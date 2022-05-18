@@ -1,0 +1,44 @@
+antiX-cli-cc
+man tlp
+sudo tlp-stat
+sudo mkdir /mnt/data
+sudo mount /dev/sda3 /mnt/data
+sudo nano /etc/tlp.conf
+sudo tlp-stat -p
+sudo tlp-stat
+man tlp
+sudo nano /etc/tlp.conf
+sudo tlp-stat
+cpufreq-info
+history
+man ls
+man history
+nano .bash_history 
+sudo nano /etc/tlp.conf
+sudo tlp start
+history -d 19
+history
+sudo tlp-stat
+history
+sudo nano /etc/tlp.conf
+sudo tlp start
+cat /proc/version
+cd /etc/modprobe.d/
+ls -a
+sudo nano pc-speaker.conf
+find alsa-base.conf
+man find
+find alsa-base.conf /
+lspic -v
+lspci -v
+sudo lspci -v
+sudo nano alsa-base.conf
+sudo lspci -v | grep Audio
+sudo lspci -v 
+dmseg | grep hda
+dmesg | grep hda
+sudo nano alsa-base.conf
+pulseaudio -k
+sudo echo 1 > '/sys/bus/pci/devices/0000:00:1b.0/remove' -v
+sudo echo 1 > '/sys/bus/pci/devices/0000:00:1b.0/remove'
+su
