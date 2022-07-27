@@ -1,0 +1,41 @@
+
+
+/* Exemple 1 : */
+
+body {color:RGB(0,0,0) !important;
+background-color:RGB(253,253,253) !important;
+text-align:justify !important;
+line-height:1.2 !important;
+margin-top:0px !important;
+margin-bottom:4px !important;
+margin-right:220px !important;
+margin-left:220px !important;
+text-indent:5em !important;
+background-position:50% !important;}
+p,div {margin-bottom:8px !important;margin-top:8px !important;}
+blockquote {padding-right:35px !important;margin-bottom:8px !important;}
+h1, h2, h3, h4, h5, h6
+{color:black !important;
+text-align:center !important;
+font-style:italic !important;
+font-weight:bold !important;}
+
+
+/* Exemple 2 : */
+
+body {color:rgb(0,0,0);
+background-color:rgb(174,174,174);
+text-align:justify;
+line-spacing:1.8;
+margin-top:0px;
+margin-bottom:4px;
+margin-right:50px;
+margin-left:50px;
+text-indent:3em;}
+h1, h2, h3, h4, h5, h6
+{color:black;
+text-align:center;
+font-style:italic;
+font-weight:bold;}
+
+/* April 19, 2012 */

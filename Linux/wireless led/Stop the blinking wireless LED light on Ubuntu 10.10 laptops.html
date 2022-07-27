@@ -1,0 +1,80 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns="http://www.w3.org/TR/REC-html40"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="ProgId" content="OneNote.File">
+<meta name="Generator" content="Microsoft OneNote 15">
+<link id="Main-File" rel="Main-File" href="file:///tmp/maftemp-42a4c974/1653205496010_288/StoptheblinkingwirelessLEDlightonUbuntu10.10laptops.htm">
+<link rel="File-List" href="file:///C:/C93BCA73/StoptheblinkingwirelessLEDlightonUbuntu10.10laptops_fichiers/filelist.xml">
+</head>
+
+<body style="font-family:Calibri;font-size:11.0pt" lang="fr">
+
+<div style="direction:ltr;border-width:100%">
+
+<div style="direction:ltr;margin-top:0in;margin-left:0in;width:6.5in">
+
+<div style="direction:ltr;margin-top:0in;margin-left:0in;width:6.5in">
+
+<p style="margin:0in;font-family:&quot;Calibri Light&quot;;font-size:20.0pt" lang="en-US">Stop
+the blinking wireless LED light on Ubuntu 10.10 laptops</p>
+
+</div>
+
+<div style="direction:ltr;margin-top:.0388in;margin-left:0in;width:2.5979in">
+
+<p style="margin:0in;font-family:Calibri;font-size:10.0pt;color:gray" lang="en-US">Sunday, December 15, 2013</p>
+
+<p style="margin:0in;font-family:Calibri;font-size:10.0pt;color:gray" lang="en-US">10:46 PM</p>
+
+</div>
+
+<div style="direction:ltr;margin-top:.1416in;margin-left:0in;width:6.109in">
+
+<p style="margin-top:2pt;margin-bottom:2pt;font-family:Calibri;font-size:11.0pt">Stop
+the blinking wireless LED light on Ubuntu 10.10 laptops<br>
+<span style="mso-spacerun:yes"> </span>November 4, 2010<br>
+<br>
+<br>
+<span style="mso-spacerun:yes"> </span>When data is being transferred via
+wireless network,the blinking LED light indicates the wireless is on.This
+tutorial shows how to stop this annoying blinking light,and so that your laptop
+has a constant on (or off) LED light when wirelessâ€™s working (or
+not).<br>
+<br>
+<span style="mso-spacerun:yes"> </span>Open up a terminal window from
+Applications -&gt; Accessories -&gt; Terminal,use following command to edit the
+â€œ/etc/modprobe.d/wlan.confâ€ file (if itâ€™s not existent,the command will
+create one with blank).<br>
+<br>
+<span style="mso-spacerun:yes"> </span>gksudo gedit
+/etc/modprobe.d/wlan.conf<br>
+<br>
+<span style="mso-spacerun:yes"> </span>add this line at the end of the file,and
+save it.<br>
+<br>
+<span style="mso-spacerun:yes"> </span>    options iwlcore
+led_mode=1<br>
+<br>
+<span style="mso-spacerun:yes"> </span>Now,restart your machine and problem
+should be fixed !<br>
+ </p>
+
+</div>
+
+</div>
+
+</div>
+
+<div>
+
+<p style="margin:0in"> </p>
+
+<p style="text-align:left;margin:0in;font-family:Arial;font-size:9pt;
+color:#969696;direction:ltr">Créé avec Microsoft OneNote 2016.</p>
+
+</div>
+
+
+
+
+</body></html>

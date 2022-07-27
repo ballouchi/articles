@@ -1,0 +1,149 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns="http://www.w3.org/TR/REC-html40"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="ProgId" content="OneNote.File">
+<meta name="Generator" content="Microsoft OneNote 15">
+<link id="Main-File" rel="Main-File" href="file:///tmp/maftemp-42a4c974/1653205495724_331/StoptheblinkingwirelessLEDinLinux.htm">
+<link rel="File-List" href="file:///C:/CEF64718/StoptheblinkingwirelessLEDinLinux_fichiers/filelist.xml">
+</head>
+
+<body style="font-family:Calibri;font-size:11.0pt" lang="fr">
+
+<div style="direction:ltr;border-width:100%">
+
+<div style="direction:ltr;margin-top:0in;margin-left:0in;width:6.1812in">
+
+<div style="direction:ltr;margin-top:0in;margin-left:.075in;width:4.7888in">
+
+<p style="margin:0in;font-family:&quot;Calibri Light&quot;;font-size:20.0pt" lang="en-US">Stop
+the blinking wireless LED in Linux</p>
+
+</div>
+
+<div style="direction:ltr;margin-top:.0388in;margin-left:.075in;width:2.5243in">
+
+<p style="margin:0in;font-family:Calibri;font-size:10.0pt;color:gray" lang="en-US">Monday, November 5, 2012</p>
+
+<p style="margin:0in;font-family:Calibri;font-size:10.0pt;color:gray" lang="en-US">1:16 PM</p>
+
+</div>
+
+<div style="direction:ltr;margin-top:.4805in;margin-left:0in;width:6.1812in">
+
+<div style="direction:ltr">
+
+<table valign="top" style="direction:ltr;
+ border-collapse:collapse;border-style:solid;border-color:#A3A3A3;border-width:
+ 0pt" title="" summary="" cellspacing="0" cellpadding="0" border="0">
+ <tbody><tr>
+  <td style="border-width:0pt;background-color:#D0CECE;vertical-align:top;
+  width:1.0395in;padding:2.0pt 3.0pt 2.0pt 3.0pt">
+  <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span style="font-weight:bold;background:#D0CECE">Tags: </span><span style="background:#D0CECE">#Linux </span></p>
+  </td>
+ </tr>
+</tbody></table>
+
+</div>
+
+<h1 style="margin-top:2pt;margin-bottom:2pt;font-family:Calibri;font-size:16.0pt;
+color:#1E4E79">Stop the blinking wireless LED in Linux</h1>
+
+<p style="margin-top:2pt;margin-bottom:2pt;font-family:Calibri;font-size:11.0pt">by
+<a href="http://www.tomdesair.com/blog/author/admin/">Tom Desair</a> Posted on <a href="http://www.tomdesair.com/blog/2012/04/stop-the-blinking-wireless-led-in-linux/">April
+21, 2012</a> </p>
+
+<p style="margin-top:2pt;margin-bottom:2pt;font-family:Calibri;font-size:11.0pt">I’ve
+recently had some problems with the wireless LED of my laptop in Linux. I have
+a Intel WiFi Link 5100 but this also applies to other Intel WiFi cards. 
+The LED that indicates that my WiFi is enabled or not, was blinking every time
+the WiFi card transmitted or received data. This seems like some special
+feature Intel introduced but it is really very annoying! Luckily you can stop
+the blinking, but this depends on your kernel version so make sure to look into
+the right section. I’m posting solutions for Linux Mint (Debian), Ubuntu and
+Arch Linux but I think this will also work for other distros.</p>
+
+<h2 style="margin-top:2pt;margin-bottom:2pt;font-family:Calibri;font-size:14.0pt;
+color:#2E75B5">Kernel version lower than 3.2.0</h2>
+
+<p style="margin-top:2pt;margin-bottom:2pt;font-family:Calibri;font-size:11.0pt">Put
+this text</p>
+
+<p style="margin-top:2pt;margin-bottom:2pt;font-family:consolas;font-size:11.0pt">options
+iwlagn led_mode=1</p>
+
+<p style="margin-top:2pt;margin-bottom:2pt;font-family:Calibri;font-size:11.0pt">in
+the following file (possibly you have to create the file):</p>
+
+<ul style="margin-left:.375in;direction:ltr;unicode-bidi:embed;
+ margin-top:0in;margin-bottom:0in" type="disc">
+ <li style="margin-top:0;margin-bottom:0;vertical-align:middle"><span style="font-family:Calibri;font-size:11.0pt">Linux Mint (Debian) or
+     Ubuntu: </span><span style="font-family:consolas;font-size:11.0pt">/etc/modprobe.d/iwlagn.conf</span></li>
+ <li style="margin-top:0;margin-bottom:0;vertical-align:middle"><span style="font-family:Calibri;font-size:11.0pt">Arch Linux: </span><span style="font-family:consolas;font-size:11.0pt">/etc/modprobe.d/modprobe.conf</span></li>
+</ul>
+
+<p style="margin-top:2pt;margin-bottom:2pt;font-size:11.0pt"><span style="font-family:Calibri">Now </span><span style="font-weight:bold;
+font-family:Calibri">restart your system</span><span style="font-family:Calibri">
+or reload the WiFi driver using:<br>
+<span style="mso-spacerun:yes"> </span></span><span style="font-family:consolas">sudo
+-i</span><span style="font-family:Calibri"><br>
+</span><span style="font-family:consolas"><span style="mso-spacerun:yes"> </span>modprobe -r iwlagn &amp;&amp; modprobe
+iwlagn</span></p>
+
+<p style="margin-top:2pt;margin-bottom:2pt;font-family:Calibri;font-size:11.0pt">If
+that doesn’t work, you can try putting the following in the same file:</p>
+
+<p style="margin-top:2pt;margin-bottom:2pt;font-family:consolas;font-size:11.0pt">options iwl_legacy
+led_mode=1</p>
+
+<h2 style="margin-top:2pt;margin-bottom:2pt;font-family:Calibri;font-size:14.0pt;
+color:#2E75B5">Kernel version greater or equal to 3.2.0</h2>
+
+<p style="margin-top:2pt;margin-bottom:2pt;font-family:Calibri;font-size:11.0pt">Put
+this text</p>
+
+<p style="margin-top:2pt;margin-bottom:2pt;font-family:consolas;font-size:11.0pt">options iwlwifi
+led_mode=1</p>
+
+<p style="margin-top:2pt;margin-bottom:2pt;font-family:Calibri;font-size:11.0pt">in
+the following file (possibly you have to create the file):</p>
+
+<ul style="margin-left:.375in;direction:ltr;unicode-bidi:embed;
+ margin-top:0in;margin-bottom:0in" type="disc">
+ <li style="margin-top:0;margin-bottom:0;vertical-align:middle"><span style="font-family:Calibri;font-size:11.0pt">Linux Mint (Debian) or
+     Ubuntu: </span><span style="font-family:consolas;font-size:11.0pt">/etc/modprobe.d/wlan.conf</span></li>
+ <li style="margin-top:0;margin-bottom:0;vertical-align:middle"><span style="font-family:Calibri;font-size:11.0pt">Arch Linux: </span><span style="font-family:consolas;font-size:11.0pt">/etc/modprobe.d/modprobe.conf</span></li>
+</ul>
+
+<p style="margin-top:2pt;margin-bottom:2pt;font-size:11.0pt"><span style="font-family:Calibri">Now </span><span style="font-weight:bold;
+font-family:Calibri">restart your system</span><span style="font-family:Calibri">
+or reload the WiFi driver using:<br>
+<span style="mso-spacerun:yes"> </span></span><span style="font-family:consolas">sudo
+-i</span><span style="font-family:Calibri"><br>
+</span><span style="font-family:consolas"><span style="mso-spacerun:yes"> </span>modprobe -r iwlwifi &amp;&amp; modprobe
+iwlwifi</span></p>
+
+<p style="margin-top:2pt;margin-bottom:2pt;font-family:Calibri;font-size:11.0pt">If
+that doesn’t work, you can try putting the following in the same file:</p>
+
+<p style="margin-top:2pt;margin-bottom:2pt;font-family:consolas;font-size:11.0pt">options iwlegacy
+led_mode=1</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div>
+
+<p style="margin:0in"> </p>
+
+<p style="text-align:left;margin:0in;font-family:Arial;font-size:9pt;
+color:#969696;direction:ltr">Créé avec Microsoft OneNote 2016.</p>
+
+</div>
+
+
+
+
+</body></html>

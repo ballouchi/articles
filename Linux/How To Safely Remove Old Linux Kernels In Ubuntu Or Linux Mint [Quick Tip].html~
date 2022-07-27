@@ -1,0 +1,131 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns="http://www.w3.org/TR/REC-html40"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="ProgId" content="OneNote.File">
+<meta name="generator" content="Bluefish 2.2.11" >
+<link id="Main-File" rel="Main-File" href="file:///tmp/maftemp-42a4c974/1653205510484_141/HowToSafelyRemoveOldLinuxKernelsInUbuntuOrLinuxMintQuickTip.htm">
+<link rel="File-List" href="file:///tmp/maftemp-42a4c974/1653205510484_141/filelist.xml">
+</head>
+
+<body style="font-family:Calibri;font-size:11.0pt" lang="fr">
+
+<div style="direction:ltr;border-width:100%">
+
+<div style="direction:ltr;margin-top:0in;margin-left:0in;width:6.5215in">
+
+<div style="direction:ltr;margin-top:0in;margin-left:.0215in;width:6.5in">
+
+<p style="margin:0in;font-family:&quot;Calibri Light&quot;;font-size:20.0pt" lang="en-US">How
+To Safely Remove Old Linux Kernels In Ubuntu Or Linux Mint [Quick Tip]</p>
+
+</div>
+
+<div style="direction:ltr;margin-top:.0388in;margin-left:.0215in;width:2.5881in">
+
+<p style="margin:0in;font-family:Calibri;font-size:10.0pt;color:gray" lang="en-US">Wednesday, August 24, 2016</p>
+
+<p style="margin:0in;font-family:Calibri;font-size:10.0pt;color:gray" lang="en-US">3:17 PM</p>
+
+</div>
+
+<div style="direction:ltr;margin-top:.1416in;margin-left:0in;width:6.1062in">
+
+<p style="margin-top:5pt;margin-bottom:5pt;font-family:Calibri;font-size:11.0pt">Old
+Linux kernels can take up a considerable amount of disk space. Apt ("sudo
+apt-get autoremove") tries to remove uneeded packages, including old Linux
+kernels, but it may fail to remove all of them.</p>
+
+<p style="margin-top:5pt;margin-bottom:5pt;font-family:Calibri;font-size:11.0pt"><br>
+ </p>
+
+<p style="margin-top:5pt;margin-bottom:5pt;font-family:Calibri;font-size:11.0pt">Apt
+may fail to remove old Linux kernels when using an Ubuntu version that's under
+development, if you encounter <a href="https://bugs.launchpad.net/ubuntu/+source/update-manager/+bug/1492709">THIS</a>
+bug (which still occurs in Trusty), or if you've installed the kernels
+manually.</p>
+
+<p style="margin-top:5pt;margin-bottom:5pt;font-family:Calibri;font-size:11.0pt"><br>
+ </p>
+
+<p style="margin-top:5pt;margin-bottom:5pt;font-family:Calibri;font-size:11.0pt">There
+are various commands out there for mass removing old Linux kernels, but they
+complicated (and hard to remember), and not all are safe. So what's the safest
+way of mass purging old Linux kernels in Ubuntu? Well, <a href="http://blog.dustinkirkland.com/2016/06/purge-old-kernels.html">according</a>
+to Dustin Kirkland, it's the "purge-old-kernels" command.</p>
+
+<p style="margin-top:5pt;margin-bottom:5pt;font-family:Calibri;font-size:11.0pt"><br>
+ </p>
+
+<p style="margin:0in"><img src="How%20To%20Safely%20Remove%20Old%20Linux%20Kernels%20In%20Ubuntu%20Or%20Linux%20Mint%20[Quick%20Tip]_files/image001.png" alt="
+" height="262" width="400"></p>
+
+<p style="margin-top:5pt;margin-bottom:5pt;font-family:Calibri;font-size:11.0pt"><a href="https://2.bp.blogspot.com/-VNtCntQdWLE/V5clva_X4OI/AAAAAAAAYI4/sli6JRSkaN8h6lieHniWfEMAoc_F5BzdwCLcB/s1600/purge-old-kernels.png">(image
+link)</a></p>
+
+<p style="margin-top:5pt;margin-bottom:5pt;font-family:Calibri;font-size:11.0pt"><br>
+ </p>
+
+<p style="margin-top:5pt;margin-bottom:5pt;font-family:Calibri;font-size:11.0pt">The
+<span style="font-style:italic">purge-old-kernels</span> <a href="http://manpages.ubuntu.com/manpages/xenial/man1/purge-old-kernels.1.html">man
+page</a> mentions that the command will never remove the currently running
+kernel. Also, by default, it will keep at least the latest 2 kernels, but you
+can override this using the "--keep" parameter (for instance
+"--keep 1" to only keep 1 Linux kernel).</p>
+
+<p style="margin-top:5pt;margin-bottom:5pt;font-family:Calibri;font-size:11.0pt"><br>
+ </p>
+
+<p style="margin-top:5pt;margin-bottom:5pt;font-family:Calibri;font-size:11.0pt">In
+Ubuntu 16.04 and newer, the <span style="font-style:italic">purge-old-kernels</span>
+command is part of the <span style="font-style:italic">byobu</span> package.
+For older Ubuntu versions, it's available with the <span style="font-style:
+italic">bikeshed</span> package. To install these packages, use the following
+command:</p>
+
+<p style="margin-top:5pt;margin-bottom:5pt;font-family:Calibri;font-size:11.0pt"><br>
+<span style="font-weight:bold">- for Ubuntu 16.04 and newer, Linux Mint 18 and
+derivatives:</span><br>
+<span style="font-weight:bold">sudo apt install byobu- for Ubuntu versions
+older than 16.04, Linux Mint 17.x and derivatives:</span><br>
+<span style="font-weight:bold">sudo apt install bikeshed</span><br>
+ </p>
+
+<p style="margin-top:5pt;margin-bottom:5pt;font-family:Calibri;font-size:11.0pt"><span style="font-weight:bold">Once installed, you can remove old Linux kernels on
+Ubuntu (or Linux Mint) desktops or servers, using the following command:</span></p>
+
+<p style="margin-top:5pt;margin-bottom:5pt;font-size:11.0pt"><span style="font-family:consolas">sudo purge-old-kernels</span><span style="font-family:Calibri"><br>
+</span> </p>
+
+<p style="margin-top:5pt;margin-bottom:5pt;font-family:Calibri;font-size:11.0pt"><span style="font-style:italic">via </span><a href="http://blog.dustinkirkland.com/2016/06/purge-old-kernels.html"><span style="font-style:italic">Dustin Kirkland</span></a></p>
+
+<p style="margin-top:5pt;margin-bottom:5pt;font-family:Calibri;font-size:11.0pt"><br>
+ </p>
+
+<p style="margin-top:5pt;margin-bottom:5pt;font-family:Calibri;font-size:11.0pt">Originally
+published at <a href="http://www.webupd8.org/">WebUpd8: Daily Ubuntu / Linux
+news and application reviews</a>.</p>
+
+<p style="margin-top:5pt;margin-bottom:5pt;font-family:Calibri;font-size:11.0pt">[source:
+<a href="http://www.webupd8.org/2016/07/how-to-safely-remove-old-linux-kernels.html">How
+To Safely Remove Old Linux Kernels In Ubuntu Or Linux Mint [Quick Tip]</a>]</p>
+
+<p style="margin-top:5pt;margin-bottom:5pt;font-family:Calibri;font-size:11.0pt"><br>
+ </p>
+
+</div>
+
+</div>
+
+</div>
+
+<div>
+
+<p style="margin:0in"> </p>
+
+
+</div>
+
+
+
+
+</body></html>

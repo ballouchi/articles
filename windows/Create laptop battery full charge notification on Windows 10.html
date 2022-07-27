@@ -1,0 +1,153 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns="http://www.w3.org/TR/REC-html40"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="ProgId" content="OneNote.File">
+<meta name="Generator" content="Microsoft OneNote 15">
+<link id="Main-File" rel="Main-File" href="file:///tmp/maftemp-42a4c974/1653205531592_886/CreatelaptopbatteryfullchargenotificationonWindows10.htm">
+<link rel="File-List" href="file:///C:/E5AA1A50/CreatelaptopbatteryfullchargenotificationonWindows10_fichiers/filelist.xml">
+</head>
+
+<body style="font-family:Calibri;font-size:11.0pt" lang="fr">
+
+<div style="direction:ltr;border-width:100%">
+
+<div style="direction:ltr;margin-top:0in;margin-left:0in;width:6.5798in">
+
+<div style="direction:ltr;margin-top:0in;margin-left:0in;width:6.5798in">
+
+<p style="margin:0in;font-family:&quot;Calibri Light&quot;;font-size:20.0pt" lang="en-US">Create
+laptop battery full charge notification on Windows 10</p>
+
+</div>
+
+<div style="direction:ltr;margin-top:.0388in;margin-left:0in;width:2.4597in">
+
+<p style="margin:0in;font-family:Calibri;font-size:10.0pt;color:gray" lang="en-US">Monday, October 31, 2016</p>
+
+<p style="margin:0in;font-family:Calibri;font-size:10.0pt;color:gray" lang="en-US">1:33 PM</p>
+
+</div>
+
+<div style="direction:ltr;margin-top:.1416in;margin-left:0in;width:6.109in">
+
+<p style="margin-top:5pt;margin-bottom:5pt"><span style="font-family:Verdana;
+font-size:12.0pt">Capturé sur : </span><a href="http://www.thewindowsclub.com/create-laptop-battery-full-charge-notification"><span style="font-family:Verdana;font-size:12.0pt">http://www.thewindowsclub.com/create-laptop-battery-full-charge-notification</span></a></p>
+
+<p style="margin-top:5pt;margin-bottom:12pt"><span style="font-family:Verdana;
+font-size:12.0pt">If for some reason, you want to be notified when your laptop
+battery has been fully charged, then the Windows OS will not be able to help
+you as such. You can </span><a href="http://www.thewindowsclub.com/change-critical-low-level-battery-action-windows-8-7"><span style="font-family:Verdana;font-size:12.0pt">change Critical &amp; Low Level
+Battery Action</span></a><span style="font-family:Verdana;font-size:12.0pt">
+and </span><a href="http://www.thewindowsclub.com/how-to-change-battery-notifications-in-windows-7"><span style="font-family:Verdana;font-size:12.0pt">change Low Battery Level
+Notifications</span></a><span style="font-family:Verdana;font-size:12.0pt">.
+too, but there is just no setting available that tells you when your laptop
+battery has been fully charged. In this post we will see how to create a
+battery full charge notification, alert or alarm for your Windows 10 / 8 / 7
+laptop, without using any software.</span></p>
+
+<h2 style="margin-top:5pt;margin-bottom:12pt;font-family:Calibri;font-size:
+14.0pt;color:#2E75B5">Create laptop battery full charge notification</h2>
+
+<p style="margin-top:5pt;margin-bottom:12pt;font-family:Verdana;font-size:12.0pt">Open
+a Notepad on your Windows desktop, and copy paste the following code in it.</p>
+
+<p style="margin-top:5pt;margin-bottom:12pt;font-size:12.0pt"><span style="font-family:consolas">set oLocator =
+CreateObject("WbemScripting.SWbemLocator")<br>
+set oServices =
+oLocator.ConnectServer(".","root\wmi")<br>
+set oResults = oServices.ExecQuery("select * from
+batteryfullchargedcapacity")<br>
+for each oResult in oResults<br>
+   iFull = oResult.FullChargedCapacity<br>
+next<br>
+<br>
+while (1)<br>
+  set oResults = oServices.ExecQuery("select * from
+batterystatus")<br>
+  for each oResult in oResults<br>
+    iRemaining =
+oResult.RemainingCapacity<br>
+    bCharging = oResult.Charging<br>
+  next<br>
+  iPercent = ((iRemaining / iFull) * 100) mod 100<br>
+  if bCharging and (iPercent &gt; 95) Then msgbox "Battery is at
+" &amp; iPercent &amp; "%",vbInformation, "Battery
+monitor"<br>
+  wscript.sleep 30000 ' 5 minutes<br>
+wend</span><span style="font-family:Verdana"> </span></p>
+
+<p style="margin-top:5pt;margin-bottom:12pt;font-family:Verdana;font-size:12.0pt">From
+the Notepad File menu, select Save as, and then from the save as dialog box
+which appears, under Save as type, select All files.</p>
+
+<p style="margin-top:5pt;margin-bottom:12pt;font-family:Verdana;font-size:12.0pt">Next
+give the file any name, along with extension as .vbs. For instance you may name
+the file as FullBat.vbs. Click on Save to save the vbs script to your desktop
+or any other location of your choice.</p>
+
+<p style="margin-top:5pt;margin-bottom:12pt"><span style="font-family:Verdana;
+font-size:12.0pt">You may also right-click on it and select Create shortcut.
+Once you have done this, move the shortcut to the </span><a href="http://www.thewindowsclub.com/startup-folder-in-windows-8"><span style="font-family:Verdana;font-size:12.0pt">Windows 10 startup folder</span></a><span style="font-family:Verdana;font-size:12.0pt"> located at:</span></p>
+
+<p style="margin-top:5pt;margin-bottom:12pt;font-family:Verdana;font-size:12.0pt">Advertisement</p>
+
+<p style="margin-top:5pt;margin-bottom:12pt;font-family:Verdana;font-size:12.0pt">^</p>
+
+<p style="margin-top:5pt;margin-bottom:12pt;font-family:Verdana;font-size:12.0pt">C:\ProgramData\Microsoft\Windows\Start
+Menu\Programs\StartUp</p>
+
+<p style="margin-top:5pt;margin-bottom:12pt;font-family:Verdana;font-size:12.0pt">This
+way, everytime your laptop boots, the script will start monitoring. That is all
+you need to do.</p>
+
+<p style="margin-top:5pt;margin-bottom:12pt;font-family:Verdana;font-size:12.0pt">You
+may also click on it right away to start running the script immediately. 
+Once it runs, it will start monitoring your battery status.</p>
+
+<p style="margin-top:5pt;margin-bottom:12pt;font-family:Verdana;font-size:12.0pt">When
+your battery charge exceeds 95%, you will hear an alarm and see the following
+notification pop up.</p>
+
+<p style="margin-top:5pt;margin-bottom:12pt;font-family:Verdana;font-size:12.0pt">The
+scrip sets the notification to appear when it crosses 95%. If you wish, you can
+change it to 99%.</p>
+
+<p style="margin-top:5pt;margin-bottom:12pt;font-family:Verdana;font-size:12.0pt">It
+worked for me. Let us know if it worked for you too.</p>
+
+<p style="margin-top:5pt;margin-bottom:12pt"><a href="http://forum.thewindowsclub.com/windows-8-management-support/36026-laptop-battery-fully-charged-notification-alarm-software.html#post170670"><span style="font-family:Verdana;font-size:12.0pt">Battery Alarm and Laptop Battery
+Monitor</span></a><span style="font-family:Verdana;font-size:12.0pt"> are good
+freeware that will tell you when your battery is fully charged. Take a look at
+them too. </span><a href="http://www.thewindowsclub.com/batexpert-free-laptop-battery-monitoring-software-windows-8-7"><span style="font-family:Verdana;font-size:12.0pt">BATExpert</span></a><span style="font-family:Verdana;font-size:12.0pt"> is another good tool that may
+interest you as it shows you the current status of the battery installed in
+your laptop and also provides other detailed information about it like the
+battery type, manufacturer, voltage and temperature, etc.</span></p>
+
+<p style="margin-top:5pt;margin-bottom:12pt"><span style="font-family:Verdana;
+font-size:12.0pt">Source: </span><a href="http://blogs.technet.com/b/jhoward/archive/2013/04/24/get-an-alert-when-my-battery-reaches-95.aspx"><span style="font-family:Verdana;font-size:12.0pt">TechNet</span></a><span style="font-family:Verdana;font-size:12.0pt">.</span></p>
+
+<p style="margin-top:5pt;margin-bottom:12pt"><span style="font-weight:bold;
+font-family:Verdana;font-size:12.0pt">RECOMMENDED: </span><a href="http://link.tweakbit.com/tds/1avD"><span style="font-weight:bold;
+font-family:Verdana;font-size:12.0pt">Click here to repair/restore missing
+Windows files &amp; Optimize your PC</span></a><span style="font-family:Verdana;
+font-size:12.0pt"> </span></p>
+
+</div>
+
+</div>
+
+</div>
+
+<div>
+
+<p style="margin:0in"> </p>
+
+<p style="text-align:left;margin:0in;font-family:Arial;font-size:9pt;
+color:#969696;direction:ltr">Créé avec Microsoft OneNote 2016.</p>
+
+</div>
+
+
+
+
+</body></html>
