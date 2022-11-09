@@ -1,0 +1,658 @@
+illumina
+ ._________________________________. 
+ |                                 | 
+ |                 _               | 
+ |                //\              | 
+ |          //-- //  \  ========,  | 
+ |         //   //    \        /   | 
+ |        //   //      \      /    | 
+ |  __________  ___  __  _________ | 
+ |       /     \        //  //     | 
+ |      /       \      //  //      | 
+ |     /__________________//       | 
+ |                \  //            | 
+ |                 \//             | 
+ |                  "              | 
+ |                                 | 
+ '---------------------------------' 
+[med-arch@hp6830s-arch ~]$ pwrsave
+Setting cpu: 0
+Setting cpu: 1
+[med-arch@hp6830s-arch ~]$ pacs qtile
+resolving dependencies...
+looking for conflicting packages...
+
+Packages (3) python-cairocffi-1.2.0-1  python-xcffib-0.10.1-1  qtile-0.16.1-1
+
+Total Download Size:   0,50 MiB
+Total Installed Size:  5,98 MiB
+
+:: Proceed with installation? [Y/n] n
+[med-arch@hp6830s-arch ~]$ perfmode
+Setting cpu: 0
+Setting cpu: 1
+[med-arch@hp6830s-arch ~]$ pacman -Qqe
+accountsservice
+acpi
+acpid
+alpine-git
+alsa-firmware
+alsa-utils
+android-tools
+android-udev
+aqemu
+avahi
+b43-fwcutter
+backintime
+bash-completion
+bleachbit
+blueman
+btrfs-progs
+byobu
+bzip2
+cmus
+coreutils
+cpupower
+crda
+cronie
+cryptsetup
+dbus-x11
+deadbeef
+device-mapper
+dhclient
+dhcpcd
+diffutils
+dmidecode
+dmraid
+dnsmasq
+dosfstools
+e2fsprogs
+ecryptfs-utils
+efibootmgr
+engrampa
+exfat-utils
+exo
+f2fs-tools
+fakeroot
+feedreader
+ffmpeg
+ffmpegthumbnailer
+file
+filesystem
+findutils
+firefox
+galculator
+garcon
+gawk
+gcc-libs
+gcolor2
+geary
+gettext
+glibc
+gnome-control-center
+gnome-disk-utility
+gnome-icon-theme
+gnome-keyring
+gnome-themes-extra
+gparted
+grep
+grub
+grub-theme-manjaro
+gst-libav
+gst-plugins-bad
+gst-plugins-base
+gst-plugins-good
+gst-plugins-ugly
+gtkhash-thunar
+gufw
+gvfs
+gvfs-afc
+gvfs-gphoto2
+gvfs-mtp
+gvfs-nfs
+gvfs-smb
+gzip
+hardinfo
+haveged
+htop
+inetutils
+intel-ucode
+inxi
+iproute2
+iptables
+iputils
+ipw2100-fw
+ipw2200-fw
+jfsutils
+keepassxc
+less
+lib32-libva-intel-driver
+lib32-libva-mesa-driver
+lib32-libva-vdpau-driver
+lib32-mesa-demos
+lib32-mesa-vdpau
+lib32-vulkan-intel
+lib32-vulkan-radeon
+libdvdcss
+libgsf
+libopenraw
+libva-intel-driver
+libva-mesa-driver
+libva-vdpau-driver
+licenses
+light-locker
+lightdm
+lightdm-gtk-greeter
+lightdm-gtk-greeter-settings
+linux-firmware
+linux58
+logrotate
+lsb-release
+lvm2
+lyvi-git
+make
+man-db
+man-pages
+manjaro-alsa
+manjaro-application-utility
+manjaro-browser-settings
+manjaro-documentation-en
+manjaro-firmware
+manjaro-hello
+manjaro-hotfixes
+manjaro-pulse
+manjaro-release
+manjaro-settings-manager
+manjaro-settings-manager-notifier
+manjaro-system
+manjaro-xfce-minimal-settings
+matcha-gtk-theme
+mc
+mdadm
+memtest86+
+menulibre
+mesa-demos
+mesa-vdpau
+mhwd
+mhwd-db
+midori
+mkinitcpio-openswap
+mobile-broadband-provider-info
+modemmanager
+mousepad
+mtpfs
+mugshot
+nano
+network-manager-applet
+networkmanager
+networkmanager-openconnect
+networkmanager-openvpn
+networkmanager-pptp
+networkmanager-vpnc
+nfs-utils
+noto-fonts
+noto-fonts-cjk
+nss-mdns
+ntfs-3g
+ntp
+numlockx
+onboard
+openresolv
+openssh
+orage
+os-prober
+p7zip
+pacman
+pamac-gtk
+pantheon-code
+parole
+pavucontrol
+pciutils
+perl
+perl-file-mimeinfo
+pikaur
+poppler-glib
+powertop
+procps-ng
+psmisc
+pulseaudio-bluetooth
+pulseaudio-ctl
+pulseaudio-zeroconf
+qpdfview
+redshift
+reiserfsprogs
+ristretto
+rsync
+s-nail
+samba
+screenfetch
+sed
+shadow
+shell-color-scripts
+smplayer
+smtube
+spectre-meltdown-checker
+squashfs-tools
+sudo
+syncthing
+sysfsutils
+systemd-fsck-silent
+systemd-sysvcompat
+tar
+terminus-font
+texinfo
+thunar
+thunar-archive-plugin
+thunar-media-tags-plugin
+thunar-volman
+timeshift
+tlp
+tlp-rdw
+tlpui
+tmux
+ttf-dejavu
+tumbler
+udiskie
+udisks2
+unace
+unrar
+usb_modeswitch
+usbutils
+util-linux
+vi
+viewnior
+vulkan-intel
+vulkan-radeon
+wget
+which
+wpa_supplicant
+xcursor-simpleandsoft
+xcursor-vanilla-dmz-aa
+xdg-user-dirs
+xdg-utils
+xf86-input-elographics
+xf86-input-evdev
+xf86-input-libinput
+xf86-input-void
+xf86-video-amdgpu
+xf86-video-ati
+xf86-video-intel
+xf86-video-nouveau
+xfce4-appfinder
+xfce4-battery-plugin
+xfce4-clipman-plugin
+xfce4-cpufreq-plugin
+xfce4-cpugraph-plugin
+xfce4-mount-plugin
+xfce4-netload-plugin
+xfce4-notifyd
+xfce4-panel
+xfce4-power-manager
+xfce4-pulseaudio-plugin
+xfce4-screenshooter
+xfce4-sensors-plugin
+xfce4-session
+xfce4-settings
+xfce4-taskmanager
+xfce4-terminal
+xfce4-weather-plugin
+xfce4-whiskermenu-plugin
+xfce4-xkb-plugin
+xfconf
+xfdesktop
+xfsprogs
+xfwm4
+xiccd
+xorg-server
+xorg-twm
+xorg-xinit
+xorg-xkill
+zensu
+zsh
+[med-arch@hp6830s-arch ~]$ pacman -Qqe > installed-packages.txt
+[med-arch@hp6830s-arch ~]$ nano installed-packages.txt
+[med-arch@hp6830s-arch ~]$ vi installed-packages.txt
+[med-arch@hp6830s-arch ~]$ sudo pacman -S --needed budgie-desktop network-manager-applet gnome-control-center gnome-screensaver
+warning: network-manager-applet-1.18.0-1 is up to date -- skipping
+warning: gnome-control-center-3.38.2-1 is up to date -- skipping
+resolving dependencies...
+looking for conflicting packages...
+
+Packages (7) gnome-session-3.38.0-1  mutter6-3.36.6-1  pipewire-0.3.15-2
+             xorg-server-xwayland-1.20.9.r21.g5c400cae1-1
+             zenity-3.32.0+55+gd7bedff-1  budgie-desktop-10.5.1+12+g10b814fa-2
+             gnome-screensaver-3.6.1-17
+
+Total Installed Size:  29,76 MiB
+
+:: Proceed with installation? [Y/n] n
+[med-arch@hp6830s-arch ~]$ pacs --needed gnome
+warning: cheese-3.38.0-1 is up to date -- skipping
+warning: gnome-color-manager-3.36.0-1 is up to date -- skipping
+warning: gnome-control-center-3.38.2-1 is up to date -- skipping
+warning: gnome-disk-utility-3.38.0-1 is up to date -- skipping
+warning: gnome-keyring-1:3.36.0-1 is up to date -- skipping
+warning: gnome-menus-3.36.0-1 is up to date -- skipping
+warning: gnome-settings-daemon-3.38.1-1 is up to date -- skipping
+warning: gnome-themes-extra-3.28-2 is up to date -- skipping
+warning: gnome-video-effects-0.5.0+4+g9554041-2 is up to date -- skipping
+warning: gvfs-1.46.1-1 is up to date -- skipping
+warning: gvfs-afc-1.46.1-1 is up to date -- skipping
+warning: gvfs-gphoto2-1.46.1-1 is up to date -- skipping
+warning: gvfs-mtp-1.46.1-1 is up to date -- skipping
+warning: gvfs-nfs-1.46.1-1 is up to date -- skipping
+warning: gvfs-smb-1.46.1-1 is up to date -- skipping
+warning: networkmanager-1.26.4-1 is up to date -- skipping
+warning: tracker3-3.0.1-1 is up to date -- skipping
+:: There are 51 members in group gnome:
+:: Repository extra
+   1) baobab  2) eog  3) epiphany  4) evince  5) file-roller  6) gdm  7) gedit
+   8) gnome-backgrounds  9) gnome-books  10) gnome-calculator
+   11) gnome-calendar  12) gnome-characters  13) gnome-clocks
+   14) gnome-contacts  15) gnome-documents  16) gnome-font-viewer
+   17) gnome-getting-started-docs  18) gnome-logs  19) gnome-maps
+   20) gnome-music  21) gnome-photos  22) gnome-remote-desktop
+   23) gnome-screenshot  24) gnome-session  25) gnome-shell
+   26) gnome-shell-extensions  27) gnome-software  28) gnome-system-monitor
+   29) gnome-terminal  30) gnome-user-docs  31) gnome-user-share
+   32) gnome-weather  33) grilo-plugins  34) gvfs-goa  35) gvfs-google
+   36) mutter  37) mutter-x11-sc  38) nautilus  39) orca  40) rygel  41) sushi
+   42) totem  43) tracker  44) tracker-miners  45) tracker3-miners  46) vino
+   47) xdg-user-dirs-gtk  48) yelp
+:: Repository community
+   49) gnome-boxes  50) nautilus-typeahead  51) simple-scan
+
+Enter a selection (default=all): 
+resolving dependencies...
+:: There are 2 providers available for emoji-font:
+:: Repository extra
+   1) noto-fonts-emoji
+:: Repository community
+   2) ttf-joypixels
+
+Enter a number (default=1): 1
+:: There are 3 providers available for xdg-desktop-portal-impl:
+:: Repository extra
+   1) xdg-desktop-portal-gtk  2) xdg-desktop-portal-kde
+:: Repository community
+   3) xdg-desktop-portal-wlr
+
+Enter a number (default=1): 1
+looking for conflicting packages...
+warning: removing 'mutter' from target list because it conflicts with 'mutter-x11-sc'
+warning: removing 'nautilus' from target list because it conflicts with 'nautilus-typeahead'
+warning: removing 'libnautilus-extension' from target list because it conflicts with 'libnautilus-extension-typeahead'
+
+Packages (143) amtk-5.2.0-2  apache-2.4.46-3  apr-1.7.0-3  apr-util-1.6.1-8
+               babl-0.1.82-1  blas-3.9.0-3  cdrtools-3.02a09-4
+               colord-sane-1.4.5-1  djvulibre-3.5.27-6
+               dleyna-connector-dbus-0.3.0-3  dleyna-core-0.6.0+2+g1c6853f-2
+               dleyna-renderer-0.6.0-4  dleyna-server-0.6.0+2+geb895ae-2
+               dotconf-1.3-6  edk2-ovmf-202008-1  exempi-2.5.2-1
+               flatpak-1.8.3-1  freerdp-2:2.2.0-2  gegl-0.4.26-1
+               gfbgraph-0.2.4-1  ghostscript-9.53.3-2  gjs-2:1.66.1-1
+               gnome-autoar-0.2.4-2  gnome-epub-thumbnailer-1.6-2
+               gnome-online-miners-3.34.0-2  gom-0.4-1  gsfonts-20200910-1
+               gst-editing-services-1.18.1-1  gst-plugin-gtk-1.18.1-1
+               gtk-vnc-1.0.0-2  gtksourceview4-4.8.0-1
+               gupnp-av-0.12.11+3+g2123c81-1  gupnp-dlna-0.10.5+4+gc947eed-2
+               ijs-0.35-3  jasper-2.0.19-1  jbig2dec-0.19-1  lapack-3.9.0-3
+               lensfun-0.3.95-2  libao-1.2.2-5  libchamplain-0.12.20-2
+               libcue-2.2.1-2  libdazzle-3.38.0-1  libdmapsharing-2.9.39-3
+               libgdm-3.38.2-1.2  libgepub-0.6.0-2  libgexiv2-0.12.1-1
+               libgrss-0.7.0+16+g971c421-3  libgssglue-0.4-4  libgxps-0.3.1-2
+               libhandy0-0.0.13+12+gaa6b6f4-2  libidn-1.36-1
+               libieee1284-0.2.11-9  libiptcdata-1.0.4-5
+               libmediaart-1.9.4+1+ga704d0b-2  libmusicbrainz5-5.1.0-4
+               libnautilus-extension-typeahead-3.38.2-1  libosinfo-1.8.0-1
+               libpackagekit-glib-1.1.13-1  libpaper-1.1.28-1  libportal-0.3-2
+               libraw-0.20.2-1  libspectre-0.2.9-2  libspiro-1:20200505-2
+               libvirt-1:6.5.0-3  libvirt-glib-3.0.0-2  libxaw-1.0.13-3
+               libxmlb-0.2.1-1  libzapojit-0.0.3+14+g2dace3f-2  lua-5.4.1-1
+               luajit-2.0.5-3  malcontent-0.9.0-1  metis-5.1.0.p10-1
+               mod_dnssd-0.6-8  mtools-4.0.25-1  net-snmp-5.9-1
+               noto-fonts-emoji-20200916-1  osinfo-db-20201015-1
+               ostree-2020.3-2  phodav-2.5-1  pipewire-0.3.15-2
+               python-atspi-2.38.0-1  sane-1.0.31-3  speech-dispatcher-0.10.1-1
+               spice-gtk-0.38-1  suitesparse-5.8.1-1  t1lib-5.1.2-8
+               tbb-2020.3-1  tepl-5.0.1-1  xdg-desktop-portal-1.8.0-1
+               xdg-desktop-portal-gtk-1.8.0-1
+               xorg-server-xwayland-1.20.9.r21.g5c400cae1-1  yajl-2.1.0-4
+               yelp-xsl-3.38.2-1  zenity-3.32.0+55+gd7bedff-1  baobab-3.38.0-1
+               eog-3.38.1-1  epiphany-3.38.1-2  evince-3.38.0+1+gffa3fd98-1
+               file-roller-3.38.0-1  gdm-3.38.2-1.2  gedit-3.38.0-1
+               gnome-backgrounds-3.38.0-1  gnome-books-3.34.0+21+g4d34d109-1
+               gnome-boxes-3.38.1-2  gnome-calculator-3.38.2-1
+               gnome-calendar-3.38.1-1  gnome-characters-3.34.0+9+geeab5f2-1
+               gnome-clocks-3.38.0-1  gnome-contacts-3.38.1-1
+               gnome-documents-3.34.0+6+g966b04ec-1
+               gnome-font-viewer-3.34.0+27+g5ffd1ba-1
+               gnome-getting-started-docs-3.38.0-1  gnome-logs-3.36.0-1
+               gnome-maps-3.38.2-1  gnome-music-1:3.38.1-1
+               gnome-photos-3.38.0-1  gnome-remote-desktop-0.1.9-1
+               gnome-screenshot-3.38.0-1  gnome-session-3.38.0-1
+               gnome-shell-1:3.38.1-1  gnome-shell-extensions-3.38.1-1
+               gnome-software-3.38.0-2  gnome-system-monitor-3.38.0-1
+               gnome-terminal-3.38.1-2  gnome-user-docs-3.38.2-1
+               gnome-user-share-3.34.0-2  gnome-weather-3.36.1-1
+               grilo-plugins-1:0.3.12-2  gvfs-goa-1.46.1-1
+               gvfs-google-1.46.1-1  mutter-x11-sc-3.38.1-1
+               nautilus-typeahead-3.38.2-1  orca-3.38.0-1  rygel-0.40.0-1
+               simple-scan-3.38.1-1  sushi-3.38.0-1  totem-3.38.0-1
+               tracker-2.3.6-2  tracker-miners-2.3.5-2  tracker3-miners-3.0.1-1
+               vino-3.22.0+72+g3fe1f12-1  xdg-user-dirs-gtk-0.10+9+g5b7efc6-3
+               yelp-3.38.2-1
+
+Total Download Size:   178,11 MiB
+Total Installed Size:  662,81 MiB
+
+:: Proceed with installation? [Y/n] n
+[med-arch@hp6830s-arch ~]$ pwrsave
+Setting cpu: 0
+Setting cpu: 1
+[med-arch@hp6830s-arch ~]$ pacs --needed cinnamon
+resolving dependencies...
+looking for conflicting packages...
+
+Packages (24) caribou-0.4.21+60+gec9041b-3  cinnamon-control-center-4.6.2-1
+              cinnamon-desktop-4.6.4-1  cinnamon-menus-4.6.1-1
+              cinnamon-screensaver-4.6.0-1.1  cinnamon-session-4.6.2-1
+              cinnamon-settings-daemon-4.6.4-1  cjs-4.6.0-1  exempi-2.5.2-1
+              gnome-backgrounds-3.38.0-1  js52-52.9.0-4  muffin-4.6.3-1
+              nemo-4.6.5-1  python-atspi-2.38.0-1  python-pam-1.8.4-4
+              python-pyinotify-0.9.6-7  python-pytz-2020.4-1
+              python-setproctitle-1.1.10-5  python-tinycss2-1.0.2-3
+              python-webencodings-0.5.1-4  python-xapp-2.0.0-1
+              timezonemap-0.4.5.1-1  zenity-3.32.0+55+gd7bedff-1
+              cinnamon-4.6.7-1
+
+Total Download Size:    57,30 MiB
+Total Installed Size:  146,87 MiB
+
+:: Proceed with installation? [Y/n] n
+[med-arch@hp6830s-arch ~]$ pacs --needed gnome
+warning: cheese-3.38.0-1 is up to date -- skipping
+warning: gnome-color-manager-3.36.0-1 is up to date -- skipping
+warning: gnome-control-center-3.38.2-1 is up to date -- skipping
+warning: gnome-disk-utility-3.38.0-1 is up to date -- skipping
+warning: gnome-keyring-1:3.36.0-1 is up to date -- skipping
+warning: gnome-menus-3.36.0-1 is up to date -- skipping
+warning: gnome-settings-daemon-3.38.1-1 is up to date -- skipping
+warning: gnome-themes-extra-3.28-2 is up to date -- skipping
+warning: gnome-video-effects-0.5.0+4+g9554041-2 is up to date -- skipping
+warning: gvfs-1.46.1-1 is up to date -- skipping
+warning: gvfs-afc-1.46.1-1 is up to date -- skipping
+warning: gvfs-gphoto2-1.46.1-1 is up to date -- skipping
+warning: gvfs-mtp-1.46.1-1 is up to date -- skipping
+warning: gvfs-nfs-1.46.1-1 is up to date -- skipping
+warning: gvfs-smb-1.46.1-1 is up to date -- skipping
+warning: networkmanager-1.26.4-1 is up to date -- skipping
+warning: tracker3-3.0.1-1 is up to date -- skipping
+:: There are 51 members in group gnome:
+:: Repository extra
+   1) baobab  2) eog  3) epiphany  4) evince  5) file-roller  6) gdm  7) gedit
+   8) gnome-backgrounds  9) gnome-books  10) gnome-calculator
+   11) gnome-calendar  12) gnome-characters  13) gnome-clocks
+   14) gnome-contacts  15) gnome-documents  16) gnome-font-viewer
+   17) gnome-getting-started-docs  18) gnome-logs  19) gnome-maps
+   20) gnome-music  21) gnome-photos  22) gnome-remote-desktop
+   23) gnome-screenshot  24) gnome-session  25) gnome-shell
+   26) gnome-shell-extensions  27) gnome-software  28) gnome-system-monitor
+   29) gnome-terminal  30) gnome-user-docs  31) gnome-user-share
+   32) gnome-weather  33) grilo-plugins  34) gvfs-goa  35) gvfs-google
+   36) mutter  37) mutter-x11-sc  38) nautilus  39) orca  40) rygel  41) sushi
+   42) totem  43) tracker  44) tracker-miners  45) tracker3-miners  46) vino
+   47) xdg-user-dirs-gtk  48) yelp
+:: Repository community
+   49) gnome-boxes  50) nautilus-typeahead  51) simple-scan
+
+Enter a selection (default=all): 6 8 11 12 13 14 15 18 24 25 26 27 28 29 31 32 33 34 35 36 37 
+resolving dependencies...
+:: There are 2 providers available for emoji-font:
+:: Repository extra
+   1) noto-fonts-emoji
+:: Repository community
+   2) ttf-joypixels
+
+Enter a number (default=1): 1
+:: There are 3 providers available for xdg-desktop-portal-impl:
+:: Repository extra
+   1) xdg-desktop-portal-gtk  2) xdg-desktop-portal-kde
+:: Repository community
+   3) xdg-desktop-portal-wlr
+
+Enter a number (default=1): 1
+looking for conflicting packages...
+warning: removing 'mutter' from target list because it conflicts with 'mutter-x11-sc'
+
+Packages (75) apache-2.4.46-3  apr-1.7.0-3  apr-util-1.6.1-8
+              djvulibre-3.5.27-6  dleyna-connector-dbus-0.3.0-3
+              dleyna-core-0.6.0+2+g1c6853f-2  dleyna-server-0.6.0+2+geb895ae-2
+              evince-3.38.0+1+gffa3fd98-1  exempi-2.5.2-1  flatpak-1.8.3-1
+              gfbgraph-0.2.4-1  ghostscript-9.53.3-2  gjs-2:1.66.1-1
+              gnome-autoar-0.2.4-2  gnome-epub-thumbnailer-1.6-2
+              gnome-online-miners-3.34.0-2  gom-0.4-1  gsfonts-20200910-1
+              gupnp-av-0.12.11+3+g2123c81-1  gupnp-dlna-0.10.5+4+gc947eed-2
+              ijs-0.35-3  jbig2dec-0.19-1  libcue-2.2.1-2  libdazzle-3.38.0-1
+              libdmapsharing-2.9.39-3  libgdm-3.38.2-1.2  libgepub-0.6.0-2
+              libgexiv2-0.12.1-1  libgrss-0.7.0+16+g971c421-3  libgxps-0.3.1-2
+              libhandy0-0.0.13+12+gaa6b6f4-2  libidn-1.36-1
+              libiptcdata-1.0.4-5  libmediaart-1.9.4+1+ga704d0b-2
+              libosinfo-1.8.0-1  libpackagekit-glib-1.1.13-1  libpaper-1.1.28-1
+              libspectre-0.2.9-2  libxaw-1.0.13-3  libxmlb-0.2.1-1
+              libzapojit-0.0.3+14+g2dace3f-2  lua-5.4.1-1  malcontent-0.9.0-1
+              mod_dnssd-0.6-8  noto-fonts-emoji-20200916-1
+              osinfo-db-20201015-1  ostree-2020.3-2  pipewire-0.3.15-2
+              t1lib-5.1.2-8  tracker-2.3.6-2  tracker-miners-2.3.5-2
+              xdg-desktop-portal-1.8.0-1  xdg-desktop-portal-gtk-1.8.0-1
+              xorg-server-xwayland-1.20.9.r21.g5c400cae1-1
+              zenity-3.32.0+55+gd7bedff-1  gdm-3.38.2-1.2
+              gnome-backgrounds-3.38.0-1  gnome-calendar-3.38.1-1
+              gnome-characters-3.34.0+9+geeab5f2-1  gnome-clocks-3.38.0-1
+              gnome-contacts-3.38.1-1  gnome-documents-3.34.0+6+g966b04ec-1
+              gnome-logs-3.36.0-1  gnome-session-3.38.0-1
+              gnome-shell-1:3.38.1-1  gnome-shell-extensions-3.38.1-1
+              gnome-software-3.38.0-2  gnome-system-monitor-3.38.0-1
+              gnome-terminal-3.38.1-2  gnome-user-share-3.34.0-2
+              gnome-weather-3.36.1-1  grilo-plugins-1:0.3.12-2
+              gvfs-goa-1.46.1-1  gvfs-google-1.46.1-1  mutter-x11-sc-3.38.1-1
+
+Total Download Size:   103,11 MiB
+Total Installed Size:  272,32 MiB
+
+:: Proceed with installation? [Y/n] n
+[med-arch@hp6830s-arch ~]$ pacs --needed gnome
+warning: cheese-3.38.0-1 is up to date -- skipping
+warning: gnome-color-manager-3.36.0-1 is up to date -- skipping
+warning: gnome-control-center-3.38.2-1 is up to date -- skipping
+warning: gnome-disk-utility-3.38.0-1 is up to date -- skipping
+warning: gnome-keyring-1:3.36.0-1 is up to date -- skipping
+warning: gnome-menus-3.36.0-1 is up to date -- skipping
+warning: gnome-settings-daemon-3.38.1-1 is up to date -- skipping
+warning: gnome-themes-extra-3.28-2 is up to date -- skipping
+warning: gnome-video-effects-0.5.0+4+g9554041-2 is up to date -- skipping
+warning: gvfs-1.46.1-1 is up to date -- skipping
+warning: gvfs-afc-1.46.1-1 is up to date -- skipping
+warning: gvfs-gphoto2-1.46.1-1 is up to date -- skipping
+warning: gvfs-mtp-1.46.1-1 is up to date -- skipping
+warning: gvfs-nfs-1.46.1-1 is up to date -- skipping
+warning: gvfs-smb-1.46.1-1 is up to date -- skipping
+warning: networkmanager-1.26.4-1 is up to date -- skipping
+warning: tracker3-3.0.1-1 is up to date -- skipping
+:: There are 51 members in group gnome:
+:: Repository extra
+   1) baobab  2) eog  3) epiphany  4) evince  5) file-roller  6) gdm  7) gedit
+   8) gnome-backgrounds  9) gnome-books  10) gnome-calculator
+   11) gnome-calendar  12) gnome-characters  13) gnome-clocks
+   14) gnome-contacts  15) gnome-documents  16) gnome-font-viewer
+   17) gnome-getting-started-docs  18) gnome-logs  19) gnome-maps
+   20) gnome-music  21) gnome-photos  22) gnome-remote-desktop
+   23) gnome-screenshot  24) gnome-session  25) gnome-shell
+   26) gnome-shell-extensions  27) gnome-software  28) gnome-system-monitor
+   29) gnome-terminal  30) gnome-user-docs  31) gnome-user-share
+   32) gnome-weather  33) grilo-plugins  34) gvfs-goa  35) gvfs-google
+   36) mutter  37) mutter-x11-sc  38) nautilus  39) orca  40) rygel  41) sushi
+   42) totem  43) tracker  44) tracker-miners  45) tracker3-miners  46) vino
+   47) xdg-user-dirs-gtk  48) yelp
+:: Repository community
+   49) gnome-boxes  50) nautilus-typeahead  51) simple-scan
+
+Enter a selection (default=all): 6 8 11 12 13 14 15 18 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 43 44 45 47    
+resolving dependencies...
+:: There are 2 providers available for emoji-font:
+:: Repository extra
+   1) noto-fonts-emoji
+:: Repository community
+   2) ttf-joypixels
+
+Enter a number (default=1): 1
+:: There are 3 providers available for xdg-desktop-portal-impl:
+:: Repository extra
+   1) xdg-desktop-portal-gtk  2) xdg-desktop-portal-kde
+:: Repository community
+   3) xdg-desktop-portal-wlr
+
+Enter a number (default=1): 1
+looking for conflicting packages...
+warning: removing 'mutter' from target list because it conflicts with 'mutter-x11-sc'
+
+Packages (82) apache-2.4.46-3  apr-1.7.0-3  apr-util-1.6.1-8
+              djvulibre-3.5.27-6  dleyna-connector-dbus-0.3.0-3
+              dleyna-core-0.6.0+2+g1c6853f-2  dleyna-server-0.6.0+2+geb895ae-2
+              evince-3.38.0+1+gffa3fd98-1  exempi-2.5.2-1  flatpak-1.8.3-1
+              gfbgraph-0.2.4-1  ghostscript-9.53.3-2  gjs-2:1.66.1-1
+              gnome-autoar-0.2.4-2  gnome-epub-thumbnailer-1.6-2
+              gnome-online-miners-3.34.0-2  gom-0.4-1  gsfonts-20200910-1
+              gupnp-av-0.12.11+3+g2123c81-1  gupnp-dlna-0.10.5+4+gc947eed-2
+              ijs-0.35-3  jbig2dec-0.19-1  libcue-2.2.1-2  libdazzle-3.38.0-1
+              libdmapsharing-2.9.39-3  libgdm-3.38.2-1.2  libgepub-0.6.0-2
+              libgexiv2-0.12.1-1  libgrss-0.7.0+16+g971c421-3  libgxps-0.3.1-2
+              libhandy0-0.0.13+12+gaa6b6f4-2  libidn-1.36-1
+              libiptcdata-1.0.4-5  libmediaart-1.9.4+1+ga704d0b-2
+              libnautilus-extension-3.38.2-1  libosinfo-1.8.0-1
+              libpackagekit-glib-1.1.13-1  libpaper-1.1.28-1
+              libspectre-0.2.9-2  libxaw-1.0.13-3  libxmlb-0.2.1-1
+              libzapojit-0.0.3+14+g2dace3f-2  lua-5.4.1-1  malcontent-0.9.0-1
+              mod_dnssd-0.6-8  noto-fonts-emoji-20200916-1
+              osinfo-db-20201015-1  ostree-2020.3-2  pipewire-0.3.15-2
+              t1lib-5.1.2-8  xdg-desktop-portal-1.8.0-1
+              xdg-desktop-portal-gtk-1.8.0-1
+              xorg-server-xwayland-1.20.9.r21.g5c400cae1-1  yelp-3.38.2-1
+              yelp-xsl-3.38.2-1  zenity-3.32.0+55+gd7bedff-1  gdm-3.38.2-1.2
+              gnome-backgrounds-3.38.0-1  gnome-calendar-3.38.1-1
+              gnome-characters-3.34.0+9+geeab5f2-1  gnome-clocks-3.38.0-1
+              gnome-contacts-3.38.1-1  gnome-documents-3.34.0+6+g966b04ec-1
+              gnome-logs-3.36.0-1  gnome-session-3.38.0-1
+              gnome-shell-1:3.38.1-1  gnome-shell-extensions-3.38.1-1
+              gnome-software-3.38.0-2  gnome-system-monitor-3.38.0-1
+              gnome-terminal-3.38.1-2  gnome-user-docs-3.38.2-1
+              gnome-user-share-3.34.0-2  gnome-weather-3.36.1-1
+              grilo-plugins-1:0.3.12-2  gvfs-goa-1.46.1-1  gvfs-google-1.46.1-1
+              mutter-x11-sc-3.38.1-1  nautilus-3.38.2-1  tracker-2.3.6-2
+              tracker-miners-2.3.5-2  tracker3-miners-3.0.1-1
+              xdg-user-dirs-gtk-0.10+9+g5b7efc6-3
+
+Total Download Size:   115,12 MiB
+Total Installed Size:  338,11 MiB
+
+:: Proceed with installation? [Y/n] 

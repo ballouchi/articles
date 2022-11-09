@@ -1,0 +1,399 @@
+<!DOCTYPE html> <html dir=ltr class="js desktop" style lang=en><!--
+ Page saved with SingleFile 
+ url: https://wiki.xfce.org/howto/customize-menu 
+ saved date: Wed Nov 25 2020 21:20:59 GMT+0100 (Central European Standard Time)
+--><meta charset=utf-8>
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><![endif]-->
+<title>howto:customize-menu [Xfce Wiki]</title>
+<meta name=generator content=DokuWiki>
+<meta name=robots content=index,follow>
+<meta name=keywords content=howto,customize-menu>
+<link rel=search type=application/opensearchdescription+xml href=https://wiki.xfce.org/lib/exe/opensearch.php title="Xfce Wiki">
+<link rel=start href=https://wiki.xfce.org/>
+<link rel=contents href="https://wiki.xfce.org/howto/customize-menu?do=index" title=Sitemap>
+<link rel=alternate type=application/rss+xml title="Recent Changes" href=https://wiki.xfce.org/feed.php>
+<link rel=alternate type=application/rss+xml title="Current namespace" href="https://wiki.xfce.org/feed.php?mode=list&amp;ns=howto">
+<link rel=alternate type=text/html title="Plain HTML" href=https://wiki.xfce.org/_export/xhtml/howto/customize-menu>
+<link rel=alternate type=text/plain title="Wiki Markup" href=https://wiki.xfce.org/_export/raw/howto/customize-menu>
+<link rel=canonical href=https://wiki.xfce.org/howto/customize-menu>
+<style>@media screen{.a11y{position:absolute!important;left:-99999em!important;top:auto!important;width:1px!important;height:1px!important;overflow:hidden!important}.code .re2{color:#933}.code .re1{color:#f00}.plugin_note{margin:2em auto;max-width:70%;min-height:40px;text-align:justify;vertical-align:middle;border-collapse:collapse;padding:15px 20px 15px 80px;background-position:20px 50%;background-repeat:no-repeat;-moz-border-radius:20px;border-radius:6px;color:black;overflow:hidden}.notetip{background-color:#dfd;background-image:url(data:image/png;base64,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)}.dokuwiki span.curid a{font-weight:bold}.dokuwiki a.urlextern{background-repeat:no-repeat;background-position:0 center;padding:0 0 0 18px}.dokuwiki a.urlextern{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAABdklEQVR4AWMgAVRo1zY3rGk41rC+rqvCBCJWBpPM4WoomLHtdtuv/t9Lfk263TtrQ0t7Oj9cbzZDc/W6s/8T7khD+P+F/8bv29PZlswJVVBu0vPuVZyNYHFZbmAqE1SR0cbjXR6pjGBO58am962Ta3e3ftqy6B5LCcMasOj7gInrm9jBzI4vTX+bfjT/7/4/p/w/zFXybUmt71u4wJzGfxP/t/xvA+KaP2XnQSKVFpWPav/U/6+HKJjz++OVJUDp1n9N/+r+19QyMCz1mPC/8X/X/26Igrn3GiUeL5n/v+F/8//6/9NOMTC0hDUDefP/L4MoOL6ickVeSQ1QqAGooPdBJE/lnloge/fhixBHftFd9bLkR83/+n/1QAXVP8qX1Pyv/L/s/12f/4xQNz8s3Pa/6X/Vvzqgour/5f/r/q//f2fmLy54WP7lfJN74eMSoKIyoNFz/5/+9ar+Px9aZL3Xfjvz7aO3/96+eLvsnSVE7CPhOAYA9nvIX0UoNU8AAAAASUVORK5CYII=)}#dw__toc{float:right;background-color:#eee}.dokuwiki h3.toggle{font-weight:bold}.dokuwiki .toggle strong{float:right}#dw__toc ul{margin:0}#dw__toc ul li{list-style:none;padding:0;margin:0;line-height:1.1}#dw__toc ul ul{padding-left:1em}.dokuwiki form.search div.no{position:relative}.dokuwiki form{border:none;display:inline}.dokuwiki input.edit{vertical-align:middle}body{margin:0 auto}.dokuwiki div.page{background:#fff;color:inherit;box-shadow:0 0 2px rgba(0,0,0,0.25);border-radius:4px;padding:1.556em 2em 2em;margin-bottom:.5em;overflow:hidden;word-wrap:break-word}.dokuwiki div.page{min-height:190px;height:auto}.dokuwiki a.wikilink1{color:#06c;background-color:inherit}#dw__toc{margin:-1.556em -2em .5em 1.4em;width:16em;border-left:1px solid #ccc;background:#fff;color:inherit}.dokuwiki h3.toggle{padding:.5em 1em;margin-bottom:0;font-size:.875em;letter-spacing:.1em}.dokuwiki .toggle strong{background:transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAKCAMAAAC+Ge+yAAAAQlBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACO4fbyAAAAFnRSTlMONR0rATsVCD8ELigXODwpSSMnMjcAXQ+QPwAAADhJREFUeNo9jMcJADAMA53ee7z/qnE+AiEOVIiZzREj0Zz+g+1XxSSw29g3M4Wz9CquAhChjDkOH9FOBKVcmAk8AAAAAElFTkSuQmCC) 0 0;width:8px;height:5px;margin:.4em 0 0}#dw__toc>div{font-size:.875em;padding:.5em 1em 1em}#dw__toc ul{padding:0 0 0 1.2em}#dw__toc ul li{list-style-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAHCAMAAAD3eXfcAAAACVBMVEUAAADd3d27u7saETAbAAAAAXRSTlMAQObYZgAAAB5JREFUeNpViLEJAAAMg6z/Hx1CpjooCEil1S1bPAICzQAa+DbztAAAAABJRU5ErkJggg==)}#dw__toc ul li div.li{padding:.2em 0}}.group{display:block}.group:before,.group:after{content:"";display:table}.group:after{clear:both}div.no{display:inline;margin:0;padding:0}div.plugin_translation{float:none!important;margin:auto!important;padding-left:.6em!important;padding-right:0!important;text-align:left!important;font-size:.925em!important}div.plugin_translation select{background-color:transparent!important;color:#333!important;padding:.35em 6px .35em .1em!important;border:1px solid #ccc!important;box-shadow:0 0 1px #eee inset!important;border-radius:2px!important;font-size:inherit!important}div.plugin_translation option{text-align:left!important}#screen__mode{position:relative;z-index:0}@media only screen and (max-width:979px){#screen__mode{z-index:1}#dw__toc{float:none;margin:0 0 1em 0;width:auto;border-left-width:0;border-bottom:1px solid #ccc}.dokuwiki h3.toggle{padding:0 .5em .5em 0}#dw__toc>div{padding:.2em 0 .5em}.dokuwiki div.page{padding:1em}}@media only screen and (max-width:480px){#screen__mode{z-index:2}body{font-size:100%}.dokuwiki div.page{padding:.5em}.dokuwiki input.edit{width:auto!important;max-width:100%!important}}</style>
+<!--[if gte IE 9]><!-->
+<meta name=viewport content="width=device-width,initial-scale=1">
+<style media=screen>#xfce-header{background:#333 url(data:image/gif;base64,R0lGODlhSwAZAPUAABsYFxosMC0uKygmJTMuLTIpJDEyLyszNjEzMDM4OikuMCQcGg49TCk7QjY9RBhJVxFCUTVDSCtHTwpUai5baClkdxdmfkNfaAVwjgB+ogyMtjSNp1WUpwibygCo3Qun2Bys2yix3QCt4gCy4AK27RW45y+44TW85Syewkiz00m/42+xxkvC6FjI6lXO9GXL6nzS7XPR7izB8InX7ZnZ7Zfc84HW8afi9LTm9Lfq96HS4MPq99Px+O/6/cPb4JK5xCH5BAAKAAAALAAAAABLABkAAAb+QIQBgSBEHMMhcZloCIVJqCEZXRKV1KcScZhqp+Aw+GoYSHS/AYE6PFRSEoL00Kjb7/WuWDolKCIXHBsDUAkXh4cUFxSMjF0HCAIUPj08HGpXRRItMSYNAkIEEGg/pT8rqKgccWxcRQIHgTQ4OS8ASRE4PDw7Ozg3NDUzNjFxkZM9lTsUCksEDSkvLC0mDwVFDMmVvDm/wjEPA1tPAw0cOjs8OTc1MQFyBhGUu7437MMtnwgXPMn0NQqGEDiQokULFidOgHhAgEA2evVq0LAB40W4TFwk+aD3a9gLCYTi6er1i8ZEGDHyCUjwwx8vWi/UHNjwooWKEyZGjMCg5mH+vWAzYFRUAYHQEgMJOPjbca9iCwuEjNzg8YvdyRfSGKyJoIMjuxscAlQwiDBnCQwABDh8aZVYTZsXhwjgqsxb0JoqeAqJQIPpvRQcBG3YEAAUgTMRaQjloOIgzhEk0BpmwBQojA0VMleYUDiUvLomianA/CCAuHizLD8AMKB1ayWHZ+CQSBGr45yRATQrAiGHyaAxKCxwjUlIAx3KgE1MUSGAaTVKIsy4Z+Mj9DVHhRyIUaM22cdnAcAzQODBjWFOK5x+QuQAB273YjQfoHbLlAgwhAltEe6AggN6WIFAAzE4ZdNjI2iQVhTl1SBUTSxUcEAEFDYQXVfeEFNBWtn+eRFPDMBByIIMMpQwgVFHGUBBYyzclNMIHbAmYHkGthgCCB/kqMFpFHRjEkoocNjhFRG8UCNCJ5QwQlxWxFOQiyPc2ME7VhxQXkq3KRmCCCJosAB5G+ygX00WLCAgRvHYdhCUI4hwooAGEHRgTlt64IEGVlpRngstIiiCnXeKIwAH5zmlwkVnYhGBChAmVIKSXL6pxQCN3aRkm4De+Y4Xe7L5J6A7gtmOYyWUycapizp2wo0fAFrUUQdU6memHoiQwW5FPMDCiyB40IEGwGqQgRoEVJASQkriOQ5GRqhQVk4MACAta6AUEcGT4GmAwace9ErCrXKUJ0OUgE4AwAL+6C4gwBARkBpCrRo84AQBBTQ0XgQhILiQOGuEcW0LCeGm4AAZcGtnlwo09EAJvZaLohQJoHDCCA3XeicGGGSG8QNq4TvxjR6cCODICPzL5pQyaUCrncOWRwKtkobBRQUMr8zlzSKQAFXJIJRQp68a/NpBBxxHcAKyUYrAgFEDdUCrmwsc9nKmkrI3xQEaiFDxygefGM8HmHItAgRqURCClm5yKFADmYog2WEGhxySFldgzfXTXkfwQdy0kl1EBR5siZYcUOTaQaQcwg3zelgQMRAGh3Mp9gRRR+D03Xb6bYAAFnQpYxQCTRAyAJCQ9wAJOLvJeIqvNGBB0LXi7OtUiUbEnjrOmpM3XyZYxBkOKH24PsHwwy/tIeuOD6BAAw88MHzzEDjXUAITNO888dU735kXkTQ+zhjcZ6TA+AqsS3eTbKwhACzrNwT++uuXXz78UwQBADs=) no-repeat 3px 50%;box-shadow:0 0 8px rgba(0,0,0,0.5);font-family:'Helvetica Neue Light',HelveticaNeue-Light,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;height:35px}#xfce-header ul{list-style:none;float:right;margin:5px;padding:0}#xfce-header ul li{float:left;margin:0}#xfce-header a{color:#999;text-decoration:none;display:block;padding:0 8px 0 8px;border:0;line-height:25px;transition:color 0.2s linear;-moz-transition:color 0.2s linear;-webkit-transition:color 0.2s linear;-o-transition:color 0.2s linear}#xfce-header ul li a:hover{color:#fff;text-decoration:underline}#xfce-header-clear{clear:both}body,h1,h2,h3,ul,li{margin:0;padding:0;font-weight:normal;font-style:normal}body{font-family:"Bitstream Vera Sans","Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,Verdana,sans-serif;font-size:80%;line-height:1.5em;text-align:left;background-color:#eee;color:#000}h1,h2,h3{color:#333}h1{font-size:180%;font-weight:normal;margin:0.5em 0 1em 0}h2,h3{font-weight:bold;margin:1em 0}h2{font-size:125%}h3{font-size:100%}a,a:link,a:visited{color:#06c;text-decoration:none;outline:none}a:hover{color:#f00;text-decoration:underline}a:hover span{color:#f00}hr{border:none;border-top:1px solid rgba(0,0,0,0.2);margin:2em 0}ul{list-style-type:square}input[type="submit"],button,select{border-radius:0.2em;border:1px solid rgba(0,0,0,0.2);background:#f7f7f7 linear-gradient(to bottom,rgba(255,255,255,0.5),rgba(0,0,0,0.02) 1px,rgba(0,0,0,0.05)) repeat-x;color:#000;padding:0.2em 0.5em;outline:none!important;transition:150ms all}select{-moz-appearance:none;-webkit-appearance:none;appearance:none}input[type="submit"]:hover,button:hover,select:hover{background-color:#fff;color:#06c;text-decoration:none}input,input[type="text"]{background-color:#f7f7f7;color:#000;border-radius:0.2em;border:1px solid rgba(0,0,0,0.2);padding:0.2em 0.5em}.main_width,#main{width:95%;min-width:830px;max-width:1400px;margin:0 auto;padding:0 0.5em}#content{display:-webkit-box;display:-ms-flexbox;display:flex;background-color:#fff;box-shadow:0 0 3px rgba(0,0,0,.25);border-radius:4px}#article{-webkit-box-flex:70;-ms-flex:70;flex:70;padding:2em;border-right:1px solid #ccc;line-height:1.7em}#article ul{list-style-position:outside;margin-left:3em}#related{-webkit-box-flex:30;-ms-flex:30;flex:30;max-width:230px;padding:1em 1.5em}#related:empty{display:none}#related h2{margin:1em 0 0.5em 0;font-weight:normal}#related ul{margin:0 0 0 2em}#related ul li{margin-bottom:0.5em}#related ul li a{display:block}#footer{color:#999;text-align:center}.group:after{content:".";display:block;height:0;clear:both;visibility:hidden}a span{color:inherit}#header .breadcrumbs{float:left}#header .tools{float:right;margin-top:-0.4em}@media screen and (max-width:850px){#header .tools div,#header .tools select,#header .tools form{display:inline}}.dokuwiki div.page{box-shadow:none;border:none;border-top-right-radius:0;border-bottom-right-radius:0;margin-bottom:0}.dokuwiki #related ul{margin-left:1em}#dw__toc{margin:0;width:100%;border:none;margin-bottom:1em}#dw__toc h3{font-weight:normal;font-size:125%;letter-spacing:inherit;padding:0}#dw__toc h3 strong{display:inline-block;width:1.3em;margin-right:0.5em;text-align:center;background-color:rgba(0,0,0,0.1)}#dw__toc>div{font-size:100%}#dw__toc ul li{list-style-image:none;list-style-type:square}#dw__toc li ul{margin-top:0.5em}#dw__toc a{color:#333}#header,#footer{padding:0.4em 0}#header{padding-top:0.8em}#footer .bars{display:flex;margin-bottom:0.4em}#footer .bars div{flex:1}#footer .bar-left{text-align:left}#footer .bar-right{text-align:right}#footer .bar-left form,#footer .bar-right form{display:inline}div.plugin_translation select{background-color:#f7f7f7!important;padding:0.2em 0.5em!important;border:1px solid rgba(0,0,0,0.2)!important;border-radius:0.2em!important;box-shadow:none!important;color:#000!important}pre.code{background-color:rgba(0,0,0,0.04);border:1px solid rgba(0,0,0,0.1);border-radius:0.3em;padding:0.3em 0.8em}@media screen and (max-width:850px){h1{margin-top:0.3em;font-size:160%;text-align:left}.main_width,#main{min-width:300px}#content{display:block}#article{border:none;padding:1.5em}#related{background-color:#fafafa;border-top:1px solid #eee;max-width:100%;padding-bottom:1.5em;border-bottom-right-radius:4px;border-bottom-left-radius:4px}}</style>
+<link rel="shortcut icon" href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAOoSURBVFiFrZdfiFR1FMc/v3tnx91KcCsJy5qZHbeoEHwKCtldw6REkWZ27u4iFAY9iOWDWL0E/SGCFoq2pyR6SMh17rTaRgrRupOREFEPFZawzNxZUzZYQ0NTdqe5p4fxzv8787vaeZvzO7/z/Zy553d+90I7s+dWY+e/ws7d1zbOz7LZEGlnL7aYfiGG7+ZD+bvAPAFsATXNwT9vDQxwIfIuSibA+ZRsNqQPMFVYQ0hmgfXXPRvovvoJIkpbPJPbhbD3+q8RFiOTHPixqzPApBOl5H4H6qGGlSSZ/Cta4un8AKI+bPAO09ubboSor2jSiWLKLBDzSe2iZAep+Je+4uUcPwCrWweo49z2b4Kt/Uv1AHb+AZAToO7xTV62yxilRxnuP920Mn1mJUvhU1QfnY9VIcqPYGpuLXBSQxxgJa55hKPOqjqvLSZL4UOdxQFkK/+YL4HXA4l15xH5XEPcs/spSqb+eTrjwDbN/Sfp7n6vCqCUYPXtBj4OALGZ2+8oN1o69xywT3Pf96xY3s72u69CYxNmsyEWI4eBpDaGcBDFGNB0xJpN/UQXm3k6dqniaYqxT4ehZxp4UhtCz34lFN5EYu1fdUgtQ+0/eqB4HBj6n8TnMI1BktGFxgX/yVY+UjPAIzcpnoeuAax7z7dabD9ajzqrKEoW2HCD4ufAGMCKOn4BnWf7VGENJfdbYF1A8QUMGWQ4PtcuyP829CwZXaCkngDOBRC/hutu6SSuBwAwGp1HmA0A0INh7NAJ7AwgorCdCRTPBAAAeAs713E4te+BqviLAcUrGYDnsfp8J6w/gIgi43wAvHCD4p6VUGKRih/RB7j5yhttGSSBFT/WuNDcA17leuJXNAHCoDJknKH2AF7len/7FVw2gkxoQvQgcgw7t7E1QLDKSygZY7TvZ37r2wd8pglxC6gvsJ3KZDUq4vqVg1L7K++FrysXru0EZjQhekG+xs6trwLoVw4iB0jF3q/zWQ8vgwwDv2hC3AnqoyoAalFz4wyXLrYGteJ/Uwo9Bcxr5ClgMgK1xzDjvIzIO202naFoPsbOyMW2qQ8XHsRwTwG9PhFnwRjybshqE6Zi46Be89l0Abe0raM4wGj0d5RKAEstVucpqcHa67n+GFqxN1Gq8euniBgWo/25juKepWLfgHoWcGu8ZzHNxxmLFWpDmwdRKjaOkj2U5zgIexiJZrXFPbNiaZS8WiO+iWQkr5/Azu0m7bwdWLg5zxvYBb9PPf4DleI4Htsna7YAAAAASUVORK5CYII="><style>.sf-hidden{display:none!important}</style></head>
+<body>
+<div id=xfce-header>
+ <div>
+ <h1 id=xfce-header-title class=sf-hidden>Xfce Wiki</h1>
+ <h5 id=xfce-header-subtitle class=sf-hidden>Sub domains</h5>
+ &nbsp;
+ <ul>
+ <li><a href=https://www.xfce.org/ title="Go to the homepage">Home</a></li>
+ <li><a href=https://docs.xfce.org/ title="Official documentation">Docs</a></li>
+ <li><a href=https://archive.xfce.org/ title="Download location of tarballs">Archive</a></li>
+ <li><a href=https://wiki.xfce.org/ title="Community documentation">Wiki</a></li>
+ <li><a href=https://forum.xfce.org/ title="Community forums">Forum</a></li>
+ <li><a href=https://gitlab.xfce.org/ title="Report and track bugs">Bugs</a></li>
+ <li><a href=https://blog.xfce.org/ title="Visit the blog">Blog</a></li>
+ <li><a href=https://docs.xfce.org/contribute/translate/start title="Help translating the Xfce project">Translate</a></li>
+ <li><a href=https://gitlab.xfce.org/ title="Project repositories">Git</a></li>
+ </ul>
+ </div>
+ <div id=xfce-header-clear></div>
+</div>
+ <!--[if lte IE 7 ]><div id="IE7"><![endif]--><!--[if IE 8 ]><div id="IE8"><![endif]-->
+ 
+<div id=header class=main_width><div class="pad group">
+ 
+ <div class=breadcrumbs>
+ <div class=youarehere><span class=bchead>You are here: </span><span class=home><bdi><a href=https://wiki.xfce.org/start class=wikilink1 title=start>start</a></bdi></span> » <bdi><a href=https://wiki.xfce.org/howto class=wikilink1 title=howto>howto</a></bdi> » <bdi><span class=curid><a href=https://wiki.xfce.org/howto/customize-menu class=wikilink1 title=howto:customize-menu>customize-menu</a></span></bdi></div>
+ </div>
+ 
+ <div class=tools>
+ <div class="mobileTools sf-hidden">
+ </div>
+ <div class=translation>
+ <div class=plugin_translation><span class=sf-hidden>Translations of this page:</span> <form action=/start id=translation__dropdown><select name=id class=wikilink1><option class="wikilink1 cur" title=English value=howto/customize-menu selected>en<option class=wikilink2 title=|العربية value=ar/howto/customize-menu>ar<option class=wikilink2 title="Български език" value=bg/howto/customize-menu>bg<option class=wikilink2 title=বাংলা value=bn/howto/customize-menu>bn<option class=wikilink1 title=Dansk value=da/howto/customize-menu>da<option class=wikilink1 title=Deutsch value=de/howto/customize-menu>de<option class=wikilink2 title=Español value=es/howto/customize-menu>es<option class=wikilink2 title=فارسی value=fa/howto/customize-menu>fa<option class=wikilink1 title=Français value=fr/howto/customize-menu>fr<option class=wikilink2 title=Italiano value=it/howto/customize-menu>it<option class=wikilink1 title=日本語 value=ja/howto/customize-menu>ja<option class=wikilink2 title=한국어 value=ko/howto/customize-menu>ko<option class=wikilink2 title=Nederlands value=nl/howto/customize-menu>nl<option class=wikilink2 title=Polski value=pl/howto/customize-menu>pl<option class=wikilink1 title=Português value=pt-br/howto/customize-menu>pt-br<option class=wikilink1 title=pt-pt value=pt-pt/howto/customize-menu>pt-pt<option class=wikilink1 title=Русский value=ru/howto/customize-menu>ru<option class=wikilink2 title=Slovenčina value=sk/howto/customize-menu>sk<option class=wikilink2 title=Türkçe value=tr/howto/customize-menu>tr<option class=wikilink1 title=zh-cn value=zh-cn/howto/customize-menu>zh-cn</select><input name=go type=submit value=→ style=display:none></form></div> </div>
+ </div>
+ <hr class=a11y>
+</div></div>
+ <div id=dokuwiki__top></div>
+ <div id=main class="dokuwiki site mode_show">
+ <div id=content>
+ <div id=article class="page group">
+ 
+ 
+ 
+<h1 class=sectionedit1 id=customize_the_xfce_menu>Customize the Xfce menu</h1>
+<div class=level1>
+<p>
+This page describes how to customize the menu, using Xfdesktop <strong>4.5 or higher</strong>. For earlier versions you can use the libxfce4menu <abbr title="Graphical User Interface">GUI</abbr>.
+</p>
+<p>
+A GNU-licensed graphical menu editor for LXDE, <a href=http://lxmed.sourceforge.net/ class=urlextern title=http://lxmed.sourceforge.net rel=nofollow>LXMenuEditor</a>, also works for Xfce, as of Xfce 4.8.0 and LXMenuEditor 20110523. <a href=https://launchpad.net/menulibre class=urlextern title=https://launchpad.net/menulibre rel=nofollow>MenuLibre</a> is another freedesktop.org standard-compliant editor that works well with Xfce.
+</p>
+<hr>
+</div>
+<h2 class=sectionedit2 id=what_xfdesktop_installs>What xfdesktop installs</h2>
+<div class=level2>
+<p>
+Xfdesktop installs a menu file and .desktop files which together with non-xfdesktop .desktop files define the menu. To customize your menu you need to modify them. The method described here modifies the menu file identified by the $XDG_CONFIG_HOME variable (usually null, so ~/.config/menus/xfce-applications.menu) and copies of .desktop files in your home directory.
+</p>
+<hr>
+</div>
+<h2 class=sectionedit3 id=when_xfdesktop_implements_your_changes>When xfdesktop implements your changes</h2>
+<div class=level2>
+<p>
+If the menu file's directory exists when the xfdesktop session starts, changes to the menu file are implemented immediately. Similarly if the <em>.local/share/applications</em> directory in your home directory exists when the xfdesktop session starts, changes to its .desktop files are implemented immediately.
+</p>
+<hr>
+</div>
+<h2 class=sectionedit4 id=copy_the_menu_file>Copy the menu file</h2>
+<div class=level2>
+<p>
+This is only necessary if you want to change the hardcoded entries (usually above the Settings sub-menu and below the last sub-menu) or to change the sub-menu definitions.
+</p>
+<p>
+Create ~/.config/menus directory (if it doesn't exist already):
+</p>
+<pre class=code>mkdir ${XDG_CONFIG_HOME:-~/.config}/menus/</pre>
+<p>
+Copy the installed menu file to where xfdesktop will look for it before looking for the installed menu file ($prefix = /usr on most systems):
+</p>
+<pre class=code>cp $prefix/etc/xdg/menus/xfce-applications.menu ${XDG_CONFIG_HOME:-~/.config}/menus</pre>
+<p>
+or
+</p>
+<pre class=code>cp $prefix/etc/xfce/xdg/menus/xfce-applications.menu ${XDG_CONFIG_HOME:-~/.config}/menus</pre>
+<p>
+<span class=curid><a href=https://wiki.xfce.org/howto/customize-menu class=wikilink1 title=howto:customize-menu>Back to Top</a></span>
+</p>
+<hr>
+</div>
+<h2 class=sectionedit5 id=copy_a_desktop_file>Copy a .desktop file</h2>
+<div class=level2>
+<p>
+For example, to copy the Web Browser's .desktop file to the <em>.local/share/applications</em> directory in your home directory ($prefix = /usr on most systems):
+</p>
+<pre class=code>cp $prefix/share/applications/xfce4-web-browser.desktop ~/.local/share/applications </pre>
+<p>
+or
+</p>
+<pre class=code>cp /usr/share/applications/xfce4-web-browser.desktop ~/.local/share/applications</pre>
+<hr>
+</div>
+<h2 class=sectionedit6 id=hide_menu_entries>Hide menu entries</h2>
+<div class=level2>
+<p>
+If you want to hide menu entries from all menus, copy their .desktop files and edit them to add a <code>NoDisplay=true</code> line.
+</p>
+<div class="plugin_note notetip">As explained<a href=http://standards.freedesktop.org/desktop-entry-spec/latest/ar01s05.html class=urlextern title=http://standards.freedesktop.org/desktop-entry-spec/latest/ar01s05.html rel=nofollow> here</a>, <code>NoDisplay=true</code> will hide the application from the menu but the mime type associations will still be available. <code>Hidden=true</code> is equivalent to deleting the file.
+</div>
+</div>
+<h2 class=sectionedit7 id=hide_only_root_entries>Hide only root entries</h2>
+<div class=level2>
+<p>
+If you only want to remove menu items from the root menu only, copy their .desktop files and edit them to remove Category X-Xfce-Toplevel.
+</p>
+<p>
+Xfdesktop installs the following desktop entry files in the root menu ($prefix = /usr on most systems):
+</p>
+<ul>
+<li class=level1><div class=li> <code>$prefix/share/applications/xfce4-about-xfce.desktop</code></div>
+</li>
+<li class=level1><div class=li> <code>$prefix/share/applications/xfce4-file-manager.desktop</code></div>
+</li>
+<li class=level1><div class=li> <code>$prefix/share/applications/xfce4-help.desktop</code></div>
+</li>
+<li class=level1><div class=li> <code>$prefix/share/applications/xfce4-logout.desktop</code></div>
+</li>
+<li class=level1><div class=li> <code>$prefix/share/applications/xfce4-run-program.desktop</code></div>
+</li>
+<li class=level1><div class=li> <code>$prefix/share/applications/xfce4-terminal.desktop</code></div>
+</li>
+<li class=level1><div class=li> <code>$prefix/share/applications/xfce4-web-browser.desktop</code></div>
+</li>
+</ul>
+<p>
+For example, to remove Web Browser from the root menu, copy its .desktop file and edit it, changing <code>Categories=X-XFCE;X-Xfce-Toplevel;</code> to <code>Categories=X-XFCE;</code>
+</p>
+<p>
+<span class=curid><a href=https://wiki.xfce.org/howto/customize-menu class=wikilink1 title=howto:customize-menu>Back to Top</a></span>
+</p>
+<hr>
+</div>
+<h2 class=sectionedit8 id=add_entries>Add entries</h2>
+<div class=level2>
+<p>
+Create a .desktop file for each entry required. For example, a menu entry for Eclipse, create a file named <code>eclipse.desktop</code> in <code>~/.local/share/applications</code>:
+</p>
+<pre class=code>[Desktop Entry]
+Version=1.0
+Type=Application
+Encoding=UTF-8
+Exec=eclipse
+Icon=eclipse
+StartupNotify=false
+Categories=X-XFCE;X-Xfce-Toplevel;
+OnlyShowIn=XFCE;
+Name=Eclipse
+Comment=Eclipse Java IDE</pre>
+<p>
+If you prefer to work in a <abbr title="Graphical User Interface">GUI</abbr> (allows browsing for the icon) you can create the .desktop file using
+</p>
+<pre class=code>exo-desktop-item-edit --create-new ~/.local/share/applications</pre>
+<p>
+but the new file will only have category Application so will probably need editing afterwards.
+</p>
+<p>
+The categories determine where the new entry will be displayed. For display in the root menu, include category X-Xfce-Toplevel. For display in a sub-menu, include at least one of the categories defined for that sub-menu. These can be found by examining your <code>${XDG_CONFIG_HOME:-~/.config}/menus/xfce-applications.menu</code>. For example here's an Accessories sub-menu definition:
+</p>
+<pre class="code xml">    <span class=sc3><span class=re1>&lt;Menu<span class=re2>&gt;</span></span></span>
+        <span class=sc3><span class=re1>&lt;Name<span class=re2>&gt;</span></span></span>Accessories<span class=sc3><span class=re1>&lt;/Name<span class=re2>&gt;</span></span></span>
+        <span class=sc3><span class=re1>&lt;Directory<span class=re2>&gt;</span></span></span>xfce-accessories.directory<span class=sc3><span class=re1>&lt;/Directory<span class=re2>&gt;</span></span></span>
+        <span class=sc3><span class=re1>&lt;Include<span class=re2>&gt;</span></span></span>
+            <span class=sc3><span class=re1>&lt;Or<span class=re2>&gt;</span></span></span>
+                <span class=sc3><span class=re1>&lt;Category<span class=re2>&gt;</span></span></span>Accessibility<span class=sc3><span class=re1>&lt;/Category<span class=re2>&gt;</span></span></span>
+                <span class=sc3><span class=re1>&lt;Category<span class=re2>&gt;</span></span></span>Core<span class=sc3><span class=re1>&lt;/Category<span class=re2>&gt;</span></span></span>
+                <span class=sc3><span class=re1>&lt;Category<span class=re2>&gt;</span></span></span>Legacy<span class=sc3><span class=re1>&lt;/Category<span class=re2>&gt;</span></span></span>
+                <span class=sc3><span class=re1>&lt;Category<span class=re2>&gt;</span></span></span>Utility<span class=sc3><span class=re1>&lt;/Category<span class=re2>&gt;</span></span></span>
+            <span class=sc3><span class=re1>&lt;/Or<span class=re2>&gt;</span></span></span>
+        <span class=sc3><span class=re1>&lt;/Include<span class=re2>&gt;</span></span></span>
+    <span class=sc3><span class=re1>&lt;/Menu<span class=re2>&gt;</span></span></span></pre>
+<p>
+Any .desktop files with categories including Accessibility, Core, Legacy or Utility will be shown in the Accessories sub-menu providing they do not also have <code>NoDisplay=true</code>.
+</p>
+<hr>
+</div>
+<h2 class=sectionedit9 id=the_other_sub-menu>The Other sub-menu</h2>
+<div class=level2>
+<p>
+If there are any .desktop files which are configured to be displayed in the xfdesktop menu but do not have any categories which include them in any of the defined menus, the Other sub-menu will be displayed and will display those entries. This applies to .desktop files in the <em>$prefix/share/applications</em>/ directory as well as the <em>~/.local/share/applications</em> directory.
+</p>
+<p>
+If you have an Other sub-menu and do not want it, copy the .desktop file and modify its categories so it is included in one of the other sub-menus.
+</p>
+<p>
+<span class=curid><a href=https://wiki.xfce.org/howto/customize-menu class=wikilink1 title=howto:customize-menu>Back to Top</a></span>
+</p>
+<hr>
+</div>
+<h2 class=sectionedit10 id=create_sub-menus>Create sub-menus</h2>
+<div class=level2>
+<p>
+To create a new sub-menu, add a new “Menu” element to your ~/.config/menus/xfce-applications.menu at the same level as the other xfdesktop sub-menus like “Graphics” or “Multimedia”. In addition to the aptly named “Name” element, two additional elements are required: first, the “Directory” element is useful to associate the submenu with a desktop entry file which provides, among others, an appropriate icon as we will see shortly. Second, the “Category” element associates .desktop files with this sub-menu. It is recommended to make up a custom category starting with “X-”, which is the prefix of non-standard categories by convention. As an example, we'll create a submenu with entries to display various folders in your favourite file manager. Your new entry should look like this:
+</p>
+<pre class="code xml">  <span class=sc3><span class=re1>&lt;Menu<span class=re2>&gt;</span></span></span>
+    <span class=sc3><span class=re1>&lt;Name<span class=re2>&gt;</span></span></span>Folders<span class=sc3><span class=re1>&lt;/Name<span class=re2>&gt;</span></span></span>
+    <span class=sc3><span class=re1>&lt;Directory<span class=re2>&gt;</span></span></span>folders.directory<span class=sc3><span class=re1>&lt;/Directory<span class=re2>&gt;</span></span></span>
+    <span class=sc3><span class=re1>&lt;Include<span class=re2>&gt;</span></span></span>
+      <span class=sc3><span class=re1>&lt;Category<span class=re2>&gt;</span></span></span>X-Folders<span class=sc3><span class=re1>&lt;/Category<span class=re2>&gt;</span></span></span>
+    <span class=sc3><span class=re1>&lt;/Include<span class=re2>&gt;</span></span></span>
+  <span class=sc3><span class=re1>&lt;/Menu<span class=re2>&gt;</span></span></span></pre>
+<p>
+Next, create ~/.local/share/desktop-directories/folders.directory with the following contents:
+</p>
+<pre class=code>[Desktop Entry]
+Version=1.0
+Type=Directory
+Icon=file-manager
+Name=Folders
+Comment=Folders viewed in a file manager</pre>
+<p>
+This provides the displayed name of the subdirectory as well as an appropriate icon.
+</p>
+<p>
+Finally, create .desktop files in your ~/.local/share/applications folder as shown above to populate the submenu. In order to be displayed in the submenu, add your custom category to the “Categories” list. One of these files, let's call it thunar-home.desktop, might look like this:
+</p>
+<pre class=code>[Desktop Entry]
+Version=1.0
+Type=Application
+Exec=/usr/local/bin/thunar /usr/home/yourname
+Icon=file-manager
+StartupNotify=false
+Categories=X-Folders;
+OnlyShowIn=XFCE
+Name=home
+Comment=home displayed in Thunar</pre>
+<p>
+With all this in place, you should have a new submenu called “Folders” using the file manager icon. The submenu entry shown above should display your home directory in Thunar. You can of course add more entries as shortcuts to common places like /cdrom, /stick, /, or whatever you see fit.
+</p>
+<hr>
+</div>
+<h2 class=sectionedit11 id=forcing_changes>Forcing changes</h2>
+<div class=level2>
+<p>
+This is not usually necessary and may not work anyway; logging out of the Xfce session and back in always works. 
+</p>
+<p>
+If the menu is not automatically updated with your changes, try
+</p>
+<pre class=code>xfdesktop --reload</pre>
+<p>
+If that doesn't work, try
+</p>
+<pre class=code>killall -HUP xfdesktop</pre>
+<p>
+<span class=curid><a href=https://wiki.xfce.org/howto/customize-menu class=wikilink1 title=howto:customize-menu>Back to Top</a></span>
+</p>
+<hr>
+</div>
+<h2 class=sectionedit12 id=questions>Questions</h2>
+<div class=level2>
+</div>
+<h3 class=sectionedit13 id=answered>Answered</h3>
+<div class=level3>
+<p>
+<strong>Question:</strong> I setup several machines for my company. After migrating all the software to the new version 9.04 we realized we cannot use the custom menus that points to our software with specific variables.
+<strong>Answer:</strong> In Jaunty the appropriate file might be found in /etc/xdg/xubuntu/menus/xfce-applications.menu and not in /etc/xdg/menus/xfce-applications.menu. Everything else should work as described above. Could be any other *buntu-flavor in the path also, I have no appropriate machine to compare. Also note that you should not only extend your Layout-Section but also your Include-Section …
+</p>
+<p>
+<strong>Question:</strong> Primarily i wanted to modify the menu-structure. Just copying xfce-applications.menu to my home didn't do it. After tracing around with strace and inotify i finally logged out of xfce and back in. Before that my local copy didnt even get touched. <code>xfdesktop –reload</code> didn't work either. Modifying menu entries was ok but changes to the structure of the menu file had no effect. 
+<strong>Answer:</strong> Menu file changes are implemented immediately if the menu file's directory exists when the xfdesktop session starts. Any further changes you made after logging out of the Xfce session and back in again should have been reflected in the menu immediately.
+</p>
+<p>
+<strong>Question:</strong> I want to add an entry for an application that's installed by hand, rather than through the package manager. If I make a local copy of /etc/xdg/xubuntu/menus/xfce-applications.menu, then when I add a further application using the package manager, won't it change only the master? Will I have to re-copy and re-edit?
+<strong>Answer:</strong> No. The menu file defines which categories of entry go where. Your further application will appear in the defined place(s). If not, compare its categories with the categories in the menu file and adjust accordingly. Another possible gotcha is that the .desktop file has an OnlyShowIn or NotShowIn line that does not match Xfce.
+</p>
+<p>
+<span class=curid><a href=https://wiki.xfce.org/howto/customize-menu class=wikilink1 title=howto:customize-menu>Back to Top</a></span>
+</p>
+<hr>
+</div>
+<h3 class=sectionedit14 id=unanswered>Unanswered</h3>
+<div class=level3>
+<ul>
+<li class=level1><div class=li> With which command can I set a start-up-password for an application in the *.desktop file?</div>
+</li>
+</ul>
+<p>
+ One approach would be to remove execution rights for others (chmod o-x filename) and start the command using 'Exec=gksudo filename' (gksudo is included in package gksu - apt-get install gksu). You may need to provide some command line options before the filename to tune the behaviour of gksu. In this way users have to be members of group sudo to start the program, and enter their own password to confirm their identity. You could also make the program owned by a special group, e.g. powerusers (sudo addgroup powerusers), that have execution rights (e.g. chown root:powerusers filename &amp;&amp; chmod g+x filename &amp;&amp; chmod o-x filename) and then users would have to be a member of group powerusers (adduser someuser powerusers) to start the command after one-time logging in and out of the system to apply the new group membership to their user profile. Users that are not members of that group will simply not be able to run the program at all. 
+ If you really want a password prompt, you can also run the program using 'Exec=gksu –user someuser filename' in the .desktop file in order to require someuser's password before running the program. However, running programs as a different user is not generally recommended for more complex programs unless you know how to avoid the side-effects (e.g. different home directory, security policy, etc.).
+</p>
+<ul>
+<li class=level1><div class=li> What do i do, if the above does <em>not</em> work? (only xfce's own desktop files are seen, not even the one created with exo-desktop-item-edit, not to speak from common desktop files in both /usr/share/applications/ and ~/.local/share/applications/)</div>
+</li>
+</ul>
+<p>
+In some cases running update-desktop-database may help. Or directly modify the files in /usr/share/applications.
+</p>
+<ul>
+<li class=level1><div class=li> Where do i find a log or anything like that, actually giving me a clue other than simply empty space in the menu?</div>
+</li>
+</ul>
+<p>
+View /usr/share/applications, ~/.local/share/applications, etc. with Thunar. You should see a plain .desktop file listed for the blank entry, between the clickable icons with fancy names.
+</p>
+<ul>
+<li class=level1><div class=li> I run Jaunty and need to make the menu to be multi-level, which, in previous versions I believe, could be achieved by editing '<em>/etc/X11/xdg/xfce4/desktop/menu.xml</em>' and replace <em>style=“simple”</em> with <em>style=“multilevel”</em> in the <em>&lt;include&gt;</em>. How do I do this in Jaunty? I need this because I have certain applications under Wine which have very many start-menu entries and they are all merged into one menulevel, which is really annoying to navigate thru. Please help …</div>
+</li>
+</ul>
+<p>
+See <a href=http://forums.opensuse.org/english/get-technical-help-here/applications/477258-flat-menu-xfce.html class=urlextern title=http://forums.opensuse.org/english/get-technical-help-here/applications/477258-flat-menu-xfce.html rel=nofollow>http://forums.opensuse.org/english/get-technical-help-here/applications/477258-flat-menu-xfce.html</a>
+</p>
+<p>
+<span class=curid><a href=https://wiki.xfce.org/howto/customize-menu class=wikilink1 title=howto:customize-menu>Back to Top</a></span>
+</p>
+<hr>
+<p>
+<a href=https://docs.xfce.org/xfce/xfce4-panel/start class=urlextern title=https://docs.xfce.org/xfce/xfce4-panel/start rel=nofollow>Back to xfce4-panel main page</a>
+</p>
+</div>
+ 
+ </div>
+ 
+ <div id=related>
+ 
+<div id=dw__toc class=dw__toc>
+<h3 class="toggle open" style=cursor:pointer><strong><span class=sf-hidden>−</span></strong>Table of Contents</h3>
+<div aria-expanded=true>
+<ul class=toc>
+<li class=level1><div class=li><a href=#customize_the_xfce_menu>Customize the Xfce menu</a></div>
+<ul class=toc>
+<li class=level2><div class=li><a href=#what_xfdesktop_installs>What xfdesktop installs</a></div></li>
+<li class=level2><div class=li><a href=#when_xfdesktop_implements_your_changes>When xfdesktop implements your changes</a></div></li>
+<li class=level2><div class=li><a href=#copy_the_menu_file>Copy the menu file</a></div></li>
+<li class=level2><div class=li><a href=#copy_a_desktop_file>Copy a .desktop file</a></div></li>
+<li class=level2><div class=li><a href=#hide_menu_entries>Hide menu entries</a></div></li>
+<li class=level2><div class=li><a href=#hide_only_root_entries>Hide only root entries</a></div></li>
+<li class=level2><div class=li><a href=#add_entries>Add entries</a></div></li>
+<li class=level2><div class=li><a href=#the_other_sub-menu>The Other sub-menu</a></div></li>
+<li class=level2><div class=li><a href=#create_sub-menus>Create sub-menus</a></div></li>
+<li class=level2><div class=li><a href=#forcing_changes>Forcing changes</a></div></li>
+<li class=level2><div class=li><a href=#questions>Questions</a></div>
+<ul class=toc>
+<li class=level3><div class=li><a href=#answered>Answered</a></div></li>
+<li class=level3><div class=li><a href=#unanswered>Unanswered</a></div></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+ <h2>Tools</h2>
+ <p><form action=/start role=search class="search doku_form" id=dw__search accept-charset=utf-8><div class=no><input name=q type=text class=edit title=[F] accesskey=f placeholder=Search autocomplete=on id=qsearch__in value><button value=1 type=submit title=Search>Search</button><div id=qsearch__out class="ajax_qsearch JSpopup sf-hidden"></div></div></form><p></p>
+ <ul>
+ <li><a href="https://wiki.xfce.org/howto/customize-menu?do=edit" class="action source" accesskey=v rel=nofollow title="Show pagesource [V]"><span>Show pagesource</span></a><li><a href="https://wiki.xfce.org/howto/customize-menu?do=revisions" class="action revs" accesskey=o rel=nofollow title="Old revisions [O]"><span>Old revisions</span></a><li><a href="https://wiki.xfce.org/howto/customize-menu?do=backlink" class="action backlink" rel=nofollow title=Backlinks><span>Backlinks</span></a><li><a href="https://wiki.xfce.org/howto/customize-menu?do=media&amp;ns=howto" class="action media" rel=nofollow title="Media Manager"><span>Media Manager</span></a><li><a href=#dokuwiki__top class="action top" accesskey=t rel=nofollow title="Back to top [T]"><span>Back to top</span></a></li> </ul>
+ <p><bdi>howto/customize-menu.txt</bdi> · Last modified: 2019/12/09 07:10 by <bdi>kevinbowen</bdi></p>
+ 
+ </div>
+ </div>
+ </div>
+ <div id=footer class=main_width>
+ 
+<div class=bars>
+ <div class=bar-left>
+ <form class="button btn_source" method=post action=/howto/customize-menu><div class=no><button type=submit accesskey=v title="Show pagesource [V]">Show pagesource</button></div></form> <form class="button btn_revs" action=/howto/customize-menu><div class=no><button type=submit accesskey=o title="Old revisions [O]">Old revisions</button></div></form> <form class="button btn_recent" action=/howto/customize-menu><div class=no><button type=submit accesskey=r title="Recent Changes [R]">Recent Changes</button></div></form> <form class="button btn_index" action=/howto/customize-menu><div class=no><button type=submit accesskey=x title="Sitemap [X]">Sitemap</button></div></form> <form class="button btn_media" action=/howto/customize-menu><div class=no><button type=submit title="Media Manager">Media Manager</button></div></form>	</div>
+ <div class=bar-right>
+ <form class="button btn_login" action=/howto/customize-menu><div class=no><button type=submit title="Log In">Log In</button></div></form> <a class=nolink href=#dokuwiki__top><button class=button title="Back to top">Back to top</button></a>	</div>
+</div>
+<hr class=a11y>
+<div class=pad>
+ <div class=license>Except where otherwise noted, content on this wiki is licensed under the following license: <bdi><a href=http://creativecommons.org/licenses/by-nc-sa/4.0/ rel=license class=urlextern>CC Attribution-Noncommercial-Share Alike 4.0 International</a></bdi></div>
+ <div class=credit>
+ Copyright 2003-2020 Xfce Development Team.
+ </div>
+ </div>
+</div>
+ 
+ <div class=no><img src=data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7 alt width=2 height=1></div>
+ <div id=screen__mode class=no></div>	<!--[if ( lte IE 7 | IE 8 ) ]></div><![endif]-->

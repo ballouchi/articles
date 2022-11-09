@@ -1,0 +1,596 @@
+﻿<!DOCTYPE html><html><head>
+<link rel="icon" data-savepage-href="" href="data:image/vnd.microsoft.icon;base64,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">
+    <title>Installting Porteus Linux With Grub2</title>
+    <meta name="Author" content="Philip G Collier">
+    <meta name="Description" content="How to install Porteus Linux to a hard drive or ssd and boot with Grub2.">
+    <meta name="GENERATOR" content="Kwrite">
+    <meta name="Language" content="English">  
+    <meta name="Summary" content="">
+    <meta http-equiv="Content-Type" content="text/html">
+    <meta charset="UTF-8"> 
+    <style data-savepage-href="https://www.ab9il.net/textpage.css" type="text/css">@viewport {
+    width: device-width;
+    zoom: 1.0;
+}
+body {
+   color: #DDDDDD;
+   background-color: #060608;
+   font-size: 15px;
+   font-weight: 500;
+   font-family: Arial, Helvetica, Courier, Verdana, Times New Roman;
+   text-justify: auto;
+   padding:0px;
+}
+    a:link {text-decoration: none; color: #AAAAFF;}
+    a:visited {color: #3D81EE;}
+    a:hover {color: #DDDDDD;}
+    b.red {color: #FF0000;}
+    button {float: left; padding-left: 5px; padding-right: 5px; border: 4px; margin: 7px;
+        border-radius: 4px; cursor: pointer; color: #000000; background-color: #20cccc;}
+    button2 {font-size: 17px; padding-left: 5px; padding-right: 5px; border: 4px;
+        margin: 7px; border-radius: 4px; cursor: pointer; color: #DDDDDD ; background-color: #005A00;}
+	button3 {float:left; padding-left:5px; padding-right:5px; border:4px; margin:7px; 
+		border-radius:4px; cursor:pointer; color: #DDDDDD; background-color: #304358;}
+    button4 {padding-left: 5px; padding-right: 5px; border: 4px; margin: 7px;
+        border-radius: 4px; cursor: pointer; color: #20CCCC; background-color: #304358;}
+    input[type=text] {border: 2px solid #20CCCC; }
+    input[type=radio]:first-child {margin-left: 1; padding-left: 3px; padding-right: 8px;}
+    input[type=button] {padding-left: 5px; padding-right: 5px; border: 4px; margin: 4px;
+        border-radius: 4px; cursor: pointer; color: #BBBBBB; background-color: #304358;}
+    input[type=submit] {padding-left: 5px; padding-right: 5px; border: 4px; margin: 4px;
+        border-radius: 4px; cursor: pointer; color: #20CCCC; background-color: #304358;}
+    div.c1 { float: right; margin: 0 0 5px 5px;}
+    div.c2 { float: left; margin: 0 0 5px 5px;}
+    div.c10 {font-size: 9px; text-align: left;}
+    div.c20 {display:block;float:left;padding:5px;}
+    div.c21 {display:block;float:right;padding:5px;}
+    div.c22 {width:230px; margin: 0 auto;}
+    div.ads {display:block;float:left;padding:5px;width:100%}
+    div.bigfont {font-weight:bold; font-size: 20px; padding: 7px;}
+    div.center {margin-left: auto ; margin-right: auto;}
+    div.buttonbar {height: 15px; padding-top: 3px;}
+    div.button {float: left; padding-left 5px; padding-right: 5px;}
+    div.clear {height:0;line-height:0px;font-size:0;clear:both;}
+    div.column {float: left; width: 550px; height: 800px; padding-left:13px;}
+    div.content {width: 901px;}
+    div.disclosure {font-style: italic; font-size 13px;}
+    div.header {width: 900px; font-size: 20px; font-weight: bold;}
+    div.hugefont {font-weight:bold; font-size: 40px;}
+    div.image {float: left; padding-left: 5px; padding-right: 5px;}
+    div.imagebar {width: 900px; float: left; overflow: hidden;}
+    div.inner {width:900px; font-size: 15px;}
+    div.intro {font-size: 15px; width: 900px;}
+    div.list0 {height: 850px; width: 900px;  font-size: 15px;}
+    div.list1 {height:250px;width:710px;font-size:15px;font-weight:bold;}
+    div.listitem {float:left;width:150px;padding:4px;font-size:15px;font-weight:bold;}
+    div.player {width:165px; margin-left: auto; margin-right: auto;}
+    div.rightside {width:336px; top: 2px; left: 685px; position:fixed;}
+	div.video {float: left; padding: 2px;}
+    h1 {text-align: left;font-size: 24px;font-weight:bold;color:#FF9900;}
+    h1.c2 {text-align: center; font-size: 24px;font-weight:bold;color:#FF9900;}
+    h2 {text-align: left; font-size: 20px;font-weight:bold;color:#FF9900;}
+    h2.c3 {text-align: center; font-size: 20px;font-weight:bold;color:#FF9900;}
+    h3 {margin-top: 20px; padding-top: 20px; text-align: left; font-size:18px;font-weight:bold;color:#FF9900;}
+    h3.c6 {margin-top: 20px; text-align: center; font-size:18px;font-weight:bold;color:#FF9900;}
+    h4.c6 {font-size:16px;font-weight:bold;color:#FF9900;}
+    li {list-style-type: square;margin-bottom: 10px; padding-left 15px; padding-right 10px;}
+    mark {background-color: #999999; color: #000000;}
+    mark2 {color: #00FFFF;}
+    pre {text-align: left; font-weight:bold; font-size: 15px; background-color: #060608; color: #DDDDDD;}
+    pre.c19 {text-align: left; font-weight:bold; font-size: 12px; background-color: #060608; color: #DDDDDD;}
+    pre.c18 {text-align: left; font-weight:bold; font-size: 12px; background-color: #060608 color: #DDDDDD;}
+    table {padding: 5px; border-spacing: 5px;}
+    table.c12 {WIDTH: 90%; FONT-FAMILY: Arial, Helvetica,  Courier; HEIGHT: 58px; TEXT-ALIGN: left;
+    background:#050509; opacity:0.8; filter:alpha(opacity=80);}
+    table.c15 {margin-left: auto; margin-right: auto; vertical-align: top;
+    background:#050509; opacity:0.8; filter:alpha(opacity=80);}
+    table.c17 {margin-left: auto; margin-right: auto; vertical-align: top; 
+    background:#050509; opacity:0.8; filter:alpha(opacity=80);}
+    td.c16 {VERTICAL-ALIGN: top; BACKGROUND-COLOR: #FFFFFF; font-size: 15px;}
+	p {text-align: left; padding: 5px;}
+    p.c6 {text-align: right; padding: 5px}
+    p.c5 {text-align: center; padding: 5px}
+    p.c4 {text-align: left; padding: 5px}
+    ul,ol {margin-left: 15; padding-left: 5; margin-bottom:10px;}
+
+/*-----------Navigation Section------------*/
+div.navbar {float: left; padding: 10px; width: 350px; height: 20px; font-weight:bold;}
+div.navigation {width: 900px;  height: 80px; background-color: #202027;padding-bottom:10px;}
+
+/*-----------Accordion---------------*/
+section {
+  max-width:65%;
+  margin: 40px auto;
+  width: 60%;
+}
+
+summary {
+  display: block;
+  cursor: pointer;
+  padding: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  transition: .3s;
+  user-select: none;
+  background-color: #00161F;
+}
+
+details {
+  background-color: #00101C;
+}
+details > div {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+  height: 100%;
+  user-select: none;
+  padding: 0 20px;
+  line-height: 1.5;
+}
+
+details > div > img {
+  align-self: flex-start;
+  max-width: 100%;
+  margin-top: 20px;
+}
+
+details > div > p {
+  flex: 1;
+}
+
+details[open] > summary {
+   color: white;
+}
+
+@media (min-width: 768px) {
+  details[open] > div > p {
+    opacity: 0;
+    animation-name: showContent;
+    animation-duration: 0.6s;
+    animation-delay: 0.2s;
+    animation-fill-mode: forwards;
+    margin: 0;
+    padding-left: 20px;
+  }
+
+  details[open] > div {
+    animation-name: slideDown;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+  }
+
+  details[open] > div > img {
+    opacity: 0;
+    height: 100%;
+    margin: 0;
+    animation-name: showImage;
+    animation-duration: 0.3s;
+    animation-delay: 0.15s;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    height: 0;
+    padding: 0;
+  }
+
+  to {
+    opacity: 1;
+    height: var(--contentHeight);
+    padding: 20px;
+  }
+}
+
+@keyframes showImage {
+  from {
+    opacity: 0;
+    clip-path: inset(50% 0 50% 0);
+    transform: scale(0.4);
+  }
+
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes showContent {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 650px) {
+div.content {width: 650px; margin-left: auto; margin-right: auto;}
+div.header {width: 640px; font-size: 20px; font-weight: bold;}
+div.inner {width: 630px; font-size: 15px;}
+}
+
+
+@media screen and (max-width: 480px) {
+div.content {width: 480px; margin-left: auto; margin-right: auto;}
+div.header {width: 475px; font-size: 20px; font-weight: bold;}
+div.inner {width: 470px; font-size: 15px;}
+}
+</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  
+<style id="savepage-cssvariables">
+  :root {
+  }
+</style>
+<script id="savepage-shadowloader" type="application/javascript">
+  "use strict";
+  window.addEventListener("DOMContentLoaded",
+  function(event) {
+    savepage_ShadowLoader(5);
+  },false);
+  function savepage_ShadowLoader(c){createShadowDOMs(0,document.documentElement);function createShadowDOMs(a,b){var i;if(b.localName=="iframe"||b.localName=="frame"){if(a<c){try{if(b.contentDocument.documentElement!=null){createShadowDOMs(a+1,b.contentDocument.documentElement)}}catch(e){}}}else{if(b.children.length>=1&&b.children[0].localName=="template"&&b.children[0].hasAttribute("data-savepage-shadowroot")){b.attachShadow({mode:"open"}).appendChild(b.children[0].content);b.removeChild(b.children[0]);for(i=0;i<b.shadowRoot.children.length;i++)if(b.shadowRoot.children[i]!=null)createShadowDOMs(a,b.shadowRoot.children[i])}for(i=0;i<b.children.length;i++)if(b.children[i]!=null)createShadowDOMs(a,b.children[i])}}}
+</script>
+<meta name="savepage-url" content="https://www.ab9il.net/linux/porteus-linux-grub2.html">
+<meta name="savepage-title" content="Installting Porteus Linux With Grub2">
+<meta name="savepage-from" content="https://www.ab9il.net/linux/porteus-linux-grub2.html">
+<meta name="savepage-date" content="Tue Dec 29 2020 17:10:12 GMT+0100 (heure normale d’Europe centrale)">
+<meta name="savepage-state" content="Standard Items; Retain cross-origin frames; Merge CSS images; Remove unsaved URLs; Max frame depth = 5; Max resource size = 50MB; Max resource time = 10s;">
+<meta name="savepage-version" content="24.1">
+<meta name="savepage-comments" content="">
+  </head>
+
+<body>
+
+<div class="content">
+<div class="header">
+<div class="c2">
+<div class="topper">
+<div class="hugefont"><a data-savepage-href="https://www.ab9il.net" href="https://www.ab9il.net/" style="color: #FF9900">AB9IL.net</a> <h1>A simple frugall install for multibooting with Grub2.</h1></div>
+</div>
+</div>
+</div>
+<div class="clear"></div>
+
+<div class="inner">
+<div class="disclosure">Disclosure: AB9IL.net is a participant in the Amazon Services LLC Associates Program, an affiliate advertising
+program such that this site earns advertising fees by linking to Amazon.com. If you make a qualifying purchase  
+after clicking a link on this website, the associate affiliated with this site may earn a comission at no cost to
+you.</div><br><br><button3 onclick="window.location.href=&quot;https://amzn.to/39W2lE8&quot;;">#Advert: Supercharge your computing on systems and parts from Computer Upgrade King</button3><br><br>
+
+<div><button2 onclick="window.location.href=&quot;https://www.ab9il.net/software-defined-radio/best-sdrservers.html&quot;;">New Features: Global Quick Tune Internet SDR List</button2> 
+<button2 onclick="window.location.href=&quot;https://www.ab9il.net/software-defined-radio/sdr-youtube-school.html&quot;;">Improve Your Radio Knowledge at "YouTube SDR School"</button2></div>
+<div class="clear"></div>
+<details>
+
+<summary>Article Index --- click here to unfold --- </summary>
+<details open="">
+<summary>Newest Pages</summary>
+<a href="https://www.ab9il.net/aviation/hornet-nest.html" title="Trumpists Kicking the Hornets Nest"><font color="yellow">NEW: </font>Trumpists Kicking the Hornets Nest</a><br>
+<a href="https://www.ab9il.net/linux/intro-catbird-linux.html" title="Introduction to Catbird Linux"><font color="yellow">NEW: </font>Introduction to Catbird Linux</a><br>
+<a href="https://www.ab9il.net/linux/skywave-linux-v4-updated.html" title="Skywave Linux Updated to 4.1"><font color="yellow">NEW: </font>Skywave Linux Updated to ver 4.1</a><br>
+<a href="https://www.ab9il.net/linux/i3ipc-floating-windows.html" title="i3wm: Using i3-ipc to Float Windows"><font color="yellow">NEW: </font>i3wm: Using i3-ipc to Float Windows</a><br>
+<a href="https://www.ab9il.net/software-defined-radio/recording-sdr.html" title="How to Record from WebSDR and OpenWebRX Sites">How to Record from WebSDR and OpenWebRX Sites</a><br>
+<a href="https://www.ab9il.net/software-defined-radio/rtlsdr-calibrate.html" title="Programmatic RTL-SDR Frequency Claibration">Programmatic RTL-SDR Frequency Claibration</a><br>
+<a href="https://www.ab9il.net/software-defined-radio/alternate-kiwisdr-lists.html" title="Public KiwiSDR Lists">Public KiwiSDR Lists</a><br>
+<a href="https://www.ab9il.net/aviation/mh-17.html" title="Malaysia Airlines Flight MH17: Simply Mass Murder">Malaysia Airlines Flight MH17: Simply Mass Murder</a><br>
+<a href="https://www.ab9il.net/aviation/cathay-anon-letter.html" title="The Anonymous Cathay Pacific Employee Letter to Hong Kong">The Anonymous Cathay Pacific Employee Letter to Hong Kong</a><br>
+<a href="https://www.ab9il.net/aviation/electronics-at-the-border.html" title="For For Cathay Crews Crossing Borders With Electronics">For For Cathay Crews Crossing Borders With Electronics</a><br>
+<a href="https://www.ab9il.net/avgallery/newlife.html" title="The New Life Movement in China, 1944">Photo Gallery 9: The New Life Movement in China, 1944</a><br>
+<a href="https://www.ab9il.net/aviation/e-pluribus-unum.html" title="E Pluribus Unum: From Many, One Dammit">E Pluribus Unum: From Many, One, Dammit</a><br>
+<a href="https://www.ab9il.net/aviation/hfgcs-internet-sdr.html" title="HFGCS Quick Tune SDR List">HFGCS Quick Tune SDR List</a><br>
+<a href="https://www.ab9il.net/aviation/iron-triangle-speech.html" title="Robert Mueller Iron Triangle Speech">The Robert Mueller Iron Triangle Speech</a><br>
+<a href="https://www.ab9il.net/aviation/one-party-rule.html" title="Best OpenWebRX and WebSDR Servers">A Rant About One Party Rule</a><br>
+<a href="https://www.ab9il.net/software-defined-radio/best-sdrservers.html" title="Best OpenWebRX and WebSDR Servers">Best OpenWebRX and WebSDR Servers</a><br>
+<a href="https://www.ab9il.net/software-defined-radio/sdr-youtube-school.html" title="SDR School via YouTube">SDR School via YouTube</a><br>
+<a href="https://www.ab9il.net/software-defined-radio/plutosdr.html" title="ADALM-PlutoSDR on Linux Systems">ADALM-PlutoSDR on Linux Systems</a><br>
+<a href="https://www.ab9il.net/linux/mofo-linux.html" title="MOFO Linux - For Unrestricted Internet">MOFO Linux: Defeating State Censorship and Surveillance</a><br>
+</details>
+
+<details>
+<summary>Linux: Distros, Code, and Nifty Software</summary>
+<a href="https://www.ab9il.net/linux/intro-catbird-linux.html" title="Introduction to Catbird Linux"><font color="yellow">NEW: </font>Introduction to Catbird Linux</a><br>
+<a href="https://www.ab9il.net/linux/skywave-linux-v4-updated.html" title="Skywave Linux Updated to 4.1"><font color="yellow">NEW: </font>Skywave Linux Updated to ver 4.1</a><br>
+<a href="https://www.ab9il.net/linux/i3ipc-floating-windows.html" title="i3wm: Using i3-ipc to Float Windows"><font color="yellow">NEW: </font>i3wm: Using i3-ipc to Float Windows</a><br>
+<a href="https://www.ab9il.net/linux/skywavelinux.html" title="Skywave Linux: HPSDR, WebSDR, and RTL-SDR ready to run.">Skywave Linux: HPSDR, WebSDR, and RTL-SDR ready to run.</a><br>
+<a href="https://www.ab9il.net/linux/siduction-cinnamon-2014.1.html" title="Siduction Linux with the Cinnamon Desktop">Siduction Linux with the Cinnamon Desktop</a><br>
+<a href="https://www.ab9il.net/linux/siduction-lxqt-2014.1.html" title="Siduction Linux with the LXQT Desktop">Siduction Linux with the LXQT Desktop</a><br>
+<a href="https://www.ab9il.net/linux/andys-hamradio-linux15.html" title="Andy's Ham Radio Linux 15 and QtRadio">Andy's Ham Radio Linux 15 and QtRadio</a><br>
+<a href="https://www.ab9il.net/linux/grub2-iso-booting.html" title="Booting Multiple Linux Disc Images with Grub2">Booting Multiple Linux Disc Images with Grub2</a><br>
+<a href="https://www.ab9il.net/linux/porteus-linux-grub2.html" title="Porteus Linux Hard Drive Installation">Porteus Linux Hard Drive Installation</a><br>
+<a href="https://www.ab9il.net/linux/mofo-linux.html" title="MOFO Linux - For Unrestricted Internet"><font color="yellow">UPDATED: </font>MOFO Linux - For Unrestricted Internet</a><br>
+<a href="https://www.ab9il.net/linux/aptosid-lxde.html" title="Aptosid with LXDE">Aptosid with LXDE</a><br>
+<a href="https://www.ab9il.net/linux/linux-netbook.html" title="Asus EeePC 1215N with Linux">Asus EeePC 1215N with Linux</a><br>
+<a href="https://www.ab9il.net/linux/autostarts-kde.html" title="Autostart Tweaks for KDE3 snd KDE4">Autostart Tweaks for KDE3 and KDE4</a><br>
+<a href="https://www.ab9il.net/linux/fast-linux-networking.html" title="Broadband Speed Tweaks For Linux">Broadband Speed Tweaks For Linux</a><br>
+<a href="https://www.ab9il.net/linux/firefox-3-xconf.html" title="Fixing the Firefox 3 Rendering Bug">Fixing the Firefox 3 Rendering Bug</a><br>
+<a href="https://www.ab9il.net/linux/solid-state-drives1.html" title="Linux on Solid State Drives">Linux on Solid State Drives</a><br>
+<a href="https://www.ab9il.net/linuxwireless/wifidrivers1.html" title="Linux Wireless Interface Driver Updates">Linux Wireless Interface Driver Updates</a><br>
+<a href="https://www.ab9il.net/linux/pcmanfm-usb-mount.html" title="Setting Polkit to Automount USB Devices">Setting Polkit to Automount USB Devices</a><br>
+<a href="https://www.ab9il.net/linux/sidux-lxde.html" title="Sidux with LXDE">Sidux with LXDE</a><br>
+<a href="https://www.ab9il.net/linux/un-invert-skype-video.html" title="Fixing Skype Inverted Video">Fixing Skype Inverted Video</a><br>
+<a href="https://www.ab9il.net/slax/slax-remix.html" title="SLAX Remix - kernel upgrades">SLAX Remix - kernel upgrades</a><br>
+<a href="https://www.ab9il.net/flashdrive-linux/flashlinux.html" title="Flash Drive Linux - Introduction">Flash Drive Linux - Introduction</a><br>
+<a href="https://www.ab9il.net/flashdrive-linux/flashlinux3.html" title="Flash Drive Knoppix 5.3">Flash Drive Knoppix 5.3  - Part 1</a><br>
+<a href="https://www.ab9il.net/flashdrive-linux/flashlinux3A.html" title="Flash Drive Knoppix 5.3">Flash Drive Knoppix 5.3  - Part 2</a><br>
+<a href="https://www.ab9il.net/flashdrive-linux/flashlinux4.html" title="Flash Drive Knoppix 6.0">Flash Drive Knoppix 6.0  - Part 1</a><br>
+<a href="https://www.ab9il.net/flashdrive-linux/flashlinux3A.html" title="Flash Drive Knoppix 6.0">Flash Drive Knoppix 6.0  - Part 2</a><br>
+<a href="https://www.ab9il.net/flashdrive-linux/flashlinux-A.html" title="Flash Drive SLAX">Flash Drive SLAX  - Part 1</a><br>
+<a href="https://www.ab9il.net/flashdrive-linux/flashlinux-B.html" title="Flash Drive SLAX">Flash Drive SLAX  - Part 2</a><br>
+<a href="https://www.ab9il.net/flashdrive-linux/flashlinux5.html" title="Flash Drive Bluewhite64">Flash Drive Bluewhite64  - Part 1</a><br>
+<a href="https://www.ab9il.net/flashdrive-linux/flashlinux6.html" title="Flash Drive Bluewhite64">Flash Drive Bluewhite64  - Part 2</a><br>
+<a href="https://www.ab9il.net/flashdrive-linux/flashlinux2.html" title="Flash Drive Linux - Basic Customization">Flash Drive Linux - Basic Customization</a><br>
+<a href="https://www.ab9il.net/slax/slax-customization1.html" title="SLAX Customization">SLAX Customization  - Part 1</a><br>
+<a href="https://www.ab9il.net/slax/slax-customization2.html" title="SLAX Customization">SLAX Customization  - Part 2</a><br>
+<a href="https://www.ab9il.net/bw64/bw64-customization1.html" title="Bluewhite64 Customization">Bluewhite64 Customization  - Part 1</a><br>
+<a href="https://www.ab9il.net/bw64/bw64-customization2.html" title="Bluewhite64 Customization">Bluewhite64 Customization  - Part 2</a><br>
+</details>
+
+<details>
+<summary>Long Range Wi-Fi</summary>
+<a href="https://www.ab9il.net/wlan-projects/wifi1.html" title="Basics of Long Range Wireless Networking">Basics of Long Range Wireless Networking</a><br>
+<a href="https://www.ab9il.net/wlan-projects/wifi2.html" title="Linear Focus Parabolic W iFi Antenna">Linear Focus Parabolic Wi Fi Antenna</a><br>
+<a href="https://www.ab9il.net/wlan-projects/wifi3.html" title="High Gain Wi Fi Dish Antenna">High Gain Wi Fi Dish Antenna</a><br>
+<a href="https://www.ab9il.net/wlan-projects/wifi3A.html" title="High Gain Helical Wi Fi Antenna">High Gain Helical Wi Fi Antenna</a><br>
+<a href="https://www.ab9il.net/wlan-projects/wifi6.html" title="High Gain Yagi Wi Fi Antenna">High Gain Yagi Wi Fi Antenna</a><br>
+<a href="https://www.ab9il.net/wlan-projects/wifi-highpower.html" title="High Power Wireless Adapters">High Power Wireless Adapters</a><br>
+<a href="https://www.ab9il.net/wlan-projects/wifi7.html" title="Wi Fi Extender Antenna for Routers">Wi Fi Extender Antenna for Routers</a><br>
+<a href="https://www.ab9il.net/wlan-projects/wifi4.html" title="Belkin F5D7050 External Wi Fi Antenna">Belkin F5D7050 External Wi Fi Antenna</a><br>
+<a href="https://www.ab9il.net/wlan-projects/wifi5.html" title="Linksys WUSB54GC External Antenna Mod">Linksys WUSB54GC External Antenna Mod</a><br>
+<a href="https://www.ab9il.net/linuxwireless/compat-wireless.html" title="Compat Wireless Linux Drivers">Compat Wireless Linux Drivers</a><br>
+<a href="https://www.ab9il.net/linuxwireless/wpa_supplicant.html" title="WPA_SUPPLICANT for Wi-Fi Security">Installing WPA_Supplicant for Wi-Fi Security</a><br>
+<a href="https://www.ab9il.net/linuxwireless/wifidrivers1.html" title="Linux Wireless Interface Drivers">Linux Wireless Interface Driver Updates</a><br>
+<a href="https://www.ab9il.net/linuxwireless/wifidrivers2.html" title="Linux Wireless Interface Driver Info">Linux Wireless Interface Driver Support</a><br>
+<a href="https://www.ab9il.net/linuxwireless/networkmanager-consolekit.html" title="NetworkManager and Consolekit">NetworkManager and Consolekit</a><br>
+<a href="https://www.ab9il.net/linuxwireless/rt73.html" title="RT73 WiFi Drivers for Linux Kernel 2.6.27+">RT73 Wireless Drivers for Linux Kernel 2.6.27+</a><br>
+<a href="https://www.ab9il.net/linuxwireless/rt2860.html" title="RT2860 Wi Fi Drivers for Linux Kernel 2.6.27+">RT2860 Wireless Drivers for Linux Kernel 2.6.27+</a><br>
+</details>
+
+<details>
+<summary>Radio: Amateur Radio, Aero Radio, Shortwave, etc</summary>
+<a href="https://www.ab9il.net/software-defined-radio/rtlsdr-calibrate.html" title="Programmatic RTL-SDR Frequency Claibration"><font color="yellow">NEW: </font>Programmatic RTL-SDR Frequency Claibration</a><br>
+<a href="https://www.ab9il.net/software-defined-radio/alternate-kiwisdr-lists.html" title="Public KiwiSDR Lists"><font color="yellow">NEW: </font>Public KiwiSDR Lists</a><br>
+<a href="https://www.ab9il.net/aviation/ghfs-internet-sdr.html" title="GHFS Quick Tune SDR List"><font color="yellow">NEW: </font>GHFS Quick Tune SDR List</a><br>
+<a href="https://www.ab9il.net/software-defined-radio/best-sdrservers.html" title="Best OpenWebRX and WebSDR Servers"><font color="yellow">UPDATED: </font>Best OpenWebRX and WebSDR Servers</a><br>
+<a href="https://www.ab9il.net/linux/skywavelinux.html" title="Skywave Linux: HPSDR, WebSDR, and RTL-SDR ready to run."><font color="yellow">UPDATED: </font>Skywave Linux: HPSDR, WebSDR, and RTL-SDR ready to run.</a><br>
+<a href="https://www.ab9il.net/software-defined-radio/cubicsdr.html" title="CubicSDR on Debian, Ubuntu, and Linux Mint">CubicSDR on Debian, Ubuntu, and Linux Mint</a><br>
+<a href="https://www.ab9il.net/software-defined-radio/dump1090-linux.html" title="Dump1090 for Linux Mint 17.1 and Siduction 2014.1">Dump1090 for Linux Mint 17.1 and Siduction 2014.1</a><br>
+<a href="https://www.ab9il.net/software-defined-radio/sdr1.html" title="Software Defined Radio - An Introduction">Software Defined Radio - An Introduction</a><br>
+<a href="https://www.ab9il.net/software-defined-radio/sdr2.html" title="QS1R Direct Sampling SDR">QS1R Direct Sampling SDR</a><br>
+<a href="https://www.ab9il.net/software-defined-radio/sdr-audio-interfaces.html" title="Chaining SDR Audio Interfaces">Chaining SDR Audio Interfaces</a><br>
+<a href="https://www.ab9il.net/software-defined-radio/flex-6000.html" title="FLEX-6000 Direct Sampling SDR">FLEX-6000 Direct Sampling SDR</a><br>
+<a href="https://www.ab9il.net/software-defined-radio/rtl2832-sdr.html" title="RTL2832 Software Defined Radio"><font color="yellow">UPDATED: </font>RTL2832 Software Defined Radio</a><br>
+<a href="https://www.ab9il.net/software-defined-radio/websdr-digimodes.html" title="WebSDR Digimode Reception">WebSDR Digimode Reception</a><br>
+<a href="https://www.ab9il.net/software-defined-radio/jack-flash-audio.html" title="Enabling FLASH in Jack Audio">Enabling FLASH in Jack Audio</a><br>
+<a href="https://www.ab9il.net/software-defined-radio/software-audio-processing.html" title="Realtime Software Audio Processing">Realtime Software Audio Processing</a><br>
+</details>
+
+<details>
+<summary>Liberation Technology</summary>
+<a href="https://www.ab9il.net/linux/mofo-linux.html" title="MOFO Linux - For Unrestricted Internet">MOFO Linux - For Unrestricted Internet</a><br>
+<a href="https://www.ab9il.net/crypto/veracrypt-linux.html" title="Flash Drive Encryption for Linux">Veracrypt Encryption for Linux</a><br>
+<a href="https://www.ab9il.net/crypto/veracrypt-windows.html" title="Flash Drive Encryption for Windows">Veracrypt Encryption for Windows</a><br>
+<a href="https://www.ab9il.net/crypto/google-within-china.html" title="Using Google Within China">Using Google Within China</a><br>
+<a href="https://www.ab9il.net/crypto/popcorn-time-flixtor.html" title="Popcorn Time and Flixtor for Ucensored Streaming Media">Popcorn Time and Flixtor for Uncensored Streaming Media</a><br>
+<a href="https://www.ab9il.net/crypto/dnscrypt.html" title="DNS Encryption using DNSCrypt">DNS Encryption using DNSCrypt</a><br>
+<a href="https://www.ab9il.net/crypto/opennvpn-android-nexus.html" title="Galaxy Nexus Privacy and Robustness Enhancements">Galaxy Nexus Privacy and Robustness Enhancements</a><br>
+<a href="https://www.ab9il.net/crypto/opennvpn-android-galaxy-siii.html" title="Galaxy SIII Privacy and Robustness Enhancements">Galaxy SIII Privacy and Robustness Enhancements</a><br>
+<a href="https://www.ab9il.net/crypto/truecrypt-linux.html" title="Flash Drive Encryption for Linux">Flash Drive Encryption for Linux</a><br>
+<a href="https://www.ab9il.net/crypto/truecrypt-windows.html" title="Flash Drive Encryption for Windows">Flash Drive Encryption for Windows</a><br>
+<a href="https://www.ab9il.net/crypto/multi-vpn.html" title="Multihop VPN Connections for Strong Internet Privacy">Multihop VPN Connections for Strong Internet Privacy</a><br>
+<a href="https://www.ab9il.net/crypto/open-free-dns.html" title="Open and Free DNS Server List">Open and Free DNS Server List</a><br>
+<a href="https://www.ab9il.net/crypto/openvpn-cloaking.html" title="OpenVPN Cloaking against Deep Packet Inspection">OpenVPN Cloaking against Deep Packet Inspection</a>
+<a href="https://www.ab9il.net/crypto/serval-project.html" title="The Serval Mesh Telephone Project">The Serval Mesh Phone Project</a><br>
+<a href="https://www.ab9il.net/crypto/skype-security.html" title="Skype's Robust Security">Skype's Robust Security</a><br>
+<a href="https://www.ab9il.net/wlan-projects/wifi-security2.html" title="Man in the Middle Wireless Security Risks">Man in the Middle Wireless Security Risks</a><br>
+<a href="https://www.ab9il.net/wlan-projects/wifi-security.html" title="Wireless Security and Surveillance">Wireless Security and Surveillance</a><br>
+</details>
+
+<details>
+<summary>Digital Audio</summary>
+<a href="https://www.ab9il.net/digital-audio/vlc-audio-dynamics.html" title="Adjusting Audio Dynamics in VLC">Adjusting Audio Dynamics in VLC</a><br>
+<a href="https://www.ab9il.net/digital-audio/backingtracks.html" title="Backing Track Prep Guide">Backing Track Prep Guide</a><br>
+<a href="https://www.ab9il.net/digital-audio/mp3-audio-processing.html" title="Ipod Music Processing Guide">Ipod Music Processing Guide</a><br>
+<a href="https://www.ab9il.net/digital-audio/audience-recordings.html" title="How To Record Live Music">How To Record Record Live Music Performances</a><br>
+<a href="https://www.ab9il.net/software-defined-radio/software-audio-processing.html" title="Realtime Software Audio Processing">Realtime Software Audio Processing</a><br>
+<a href="https://www.ab9il.net/software-defined-radio/sdr-audio-interfaces.html" title="Chaining SDR Audio Interfaces">Chaining SDR Audio Interfaces</a><br>
+</details>
+
+<details>
+<summary>Aerospace Radio, Aviation, Pontification, and Opinion</summary>
+<a href="https://www.ab9il.net/aviation/hornet-nest.html" title="Trumpists Kicking the Hornets Nest"><font color="yellow">NEW: </font>Trumpists Kicking the Hornets Nest</a><br>
+<a href="https://www.ab9il.net/aviation/cathay-anon-letter.html" title="The Anonymous Cathay Pacific Employee Letter to Hong Kong"><font color="yellow">NEW: </font>The Anonymous Cathay Pacific Employee Letter to Hong Kong</a><br>
+<a href="https://www.ab9il.net/aviation/electronics-at-the-border.html" title="For For Cathay Crews Crossing Borders With Electronics"><font color="yellow">NEW: </font>For For Cathay Crews Crossing Borders With Electronics</a><br>
+<a href="https://www.ab9il.net/aviation/e-pluribus-unum.html" title="E Pluribus Unum: From Many, One Dammit"><font color="yellow">NEW: </font>E Pluribus Unum: From Many, One, Dammit</a><br>
+<a href="https://www.ab9il.net/aviation/hfgcs-internet-sdr.html" title="HFGCS Quick Tune SDR List"><font color="yellow">NEW: </font>HFGCS Quick Tune SDR List</a><br>
+<a href="https://www.ab9il.net/aviation/iron-triangle-speech.html" title="Robert Mueller Iron Triangle Speech"><font color="yellow">NEW: </font>The Robert Mueller Iron Triangle Speech</a><br>
+<a href="https://www.ab9il.net/aviation/one-party-rule.html" title="A rant About One Party Rule"><font color="yellow">NEW: </font>A Rant About One Party Rule</a><br>
+<a href="https://www.ab9il.net/aviation/captains-authority.html" title="Captains authority versus autocratic airline management">Captains Authority Versus Autocratic Airline Management</a><br>
+<a href="https://www.ab9il.net/aviation/mh-17.html" title="Malaysia Airlines Flight MH17: Simply Mass Murder">Malaysia Airlines Flight MH17: Simply Mass Murder</a><br>
+<a href="https://www.ab9il.net/aviation/mh-370.html" title="Malaysia Airlines Flight 370 - A Media Circus">Malaysia Airlines Flight MH370 - A Media Circus</a><br>
+<a href="https://www.ab9il.net/aviation/airband-antenna1.html" title="High Gain Air Band Antennas">High Gain Air Band Antennas</a><br>
+<a href="https://www.ab9il.net/aviation/apollo-s-band.html" title="Apollo Unified S Band Communications">Apollo Unified S Band Communications</a><br>
+<a href="https://www.ab9il.net/aviation/chinese-anti-stealth-vhf-radar.html" title="Chinese Anti-Stealth VHF Radar">Chinese Anti-Stealth VHF Radar</a><br>
+<a href="https://www.ab9il.net/aviation/hf1.html" title="Oceanic Communications - Intro">Oceanic Communications - Procedures, Equipment, Voice and HFDL</a><br>
+<a href="https://www.ab9il.net/aviation/737-radio.html" title="Boeing 737NG Radio Equipment">Boeing 737NG Radio Equipment</a><br>
+<a href="https://www.ab9il.net/aviation/767-radio.html" title="Boeing 767 Radio Equipment">Boeing 767 Radio Equipment</a><br>
+<a href="https://www.ab9il.net/aviation/naoc-tacamo.html" title="NAOC-TACAMO Monitoring">NAOC-TACAMO Monitoring</a><br>
+<a href="https://www.ab9il.net/aviation/my-flight-9-11.html" title="My Flight on 9/11">My Flight on 9/11</a><br>
+<a href="https://www.ab9il.net/aviation/joshua-chamberlain-lessons.html" title="Joshua Chamberlain's Leadership Tips">Joshua Chamberlain's Leadership Tips</a><br>
+<a href="https://www.ab9il.net/aviation/sof-truths.html" title="Special Operations Forces Truths">Special Operations Forces Truths</a><br>
+<a href="https://www.ab9il.net/aviation/twa-800.html" title="TWA 800: Just Give Me Some Truth">TWA 800: Just Give Me Some Truth</a><br>
+</details>
+
+<details>
+<summary>Photo Gallery</summary>
+<a href="https://www.ab9il.net/avgallery/photo1.html" title="Snapshots From My Journeys">Aviation Photo Gallery 1: Snapshots From My Journeys</a><br>
+<a href="https://www.ab9il.net/avgallery/photo2.html" title="On the Road With ATA Airlines">Aviation Photo Gallery 2: On the Road With ATA Airlines</a><br>
+<a href="https://www.ab9il.net/avgallery/photo3.html" title="More ATA Airlines">Aviation Photo Gallery 3: More ATA Airlines</a><br>
+<a href="https://www.ab9il.net/avgallery/photo4.html" title="Southwest Airlines is the Borg Empire">Aviation Photo Gallery 4: Southwest Airlines is the Borg Empire</a><br>
+<a href="https://www.ab9il.net/avgallery/photo5.html" title="Starting Over, Moving On">Aviation Photo Gallery 5: Starting Over, Moving On...</a><br>
+<a href="https://www.ab9il.net/avgallery/photo6.html" title="More Viva Macau">Aviation Photo Gallery 6: More Viva Macau</a><br>
+<a href="https://www.ab9il.net/avgallery/photo7.html" title="Mainland China Airline Flying">Aviation Photo Gallery 7: Mainland China Airline Flying</a><br>
+<a href="https://www.ab9il.net/avgallery/china-smog.html" title="Chinese Smog and Fog">Aviation Photo Gallery 8: Chinese Smog and Fog</a><br>
+<a href="https://www.ab9il.net/avgallery/newlife.html" title="The New Life Movement in China, 1944"><font color="yellow">NEW: </font>Photo Gallery 9: The New Life Movement in China, 1944</a><br>
+</details>
+
+<details>
+<summary>Broadcasting</summary>
+<a href="https://www.ab9il.net/radio-arts/bbc-blooper.html" title="BBC Radio Blooper - Adolf Merckle">BBC Radio Blooper - Adolf Merckle</a><br>
+<a href="https://www.ab9il.net/new-york/wtc-dx.html" title="TV DXing the World Trade Center">TV DXing the World Trade Center</a><br>
+<a href="https://www.ab9il.net/new-york/tv-september11.html" title="New York Broadcasting after 9/11">New York TV after 9/11</a><br>
+</details>
+
+<details>
+<summary>Live Music Recording</summary>
+<a href="https://www.ab9il.net/digital-audio/vlc-audio-dynamics.html" title="Adjusting Audio Dynamics in VLC">Adjusting Audio Dynamics in VLC</a><br>
+<a href="https://www.ab9il.net/digital-audio/backingtracks.html" title="Backing Track Prep Guide">Backing Track Prep Guide</a><br>
+<a href="https://www.ab9il.net/digital-audio/mp3-audio-processing.html" title="Ipod Music Processing Guide">Ipod Music Processing Guide</a><br>
+<a href="https://www.ab9il.net/digital-audio/audience-recordings.html" title="How To Record Live Music">How To Record Record Live Music Performances</a><br>
+</details>
+
+<details>
+<summary>Radio Poetry and Arts</summary>
+<a href="https://www.ab9il.net/radio-arts/in-distress.html" title="In Distress">In Distress, by David Wagoner</a><br>
+<a href="https://www.ab9il.net/radio-arts/justaradio-op.html" title="Just A Radio Operator">Just A Radio Operator, by Robert A. Wallace</a><br>
+</details>
+
+<details>
+<summary>Radio Circuit Modifications</summary>
+<a href="https://www.ab9il.net/ats-909/ats909.html" title="ATS-909 Modifications">ATS-909 Modifications</a><br>
+<a href="https://www.ab9il.net/ats-909/ats909-manuals.html" title="ATS-909 Manuals">ATS-909 Manuals</a><br>
+<a href="https://www.ab9il.net/ats-909/ats909cal1.html" title="ATS-909 Alignment Procedure">ATS-909 Alignment Procedure</a><br>
+<a href="https://www.ab9il.net/ats-909/ats909cal2.html" title="ATS-909 Alignment Spectrograms">ATS-909 Alignment Spectrograms</a><br>
+</details>
+
+<details>
+<summary>Very Low Frequency (VLF) Radio</summary>
+<a href="https://www.ab9il.net/vlf/vlf1.html" title="Internet Based VLF Radio Listening">Internet Based VLF Radio Listening</a><br>
+</details>
+
+<details>
+<summary>Windows Tips</summary>
+<a href="https://www.ab9il.net/windows-tips/windows-tips.html" title="Windows Performance Enhancement Tips">Windows Performance Enhancement Tips</a><br>
+<a href="https://www.ab9il.net/windows-tips/windows-7-speed-tweaks.html" title="A Faster Windows 7">A Faster Windows 7</a><br>
+<a href="https://www.ab9il.net/windows-tips/windows-7-ssd-setup.html" title="Windows 7 SSD Setup">Windows 7 SSD Setup</a><br>
+</details>
+</details>
+
+
+<p>Porteus Linux is a fast and lightweight operating system distributed as a live CD iso file.  While many users
+prefer to run it directly from a CD or installed to a USB stick, you may want to put it on your hard drive as an option
+in a dual boot or multiboot setup.  This is called a "frugal install" using an iso image or files copied from an image.  
+It makes a perfect companion to larger Linux distributions such as Ubuntu, Mint,or Arch Linux.  Use the instructions 
+below to easly configure an existing Linux system to optionally boot and run Porteus.
+</p>
+
+<p>It is suggested to create a disk partition separate from the computer's main system to hold Porteus and other special
+frugal installs.  This will ensure that updates or clean-ups for one system do not damage or clutter the other one.  The 
+webmaster has accidentally erased frugal installs kept on his main system during overzealous maintenance.  Take the
+lesson and keep Porteus on a different partition...
+</p>
+
+<br>
+<h3>Prerequisites</h3>
+<ol>
+     <li>A mainstream Linux system such as Debian, Ubuntu, Arch, Mint, or other type with Grub2 as the bootloader.</li>
+     <li>At least 500 MB of free space available for Porteus Linux</li>
+     <li>A Porteus live CD, ISO file, or USB stick. Get Porteus from <a href="http://build.porteus.org/" target="_blank">here</a>.</li>
+</ol>
+
+<p>In the example used here, the computer has one hard drive, and it is divided into two partitions.  The main system
+runs on the first partition and the second partition serves as storage for documents, backups, and frugal installation of
+Porteus Linux.  Be aware that the drive and partitioning scheme is peculiar: the first drive is "hd0" while the first partition
+is numbered "1" and so forth.
+<br><br><button3 onclick="window.location.href=&quot;https://amzn.to/2Vm8KDq&quot;;">#Advert: Supercharge your computing on systems and parts from Eluktronics</button3><br></p>
+
+<br>
+<h3>Installing the Porteus Files</h3>
+<ol>
+     <li>Start up the main operating system on the computer.</li>
+     <li>Open the file manager as root.</li>
+     <li>On the hard drive, in the partition to be used for frugal installations, create a folder called "porteus."</li>
+     <li>Navigae to the Porteus CD or ISO image, and open it.  Select and copy all of the contents.  Try "CTRL-A then CTRL-C to do that.</li>
+     <li>Paste all of those files and folders to the newly created "porteus" folder.  Use "CTRL-V" to paste.</li>
+</ol>
+
+
+<br>
+<h3>Configuring Grub2 to Boot Porteus</h3>
+<ol>
+     <li>In the file manager, as root, navigate into the folder /etc/grub.d</li>
+     <li>Create (or edit) the file "40_custom" to contain the following:</li>
+</ol>
+
+<pre class="c18">#!/bin/sh
+exec tail -n +3 $0
+# This file provides an easy way to add custom menu entries.  Simply type the
+# menu entries you want to add after this comment.  Be careful not to change
+# the 'exec tail' line above.
+
+menuentry 'Porteus Linux - Normal User' {
+	insmod ext2 
+	set root='(hd0,2)'
+	linux /porteus/boot/syslinux/vmlinuz nomagic base_only norootcopy zram=60% noauto timezone=GMT-0 login=guest
+	initrd /porteus/boot/syslinux/initrd.xz
+}
+
+menuentry 'Porteus Linux - Root User' {
+	insmod ext2 
+	set root='(hd0,2)'
+	linux /porteus/boot/syslinux/vmlinuz nomagic base_only norootcopy zram=60% noauto timezone=GMT-0 login=root
+	initrd /porteus/boot/syslinux/initrd.xz
+}
+
+</pre>
+
+<ol start="3">
+     <li>Startup options included after vmlinuz were taken from the file "porteus.cfg" and can be changed to suit user preferences."</li>
+     <li>For multiple Porteus startup options, create more "menuentry" items and give each its own cheatcodes.</li>
+</ol>
+
+<br>
+<h3>Starting the Porteus Frugal Install</h3>
+<p>To run Porteus, simply boot the computer and await the appearance of Grub2's menu.  It should list both
+the main system and also Porteus Linux.  Select Porteus, and observe a normal startup sequence.  After a few
+seconds of scrolling messages, the desktop should appear.  At this point, the system is ready to run.
+</p>
+
+<br>
+<h3>Going Further with Frugal Installs</h3>
+<p>Other systems may be added in the same manner as Porteus.  Kali Linux, Slitaz, SLAX, Siduction, Knoppix,
+or any other live CD or DVD may be installed alongside Porteus.  Each should be extracted and placed in its own
+folder and each will need its own entry (plus startup cheatcodes) written to "/etc/grub.d/40_custom." 
+</p>
+
+<p>Multiple versions of Porteus, or Porteus derivatives such as MOFO Linux require slight changes.  Each version
+needs a unique name for the *.sgn file contained within its "porteus" folder AND a cheatcode sgnfile=something.sgn
+in the grub entry.  Otherwise, Porteus will boot using files associated with the first sgn file it finds.
+</p>
+
+<p>Good luck, and enjoy the convenience and robustness of having two (or more) separate operating systems installed
+to the same hardware.  For more information, be sure to visit the Porteus forums.  There are many, many computer users
+with Porteus on their hard drives. 
+</p>
+
+<br>
+<br>
+Tags: 
+<br>
+</div>
+<div class="clear"></div>
+<div class="center">
+<br>
+<strong>©2005 - 2020 AB9IL, All Rights Reserved.<br>
+    <a href="https://www.ab9il.net/about/about.html">About</a>,
+    <a href="https://www.ab9il.net/contact.php">Contact</a>,
+    <a href="https://www.ab9il.net/privacy.html">Privacy Policy and Affiliate Disclosure</a>,
+    <a href="https://www.ab9il.net/sitemap.xml">XML Sitemap</a>.</strong>
+</div>
+</div>
+ 
+
+
+</body></html>

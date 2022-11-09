@@ -1,0 +1,748 @@
+<!DOCTYPE html> <html style lang=en><!--
+ Page saved with SingleFile 
+ url: http://localhost:8000/show_bug.cgi?id=206813 
+ saved date: Tue Aug 30 2022 08:50:51 GMT+0100 (Central European Standard Time) 
+ info: http://localhost:8000/show_bug.cgi?id=206813
+--><meta charset=utf-8>
+<title>206813 – snd_hda_intel: No response from codec, resetting bus:</title>
+<style>body{color:#000}body,td,th,input,#titles{font-family:Verdana,sans-serif;font-size:small}header,main,footer{display:block}pre{font-size:medium}#bugzilla-body{clear:both}#bugzilla-body th{font-weight:bold;vertical-align:top}#header{margin-bottom:1em}#header form,#header form input,#footer form,#footer form input{font-size:95%;display:inline}#header .links{border-left:1px solid #747E93;border-right:1px solid #747E93;border-bottom:1px solid #747E93;border-bottom-left-radius:5px;border-bottom-right-radius:5px;padding:0.5em}#titles{width:100%;background-color:#404D6C;color:#fff;margin:0;vertical-align:bottom;display:table}#titles #title{font-weight:bold;padding:0.5em;white-space:nowrap;display:table-cell}#titles #subtitle{font-weight:normal;text-align:center;padding:0.5em;display:table-cell}#titles #information{font-weight:normal;text-align:right;font-size:90%;padding:0.5em;white-space:nowrap;display:table-cell}#footer{clear:both;margin-top:1em;background:#edf2f2;border-top:1px solid #ddd;border-bottom:1px solid #ddd}#footer #useful-links{padding-left:1ex;padding-right:1ex}#footer ul{list-style-type:none}#footer .links{vertical-align:top}ul.links{margin:0;padding:0;list-style-type:none}ul.links li{display:inline;white-space:nowrap}a:visited{color:#636}a:hover{color:#333}a:active{color:#000}.bz_comment_table td{vertical-align:top}.bz_comment{margin-bottom:2em}pre.bz_comment_text{font-family:monospace;white-space:pre-wrap}.bz_comment_text{width:50em}.bz_comment_user,.bz_comment_time,.bz_comment_number{margin:0 .5em}.bz_comment_number{float:right}.bz_comment_head,.bz_first_comment_head{padding-top:.1em;padding-bottom:.1em;padding-left:.5em}#attachment_table{border-collapse:collapse;border:1px solid #333333}#attachment_table th,.bz_attach_footer{background-color:#E0E0E0;color:black}#attachment_table td{border:1px solid #333333}#attachment_table th,#attachment_table td{padding:0.3em}.bz_attach_extra_info{font-size:smaller}.bz_attach_footer{white-space:nowrap}.bz_attach_view_hide{float:right;padding-left:1em}.field_label{text-align:right}.field_help_link{cursor:help}.field_value{vertical-align:top}.left{text-align:left}.intro,.outro{text-align:center}.bz_short_desc_container{margin:8px 0;padding:0.3em;background-color:rgb(208,208,208);border-radius:0.5em;font-size:125%;font-weight:bold}.bz_bug .edit_form{width:100%}.bz_bug .edit_form table{width:100%}.bz_column_spacer{width:0.5em}.related_actions{font-size:0.85em;float:right;list-style-type:none;white-space:nowrap;margin:0;padding:0}.related_actions li{display:inline}.bz_show_bug_column{vertical-align:top}.bz_section_spacer{height:1em}#bz_big_form_parts td{vertical-align:top}.bz_bug .bz_short_desc_container{width:inherit}body{background:#c8c8c8;font-family:Helvetica,Arial,Geneva;padding-left:1em;padding-right:1em}#titles{border-top-left-radius:5px;border-top-right-radius:5px}#header .links,#footer{background-color:#929bb1;color:#ddd}#header{border-bottom-left-radius:5px;border-bottom-right-radius:5px;border:none}#header a,#footer a{color:white;text-decoration:none}#header a:hover,#footer a:hover{text-decoration:underline}#bugzilla-body{background:#f0f0f0;color:black;border:1px solid #747e93;padding:10px;font-size:10pt;border-radius:5px}a{color:#6070cf}a:hover{color:#8090ef}hr{border-color:#969696;border-style:dashed;border-width:1px;margin-top:10px}#comments td{padding-top:2px}.bz_comment{background-color:#e8e8e8;margin:1px 1px 10px 1px;border-width:1px;border-style:solid;border-color:#c8c8ba;padding:5px;font-size:9pt}.bz_comment_head,.bz_first_comment_head{margin:0;padding:0;background-color:transparent;font-weight:bold}.bz_comment_user{margin-left:0}#footer{border:1px solid #747e93;width:100%;border-radius:5px}#footer #links-actions{margin-top:2ex}#footer .links{border-spacing:30px;margin-bottom:2ex}.separator{color:#cccccc}</style>
+<!--[if lt IE 9]>
+      <script>
+        document.createElement('header');
+        document.createElement('nav');
+        document.createElement('main');
+        document.createElement('footer');
+      </script>
+    <![endif]-->
+<link rel=search type=application/opensearchdescription+xml title="Kernel.org Bugzilla" href=https://bugzilla.kernel.org/search_plugin.cgi>
+<meta name=robots content=noarchive>
+<link rel="shortcut icon" href="data:image/vnd.microsoft.icon;base64,AAABAAIAEBAAAAEAGABoAwAAJgAAACAgAAABABgAqAwAAI4DAAAoAAAAEAAAACAAAAABABgAAAAAAEADAAAAAAAAAAAAAAAAAAAAAAAAraKqc2tzj6GypL7Wj52stZGswZm4w5m4w5i4wpm4wpm4wZi4wpi4wpi4wpi4x6K/vJKwpX2biqTBpM7uk7TMqHyctoWptoaqtoaqtoWrt4Wrt4WrtoWptoartoarvpGxvZCuqn6biqfEp9f1qNb1hIyghnKHhG2DjnyTjXmRiXSLj3KNo3uYtYWktoaovZGvvZCuo3mUkrfRqdn1mL3UjqzBiKnBoc3mqtr2qdn1rNr2p9PtlbjQg5GnlnWNvZGtv4+tknCIpM7pqtj2qdr3qNn2qtn3qtn3qtn2qdn2qdr2qtn2qtr3q9r4k7fOnYGXwY6pi3aMqNb2qdn2qtr2qtr2qtr2qtr2qtr2qtr2qtr2q9r2tt74uuD4st32kJWmwo6ng4ecqNj3qdr1qtr2qdr1q9n1qdn2qtn2qdn2q9r2td34z+j32Ov2y+f4laCzuoqhhpuyqNn1qtr1qdn1qdPtrMXVpbzJmbjNqNfyq9n2veH33e726/X4ytffmX+QnHmLl7vZqdj1qtn1qtr24fH5/f38+/388PHxmbbIrNn2tNz4zej4ucbPkneIwIuhknqKoMTmp9b0qtn2rtv38/n75ujn+fr69ff3k7bKo9DsqNTui5OknXSFu3+XwYuhn3mMk7TSp9PzqNn2sdv23+LiYGFiqayvz9TXocrkhaG0bX+Po3KGuX6VuH+WwIqfv4mceHeLmr7cqNbzq9r2z9nflpiaeXt8mrDAlbzVmL3WfoSXt32SuX6TuX6TwIqdvYmbsXiLhHKCfImeptXxyeP0l56kd4uXos7rhqO5lrzVk2x8uHySuH2RuH2Rv4mcvYiat3yQt3uPsniLcWh1gaC0pdDqnsrlb3aFfI+igG5/t3uPt3yQt3yQt3yQvoibvoeZt3qOt3qOt3qOl2p8kmZ2iGN1iWR0sneKtXiLtnmOt3uOt3uPt3uPt3uPvYeZwpGfvIaVvIaVvYaWqn6MoHmGt4SVvoaWvIaVvIaVvIaVvIaVvIaVvIaVvIaVwpGfAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACgAAAAgAAAAQAAAAAEAGAAAAAAAgAwAAAAAAAAAAAAAAAAAAAAAAADc2tyam5x0dHZxcXOChIaeqrSsuMKquMKjrLWLiI2pkqHMrMTKq8PNrsfOq8TNq8XNq8XNq8XNq8XNq8XNq8XNq8XNq8XNq8XNq8XNq8XNq8XNq8XNq8XNq8XKq8bWu9CijJychZWZg5ROQ1J9lKedweebweefx+yn0OlncoWog5+5ha25h6y2hqi6h6q4hqq4hqq4hqq4hqq2hqq3hqq3h6q1hqq3hqy3hqy3hqy3hqy3hqy3hqy3hqyzhqvGnbrEnrmzhae1h6iQcYqBj6Gav+Sfxeam0vKt2fNseo6ofZm3iKyyhqm0hqqyhqq0h6q0h6q0h6q1h6q3hqy3hau2hau4h622hau2hKm2haq2hqu3hqy3hqy3hqy0hqrHnLnEnbi2h6i2hqiYd5RzhJubv+SkzO2o1/Wq2fiIo7iJaIG3haq6hqu5hKe6hKm4hqq4hqq4hqq4hau2g6u3hKy3hau2hKu2hqu2hai2hqm2hqu2hqu2hqu2hqu0hqnInLjEnLe3haa3haaed5JzhJmfxuuj0O6p2vap2Pmkz+pgZnaPcIiphKCwgp+wg6Csg5+sg5+sg5+tg5+ug6CuhKCvhaKyhaW0hKa2h6i2h6i2h6i2h6i2h6i2h6izhqjInLjEm7a3haa4haaddo9xhZ+kzOyp2feo2fmr2fqq2PalzeV7jJ1hanZeWmhORVFnan1vdYhudIdxdYhraXtpZ3hgYHJnXXFxYXWEaH+ceJGvg5y6haS6hqq1hqmyhqbInLjEm7a3haa3hKWWcYh1jqmm0+6p2fer1++St82Lqr2Amq50jqNieYxlfo+Jqbqs2PGr2vOs2vWr2vSp2fSq2vas2ver1e+exduNqLt1hZlhYnV+Z32ofpm1hKSyhaPHm7fEm7a3hKW3haWIaXyFo7uo1/Ko2Pep2/Wn0eqbwdqcu9KqzOOu1vCq2feo2fin2Pap2vmn2fao2fep2Par2PSu2ves2fan2Pao1/Wo2fio1vKGpbplYnCWcoi2h6PGm7fGm7W5hKW4g6R1XnGWutSq2POq2Pap1/an2fin2vin2fan2feo2fer2fis2fer2fip1/as2/mp2fan2/Wo3Pao2vSq2faq2fer2vir2vip2Pep2/eiz+VfZnaSdInHm7fFm7a4g6K5gqJkW2qmzumo2fWq2fit2vWs2vWq2vWo2vWp2feq2veq2vaq2vap2vap2vap2fWp2fWp2feq2feq2feq2Pap2/ip2fap2vev2/mq1/io2velzedYW2vDm7LGmrS5g6C2gJ5kZnWn0fOq2/ep2faq2vaq2vaq2vaq2vaq2vaq2vaq2vaq2vaq2vaq2vaq2vaq2vaq2vaq2vaq2vap2vaq2fes2vex3Pi03Pex3fis3Pet2/d5laakg5PImrG8g6Gjd5NufIum1Pir2vWp2faq2vaq2vaq2vaq2vaq2vaq2vaq2vaq2vaq2vaq2vaq2vaq2vaq2vaq2vaq2var2fav2ve43/jD4/jD4/e/4/i74fez3fWiy9+CcoDLmq+8hKCFZnqBnrKm1fis2vao2/Sq2vaq2vaq2vaq2vaq2vaq2vaq2vaq2vaq2vaq2vaq2vaq2vaq2vaq2vaq2vat2ve33vnF5PjP6PjS6fjQ6PfM5vfB5Pqy3O55b4HHmLC6gZxrW2aavt6n1/ep2/ap2vWq2vaq2vaq2vaq2vap2/Ss2fOs2fWp2ven2fiq2Par2fep2faq2fWq2fat2vey3Pe+4vnN5/jb7PTh7/fe7PXa7PfH5vmdwNSLdYbImbG1f5hkW2alzO2o2Pan2vWp2vWp2fWp2fWp2fWo2fWm2fijz+yfw9uWvtSfxdqr0+yo2fSl2/ep2vaq2fWr1/W13/jG5PfV6vbl8fbt9vjo9Pff7vbO5fJzfIuwi53HmK2keY9peYily+yn1vSp3Par2vap2fWp2fWq2var2PKqw9Sxv8i8wsazur6ssreNmKSDna+nzuaq2far2vas2fe03vfG5PfV6vbm8vbu9vnp9fjh7fKanaN5W2rHmq/HmKuAYXV9nLOkyuyp2Pap2vWq2fWq2vaq2vaq2fa54fj09fX+/fz+/fv8/fr6/Pz6+fnP0tWEk6Go1/Oq2PWs2PWw2ve84vrL5/jY7Pfj8ffa5+yZmqJ4XW66fpTFl63Dl6pmVGOautmkyuyp1/Wp2PWr2fap2fSq2var2ffa8Pr8/f38/f39/v37/f36/v36/Pv8/PuSnKKn0emt2ves2fmu2fe33fbE5PfM6Pm0y9hzdX+FZHqzf5e5f5bGmK2/lahnX22fwuajyeqn1fSp2PWr2Pap2fWq2vau2/nl9fz8/fz9/v38/fz8/fz7/f38/fz7/f2DkZml1e+p2fWl0vCq2viq3Paz2u+NnattYGucdIa9f5i/fpi9fpbHl6zBl6diXm2fwOOgxeem0fGp2Par2fap2fas2/a13ffw+Pz5+vna29vIycjz9PT7/P37+/rj5umAmamm2vadzOagx+Sv2fGcwddqc4SAYnKye4+6gJW5f5a2f5a5f5bGl6zFlqppVmWYutqfxOak0PGp2feq2fao2fet3Pa33fT2+vvf4N9ZWVp0dHWPkJH5/Pz+/fm5wMaPrcOq2PaUu9Wmy+F8l6tTWmR6W222fpW5fpa5f5S3gJe1f5i6f5bGl6zJlamFYnZ4kaKdwuWlze+p1/im2fSq2vaq2fa23Pb2+/uxs7Q+PkB3eXpESU7X3d/6+feKmaWkzuio1PByhpRneId/mq9lb32jcIO6f5S3fpa6fpS6f5S6fpS8fpPGlqnIlaiye5FcVWOWuNihxuqgyOep1vSo2Paq2fWw2/fn9vutr7BvcHF1eX40NTjIycrAxMeGorWr2faOtcxshZihxNuext1hWmqye4+5fpO5fpO7f5S7f5S7f5S7fpLFlqjElqe8fJGYbX9XYHOdu9WKr8qn1Oyp2Pir2vSp2fjT6vjV19enqqvLzMw7PD2usLN7i5qm0Ouq0+5xjqOo0u2s2vZyi6CHZnS4fJK4fpO4fpK4fZK4fZK4fZK6fZHFlqi/l6W7fJG4fI+ZbX5jW212h5lziJmk0fOr2vKm2Pq+4PX09vanqKlnZ2lGR0h3gouhx+Oq2fWIpbqIpbim2fefxN5cU2OreIi6e5W2fJO6fZG4fZG4fZG4fZG6fZHElajElaW3fJC4fZG7fJCte46MaHdqVWNteIqgyuGn2fiv2vfC3u/AzdaQnad8k6Skz+en1/iXwtxjdIWm0Oyp2/Rqd4mNZnS3fZC3fJG3fJG4fZG4fZG4fZG4fZG6fJLDlqbElKS3fJC3fJC3fJC1fJC2fJC2e4+bb4BdVmF4lKagzuin2fam1fGk1POn1/mo2PSiyd9PXm2OrcOu3PWCm6ltV2a0eY23fJC3fJC3fJC3fJC3fJC3fJC3fJC4e5LDlqXElKS3fJC3fJC3fJC3e5C7e4++e462e5CMZHFjUVxMT1tyiZabv9St2O+o1O2DpLpXV2R2WWZcV2VWW21nUmGrdoq6epC3fJC3fJC3fJC3fJC3fJC3fJC3fJC4e5HDlaXElKS3fJC3e4+3eo62e462e4+2e4+6e5CncISEX2yKY3CIXm1nUWBOSFhSTFZrU2GkcH+ze461eY2udoa0eI60eY61fI+3fJC3fJC3fJC3fJC3fJC3fJC3fJC4e5HClKTFk6O4eo64eo64eo64eY24eo63eY21eIyteIyEYXSEYHGweIu4eo60eIyweY23eY24eo24eo64eo64eY24eo64eo64eo24eo64eo64eo64eo64eo64eo64eo6ye43IkqHDkqG2eYu2eYu2eYu2eYu2eYu2eYy4e4+weYuOY3GdcH+PZna0e463eo64eo62eYu2eYu2eYu2eYu2eYu2eYu2eYu2eYu2eYu2eYu2eYu2eYu2eYu2eYu2eYu3eo3Mk6DOp7HDk6DDk6DDk6DDk6DDk6DDk6DDk5/ClKKohpOxi5eigYyviZbEk6HHk5/Dk6DDk6DDk6DDk6DDk6DDk6DDk6DDk6DDk6DDk6DDk6DDk6DDk6DDk6DDk6C/k5/IpbEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="><style>.sf-hidden{display:none!important}</style><link rel=canonical href="http://localhost:8000/show_bug.cgi?id=206813"><meta http-equiv=content-security-policy content="default-src 'none'; font-src 'self' data:; img-src 'self' data:; style-src 'unsafe-inline'; media-src 'self' data:; script-src 'unsafe-inline' data:;"><style>img[src="data:,"],source[src="data:,"]{display:none!important}</style></head>
+ <body class="bugzilla-kernel-org bz_bug bz_status_NEW bz_product_Drivers bz_component_Sound(ALSA) bz_bug_206813 yui-skin-sam">
+ <header id=header><div id=banner>
+ </div>
+ <div id=titles>
+ <span id=title>Kernel.org Bugzilla – Bug&nbsp;206813</span>
+ <span id=subtitle class=subheader>snd_hda_intel: No response from codec, resetting bus:</span>
+ <span id=information class=header_addl_info>Last modified: 2020-07-08 01:16:24 UTC</span>
+ </div>
+ <nav id=common_links><ul class=links>
+ <li><a href=https://bugzilla.kernel.org/>Home</a></li>
+ <li><span class=separator>| </span><a href=https://bugzilla.kernel.org/enter_bug.cgi>New</a></li>
+ <li><span class=separator>| </span><a href=https://bugzilla.kernel.org/describecomponents.cgi>Browse</a></li>
+ <li><span class=separator>| </span><a href=https://bugzilla.kernel.org/query.cgi>Search</a></li>
+ <li class=form>
+ <span class=separator>| </span>
+ <form action=buglist.cgi>
+ 
+ 
+ <input class=txt type=text id=quicksearch_top name=quicksearch title="Quick Search" value>
+ <input class=btn type=submit value=Search id=find_top></form>
+ <a href="https://bugzilla.kernel.org/page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+ <li><span class=separator>| </span><a href=https://bugzilla.kernel.org/report.cgi>Reports</a></li>
+ <li></li>
+ <li>
+ <span class=separator>| </span>
+ <a href=https://bugzilla.readthedocs.org/en/latest/using/understanding.html target=_blank>Help</a>
+ </li>
+ 
+ <li id=new_account_container_top>
+ <span class=separator>| </span>
+ <a href=https://bugzilla.kernel.org/createaccount.cgi>New&nbsp;Account</a>
+ </li>
+ <li id=mini_login_container_top>
+ <span class=separator>| </span>
+ <a id=login_link_top href="https://bugzilla.kernel.org/show_bug.cgi?id=206813&amp;GoAheadAndLogIn=1">Log In</a>
+ <form action="show_bug.cgi?id=206813" method=POST class="mini_login bz_default_hidden sf-hidden" id=mini_login_top>
+ 
+ 
+ 
+ 
+ 
+ </form>
+</li>
+ <li id=forgot_container_top>
+ <span class=separator>| </span>
+ <a id=forgot_link_top href="https://bugzilla.kernel.org/createaccount.cgi?request_new_password=1">Forgot Password</a>
+ <form action=token.cgi method=post id=forgot_form_top class="mini_forgot bz_default_hidden sf-hidden">
+ 
+ 
+ 
+ 
+ 
+ 
+ </form>
+ </li>
+</ul>
+ </nav>
+ </header>
+ <main role=main id=bugzilla-body>
+<form name=changeform id=changeform method=post action=process_bug.cgi>
+ 
+ 
+ 
+<div class="bz_short_desc_container edit_form">
+ <a href="https://bugzilla.kernel.org/show_bug.cgi?id=206813"><b>Bug&nbsp;206813</b></a> <span id=summary_container>
+ - <span id=short_desc_nonedit_display>snd_hda_intel: No response from codec, resetting bus:</span>
+ </span>
+ <div id=summary_input class="bz_default_hidden sf-hidden">snd_hda_intel: No response from codec, resetting bus:
+ </div>
+ </div>
+ 
+ <table class=edit_form>
+ <tbody><tr>
+ 
+ <td id=bz_show_bug_column_1 class=bz_show_bug_column> 
+ <table>
+ <tbody><tr id=field_tablerow_status>
+ <th class=field_label>
+ <a href="https://bugzilla.kernel.org/page.cgi?id=fields.html#bug_status">Status</a>:
+ </th>
+ <td id=bz_field_status>
+ <span id=static_bug_status>NEW
+ </span>
+ </td>
+ </tr>
+<tr>
+ <td colspan=2 class=bz_section_spacer></td>
+ </tr>
+<tr id=field_tablerow_alias><th class=field_label id=field_label_alias>
+ <a title="A short, unique name assigned to a bug in order to assist with looking it up and referring to it in other places in Bugzilla." class=field_help_link href="https://bugzilla.kernel.org/page.cgi?id=fields.html#alias">Alias:</a>
+</th>
+ <td>
+ None
+ </td>
+ </tr>
+<tr>
+ <td colspan=2 class=bz_section_spacer></td>
+ </tr>
+<tr id=field_tablerow_product><th class=field_label id=field_label_product>
+ <a title="Bugs are categorised into Products and Components." class=field_help_link href=https://bugzilla.kernel.org/describecomponents.cgi>Product:</a>
+</th>
+ <td class=field_value id=field_container_product>Drivers
+</td>
+ </tr>
+ 
+ <tr id=field_tablerow_classification class="bz_default_hidden sf-hidden">
+ 
+ </tr>
+ 
+ 
+ 
+ <tr id=field_tablerow_component><th class=field_label id=field_label_component>
+ <a title="Components are second-level categories; each belongs to a particular Product. Select a Product to narrow down this list." class=field_help_link href="https://bugzilla.kernel.org/describecomponents.cgi?product=Drivers">Component:</a>
+</th>
+ <td class=field_value id=field_container_component>Sound(ALSA)
+ (<a href="https://bugzilla.kernel.org/buglist.cgi?component=Sound(ALSA)&amp;product=Drivers&amp;bug_status=__open__" target=_blank>show other bugs</a>)
+</td>
+ </tr>
+ 
+ 
+ 
+ <tr id=field_tablerow_rep_platform><th class=field_label id=field_label_rep_platform>
+ <a title='The hardware platform the bug was observed on. Note: When searching, selecting the option "All" only finds bugs whose value for this field is literally the word "All".' class=field_help_link href="https://bugzilla.kernel.org/page.cgi?id=fields.html#rep_platform">Hardware:</a>
+</th>
+ <td class=field_value>Intel
+ Linux
+ </td>
+ </tr>
+ <tr>
+ <td colspan=2 class=bz_section_spacer></td>
+ </tr>
+ 
+ <tr id=field_tablerow_importance>
+ <th class=field_label>
+ <label accesskey=i>
+ <a href="https://bugzilla.kernel.org/page.cgi?id=fields.html#importance"><u>I</u>mportance</a></label>:
+ </th>
+ <td>P1
+ normal
+ </td>
+ </tr>
+ 
+ <tr id=field_tablerow_assigned_to><th class=field_label id=field_label_assigned_to>
+ <a title="The person in charge of resolving the bug." class=field_help_link href="https://bugzilla.kernel.org/page.cgi?id=fields.html#assigned_to">Assignee:</a>
+</th>
+ <td><span class=vcard><span class=fn>Jaroslav Kysela</span>
+</span>
+ </td>
+ </tr>
+ 
+ <tr>
+ <td colspan=2 class=bz_section_spacer></td>
+ </tr>
+ <tr id=field_tablerow_bug_file_loc><th class=field_label id=field_label_bug_file_loc>
+ <a title="Bugs can have a URL associated with them - for example, a pointer to a web site where the problem is seen." class=field_help_link href="https://bugzilla.kernel.org/page.cgi?id=fields.html#bug_file_loc">URL:</a>
+</th>
+ <td>
+ <span id=bz_url_input_area>
+ </span>
+ </td>
+ </tr>
+ <tr id=field_tablerow_keywords><th class=field_label id=field_label_keywords>
+ <a title="You can add keywords from a defined list to bugs, in order to easily identify and group them." class=field_help_link href=https://bugzilla.kernel.org/describekeywords.cgi>Keywords:</a>
+</th>
+ <td class=field_value id=field_container_keywords>
+</td>
+ </tr>
+ <tr>
+ <td colspan=2 class=bz_section_spacer></td>
+ </tr>
+ 
+<tr id=field_tablerow_dependson><th class=field_label id=field_label_dependson>
+ <a title="The bugs listed here must be resolved before this bug can be resolved." class=field_help_link href="https://bugzilla.kernel.org/page.cgi?id=fields.html#dependson">Depends on:</a>
+</th>
+ <td>
+ <span id=dependson_input_area>
+ </span>
+ </td>
+ </tr>
+ 
+ <tr><th class=field_label id=field_label_blocked>
+ <a title="This bug must be resolved before the bugs listed in this field can be resolved." class=field_help_link href="https://bugzilla.kernel.org/page.cgi?id=fields.html#blocked">Blocks:</a>
+</th>
+ <td>
+ <span id=blocked_input_area>
+ </span>
+ </td>
+ </tr>
+ 
+ </table>
+ </td>
+ <td>
+ <div class=bz_column_spacer>&nbsp;</div>
+ </td>
+ 
+ <td id=bz_show_bug_column_2 class=bz_show_bug_column>
+ <table>
+ <tbody><tr id=field_tablerow_reported>
+ <th class=field_label>
+ Reported:
+ </th>
+ <td>2020-03-11 08:30 UTC by <span class=vcard><span class=fn>Patrick Eigensatz</span>
+</span>
+ </td>
+ </tr>
+ 
+ <tr id=field_tablerow_modified>
+ <th class=field_label>
+ Modified:
+ </th>
+ <td>2020-07-08 01:16 UTC
+ (<a href="https://bugzilla.kernel.org/show_activity.cgi?id=206813">History</a>)
+ </td>
+ 
+ </tr>
+<tr id=field_tablerow_cclist>
+ <th class=field_label>
+ <label accesskey=a>
+ CC List:
+ </label>
+ </th>
+ <td>4 
+ users
+ <span id=cc_edit_area_showhide_container>
+ (<a href=# id=cc_edit_area_showhide>show</a>)
+ </span>
+ <div id=cc_edit_area class="bz_default_hidden sf-hidden">
+ 
+ 
+ </div>
+ 
+ </td>
+ </tr>
+<tr>
+ <td colspan=2 class=bz_section_spacer></td>
+ </tr>
+<tr id=field_tablerow_see_also><th class=field_label id=field_label_see_also>
+ <a title="This allows you to refer to bugs in other installations. You can enter a URL to a bug in the 'Add Bug URLs' field to note that that bug is related to this one. You can enter multiple URLs at once by separating them with whitespace. You should normally use this field to refer to bugs in other installations. For bugs in this installation, it is better to use the Depends on and Blocks fields." class=field_help_link href="https://bugzilla.kernel.org/page.cgi?id=fields.html#see_also">See Also:</a>
+</th>
+ <td class=field_value id=field_container_see_also>
+</td>
+ </tr> 
+<tr>
+ <th class=field_label id=field_label_cf_kernel_version>
+ <a title="A custom Free Text field in this installation of Bugzilla." class=field_help_link href="https://bugzilla.kernel.org/page.cgi?id=fields.html#cf_kernel_version">Kernel Version:</a>
+</th>
+ <td class=field_value id=field_container_cf_kernel_version>5.5.8
+</td>
+ </tr>
+ <tr>
+ <th class=field_label id=field_label_cf_tree>
+ <a title="A custom Drop Down field in this installation of Bugzilla." class=field_help_link href="https://bugzilla.kernel.org/page.cgi?id=fields.html#cf_tree">Tree:</a>
+</th>
+ <td class=field_value id=field_container_cf_tree>Mainline
+</td>
+ </tr>
+ <tr>
+ <th class=field_label id=field_label_cf_regression>
+ <a title="A custom Drop Down field in this installation of Bugzilla." class=field_help_link href="https://bugzilla.kernel.org/page.cgi?id=fields.html#cf_regression">Regression:</a>
+</th>
+ <td class=field_value id=field_container_cf_regression>No
+</td>
+ </tr>
+<tr>
+ <td colspan=2 class=bz_section_spacer></td>
+ </tr>
+ </table>
+ </td>
+ </tr>
+ <tr>
+ <td colspan=3>
+ <hr id=bz_top_half_spacer>
+ </td>
+ </tr>
+ </table>
+ <table id=bz_big_form_parts>
+ <tbody><tr>
+ <td>
+ 
+<br>
+<table id=attachment_table>
+ <tbody><tr id=a0>
+ <th colspan=2 class=left>
+ Attachments
+ </th>
+ </tr>
+ <tr id=a1 class=bz_contenttype_text_plain>
+ <td>
+ <a href="https://bugzilla.kernel.org/attachment.cgi?id=287865" title="View the content of the attachment">
+ <b>dmesg output
+ </b></a>
+ <span class=bz_attach_extra_info>
+ (101.42 KB,
+ text/plain)
+ <br>
+ <a href=#attach_287865 title="Go to the comment associated with the attachment">2020-03-11 08:30 UTC</a>,
+ <span class=vcard><span class=fn>Patrick Eigensatz</span>
+</span>
+ </span>
+ </td>
+ <td>
+ <a href="https://bugzilla.kernel.org/attachment.cgi?id=287865&amp;action=edit">Details</a>
+ </td>
+ </tr>
+ <tr id=a2 class=bz_contenttype_text_plain>
+ <td>
+ <a href="https://bugzilla.kernel.org/attachment.cgi?id=287867" title="View the content of the attachment">
+ <b>/proc/modules
+ </b></a>
+ <span class=bz_attach_extra_info>
+ (11.27 KB,
+ text/plain)
+ <br>
+ <a href=#attach_287867 title="Go to the comment associated with the attachment">2020-03-11 08:31 UTC</a>,
+ <span class=vcard><span class=fn>Patrick Eigensatz</span>
+</span>
+ </span>
+ </td>
+ <td>
+ <a href="https://bugzilla.kernel.org/attachment.cgi?id=287867&amp;action=edit">Details</a>
+ </td>
+ </tr>
+ <tr class=bz_attach_footer>
+ <td colspan=2>
+ <span class=bz_attach_view_hide>
+ </span>
+ <a href="https://bugzilla.kernel.org/attachment.cgi?bugid=206813&amp;action=enter">Add an attachment</a>
+ (proposed patch, testcase, etc.)
+ </td>
+ </tr>
+</table>
+<br>
+ </td>
+ <td>
+ </td>
+ </table>
+ 
+ <div id=comments>
+<table class=bz_comment_table>
+<tbody><tr>
+<td>
+<div id=c0 class="bz_comment bz_first_comment">
+ <div class=bz_first_comment_head>
+ <span class=bz_comment_number>
+ <a href="https://bugzilla.kernel.org/show_bug.cgi?id=206813#c0">Description</a>
+ </span>
+ <span class=bz_comment_user>
+ <span class=vcard><span class=fn>Patrick Eigensatz</span>
+</span>
+ </span>
+ <span class=bz_comment_user_images>
+ </span>
+ <span class=bz_comment_time>
+ 2020-03-11 08:30:33 UTC
+ </span>
+ </div>
+<pre class=bz_comment_text>Created <span><a href="https://bugzilla.kernel.org/attachment.cgi?id=287865" name=attach_287865 title="dmesg output">attachment 287865</a> <a href="https://bugzilla.kernel.org/attachment.cgi?id=287865&amp;action=edit" title="dmesg output">[details]</a></span>
+dmesg output
+
+First of all:
+1. This bug seems similar to <a href="https://bugs.freedesktop.org/show_bug.cgi?id=111214">https://bugs.freedesktop.org/show_bug.cgi?id=111214</a>, however this bug is considered patched and non-reproducible in newer kernel versions. Also, this issue is not related to external monitors / devices.
+
+2. Product/Component was hard to pin down, seems like it fits in multiple categories. Please correct it if I was wrong.
+
+3. This bug appears randomly, most of the times it works.
+
+My hardware: XPS13 7390 2-in-1 (Intel i7-1065G7)
+
+Problem:
+Booted Linux on the notebook, the system was rather unresponsive and performed poorly. The sound worked for a short moment, but volume control didn't. I stopped playing music, and tried to turn down the volume, this however, did not work:
+
+pavucontrol froze at startup, pactl list timed out.
+
+After some time, the system was responsive again, however playing sounds did no longer work. PulseAudio lists only the "dummy output".
+
+Checking dmesg yields problems in snd_hda_intel. Please note that this happened pretty much every second, i.e. there seems to be a persistent problem.
+
+[   22.407939] snd_hda_intel 0000:00:1f.3: No response from codec, resetting bus: last cmd=0x202f8100
+[   23.417958] snd_hda_intel 0000:00:1f.3: No response from codec, resetting bus: last cmd=0x202f8100
+[   24.424600] snd_hda_intel 0000:00:1f.3: No response from codec, resetting bus: last cmd=0x20170500
+[   25.428039] snd_hda_intel 0000:00:1f.3: No response from codec, resetting bus: last cmd=0x20370500</pre>
+ </div>
+ <div id=c1 class=bz_comment>
+ <div class=bz_comment_head>
+ <span class=bz_comment_number>
+ <a href="https://bugzilla.kernel.org/show_bug.cgi?id=206813#c1">Comment 1</a>
+ </span>
+ <span class=bz_comment_user>
+ <span class=vcard><span class=fn>Patrick Eigensatz</span>
+</span>
+ </span>
+ <span class=bz_comment_user_images>
+ </span>
+ <span class=bz_comment_time>
+ 2020-03-11 08:31:35 UTC
+ </span>
+ </div>
+<pre class=bz_comment_text>Created <span><a href="https://bugzilla.kernel.org/attachment.cgi?id=287867" name=attach_287867 title=/proc/modules>attachment 287867</a> <a href="https://bugzilla.kernel.org/attachment.cgi?id=287867&amp;action=edit" title=/proc/modules>[details]</a></span>
+/proc/modules</pre>
+ </div>
+ <div id=c2 class=bz_comment>
+ <div class=bz_comment_head>
+ <span class=bz_comment_number>
+ <a href="https://bugzilla.kernel.org/show_bug.cgi?id=206813#c2">Comment 2</a>
+ </span>
+ <span class=bz_comment_user>
+ <span class=vcard>jacobecc9
+</span>
+ </span>
+ <span class=bz_comment_user_images>
+ </span>
+ <span class=bz_comment_time>
+ 2020-05-06 11:02:43 UTC
+ </span>
+ </div>
+<pre class=bz_comment_text>it happens also with kernel 5.6.11</pre>
+ </div>
+ <div id=c3 class=bz_comment>
+ <div class=bz_comment_head>
+ <span class=bz_comment_number>
+ <a href="https://bugzilla.kernel.org/show_bug.cgi?id=206813#c3">Comment 3</a>
+ </span>
+ <span class=bz_comment_user>
+ <span class=vcard><span class=fn>Marty</span>
+</span>
+ </span>
+ <span class=bz_comment_user_images>
+ </span>
+ <span class=bz_comment_time>
+ 2020-05-17 12:43:35 UTC
+ </span>
+ </div>
+<pre class=bz_comment_text>also happens with 5.6.13, never observed it in 5.6.7 and before</pre>
+ </div>
+ <div id=c4 class=bz_comment>
+ <div class=bz_comment_head>
+ <span class=bz_comment_number>
+ <a href="https://bugzilla.kernel.org/show_bug.cgi?id=206813#c4">Comment 4</a>
+ </span>
+ <span class=bz_comment_user>
+ <span class=vcard><span class=fn>favabean</span>
+</span>
+ </span>
+ <span class=bz_comment_user_images>
+ </span>
+ <span class=bz_comment_time>
+ 2020-05-19 10:16:33 UTC
+ </span>
+ </div>
+<pre class=bz_comment_text>Also experiencing this on 5.6.13, pulseaudio on a Dell E7440. Hang reliably occurs after suspend/resume, after ~30s recovers to fully working state.</pre>
+ </div>
+ <div id=c5 class=bz_comment>
+ <div class=bz_comment_head>
+ <span class=bz_comment_number>
+ <a href="https://bugzilla.kernel.org/show_bug.cgi?id=206813#c5">Comment 5</a>
+ </span>
+ <span class=bz_comment_user>
+ <span class=vcard><span class=fn>Marty</span>
+</span>
+ </span>
+ <span class=bz_comment_user_images>
+ </span>
+ <span class=bz_comment_time>
+ 2020-06-17 11:59:40 UTC
+ </span>
+ </div>
+<pre class=bz_comment_text>Problem persists with 5.7.2. However this time I was able to properly shutdown the system. Happy to aid with additional information if needed.
+
+Excerpt from logs:
+
+kernel: snd_hda_intel 0000:00:1f.3: azx_get_response timeout, switching to polling mode: last cmd=0x20170500
+kernel: snd_hda_intel 0000:00:1f.3: No response from codec, disabling MSI: last cmd=0x20170500
+kernel: snd_hda_intel 0000:00:1f.3: No response from codec, resetting bus: last cmd=0x20170500
+...
+kernel: snd_hda_intel 0000:00:1f.3: No response from codec, resetting bus: last cmd=0x20270d00
+kernel: snd_hda_codec_generic hdaudioC0D2: Unable to sync register 0x2f0d00. -11
+kernel: snd_hda_intel 0000:00:1f.3: No response from codec, resetting bus: last cmd=0x20270d00
+kernel: snd_hda_codec_generic hdaudioC0D2: Unable to sync register 0x2f0d00. -11
+kernel: snd_hda_intel 0000:00:1f.3: No response from codec, resetting bus: last cmd=0x203f0900
+...
+kernel: snd_hda_intel 0000:00:1f.3: No response from codec, resetting bus: last cmd=0x201f0500</pre>
+ </div>
+ <div id=c6 class=bz_comment>
+ <div class=bz_comment_head>
+ <span class=bz_comment_number>
+ <a href="https://bugzilla.kernel.org/show_bug.cgi?id=206813#c6">Comment 6</a>
+ </span>
+ <span class=bz_comment_user>
+ <span class=vcard><span class=fn>Marty</span>
+</span>
+ </span>
+ <span class=bz_comment_user_images>
+ </span>
+ <span class=bz_comment_time>
+ 2020-06-17 12:10:37 UTC
+ </span>
+ </div>
+<pre class=bz_comment_text>not sure whether related, but somewhat later systemd restarted the sound service resulting in:
+ 
+kernel: ------------[ cut here ]------------
+kernel: percpu ref (cgroup_bpf_release_fn) &lt;= 0 (0) after switching to atomic
+kernel: WARNING: CPU: 1 PID: 0 at lib/percpu-refcount.c:161 percpu_ref_switch_to_atomic_rcu+0x119/0x120
+kernel: Modules linked in: tun(E) kvm_intel(E) kvm(E) irqbypass(E) mei_me(E) mei(E) tpm_crb(E) tpm_tis(E) tpm_tis_core(E) tpm(E) rng_core(E) acpi_pad(E) ip_tables(E) autofs4(E) linear(E) fan(E) [last unloaded: msr]
+kernel: CPU: 1 PID: 0 Comm: swapper/1 Tainted: G            E     5.7.2-calvin #1
+kernel: Hardware name: Gigabyte Technology Co., Ltd. Q270M-D3H/Q270M-D3H, BIOS F3 04/25/2017
+kernel: RIP: 0010:percpu_ref_switch_to_atomic_rcu+0x119/0x120
+kernel: Code: eb af 80 3d a9 0a 28 01 00 0f 85 63 ff ff ff 48 8b 55 d8 48 c7 c7 48 28 dc 9c c6 05 91 0a 28 01 01 48 8b 75 e8 e8 29 22 c0 ff &lt;0f&gt; 0b e9 41 ff ff ff 55 48 89 fd 53 48 89 f3 48 83 ec 30 65 48 8b
+kernel: RSP: 0018:ffffc3b5c003cef0 EFLAGS: 00010286
+kernel: RAX: 0000000000000000 RBX: 7fffffffffffffff RCX: 0000000000000000
+kernel: RDX: 0000000000000045 RSI: ffffffff9d766405 RDI: ffffffff9d766805
+kernel: RBP: ffffa02c09b6a958 R08: 000009f34a0a4e41 R09: 0000000000000045
+kernel: R10: 0000000000000000 R11: 000000009d7663cb R12: 00004389a1e51610
+kernel: R13: ffffa02c1b96db80 R14: 0000000000000000 R15: 0000000000000000
+kernel: FS:  0000000000000000(0000) GS:ffffa02c1de80000(0000) knlGS:0000000000000000
+kernel: CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+kernel: CR2: 00007ffc2aca0b68 CR3: 0000000417e38002 CR4: 00000000003606e0
+kernel: DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+kernel: DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400
+kernel: Call Trace:
+kernel:  &lt;IRQ&gt;
+kernel:  rcu_core+0x1c2/0x470
+kernel:  __do_softirq+0xe0/0x2ca
+kernel:  irq_exit+0xa0/0xb0
+kernel:  smp_apic_timer_interrupt+0x76/0x130
+kernel:  apic_timer_interrupt+0xf/0x20
+kernel:  &lt;/IRQ&gt;
+kernel: RIP: 0010:poll_idle+0x5d/0xac
+kernel: Code: f0 41 80 4e 02 20 49 8b 06 a8 08 75 3a 4c 89 e7 48 89 ee e8 f5 aa d8 ff 49 89 c4 b8 c9 00 00 00 49 8b 16 83 e2 08 75 1f f3 90 &lt;83&gt; e8 01 75 f1 65 8b 3d 77 1d ad 63 e8 62 d6 5a ff 48 29 d8 4c 39
+kernel: RSP: 0018:ffffc3b5c00c3e40 EFLAGS: 00000246 ORIG_RAX: ffffffffffffff13
+kernel: RAX: 0000000000000076 RBX: 000009f34a09cbc2 RCX: 000000000000001f
+kernel: RDX: 0000000000000000 RSI: ffffa02c1deb4700 RDI: ffffffff9d0c7c20
+kernel: RBP: ffffa02c1deb4700 R08: 000009f34a09cbc2 R09: ffffa02c1deaa69c
+kernel: R10: 0000000000000300 R11: 0000000000000000 R12: 00000000000007d0
+kernel: R13: 0000000000000000 R14: ffffa02c1b96db80 R15: ffffa02c1b96db80
+kernel:  cpuidle_enter_state+0x6e/0x380
+kernel:  cpuidle_enter+0x29/0x40
+kernel:  do_idle+0x1d9/0x260
+kernel:  cpu_startup_entry+0x19/0x20
+kernel:  start_secondary+0x15c/0x1b0
+kernel:  secondary_startup_64+0xa4/0xb0
+kernel: ---[ end trace fe617a4f30197046 ]---</pre>
+ </div>
+ <div id=c7 class=bz_comment>
+ <div class=bz_comment_head>
+ <span class=bz_comment_number>
+ <a href="https://bugzilla.kernel.org/show_bug.cgi?id=206813#c7">Comment 7</a>
+ </span>
+ <span class=bz_comment_user>
+ <span class=vcard>jacobecc9
+</span>
+ </span>
+ <span class=bz_comment_user_images>
+ </span>
+ <span class=bz_comment_time>
+ 2020-06-17 16:16:28 UTC
+ </span>
+ </div>
+<pre class=bz_comment_text>it seems it happens when kernel config is missing
+CONFIG_SND_HDA_CODEC_HDMI=y</pre>
+ </div>
+ <div id=c8 class=bz_comment>
+ <div class=bz_comment_head>
+ <span class=bz_comment_number>
+ <a href="https://bugzilla.kernel.org/show_bug.cgi?id=206813#c8">Comment 8</a>
+ </span>
+ <span class=bz_comment_user>
+ <span class=vcard><span class=fn>favabean</span>
+</span>
+ </span>
+ <span class=bz_comment_user_images>
+ </span>
+ <span class=bz_comment_time>
+ 2020-06-17 16:55:18 UTC
+ </span>
+ </div>
+<pre class=bz_comment_text>Indeed, enabling CONFIG_SND_HDA_CODEC_HDMI fixed it for me.</pre>
+ </div>
+ <div id=c9 class=bz_comment>
+ <div class=bz_comment_head>
+ <span class=bz_comment_number>
+ <a href="https://bugzilla.kernel.org/show_bug.cgi?id=206813#c9">Comment 9</a>
+ </span>
+ <span class=bz_comment_user>
+ <span class=vcard><span class=fn>Patrick Eigensatz</span>
+</span>
+ </span>
+ <span class=bz_comment_user_images>
+ </span>
+ <span class=bz_comment_time>
+ 2020-06-18 08:28:46 UTC
+ </span>
+ </div>
+<pre class=bz_comment_text>I'm currently running 5.7.2 and the issue seems unreproducible.
+
+I compared my 5.5.8 config to what I'm using now and the important differences seem to be:
+
+CONFIG_SND_SOC_SOF_HDA_COMMON_HDMI_CODEC=y has been removed from the config
+CONFIG_SND_HDA_PREALLOC_SIZE=4096 has been set to 0
+
+CONFIG_SND_HDA_CODEC_HDMI was set to "module" in both configs, i.e. didn't
+change at all.</pre>
+ </div>
+ <div id=c10 class=bz_comment>
+ <div class=bz_comment_head>
+ <span class=bz_comment_number>
+ <a href="https://bugzilla.kernel.org/show_bug.cgi?id=206813#c10">Comment 10</a>
+ </span>
+ <span class=bz_comment_user>
+ <span class=vcard><span class=fn>Marty</span>
+</span>
+ </span>
+ <span class=bz_comment_user_images>
+ </span>
+ <span class=bz_comment_time>
+ 2020-06-19 08:44:20 UTC
+ </span>
+ </div>
+<pre class=bz_comment_text>Setting CONFIG_SND_HDA_CODEC_HDMI=y seems to fix it for me as well.
+
+Before it was set to CONFIG_SND_HDA_CODEC_HDMI=m, however the module was not loaded. Maybe dependencies between modules -- either at compile-time or at run-time -- are not complete.</pre>
+ </div>
+ <div id=c11 class=bz_comment>
+ <div class=bz_comment_head>
+ <span class=bz_comment_number>
+ <a href="https://bugzilla.kernel.org/show_bug.cgi?id=206813#c11">Comment 11</a>
+ </span>
+ <span class=bz_comment_user>
+ <span class=vcard><span class=fn>ItsMe</span>
+</span>
+ </span>
+ <span class=bz_comment_user_images>
+ </span>
+ <span class=bz_comment_time>
+ 2020-07-08 01:16:24 UTC
+ </span>
+ </div>
+<pre class=bz_comment_text>I have this problem in all distros I tested except Arch. I looked at Arch kernel configs and compared to Ubuntu kernel configs. One difference is 'CONFIG_SND_HDA_POWER_SAVE_DEFAULT=1' in Ubuntu while Arch has 'CONFIG_SND_HDA_POWER_SAVE_DEFAULT=0'. So I created the file '/etc/modprobe.d/audio_powersave.conf' and added 'options snd_hda_intel power_save=0
+' to it and this issue was fixed for me.</pre>
+ </div>
+ 
+</td>
+<td>
+</td>
+</table>
+ </div>
+ <hr><div id=add_comment class=bz_section_additional_comments>
+ <table>
+ <tbody><tr>
+ <td>
+ <fieldset>
+ <legend>Note</legend>
+ You need to
+ <a href="https://bugzilla.kernel.org/show_bug.cgi?id=206813&amp;GoAheadAndLogIn=1">log in</a>
+ before you can comment on or make changes to this bug.
+ </fieldset>
+ </td>
+ </tr> 
+ </table>
+ </div> 
+</form>
+<hr>
+<ul class=related_actions>
+ <li><a href="https://bugzilla.kernel.org/show_bug.cgi?format=multiple&amp;id=206813">Format For Printing</a></li>
+ <li>&nbsp;-&nbsp;<a href="https://bugzilla.kernel.org/show_bug.cgi?ctype=xml&amp;id=206813">XML</a></li>
+ <li>&nbsp;-&nbsp;<a href="https://bugzilla.kernel.org/enter_bug.cgi?cloned_bug_id=206813">Clone This Bug</a></li>
+ 
+ <li>&nbsp;-&nbsp;<a href=#>Top of page </a></li>
+ </ul>
+<br>
+</main>
+ <footer id=footer>
+ <div class=intro></div>
+ <nav><ul id=useful-links>
+ <li id=links-actions><ul class=links>
+ <li><a href=https://bugzilla.kernel.org/>Home</a></li>
+ <li><span class=separator>| </span><a href=https://bugzilla.kernel.org/enter_bug.cgi>New</a></li>
+ <li><span class=separator>| </span><a href=https://bugzilla.kernel.org/describecomponents.cgi>Browse</a></li>
+ <li><span class=separator>| </span><a href=https://bugzilla.kernel.org/query.cgi>Search</a></li>
+ <li class=form>
+ <span class=separator>| </span>
+ <form action=buglist.cgi>
+ 
+ 
+ <input class=txt type=text id=quicksearch_bottom name=quicksearch title="Quick Search" value>
+ <input class=btn type=submit value=Search id=find_bottom></form>
+ <a href="https://bugzilla.kernel.org/page.cgi?id=quicksearch.html" title="Quicksearch Help">[?]</a></li>
+ <li><span class=separator>| </span><a href=https://bugzilla.kernel.org/report.cgi>Reports</a></li>
+ <li></li>
+ <li>
+ <span class=separator>| </span>
+ <a href=https://bugzilla.readthedocs.org/en/latest/using/understanding.html target=_blank>Help</a>
+ </li>
+ 
+ <li id=new_account_container_bottom>
+ <span class=separator>| </span>
+ <a href=https://bugzilla.kernel.org/createaccount.cgi>New&nbsp;Account</a>
+ </li>
+ <li id=mini_login_container_bottom>
+ <span class=separator>| </span>
+ <a id=login_link_bottom href="https://bugzilla.kernel.org/show_bug.cgi?id=206813&amp;GoAheadAndLogIn=1">Log In</a>
+ <form action="show_bug.cgi?id=206813" method=POST class="mini_login bz_default_hidden sf-hidden" id=mini_login_bottom>
+ 
+ 
+ 
+ 
+ 
+ </form>
+</li>
+ <li id=forgot_container_bottom>
+ <span class=separator>| </span>
+ <a id=forgot_link_bottom href="https://bugzilla.kernel.org/createaccount.cgi?request_new_password=1">Forgot Password</a>
+ <form action=token.cgi method=post id=forgot_form_bottom class="mini_forgot bz_default_hidden sf-hidden">
+ 
+ 
+ 
+ 
+ 
+ 
+ </form>
+ </li>
+</ul>
+ </li>
+ 
+ 
+</ul>
+ </nav>
+ <div class=outro></div>
+ </footer>
+ 

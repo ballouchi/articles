@@ -1,0 +1,1115 @@
+[med-arch@hp6830s-arch ~]$ pikaur -Ss kqemu
+Searching... [###]
+[med-arch@hp6830s-arch ~]$ pikaur -Ss qemu
+Searching... [###]
+extra/qemu 5.1.0-3 
+    A generic and open source machine emulator and virtualizer    
+extra/qemu-arch-extra 5.1.0-3 
+    QEMU for foreign architectures    
+extra/qemu-block-gluster 5.1.0-3 
+    QEMU GlusterFS block module    
+extra/qemu-block-iscsi 5.1.0-3 
+    QEMU iSCSI block module    
+extra/qemu-block-rbd 5.1.0-3 
+    QEMU RBD block module    
+extra/qemu-guest-agent 5.1.0-3 
+    QEMU Guest Agent    
+extra/qemu-headless 5.1.0-3 
+    QEMU without GUI    
+extra/qemu-headless-arch-extra 5.1.0-3 
+    QEMU without GUI, for foreign architectures    
+extra/vde2 2.3.2-14 
+    Virtual Distributed Ethernet for emulators like qemu    
+community/libvirt 1:6.5.0-3 
+    API for controlling virtualization engines    
+    (openvz,kvm,qemu,virtualbox,xen,etc)    
+community/manjaro-arm-qemu-static 1.1.0-2 
+    Register qemu-static interpreters for various binary formats    
+community/python-unicorn 1.0.1-8 
+    Lightweight, multi-platform, multi-architecture CPU emulator framework    
+    based on QEMU    
+community/ruby-unicorn-engine 1.0.1-8 
+    Lightweight, multi-platform, multi-architecture CPU emulator framework    
+    based on QEMU    
+community/unicorn 1.0.1-8 
+    Lightweight, multi-platform, multi-architecture CPU emulator framework    
+    based on QEMU    
+aur/aqemu 0.9.4-2 (117, 1.34)
+    QEMU GUI written in Qt5    
+aur/qemu-user-static-bin 5.1-3 (78, 0.81)
+    A generic and open source machine emulator, statically linked    
+aur/binfmt-qemu-static 20190112-4 (25, 0.51)
+    Register qemu-static interpreters for various binary formats    
+aur/qemu-arch-extra-git 11:5.1.0.r4.g1d806cef0e-2 (28, 0.26)
+    QEMU for foreign architectures. Git version.    
+aur/qemu-block-gluster-git 11:5.1.0.r4.g1d806cef0e-2 (28, 0.26)
+    QEMU GlusterFS block module. Git version.    
+aur/qemu-block-iscsi-git 11:5.1.0.r4.g1d806cef0e-2 (28, 0.26)
+    QEMU iSCSI block module. Git version.    
+aur/qemu-block-rbd-git 11:5.1.0.r4.g1d806cef0e-2 (28, 0.26)
+    QEMU RBD block module. Git version.    
+aur/qemu-git 11:5.1.0.r4.g1d806cef0e-2 (28, 0.26)
+    A generic and open source machine emulator and virtualizer. Git version.    
+aur/qemu-guest-agent-git 11:5.1.0.r4.g1d806cef0e-2 (28, 0.26)
+    QEMU Guest Agent. Git version.    
+aur/qemu-headless-arch-extra-git 11:5.1.0.r4.g1d806cef0e-2 (28, 0.26)
+    QEMU without GUI, for foreign architectures. Git version.    
+aur/qemu-headless-git 11:5.1.0.r4.g1d806cef0e-2 (28, 0.26)
+    QEMU without GUI. Git version.    
+aur/qt-virt-manager 0.70.91-4 (27, 0.00)
+    Qt5 Virtual Machine Manager provides a graphical tool for administering    
+    virtual machines for QEMU/KVM, Xen, and LXC and other Virtual Entities.    
+    Uses libvirt as the backend management API.    
+aur/qemu-user-static 5.1.0-1 (12, 0.97)
+    Statically linked binaries of Qemu with user emulation. Useful for    
+    containers/chroot environment with binfmt.    
+aur/spice-guest-tools-windows 0.141-1 (12, 0.53)
+    Windows XP-10/2003-2016 guest drivers and agent for SPICE-enabled QEMU    
+    VMs    
+aur/libvirt-git 6.9.0.r109.g3113f3d815-1 (11, 0.24)
+    API for controlling virtualization engines    
+    (openvz,kvm,qemu,virtualbox,xen,etc)    
+aur/qemu-arm-static 5.1.0r1-1 (12, 0.09)
+    Statically linked qemu-arm, qemu-armeb and qemu-aarch64 executables from    
+    Alpine    
+aur/grub2-theme-preview 1.5.1-1 (11, 0.03)
+    Preview a full GRUB 2.x theme (or just a background image) using    
+    KVM/QEMU    
+aur/qemu-android-x86 9.0.r2-2 (5, 0.20)
+    Android-x86 environment via QEMU and VirGL    
+aur/xemu-git 0.3.0.r2.gfcd3764cce-1 (2, 1.22)
+    Original Xbox emulator (fork of XQEMU)    
+aur/aqemu-git v0.9.2.r101.g34ca8ce-1 (4, 0.05)
+    QEMU GUI written in Qt (Qt5 rewrite)    
+aur/libvirt-autoballoon-git v0.2.r4.g6983dac-1 (2, 0.52)
+    Libvirt-qemu autoballooning    
+aur/binfmt-qemu-static-all-arch 20200413-1 (3, 0.12)
+    Register qemu-static interpreters for various binary formats - all    
+    archetectures, intelligently removing the current archetecture    
+aur/qemu-irix-git v2.11.0.r2171.g939acda8af-1 (3, 0.06)
+    QEMU with IRIX userland support    
+aur/qemu-launcher 1.7.4-5 (3, 0.04)
+    GNOME/Gtk front-end for the Qemu x86 PC emulator    
+aur/nemu 2.4.0-1 (3, 0.00)
+    ncurses interface for QEMU    
+aur/qtemu-git r247.d230e82-1 (3, 0.00)
+    Qt5 GUI front-end for QEMU, similar to VirtualBox.    
+aur/pcsx2-plugin-usbqemu-wheel 0.8.2_3-1 (2, 0.13)
+    A USB plugin modified to support steering wheels in pcsx2.    
+aur/edk2-avmf 20200801-1 (2, 0.03)
+    QEMU ARM/AARCH64 Virtual Machine Firmware (Tianocore UEFI firmware).    
+aur/qemu-60fps 4.2.0-2 [outofdate: 2020/05/04] (2, 0.03)
+    A generic and open source machine emulator and virtualizer    
+aur/qemu-arch-extra-60fps 4.2.0-2 [outofdate: 2020/05/04] (2, 0.03)
+    QEMU for foreign architectures    
+aur/qemu-block-gluster-60fps 4.2.0-2 [outofdate: 2020/05/04] (2, 0.03)
+    QEMU GlusterFS block module    
+aur/qemu-block-iscsi-60fps 4.2.0-2 [outofdate: 2020/05/04] (2, 0.03)
+    QEMU iSCSI block module    
+aur/qemu-block-rbd-60fps 4.2.0-2 [outofdate: 2020/05/04] (2, 0.03)
+    QEMU RBD block module    
+aur/qemu-guest-agent-60fps 4.2.0-2 [outofdate: 2020/05/04] (2, 0.03)
+    QEMU Guest Agent    
+aur/qemu-headless-60fps 4.2.0-2 [outofdate: 2020/05/04] (2, 0.03)
+    QEMU without GUI    
+aur/qemu-headless-arch-extra-60fps 4.2.0-2 [outofdate: 2020/05/04] (2, 0.03)
+    QEMU without GUI, for foreign architectures    
+aur/qtemu 1.0.5-11 [outofdate: 2020/03/13] (2, 0.00)
+    Graphical user interface for QEMU written in Qt4    
+aur/binfmt-qemu 20190725-1 (1, 0.33)
+    Register qemu interpreters for various binary formats    
+aur/binfmt-qemu-all-arch 20200413-1 (1, 0.01)
+    Register qemu interpreters for various binary formats - all    
+    archetectures, intelligently removing the current archetecture    
+aur/nemu-git 2.2.1.r48.ga99a806-1 (1, 0.01)
+    ncurses interface for QEMU    
+aur/aflplusplus-git 2.54c-1 (1, 0.00)
+    afl++ is afl with community patches, AFLfast power schedules, qemu 3.1    
+    upgrade + laf-intel support, MOpt mutators, InsTrim instrumentation,    
+    unicorn_mode and a lot more!    
+aur/gpm-vm 1.20.7.r27.g1fd1941-1 (1, 0.00)
+    A mouse server for the console and xterm (for QEMU/VirtualBox)    
+aur/afl-qemu 2.52b-1 [outofdate: 2020/04/26] (1, 0.00)
+    Lets you fuzz black-box binaries with afl.    
+aur/xqemu-git r63217.729e52662f-1 (1, 0.00)
+    An original Xbox emulator    
+aur/devtools-qemu 12.3c44e3c-1 (1, 0.00)
+    QEMU based cross-build tools for Arch Linux ARM package maintainers    
+aur/aflplusplus 2.68c-1 (0, 0.00)
+    afl++ is afl with community patches, AFLfast power schedules, qemu 3.1    
+    upgrade + laf-intel support, MOpt mutators, InsTrim instrumentation,    
+    unicorn_mode and a lot more!    
+aur/gnuarmeclipse-qemu-bin 2.8.0_3_20180523-1 [outofdate: 2019/09/24] (5, 0.00)
+    The GNU MCU Eclipse QEMU is a fork of the public open-source QEMU    
+    project, customised for more support of Cortex-M cores, and a better    
+    integration with the GNU ARM QEMU Debugging plug-in.    
+aur/gnuarmeclipse-qemu-git r50620.2c99a25f9e-1 (0, 0.00)
+    Fork, Cortex-M cores support, better integration with the GNU ARM QEMU    
+    Debugging plug-in    
+aur/ksmtuned-git 15.fef066f-1 (1, 0.00)
+    While the ksm service is only able to start and stop the KSM kernel    
+    thread, ksmtuned controls and tunes KSM according to the used memory of    
+    running qemu KVM instances.    
+aur/kvirtual 1.1.1-2 [outofdate: 2019/09/19] (17, 0.00)
+    KDE4 GUI-frontend for kvm/qemu emulator    
+aur/kvirtual-git 20170125.d14e0c5-1 (1, 0.00)
+    KDE4 GUI-frontend for kvm/qemu emulator    
+aur/libqcow 20200729-1 (3, 0.00)
+    Library and tools to support QEMU copy-on-write image format (QCOW,    
+    QCOW2), including a FUSE-based mount utility    
+aur/libvirt-apparmor 5.6.0-1 (0, 0.00)
+    API for controlling virtualization engines    
+    (openvz,kvm,qemu,virtualbox,xen,etc). Compiled with Audit and AppArmor    
+    support.    
+aur/libvirt-xen 5.3.0-1 (0, 0.00)
+    API for controlling virtualization engines    
+    (openvz,kvm,qemu,virtualbox,xen,etc)    
+aur/memflow-qemu-procfs-git 0.1.1-2 (0, 0.00)
+    Qemu Procfs connector plugin for the memflow physical memory    
+    introspection framework    
+aur/ovmf-git 1:r25361.514c55c185-1 (30, 0.00)
+    Tianocore UEFI firmware for qemu.    
+aur/panda-qemu-git r1715.f758bee-3 (0, 0.00)
+    An open-source Platform for Architecture-Neutral Dynamic Analysis    
+aur/python-unicorn-git 1.0.2.rc3.r54.g94c94cdf-1 (2, 0.00)
+    Lightweight, multi-platform, multi-architecture CPU emulator framework    
+    based on QEMU    
+aur/python2-libqcow 20160119-1 (0, 0.00)
+    ibrary and tools to access the QEMU Copy-On-Write (QCOW) image format    
+aur/python2-unicorn-git 1.0.2.rc3.r54.g94c94cdf-1 (2, 0.00)
+    Lightweight, multi-platform, multi-architecture CPU emulator framework    
+    based on QEMU    
+aur/qemu-arch-extra-templeos 5.1.0-1 (0, 0.00)
+    QEMU for foreign architectures    
+aur/qemu-block-gluster-templeos 5.1.0-1 (0, 0.00)
+    QEMU GlusterFS block module    
+aur/qemu-block-iscsi-templeos 5.1.0-1 (0, 0.00)
+    QEMU iSCSI block module    
+aur/qemu-block-rbd-templeos 5.1.0-1 (0, 0.00)
+    QEMU RBD block module    
+aur/qemu-guest-agent-templeos 5.1.0-1 (0, 0.00)
+    QEMU Guest Agent    
+aur/qemu-guest-agent-windows 2.10.0-1 (0, 0.00)
+    qemu-ga    
+aur/qemu-headless-arch-extra-templeos 5.1.0-1 (0, 0.00)
+    QEMU without GUI, for foreign architectures    
+aur/qemu-headless-templeos 5.1.0-1 (0, 0.00)
+    QEMU without GUI    
+aur/qemu-lite 2.7.1-1 [outofdate: 2018/01/03] (1, 0.00)
+    QEMU with pc-lite system    
+aur/qemu-pebble 4.5-1 (0, 0.00)
+    QEMU emulator for the pebble smartwatch    
+aur/qemu-pinning 5.0.0-7 (0, 0.00)
+    A generic and open source machine emulator and virtualizer. Patch from    
+    saveriomiroddi/qemu-pinning applied.    
+aur/qemu-pinning-arch-extra 5.0.0-7 (0, 0.00)
+    QEMU for foreign architectures    
+aur/qemu-pinning-block-gluster 5.0.0-7 (0, 0.00)
+    QEMU GlusterFS block module    
+aur/qemu-pinning-block-iscsi 5.0.0-7 (0, 0.00)
+    QEMU iSCSI block module    
+aur/qemu-pinning-block-rbd 5.0.0-7 (0, 0.00)
+    QEMU RBD block module    
+aur/qemu-pinning-guest-agent 5.0.0-7 (0, 0.00)
+    QEMU Guest Agent    
+aur/qemu-pinning-headless 5.0.0-7 (0, 0.00)
+    QEMU without GUI    
+aur/qemu-pinning-headless-arch-extra 5.0.0-7 (0, 0.00)
+    QEMU without GUI, for foreign architectures    
+aur/qemu-templeos 5.1.0-1 (0, 0.00)
+    QEMU with better pc speaker audio for TempleOS    
+aur/qemu-ugent 0.13.0-1 (0, 0.00)
+    QEMU 0.13.0 required for UGent 'Besturingssystemen' course    
+aur/qira 1.3-1 (8, 0.00)
+    QEMU Interactive Runtime Analyser    
+aur/qrun-git r57.3a62205-1 (1, 0.00)
+    A command line tool to run QEMU in the most common configurations    
+aur/ruby-unicorn-git 1.0.2.rc3.r54.g94c94cdf-1 (2, 0.00)
+    Lightweight, multi-platform, multi-architecture CPU emulator framework    
+    based on QEMU    
+aur/sheepdog 1.0_rc0-4 [outofdate: 2017/07/11] (1, 0.00)
+    This package provides a distributed storage system for QEMU. It provides    
+    highly available block level storage volumes to virtual machines. It    
+    supports advanced volume management features such as snapshot, cloning,    
+    and thin provisioning.    
+aur/uefi-run 0.3.2-1 (0, 0.00)
+    Directly run UEFI applications in qemu    
+aur/unicorn-git 1.0.2.rc3.r54.g94c94cdf-1 (2, 0.00)
+    Lightweight, multi-platform, multi-architecture CPU emulator framework    
+    based on QEMU    
+aur/utqemu-git r29.c49d084-1 (0, 0.00)
+    Ubuntu touch qemu is an easy to use ubuntu touch emulator/virtual    
+    machine    
+aur/vde2-dosemu2 2.3.2-2 (0, 0.00)
+    Virtual Distributed Ethernet for emulators like qemu, patched for    
+    dosemu2    
+aur/vde2-static 2.3.2-7 (3, 0.00)
+    Virtual Distributed Ethernet for emulators like qemu    
+aur/vde2-svn 2.3.2.r588-1 (0, 0.00)
+    Virtual Distributed Ethernet for emulators like qemu    
+aur/virt-backup-git 20120419.9-2 (0, 0.00)
+    Perl script to backup qemu machines    
+[med-arch@hp6830s-arch ~]$ pikaur -S aqemu
+Reading repository package databases...
+Reading local package database...
+Resolving AUR dependencies...
+
+:: New dependencies will be installed from repository:
+ brltty (for qemu)                                -> 6.1-2
+ cmake (for aqemu)                                -> 3.18.4-1
+ jsoncpp (for cmake, cmake)                       -> 1.9.4-1
+ libcacard (for qemu)                             -> 2.7.0-2
+ liblouis (for brltty)                            -> 3.15.0-1
+ libslirp (for qemu)                              -> 4.3.1-1
+ libspeechd (for brltty)                          -> 0.10.1-1
+ libuv (for cmake)                                -> 1.40.0-1
+ libvncserver (for aqemu)                         -> 0.9.13-1
+ numactl (for qemu)                               -> 2.0.14-1
+ qemu (for aqemu)                                 -> 5.1.0-3
+ rhash (for cmake)                                -> 1.4.0-1
+ seabios (for qemu)                               -> 1.14.0-1
+ spice (for qemu)                                 -> 0.14.3-2
+ usbredir (for qemu)                              -> 0.8.0-2
+ vde2 (for qemu)                                  -> 2.3.2-14
+ virglrenderer (for qemu)                         -> 0.8.2-1
+
+:: AUR package will be installed:
+ aqemu                                            -> 0.9.4-2
+
+:: Proceed with installation? [Y/n] 
+:: [v]iew package details   [m]anually select packages
+>> v
+
+:: New dependencies will be installed from repository:
+ extra/brltty (for qemu)                          -> 6.1-2
+    Braille display driver for Linux/Unix    
+ extra/cmake (for aqemu)                          -> 3.18.4-1
+    A cross-platform open-source make system    
+ extra/jsoncpp (for cmake, cmake)                 -> 1.9.4-1
+    C++ library for interacting with JSON    
+ extra/libcacard (for qemu)                       -> 2.7.0-2
+    (Common Access Card) library thar provides emulation of smart cards to a    
+    virtual card reader running in a guest virtual machine    
+ extra/liblouis (for brltty)                      -> 3.15.0-1
+    Open-source braille translator and back-translator    
+ community/libslirp (for qemu)                    -> 4.3.1-1
+    General purpose TCP-IP emulator    
+ extra/libspeechd (for brltty)                    -> 0.10.1-1
+    High-level device independent layer for speech synthesis interface    
+ extra/libuv (for cmake)                          -> 1.40.0-1
+    Multi-platform support library with a focus on asynchronous I/O    
+ extra/libvncserver (for aqemu)                   -> 0.9.13-1
+    Cross-platform C libraries that allow you to easily implement VNC server    
+    or client functionality    
+ extra/numactl (for qemu)                         -> 2.0.14-1
+    Simple NUMA policy support    
+ extra/qemu (for aqemu)                           -> 5.1.0-3
+    A generic and open source machine emulator and virtualizer    
+ extra/rhash (for cmake)                          -> 1.4.0-1
+    Utility for verifying hash sums of files    
+ extra/seabios (for qemu)                         -> 1.14.0-1
+    A 16-bit x86 bios    
+ extra/spice (for qemu)                           -> 0.14.3-2
+    SPICE server    
+ community/usbredir (for qemu)                    -> 0.8.0-2
+    USB traffic redirection protocol    
+ extra/vde2 (for qemu)                            -> 2.3.2-14
+    Virtual Distributed Ethernet for emulators like qemu    
+ extra/virglrenderer (for qemu)                   -> 0.8.2-1
+    A virtual 3D GPU library, that allows the guest operating system to use    
+    the host GPU to accelerate 3D rendering    
+
+:: AUR package will be installed:
+ aqemu                                            -> 0.9.4-2
+    QEMU GUI written in Qt5    
+
+:: Proceed with installation? [Y/n] 
+:: [v]iew package details   [m]anually select packages
+>> n
+[med-arch@hp6830s-arch ~]$ pikaur -S aqemu
+Reading repository package databases...
+Reading local package database...
+Resolving AUR dependencies...
+
+:: New dependencies will be installed from repository:
+ brltty (for qemu)                                -> 6.1-2
+ cmake (for aqemu)                                -> 3.18.4-1
+ jsoncpp (for cmake, cmake)                       -> 1.9.4-1
+ libcacard (for qemu)                             -> 2.7.0-2
+ liblouis (for brltty)                            -> 3.15.0-1
+ libslirp (for qemu)                              -> 4.3.1-1
+ libspeechd (for brltty)                          -> 0.10.1-1
+ libuv (for cmake)                                -> 1.40.0-1
+ libvncserver (for aqemu)                         -> 0.9.13-1
+ numactl (for qemu)                               -> 2.0.14-1
+ qemu (for aqemu)                                 -> 5.1.0-3
+ rhash (for cmake)                                -> 1.4.0-1
+ seabios (for qemu)                               -> 1.14.0-1
+ spice (for qemu)                                 -> 0.14.3-2
+ usbredir (for qemu)                              -> 0.8.0-2
+ vde2 (for qemu)                                  -> 2.3.2-14
+ virglrenderer (for qemu)                         -> 0.8.2-1
+
+:: AUR package will be installed:
+ aqemu                                            -> 0.9.4-2
+
+:: Proceed with installation? [Y/n] 
+:: [v]iew package details   [m]anually select packages
+>> n
+[med-arch@hp6830s-arch ~]$ pikaur -S aqemu
+Reading repository package databases...
+Reading local package database...
+Resolving AUR dependencies...
+
+:: New dependencies will be installed from repository:
+ extra/brltty (for qemu)                          -> 6.1-2          1.50 MiB
+ extra/cmake (for aqemu)                          -> 3.18.4-1       7.63 MiB
+ extra/jsoncpp (for cmake, cmake)                 -> 1.9.4-1       1.24 MiB
+ extra/libcacard (for qemu)                       -> 2.7.0-2        0.04 MiB
+ extra/liblouis (for brltty)                      -> 3.15.0-1       2.02 MiB
+ community/libslirp (for qemu)                    -> 4.3.1-1        0.06 MiB
+ extra/libspeechd (for brltty)                    -> 0.10.1-1       0.02 MiB
+ extra/libuv (for cmake)                          -> 1.40.0-1       0.22 MiB
+ extra/libvncserver (for aqemu)                   -> 0.9.13-1       0.22 MiB
+ extra/numactl (for qemu)                         -> 2.0.14-1       0.08 MiB
+ extra/qemu (for aqemu)                           -> 5.1.0-3        7.87 MiB
+ extra/rhash (for cmake)                          -> 1.4.0-1        0.16 MiB
+ extra/seabios (for qemu)                         -> 1.14.0-1       0.18 MiB
+ extra/spice (for qemu)                           -> 0.14.3-2       0.34 MiB
+ community/usbredir (for qemu)                    -> 0.8.0-2        0.04 MiB
+ extra/vde2 (for qemu)                            -> 2.3.2-14       0.21 MiB
+ extra/virglrenderer (for qemu)                   -> 0.8.2-1        0.18 MiB
+
+:: AUR package will be installed:
+ aqemu                                            -> 0.9.4-2
+
+:: Proceed with installation? [Y/n] 
+:: [v]iew package details   [m]anually select packages
+>> y
+looking for conflicting AUR packages...
+:: warning: Not showing diff for aqemu package (installing for the first time)
+Do you want to edit PKGBUILD for aqemu package? [Y/n] n
+
+Reading local package database...
+:: Installing repository dependencies for aqemu:
+resolving dependencies...
+looking for conflicting packages...
+
+Packages (17) brltty-6.1-2  jsoncpp-1.9.4-1  libcacard-2.7.0-2
+              liblouis-3.15.0-1  libslirp-4.3.1-1  libspeechd-0.10.1-1
+              libuv-1.40.0-1  numactl-2.0.14-1  rhash-1.4.0-1  seabios-1.14.0-1
+              spice-0.14.3-2  usbredir-0.8.0-2  vde2-2.3.2-14
+              virglrenderer-0.8.2-1  cmake-3.18.4-1  libvncserver-0.9.13-1
+              qemu-5.1.0-3
+
+Total Download Size:    22.00 MiB
+Total Installed Size:  104.95 MiB
+
+:: Proceed with installation? [Y/n] Y
+:: Retrieving packages...
+ jsoncpp-1.9.4-1-...  1265.2 KiB   250 KiB/s 00:05 [######################] 100%
+ libuv-1.40.0-1-x...   224.8 KiB   252 KiB/s 00:01 [######################] 100%
+ rhash-1.4.0-1-x86_64  162.4 KiB   317 KiB/s 00:01 [######################] 100%
+ cmake-3.18.4-1-x...     7.6 MiB   320 KiB/s 00:24 [######################] 100%
+ libvncserver-0.9...   228.9 KiB   366 KiB/s 00:01 [######################] 100%
+ virglrenderer-0....   182.5 KiB   403 KiB/s 00:00 [######################] 100%
+ liblouis-3.15.0-...     2.0 MiB   273 KiB/s 00:08 [######################] 100%
+ libspeechd-0.10....    19.4 KiB   346 KiB/s 00:00 [######################] 100%
+ brltty-6.1-2-x86_64  1532.9 KiB   351 KiB/s 00:04 [######################] 100%
+ seabios-1.14.0-1-any  185.7 KiB   385 KiB/s 00:00 [######################] 100%
+ numactl-2.0.14-1...    81.2 KiB   333 KiB/s 00:00 [######################] 100%
+ vde2-2.3.2-14-x86_64  216.0 KiB   379 KiB/s 00:01 [######################] 100%
+ spice-0.14.3-2-x...   346.7 KiB   378 KiB/s 00:01 [######################] 100%
+ libcacard-2.7.0-...    40.3 KiB   192 KiB/s 00:00 [######################] 100%
+ qemu-5.1.0-3-x86_64     7.9 MiB   341 KiB/s 00:24 [######################] 100%
+ usbredir-0.8.0-2...    41.5 KiB   427 KiB/s 00:00 [######################] 100%
+ libslirp-4.3.1-1...    57.5 KiB   443 KiB/s 00:00 [######################] 100%
+(17/17) checking keys in keyring                   [######################] 100%
+(17/17) checking package integrity                 [######################] 100%
+(17/17) loading package files                      [######################] 100%
+(17/17) checking for file conflicts                [######################] 100%
+(17/17) checking available disk space              [######################] 100%
+:: Processing package changes...
+( 1/17) installing jsoncpp                         [######################] 100%
+Optional dependencies for jsoncpp
+    jsoncpp-doc: documentation
+( 2/17) installing libuv                           [######################] 100%
+( 3/17) installing rhash                           [######################] 100%
+( 4/17) installing cmake                           [######################] 100%
+Optional dependencies for cmake
+    qt5-base: cmake-gui [installed]
+( 5/17) installing libvncserver                    [######################] 100%
+( 6/17) installing virglrenderer                   [######################] 100%
+( 7/17) installing liblouis                        [######################] 100%
+( 8/17) installing libspeechd                      [######################] 100%
+( 9/17) installing brltty                          [######################] 100%
+Got 128 bytes from getrandom() function
+Please add your user to the brlapi group.
+Optional dependencies for brltty
+    at-spi2-core: X11/GNOME Apps accessibility [installed]
+    atk: ATK bridge for X11/GNOME accessibility [installed]
+    espeak-ng: espeak-ng driver
+    java-runtime: Java support
+    libxaw: X11 support
+    libxt: X11 support [installed]
+    libx11: for xbrlapi [installed]
+    libxfixes: for xbrlapi [installed]
+    libxtst: for xbrlapi [installed]
+    ocaml: OCaml support
+    python: Python support [installed]
+    speech-dispatcher: speech-dispatcher driver
+(10/17) installing seabios                         [######################] 100%
+(11/17) installing numactl                         [######################] 100%
+(12/17) installing vde2                            [######################] 100%
+vde config files should be placed in /etc/vde, sample files are provided.
+iptables and dhcpd sample files have been installed to '/usr/share/vde2'.
+Merge those examples, if needed to the according config files.
+(13/17) installing spice                           [######################] 100%
+(14/17) installing libcacard                       [######################] 100%
+(15/17) installing usbredir                        [######################] 100%
+(16/17) installing libslirp                        [######################] 100%
+(17/17) installing qemu                            [######################] 100%
+Optional dependencies for qemu
+    qemu-arch-extra: extra architectures support
+    samba: SMB/CIFS server support [installed]
+    qemu-block-iscsi: iSCSI block support
+    qemu-block-rbd: RBD block support
+    qemu-block-gluster: glusterfs block support
+:: Running post-transaction hooks...
+(1/9) Creating system user accounts...
+Creating group brlapi with gid 966.
+(2/9) Reloading system manager configuration...
+(3/9) Creating temporary files...
+(4/9) Reloading device manager configuration...
+(5/9) Arming ConditionNeedsUpdate...
+(6/9) Updating icon theme caches...
+(7/9) Updating the info directory file...
+(8/9) Updating the desktop file MIME type cache...
+(9/9) Updating the MIME type database...
+
+:: Starting the build:
+==> Making package: aqemu 0.9.4-2 (ven. 27 nov. 2020 09:50:51)
+==> Checking runtime dependencies...
+==> Checking buildtime dependencies...
+==> Retrieving sources...
+  -> Downloading aqemu-0.9.4.tar.gz...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   117  100   117    0     0    251      0 --:--:-- --:--:-- --:--:--   251
+100 1496k    0 1496k    0     0   323k      0 --:--:--  0:00:04 --:--:--  371k
+==> Validating source files with md5sums...
+    aqemu-0.9.4.tar.gz ... Passed
+==> Extracting sources...
+  -> Extracting aqemu-0.9.4.tar.gz with bsdtar
+==> Starting prepare()...
+==> Starting build()...
+CMake Warning:
+  No source or binary directory provided.  Both will be assumed to be the
+  same as the current working directory, but note that this warning will
+  become a fatal error in future CMake releases.
+
+
+-- The CXX compiler identification is GNU 10.2.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test LIBVNCSERVER_FOUND
+-- Performing Test LIBVNCSERVER_FOUND - Success
+-- Found LibVNCServer: /usr/lib/libvncserver.so
+-- MAN page will be installed is not packed.
+-- MAN_PAGE_COMPRESSOR flag not set. Available values: gzip, bzip2, lzma
+-- Will be installed not compressed MAN pages
+-- Configuring done
+-- Generating done
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    QT_QMAKE_EXECUTABLE
+
+
+-- Build files have been written to: /home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4
+Scanning dependencies of target docs
+Scanning dependencies of target aqemu_autogen
+[  1%] Automatic MOC and UIC for target aqemu
+[  3%] Generating AUTHORS.bz2
+[  4%] Generating CHANGELOG.bz2
+[  6%] Generating README.bz2
+[  7%] Generating TODO.bz2
+[  7%] Built target docs
+AutoUic: /home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Advanced_Settings_Window.ui: Warning: The name 'widget' (QWidget) is already in use, defaulting to 'widget1'.
+AutoUic: /home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Create_Template_Window.ui: Warning: The name 'groupBox' (QGroupBox) is already in use, defaulting to 'groupBox1'.
+AutoUic: /home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Delete_VM_Files_Window.ui: Warning: Buddy assignment: '' is not a valid widget.
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Delete_VM_Files_Window.ui: Warning: Buddy assignment: '' is not a valid widget.
+AutoUic: /home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Main_Window.ui: Warning: The name 'widget' (QWidget) is already in use, defaulting to 'widget1'.
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Main_Window.ui: Warning: The name 'widget' (QWidget) is already in use, defaulting to 'widget2'.
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Main_Window.ui: Warning: Z-order assignment: 'verticalSpacer_11' is not a valid widget.
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Main_Window.ui: Warning: Z-order assignment: 'verticalSpacer_5' is not a valid widget.
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Main_Window.ui: Warning: Z-order assignment: 'verticalSpacer_9' is not a valid widget.
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Main_Window.ui: Warning: Buddy assignment: '' is not a valid widget.
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Main_Window.ui: Warning: Buddy assignment: '' is not a valid widget.
+[  7%] Built target aqemu_autogen
+[ 11%] Automatic RCC for resources/icons.qrc
+[ 11%] Automatic RCC for resources/shared_images.qrc
+Scanning dependencies of target aqemu
+[ 12%] Building CXX object CMakeFiles/aqemu.dir/src/No_Boot_Device.cpp.o
+[ 14%] Building CXX object CMakeFiles/aqemu.dir/aqemu_autogen/mocs_compilation.cpp.o
+[ 15%] Building CXX object CMakeFiles/aqemu.dir/src/Highlighted_Label.cpp.o
+[ 17%] Building CXX object CMakeFiles/aqemu.dir/src/Service.cpp.o
+[ 19%] Building CXX object CMakeFiles/aqemu.dir/src/Run_Guard.cpp.o
+[ 20%] Building CXX object CMakeFiles/aqemu.dir/src/QEMU_Docopt.cpp.o
+[ 22%] Building CXX object CMakeFiles/aqemu.dir/src/IP_Edit.cpp.o
+[ 23%] Building CXX object CMakeFiles/aqemu.dir/src/Dialog_Button_Box.cpp.o
+[ 25%] Building CXX object CMakeFiles/aqemu.dir/src/docopt/docopt.cpp.o
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/IP_Edit.cpp: In constructor ‘IP_Edit::IP_Edit(QWidget*)’:
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/IP_Edit.cpp:136:34: warning: ‘int QFontMetrics::width(const QString&, int) const’ is deprecated: Use QFontMetrics::horizontalAdvance [-Wdeprecated-declarations]
+  136 |   int width = metrics.width("888") + 24;
+      |                                  ^
+In file included from /usr/include/qt/QtGui/QFontMetrics:1,
+                 from /home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/IP_Edit.cpp:25:
+/usr/include/qt/QtGui/qfontmetrics.h:106:9: note: declared here
+  106 |     int width(const QString &, int len = -1) const;
+      |         ^~~~~
+[ 26%] Building CXX object CMakeFiles/aqemu.dir/src/Settings_Widget.cpp.o
+[ 28%] Building CXX object CMakeFiles/aqemu.dir/src/QDom.cpp.o
+[ 30%] Building CXX object CMakeFiles/aqemu.dir/src/tinyxml2.cpp.o
+[ 31%] Building CXX object CMakeFiles/aqemu.dir/src/About_Window.cpp.o
+[ 33%] Building CXX object CMakeFiles/aqemu.dir/src/Add_New_Device_Window.cpp.o
+[ 34%] Building CXX object CMakeFiles/aqemu.dir/src/Add_Port_Window.cpp.o
+[ 36%] Building CXX object CMakeFiles/aqemu.dir/src/Add_USB_Port_Window.cpp.o
+[ 38%] Building CXX object CMakeFiles/aqemu.dir/src/Advanced_Settings_Window.cpp.o
+[ 39%] Building CXX object CMakeFiles/aqemu.dir/src/Boot_Device_Window.cpp.o
+[ 41%] Building CXX object CMakeFiles/aqemu.dir/src/Convert_HDD_Image_Window.cpp.o
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Convert_HDD_Image_Window.cpp: In member function ‘bool Convert_HDD_Image_Window::Get_QEMU_IMG_Info()’:
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Convert_HDD_Image_Window.cpp:275:76: warning: ‘QStringList QString::split(QChar, QString::SplitBehavior, Qt::CaseSensitivity) const’ is deprecated: Use Qt::SplitBehavior variant instead [-Wdeprecated-declarations]
+  275 | tringList formatsList = tmpList[1].split(' ', QString::SkipEmptyParts);
+      |                                                                      ^
+
+In file included from /usr/include/qt/QtCore/qdir.h:43,
+                 from /usr/include/qt/QtWidgets/qfiledialog.h:44,
+                 from /usr/include/qt/QtWidgets/QFileDialog:1,
+                 from /home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Convert_HDD_Image_Window.cpp:23:
+/usr/include/qt/QtCore/qstring.h:610:17: note: declared here
+  610 |     QStringList split(QChar sep, SplitBehavior behavior,
+      |                 ^~~~~
+[ 42%] Building CXX object CMakeFiles/aqemu.dir/src/Copy_VM_Window.cpp.o
+[ 44%] Building CXX object CMakeFiles/aqemu.dir/src/Create_HDD_Image_Window.cpp.o
+[ 46%] Building CXX object CMakeFiles/aqemu.dir/src/Create_Template_Window.cpp.o
+[ 47%] Building CXX object CMakeFiles/aqemu.dir/src/Delete_VM_Files_Window.cpp.o
+[ 49%] Building CXX object CMakeFiles/aqemu.dir/src/Device_Manager_Widget.cpp.o
+[ 50%] Building CXX object CMakeFiles/aqemu.dir/src/Edit_Emulator_Version_Window.cpp.o
+[ 52%] Building CXX object CMakeFiles/aqemu.dir/src/Emulator_Control_Window.cpp.o
+[ 53%] Building CXX object CMakeFiles/aqemu.dir/src/Error_Log_Window.cpp.o
+[ 55%] Building CXX object CMakeFiles/aqemu.dir/src/First_Start_Wizard.cpp.o
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Emulator_Control_Window.cpp: In member function ‘void Emulator_Control_Window::Apply_Full_Size(int, int)’:
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Emulator_Control_Window.cpp:75:54: warning: ‘int QDesktopWidget::primaryScreen() const’ is deprecated: Use QGuiApplication::primaryScreen() [-Wdeprecated-declarations]
+   75 |     if (desktop.screenGeometry(desktop.primaryScreen()).width() > w)
+      |                                                      ^
+In file included from /usr/include/qt/QtWidgets/QDesktopWidget:1,
+                 from /home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Emulator_Control_Window.cpp:27:
+/usr/include/qt/QtWidgets/qdesktopwidget.h:73:65: note: declared here
+   73 | QT_DEPRECATED_X("Use QGuiApplication::primaryScreen()") int primaryScreen() const;
+      |                                                             ^~~~~~~~~~~~~
+
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Emulator_Control_Window.cpp:75:55: warning: ‘const QRect QDesktopWidget::screenGeometry(int) const’ is deprecated: Use QGuiApplication::screens() [-Wdeprecated-declarations]
+   75 |     if (desktop.screenGeometry(desktop.primaryScreen()).width() > w)
+      |                                                       ^
+In file included from /usr/include/qt/QtWidgets/QDesktopWidget:1,
+                 from /home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Emulator_Control_Window.cpp:27:
+/usr/include/qt/QtWidgets/qdesktopwidget.h:79:67: note: declared here
+   79 | _DEPRECATED_X("Use QGuiApplication::screens()") const QRect screenGeometry(int screen = -1) const;
+      |                                                             ^~~~~~~~~~~~~~
+
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Emulator_Control_Window.cpp: In member function ‘void Emulator_Control_Window::Create_Connect_Menu()’:
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Emulator_Control_Window.cpp:120:65: warning: ‘QStringList QString::split(QChar, QString::SplitBehavior, Qt::CaseSensitivity) const’ is deprecated: Use Qt::SplitBehavior variant instead [-Wdeprecated-declarations]
+  120 |   QStringList devices = list.split('\n', QString::SkipEmptyParts);
+      |                                                                 ^
+In file included from /usr/include/qt/QtCore/qobject.h:47,
+                 from /usr/include/qt/QtGui/qclipboard.h:44,
+                 from /usr/include/qt/QtGui/QClipboard:1,
+                 from /home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Emulator_Control_Window.cpp:25:
+/usr/include/qt/QtCore/qstring.h:610:17: note: declared here
+  610 |     QStringList split(QChar sep, SplitBehavior behavior,
+      |                 ^~~~~
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Emulator_Control_Window.cpp:125:72: warning: ‘QStringList QString::split(QChar, QString::SplitBehavior, Qt::CaseSensitivity) const’ is deprecated: Use Qt::SplitBehavior variant instead [-Wdeprecated-declarations]
+  125 |   QStringList curDev = devices[ix].split(' ', QString::SkipEmptyParts);
+      |                                                                      ^
+
+In file included from /usr/include/qt/QtCore/qobject.h:47,
+                 from /usr/include/qt/QtGui/qclipboard.h:44,
+                 from /usr/include/qt/QtGui/QClipboard:1,
+                 from /home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Emulator_Control_Window.cpp:25:
+/usr/include/qt/QtCore/qstring.h:610:17: note: declared here
+  610 |     QStringList split(QChar sep, SplitBehavior behavior,
+      |                 ^~~~~
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Emulator_Control_Window.cpp: In member function ‘void Emulator_Control_Window::Connect_Device()’:
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Emulator_Control_Window.cpp:405:67: warning: ‘QStringList QString::split(QChar, QString::SplitBehavior, Qt::CaseSensitivity) const’ is deprecated: Use Qt::SplitBehavior variant instead [-Wdeprecated-declarations]
+  405 |         act->data().toString().split('\n', QString::SkipEmptyParts);
+      |                                                                   ^
+In file included from /usr/include/qt/QtCore/qobject.h:47,
+                 from /usr/include/qt/QtGui/qclipboard.h:44,
+                 from /usr/include/qt/QtGui/QClipboard:1,
+                 from /home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Emulator_Control_Window.cpp:25:
+/usr/include/qt/QtCore/qstring.h:610:17: note: declared here
+  610 |     QStringList split(QChar sep, SplitBehavior behavior,
+      |                 ^~~~~
+[ 57%] Building CXX object CMakeFiles/aqemu.dir/src/Folder_Sharing_Widget.cpp.o
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/First_Start_Wizard.cpp: In member function ‘void First_Start_Wizard::on_Button_Find_Emulators_clicked()’:
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/First_Start_Wizard.cpp:154:55: warning: ‘QStringList QString::split(const QString&, QString::SplitBehavior, Qt::CaseSensitivity) const’ is deprecated: Use Qt::SplitBehavior variant instead [-Wdeprecated-declarations]
+  154 |         paths = tmp.split(":", QString::SkipEmptyParts);
+      |                                                       ^
+In file included from /usr/include/qt/QtCore/qdir.h:43,
+                 from /usr/include/qt/QtCore/QDir:1,
+                 from /home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/First_Start_Wizard.cpp:24:
+/usr/include/qt/QtCore/qstring.h:604:17: note: declared here
+  604 |     QStringList split(const QString &sep, SplitBehavior behavior,
+      |                 ^~~~~
+[ 58%] Building CXX object CMakeFiles/aqemu.dir/src/HDD_Image_Info.cpp.o
+[ 60%] Building CXX object CMakeFiles/aqemu.dir/src/main.cpp.o
+[ 61%] Building CXX object CMakeFiles/aqemu.dir/src/Main_Window.cpp.o
+[ 63%] Building CXX object CMakeFiles/aqemu.dir/src/Monitor_Window.cpp.o
+[ 65%] Building CXX object CMakeFiles/aqemu.dir/src/Network_Widget.cpp.o
+[ 66%] Building CXX object CMakeFiles/aqemu.dir/src/Old_Network_Widget.cpp.o
+[ 68%] Building CXX object CMakeFiles/aqemu.dir/src/Ports_Tab_Widget.cpp.o
+[ 69%] Building CXX object CMakeFiles/aqemu.dir/src/Properties_Window.cpp.o
+[ 71%] Building CXX object CMakeFiles/aqemu.dir/src/Emulator_Options_Window.cpp.o
+[ 73%] Building CXX object CMakeFiles/aqemu.dir/src/Select_Icon_Window.cpp.o
+[ 74%] Building CXX object CMakeFiles/aqemu.dir/src/SMP_Settings_Window.cpp.o
+[ 76%] Building CXX object CMakeFiles/aqemu.dir/src/Snapshot_Properties_Window.cpp.o
+[ 77%] Building CXX object CMakeFiles/aqemu.dir/src/Snapshots_Window.cpp.o
+[ 79%] Building CXX object CMakeFiles/aqemu.dir/src/SPICE_Settings_Widget.cpp.o
+[ 80%] Building CXX object CMakeFiles/aqemu.dir/src/System_Info.cpp.o
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Snapshots_Window.cpp: In member function ‘bool Snapshots_Window::Update_Info()’:
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Snapshots_Window.cpp:323:58: warning: ‘QStringList QString::split(const QString&, QString::SplitBehavior, Qt::CaseSensitivity) const’ is deprecated: Use Qt::SplitBehavior variant instead [-Wdeprecated-declarations]
+  323 |         info_lines[1].split("\n", QString::SkipEmptyParts);
+      |                                                          ^
+In file included from /usr/include/qt/QtCore/qdatetime.h:44,
+                 from /usr/include/qt/QtCore/QDateTime:1,
+                 from /home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/VM.h:28,
+                 from /home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Snapshots_Window.h:26,
+                 from /home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Snapshots_Window.cpp:23:
+/usr/include/qt/QtCore/qstring.h:604:17: note: declared here
+  604 |     QStringList split(const QString &sep, SplitBehavior behavior,
+      |                 ^~~~~
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/System_Info.cpp: In static member function ‘static Available_Devices System_Info::Get_Emulator_Info(const QString&, bool*, VM::Emulator_Version, const QString&)’:
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/System_Info.cpp:1994:67: warning: ‘QStringList QString::split(const QString&, QString::SplitBehavior, Qt::CaseSensitivity) const’ is deprecated: Use Qt::SplitBehavior variant instead [-Wdeprecated-declarations]
+ 1994 |           rx.capturedTexts()[1].split("|", QString::SkipEmptyParts);
+      |                                                                   ^
+In file included from /usr/include/qt/QtCore/qdir.h:43,
+                 from /usr/include/qt/QtCore/QDir:1,
+                 from /home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/System_Info.cpp:24:
+/usr/include/qt/QtCore/qstring.h:604:17: note: declared here
+  604 |     QStringList split(const QString &sep, SplitBehavior behavior,
+      |                 ^~~~~
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/System_Info.cpp:2111:54: warning: ‘QStringList QString::split(QChar, QString::SplitBehavior, Qt::CaseSensitivity) const’ is deprecated: Use Qt::SplitBehavior variant instead [-Wdeprecated-declarations]
+ 2111 |         all_models.split(',', QString::SkipEmptyParts);
+      |                                                      ^
+In file included from /usr/include/qt/QtCore/qdir.h:43,
+                 from /usr/include/qt/QtCore/QDir:1,
+                 from /home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/System_Info.cpp:24:
+/usr/include/qt/QtCore/qstring.h:610:17: note: declared here
+  610 |     QStringList split(QChar sep, SplitBehavior behavior,
+      |                 ^~~~~
+[ 82%] Building CXX object CMakeFiles/aqemu.dir/src/Utils.cpp.o
+[ 84%] Building CXX object CMakeFiles/aqemu.dir/src/VM.cpp.o
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Utils.cpp: In function ‘QList<QString> Get_Templates_List()’:
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Utils.cpp:386:22: warning: ‘void qSort(Container&) [with Container = QList<QString>]’ is deprecated: Use std::sort [-Wdeprecated-declarations]
+  386 |   qSort(all_templates);
+      |                      ^
+In file included from /usr/include/qt/QtCore/qlist.h:43,
+                 from /usr/include/qt/QtCore/qobject.h:49,
+                 from /usr/include/qt/QtCore/qcoreapplication.h:46,
+                 from /usr/include/qt/QtWidgets/qapplication.h:44,
+                 from /usr/include/qt/QtWidgets/QApplication:1,
+                 from /home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Utils.cpp:24:
+/usr/include/qt/QtCore/qalgorithms.h:188:46: note: declared here
+  188 | QT_DEPRECATED_X("Use std::sort") inline void qSort(Container &c)
+      |                                              ^~~~~
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Utils.cpp: In function ‘int Get_Random(int, int)’:
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Utils.cpp:806:37: warning: ‘void qsrand(uint)’ is deprecated: use QRandomGenerator instead [-Wdeprecated-declarations]
+  806 |   qsrand(QTime::currentTime().msec());
+      |                                     ^
+In file included from /usr/include/qt/QtGui/qtguiglobal.h:43,
+                 from /usr/include/qt/QtWidgets/qtwidgetsglobal.h:43,
+                 from /usr/include/qt/QtWidgets/qapplication.h:43,
+                 from /usr/include/qt/QtWidgets/QApplication:1,
+                 from /home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Utils.cpp:24:
+/usr/include/qt/QtCore/qglobal.h:1278:81: note: declared here
+ 1278 | RECATED_VERSION_X_5_15("use QRandomGenerator instead") void qsrand(uint seed);
+      |                                                             ^~~~~~
+
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Utils.cpp:808:20: warning: ‘int qrand()’ is deprecated: use QRandomGenerator instead [-Wdeprecated-declarations]
+  808 |   return int(qrand() / (RAND_MAX + 1.0) * (max + 1 - min) + min);
+      |                    ^
+In file included from /usr/include/qt/QtGui/qtguiglobal.h:43,
+                 from /usr/include/qt/QtWidgets/qtwidgetsglobal.h:43,
+                 from /usr/include/qt/QtWidgets/qapplication.h:43,
+                 from /usr/include/qt/QtWidgets/QApplication:1,
+                 from /home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Utils.cpp:24:
+/usr/include/qt/QtCore/qglobal.h:1279:80: note: declared here
+ 1279 | _DEPRECATED_VERSION_X_5_15("use QRandomGenerator instead") int qrand();
+      |                                                                ^~~~~
+
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/VM.cpp: In member function ‘bool Virtual_Machine::Load_VM(const QString&)’:
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/VM.cpp:4668:47: warning: ‘QStringList QString::split(QChar, QString::SplitBehavior, Qt::CaseSensitivity) const’ is deprecated: Use Qt::SplitBehavior variant instead [-Wdeprecated-declarations]
+ 4668 |                   ':', QString::SkipEmptyParts);
+      |                                               ^
+In file included from /usr/include/qt/QtCore/qdir.h:43,
+                 from /usr/include/qt/QtCore/QDir:1,
+                 from /home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/VM.cpp:25:
+/usr/include/qt/QtCore/qstring.h:610:17: note: declared here
+  610 |     QStringList split(QChar sep, SplitBehavior behavior,
+      |                 ^~~~~
+[ 85%] Building CXX object CMakeFiles/aqemu.dir/src/VM_Devices.cpp.o
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/VM.cpp: In member function ‘QStringList Virtual_Machine::Build_QEMU_Args()’:
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/VM.cpp:7123:69: warning: ‘QStringList QString::split(const QString&, QString::SplitBehavior, Qt::CaseSensitivity) const’ is deprecated: Use Qt::SplitBehavior variant instead [-Wdeprecated-declarations]
+ 7123 |     QStringList ad_args = tmp_str.split(" ", QString::SkipEmptyParts);
+      |                                                                     ^
+In file included from /usr/include/qt/QtCore/qdir.h:43,
+                 from /usr/include/qt/QtCore/QDir:1,
+                 from /home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/VM.cpp:25:
+/usr/include/qt/QtCore/qstring.h:604:17: note: declared here
+  604 |     QStringList split(const QString &sep, SplitBehavior behavior,
+      |                 ^~~~~
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/VM.cpp: In member function ‘bool Virtual_Machine::Start_impl()’:
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/VM.cpp:7343:24: warning: ‘void QProcess::start(const QString&, QIODevice::OpenMode)’ is deprecated: Use QProcess::start(const QString &program, const QStringList &arguments,OpenMode mode = ReadWrite) instead [-Wdeprecated-declarations]
+ 7343 |     lsmod.start("lsmod");
+      |                        ^
+In file included from /usr/include/qt/QtCore/QProcess:1,
+                 from /home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/VM.h:30,
+                 from /home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Emulator_Control_Window.h:31,
+                 from /home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/VM.cpp:55:
+/usr/include/qt/QtCore/qprocess.h:168:10: note: declared here
+  168 |     void start(const QString &command, OpenMode mode = ReadWrite);
+      |          ^~~~~
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/VM.cpp: In member function ‘void Virtual_Machine::Show_VM_Load_Window()’:
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/VM.cpp:7694:67: warning: ‘int QDesktopWidget::primaryScreen() const’ is deprecated: Use QGuiApplication::primaryScreen() [-Wdeprecated-declarations]
+ 7694 |   QRect re = des_widget->screenGeometry(des_widget->primaryScreen());
+      |                                                                   ^
+In file included from /usr/include/qt/QtWidgets/QDesktopWidget:1,
+                 from /home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/VM.cpp:43:
+/usr/include/qt/QtWidgets/qdesktopwidget.h:73:65: note: declared here
+   73 | QT_DEPRECATED_X("Use QGuiApplication::primaryScreen()") int primaryScreen() const;
+      |                                                             ^~~~~~~~~~~~~
+
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/VM.cpp:7694:68: warning: ‘const QRect QDesktopWidget::screenGeometry(int) const’ is deprecated: Use QGuiApplication::screens() [-Wdeprecated-declarations]
+ 7694 |   QRect re = des_widget->screenGeometry(des_widget->primaryScreen());
+      |                                                                    ^
+In file included from /usr/include/qt/QtWidgets/QDesktopWidget:1,
+                 from /home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/VM.cpp:43:
+/usr/include/qt/QtWidgets/qdesktopwidget.h:79:67: note: declared here
+   79 | _DEPRECATED_X("Use QGuiApplication::screens()") const QRect screenGeometry(int screen = -1) const;
+      |                                                             ^~~~~~~~~~~~~~
+
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/VM.cpp: In member function ‘void Virtual_Machine::Show_VM_Save_Window()’:
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/VM.cpp:7726:67: warning: ‘int QDesktopWidget::primaryScreen() const’ is deprecated: Use QGuiApplication::primaryScreen() [-Wdeprecated-declarations]
+ 7726 |   QRect re = des_widget->screenGeometry(des_widget->primaryScreen());
+      |                                                                   ^
+In file included from /usr/include/qt/QtWidgets/QDesktopWidget:1,
+                 from /home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/VM.cpp:43:
+/usr/include/qt/QtWidgets/qdesktopwidget.h:73:65: note: declared here
+   73 | QT_DEPRECATED_X("Use QGuiApplication::primaryScreen()") int primaryScreen() const;
+      |                                                             ^~~~~~~~~~~~~
+
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/VM.cpp:7726:68: warning: ‘const QRect QDesktopWidget::screenGeometry(int) const’ is deprecated: Use QGuiApplication::screens() [-Wdeprecated-declarations]
+ 7726 |   QRect re = des_widget->screenGeometry(des_widget->primaryScreen());
+      |                                                                    ^
+In file included from /usr/include/qt/QtWidgets/QDesktopWidget:1,
+                 from /home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/VM.cpp:43:
+/usr/include/qt/QtWidgets/qdesktopwidget.h:79:67: note: declared here
+   79 | _DEPRECATED_X("Use QGuiApplication::screens()") const QRect screenGeometry(int screen = -1) const;
+      |                                                             ^~~~~~~~~~~~~~
+
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/VM.cpp: In member function ‘QString Virtual_Machine::Get_Current_Emulator_Binary_Path(const QString&) const’:
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/VM.cpp:7907:60: warning: ‘QStringList QString::split(const QString&, QString::SplitBehavior, Qt::CaseSensitivity) const’ is deprecated: Use Qt::SplitBehavior variant instead [-Wdeprecated-declarations]
+ 7907 |   QStringList nl = names.split(" ", QString::SkipEmptyParts);
+      |                                                            ^
+In file included from /usr/include/qt/QtCore/qdir.h:43,
+                 from /usr/include/qt/QtCore/QDir:1,
+                 from /home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/VM.cpp:25:
+/usr/include/qt/QtCore/qstring.h:604:17: note: declared here
+  604 |     QStringList split(const QString &sep, SplitBehavior behavior,
+      |                 ^~~~~
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/VM.cpp: In member function ‘void Virtual_Machine::QEMU_Started()’:
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/VM.cpp:8899:72: warning: ‘void QProcess::start(const QString&, QIODevice::OpenMode)’ is deprecated: Use QProcess::start(const QString &program, const QStringList &arguments,OpenMode mode = ReadWrite) instead [-Wdeprecated-declarations]
+ 8899 |   before_proc->start(Settings.value("Run_Before_QEMU", "").toString());
+      |                                                                      ^
+
+In file included from /usr/include/qt/QtCore/QProcess:1,
+                 from /home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/VM.h:30,
+                 from /home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Emulator_Control_Window.h:31,
+                 from /home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/VM.cpp:55:
+/usr/include/qt/QtCore/qprocess.h:168:10: note: declared here
+  168 |     void start(const QString &command, OpenMode mode = ReadWrite);
+      |          ^~~~~
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/VM.cpp: In member function ‘void Virtual_Machine::QEMU_Finished(int, QProcess::ExitStatus)’:
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/VM.cpp:8946:70: warning: ‘void QProcess::start(const QString&, QIODevice::OpenMode)’ is deprecated: Use QProcess::start(const QString &program, const QStringList &arguments,OpenMode mode = ReadWrite) instead [-Wdeprecated-declarations]
+ 8946 |     after_proc->start(Settings.value("Run_After_QEMU", "").toString());
+      |                                                                      ^
+In file included from /usr/include/qt/QtCore/QProcess:1,
+                 from /home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/VM.h:30,
+                 from /home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Emulator_Control_Window.h:31,
+                 from /home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/VM.cpp:55:
+/usr/include/qt/QtCore/qprocess.h:168:10: note: declared here
+  168 |     void start(const QString &command, OpenMode mode = ReadWrite);
+      |          ^~~~~
+[ 87%] Building CXX object CMakeFiles/aqemu.dir/src/VM_Wizard_Window.cpp.o
+[ 88%] Building CXX object CMakeFiles/aqemu.dir/src/VNC_Password_Window.cpp.o
+[ 90%] Building CXX object CMakeFiles/aqemu.dir/src/Embedded_Display/Machine_View.cpp.o
+[ 92%] Building CXX object CMakeFiles/aqemu.dir/src/Embedded_Display/remoteview.cpp.o
+[ 93%] Building CXX object CMakeFiles/aqemu.dir/src/Embedded_Display/vncclientthread.cpp.o
+[ 95%] Building CXX object CMakeFiles/aqemu.dir/src/Embedded_Display/vncview.cpp.o
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Embedded_Display/vncclientthread.cpp: In static member function ‘static void VncClientThread::outputHandler(const char*, ...)’:
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Embedded_Display/vncclientthread.cpp:131:32: warning: ‘QString& QString::vsprintf(const char*, __va_list_tag*)’ is deprecated: Use vasprintf(), arg() or QTextStream instead [-Wdeprecated-declarations]
+  131 |   message.vsprintf(format, args);
+      |                                ^
+In file included from /usr/include/qt/QtCore/qhashfunctions.h:44,
+                 from /usr/include/qt/QtCore/qlist.h:47,
+                 from /usr/include/qt/QtCore/qhash.h:46,
+                 from /usr/include/qt/QtCore/qdebug.h:45,
+                 from /usr/include/qt/QtCore/QDebug:1,
+                 from /home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Embedded_Display/vncclientthread.h:28,
+                 from /home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Embedded_Display/vncclientthread.cpp:24:
+/usr/include/qt/QtCore/qstring.h:391:14: note: declared here
+  391 |     QString &vsprintf(const char *format, va_list ap) Q_ATTRIBUTE_FORMAT_PRINTF(2, 0);
+      |              ^~~~~~~~
+[ 96%] Building CXX object CMakeFiles/aqemu.dir/aqemu_autogen/3YJK5W5UP7/qrc_shared_images.cpp.o
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Embedded_Display/vncview.cpp: In member function ‘void VncView::wheelEventHandler(QWheelEvent*)’:
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Embedded_Display/vncview.cpp:545:20: warning: ‘int QWheelEvent::delta() const’ is deprecated: Use angleDelta() [-Wdeprecated-declarations]
+  545 |   if (event->delta() < 0)
+      |                    ^
+In file included from /usr/include/qt/QtGui/QMouseEvent:1,
+                 from /home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Embedded_Display/vncview.cpp:46:
+/usr/include/qt/QtGui/qevent.h:219:16: note: declared here
+  219 |     inline int delta() const  { return qt4D; }
+      |                ^~~~~
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Embedded_Display/vncview.cpp:550:33: warning: ‘int QWheelEvent::x() const’ is deprecated: Use position() [-Wdeprecated-declarations]
+  550 |   const int x = qRound(event->x() / m_horizontalFactor);
+      |                                 ^
+In file included from /usr/include/qt/QtGui/QMouseEvent:1,
+                 from /home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Embedded_Display/vncview.cpp:46:
+/usr/include/qt/QtGui/qevent.h:229:16: note: declared here
+  229 |     inline int x() const { return int(p.x()); }
+      |                ^
+/home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Embedded_Display/vncview.cpp:551:33: warning: ‘int QWheelEvent::y() const’ is deprecated: Use position() [-Wdeprecated-declarations]
+  551 |   const int y = qRound(event->y() / m_verticalFactor);
+      |                                 ^
+In file included from /usr/include/qt/QtGui/QMouseEvent:1,
+                 from /home/med-arch/.cache/pikaur/build/aqemu/src/aqemu-0.9.4/src/Embedded_Display/vncview.cpp:46:
+/usr/include/qt/QtGui/qevent.h:231:16: note: declared here
+  231 |     inline int y() const { return int(p.y()); }
+      |                ^
+[ 98%] Building CXX object CMakeFiles/aqemu.dir/aqemu_autogen/3YJK5W5UP7/qrc_icons.cpp.o
+[100%] Linking CXX executable aqemu
+[100%] Built target aqemu
+==> Entering fakeroot environment...
+==> Starting package()...
+[  4%] Automatic MOC and UIC for target aqemu
+[  7%] Built target docs
+[  7%] Built target aqemu_autogen
+[100%] Built target aqemu
+Install the project...
+-- Install configuration: ""
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/bin/aqemu
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/alpine.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/alt.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/aptosid.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/arch.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/asp.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/bodhi.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/calculate.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/centos.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/chakra.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/clearos.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/damnsmalllinux.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/debian.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/dragonfly.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/fedora.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/freebsd.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/frugalware.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/fuduntu.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/gentoo.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/gnewsense.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/knoppix.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/knoppix_v2.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/kubuntu.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/kubuntu_v2.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/lubuntu.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/lunar.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/mac.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/mageia.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/mandriva.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/mepis.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/minix.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/mint.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/netbsd.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/novell.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/openbsd.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/opensolaris.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/pclinuxos.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/puppy.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/redhat.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/sabayon.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/scientific.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/slackware.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/slackware_v2.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/solaris.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/suse-novell.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/suse.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/symphony.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/ubuntu.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/ubuntu_v2.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/vector.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_icons/xubuntu.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_templates/FreeBSD 4.aqvmt
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_templates/FreeBSD 7.aqvmt
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_templates/FreeBSD 8.aqvmt
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_templates/Linux 2.0.aqvmt
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_templates/Linux 2.4.aqvmt
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_templates/Linux 2.6 x86_64.aqvmt
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_templates/Linux 2.6.aqvmt
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_templates/MacOS X x86.aqvmt
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_templates/Windows 2000.aqvmt
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_templates/Windows 7 x64.aqvmt
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_templates/Windows 7.aqvmt
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_templates/Windows 9X.aqvmt
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_templates/Windows Vista x64.aqvmt
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_templates/Windows Vista.aqvmt
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_templates/Windows XP x64.aqvmt
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/os_templates/Windows XP.aqvmt
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/aqemu/docs/links.html
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/pixmaps/aqemu.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/pixmaps/aqemu_48x48.png
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/applications/aqemu.desktop
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/appdata/aqemu.appdata.xml
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/doc/aqemu/AUTHORS.bz2
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/doc/aqemu/CHANGELOG.bz2
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/doc/aqemu/README.bz2
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/doc/aqemu/TODO.bz2
+-- Installing: /home/med-arch/.cache/pikaur/build/aqemu/pkg/aqemu/usr/share/man/man1/aqemu.1
+==> Tidying install...
+  -> Removing libtool files...
+  -> Purging unwanted files...
+  -> Removing static library files...
+  -> Stripping unneeded symbols from binaries and libraries...
+  -> Compressing man and info pages...
+==> Checking for packaging issues...
+==> WARNING: Package contains reference to $srcdir
+usr/bin/aqemu
+==> Creating package "aqemu"...
+  -> Generating .PKGINFO file...
+  -> Generating .BUILDINFO file...
+  -> Generating .MTREE file...
+  -> Compressing package...
+==> Leaving fakeroot environment.
+==> Finished making: aqemu 0.9.4-2 (ven. 27 nov. 2020 09:56:01)
+
+Reading local package database...
+:: Removing already installed dependencies for aqemu:
+checking dependencies...
+
+Packages (17) brltty-6.1-2  cmake-3.18.4-1  jsoncpp-1.9.4-1  libcacard-2.7.0-2
+              liblouis-3.15.0-1  libslirp-4.3.1-1  libspeechd-0.10.1-1
+              libuv-1.40.0-1  libvncserver-0.9.13-1  numactl-2.0.14-1
+              qemu-5.1.0-3  rhash-1.4.0-1  seabios-1.14.0-1  spice-0.14.3-2
+              usbredir-0.8.0-2  vde2-2.3.2-14  virglrenderer-0.8.2-1
+
+Total Removed Size:  104.95 MiB
+
+:: Do you want to remove these packages? [Y/n] Y
+:: Running pre-transaction hooks...
+(1/1) Removing old entries from the info directory file...
+:: Processing package changes...
+( 1/17) removing qemu                              [######################] 100%
+( 2/17) removing spice                             [######################] 100%
+( 3/17) removing libcacard                         [######################] 100%
+( 4/17) removing virglrenderer                     [######################] 100%
+( 5/17) removing numactl                           [######################] 100%
+( 6/17) removing cmake                             [######################] 100%
+( 7/17) removing libuv                             [######################] 100%
+( 8/17) removing rhash                             [######################] 100%
+( 9/17) removing jsoncpp                           [######################] 100%
+(10/17) removing usbredir                          [######################] 100%
+(11/17) removing seabios                           [######################] 100%
+(12/17) removing libvncserver                      [######################] 100%
+(13/17) removing brltty                            [######################] 100%
+removed '/etc/brlapi.key'
+(14/17) removing libspeechd                        [######################] 100%
+(15/17) removing vde2                              [######################] 100%
+(16/17) removing liblouis                          [######################] 100%
+(17/17) removing libslirp                          [######################] 100%
+:: Running post-transaction hooks...
+(1/6) Reloading system manager configuration...
+(2/6) Reloading device manager configuration...
+(3/6) Arming ConditionNeedsUpdate...
+(4/6) Updating icon theme caches...
+(5/6) Updating the desktop file MIME type cache...
+(6/6) Updating the MIME type database...
+loading packages...
+resolving dependencies...
+looking for conflicting packages...
+
+Packages (14) brltty-6.1-2  libcacard-2.7.0-2  liblouis-3.15.0-1
+              libslirp-4.3.1-1  libspeechd-0.10.1-1  libvncserver-0.9.13-1
+              numactl-2.0.14-1  qemu-5.1.0-3  seabios-1.14.0-1  spice-0.14.3-2
+              usbredir-0.8.0-2  vde2-2.3.2-14  virglrenderer-0.8.2-1
+              aqemu-0.9.4-2
+
+Total Installed Size:  63.08 MiB
+
+:: Proceed with installation? [Y/n] Y
+(14/14) checking keys in keyring                   [######################] 100%
+(13/14) checking package integrity                 [######################] 100%
+(13/14) loading package files                      [######################] 100%
+(14/14) checking for file conflicts                [######################] 100%
+(14/14) checking available disk space              [######################] 100%
+:: Processing package changes...
+( 1/14) installing virglrenderer                   [######################] 100%
+( 2/14) installing liblouis                        [######################] 100%
+( 3/14) installing libspeechd                      [######################] 100%
+( 4/14) installing brltty                          [######################] 100%
+Got 128 bytes from getrandom() function
+Please add your user to the brlapi group.
+Optional dependencies for brltty
+    at-spi2-core: X11/GNOME Apps accessibility [installed]
+    atk: ATK bridge for X11/GNOME accessibility [installed]
+    espeak-ng: espeak-ng driver
+    java-runtime: Java support
+    libxaw: X11 support
+    libxt: X11 support [installed]
+    libx11: for xbrlapi [installed]
+    libxfixes: for xbrlapi [installed]
+    libxtst: for xbrlapi [installed]
+    ocaml: OCaml support
+    python: Python support [installed]
+    speech-dispatcher: speech-dispatcher driver
+( 5/14) installing seabios                         [######################] 100%
+( 6/14) installing numactl                         [######################] 100%
+( 7/14) installing vde2                            [######################] 100%
+vde config files should be placed in /etc/vde, sample files are provided.
+iptables and dhcpd sample files have been installed to '/usr/share/vde2'.
+Merge those examples, if needed to the according config files.
+( 8/14) installing spice                           [######################] 100%
+( 9/14) installing libcacard                       [######################] 100%
+(10/14) installing usbredir                        [######################] 100%
+(11/14) installing libslirp                        [######################] 100%
+(12/14) installing qemu                            [######################] 100%
+Optional dependencies for qemu
+    qemu-arch-extra: extra architectures support
+    samba: SMB/CIFS server support [installed]
+    qemu-block-iscsi: iSCSI block support
+    qemu-block-rbd: RBD block support
+    qemu-block-gluster: glusterfs block support
+(13/14) installing libvncserver                    [######################] 100%
+(14/14) installing aqemu                           [######################] 100%
+:: Running post-transaction hooks...
+(1/8) Creating system user accounts...
+(2/8) Reloading system manager configuration...
+(3/8) Creating temporary files...
+(4/8) Reloading device manager configuration...
+(5/8) Arming ConditionNeedsUpdate...
+(6/8) Updating icon theme caches...
+(7/8) Updating the info directory file...
+(8/8) Updating the desktop file MIME type cache...
+[med-arch@hp6830s-arch ~]$ 

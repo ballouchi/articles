@@ -1,0 +1,304 @@
+lsb_release -a
+
+nano /sys/class/backlignt/acpi_video0/brightness
+nano /sys/class/backlight/acpi_video0/actual_brightness
+nano /sys/class/backlight/acpi_video0/max_brightness
+nano /sys/class/backlight/radeon_bl0/max_brightness
+nano /sys/class/backlight/radeon_bl0/brightness
+nano /sys/class/backlight/radeon_bl0/actual_brightness
+
+clear
+sudo pacman -Ss keepassx
+sudo pacman -S keepassx
+
+sudo pacman -S keepassxc
+
+sudo pacman -S evolution
+sudo pacman -S thunderbird
+sudo pacman -S trojita
+sudo pacman -S claws-mail
+sudo pacman -S smtube
+sudo nano /etc/default/grub
+sudo pacman -S geary
+sudo pacman -Rs claws-mail
+which gnome-online-accounts
+gnome-control-center
+sudo pacman -S gnome-control-center
+ gnome-control-center
+
+ls /sys/class/backlight/
+
+xrandr --output LVDS1 --brightness 0.9
+pacman -S xrandr
+sudo pacman -S xrandr
+
+sudo pacman -S brightnessctl
+sudo pacman -S light
+light -G
+light
+light -A 5
+light -L
+light -A 20
+light -P
+light -S 30
+sudo pacman -R light
+
+$ cat /sys/devices/system/cpu/cpufreq/policy?/energy_performance_available_preferences
+$ cat /sys/devices/system/cpu/cpufreq/policy
+sudo pacman -S relight
+sudo nano /etc/default/grub
+sudo update-grub
+systemctl status systemd-backlight@backlight:acpi_video0
+systemctl status systemd-backlight@backlight:radeon_bl0
+firefox -p
+ls /etc/X11/xorg.conf.d/
+cpufreq-info
+pacman -S cpufrequtils
+sudo pacman -S cpufrequtils
+cpufreq
+sudo pacman -S cpufreq
+sudo pacman -S auto-cpufreq
+sudo auto-cpufreq
+sudo auto-cpufreq --monitor
+sudo auto-cpufreq --log
+sudo auto-cpufreq --live
+auto-cpufreq --log
+sudo pacman -Rs auto-cpufreq
+cpupower-info
+cpupower
+cpupower frequency-info
+cpupower frequency-set
+sudo cpupower frequency-set
+cpupower info
+sudo cpupower info
+ls -1 /lib/modules/`uname -r`/kernel/drivers/cpufreq/
+sudo modprobe cpufreq_powersave
+lsmod | grep cpufreq
+sudo cpupower frequency-info --governors
+sudo cpupower frequency-info
+sudo cpupower frequency-set -g powersave
+sudo cpupower frequency-info
+sudo cpupower frequency-set -g performance
+sudo nano /etc/default/cpupower
+cat /etc/X11/default-display-manager
+sudo pacman -Ss numlockx
+ls /usr/share/lightdm/lightdm.conf.d
+which lightdm
+sudo nano /etc/lightdm/lightdm.conf
+which numlockx
+
+sudo visudo
+sudo vi /etc/sudoers.d/med
+sudo nano /etc/sudoers.d/med
+
+sudo nano /usr/share/polkit-1/actions/org.manjaro.pamac.policy
+redshift -h
+redshift -O 5500
+redshift -O 5000
+redshift -O 5750
+redshift -x
+brightness
+redshift -b 0.9:0.8
+pacman -Ss gnome-passwordsafe
+pacman -S gnome-passwordsafe
+sudo pacman -S gnome-passwordsafe
+sudo pacman -Ss feedreader
+sudo pacman -S feedreader
+
+lsmod | grep cpufreq
+cat /etc/X11/default-display-manager
+$ cat /sys/devices/system/cpu/cpufreq/policy
+ cat /sys/devices/system/cpu/cpufreq/policy
+$ cat /sys/devices/system/cpu/cpufreq/policy?/energy_performance_available_preferences
+
+mhwd -l -d --pci
+
+sudo glxinfo | grep Opengl
+
+sudo mhwd-gpu --check
+sudo mhwd-gpu --status
+
+sudo pacman -Ss deepin-image-viewer
+sudo pacman -S deepin-image-viewer
+sudo pacman -S ristretto
+sudo pacman -Ss lib32-mesa
+sudo pacman -Ss mesa-vdpau
+
+sudo mkinitcpio -P
+sudo nano /etc/mkinitcpio.conf
+sudo nano /etc/X11/xorg.conf.d/20-radeon.conf
+
+sudo modprobe cpufreq_powersave
+sudo cpupower frequency-info
+
+sudo pacman -S timeshift
+
+sudo pacman -S gnome-disk-utility
+sudo nano /etc/fstab
+
+free
+cat /proc/swaps
+swapon -help
+swapon -o
+sudo mkswap /dev/sda9
+sudo swapon /dev/sda9
+sudo nano /etc/fstab
+sudo lsblk
+sudo blkid
+sudo fdisk -l
+
+redshift -help
+redshift -b 0.8:0.8
+randr -help
+redshift -h
+redshift -l
+redshift -l list
+redshift -x
+redshift -l 34.8:10.5 -b 0.7:0.7
+
+cat /proc/sys/vm/swapiness
+cat /proc/sys/vm/swapiness #60 (default)
+sudo systemctl --fail
+
+sudo pacman -S viewnior
+sudo pacman -Ss audacious
+
+sudo pacman -S cinnamon
+sudo pacman -Ss budgie-desktop network-manager-applet gnome-control-center gnome-screensaver
+
+sudo pacman -S budgie-desktop gnome-screensaver
+sudo pacman -S gnome-terminal nautilus budgie-extras dconf-editor
+sudo pacman -S gnome-terminal
+sudo pacman -S dconf-editor
+sudo pacman -S budgie-extras
+sudo pacman -S nautilus
+sudo useradd -mG lp,network,power,sys,wheel med-budgie
+sudo passwd med-budgie
+
+sudo pacman -S lightdm-slick-greeter
+sudo pacman -S lightdm-settings
+sudo nano /etc/lightdm/lightdm.conf
+systemctl enable lightdm.service --force
+
+reboot
+sudo pacman -S manjaro-budgie-settings
+sudo pacman -Rs lightdm-slick-greeter
+sudo pacman -Rs lightdm-settings
+sudo pacman -Rs lightdm-slick-greeter
+sudo pacman -Rs nautilus
+sudo pacman -Rs budgie-extras
+sudo pacman -Rs dconf-editor
+sudo pacman -Rs gnome-terminal
+sudo pacman -Rs gnome-screensaver
+sudo pacman -Rs budgie-desktop
+
+git clone https://aur.archlinux.org/deadbeef-lyrics-hg.git
+
+sudo pacman -Ss gtkmm
+make gtk3
+nano PKGBUILD
+makepkg -si
+
+sudo pacman -Ss pup
+sudo pacman -S pup
+sudo pacman -S pup-bin
+
+sudo pacman -Ss glibc
+sudo pacman -Ss go-pie
+sudo pacman -Ss go
+git clone https://aur.archlinux.org/yay-git.git
+makepkg -si
+sudo pacman -S gnome
+sudo pacman -S deepin
+sudo pacman -Ss tumbler
+sudo pacman -Ss xfce4-goodies
+sudo pacman -Ss xfce4-artwork
+sudo pacman -S xfce4-artwork
+sudo pacman -S deadbeef
+sudo pacman -S pantheon-code
+sudo pacman -Ss gtkmm
+sudo pacman -Ss libxml
+sudo pacman -Ss base-devel
+sudo pacman -Ss git
+sudo pacman -S --needed base-devel git
+cd ./Downloads/git
+git clone https://aur.archlinux.org/pikaur.git
+cd ./pikaur
+makepkg -fsri
+pikaur -Ss lyrics
+pikaur -S songtext-git
+
+sudo pacman -Ss go
+sudo pacman -S pantheon-code
+mkdir ${XDG_CONFIG_HOME:-~/.config}/mymenus/
+cp $prefix/etc/xdg/menus/xfce-applications.menu ${XDG_CONFIG_HOME:-~/.config}/mymenus
+cd $prefix/etc/xfce/xdg/menus/
+sudo pacman -Ss xfdesktop
+
+sudo pacman -S smplayer
+
+pikaur -Ss qemu
+pikaur -S aqemu
+
+redshift -m
+redshift -m list
+redshift -o -b 0.5
+redshift -x
+
+sudo pacman -S galculator
+sudo pacman -S pantheon-calculator
+
+lyvi -help
+lyvi --help
+pikaur -S lyvi-git
+lyvi
+lyvi -c
+lyvi -l
+
+sudo pacman -Ss cmus
+sudo pacman -S cmus
+
+man tmux
+
+sudo tlp-stat
+sudo pacman -Ss hardinfo
+sudo pacman -S hardinfo
+
+sudo pacman -Ss exfalso
+
+sudo pacman -Ss tlp
+sudo pacman -S tlp-rdw tlpui
+
+sudo pacman -S quodlibet
+
+pikaur -Ss video-trimmer
+pikaur -S video-trimmer
+sudo pacman -Ss flatpak
+
+sudo pamac search flatpak
+sudo pamac install flatpak
+sudo pacman -Ss tmux
+sudo pacman -S tmux
+tmux
+exit
+
+rs07
+
+pikaur -Qs syncthing
+sudo pacman -Qs syncthing
+
+sudo pacman -Qs fakeroot
+sudo pacman -Ss fakeroot
+sudo pacman -S fakeroot
+which fakeroot
+
+pikaur -Ss syncthing
+
+sudo pacman -Ss backintime
+sudo pacman -S backintime
+
+pikaur -S video-trimmer
+
+sudo pacman -S avidemux-qt
+pwrsave
+perfmode

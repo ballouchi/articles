@@ -1,0 +1,302 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> <html xmlns=http://www.w3.org/1999/xhtml xml:lang=en dir=ltr lang=en><!--
+ Page saved with SingleFile 
+ url: https://forum.xfce.org/viewtopic.php?id=11872 
+ saved date: Fri Jul 29 2022 08:40:45 GMT+0100 (Central European Standard Time) 
+ info: https://forum.xfce.org/viewtopic.php?id=11872
+--><meta charset=utf-8>
+<title>[SOLVED] Screen brightness not reset on resume from suspend/hibernate / Desktop / Xfce Forums</title>
+<style>:root{--sf-img-3: url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD//gA7Q1JFQVRPUjogZ2QtanBlZyB2MS4wICh1c2luZyBJSkcgSlBFRyB2NjIpLCBxdWFsaXR5ID0gOTAK/9sAQwADAgIDAgIDAwMDBAMDBAUIBQUEBAUKBwcGCAwKDAwLCgsLDQ4SEA0OEQ4LCxAWEBETFBUVFQwPFxgWFBgSFBUU/9sAQwEDBAQFBAUJBQUJFA0LDRQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQU/8AAEQgAPAA8AwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/aAAwDAQACEQMRAD8A+t8CjFJ+VH5UALgUYFavh3w1e+JrwwWiDavMkr8Ig9z/AEr0S1+DenrEBc31zJJjkxBUH5EGgDybAowK7/xF8JrmwgefTZzeooyYXXEmPbHB+nFcAQQcHg+lABgUYFJ+VH5UALn3oz70fjRzQB734F0iPR/DNkigCSZBNK3cswz+gwPwrfz71jeDdTTVfDOnzI2SsSxuPRlGD/LP41tc0AJn3rxX4o6RHpfiUywgJHdJ5xAHAbJDfyz+Ne1814z8WdTS98SJBG24WsQRiP7xJJH6igDis+9Gfej8aPx/SgA/Oj86MfWux+HPg1fEV611dqTYW5GV/wCej9dv07n8PWgDS+F1nr0E5ntowulyn959oJVX90759+ler/nSJGI0VFUKqjAVeABTsGgDM8Q/2odMlGkCL7WRgGY4wPbtn68V4BqVrdWd7NFexyx3QYlxL94k9/fPrX0lj61z3jLwjB4p05lwEvYwTDN3B/un2NAHgv50fnT54JLaaSGVGSSNirKeoI4IpmPrQAfhX0J4T0hdE8PWVqFw4jDSe7nk/qf0rwGxjWS9t1YZVpFBH419K4FACY9qMe1GKMUAGPajHtRjrRigDxv4s6Qtj4hjukXCXce44/vjg/pj864nHtXqnxmjU2WmPj5hI4B+oH+FeVgAigD/2Q==");--sf-img-4: url("data:image/png;base64,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")}html,body,.pun div,.pun form,.pun p,.pun h2,.pun h3,.pun pre,.pun ul,.pun li,.pun dl,.pun dt,.pun dd{border:0;font-style:normal;font-weight:normal;margin:0;padding:0}.pun ul{list-style:none}.pun select{padding-bottom:1px;padding-top:1px;padding-right:1px}.pun input,.pun select,.pun optgroup{font-family:Arial,Helvetica,sans-serif;font-size:1em}.pun pre,.pun code{font-family:consolas,monaco,"bitstream vera sans mono","courier new",courier,monospace;font-size:1em}.pun pre code{font-size:1em}.pun h2{font:1.462em/1em"Trebuchet MS",Arial,Helvetica,sans-serif;padding:7px 0}.pun h3{font-size:1.154em;line-height:1.267em;padding:7px 0}.pun p,.pun ul{padding:7px 0}.pun strong{font-weight:bold}.pun em{font-style:italic}.pun a,.pun a:link,.pun a:visited{text-decoration:none}.pun a:hover,.pun a:active,.pun a:focus{text-decoration:underline}#brdfooter h2,div.postright h3{display:block;overflow:hidden;position:absolute;text-indent:-9999em;width:0}.pun .inbox,.pun #brdmain,.pun .crumbs,.pun .pagepost{min-height:1px}.pun .inbox:after,.pun #brdmain:after,.pun .crumbs:after,.pun .pagepost:after,.pun .block2col:after{content:" ";display:block;height:0;font-size:0;clear:both;visibility:hidden}.pun{max-width:1070px;margin:0 auto;padding:30px 40px}.pun .punwrap{border:1px solid;border-radius:10px;padding:18px}#brdmain{border-style:solid none;border-width:2px 0;margin-bottom:12px;padding:12px 0}#brdmenu ul{padding:0}#brdmenu li{float:left}#brdmenu a:link,#brdmenu a:visited{border-right-style:solid;border-width:1px;display:block;min-width:60px;padding:12px 16px 6px 8px;white-space:nowrap}#brdmenu a:hover,#brmenu a:active,#brdmenu a:focus{text-decoration:none}#brdwelcome{padding:10px 0}#brdwelcome .conl,#brdwelcome .conr,#brdwelcome li{display:inline;padding:0}#brdwelcome .conl{float:left}#brdwelcome .conr{float:right}#brdwelcome li span{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMAQMAAABsu86kAAAABlBMVEX///+wu8wFf9SGAAAAAXRSTlMAQObYZgAAABNJREFUCNdjYIAB2QNQhMZmYAAAU7IFL8NLJYgAAAAASUVORK5CYII=)center left no-repeat;padding-left:18px;margin-right:3px;display:inline-block;line-height:normal;white-space:nowrap}.pun #brdfooter .conl{float:left}.pun #brdfooter .conr{text-align:right;float:right}.pun #brdfooter #poweredby a{font-size:1.077em;font-weight:bold}.pun #brdfooter #qjump{padding-top:5px}.pun #brdfooter #qjump *{white-space:nowrap}.pun #brdfooter #feedlinks{padding-bottom:0}.pun #brdfooter #feedlinks span{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAMAAABFNRROAAAAxlBMVEVMaXHqfDf4lDDrlU/xjDv2lT34nD7////0jjXthDnzkjnkczD/9+/+8eXqgDjlbSHqeij/8ODwhC/4kCj1iiTvgCj859n2s3v8vn//9en6rGDleDHkikz/mTPtlV/44NTvjETvfCLfYB/haCn92bT5w5DeYyf1p2X6z6rgbTLjhEz1nUz7tnHocyf/zJnrjVH40Lf4283yt5L2wprvrovzrHbyijH848v3x6X8x47aVx3gckP5y6T7qlb1oln/69b93b75pFFRjL0EAAAAAXRSTlMAQObYZgAAAJ9JREFUeNoNyUMWxEAUAMDfSTM2B7HGtu5/qcmyXgFMEBICY0IUeYS6EZZ/5pxTKkNqBpr9XHiSRKkChnXqNKZH7nTKOQi/bclSYzeXczEqCLok+bAwNwzATv1l8TLR9cxCoCjeL4rjd8j2ZgpEqqtXxK6ZNi9UIK7NqsVFn21Z04+3tsP8sJsd548SZCp5jrMyy+LeDAAyxlggpKr9AH+p2Q5ke7f5FAAAAABJRU5ErkJggg==)center left no-repeat;display:inline-block;padding-left:18px;white-space:nowrap}.pun .linkst .inbox,.pun .postlinksb .inbox{overflow:hidden}.pun .postlinksb,.pun .linkst,.pun .crumbs{clear:both;position:relative}.pun .linkst .crumbs{font-family:"Trebuchet MS",Helvetica,Arial,sans-serif;font-size:1.462em;line-height:1.211em;padding:7px 0}.pun .postlinksb .crumbs{font-family:"Trebuchet MS",Helvetica,Arial,sans-serif;font-size:1.154em}.pun .linkst .crumbsplus .pagepost{border-top-style:dotted;border-top-width:1px}.pun .postlinksb .crumbsplus .pagepost{border-bottom-style:dotted;border-bottom-width:1px}.pun .postlinksb .crumbs{margin-right:11em}.pun .crumbs li{float:left;padding-right:0.4em;white-space:nowrap}.pun .crumbs li strong{font-weight:normal}.pun .pagelink{float:left;white-space:nowrap}.pun .pagelink strong{border-style:none none none solid;border-width:0 0 0 1px;display:inline-block;padding:0 12px 0 10px;margin-right:-6px}.pun .pagelink .item1{border:0}.pun .pagelink .pages-label{display:inline-block}.pun .blockpost{border-style:solid;border-width:1px;margin-bottom:-1px;overflow:hidden;position:relative}.pun .blockpost h2{font:1em/1.462em Arial,Helvetica,sans-serif;white-space:nowrap;border-bottom-style:solid;border-bottom-width:1px;height:1.462em;padding:0.538em 8px 0.538em 236px;font-weight:normal}.pun .blockpost h2 .conr{float:right;text-align:right}.pun .blockpost .inbox{float:right;position:relative;width:100%}.pun .blockpost .postbody,.pun .blockpost .postfoot{border-left-style:solid;border-left-width:1px;float:right;margin-right:-218px;position:relative;text-align:left;width:100%}.pun .blockpost .postleft,.pun .blockpost .postfootleft{width:194px;padding:7px 12px 7px 12px;float:left;margin-left:-218px;position:relative}.pun .blockpost .postleft dl{padding:0}#punviewtopic .blockpost dt{display:block;position:absolute;padding:0.538em 0 0.538em 12px;height:1.462em;top:-2.615em;left:0;overflow:hidden;width:206px}.pun .blockpost dt{text-overflow:ellipsis;white-space:nowrap}.pun .blockpost dt strong{font-size:1.231em;font-weight:bold}.pun .blockpost .postleft dd{font-size:0.923em}.pun .blockpost .postleft .usertitle{padding:4px 0 6px 0;font-size:1em}.pun .blockpost .postleft .postavatar{display:block;margin:0 0 4px 0}.pun .blockpost .postright{position:relative;padding:4px 230px 7px 18px}.pun .postmsg{width:100%;overflow:hidden;word-wrap:break-word}.pun .postfoot p{padding:0}.pun .postsignature hr{border:none;height:1px;margin-left:0px;text-align:left}.pun .postmsg p{font-family:Verdana,Arial,Helvetica,sans-serif}.pun .blockpost .postmsg .postedit{font-size:0.857em}.pun .blockpost .postsignature{font-size:0.923em}.pun .codebox{border-style:solid;border-width:1px;margin:0.75em 1em;padding:0}.pun .codebox pre{overflow:auto;width:100%;direction:ltr;text-align:left}.pun .codebox pre code{padding:0.5em;white-space:pre}.pun div[class*=codebox] pre code{display:inline-block}.pun label select{margin-top:2px}.pun select{font-family:Verdana,Arial,Helvetica,sans-serif}html,body,.pun{background:#f6f9fc;color:#333}.pun .punwrap{background:#fff;border-color:#cad7e1;color:#566579}.pun .pagepost,.pun .pagelink *{border-color:#b9c5ce}.pun a,.pun a:link,.pun a:visited{color:#2365B0}.pun a:hover,.pun a:active,.pun a:focus{color:#b50000}#brdmenu{background:#44699c}#brdmenu a,#brdmenu a:link,#brdmenu a:visited{background:#44699c;border-color:#fff;color:#d4dae2}#brdmenu a:hover,#brdmenu a:active,#brdmenu a:focus{background:#b50000;border-color:#fff;color:#fff}.pun .blockpost{background:#f6f9fc;border-color:#b9c5ce #d9e1e7}.pun .blockpost h2{background:#ebf1f5;border-color:#cad7e1;color:#357082}.pun .blockpost .postbody,.pun .blockpost .postfoot{background:#fcfdfe;border-color:#dfe6ee}.pun .postmsg{color:#333}.pun .postsignature,.pun .postmsg .postedit{color:#566579}.pun .codebox{background:#333;color:#fff}.pun .postmsg hr{background:#b9c5ce}.pun label{color:#357082}</style>
+<link rel=canonical href="https://forum.xfce.org/viewtopic.php?id=11872" title="Page 1">
+<link rel=alternate type=application/rss+xml href="https://forum.xfce.org/extern.php?action=feed&amp;tid=11872&amp;type=rss" title="RSS topic feed">
+<style media=screen>#xfce-header{background:#333 url(data:image/gif;base64,R0lGODlhSwAZAPUAABsYFxosMC0uKygmJTMuLTIpJDEyLyszNjEzMDM4OikuMCQcGg49TCk7QjY9RBhJVxFCUTVDSCtHTwpUai5baClkdxdmfkNfaAVwjgB+ogyMtjSNp1WUpwibygCo3Qun2Bys2yix3QCt4gCy4AK27RW45y+44TW85Syewkiz00m/42+xxkvC6FjI6lXO9GXL6nzS7XPR7izB8InX7ZnZ7Zfc84HW8afi9LTm9Lfq96HS4MPq99Px+O/6/cPb4JK5xCH5BAAKAAAALAAAAABLABkAAAb+QIQBgSBEHMMhcZloCIVJqCEZXRKV1KcScZhqp+Aw+GoYSHS/AYE6PFRSEoL00Kjb7/WuWDolKCIXHBsDUAkXh4cUFxSMjF0HCAIUPj08HGpXRRItMSYNAkIEEGg/pT8rqKgccWxcRQIHgTQ4OS8ASRE4PDw7Ozg3NDUzNjFxkZM9lTsUCksEDSkvLC0mDwVFDMmVvDm/wjEPA1tPAw0cOjs8OTc1MQFyBhGUu7437MMtnwgXPMn0NQqGEDiQokULFidOgHhAgEA2evVq0LAB40W4TFwk+aD3a9gLCYTi6er1i8ZEGDHyCUjwwx8vWi/UHNjwooWKEyZGjMCg5mH+vWAzYFRUAYHQEgMJOPjbca9iCwuEjNzg8YvdyRfSGKyJoIMjuxscAlQwiDBnCQwABDh8aZVYTZsXhwjgqsxb0JoqeAqJQIPpvRQcBG3YEAAUgTMRaQjloOIgzhEk0BpmwBQojA0VMleYUDiUvLomianA/CCAuHizLD8AMKB1ayWHZ+CQSBGr45yRATQrAiGHyaAxKCxwjUlIAx3KgE1MUSGAaTVKIsy4Z+Mj9DVHhRyIUaM22cdnAcAzQODBjWFOK5x+QuQAB273YjQfoHbLlAgwhAltEe6AggN6WIFAAzE4ZdNjI2iQVhTl1SBUTSxUcEAEFDYQXVfeEFNBWtn+eRFPDMBByIIMMpQwgVFHGUBBYyzclNMIHbAmYHkGthgCCB/kqMFpFHRjEkoocNjhFRG8UCNCJ5QwQlxWxFOQiyPc2ME7VhxQXkq3KRmCCCJosAB5G+ygX00WLCAgRvHYdhCUI4hwooAGEHRgTlt64IEGVlpRngstIiiCnXeKIwAH5zmlwkVnYhGBChAmVIKSXL6pxQCN3aRkm4De+Y4Xe7L5J6A7gtmOYyWUycapizp2wo0fAFrUUQdU6memHoiQwW5FPMDCiyB40IEGwGqQgRoEVJASQkriOQ5GRqhQVk4MACAta6AUEcGT4GmAwace9ErCrXKUJ0OUgE4AwAL+6C4gwBARkBpCrRo84AQBBTQ0XgQhILiQOGuEcW0LCeGm4AAZcGtnlwo09EAJvZaLohQJoHDCCA3XeicGGGSG8QNq4TvxjR6cCODICPzL5pQyaUCrncOWRwKtkobBRQUMr8zlzSKQAFXJIJRQp68a/NpBBxxHcAKyUYrAgFEDdUCrmwsc9nKmkrI3xQEaiFDxygefGM8HmHItAgRqURCClm5yKFADmYog2WEGhxySFldgzfXTXkfwQdy0kl1EBR5siZYcUOTaQaQcwg3zelgQMRAGh3Mp9gRRR+D03Xb6bYAAFnQpYxQCTRAyAJCQ9wAJOLvJeIqvNGBB0LXi7OtUiUbEnjrOmpM3XyZYxBkOKH24PsHwwy/tIeuOD6BAAw88MHzzEDjXUAITNO888dU735kXkTQ+zhjcZ6TA+AqsS3eTbKwhACzrNwT++uuXXz78UwQBADs=)no-repeat 3px 50%;box-shadow:0 0 8px rgba(0,0,0,0.5);font-family:"Helvetica Neue Light",HelveticaNeue-Light,"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:14px;height:35px}#xfce-header ul{list-style:none;float:right;margin:5px;padding:0}#xfce-header ul li{float:left;margin:0}#xfce-header a{color:#999;text-decoration:none;display:block;padding:0 8px 0 8px;border:0;line-height:25px;transition:color 0.2s linear;-moz-transition:color 0.2s linear;-webkit-transition:color 0.2s linear;-o-transition:color 0.2s linear}#xfce-header ul li a:hover{color:#fff;text-decoration:underline}#xfce-header .active{color:#fff}#xfce-header-clear{clear:both}</style>
+<style>body{margin:0;font:80%Verdana,Arial,Helvetica,sans-serif}.pun{font:inherit;background:none}</style>
+<link type=image/x-icon rel="shortcut icon" href="data:image/vnd.microsoft.icon;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAOoSURBVFiFrZdfiFR1FMc/v3tnx91KcCsJy5qZHbeoEHwKCtldw6REkWZ27u4iFAY9iOWDWL0E/SGCFoq2pyR6SMh17rTaRgrRupOREFEPFZawzNxZUzZYQ0NTdqe5p4fxzv8787vaeZvzO7/z/Zy553d+90I7s+dWY+e/ws7d1zbOz7LZEGlnL7aYfiGG7+ZD+bvAPAFsATXNwT9vDQxwIfIuSibA+ZRsNqQPMFVYQ0hmgfXXPRvovvoJIkpbPJPbhbD3+q8RFiOTHPixqzPApBOl5H4H6qGGlSSZ/Cta4un8AKI+bPAO09ubboSor2jSiWLKLBDzSe2iZAep+Je+4uUcPwCrWweo49z2b4Kt/Uv1AHb+AZAToO7xTV62yxilRxnuP920Mn1mJUvhU1QfnY9VIcqPYGpuLXBSQxxgJa55hKPOqjqvLSZL4UOdxQFkK/+YL4HXA4l15xH5XEPcs/spSqb+eTrjwDbN/Sfp7n6vCqCUYPXtBj4OALGZ2+8oN1o69xywT3Pf96xY3s72u69CYxNmsyEWI4eBpDaGcBDFGNB0xJpN/UQXm3k6dqniaYqxT4ehZxp4UhtCz34lFN5EYu1fdUgtQ+0/eqB4HBj6n8TnMI1BktGFxgX/yVY+UjPAIzcpnoeuAax7z7dabD9ajzqrKEoW2HCD4ufAGMCKOn4BnWf7VGENJfdbYF1A8QUMGWQ4PtcuyP829CwZXaCkngDOBRC/hutu6SSuBwAwGp1HmA0A0INh7NAJ7AwgorCdCRTPBAAAeAs713E4te+BqviLAcUrGYDnsfp8J6w/gIgi43wAvHCD4p6VUGKRih/RB7j5yhttGSSBFT/WuNDcA17leuJXNAHCoDJknKH2AF7len/7FVw2gkxoQvQgcgw7t7E1QLDKSygZY7TvZ37r2wd8pglxC6gvsJ3KZDUq4vqVg1L7K++FrysXru0EZjQhekG+xs6trwLoVw4iB0jF3q/zWQ8vgwwDv2hC3AnqoyoAalFz4wyXLrYGteJ/Uwo9Bcxr5ClgMgK1xzDjvIzIO202naFoPsbOyMW2qQ8XHsRwTwG9PhFnwRjybshqE6Zi46Be89l0Abe0raM4wGj0d5RKAEstVucpqcHa67n+GFqxN1Gq8euniBgWo/25juKepWLfgHoWcGu8ZzHNxxmLFWpDmwdRKjaOkj2U5zgIexiJZrXFPbNiaZS8WiO+iWQkr5/Azu0m7bwdWLg5zxvYBb9PPf4DleI4Htsna7YAAAAASUVORK5CYII="><style>.sf-hidden{display:none!important}</style><meta http-equiv=content-security-policy content="default-src 'none'; font-src 'self' data:; img-src 'self' data:; style-src 'unsafe-inline'; media-src 'self' data:; script-src 'unsafe-inline' data:;"><style>img[src="data:,"],source[src="data:,"]{display:none!important}</style></head>
+<body>
+<div id=xfce-header>
+ <div>
+ <h1 id=xfce-header-title class=sf-hidden>Xfce Forum</h1>
+ <h5 id=xfce-header-subtitle class=sf-hidden>Sub domains</h5>
+ &nbsp;
+ <ul>
+ <li><a href=https://www.xfce.org/ title="Go to the homepage">Home</a></li>
+ <li><a href=https://docs.xfce.org/ title="Official documentation">Docs</a></li>
+ <li><a href=https://archive.xfce.org/ title="Download location of tarballs">Archive</a></li>
+ <li><a href=https://wiki.xfce.org/ title="Community documentation">Wiki</a></li>
+ <li><a href=https://forum.xfce.org/ title="Community forums" class=active>Forum</a></li>
+ <li><a href=https://gitlab.xfce.org/ title="Report and track bugs">Bugs</a></li>
+ <li><a href=https://blog.xfce.org/ title="Visit the blog">Blog</a></li>
+ <li><a href=https://docs.xfce.org/contribute/translate/start title="Help translating the Xfce project">Translate</a></li>
+ <li><a href=https://gitlab.xfce.org/ title="Project repositories">Git</a></li>
+ </ul>
+ </div>
+ <div id=xfce-header-clear></div>
+</div>
+<div id=punviewtopic class=pun>
+<div class=top-box></div>
+<div class=punwrap>
+<div id=brdheader class=block>
+ <div class=box>
+ 
+ <div id=brdmenu class=inbox>
+ <ul>
+ <li id=navindex class=isactive><a href=https://forum.xfce.org/index.php>Index</a></li>
+ <li id=navsearch><a href=https://forum.xfce.org/search.php>Search</a></li>
+ <li id=navregister><a href=https://forum.xfce.org/register.php>Register</a></li>
+ <li id=navlogin><a href=https://forum.xfce.org/login.php>Login</a></li>
+ </ul>
+ </div>
+ <div id=brdwelcome class=inbox>
+ <p class=conl>You are not logged in.</p>
+ <ul class=conr>
+ <li><span>Topics: <a href="https://forum.xfce.org/search.php?action=show_recent" title="Find topics with recent posts.">Active</a> | <a href="https://forum.xfce.org/search.php?action=show_unanswered" title="Find topics with no replies.">Unanswered</a></span></li>
+ </ul>
+ <div class=clearer></div>
+ </div>
+ </div>
+</div>
+<div id=brdmain>
+<div class=linkst>
+ <div class="inbox crumbsplus">
+ <ul class=crumbs>
+ <li><a href=https://forum.xfce.org/index.php>Index</a></li>
+ <li><span>»&nbsp;</span><a href="https://forum.xfce.org/viewforum.php?id=4">Desktop</a></li>
+ <li><span>»&nbsp;</span><strong><a href="https://forum.xfce.org/viewtopic.php?id=11872">[SOLVED] Screen brightness not reset on resume from suspend/hibernate</a></strong></li>
+ </ul>
+ <div class=pagepost>
+ <p class="pagelink conl"><span class=pages-label>Pages: </span><strong class=item1>1</strong></p>
+ </div>
+ <div class=clearer></div>
+ </div>
+</div>
+<div id=p46500 class="blockpost rowodd firstpost blockpost1">
+ <h2><span><span class=conr>#1</span> <a href="https://forum.xfce.org/viewtopic.php?pid=46500#p46500">2017-11-07 14:52:37</a></span></h2>
+ <div class=box>
+ <div class=inbox>
+ <div class=postbody>
+ <div class=postleft>
+ <dl>
+ <dt><strong>am4c130d</strong></dt>
+ <dd class=usertitle><strong>Member</strong></dd>
+ <dd class=postavatar><img src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"><rect fill-opacity="0"/></svg>' alt style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-3)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important" width=60 height=60></dd>
+ <dd><span>Registered: 2014-01-07</span></dd>
+ <dd><span>Posts: 12</span></dd>
+ </dl>
+ </div>
+ <div class=postright>
+ <h3>[SOLVED] Screen brightness not reset on resume from suspend/hibernate</h3>
+ <div class=postmsg>
+ <p>Hi all<p>I'm looking for some help with a slight strange, and somewhat annoying issue I am having with the display brightness on my laptop screen when the laptop resumes from suspend or hibernate. My system is:<p>XFCE 4.12<br>Power Manager 1.4.4<br>systemd 235-2<br>Debian Buster/sid<br>Lightdm 1.18.3-4<br>lightlocker 1.0.8-1<br>HP 8440p with an external monitor (I use both screens in an extended setup).<p>My laptop suspends/hibernates perfectly with the exception that the screen brightness on the laptop display is reduced to 5% when it resumes.&nbsp; xfce4-power-manager is set to manage the display:<p>On battery<br>Blank: 5 mins<br>Sleep: 10 mins<br>Switch off: 15 mins<br>Brightness reduction: 20%<br>After: 120 seconds<p>Plugged in<br>Blank: 5 mins<br>Sleep: 10 mins<br>Switch off: 15 mins<br>Brightness reduction: 80%<br>After: Never<p>/etc/logind.conf is default, except HandlePowerKey is set to suspend.<p>Everything was working fine until I loaded Enlightenment DE, which I've since purged from the system and I cannot find what change was made that sets the brightness during idle/sleep but doesn't allow it to recover.<p>I can increase the display brightness using the laptop keyboard FN keys, the XFCE4-power-manager icon in the systray and by directly changing /sys/class/backlight/intel_backlight/brightness<p>I've reinstalled xfce4-power-manager etc. all to no avail.<p>Its annoying, as opposed to a real issue, but I'd like to address it, if possible. Any helps appreciated - thanks.<p>Alan</p>
+ <p class=postedit><em>Last edited by am4c130d (2017-11-09 20:43:39)</em></p>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class=inbox>
+ <div class="postfoot clearb">
+ <div class=postfootleft><p><span>Offline</span></p></div>
+ </div>
+ </div>
+ </div>
+</div>
+<div id=p46503 class="blockpost roweven">
+ <h2><span><span class=conr>#2</span> <a href="https://forum.xfce.org/viewtopic.php?pid=46503#p46503">2017-11-07 17:39:15</a></span></h2>
+ <div class=box>
+ <div class=inbox>
+ <div class=postbody>
+ <div class=postleft>
+ <dl>
+ <dt><strong>ToZ</strong></dt>
+ <dd class=usertitle><strong>Administrator</strong></dd>
+ <dd class=postavatar><img src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"><rect fill-opacity="0"/></svg>' alt style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-4)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important" width=60 height=60></dd>
+ <dd><span>From: Canada</span></dd>
+ <dd><span>Registered: 2011-06-02</span></dd>
+ <dd><span>Posts: 9,028</span></dd>
+ </dl>
+ </div>
+ <div class=postright>
+ <h3>Re: [SOLVED] Screen brightness not reset on resume from suspend/hibernate</h3>
+ <div class=postmsg>
+ <p>When you installed enlightenment, did you install all the recommended dependencies as well? I notice from the <a href=https://packages.debian.org/sid/x11/e17 rel=nofollow>package file</a> that pm-utils is a recommended dependency and it has <a href=https://packages.debian.org/sid/all/pm-utils/filelist rel=nofollow>some hooks</a> that might affect system configuration on resume from suspend.<p>I'm not sure if pm-utils is part of the base sid install or whether its required, but if it was installed as a dependency of enlightenment, trying removing it.</p>
+ </div>
+ <div class="postsignature postmsg"><hr><p><a href="https://forum.xfce.org/viewtopic.php?id=9278" rel=nofollow>How To Ask For Help</a>&nbsp; |&nbsp; <a href=https://docs.xfce.org/faq rel=nofollow>FAQ</a>&nbsp; |&nbsp; <a href=https://wiki.xfce.org/#release_information rel=nofollow>Developer Wiki</a>&nbsp; |&nbsp; <a href=http://www.xfce.org/community rel=nofollow>Community</a>&nbsp; |&nbsp; <a href=https://docs.xfce.org/contribute/start rel=nofollow>Contribute</a></p></div>
+ </div>
+ </div>
+ </div>
+ <div class=inbox>
+ <div class="postfoot clearb">
+ <div class=postfootleft><p><span>Offline</span></p></div>
+ </div>
+ </div>
+ </div>
+</div>
+<div id=p46513 class="blockpost rowodd">
+ <h2><span><span class=conr>#3</span> <a href="https://forum.xfce.org/viewtopic.php?pid=46513#p46513">2017-11-08 17:41:54</a></span></h2>
+ <div class=box>
+ <div class=inbox>
+ <div class=postbody>
+ <div class=postleft>
+ <dl>
+ <dt><strong>am4c130d</strong></dt>
+ <dd class=usertitle><strong>Member</strong></dd>
+ <dd class=postavatar><img src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"><rect fill-opacity="0"/></svg>' alt style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-3)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important" width=60 height=60></dd>
+ <dd><span>Registered: 2014-01-07</span></dd>
+ <dd><span>Posts: 12</span></dd>
+ </dl>
+ </div>
+ <div class=postright>
+ <h3>Re: [SOLVED] Screen brightness not reset on resume from suspend/hibernate</h3>
+ <div class=postmsg>
+ <p>Thanks ToZ.<p>pm-utils was installed - but not by Enlightenment, based on the other apps that seem to have been dependent/recommended at the same time. I should have added, I installed Enlightenment from experimental as Sid has a really old version. However, I did remove pm-utils, and rebooted - no joy unfortunately.<p>Observing things more closely, the laptop screen resumes at full brightness and then instantly drops to 5% - not sure if that is useful info. I'll look at the various suspend/sleep scripts in case there is a conflict there as well.<p>Thanks</p>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class=inbox>
+ <div class="postfoot clearb">
+ <div class=postfootleft><p><span>Offline</span></p></div>
+ </div>
+ </div>
+ </div>
+</div>
+<div id=p46514 class="blockpost roweven">
+ <h2><span><span class=conr>#4</span> <a href="https://forum.xfce.org/viewtopic.php?pid=46514#p46514">2017-11-08 18:21:51</a></span></h2>
+ <div class=box>
+ <div class=inbox>
+ <div class=postbody>
+ <div class=postleft>
+ <dl>
+ <dt><strong>ToZ</strong></dt>
+ <dd class=usertitle><strong>Administrator</strong></dd>
+ <dd class=postavatar><img src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"><rect fill-opacity="0"/></svg>' alt style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-4)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important" width=60 height=60></dd>
+ <dd><span>From: Canada</span></dd>
+ <dd><span>Registered: 2011-06-02</span></dd>
+ <dd><span>Posts: 9,028</span></dd>
+ </dl>
+ </div>
+ <div class=postright>
+ <h3>Re: [SOLVED] Screen brightness not reset on resume from suspend/hibernate</h3>
+ <div class=postmsg>
+ <p>What about <a href=https://packages.debian.org/sid/tlp rel=nofollow>TLP</a> or&nbsp; <a href=https://packages.debian.org/sid/laptop-mode-tools rel=nofollow>laptop mode tools</a>? Both also have capabilities to dim the screen based on configured settings.</p>
+ </div>
+ <div class="postsignature postmsg"><hr><p><a href="https://forum.xfce.org/viewtopic.php?id=9278" rel=nofollow>How To Ask For Help</a>&nbsp; |&nbsp; <a href=https://docs.xfce.org/faq rel=nofollow>FAQ</a>&nbsp; |&nbsp; <a href=https://wiki.xfce.org/#release_information rel=nofollow>Developer Wiki</a>&nbsp; |&nbsp; <a href=http://www.xfce.org/community rel=nofollow>Community</a>&nbsp; |&nbsp; <a href=https://docs.xfce.org/contribute/start rel=nofollow>Contribute</a></p></div>
+ </div>
+ </div>
+ </div>
+ <div class=inbox>
+ <div class="postfoot clearb">
+ <div class=postfootleft><p><span>Offline</span></p></div>
+ </div>
+ </div>
+ </div>
+</div>
+<div id=p46515 class="blockpost rowodd">
+ <h2><span><span class=conr>#5</span> <a href="https://forum.xfce.org/viewtopic.php?pid=46515#p46515">2017-11-08 21:54:41</a></span></h2>
+ <div class=box>
+ <div class=inbox>
+ <div class=postbody>
+ <div class=postleft>
+ <dl>
+ <dt><strong>am4c130d</strong></dt>
+ <dd class=usertitle><strong>Member</strong></dd>
+ <dd class=postavatar><img src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"><rect fill-opacity="0"/></svg>' alt style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-3)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important" width=60 height=60></dd>
+ <dd><span>Registered: 2014-01-07</span></dd>
+ <dd><span>Posts: 12</span></dd>
+ </dl>
+ </div>
+ <div class=postright>
+ <h3>Re: [SOLVED] Screen brightness not reset on resume from suspend/hibernate</h3>
+ <div class=postmsg>
+ <p>Thanks for sticking at this, greatly appreciated: neither of those packages are loaded. I scrubbed out acpid, acpi and acpi-support-base as well, just in case. It looks like its just xcfe4-power-manager, upower, powermgmt-base and systemd are installed now that control power.<p>I thought I'd made some progress, but I'm not sure. <p>systemd-backlight@backlight:intel_backlight.service appears to control what happens. However, it doesn't appear to launch the execstart command when the system resumes from suspend - I suspect because it already running. Its "config" file <div class=codebox><pre><code>/var/lib/systemd/backlight/pci-0000:00:02.0:backlight:intel_backlight </code></pre></div><p>appears to retain the correct value across suspends, and manually issuing <div class=codebox><pre><code>/lib/systemd/systemd-backlight load backlight:intel_backlight </code></pre></div><p>which is the execstart command restores the backlight value - but <div class=codebox><pre><code>systemctl start systemd-backlight@backlight:intel_backlight.service </code></pre></div><p>does not, as it doesn't reissue the systemd-backlight load command.<p>The man page for systemd-backlight talks about clamping the brightness to 1 or 5% of max, until some user space process can safely set it. The brightness is set to 36 on my system on resume, which is 5% of maximum. So it feels to be in this area that the issue lies - but I haven't worked out what needs to happen to restore it under the control of systemd. The variable referenced in the man page ID_BACKLIGHT_CLAMP is not configured in my udev scripts - and that seems unlikely to have changed.<p>I don't have this issue when I reboot - everything comes up correctly. I haven't investigated the suspend scripts yet...<p>Any thoughts?</p>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class=inbox>
+ <div class="postfoot clearb">
+ <div class=postfootleft><p><span>Offline</span></p></div>
+ </div>
+ </div>
+ </div>
+</div>
+<div id=p46524 class="blockpost roweven">
+ <h2><span><span class=conr>#6</span> <a href="https://forum.xfce.org/viewtopic.php?pid=46524#p46524">2017-11-09 20:42:56</a></span></h2>
+ <div class=box>
+ <div class=inbox>
+ <div class=postbody>
+ <div class=postleft>
+ <dl>
+ <dt><strong>am4c130d</strong></dt>
+ <dd class=usertitle><strong>Member</strong></dd>
+ <dd class=postavatar><img src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"><rect fill-opacity="0"/></svg>' alt style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-3)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important" width=60 height=60></dd>
+ <dd><span>Registered: 2014-01-07</span></dd>
+ <dd><span>Posts: 12</span></dd>
+ </dl>
+ </div>
+ <div class=postright>
+ <h3>Re: [SOLVED] Screen brightness not reset on resume from suspend/hibernate</h3>
+ <div class=postmsg>
+ <p>SOLVED!<div class=codebox><pre><code>/sys/class/backlignt/acpi_video0/actual_brightness </code></pre></div><p>and<div class=codebox><pre><code>/sys/class/backlignt/acpi_video0/brightness </code></pre></div><p>Were both set to 1.&nbsp; Whereas<div class=codebox><pre><code>/sys/class/backlignt/acpi_video0/max_brightness </code></pre></div><p>Had a value of 24, and<div class=codebox><pre><code>/sys/class/backlight/intel_backlight/actual_brightness
+/sys/class/backlight/intel_backlight/brightness
+/sys/class/backlight/intel_backlight/max_brightness </code></pre></div><p>were all 684 - i.e. maximum.<p>Setting<div class=codebox><pre><code>/sys/class/backlignt/acpi_video0/brightness </code></pre></div><p>to 24 fixed it! actual_brightness followed suit automatically.<p>I'm guess the kernel on resume reads acpi_video0, whereas systemd and xfce4_power_manager both read and set intel_backlight - they appear to be the generic and vendor specific settings for the same card.</p>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class=inbox>
+ <div class="postfoot clearb">
+ <div class=postfootleft><p><span>Offline</span></p></div>
+ </div>
+ </div>
+ </div>
+</div>
+<div class=postlinksb>
+ <div class="inbox crumbsplus">
+ <div class=pagepost>
+ <p class="pagelink conl"><span class=pages-label>Pages: </span><strong class=item1>1</strong></p>
+ </div>
+ <ul class=crumbs>
+ <li><a href=https://forum.xfce.org/index.php>Index</a></li>
+ <li><span>»&nbsp;</span><a href="https://forum.xfce.org/viewforum.php?id=4">Desktop</a></li>
+ <li><span>»&nbsp;</span><strong><a href="https://forum.xfce.org/viewtopic.php?id=11872">[SOLVED] Screen brightness not reset on resume from suspend/hibernate</a></strong></li>
+ </ul>
+ <div class=clearer></div>
+ </div>
+</div>
+</div>
+<div id=brdfooter class=block>
+ <h2><span>Board footer</span></h2>
+ <div class=box>
+ <div id=brdfooternav class=inbox>
+ <div class=conl>
+ <form id=qjump action=viewforum.php>
+ <div><label><span>Jump to<br></span>
+ <select name=id>
+ <optgroup label=General>
+ <option value=13>Announcements</option>
+ <option value=14>Say Hello</option>
+ </optgroup>
+ <optgroup label=Support>
+ <option value=3>Installation</option>
+ <option value=4 selected>Desktop</option>
+ </optgroup>
+ <optgroup label="Community Discussion">
+ <option value=12>General discussion</option>
+ <option value=9>Themes &amp; Screenshots</option>
+ <option value=1>Website &amp; Graphics</option>
+ </optgroup>
+ </select></label>
+ <input type=submit value=" Go " accesskey=g>
+ </div>
+ </form>
+ </div>
+ <div class=conr>
+ <p id=feedlinks><span class=rss><a href="https://forum.xfce.org/extern.php?action=feed&amp;tid=11872&amp;type=rss">RSS topic feed</a></span></p>
+ <p id=poweredby>Powered by <a href=http://fluxbb.org/>FluxBB</a></p>
+ </div>
+ <div class=clearer></div>
+ </div>
+ </div>
+</div>
+</div>
+<div class=end-box></div>
+</div>

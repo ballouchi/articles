@@ -1,0 +1,575 @@
+<!DOCTYPE html> <html class=client-js dir=ltr style lang=en><!--
+ Page saved with SingleFile 
+ url: https://wiki.archlinux.org/index.php/LightDM#NumLock_on_by_default 
+ saved date: Mon Nov 23 2020 18:54:09 GMT+0100 (Central European Standard Time)
+--><meta charset=utf-8>
+<title>LightDM - ArchWiki</title>
+<style>:root{--sf-img-6:url("data:image/png;base64,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");--sf-img-5:url("data:image/png;base64,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")}@media screen{.mw-content-ltr{direction:ltr}.sitedir-ltr input{direction:ltr}input[type='submit']{direction:ltr}@supports (text-decoration:underline dotted){abbr[title],.explain[title]{border-bottom:0;text-decoration:underline dotted}}#catlinks{text-align:left}.catlinks ul{display:inline;margin:0;padding:0;list-style:none none}.catlinks li{display:inline-block;line-height:1.25em;border-left:1px solid #a2a9b1;margin:0.125em 0;padding:0 0.5em}.catlinks li:first-child{padding-left:0.25em;border-left:0}.plainlinks a.external{background:none!important;padding:0!important}.visualClear{clear:both}.mw-content-ltr ul{margin:0.3em 0 0 1.6em;padding:0}.mw-content-ltr ol{margin:0.3em 0 0 3.2em;padding:0}h1:lang(anp),h1:lang(as),h1:lang(bh),h1:lang(bho),h1:lang(bn),h1:lang(gu),h1:lang(hi),h1:lang(kn),h1:lang(ks),h1:lang(ml),h1:lang(mr),h1:lang(my),h1:lang(mai),h1:lang(ne),h1:lang(new),h1:lang(or),h1:lang(pa),h1:lang(pi),h1:lang(sa),h1:lang(ta),h1:lang(te){line-height:1.6em!important}h2:lang(anp),h3:lang(anp),h4:lang(anp),h5:lang(anp),h6:lang(anp),h2:lang(as),h3:lang(as),h4:lang(as),h5:lang(as),h6:lang(as),h2:lang(bho),h3:lang(bho),h4:lang(bho),h5:lang(bho),h6:lang(bho),h2:lang(bh),h3:lang(bh),h4:lang(bh),h5:lang(bh),h6:lang(bh),h2:lang(bn),h3:lang(bn),h4:lang(bn),h5:lang(bn),h6:lang(bn),h2:lang(gu),h3:lang(gu),h4:lang(gu),h5:lang(gu),h6:lang(gu),h2:lang(hi),h3:lang(hi),h4:lang(hi),h5:lang(hi),h6:lang(hi),h2:lang(kn),h3:lang(kn),h4:lang(kn),h5:lang(kn),h6:lang(kn),h2:lang(ks),h3:lang(ks),h4:lang(ks),h5:lang(ks),h6:lang(ks),h2:lang(ml),h3:lang(ml),h4:lang(ml),h5:lang(ml),h6:lang(ml),h2:lang(mr),h3:lang(mr),h4:lang(mr),h5:lang(mr),h6:lang(mr),h2:lang(my),h3:lang(my),h4:lang(my),h5:lang(my),h6:lang(my),h2:lang(mai),h3:lang(mai),h4:lang(mai),h5:lang(mai),h6:lang(mai),h2:lang(ne),h3:lang(ne),h4:lang(ne),h5:lang(ne),h6:lang(ne),h2:lang(new),h3:lang(new),h4:lang(new),h5:lang(new),h6:lang(new),h2:lang(or),h3:lang(or),h4:lang(or),h5:lang(or),h6:lang(or),h2:lang(pa),h3:lang(pa),h4:lang(pa),h5:lang(pa),h6:lang(pa),h2:lang(pi),h3:lang(pi),h4:lang(pi),h5:lang(pi),h6:lang(pi),h2:lang(sa),h3:lang(sa),h4:lang(sa),h5:lang(sa),h6:lang(sa),h2:lang(ta),h3:lang(ta),h4:lang(ta),h5:lang(ta),h6:lang(ta),h2:lang(te),h3:lang(te),h4:lang(te),h5:lang(te),h6:lang(te){line-height:1.2em}ol:lang(azb) li,ol:lang(bcc) li,ol:lang(bgn) li,ol:lang(bqi) li,ol:lang(fa) li,ol:lang(glk) li,ol:lang(kk-arab) li,ol:lang(lrc) li,ol:lang(luz) li,ol:lang(mzn) li{list-style-type:persian}ol:lang(ckb) li,ol:lang(sdh) li{list-style-type:arabic-indic}ol:lang(hi) li,ol:lang(mai) li,ol:lang(mr) li,ol:lang(ne) li{list-style-type:devanagari}ol:lang(as) li,ol:lang(bn) li{list-style-type:bengali}ol:lang(or) li{list-style-type:oriya}.toc ul{margin:0.3em 0}.mw-content-ltr .toc ul{text-align:left}.mw-content-ltr .toc ul ul{margin:0 0 0 2em}.toc .toctitle{direction:ltr}sup{line-height:1}}@media screen{a{text-decoration:none;color:#0645ad;background:none}a:not([href]){cursor:pointer}a:visited{color:#0b0080}a:active{color:#faa700}a:hover,a:focus{text-decoration:underline}a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}.mw-parser-output a.external{color:#36b}.mw-parser-output a.external:visited{color:#636}.mw-parser-output a.external:active{color:#b63}.mw-parser-output a.external.free{word-wrap:break-word}img{border:0;vertical-align:middle}h1,h2,h3,h4,h5{color:#000;background:none;font-weight:normal;margin:0;overflow:hidden;padding-top:0.5em;padding-bottom:0.17em;border-bottom:1px solid #a2a9b1}h1{font-size:188%}h2{font-size:150%}h3,h4,h5{border-bottom:0;font-weight:bold}h3{font-size:128%}h4{font-size:116%}h5{font-size:108%}h2{margin-bottom:0.6em}h3,h4,h5{margin-bottom:0.3em}p{margin:0.4em 0 0.5em 0}p img{margin:0}ul{margin:0.3em 0 0 1.6em;padding:0}ol{margin:0.3em 0 0 3.2em;padding:0;list-style-image:none}li{margin-bottom:0.1em}pre,code{font-family:monospace,monospace}code{color:#000;background-color:#f8f9fa;border:1px solid #eaecf0;border-radius:2px;padding:1px 4px}pre{color:#000;background-color:#f8f9fa;border:1px solid #eaecf0;padding:1em;white-space:pre-wrap}form{border:0;margin:0}.toc{border:1px solid #a2a9b1;background-color:#f8f9fa;font-size:95%}.toc{display:table;padding:7px}.toc h2{display:inline;border:0;padding:0;font-size:100%;font-weight:bold}.toc .toctitle{text-align:center}.toc ul{list-style-type:none;list-style-image:none;margin-left:0;padding:0;text-align:left}.toc ul ul{margin:0 0 0 2em}.tocnumber,.toctext{display:table-cell;text-decoration:inherit}.tocnumber{color:#222}.mw-content-ltr .tocnumber{padding-left:0;padding-right:0.5em}.catlinks{border:1px solid #a2a9b1;background-color:#f8f9fa;padding:5px;margin-top:1em;clear:both}.firstHeading{margin-bottom:0.1em;line-height:1.2em;padding-bottom:0}#contentSub{font-size:84%;line-height:1.2em;margin:0 0 1.4em 1em;color:#54595d;width:auto}}.toctogglecheckbox:checked~ul{display:none}@media screen{:not(:checked)>.toctogglecheckbox{display:inline!important;position:absolute;opacity:0;z-index:-1}.toctogglespan{font-size:94%}:not(:checked)>.toctogglespan:before{content:' ['}:not(:checked)>.toctogglespan:after{content:']'}.toctogglelabel{cursor:pointer;color:#0645ad}.toctogglelabel:hover{text-decoration:underline}.toctogglecheckbox:focus+.toctitle .toctogglelabel{text-decoration:underline;outline:dotted 1px;outline:auto -webkit-focus-ring-color}.toctogglecheckbox:checked+.toctitle .toctogglelabel:after{content:'show'}.toctogglecheckbox:not(:checked)+.toctitle .toctogglelabel:after{content:'hide'}}@media screen{html{font-size:100%}html,body{height:100%;margin:0;padding:0;font-family:sans-serif}body{background-color:#f6f6f6}.mw-body{background-color:#ffffff;color:#222222;padding:1em;direction:ltr}.mw-body{margin-left:10em}.mw-body{border:1px solid #a7d7f9;border-right-width:0;margin-top:-1px}.mw-body h1,.mw-body-content h2{margin-bottom:0.25em;padding:0;font-family:'Linux Libertine','Georgia','Times',serif;line-height:1.3}.mw-body h1:lang(ja),.mw-body-content h1:lang(ja),.mw-body-content h2:lang(ja),.mw-body h1:lang(he),.mw-body-content h1:lang(he),.mw-body-content h2:lang(he),.mw-body h1:lang(ko),.mw-body-content h1:lang(ko),.mw-body-content h2:lang(ko){font-family:sans-serif}.mw-body h1:lang(my),.mw-body-content h1:lang(my),.mw-body-content h2:lang(my){line-height:normal}.mw-body h1{font-size:1.8em}.mw-body .firstHeading{overflow:visible}.mw-body .mw-indicators{float:right;font-size:0.875em;line-height:1.6;position:relative;z-index:1}.mw-body-content{position:relative;font-size:0.875em;line-height:1.6;z-index:0}.mw-body-content p{margin:0.5em 0}.mw-body-content h2{margin-top:1em;font-size:1.5em}.mw-body-content h3,.mw-body-content h4,.mw-body-content h5{margin-top:0.3em;margin-bottom:0;padding-bottom:0;line-height:1.6}.mw-body-content h3{font-size:1.2em}.mw-body-content h3,.mw-body-content h4{font-weight:bold}.mw-body-content h4,.mw-body-content h5{font-size:100%}.mw-body-content .toc h2{font-family:sans-serif;font-size:100%}ul{list-style-image:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%225%22 height=%2213%22%3E %3Ccircle cx=%222.5%22 cy=%229%22 r=%222.5%22 fill=%22%23222%22/%3E %3C/svg%3E")}pre{line-height:1.3}#p-personal{position:absolute;top:0.33em;right:0.75em;z-index:100}#p-personal ul{list-style:none none;margin:0;padding-left:10em}#p-personal li{float:left;margin-left:0.75em;padding-top:0.5em;font-size:0.75em;line-height:1.16666667;white-space:nowrap}#p-search{float:left;margin-right:0.5em;margin-left:0.5em}#p-search h3{display:block;position:absolute!important;clip:rect(1px,1px,1px,1px);width:1px;height:1px;margin:-1px;border:0;padding:0;overflow:hidden}#p-search form{margin:0.5em 0 0}#simpleSearch{display:block;width:20vw;min-width:5em;max-width:20em;height:100%;margin-top:0;position:relative;min-height:1px}#simpleSearch input{background-color:rgba(0,0,0,0);color:#000000;margin:0}#searchInput{width:100%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;border:1px solid #a2a9b1;border-radius:2px;padding:0.4em 1.84615385em 0.4em 0.4em;-webkit-box-shadow:inset 0 0 0 1px transparent;box-shadow:inset 0 0 0 1px transparent;font-size:0.8125em;direction:ltr;-webkit-transition:border-color 250ms,box-shadow 250ms;-moz-transition:border-color 250ms,box-shadow 250ms;transition:border-color 250ms,box-shadow 250ms;-webkit-appearance:textfield}#simpleSearch:hover #searchInput{border-color:#72777d}#searchInput:focus,#simpleSearch:hover #searchInput:focus{outline:0;border-color:#3366cc;-webkit-box-shadow:inset 0 0 0 1px #3366cc,inset 0 0 0 2px #ffffff;box-shadow:inset 0 0 0 1px #3366cc,inset 0 0 0 2px #ffffff}#searchInput::-webkit-input-placeholder{color:#72777d;opacity:1}#searchInput::-moz-placeholder{color:#72777d;opacity:1}#searchInput:-moz-placeholder{color:#72777d;opacity:1}#searchInput::placeholder{color:#72777d;opacity:1}#searchInput::-webkit-search-decoration,#searchInput::-webkit-search-cancel-button,#searchInput::-webkit-search-results-button,#searchInput::-webkit-search-results-decoration{-webkit-appearance:textfield}#searchButton{position:absolute;top:1px;bottom:1px;right:1px;min-width:24px;width:1.84615385em;border:0;padding:0;cursor:pointer;font-size:0.8125em;direction:ltr;text-indent:-99999px;white-space:nowrap;overflow:hidden;z-index:1}#searchButton{background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2213%22%3E %3Cg fill=%22none%22 stroke=%22%2354595d%22 stroke-width=%222%22%3E %3Cpath d=%22M11.29 11.71l-4-4%22/%3E %3Ccircle cx=%225%22 cy=%225%22 r=%224%22/%3E %3C/g%3E %3C/svg%3E");background-position:center center;background-repeat:no-repeat}.vectorTabs{background-position:left bottom;float:left;height:2.5em;padding-left:1px}.vectorTabs ul{float:left;height:100%;list-style:none none;margin:0;padding:0}.vectorTabs li{background-image:linear-gradient(to top,#77c1f6 0,#e8f2f8 1px,#ffffff 100%);background-position:left bottom;background-repeat:repeat-x;float:left;display:block;height:100%;margin:0;padding:0;line-height:1.125em;white-space:nowrap}.vectorTabs li a{color:#0645ad;height:1.9em;padding-left:0.615em;padding-right:0.615em;cursor:pointer;font-size:0.8125em}.vectorTabs .selected{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAABkAQAAAABvV2fNAAAADElEQVR4AWNoGB4QAInlMgFKeRKBAAAAAElFTkSuQmCC);background:#ffffff}.vectorTabs .selected a,.vectorTabs .selected a:visited{color:#222222;text-decoration:none}.vectorTabs span{background-position:right bottom;display:inline-block;height:100%}.vectorTabs span a{float:left;display:block;position:relative;padding-top:1.25em}.vectorTabs,.vectorTabs span{background-image:linear-gradient(to bottom,rgba(167,215,249,0) 0,#a7d7f9 100%);background-repeat:no-repeat;background-size:1px 100%}@-webkit-keyframes rotate{from{-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(360deg);-moz-transform:rotate(360deg);transform:rotate(360deg)}}@-moz-keyframes rotate{from{-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(360deg);-moz-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes rotate{from{-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(360deg);-moz-transform:rotate(360deg);transform:rotate(360deg)}}#mw-navigation h2{position:absolute;top:-9999px}.mw-jump-link:not(:focus){display:block;position:absolute!important;clip:rect(1px,1px,1px,1px);width:1px;height:1px;margin:-1px;border:0;padding:0;overflow:hidden}#mw-page-base{height:5em;background-position:bottom left;background-color:#fbfbfb;background-image:-webkit-gradient(linear,right top,right bottom,color-stop(50%,#ffffff),color-stop(100%,#f6f6f6));background-image:-webkit-linear-gradient(top,#ffffff 50%,#f6f6f6 100%);background-image:-moz-linear-gradient(top,#ffffff 50%,#f6f6f6 100%);background-image:linear-gradient(to bottom,#ffffff 50%,#f6f6f6 100%)}#mw-head-base{margin-top:-5em;margin-left:10em;height:5em}#mw-head{position:absolute;top:0;right:0;width:100%}#left-navigation{float:left;margin-left:10em;margin-top:2.5em;margin-bottom:-2.5em}#right-navigation{float:right;margin-top:2.5em}#mw-panel{position:absolute;top:0;width:10em;left:0;font-size:inherit}#mw-panel .portal{margin:0 0.6em 0 0.7em;padding:0.25em 0;direction:ltr}#mw-panel .portal h3{color:#444444;font-weight:normal;margin:0.5em 0 0 0.66666667em;padding:0.25em 0;cursor:default;border:0;font-size:0.75em}#mw-panel .portal .body{margin-left:0.5em;padding-top:0;background-image:linear-gradient(to right,transparent 0,#c8ccd1 35%,#c8ccd1 70%,transparent 100%);background-repeat:no-repeat;background-size:100% 1px}#mw-panel .portal .body ul{list-style:none none;margin:0;padding-top:0.3em}#mw-panel .portal .body li{margin:0;padding:0.25em 0;font-size:0.75em;line-height:1.125em;word-wrap:break-word}#mw-panel .portal .body li a{color:#0645ad}#mw-panel .portal .body li a:visited{color:#0b0080}#mw-panel #p-logo+.portal{background-image:none;margin-top:1em}#mw-panel #p-logo+.portal .body{background-image:none;margin-left:0.5em}#footer{margin-left:10em;margin-top:0;padding:0.75em;direction:ltr}#footer ul{list-style:none none;margin:0;padding:0}#footer li{color:#222222;margin:0;padding:0.5em 0;font-size:0.7em}#footer-info li{line-height:1.4}#footer-places li{float:left;margin-right:1em;line-height:2}.mw-parser-output .external{background-position:center right;background-repeat:no-repeat;background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22%3E %3Cpath fill=%22%23fff%22 stroke=%22%2336c%22 d=%22M1.5 4.518h5.982V10.5H1.5z%22/%3E %3Cpath fill=%22%2336c%22 d=%22M5.765 1H11v5.39L9.427 7.937l-1.31-1.31L5.393 9.35l-2.69-2.688 2.81-2.808L4.2 2.544z%22/%3E %3Cpath fill=%22%23fff%22 d=%22M9.995 2.004l.022 4.885L8.2 5.07 5.32 7.95 4.09 6.723l2.882-2.88-1.85-1.852z%22/%3E %3C/svg%3E");padding-right:13px}}@media screen and (min-width:982px){.mw-body,#mw-head-base,#left-navigation,#footer{margin-left:11em}.mw-body{padding:1.25em 1.5em 1.5em 1.5em}#footer{padding:1.25em}#mw-panel{padding-left:0.5em}#p-search{margin-right:1em}#p-personal{right:1em}}@media screen and (max-width:720px){#mw-head{position:static!important;margin-top:0.5em}#mw-navigation #mw-panel{display:table;position:static;table-layout:fixed;width:100%;overflow:hidden;font-size:150%}#mw-navigation #mw-panel .portal{display:block;width:100%}#mw-navigation #mw-panel ul li{list-style:none}body #footer{margin-left:0;padding-top:0}body #footer #footer-info-lastmod{display:none}#p-personal{display:table;position:relative;width:100%;top:inherit;left:inherit;right:inherit}#p-personal ul{padding-left:0}#right-navigation{position:absolute;top:inherit;right:0;margin-top:0;float:none}#left-navigation{position:absolute;top:inherit;margin:0;display:block;float:none}#p-namespaces,#p-views{position:relative;top:2.5em}#p-namespaces{padding-left:0}#p-search{float:none;position:absolute;right:0;width:100vw;margin:0}#simpleSearch{margin:0 3em;width:80vw;padding:0}.mw-body{border-left:0;margin-left:0}}#archnavbar{height:40px!important;padding:10px 15px!important;background:#333!important;border-bottom:5px #08c solid!important}#archnavbarlogo{float:left!important;margin:0!important;padding:0!important;height:40px!important;width:190px!important}html>body #archnavbarlogo{background:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEiIHdpZHRoPSI2MDAiIGhlaWdodD0iMTI2Ij48cGF0aCBkPSJNMTU5LjU2OCAzNC40MjdjLTguODktLjAxNC0xNi4yNjcgMS44MDktMTkuMTIgMi44MDNsLTIuOTM3IDE1Ljg1N2MtLjAwNy4wNTggMTQuNjE3LTMuOSAyMS4wNTktMy42NjcgMTAuNjY1LjM4MyAxMS42NDYgNC4wNzYgMTEuNDYgOS4wNi4xODIuMjkyLTIuNzUyLTQuNTAzLTExLjk3OS00LjY2NC0xMS42NC0uMi0yOC4wNjkgNC4xMjItMjguMDQ2IDIxLjY5Mi0uMzE0IDE5Ljc2NSAxNC43NjQgMjUuNTc5IDI1LjAzMiAyNS42ODYgOS4yMzItLjE2OCAxMy41NjMtMy40OTYgMTUuOTM0LTUuMjggMy4xMTUtMy4yNTcgNi42NzktNi41MzIgMTAuMDc4LTEwLjQ2Mi0zLjIxNiA1Ljg0NC02LjAwNSA5Ljg4NC04LjkwNyAxMi45Nzd2Mi42MTFsMTQuMDMzLTIuMzYxLjA5Ni0zOC4xNDRjLS4xNDMtNS4zOTkgMy4wOTYtMjYuMDU3LTI2LjcwMy0yNi4xMDh6bS0yLjAxNiAzMy4yMWM1LjgxNy4wOCAxMi40ODggMi45NDggMTIuNDk3IDkuODQ5LjAzIDYuMjc3LTcuODYzIDkuNjUxLTEyLjk5NiA5LjU5OC01LjEzNS0uMDUzLTExLjk0OS00LjAzNi0xMS45NzktMTAuMTU1LjA5OS01LjQ3IDYuNDI2LTkuNDMyIDEyLjQ3OC05LjI5MXptMzcuOTcyLTI5LjY4NWwtLjA5NSA2My4xNjYgMTYuMzQ4LTMuMTUuMDI3LTM1LjgxNGMuMDA0LTUuMzMzIDcuNjItMTEuNTY0IDE3LjE3OC0xMS40NjQgMi4wMjgtMy42NyA1Ljg0LTEzLjA1IDYuNzctMTUuMTgzLTIxLjM1MS0uMDUxLTIxLjYyMyA2LjEzNy0yNS4zMzYgOS4xOC0uMDQtNS44MDYtLjAxMy05LjI5Mi0uMDEzLTkuMjkybC0xNC44NzkgMi41NTd6bTkyLjAwMiA4LjI5MmMtLjE1OC0uMDc0LTguNTI2LTkuNzg4LTI1LjM1LTkuODY0LTE1Ljc1OC0uMjYyLTMzLjQzMyA1Ljg0Ny0zMy43MTYgMzIuMjcuMTM4IDIzLjIzMiAxNi45NzkgMzIuMzExIDMzLjgwNSAzMi40ODggMTguMDA3LjE4NyAyNS4xNzItMTEuMjYgMjUuNjAyLTExLjU0My0yLjE0OS0xLjg2My0xMC4xOTYtOS44MzctMTAuMTk2LTkuODM3cy01LjAyNyA3LjE1Ny0xNC43NzkgNy4yNDhjLTkuNzU1LjA5My0xOC4yMzQtNy41NC0xOC4zNTQtMTguMTg5LS4xMjUtMTAuNjUgNy43OTUtMTYuNDE5IDE4LjQyNy0xNi44ODUgOS4yMDUtLjAwMiAxNC41MTYgNS45NDMgMTQuNTE2IDUuOTQzem0yMC42MDYtMzAuMzk5bC0xNS40MzQgMy42MjguMTE1IDgyLjI3NyAxNS4yMDQtMi43NDUuMTcyLTM4LjcyYy4wMzMtNC4wNiA1Ljg3NC0xMC4yOTUgMTUuNjI2LTEwLjA5NyA5LjMyNS4wOTcgMTEuNDEgNi4yMTUgMTEuMzg0IDYuOTg4bC4yNjkgNDQuODI0IDE0Ljk5My0yLjY1LjA1Ny00Ny41M2MuMDk5LTQuNTc0LTEwLjAxOC0xNC4yMzMtMjYuMjgtMTQuMzAyLTcuNzI5LjAxMi0xMi4wMDkgMS43NjItMTQuMTg3IDMuMDUyLTMuNzI2IDIuODc5LTcuOTg1IDUuNjM3LTEyLjE3IDkuMTU3IDMuODY5LTQuOTcgNy4xMTctOC40MDcgMTAuMjktMTAuOTYxbC0uMDQtMjIuOTIxeiIgZmlsbD0iI2ZmZiIgZmlsbC1ydWxlPSJldmVub2RkIi8+PHBhdGggZD0iTTM2MC4xMzYgMTcuMjE4bDYuOTYyLTEuNzQyLjMzIDgyLjk1LTcuMDc0IDEuMjA0em0xOC45MjggMjQuNzU3bDYuMTAxLTIuNzE2LjA1MiA1OS40NzgtNS44OTIgMS4yMTd6bS0xLjQ1LTIxLjQ0OGw0LjkyLTQuMDE1IDQuMDg2IDQuNTQ3LTQuOTIxIDQuMTIxem0xOS4wMjQgMjAuMzY1bDYuOTYyLTEuNDIxLjAzMyAxMi40MzRjLjAwMS41MzQgMy44MjMtMTMuODkgMjIuMjU4LTEzLjU3IDE3LjkuMSAyMC44MjcgMTMuOTU3IDIwLjczIDE3LjA2NGwuMjIxIDQzLjcyNS02LjEwMiAxLjMyNC0uMDM1LTQzLjE4OWMuMDctMS4yNjEtMi43OS0xMS45MjctMTUuNDM5LTExLjk2Ni0xMi42NDYtLjAzNy0yMS40MDkgOS4xODYtMjEuMzkzIDE1LjA3OGwuMSAzOC4wNDctNy4wNyAxLjg0N3ptMTEwLjk1NCA1OC41NDZsLTYuOTYyIDEuNDItLjAzMy0xMi40MzNjLS4wMDEtLjUzNC0zLjgyNSAxMy44OS0yMi4yNTggMTMuNTctMTcuOS0uMS0yMC44MjctMTMuOTU3LTIwLjczLTE3LjA2NGwtLjIyMS00My43MjUgNy4zOTctMS40OTQuMTE0IDQzLjE5Yy4wMDMgMS4xOCAxLjQxNiAxMi4wOTYgMTQuMDY1IDEyLjEzNSAxMi42NDYuMDM3IDIxLjUwNi03LjYxNiAyMS41NjktMTkuMTM5bC0uMDktMzQuMDc2IDYuODg1LTEuNzU3em0xMy42NDUtNTkuMDM3bC00Ljg4MiAzLjgyIDE4LjcxNyAyNC40OTQtMTkuOTYzIDI4LjMgNS4xNzkgMy44NDMgMTguNzY2LTI2LjI4IDE5LjM2OCAyNi45MDIgNC43OTEtMy44Mi0yMC43NTctMjguNzY1IDE2LjU2LTIzLjI2Mi01LjA5Mi00LjMwNS0xNS4wODUgMjEuNTI1ek02MS44OCAxLjc3OGMtNS4zODUgMTMuMjAzLTguNjMzIDIxLjgzOS0xNC42MjkgMzQuNjQ5IDMuNjc2IDMuODk2IDguMTg4IDguNDM0IDE1LjUxNiAxMy41NTktNy44NzgtMy4yNDItMTMuMjUyLTYuNDk3LTE3LjI2Ny05Ljg3NC03LjY3MyAxNi4wMTEtMTkuNjk1IDM4LjgxOC00NC4wOSA4Mi42NSAxOS4xNzQtMTEuMDY4IDM0LjAzNy0xNy44OTMgNDcuODg5LTIwLjQ5N2EzNS4xMDMgMzUuMTAzIDAgMCAxLS45MS04LjIxM2wuMDIzLS42MTRjLjMwNC0xMi4yODQgNi42OTQtMjEuNzMgMTQuMjY0LTIxLjA5IDcuNTcuNjQyIDEzLjQ1NCAxMS4xMjYgMTMuMTUgMjMuNDEtLjA1OCAyLjMxMi0uMzE5IDQuNTM2LS43NzQgNi41OTggMTMuNzAxIDIuNjggMjguNDA1IDkuNDg3IDQ3LjMyIDIwLjQwNy0zLjczLTYuODY2LTcuMDU5LTEzLjA1Ni0xMC4yMzgtMTguOTUtNS4wMDctMy44ODItMTAuMjMtOC45MzMtMjAuODg0LTE0LjQwMiA3LjMyMyAxLjkwMyAxMi41NjYgNC4wOTkgMTYuNjUzIDYuNTUyQzc1LjU4IDM1Ljc4NiA3Mi45NjMgMjcuNzkgNjEuODggMS43Nzh6IiBmaWxsPSIjMTc5M2QxIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48cGF0aCBkPSJNNTc2Ljc3MSA5My4yNjVWODAuNjAzaC00Ljczdi0xLjY5NWgxMS4zOHYxLjY5NWgtNC43NXYxMi42NjJoLTEuOW04LjYyOSAwVjc4LjkwOGgyLjg1OWwzLjM5OCAxMC4xNjZjLjMxNC45NDcuNTQyIDEuNjU1LjY4NiAyLjEyNS4xNjMtLjUyMi40MTgtMS4yOS43NjQtMi4zMDFsMy40MzctOS45OWgyLjU1NnYxNC4zNTdoLTEuODMxVjgxLjI1bC00LjE3MiAxMi4wMTZoLTEuNzE0bC00LjE1Mi0xMi4yMjJ2MTIuMjIyaC0xLjgzMiIgZm9udC13ZWlnaHQ9IjQwMCIgZm9udC1zaXplPSI4LjQ0MSIgZm9udC1mYW1pbHk9IkRlamFWdSBTYW5zIE1vbm8iIGZpbGw9ImdyYXkiLz48L3N2Zz4=) no-repeat!important;background-size:190px 40px!important}#archnavbarlogo p{margin:0!important;padding:0!important;text-indent:-9999px!important}#archnavbarlogo a{display:block!important;height:40px!important;width:190px!important}#archnavbar ul{display:inline!important;float:right!important;list-style:none!important;margin:0!important;padding:0!important}#archnavbar ul li{float:left!important;font-size:14px!important;font-family:sans-serif!important;line-height:45px!important;padding-right:15px!important;padding-left:15px!important}#archnavbar ul#archnavbarlist li a{color:#999;font-weight:bold!important;text-decoration:none!important}#archnavbar ul li a:hover{color:white!important;text-decoration:underline!important}#archnavbar ul li.anb-selected a{color:white!important}@media (max-width:600px){#anb-wiki{display:none}}@media (max-width:680px){html>body #archnavbarlogo{width:40px!important;margin-right:5px!important;background:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjEyMDAiIHZlcnNpb249IjEiPjxwYXRoIGQ9Ik02MDAgMGMtNTMuNDE2IDEzMC45NjItODUuNjcxIDIxNi43NC0xNDUuMTQzIDM0My44MSAzNi40NjQgMzguNjUxIDgxLjIyIDgzLjQ0OSAxNTMuOTA1IDEzNC4yODUtNzguMTQ1LTMyLjE1Ni0xMzEuNDAzLTY0LjIxMy0xNzEuMjM4LTk3LjcxNEMzNjEuNDEgNTM5LjIgMjQxLjk4OSA3NjUuMTk0IDAgMTIwMGMxOTAuMTYxLTEwOS43ODQgMzM3LjY2NS0xNzcuMzk3IDQ3NS4wNDgtMjAzLjIzOC01Ljg5NS0yNS4zNjctOS4xOC01Mi44OTYtOC45NTMtODEuNTI0bC4xOS01LjkwNUM0NjkuMzA1IDc4Ny40OCA1MzIuNzIgNjkzLjYzOCA2MDcuODEgNzAwYzc1LjA4OSA2LjM2MiAxMzMuNDk0IDExMC41MjggMTMwLjQ3NiAyMzIuMzgxLS41NjggMjIuOTE2LTMuMTA1IDQ0Ljg4NS03LjYyIDY1LjMzM0M4NjYuNTI4IDEwMjQuMzI1IDEwMTIuNDYyIDEwOTEuNzMgMTIwMCAxMjAwYy0zNi45OTUtNjguMTExLTcwLjE4LTEyOS4zMzUtMTAxLjcxNC0xODcuODEtNDkuNjcyLTM4LjQ5OS0xMDEuMzY1LTg4LjYxMy0yMDcuMDQ4LTE0Mi44NTcgNzIuNjQgMTguODc1IDEyNC43OTMgNDAuNjEyIDE2NS4zMzMgNjQuOTUzQzczNS45NTIgMzM3LjM0OCA3MDkuOTQ4IDI1OC4wMTYgNjAwIDB6IiBmaWxsPSIjMTc5M2QxIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=) no-repeat!important;background-size:40px 40px!important}#archnavbar ul{display:flex!important;justify-content:space-between;flex-wrap:nowrap;overflow:hidden;float:none!important}#archnavbar ul li{padding:0!important;float:none!important}}@media (max-width:830px){#anb-home{display:none}html>body #archnavbarlogo{padding-right:15px!important}#archnavbar{padding-left:5px!important;padding-right:5px!important}#archnavbar ul li{padding-left:5px!important;padding-right:5px!important}}body{background:#f6f9fc}#content{background:#ffffff;border:1px solid #cccccc}#content h1,#content h2,#content h3,#content h4,#content h5,#content pre,#content code{color:#222222}#content ul{list-style-image:none}#content pre{border:1px solid #bbccdd;overflow:auto;word-break:break-all;white-space:pre-wrap!important}#content pre,#content code{background-color:#ebf1f5;font-family:monospace}#content code{display:inline-block;padding:0 0.3em;border-width:0;border-radius:0}#footer{color:#333333}#toc{background-color:#f9faff;border:1px solid #d7dfe3}#bodyContent>div.mw-content-ltr a{font-weight:bold}#bodyContent #toc a{font-weight:normal}#content a:not(.new),#mw-navigation li:not(.new) a:not(.new),#mw-panel li:not(.new) a:not(.new),#column-one li:not(.new) a:not(.new),#footer a:not(.new){text-decoration:none;color:#0077bb!important}#content a:not(.new):hover,#mw-navigation li:not(.new) a:not(.new):hover,#mw-panel li:not(.new) a:not(.new):hover,#column-one li:not(.new) a:not(.new):hover,#footer a:not(.new):hover{text-decoration:underline;background-color:transparent;color:#999999!important}#content a:active,#mw-navigation li:not(.new) a:active,#mw-panel li:not(.new) a:active,#column-one li:not(.new) a:active,#footer a:active,#content a:focus,#mw-navigation li:not(.new) a:focus,#mw-panel li:not(.new) a:focus,#column-one li:not(.new) a:focus,#footer a:focus,#content a:active:hover,#mw-navigation li:not(.new) a:active:hover,#mw-panel li:not(.new) a:active:hover,#column-one li:not(.new) a:active:hover,#footer a:active:hover,#content a:focus:hover,#mw-navigation li:not(.new) a:focus:hover,#mw-panel li:not(.new) a:focus:hover,#column-one li:not(.new) a:focus:hover,#footer a:focus:hover{color:#ee9900!important}#content a:not(.new):visited,#mw-panel li:not(.new) a:not(.new):visited,#p-navigation li:not(.new) a:not(.new):visited,#p-tb li:not(.new) a:not(.new):visited{color:#666666!important}.mw-body-content a.external{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6+R8AAAAs0lEQVR4AWP4//8/yRiroHH6njrjtN1/sGGYJpwajdJ2bXNI2M8BE8PQhMXUv0B8yThtMxeGJgyBmf9ZDRO3iRqn775rmL5NCyQG0giyEacm0WWvVstNvnNXt+hYNogP0giyEeRUnJpkVj3mBGqcC8SvNGrOVIJsBDkV5EecmmBYZOnrbqmZD1+CnAqTA2nEq4lh/38W0aWv9gGxF4YcpiYEFlz1jh+kGa8m3BhTE1GYYk0A08+9f1lXOBcAAAAASUVORK5CYII=) center right no-repeat;padding-right:13px}.mw-body h1,.mw-body-content h2{font-family:sans-serif}div#mw-head{top:65px}div#mw-panel{top:65px}#mw-page-base{background:none}div.vectorTabs{margin-top:-2px}div.vectorTabs{padding-left:0}div.vectorTabs ul,div.vectorTabs ul li{background:none}div.vectorTabs ul li{border:1px}div.vectorTabs li.selected{border:1px solid #cccccc;border-bottom-color:#ffffff;background-color:#ffffff}div.vectorTabs li.selected span{background:none}div.vectorTabs li:not(:first-child).selected{margin-left:-2px}@media screen and (max-width:720px){div#p-personal{top:unset}div#mw-panel{padding-top:0}}.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:0;z-index:1099;padding:0;margin:-1px 0 0 0}</style><meta name=ResourceLoaderDynamicStyles content>
+<style>#bodyContent a.external[href^="https://wiki.archlinux.org"]{background:none;padding-right:0}span.archwiki-template-pkg{font-family:monospace}div.archwiki-template-box{padding:5px;border:thin solid black;margin:0.5em 0;overflow:hidden}div.archwiki-template-box.archwiki-template-box-note{background-color:#ddf;border-color:#bbd}div.archwiki-template-box.archwiki-template-box-warning{background-color:#fdd;border-color:#dbb}div.archwiki-template-box.archwiki-template-box-tip{background-color:#dfd;border-color:#bdb}div.archwiki-template-message{position:relative;overflow:hidden;min-height:4.6em;margin-bottom:1em;background-color:#f9faff;border:1px solid #d7dfe3;padding:0 100px;text-align:center}div.archwiki-template-message>p>a{display:block;position:absolute;top:5px}div.archwiki-template-message>p>a:first-of-type{left:26px}div.archwiki-template-message>p>a:last-of-type{right:26px}div.archwiki-template-message>div{font-size:90%}div.archwiki-template-meta-related-articles-start{float:right;clear:right;width:25%;margin:0 0 0.5em 0.5em}div.archwiki-template-meta-related-articles-start>p{background:#333;color:white;padding:0.2em;border-bottom:5px #08c solid;margin:0;text-align:center;font-weight:bold}div.archwiki-template-meta-related-articles-start>ul{list-style-type:none;margin:0;padding:0.3em}div.archwiki-template-meta-related-articles-start>ul>li{padding:0.4em 0;line-height:1}</style>
+<meta name=generator content="MediaWiki 1.34.1">
+<meta name=viewport content="width=device-width, initial-scale=1">
+<link rel=search type=application/opensearchdescription+xml href=https://wiki.archlinux.org/opensearch_desc.php title="ArchWiki (en)">
+<link rel=EditURI type=application/rsd+xml href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel=license href=http://www.gnu.org/copyleft/fdl.html>
+<link rel=alternate type=application/atom+xml title="ArchWiki Atom feed" href="https://wiki.archlinux.org/index.php?title=Special:RecentChanges&amp;feed=atom">
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+<link rel="shortcut icon" href=data:image/vnd.microsoft.icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABvElEQVQ4jY2TP4gTQRTGfzM7ybp35mBX8LY4GxM5OI4UiqDWtoKIjWhl4QmmEQwIhzZaa3GLlYWgjViI+AcUrrASUYTbQ0UxepwpFj1EDCSXuLNj4QYSLxP8mnm8972P3wyMMMZgUxjF+ycLUjUW5l/YPMq6/VfnHCEmAGuAsBHsurG6QwiaRUeq2cCdfXy88nmUT9qSJ4tywVNyGxjVSbPzNp81wFNyt6cknpJ00uzk2Wfr/n8HHLrz4ajriFeuEsuekvS08Zu/eoujvFveYN+t98XAUw1jmEmN+ZEZfG2M8BzZKhVl+f6x8vexBIGn6hMFOeMqgTEEXZ2J39qwqbNSR5tLYwnmbr6b2hO4axvt1P/a6tHTw3SuI1pTrlNZPT33bSTBps7qb5K23/jZ7S8/AO72511tShud9MJIgjCKdwINYHs+e5TUqkfy2W3gVN5vA+WkVk3+Jbg8sAzwcKB+mp8G+ALUh64QRnEZOMOwPg3Ub/vEgAvcGwoArgKFvF4DrgEfBwKawHVgHagAy2EUnwAQ00sre4HXwBPgSlKrvmSMwig+CCwCh4F5Mb20chF4ntSq1h83JujAH3Eom+H9uAq8AAAAAElFTkSuQmCC><style>.sf-hidden{display:none!important}</style><link rel=canonical href=https://wiki.archlinux.org/index.php/LightDM#NumLock_on_by_default></head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-LightDM rootpage-LightDM skin-vector action-view"><div id=archnavbar class=noprint>
+ <div id=archnavbarlogo>
+ <p><a id=logo href=https://www.archlinux.org/></a></p>
+ </div>
+ <div id=archnavbarmenu>
+ <ul id=archnavbarlist>
+ <li id=anb-home><a href=https://www.archlinux.org/>Home</a></li> <li id=anb-packages><a href=https://www.archlinux.org/packages/>Packages</a></li> <li id=anb-forums><a href=https://bbs.archlinux.org/>Forums</a></li> <li id=anb-wiki class=anb-selected><a href=https://wiki.archlinux.org/>Wiki</a></li> <li id=anb-bugs><a href=https://bugs.archlinux.org/>Bugs</a></li> <li id=anb-security><a href=https://security.archlinux.org/>Security</a></li> <li id=anb-aur><a href=https://aur.archlinux.org/>AUR</a></li> <li id=anb-download><a href=https://www.archlinux.org/download/>Download</a></li> </ul>
+ </div>
+</div>
+<div id=mw-page-base class=noprint></div>
+<div id=mw-head-base class=noprint></div>
+<div id=content class=mw-body role=main>
+ <a id=top></a>
+ 
+ <div class="mw-indicators mw-body-content">
+</div>
+ <h1 id=firstHeading class=firstHeading lang=en>LightDM</h1>
+ 
+ <div id=bodyContent class=mw-body-content>
+ <div id=siteSub class="noprint sf-hidden">From ArchWiki</div>
+ <div id=contentSub></div>
+ 
+ 
+ 
+ <div id=jump-to-nav></div>
+ <a class=mw-jump-link href=#mw-head>Jump to navigation</a>
+ <a class=mw-jump-link href=#p-search>Jump to search</a>
+ <div id=mw-content-text dir=ltr class=mw-content-ltr lang=en><div class=mw-parser-output><div class=archwiki-template-meta-related-articles-start><p>Related articles<ul>
+<li><a href=https://wiki.archlinux.org/index.php/Display_manager title="Display manager">Display manager</a></li>
+<li><a href=https://wiki.archlinux.org/index.php/GDM title=GDM>GDM</a></li>
+<li><a href=https://wiki.archlinux.org/index.php/LXDM title=LXDM>LXDM</a></li>
+</ul></div>
+<p><a rel=nofollow class="external text" href=https://github.com/canonical/lightdm>LightDM</a> is a cross-desktop <a href=https://wiki.archlinux.org/index.php/Display_manager title="Display manager">display manager</a>. Its key features are:
+</p>
+<ul><li>Cross-desktop - supports different desktop technologies.</li>
+<li>Supports different display technologies (X, Mir, Wayland ...).</li>
+<li>Lightweight - low memory usage and high performance.</li>
+<li>Supports guest sessions.</li>
+<li>Supports remote login (incoming - <a href=https://wiki.archlinux.org/index.php/XDMCP title=XDMCP>XDMCP</a>, <a href=https://wiki.archlinux.org/index.php/VNC class=mw-redirect title=VNC>VNC</a>, outgoing - XDMCP, <a href=https://wiki.archlinux.org/index.php/Pluggable class=mw-redirect title=Pluggable>pluggable</a>).</li>
+<li>Comprehensive test suite.</li>
+<li>Low code complexity.</ul>
+<p>More details about LightDM's design can be found <a rel=nofollow class="external text" href=https://www.freedesktop.org/wiki/Software/LightDM/Design>here</a>.
+</p>
+<div id=toc class=toc><input type=checkbox role=button id=toctogglecheckbox class=toctogglecheckbox style=display:none><div class=toctitle dir=ltr lang=en><h2>Contents</h2><span class=toctogglespan><label class=toctogglelabel for=toctogglecheckbox></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href=#Installation><span class=tocnumber>1</span> <span class=toctext>Installation</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href=#Greeter><span class=tocnumber>1.1</span> <span class=toctext>Greeter</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-3"><a href=#Enabling_LightDM><span class=tocnumber>2</span> <span class=toctext>Enabling LightDM</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href=#Command_line_tool><span class=tocnumber>3</span> <span class=toctext>Command line tool</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href=#User_switching><span class=tocnumber>3.1</span> <span class=toctext>User switching</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href=#Testing><span class=tocnumber>4</span> <span class=toctext>Testing</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href=#Optional_configuration_and_tweaks><span class=tocnumber>5</span> <span class=toctext>Optional configuration and tweaks</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href=#X_session_wrapper><span class=tocnumber>5.1</span> <span class=toctext>X session wrapper</span></a>
+<ul>
+<li class="toclevel-3 tocsection-9"><a href=#Environment_variables><span class=tocnumber>5.1.1</span> <span class=toctext>Environment variables</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href=#Keymap><span class=tocnumber>5.1.2</span> <span class=toctext>Keymap</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href=#Multiple_keyboard_layouts_in_lightdm-gtk-greeter><span class=tocnumber>5.1.3</span> <span class=toctext>Multiple keyboard layouts in lightdm-gtk-greeter</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-12"><a href=#Changing_background_images/colors><span class=tocnumber>5.2</span> <span class=toctext>Changing background images/colors</span></a>
+<ul>
+<li class="toclevel-3 tocsection-13"><a href=#GTK_greeter><span class=tocnumber>5.2.1</span> <span class=toctext>GTK greeter</span></a>
+<ul>
+<li class="toclevel-4 tocsection-14"><a href=#GTK3_Theme><span class=tocnumber>5.2.1.1</span> <span class=toctext>GTK3 Theme</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-15"><a href=#Webkit2_greeter><span class=tocnumber>5.2.2</span> <span class=toctext>Webkit2 greeter</span></a></li>
+<li class="toclevel-3 tocsection-16"><a href=#Unity_greeter><span class=tocnumber>5.2.3</span> <span class=toctext>Unity greeter</span></a></li>
+<li class="toclevel-3 tocsection-17"><a href=#Slick_Greeter><span class=tocnumber>5.2.4</span> <span class=toctext>Slick Greeter</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-18"><a href=#Changing_your_avatar><span class=tocnumber>5.3</span> <span class=toctext>Changing your avatar</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href=#Sources_of_Arch-centric_64x64_icons><span class=tocnumber>5.4</span> <span class=toctext>Sources of Arch-centric 64x64 icons</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href=#Enabling_autologin><span class=tocnumber>5.5</span> <span class=toctext>Enabling autologin</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href=#Enabling_interactive_passwordless_login><span class=tocnumber>5.6</span> <span class=toctext>Enabling interactive passwordless login</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href=#Enabling_guest_sessions><span class=tocnumber>5.7</span> <span class=toctext>Enabling guest sessions</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href=#Hiding_system_and_services_users><span class=tocnumber>5.8</span> <span class=toctext>Hiding system and services users</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href=#Migrating_from_SLiM><span class=tocnumber>5.9</span> <span class=toctext>Migrating from SLiM</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href=#Login_using_~/.xinitrc><span class=tocnumber>5.10</span> <span class=toctext>Login using ~/.xinitrc</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href=#NumLock_on_by_default><span class=tocnumber>5.11</span> <span class=toctext>NumLock on by default</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href=#Default_session><span class=tocnumber>5.12</span> <span class=toctext>Default session</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="#Adjusting_the_login_window's_position"><span class=tocnumber>5.13</span> <span class=toctext>Adjusting the login window's position</span></a>
+<ul>
+<li class="toclevel-3 tocsection-29"><a href=#GTK_greeter_2><span class=tocnumber>5.13.1</span> <span class=toctext>GTK greeter</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-30"><a href=#VNC_Server><span class=tocnumber>5.14</span> <span class=toctext>VNC Server</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href=#Lock_the_screen_using_light-locker><span class=tocnumber>5.15</span> <span class=toctext>Lock the screen using light-locker</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-32"><a href=#Troubleshooting><span class=tocnumber>6</span> <span class=toctext>Troubleshooting</span></a>
+<ul>
+<li class="toclevel-2 tocsection-33"><a href=#Viewing_current_configuration><span class=tocnumber>6.1</span> <span class=toctext>Viewing current configuration</span></a></li>
+<li class="toclevel-2 tocsection-34"><a href=#LightDM_not_starting_and_screen_flashing><span class=tocnumber>6.2</span> <span class=toctext>LightDM not starting and screen flashing</span></a></li>
+<li class="toclevel-2 tocsection-35"><a href=#Wrong_locale_displayed><span class=tocnumber>6.3</span> <span class=toctext>Wrong locale displayed</span></a></li>
+<li class="toclevel-2 tocsection-36"><a href=#Unresponsive_for_a_few_minutes_after_startup><span class=tocnumber>6.4</span> <span class=toctext>Unresponsive for a few minutes after startup</span></a></li>
+<li class="toclevel-2 tocsection-37"><a href=#Missing_icons_with_GTK_greeter><span class=tocnumber>6.5</span> <span class=toctext>Missing icons with GTK greeter</span></a></li>
+<li class="toclevel-2 tocsection-38"><a href=#LightDM_freezes_on_login_attempt><span class=tocnumber>6.6</span> <span class=toctext>LightDM freezes on login attempt</span></a></li>
+<li class="toclevel-2 tocsection-39"><a href=#LightDM_displaying_in_wrong_monitor><span class=tocnumber>6.7</span> <span class=toctext>LightDM displaying in wrong monitor</span></a></li>
+<li class="toclevel-2 tocsection-40"><a href=#LightDM_does_not_appear_or_monitor_only_displays_TTY_output><span class=tocnumber>6.8</span> <span class=toctext>LightDM does not appear or monitor only displays TTY output</span></a></li>
+<li class="toclevel-2 tocsection-41"><a href=#LightDM_is_running_with_low_FPS_on_Intel_Graphics><span class=tocnumber>6.9</span> <span class=toctext>LightDM is running with low FPS on Intel Graphics</span></a></li>
+<li class="toclevel-2 tocsection-42"><a href=#Pulseaudio_not_starting_automatically><span class=tocnumber>6.10</span> <span class=toctext>Pulseaudio not starting automatically</span></a></li>
+<li class="toclevel-2 tocsection-43"><a href=#Long_pause_before_LightDM_shows_up_when_home_is_encrypted><span class=tocnumber>6.11</span> <span class=toctext>Long pause before LightDM shows up when home is encrypted</span></a></li>
+<li class="toclevel-2 tocsection-44"><a href=#Boot_hangs_on_%22[_OK_]_Reached_target_Graphical_Interface.%22><span class=tocnumber>6.12</span> <span class=toctext>Boot hangs on "[ OK ] Reached target Graphical Interface."</span></a></li>
+<li class="toclevel-2 tocsection-45"><a href=#Wayland_session_not_working_with_duplicate_GNOME_entries_in_greeter><span class=tocnumber>6.13</span> <span class=toctext>Wayland session not working with duplicate GNOME entries in greeter</span></a></li>
+<li class="toclevel-2 tocsection-46"><a href=#Login_always_segfaults_on_first_attempt><span class=tocnumber>6.14</span> <span class=toctext>Login always segfaults on first attempt</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-47"><a href=#See_also><span class=tocnumber>7</span> <span class=toctext>See also</span></a></li>
+</ul>
+</div>
+<h2><span class=mw-headline id=Installation>Installation</span></h2>
+<p><a href=https://wiki.archlinux.org/index.php/Install class=mw-redirect title=Install>Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=lightdm">lightdm</a></span> package.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip"><strong>Tip:</strong> Stable releases are even-numbered (1.8, 1.10) while development releases are odd-numbered (1.9, 1.11). These development releases are available with <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href=https://aur.archlinux.org/packages/lightdm-devel/>lightdm-devel</a></span><sup><small>AUR</small></sup>. Also available is <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href=https://aur.archlinux.org/packages/lightdm-git/>lightdm-git</a></span><sup><small>AUR</small></sup>.</div>
+<h3><span class=mw-headline id=Greeter>Greeter</span></h3>
+<p>You will probably want to install a greeter. A greeter is a GUI that prompts the user for credentials, lets the user select a session, and so on. It is possible to use LightDM without a greeter, but only if an automatic login is configured; otherwise you will need to install <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=xorg-server">xorg-server</a></span> and one of the greeter packages below.
+<p>The official repositories contain the following greeters:
+</p>
+<ul><li><span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=lightdm-gtk-greeter">lightdm-gtk-greeter</a></span>: this is the <b>default</b> greeter LightDM attempts to use when started unless configured to do otherwise.</li>
+<li>lightdm-deepin-greeter (<span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=deepin-session-ui">deepin-session-ui</a></span>): A greeter from the <a href=https://wiki.archlinux.org/index.php/Deepin class=mw-redirect title=Deepin>Deepin</a> project.</li>
+<li><span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=lightdm-pantheon-greeter">lightdm-pantheon-greeter</a></span>: A greeter from the elementary OS project.</li>
+<li><span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=lightdm-webkit2-greeter">lightdm-webkit2-greeter</a></span>: A greeter that uses Webkit2 for theming. It supersedes <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href=https://aur.archlinux.org/packages/lightdm-webkit-greeter/>lightdm-webkit-greeter</a></span><sup><small>AUR</small></sup>.</li>
+<li><span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=lightdm-webkit-theme-litarvan">lightdm-webkit-theme-litarvan</a></span>: A modern and full-featured Webkit2 LightDM theme.</ul>
+<p>Other alternative greeters are available in the <a href=https://wiki.archlinux.org/index.php/AUR class=mw-redirect title=AUR>AUR</a>:
+</p>
+<ul><li><span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href=https://aur.archlinux.org/packages/lightdm-slick-greeter/>lightdm-slick-greeter</a></span><sup><small>AUR</small></sup>: A GTK based greeter focused more on appearance than <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=lightdm-gtk-greeter">lightdm-gtk-greeter</a></span>, forked from <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href=https://aur.archlinux.org/packages/lightdm-unity-greeter/>lightdm-unity-greeter</a></span><sup><small>AUR</small></sup>, and default in Linux Mint.</li>
+<li><span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href=https://aur.archlinux.org/packages/lightdm-unity-greeter/>lightdm-unity-greeter</a></span><sup><small>AUR</small></sup>: The greeter used by Unity.</li>
+<li><span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href=https://aur.archlinux.org/packages/lightdm-mini-greeter/>lightdm-mini-greeter</a></span><sup><small>AUR</small></sup>: A minimal, configurable, single-user greeter.</li>
+<li><span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href=https://aur.archlinux.org/packages/lightdm-webkit-theme-aether/>lightdm-webkit-theme-aether</a></span><sup><small>AUR</small></sup>: A sleek, straightforward Archlinux themed login screen written on lightdm and the lightdm-webkit2-greeter.</ul>
+<p>You can set the default greeter by changing the <code>[Seat:*]</code> section of the LightDM configuration file, like so:
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>/etc/lightdm/lightdm.conf</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>[Seat:*]
+...
+greeter-session=lightdm-<i>yourgreeter</i>-greeter
+...</pre>
+<p>One way to check which greeters are available is to list the files in the <code>/usr/share/xgreeters</code> directory; each <i>.desktop</i> file represents an available greeter. In this example, the <code>lightdm-gtk-greeter</code> and <code>lightdm-webkit2-greeter</code> greeters are available:
+</p>
+<pre>$ ls -1 /usr/share/xgreeters/
+lightdm-gtk-greeter.desktop
+lightdm-webkit2-greeter.desktop
+</pre>
+<h2><span class=mw-headline id=Enabling_LightDM>Enabling LightDM</span></h2>
+<p>Make sure to <a href=https://wiki.archlinux.org/index.php/Enable class=mw-redirect title=Enable>enable</a> <code>lightdm.service</code> so LightDM will be started at boot; see also <a href=https://wiki.archlinux.org/index.php/Display_manager#Loading_the_display_manager title="Display manager">Display manager#Loading the display manager</a>.
+</p>
+<h2><span class=mw-headline id=Command_line_tool>Command line tool</span></h2>
+<p>LightDM offers a command line tool, <code>dm-tool</code>, which can be used to lock the current seat, switch sessions, etc, which is useful with 'minimalist' window managers and for testing. To see a list of available commands, execute:
+</p>
+<pre>$ dm-tool --help
+</pre>
+<h3><span class=mw-headline id=User_switching>User switching</span></h3>
+<div class="noprint archwiki-template-message">
+<p><a href=https://wiki.archlinux.org/index.php/File:Tango-inaccurate.png class=image><img alt=Tango-inaccurate.png src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"><rect fill-opacity="0"/></svg>' decoding=async style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-5)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important" width=48 height=48></a><b>The factual accuracy of this article or section is disputed.</b><a href=https://wiki.archlinux.org/index.php/File:Tango-inaccurate.png class=image><img alt=Tango-inaccurate.png src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"><rect fill-opacity="0"/></svg>' decoding=async style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-5)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important" width=48 height=48></a></p>
+<div><b>Reason:</b> Is this warning inappropriate? <code>dm-tool lock</code> and <code>dm-tool switch-to-greeter</code> are NOT screen lockers. They only switch to the LightDM greeter and send a notification to lock the session (as <code>loginctl lock-session</code>). This notification should be processed by a screen locker or redirected by <i>xss-lock</i>. In the absence of a screen locker to listen, there is nothing <code>dm-tool ...</code> can do - but that's not LightDM's fault. This issue is well known and touched upon <a href=https://wiki.archlinux.org/index.php/List_of_applications#Screen_lockers title="List of applications">here</a> and <a href=https://wiki.archlinux.org/index.php/XScreenSaver#Lock_on_suspend title=XScreenSaver>here</a>. (Discuss in <a rel=nofollow class="external text" href=https://wiki.archlinux.org/index.php/Talk:LightDM>Talk:LightDM#</a>)</div>
+</div>
+<div class="archwiki-template-box archwiki-template-box-warning"><strong>Warning:</strong> The use of lightDM's built-in screen lockers like <code>dm-tool lock</code> or <code>dm-tool switch-to-greeter</code> are <a rel=nofollow class="external text" href="https://bbs.archlinux.org/viewtopic.php?pid=1712213#p1712213"><b>not</b> recommended</a>. Use <a href=#Lock_the_screen_using_light-locker>light-locker</a> or something from <a href=https://wiki.archlinux.org/index.php/List_of_applications/Security#Screen_lockers title="List of applications/Security">List of applications/Security#Screen lockers</a>.</div>
+<p>LightDM's <i>dm-tool</i> command can be used to allow multiple users to be logged in on separate ttys. The following will send a signal requesting that the current session be locked and then will initiate a switch to LightDM's greeter, allowing a new user to log in to the system.
+</p>
+<pre>$ dm-tool switch-to-greeter
+</pre>
+<h2><span class=mw-headline id=Testing>Testing</span></h2>
+<p>First, <a href=https://wiki.archlinux.org/index.php/Install class=mw-redirect title=Install>install</a> <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=xorg-server-xephyr">xorg-server-xephyr</a></span> from the <a href=https://wiki.archlinux.org/index.php/Official_repositories title="Official repositories">official repositories</a>.
+<p>Then, run LightDM as an X application:
+</p>
+<pre>$ lightdm --test-mode --debug
+</pre>
+<h2><span class=mw-headline id=Optional_configuration_and_tweaks>Optional configuration and tweaks</span></h2>
+<p>LightDM can be configured by modifying its config file, <code>/etc/lightdm/lightdm.conf</code>.
+<p>Some greeters have their own configuration files. For example:
+<p><span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=lightdm-gtk-greeter">lightdm-gtk-greeter</a></span>: <code>/etc/lightdm/lightdm-gtk-greeter.conf</code> (or you can use the <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=lightdm-gtk-greeter-settings">lightdm-gtk-greeter-settings</a></span> gui).
+<p><span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=lightdm-webkit2-greeter">lightdm-webkit2-greeter</a></span>: <code>/etc/lightdm/lightdm-webkit2-greeter.conf</code>
+</p>
+<h3><span class=mw-headline id=X_session_wrapper>X session wrapper</span></h3>
+<div class="noprint archwiki-template-message">
+<p><a href=https://wiki.archlinux.org/index.php/File:Merge-arrows-2.png class=image><img alt=Merge-arrows-2.png src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"><rect fill-opacity="0"/></svg>' decoding=async style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-6)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important" width=48 height=48></a><b>This article or section is a candidate for merging with <a href=https://wiki.archlinux.org/index.php/Xprofile title=Xprofile>Xprofile</a>.</b><a href=https://wiki.archlinux.org/index.php/File:Merge-arrows-2.png class=image><img alt=Merge-arrows-2.png src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"><rect fill-opacity="0"/></svg>' decoding=async style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-6)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important" width=48 height=48></a></p>
+<div><b>Notes:</b> Duplicated information (Discuss in <a rel=nofollow class="external text" href=https://wiki.archlinux.org/index.php/Talk:LightDM>Talk:LightDM#</a>)</div>
+</div>
+<p>If you are migrating from <a href=https://wiki.archlinux.org/index.php/Xinit title=Xinit>xinit</a>, you will notice that the display is not launched by your shell. This is because, as opposed to your shell starting the display (and the display inheriting the environment of your shell), LightDM starts your display and does not source your shell. LightDM launches the display by running a wrapper script and that finally exec's your graphic environment. By default, <code>/etc/lightdm/Xsession</code> is run.
+</p>
+<h4><span class=mw-headline id=Environment_variables>Environment variables</span></h4>
+<p>The script checks and sources <code>/etc/profile</code>, <code>~/.profile</code>, <code>/etc/xprofile</code> and <code>~/.xprofile</code>, in that order. If you are using a shell that does not source any of these files, you can create an <code>~/.xprofile</code> to do so. (In this example, the login shell is <a href=https://wiki.archlinux.org/index.php/Zsh title=Zsh>zsh</a>)
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>~/.xprofile</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>#!/bin/sh
+[[ -f ~/.config/zsh/.zshenv ]] &amp;&amp; source ~/.config/zsh/.zshenv</pre>
+<p>If you have shell variables that are important for your display (such as Gtk or QT themes, GNUPG location, config overrides, etc.) this will let your graphic environment have access to your environment without having to be launched by your login shell.
+</p>
+<h4><span class=mw-headline id=Keymap>Keymap</span></h4>
+<p>The script runs <a href=https://wiki.archlinux.org/index.php/Xkbmap class=mw-redirect title=Xkbmap>Xkbmap</a> with arguments provided in files <code>/etc/X11/Xkbmap</code>, <code>~/.Xkbmap</code>. If those files are not found, it runs <a href=https://wiki.archlinux.org/index.php/Xmodmap title=Xmodmap>xmodmap</a> with <code>/etc/X11/Xmodmap</code>, <code>~/.Xmodmap</code>. If using xkbmap, the files are parsed using cat. The following example works
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>~/.Xmodmap</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>-model pc105 -layout us,us,tr -variant ,dvorak,f -option grp:caps_toggle</pre>
+<p>Otherwise, the session inherits the system default mapping of X11. This mapping can be defined in the xorg configuration files, either manually or with <code>localectl set-x11-keymap</code>. See <a href=https://wiki.archlinux.org/index.php/Xorg/Keyboard_configuration#Setting_keyboard_layout title="Xorg/Keyboard configuration">Xorg/Keyboard configuration#Setting keyboard layout</a>.
+</p>
+<h4><span class=mw-headline id=Multiple_keyboard_layouts_in_lightdm-gtk-greeter>Multiple keyboard layouts in lightdm-gtk-greeter</span></h4>
+<p>To enable users switch between pre-defined keyboard layouts on the log-in screen enable the drop-down menu and configure the layouts. Either use the <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=lightdm-gtk-greeter-settings">lightdm-gtk-greeter-settings</a></span> gui or edit the configuration file directly:
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>/etc/lightdm/lightdm-gtk-greeter.conf</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>[greeter]
+indicators = ~hosts;~spacer;~clock;~spacer;~layout;~language;~session;~ally;~power</pre>
+<p>Use <a href=https://wiki.archlinux.org/index.php/Xorg/Keyboard_configuration#Using_localectl title="Xorg/Keyboard configuration">localectl</a> to set multiple layouts, e.g. de and its “variant” neo with the latter as primary:
+</p>
+<pre># localectl --no-convert set-x11-keymap de,de pc105 neo,
+</pre>
+<p>Note the trailing comma which implies a blank variant for the second de.
+</p>
+<h3><span id=Changing_background_images.2Fcolors></span><span class=mw-headline id=Changing_background_images/colors>Changing background images/colors</span></h3>
+<p>You can set the background to a hex color or an image. Some greeters offer more robust background options like background selection from the login screen, random backgrounds, etc.
+</p>
+<h4><span class=mw-headline id=GTK_greeter>GTK greeter</span></h4>
+<p>You can use the <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=lightdm-gtk-greeter-settings">lightdm-gtk-greeter-settings</a></span> gui.
+<p>Users wishing to customize the wallpaper on the greeter screen need to edit <code>/etc/lightdm/lightdm-gtk-greeter.conf</code> and define the <code>background</code> variable under the <code>[greeter]</code> section. For example:
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>/etc/lightdm/lightdm-gtk-greeter.conf</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>[greeter]
+background=/usr/share/pixmaps/black_and_white_photography-wallpaper-1920x1080.jpg</pre>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> It is recommended to place the PNG or JPG file in <code>/usr/share/pixmaps</code> since the LightDM user needs read access to the wallpaper file.</div>
+<h5><span class=mw-headline id=GTK3_Theme>GTK3 Theme</span></h5>
+<p>GTK3 themes can be specified with the <code>theme-name</code> variable in the <code>[greeter]</code> section of <code>/etc/lightdm/lightdm-gtk-greeter.conf</code> For example, <code>theme-name=Adwaita-dark</code>.
+</p>
+<h4><span class=mw-headline id=Webkit2_greeter>Webkit2 greeter</span></h4>
+<p>The <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=lightdm-webkit2-greeter">lightdm-webkit2-greeter</a></span> allows you to choose a background image directly on the login screen. It also offers an option to display a random image each time it starts if you use the <a rel=nofollow class="external text" href=https://github.com/artur9010/lightdm-webkit-material>Material theme</a>. By default, images are sourced from <code>/usr/share/backgrounds</code>. You can change the background images directory by editing <code>lightdm-webkit2-greeter.conf</code>. For example:
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>/etc/lightdm/lightdm-webkit2-greeter.conf</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>[branding]
+background_images = /usr/share/backgrounds</pre>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> The background images directory must be accessible to the LightDM user so it should not be located anywhere under <code>/home</code>. </div>
+<h4><span class=mw-headline id=Unity_greeter>Unity greeter</span></h4>
+<p>Users using the <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href=https://aur.archlinux.org/packages/lightdm-unity-greeter/>lightdm-unity-greeter</a></span><sup><small>AUR</small></sup> must edit the <code>/usr/share/glib-2.0/schemas/com.canonical.unity-greeter.gschema.xml</code> file and then execute:
+</p>
+<pre># glib-compile-schemas /usr/share/glib-2.0/schemas/
+</pre>
+<p>According to <a rel=nofollow class="external text" href="https://bbs.archlinux.org/viewtopic.php?id=149945">this</a> page.
+</p>
+<h4><span class=mw-headline id=Slick_Greeter>Slick Greeter</span></h4>
+<p>Use the <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href=https://aur.archlinux.org/packages/lightdm-settings/>lightdm-settings</a></span><sup><small>AUR</small></sup> GUI 
+</p>
+<h3><span class=mw-headline id=Changing_your_avatar>Changing your avatar</span></h3>
+<p>First, make sure the <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=accountsservice">accountsservice</a></span> package from the <a href=https://wiki.archlinux.org/index.php/Official_repositories title="Official repositories">official repositories</a> is installed, then set it up as follows, replacing <code><i>username</i></code> with the desired user's login name.
+</p>
+<ul><li>Create the file <code>/var/lib/AccountsService/icons/<i>username</i>.png</code> using a 96x96 PNG image file. Different image file formats are possible too, e.g., JPEG.</li>
+<li>Alternatively, create the image file as <code>/home/<i>username</i>/.face</code> and skip the next step if the defaults already point to the user home directory path</li>
+<li>Edit or create the account settings file <code>/var/lib/AccountsService/users/<i>username</i></code>, and add the lines</ul>
+<pre>[User]
+Icon=/var/lib/AccountsService/icons/<i>username</i>.png
+</pre>
+<p>The filename here should point to the icon created in the first step, so adjust the filename extension if necessary.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> Make sure that both created files have 644 permissions, use <a href=https://wiki.archlinux.org/index.php/Chmod class=mw-redirect title=Chmod>chmod</a> to correct them.</div>
+<h3><span class=mw-headline id=Sources_of_Arch-centric_64x64_icons>Sources of Arch-centric 64x64 icons</span></h3>
+<p>The <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href=https://aur.archlinux.org/packages/archlinux-artwork/>archlinux-artwork</a></span><sup><small>AUR</small></sup> package contains some nice examples that install to <code>/usr/share/archlinux/icons</code> and that can be copied to <code>/usr/share/icons/hicolor/64x64/devices</code> as follows:
+</p>
+<pre># find /usr/share/archlinux/icons -name "*64*" -exec cp {} /usr/share/icons/hicolor/64x64/devices \;
+</pre>
+<p>After copying, the <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href=https://aur.archlinux.org/packages/archlinux-artwork/>archlinux-artwork</a></span><sup><small>AUR</small></sup> package can be removed.
+</p>
+<h3><span class=mw-headline id=Enabling_autologin>Enabling autologin</span></h3>
+<p>Edit the LightDM configuration file and ensure these lines are uncommented and correctly configured:
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>/etc/lightdm/lightdm.conf</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>[Seat:*]
+autologin-user=<i>username</i></pre>
+<p>You must be part of the <code>autologin</code> group to be able to login automatically without entering your password:
+</p>
+<pre># groupadd -r autologin
+# gpasswd -a <i>username</i> autologin
+</pre>
+<p>LightDM logs in using the session specified in the <code>~/.dmrc</code> of the user getting logged in automatically. To override this file, specify <code>autologin-session</code> in <code>lightdm.conf</code>:
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>/etc/lightdm/lightdm.conf</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>[Seat:*]
+autologin-user=<i>username</i>
+autologin-session=<i>session</i></pre>
+<p>The list of valid session names can be found by listing <code>/usr/share/xsessions/*.desktop</code> for X's sessions and <code>/usr/share/wayland-sessions/*.desktop</code> for Wayland's.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> GNOME users, and by extension any gnome-keyring user will have to set up a blank password to their keyring for it to be unlocked automatically.</div>
+<h3><span class=mw-headline id=Enabling_interactive_passwordless_login>Enabling interactive passwordless login</span></h3>
+<p>LightDM goes through PAM so you must configure the lightdm configuration of PAM:
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>/etc/pam.d/lightdm</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>#%PAM-1.0
+<b>auth        sufficient  pam_succeed_if.so user ingroup nopasswdlogin</b>
+auth        include     system-login
+...</pre>
+<p>You must then also be part of the <code>nopasswdlogin</code> group to be able to login interactively without entering your password:
+</p>
+<pre># groupadd -r nopasswdlogin
+# gpasswd -a <i>username</i> nopasswdlogin
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> GNOME users, and by extension any gnome-keyring user may have to follow the instructions at the end of the previous section on enabling autologin.</div>
+<p>To create a new user account that logs in automatically and additionally able to login again without a password the user can be created with supplementary membership of both groups, e.g.:
+</p>
+<pre># useradd -mG autologin,nopasswdlogin -s /bin/bash <i>username</i>
+</pre>
+<h3><span class=mw-headline id=Enabling_guest_sessions>Enabling guest sessions</span></h3>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> A guest user has passwordless access to your system after enabling this feature.</div> 
+<p>To enable guest sessions in LightDM (without changing your system configuration) you need at least two things:
+</p>
+<ol><li>a <b>guest-account-script</b>: defaults to <code>guest-account</code> and accepts two commands:
+<ul><li><b>add</b> (to create a temporary guest system account and returns the user name of the created account)</li>
+<li><b>remove</b> <i>account name</i>(to delete the corresponding account)</ul></li>
+<li>an <a href=#Enabling_autologin><b>autologin</b></a> group to which the created guest account must be added (cf. <code>/etc/pam.d/lightdm-autologin</code>)</ol>
+<p>There are two AUR packages that enable guest sessions in lightdm:
+</p>
+<ul><li><span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href=https://aur.archlinux.org/packages/lightdm-guest/>lightdm-guest</a></span><sup><small>AUR</small></sup> which provides the (largely unmodified) upstream guest-session script as well as <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=lightdm">lightdm</a></span> itself.</li>
+<li><span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href=https://aur.archlinux.org/packages/lightdm-guest-account/>lightdm-guest-account</a></span><sup><small>AUR</small></sup> which provides only a minimal version of the script.</ul>
+<h3><span class=mw-headline id=Hiding_system_and_services_users>Hiding system and services users</span></h3>
+<p>To prevent system users from showing-up in the login, install the optional dependency <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=accountsservice">accountsservice</a></span>, or add the user names to <code>/etc/lightdm/users.conf</code> under <code>hidden-users</code>. The first option has the advantage of not needing to update the list when more users are added or removed.
+</p>
+<h3><span class=mw-headline id=Migrating_from_SLiM>Migrating from SLiM</span></h3>
+<div class="noprint archwiki-template-message">
+<p><a href=https://wiki.archlinux.org/index.php/File:Merge-arrows-2.png class=image><img alt=Merge-arrows-2.png src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"><rect fill-opacity="0"/></svg>' decoding=async style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-6)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important" width=48 height=48></a><b>This article or section is a candidate for merging with <a href=https://wiki.archlinux.org/index.php/Display_Manager class=mw-redirect title="Display Manager">Display Manager</a>.</b><a href=https://wiki.archlinux.org/index.php/File:Merge-arrows-2.png class=image><img alt=Merge-arrows-2.png src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"><rect fill-opacity="0"/></svg>' decoding=async style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-6)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important" width=48 height=48></a></p>
+<div><b>Notes:</b> Not LightDM specific (or even SLiM specific for that matter as <a href=https://wiki.archlinux.org/index.php/XDM title=XDM>XDM</a> also uses <a href=https://wiki.archlinux.org/index.php/Xinitrc class=mw-redirect title=Xinitrc>xinitrc</a>). Perhaps this merits a one-liner somewhere on the <a href=https://wiki.archlinux.org/index.php/Display_Manager class=mw-redirect title="Display Manager">Display Manager</a> page? (Discuss in <a rel=nofollow class="external text" href=https://wiki.archlinux.org/index.php/Talk:LightDM>Talk:LightDM#</a>)</div>
+</div>
+<p>Move the contents of <a href=https://wiki.archlinux.org/index.php/Xinitrc class=mw-redirect title=Xinitrc>xinitrc</a> to <a href=https://wiki.archlinux.org/index.php/Xprofile title=Xprofile>xprofile</a>, removing the call to start the <a href=https://wiki.archlinux.org/index.php/Window_manager title="Window manager">window manager</a> or <a href=https://wiki.archlinux.org/index.php/Desktop_environment title="Desktop environment">desktop environment</a>.
+</p>
+<h3><span id=Login_using_.7E.2F.xinitrc></span><span class=mw-headline id=Login_using_~/.xinitrc>Login using ~/.xinitrc</span></h3>
+<p>See <a href=https://wiki.archlinux.org/index.php/Display_manager#Run_~/.xinitrc_as_a_session title="Display manager">Display manager#Run ~/.xinitrc as a session</a>.
+</p>
+<h3><span class=mw-headline id=NumLock_on_by_default>NumLock on by default</span></h3>
+<p>Install the <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=numlockx">numlockx</a></span> package and then edit <code>/etc/lightdm/lightdm.conf</code>:
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>/etc/lightdm/lightdm.conf</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>[Seat:*]
+greeter-setup-script=/usr/bin/numlockx on</pre>
+<h3><span class=mw-headline id=Default_session>Default session</span></h3>
+<p>Lightdm, like other DMs, stores the last-selected xsession in <code>~/.dmrc</code>. See <a href=https://wiki.archlinux.org/index.php/Display_manager#Session_configuration title="Display manager">Display manager#Session configuration</a> for more info.
+</p>
+<h3><span id=Adjusting_the_login_window.27s_position></span><span class=mw-headline id="Adjusting_the_login_window's_position">Adjusting the login window's position</span></h3>
+<h4><span class=mw-headline id=GTK_greeter_2>GTK greeter</span></h4>
+<p>Users need to edit <code>/etc/lightdm/lightdm-gtk-greeter.conf</code> and enter a value for the <code>position</code> variable. It accepts <code>x</code> and <code>y</code> values, either absolute (in pixels) or relative (in percent). Each value can also have an additional anchor location for the window, <code>start</code>, <code>center</code> and <code>end</code> separated from the value by a comma.
+<p>Example:
+</p>
+<pre>position=200,start 50%,center
+</pre>
+<h3><span class=mw-headline id=VNC_Server>VNC Server</span></h3>
+<p>Lightdm can also be used to connect to via VNC. Make sure to install <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=tigervnc">tigervnc</a></span> on the server side and optionally as your VNC client on the client PC.
+<p>Setup an authentication password on the server as root:
+</p>
+<pre># vncpasswd /etc/vncpasswd
+</pre>
+<p>Edit the LightDM configuration file as shown below. Note that <code>listen-address</code> configures the VNC to only listen to connections from localhost. This is used to only allow connections via <a href=https://wiki.archlinux.org/index.php/TigerVNC#On_the_client title=TigerVNC>SSH and port forwarding</a>. On the SSH client, make sure that you use <code>localhost:5900</code> for the tunnel destination; using <code>127.0.0.1:5900</code> or <code>::1:5900</code> is not reliable on dual stack network connections. If you want to allow insecure connections you can disable this setting.
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>/etc/lightdm/lightdm.conf</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>[VNCServer]
+enabled=true
+command=Xvnc -rfbauth /etc/vncpasswd
+port=5900
+listen-address=localhost
+width=1024
+height=768
+depth=24</pre>
+<p>Now open an SSH tunnel and connect to localhost as described in <a href=https://wiki.archlinux.org/index.php/TigerVNC#On_the_client title=TigerVNC>TigerVNC#On the client</a>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> If you get a blank screen upon opening the VNC connection, try a different LightDM greeter.</div>
+<h3><span class=mw-headline id=Lock_the_screen_using_light-locker>Lock the screen using light-locker</span></h3>
+<p><span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=light-locker">light-locker</a></span> is a simple screen locker using LightDM to authenticate the user. Once it is installed and running you can lock your session using
+</p>
+<pre>$ light-locker-command -l
+</pre>
+<p>This requires <code>light-locker</code> to be started at the beginning of your session - see <a href=https://wiki.archlinux.org/index.php/Autostarting title=Autostarting>Autostarting</a>.
+</p>
+<h2><span class=mw-headline id=Troubleshooting>Troubleshooting</span></h2>
+<h3><span class=mw-headline id=Viewing_current_configuration>Viewing current configuration</span></h3>
+<p>To view effective configuration, run
+</p>
+<pre>$ lightdm --show-config
+</pre>
+<p>This will show current settings, with the configuration files these settings were read from. 
+</p>
+<h3><span class=mw-headline id=LightDM_not_starting_and_screen_flashing>LightDM not starting and screen flashing</span></h3>
+<p>If you encounter consistent screen flashing and ultimately no LightDM on boot, ensure that you have defined the greeter correctly in LightDM's config file. And if you have correctly defined the GTK greeter, make sure the <code>xsessions-directory</code> (default: <code>/usr/share/xsessions</code>) exists and contains at least one .desktop file.
+<p>The same error can happen on lightdm startup if the last used session is not available anymore (eg. you last used gnome and then removed the gnome-session package): the easiest workaround is to temporarily restore the removed package. Another solution might be:
+</p>
+<pre># dbus-send --system --type=method_call --print-reply --dest=org.freedesktop.Accounts /org/freedesktop/Accounts/User1000 org.freedesktop.Accounts.User.SetXSession string:xfce
+</pre>
+<p>This example sets the session "xfce" as default for the user 1000.
+</p>
+<h3><span class=mw-headline id=Wrong_locale_displayed>Wrong locale displayed</span></h3>
+<p>In case of your locale not being displayed correctly in Lightdm add your locale to <code>/etc/environment</code>
+</p>
+<pre> LANG=pt_PT.utf8
+</pre>
+<p>Alternatively if you want LightDM and its greeters to be in a language other than your set system locale, you can use the <code>Environment=</code> option in <a href=https://wiki.archlinux.org/index.php/Systemd#Drop-in_files title=Systemd>Systemd#Drop-in files</a>.
+</p>
+<h3><span class=mw-headline id=Unresponsive_for_a_few_minutes_after_startup>Unresponsive for a few minutes after startup</span></h3>
+<p>You may have to download more entropy. Install and enable haveged, c.f. <a rel=nofollow class="external free" href=https://github.com/canonical/lightdm/issues/17>https://github.com/canonical/lightdm/issues/17</a>
+</p>
+<h3><span class=mw-headline id=Missing_icons_with_GTK_greeter>Missing icons with GTK greeter</span></h3>
+<p>If you are using <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=lightdm-gtk-greeter">lightdm-gtk-greeter</a></span> as a greeter and it shows placeholder images as icons, make sure valid icon themes and themes are installed and configured. Check the following file:
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>/etc/lightdm/lightdm-gtk-greeter.conf</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>[greeter]
+theme-name=mate      # this should be the name of a directory under /usr/share/themes/
+icon-theme-name=mate # this should be the name of a fully featured icons set directory under /usr/share/icons/</pre>
+<h3><span class=mw-headline id=LightDM_freezes_on_login_attempt>LightDM freezes on login attempt</span></h3>
+<p>You may find that after entering the correct username and password and attempting to log in, LightDM freezes and you are unable to continue to the desktop. To fix the issue, reinstall the <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=gdk-pixbuf2">gdk-pixbuf2</a></span> package. See <a rel=nofollow class="external text" href="https://bbs.archlinux.org/viewtopic.php?id=179031">this forum thread</a>.
+</p>
+<h3><span class=mw-headline id=LightDM_displaying_in_wrong_monitor>LightDM displaying in wrong monitor</span></h3>
+<p>If you are using multiple monitors, LightDM may display in the wrong one (e.g. if your primary monitor is on the right). To force the LightDM login screen to display on a specific monitor, edit <code>/etc/lightdm/lightdm.conf</code> and change the <i>display-setup-script</i> parameter like this:
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>/etc/lightdm/lightdm.conf</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>display-setup-script=xrandr --output <i>HDMI1</i> --primary</pre>
+<p>Replace <i>HDMI1</i> with your real monitor ID, which you can find from <b>xrandr</b> command output.
+<p>Alternatively, if you are using the GTK greeter, you can edit <code>/etc/lightdm/lightdm-gtk-greeter.conf</code> and add the <i>active-monitor</i> parameter like this:
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>/etc/lightdm/lightdm-gtk-greeter.conf</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>[greeter]
+active-monitor=0</pre>
+<p>Replace 0 with the desired display number.
+</p>
+<h3><span class=mw-headline id=LightDM_does_not_appear_or_monitor_only_displays_TTY_output>LightDM does not appear or monitor only displays TTY output</span></h3>
+<p>It may happen that your system boots so fast that LightDM service is started before your graphics drivers are properly loaded. If this is your case, you will want to add the following config to your lightdm.conf file:
+</p>
+<pre>   [LightDM]
+   logind-check-graphical=true
+</pre>
+<p>This setting will tell LightDM to wait until graphics devices are ready before spawning greeters/autostarting sessions on them.
+</p>
+<h3><span class=mw-headline id=LightDM_is_running_with_low_FPS_on_Intel_Graphics>LightDM is running with low FPS on Intel Graphics</span></h3>
+<p>See <a href=https://wiki.archlinux.org/index.php/Intel_graphics#AccelMethod title="Intel graphics">Intel graphics#AccelMethod</a>.
+</p>
+<h3><span class=mw-headline id=Pulseaudio_not_starting_automatically>Pulseaudio not starting automatically</span></h3>
+<p>See <a href=https://wiki.archlinux.org/index.php/PulseAudio#Running title=PulseAudio>PulseAudio#Running</a>.
+</p>
+<h3><span class=mw-headline id=Long_pause_before_LightDM_shows_up_when_home_is_encrypted>Long pause before LightDM shows up when home is encrypted</span></h3>
+<p>Some LightDM themes try to access the user avatar located in HOME. If your HOME is encrypted, LightDM cannot access it and hangs. To prevent this from happening, you can either:
+</p>
+<ul><li>Set your avatar as explained in <a href=#Changing_your_avatar>#Changing your avatar</a></li>
+<li>for <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=lightdm-gtk-greeter">lightdm-gtk-greeter</a></span> only: <code>hide-user-image = true</code> in <code>/etc/lightdm/lightdm-gtk-greeter.conf</code></ul>
+<h3><span id=Boot_hangs_on_.22.5B_OK_.5D_Reached_target_Graphical_Interface..22></span><span class=mw-headline id='Boot_hangs_on_"[_OK_]_Reached_target_Graphical_Interface."'>Boot hangs on "[ OK ] Reached target Graphical Interface."</span></h3>
+<p>There is a possibility that user and group lookups fail if you modified /etc/nsswitch.conf. That happens when:
+</p>
+<ul><li>nsswitch.conf group: includes <code>ldap</code> without setting <code>nss_initgroups_ignoreusers ALLLOCAL</code> in <code>/etc/nslcd.conf</code></ul>
+<h3><span class=mw-headline id=Wayland_session_not_working_with_duplicate_GNOME_entries_in_greeter>Wayland session not working with duplicate GNOME entries in greeter</span></h3>
+<ul><li>Some greeters (<span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=lightdm-webkit2-greeter">lightdm-webkit2-greeter</a></span> for example) do not support two sessions with the same name <a rel=nofollow class="external autonumber" href=https://github.com/CanonicalLtd/lightdm/issues/16>[1]</a>. To check for duplicate entries:</ul>
+<pre>ls -1 /usr/share/wayland-sessions /usr/share/xsessions
+</pre>
+<ul><li>Rename the duplicate entry in /usr/share/xsessions. For example:</ul>
+<pre>mv /usr/share/xsessions/gnome.desktop /usr/share/xsessions/gnome.desktop.disabled
+</pre>
+<h3><span class=mw-headline id=Login_always_segfaults_on_first_attempt>Login always segfaults on first attempt</span></h3>
+<p>Set a hostname as described in <a href=https://wiki.archlinux.org/index.php/Network_configuration#Set_the_hostname title="Network configuration">Network Page</a>. See also <a rel=nofollow class="external text" href=https://bugs.archlinux.org/task/47694>FS#47694</a>.
+</p>
+<h2><span class=mw-headline id=See_also>See also</span></h2>
+<ul><li><a rel=nofollow class="external text" href=https://wiki.ubuntu.com/LightDM>Ubuntu Wiki article</a></li>
+<li><a rel=nofollow class="external text" href=http://wiki.gentoo.org/wiki/LightDM>Gentoo Wiki article</a></li>
+<li><a rel=nofollow class="external text" href=https://launchpad.net/lightdm>Launchpad Page</a> obsolete</li>
+<li><a rel=nofollow class="external text" href="http://www.mattfischer.com/blog/?tag=lightdm">LightDM blog</a></li>
+<li><a rel=nofollow class="external text" href=https://github.com/CanonicalLtd/lightdm>LightDM on GitHub</a></ul>
+</div></div>
+ 
+ <div class="printfooter sf-hidden">Retrieved from ""</div>
+ 
+ <div id=catlinks class=catlinks data-mw=interface><div id=mw-normal-catlinks class=mw-normal-catlinks><a href=https://wiki.archlinux.org/index.php/Special:Categories title=Special:Categories>Categories</a>: <ul><li><a href=https://wiki.archlinux.org/index.php/Category:Display_managers title="Category:Display managers">Display managers</a><li><a href=https://wiki.archlinux.org/index.php/Category:Canonical title=Category:Canonical>Canonical</a></ul></div><div id=mw-hidden-catlinks class="mw-hidden-catlinks mw-hidden-cats-hidden sf-hidden">Hidden categories: </div></div>
+ <div class=visualClear></div>
+ 
+ </div>
+</div>
+ <div id=mw-navigation>
+ <h2>Navigation menu</h2>
+ <div id=mw-head>
+ <div id=p-personal role=navigation aria-labelledby=p-personal-label>
+ <h3 id=p-personal-label class=sf-hidden>Personal tools</h3>
+ <ul>
+ <li id=pt-createaccount><a href="https://wiki.archlinux.org/index.php?title=Special:CreateAccount&amp;returnto=LightDM" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a><li id=pt-login><a href="https://wiki.archlinux.org/index.php?title=Special:UserLogin&amp;returnto=LightDM" title="You are encouraged to log in; however, it is not mandatory [Alt+Shift+o]" accesskey=o>Log in</a></li> </ul>
+ </div>
+ <div id=left-navigation>
+ <div id=p-namespaces role=navigation class=vectorTabs aria-labelledby=p-namespaces-label>
+ <h3 id=p-namespaces-label class=sf-hidden>Namespaces</h3>
+ <ul>
+ <li id=ca-nstab-main class=selected><span><a href=https://wiki.archlinux.org/index.php/LightDM title="View the content page [Alt+Shift+c]" accesskey=c>Page</a></span><li id=ca-talk><span><a href=https://wiki.archlinux.org/index.php/Talk:LightDM rel=discussion title="Discussion about the content page [Alt+Shift+t]" accesskey=t>Discussion</a></span></li> </ul>
+ </div>
+ <div id=p-variants role=navigation class="vectorMenu emptyPortlet sf-hidden" aria-labelledby=p-variants-label>
+ 
+ 
+ 
+ </div>
+ </div>
+ <div id=right-navigation>
+ <div id=p-views role=navigation class=vectorTabs aria-labelledby=p-views-label>
+ <h3 id=p-views-label class=sf-hidden>Views</h3>
+ <ul>
+ <li id=ca-view class="collapsible selected"><span><a href=https://wiki.archlinux.org/index.php/LightDM>Read</a></span><li id=ca-viewsource class=collapsible><span><a href="https://wiki.archlinux.org/index.php?title=LightDM&amp;action=edit" title="This page is protected.
+You can view its source [Alt+Shift+e]" accesskey=e>View source</a></span><li id=ca-history class=collapsible><span><a href="https://wiki.archlinux.org/index.php?title=LightDM&amp;action=history" title="Past revisions of this page [Alt+Shift+h]" accesskey=h>View history</a></span></li> </ul>
+ </div>
+ <div id=p-cactions role=navigation class="vectorMenu emptyPortlet sf-hidden" aria-labelledby=p-cactions-label>
+ 
+ 
+ 
+ </div>
+ <div id=p-search role=search>
+ <h3>
+ <label for=searchInput>Search</label>
+ </h3>
+ <form action=/index.php id=searchform>
+ <div id=simpleSearch>
+ <input type=search name=search placeholder="Search ArchWiki" title="Search ArchWiki [Alt+Shift+f]" accesskey=f id=searchInput autocomplete=off value><input type=submit name=go value=Go title="Go to a page with this exact name if it exists" id=searchButton class=searchButton> </div>
+ </form>
+ </div>
+ </div>
+ </div>
+ <div id=mw-panel>
+ <div id=p-logo role=banner class=sf-hidden></div>
+ <div class=portal role=navigation id=p-navigation aria-labelledby=p-navigation-label>
+ <h3 id=p-navigation-label class=sf-hidden>Navigation</h3>
+ <div class=body>
+ <ul>
+ <li id=n-mainpage-description><a href=https://wiki.archlinux.org/index.php/Main_page title="Visit the main page [Alt+Shift+z]" accesskey=z>Main page</a><li id=n-Table-of-contents><a href=https://wiki.archlinux.org/index.php/Table_of_contents>Table of contents</a><li id=n-portal><a href=https://wiki.archlinux.org/index.php/Getting_involved title="Various ways Archers can contribute to the community">Getting involved</a><li id=n-currentevents><a href=https://wiki.archlinux.org/index.php/ArchWiki:News title="The latest lowdown on the wiki">Wiki news</a><li id=n-randompage><a href=https://wiki.archlinux.org/index.php/Special:Random title="Load a random page [Alt+Shift+x]" accesskey=x>Random page</a></li> </ul>
+ </div>
+ </div>
+ <div class=portal role=navigation id=p-Interaction aria-labelledby=p-Interaction-label>
+ <h3 id=p-Interaction-label>Interaction</h3>
+ <div class=body>
+ <ul>
+ <li id=n-help><a href=https://wiki.archlinux.org/index.php/Category:Help title="Wiki navigation, reading, and editing help">Help</a><li id=n-Contributing><a href=https://wiki.archlinux.org/index.php/ArchWiki:Contributing>Contributing</a><li id=n-recentchanges><a href=https://wiki.archlinux.org/index.php/Special:RecentChanges title="A list of recent changes in the wiki [Alt+Shift+r]" accesskey=r>Recent changes</a><li id=n-Recent-talks><a href="https://wiki.archlinux.org/index.php?title=Special:RecentChanges&amp;namespace=all-discussions" rel=nofollow>Recent talks</a><li id=n-newpages><a href=https://wiki.archlinux.org/index.php/Special:NewPages>New pages</a><li id=n-Statistics><a href=https://wiki.archlinux.org/index.php/ArchWiki:Statistics>Statistics</a><li id=n-Requests><a href=https://wiki.archlinux.org/index.php/ArchWiki_talk:Requests>Requests</a></li> </ul>
+ </div>
+ </div>
+ <div class=portal role=navigation id=p-tb aria-labelledby=p-tb-label>
+ <h3 id=p-tb-label>Tools</h3>
+ <div class=body>
+ <ul>
+ <li id=t-whatlinkshere><a href=https://wiki.archlinux.org/index.php/Special:WhatLinksHere/LightDM title="A list of all wiki pages that link here [Alt+Shift+j]" accesskey=j>What links here</a><li id=t-recentchangeslinked><a href=https://wiki.archlinux.org/index.php/Special:RecentChangesLinked/LightDM rel=nofollow title="Recent changes in pages linked from this page [Alt+Shift+k]" accesskey=k>Related changes</a><li id=t-specialpages><a href=https://wiki.archlinux.org/index.php/Special:SpecialPages title="A list of all special pages [Alt+Shift+q]" accesskey=q>Special pages</a><li id=t-print><a href="https://wiki.archlinux.org/index.php?title=LightDM&amp;printable=yes" rel=alternate title="Printable version of this page [Alt+Shift+p]" accesskey=p>Printable version</a><li id=t-permalink><a href="https://wiki.archlinux.org/index.php?title=LightDM&amp;oldid=637969" title="Permanent link to this revision of the page">Permanent link</a><li id=t-info><a href="https://wiki.archlinux.org/index.php?title=LightDM&amp;action=info" title="More information about this page">Page information</a></li> </ul>
+ </div>
+ </div>
+ <div class=portal role=navigation id=p-lang aria-labelledby=p-lang-label>
+ <h3 id=p-lang-label>In other languages</h3>
+ <div class=body>
+ <ul>
+ <li class="interlanguage-link interwiki-de"><a href=https://wiki.archlinux.de/title/Login-Manager#LightDM title="Login-Manager – Deutsch" hreflang=de class=interlanguage-link-target lang=de>Deutsch</a><li class="interlanguage-link interwiki-es"><a href=https://wiki.archlinux.org/index.php/LightDM_(Espa%C3%B1ol) title="LightDM – español" hreflang=es class=interlanguage-link-target lang=es>Español</a><li class="interlanguage-link interwiki-fr"><a href=https://wiki.archlinux.fr/LightDM title="LightDM – français" hreflang=fr class=interlanguage-link-target lang=fr>Français</a><li class="interlanguage-link interwiki-ja"><a href=https://wiki.archlinux.jp/index.php/LightDM title="LightDM – 日本語" hreflang=ja class=interlanguage-link-target lang=ja>日本語</a><li class="interlanguage-link interwiki-ru"><a href=https://wiki.archlinux.org/index.php/LightDM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) title="LightDM – русский" hreflang=ru class=interlanguage-link-target lang=ru>Русский</a><li class="interlanguage-link interwiki-zh-hans"><a href=https://wiki.archlinux.org/index.php/LightDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) title="LightDM – 中文（简体）‎" hreflang=zh-Hans class=interlanguage-link-target lang=zh-Hans>中文（简体）‎</a></li> </ul>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div id=footer role=contentinfo>
+ <ul id=footer-info>
+ <li id=footer-info-lastmod> This page was last edited on 13 October 2020, at 22:57.</li>
+ <li id=footer-info-copyright>Content is available under <a class=external rel=nofollow href=http://www.gnu.org/copyleft/fdl.html>GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+ </ul>
+ <ul id=footer-places>
+ <li id=footer-places-privacy><a href=https://wiki.archlinux.org/index.php/ArchWiki:Privacy_policy title="ArchWiki:Privacy policy">Privacy policy</a></li>
+ <li id=footer-places-about><a href=https://wiki.archlinux.org/index.php/ArchWiki:About title=ArchWiki:About>About ArchWiki</a></li>
+ <li id=footer-places-disclaimer><a href=https://wiki.archlinux.org/index.php/ArchWiki:General_disclaimer title="ArchWiki:General disclaimer">Disclaimers</a></li>
+ </ul>
+ <ul id=footer-icons class="noprint sf-hidden">
+ 
+ </ul>
+ <div style=clear:both></div>
+ </div>
+ 
+<div style=display:none;font-size:14.3px class=suggestions></div>

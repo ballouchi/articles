@@ -1,0 +1,346 @@
+<!DOCTYPE html> <html class=client-js dir=ltr lang=en><!--
+ Page saved with SingleFile 
+ url: https://wiki.archlinux.org/index.php/Swap 
+ saved date: Tue Nov 24 2020 14:28:46 GMT+0100 (Central European Standard Time)
+--><meta charset=utf-8>
+<title>Swap - ArchWiki</title>
+<style>:root{--sf-img-5:url("data:image/png;base64,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")}@media screen{.mw-content-ltr{direction:ltr}.sitedir-ltr input{direction:ltr}input[type='submit']{direction:ltr}@supports (text-decoration:underline dotted){abbr[title],.explain[title]{border-bottom:0;text-decoration:underline dotted}}#catlinks{text-align:left}.catlinks ul{display:inline;margin:0;padding:0;list-style:none none}.catlinks li{display:inline-block;line-height:1.25em;border-left:1px solid #a2a9b1;margin:0.125em 0;padding:0 0.5em}.catlinks li:first-child{padding-left:0.25em;border-left:0}.plainlinks a.external{background:none!important;padding:0!important}.visualClear{clear:both}.mw-content-ltr ul{margin:0.3em 0 0 1.6em;padding:0}.mw-content-ltr dd{margin-left:1.6em;margin-right:0}h1:lang(anp),h1:lang(as),h1:lang(bh),h1:lang(bho),h1:lang(bn),h1:lang(gu),h1:lang(hi),h1:lang(kn),h1:lang(ks),h1:lang(ml),h1:lang(mr),h1:lang(my),h1:lang(mai),h1:lang(ne),h1:lang(new),h1:lang(or),h1:lang(pa),h1:lang(pi),h1:lang(sa),h1:lang(ta),h1:lang(te){line-height:1.6em!important}h2:lang(anp),h3:lang(anp),h4:lang(anp),h5:lang(anp),h6:lang(anp),h2:lang(as),h3:lang(as),h4:lang(as),h5:lang(as),h6:lang(as),h2:lang(bho),h3:lang(bho),h4:lang(bho),h5:lang(bho),h6:lang(bho),h2:lang(bh),h3:lang(bh),h4:lang(bh),h5:lang(bh),h6:lang(bh),h2:lang(bn),h3:lang(bn),h4:lang(bn),h5:lang(bn),h6:lang(bn),h2:lang(gu),h3:lang(gu),h4:lang(gu),h5:lang(gu),h6:lang(gu),h2:lang(hi),h3:lang(hi),h4:lang(hi),h5:lang(hi),h6:lang(hi),h2:lang(kn),h3:lang(kn),h4:lang(kn),h5:lang(kn),h6:lang(kn),h2:lang(ks),h3:lang(ks),h4:lang(ks),h5:lang(ks),h6:lang(ks),h2:lang(ml),h3:lang(ml),h4:lang(ml),h5:lang(ml),h6:lang(ml),h2:lang(mr),h3:lang(mr),h4:lang(mr),h5:lang(mr),h6:lang(mr),h2:lang(my),h3:lang(my),h4:lang(my),h5:lang(my),h6:lang(my),h2:lang(mai),h3:lang(mai),h4:lang(mai),h5:lang(mai),h6:lang(mai),h2:lang(ne),h3:lang(ne),h4:lang(ne),h5:lang(ne),h6:lang(ne),h2:lang(new),h3:lang(new),h4:lang(new),h5:lang(new),h6:lang(new),h2:lang(or),h3:lang(or),h4:lang(or),h5:lang(or),h6:lang(or),h2:lang(pa),h3:lang(pa),h4:lang(pa),h5:lang(pa),h6:lang(pa),h2:lang(pi),h3:lang(pi),h4:lang(pi),h5:lang(pi),h6:lang(pi),h2:lang(sa),h3:lang(sa),h4:lang(sa),h5:lang(sa),h6:lang(sa),h2:lang(ta),h3:lang(ta),h4:lang(ta),h5:lang(ta),h6:lang(ta),h2:lang(te),h3:lang(te),h4:lang(te),h5:lang(te),h6:lang(te){line-height:1.2em}.toc ul{margin:0.3em 0}.mw-content-ltr .toc ul{text-align:left}.mw-content-ltr .toc ul ul{margin:0 0 0 2em}.toc .toctitle{direction:ltr}sup{line-height:1}}@media screen{a{text-decoration:none;color:#0645ad;background:none}a:not([href]){cursor:pointer}a:visited{color:#0b0080}a:active{color:#faa700}a:hover,a:focus{text-decoration:underline}a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}.mw-parser-output a.extiw,.mw-parser-output a.extiw:active{color:#36b}.mw-parser-output a.extiw:visited{color:#636}.mw-parser-output a.extiw:active{color:#b63}.mw-parser-output a.external{color:#36b}.mw-parser-output a.external:visited{color:#636}.mw-parser-output a.external:active{color:#b63}img{border:0;vertical-align:middle}h1,h2,h3,h4{color:#000;background:none;font-weight:normal;margin:0;overflow:hidden;padding-top:0.5em;padding-bottom:0.17em;border-bottom:1px solid #a2a9b1}h1{font-size:188%}h2{font-size:150%}h3,h4{border-bottom:0;font-weight:bold}h3{font-size:128%}h4{font-size:116%}h2{margin-bottom:0.6em}h3,h4{margin-bottom:0.3em}p{margin:0.4em 0 0.5em 0}p img{margin:0}ul{margin:0.3em 0 0 1.6em;padding:0}li{margin-bottom:0.1em}dl{margin-top:0.2em;margin-bottom:0.5em}dd{margin-left:1.6em;margin-bottom:0.1em}pre,code{font-family:monospace,monospace}code{color:#000;background-color:#f8f9fa;border:1px solid #eaecf0;border-radius:2px;padding:1px 4px}pre{color:#000;background-color:#f8f9fa;border:1px solid #eaecf0;padding:1em;white-space:pre-wrap}form{border:0;margin:0}.toc{border:1px solid #a2a9b1;background-color:#f8f9fa;font-size:95%}.toc{display:table;padding:7px}.toc h2{display:inline;border:0;padding:0;font-size:100%;font-weight:bold}.toc .toctitle{text-align:center}.toc ul{list-style-type:none;list-style-image:none;margin-left:0;padding:0;text-align:left}.toc ul ul{margin:0 0 0 2em}.tocnumber,.toctext{display:table-cell;text-decoration:inherit}.tocnumber{color:#222}.mw-content-ltr .tocnumber{padding-left:0;padding-right:0.5em}.catlinks{border:1px solid #a2a9b1;background-color:#f8f9fa;padding:5px;margin-top:1em;clear:both}.firstHeading{margin-bottom:0.1em;line-height:1.2em;padding-bottom:0}#contentSub{font-size:84%;line-height:1.2em;margin:0 0 1.4em 1em;color:#54595d;width:auto}}.toctogglecheckbox:checked~ul{display:none}@media screen{:not(:checked)>.toctogglecheckbox{display:inline!important;position:absolute;opacity:0;z-index:-1}.toctogglespan{font-size:94%}:not(:checked)>.toctogglespan:before{content:' ['}:not(:checked)>.toctogglespan:after{content:']'}.toctogglelabel{cursor:pointer;color:#0645ad}.toctogglelabel:hover{text-decoration:underline}.toctogglecheckbox:focus+.toctitle .toctogglelabel{text-decoration:underline;outline:dotted 1px;outline:auto -webkit-focus-ring-color}.toctogglecheckbox:checked+.toctitle .toctogglelabel:after{content:'show'}.toctogglecheckbox:not(:checked)+.toctitle .toctogglelabel:after{content:'hide'}}@media screen{html{font-size:100%}html,body{height:100%;margin:0;padding:0;font-family:sans-serif}body{background-color:#f6f6f6}.mw-body{background-color:#ffffff;color:#222222;padding:1em;direction:ltr}.mw-body{margin-left:10em}.mw-body{border:1px solid #a7d7f9;border-right-width:0;margin-top:-1px}.mw-body h1,.mw-body-content h2{margin-bottom:0.25em;padding:0;font-family:'Linux Libertine','Georgia','Times',serif;line-height:1.3}.mw-body h1:lang(ja),.mw-body-content h1:lang(ja),.mw-body-content h2:lang(ja),.mw-body h1:lang(he),.mw-body-content h1:lang(he),.mw-body-content h2:lang(he),.mw-body h1:lang(ko),.mw-body-content h1:lang(ko),.mw-body-content h2:lang(ko){font-family:sans-serif}.mw-body h1:lang(my),.mw-body-content h1:lang(my),.mw-body-content h2:lang(my){line-height:normal}.mw-body h1{font-size:1.8em}.mw-body .firstHeading{overflow:visible}.mw-body .mw-indicators{float:right;font-size:0.875em;line-height:1.6;position:relative;z-index:1}.mw-body-content{position:relative;font-size:0.875em;line-height:1.6;z-index:0}.mw-body-content p{margin:0.5em 0}.mw-body-content h2{margin-top:1em;font-size:1.5em}.mw-body-content h3,.mw-body-content h4{margin-top:0.3em;margin-bottom:0;padding-bottom:0;line-height:1.6}.mw-body-content h3{font-size:1.2em}.mw-body-content h3,.mw-body-content h4{font-weight:bold}.mw-body-content h4{font-size:100%}.mw-body-content .toc h2{font-family:sans-serif;font-size:100%}ul{list-style-image:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%225%22 height=%2213%22%3E %3Ccircle cx=%222.5%22 cy=%229%22 r=%222.5%22 fill=%22%23222%22/%3E %3C/svg%3E")}pre{line-height:1.3}#p-personal{position:absolute;top:0.33em;right:0.75em;z-index:100}#p-personal ul{list-style:none none;margin:0;padding-left:10em}#p-personal li{float:left;margin-left:0.75em;padding-top:0.5em;font-size:0.75em;line-height:1.16666667;white-space:nowrap}#p-search{float:left;margin-right:0.5em;margin-left:0.5em}#p-search h3{display:block;position:absolute!important;clip:rect(1px,1px,1px,1px);width:1px;height:1px;margin:-1px;border:0;padding:0;overflow:hidden}#p-search form{margin:0.5em 0 0}#simpleSearch{display:block;width:20vw;min-width:5em;max-width:20em;height:100%;margin-top:0;position:relative;min-height:1px}#simpleSearch input{background-color:rgba(0,0,0,0);color:#000000;margin:0}#searchInput{width:100%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;border:1px solid #a2a9b1;border-radius:2px;padding:0.4em 1.84615385em 0.4em 0.4em;-webkit-box-shadow:inset 0 0 0 1px transparent;box-shadow:inset 0 0 0 1px transparent;font-size:0.8125em;direction:ltr;-webkit-transition:border-color 250ms,box-shadow 250ms;-moz-transition:border-color 250ms,box-shadow 250ms;transition:border-color 250ms,box-shadow 250ms;-webkit-appearance:textfield}#simpleSearch:hover #searchInput{border-color:#72777d}#searchInput:focus,#simpleSearch:hover #searchInput:focus{outline:0;border-color:#3366cc;-webkit-box-shadow:inset 0 0 0 1px #3366cc,inset 0 0 0 2px #ffffff;box-shadow:inset 0 0 0 1px #3366cc,inset 0 0 0 2px #ffffff}#searchInput::-webkit-input-placeholder{color:#72777d;opacity:1}#searchInput::-moz-placeholder{color:#72777d;opacity:1}#searchInput:-moz-placeholder{color:#72777d;opacity:1}#searchInput::placeholder{color:#72777d;opacity:1}#searchInput::-webkit-search-decoration,#searchInput::-webkit-search-cancel-button,#searchInput::-webkit-search-results-button,#searchInput::-webkit-search-results-decoration{-webkit-appearance:textfield}#searchButton{position:absolute;top:1px;bottom:1px;right:1px;min-width:24px;width:1.84615385em;border:0;padding:0;cursor:pointer;font-size:0.8125em;direction:ltr;text-indent:-99999px;white-space:nowrap;overflow:hidden;z-index:1}#searchButton{background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2213%22%3E %3Cg fill=%22none%22 stroke=%22%2354595d%22 stroke-width=%222%22%3E %3Cpath d=%22M11.29 11.71l-4-4%22/%3E %3Ccircle cx=%225%22 cy=%225%22 r=%224%22/%3E %3C/g%3E %3C/svg%3E");background-position:center center;background-repeat:no-repeat}.vectorTabs{background-position:left bottom;float:left;height:2.5em;padding-left:1px}.vectorTabs ul{float:left;height:100%;list-style:none none;margin:0;padding:0}.vectorTabs li{background-image:linear-gradient(to top,#77c1f6 0,#e8f2f8 1px,#ffffff 100%);background-position:left bottom;background-repeat:repeat-x;float:left;display:block;height:100%;margin:0;padding:0;line-height:1.125em;white-space:nowrap}.vectorTabs li a{color:#0645ad;height:1.9em;padding-left:0.615em;padding-right:0.615em;cursor:pointer;font-size:0.8125em}.vectorTabs .selected{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAABkAQAAAABvV2fNAAAADElEQVR4AWNoGB4QAInlMgFKeRKBAAAAAElFTkSuQmCC);background:#ffffff}.vectorTabs .selected a,.vectorTabs .selected a:visited{color:#222222;text-decoration:none}.vectorTabs span{background-position:right bottom;display:inline-block;height:100%}.vectorTabs span a{float:left;display:block;position:relative;padding-top:1.25em}.vectorTabs,.vectorTabs span{background-image:linear-gradient(to bottom,rgba(167,215,249,0) 0,#a7d7f9 100%);background-repeat:no-repeat;background-size:1px 100%}@-webkit-keyframes rotate{from{-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(360deg);-moz-transform:rotate(360deg);transform:rotate(360deg)}}@-moz-keyframes rotate{from{-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(360deg);-moz-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes rotate{from{-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(360deg);-moz-transform:rotate(360deg);transform:rotate(360deg)}}#mw-navigation h2{position:absolute;top:-9999px}.mw-jump-link:not(:focus){display:block;position:absolute!important;clip:rect(1px,1px,1px,1px);width:1px;height:1px;margin:-1px;border:0;padding:0;overflow:hidden}#mw-page-base{height:5em;background-position:bottom left;background-color:#fbfbfb;background-image:-webkit-gradient(linear,right top,right bottom,color-stop(50%,#ffffff),color-stop(100%,#f6f6f6));background-image:-webkit-linear-gradient(top,#ffffff 50%,#f6f6f6 100%);background-image:-moz-linear-gradient(top,#ffffff 50%,#f6f6f6 100%);background-image:linear-gradient(to bottom,#ffffff 50%,#f6f6f6 100%)}#mw-head-base{margin-top:-5em;margin-left:10em;height:5em}#mw-head{position:absolute;top:0;right:0;width:100%}#left-navigation{float:left;margin-left:10em;margin-top:2.5em;margin-bottom:-2.5em}#right-navigation{float:right;margin-top:2.5em}#mw-panel{position:absolute;top:0;width:10em;left:0;font-size:inherit}#mw-panel .portal{margin:0 0.6em 0 0.7em;padding:0.25em 0;direction:ltr}#mw-panel .portal h3{color:#444444;font-weight:normal;margin:0.5em 0 0 0.66666667em;padding:0.25em 0;cursor:default;border:0;font-size:0.75em}#mw-panel .portal .body{margin-left:0.5em;padding-top:0;background-image:linear-gradient(to right,transparent 0,#c8ccd1 35%,#c8ccd1 70%,transparent 100%);background-repeat:no-repeat;background-size:100% 1px}#mw-panel .portal .body ul{list-style:none none;margin:0;padding-top:0.3em}#mw-panel .portal .body li{margin:0;padding:0.25em 0;font-size:0.75em;line-height:1.125em;word-wrap:break-word}#mw-panel .portal .body li a{color:#0645ad}#mw-panel .portal .body li a:visited{color:#0b0080}#mw-panel #p-logo+.portal{background-image:none;margin-top:1em}#mw-panel #p-logo+.portal .body{background-image:none;margin-left:0.5em}#footer{margin-left:10em;margin-top:0;padding:0.75em;direction:ltr}#footer ul{list-style:none none;margin:0;padding:0}#footer li{color:#222222;margin:0;padding:0.5em 0;font-size:0.7em}#footer-info li{line-height:1.4}#footer-places li{float:left;margin-right:1em;line-height:2}.mw-parser-output .external{background-position:center right;background-repeat:no-repeat;background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22%3E %3Cpath fill=%22%23fff%22 stroke=%22%2336c%22 d=%22M1.5 4.518h5.982V10.5H1.5z%22/%3E %3Cpath fill=%22%2336c%22 d=%22M5.765 1H11v5.39L9.427 7.937l-1.31-1.31L5.393 9.35l-2.69-2.688 2.81-2.808L4.2 2.544z%22/%3E %3Cpath fill=%22%23fff%22 d=%22M9.995 2.004l.022 4.885L8.2 5.07 5.32 7.95 4.09 6.723l2.882-2.88-1.85-1.852z%22/%3E %3C/svg%3E");padding-right:13px}}@media screen and (min-width:982px){.mw-body,#mw-head-base,#left-navigation,#footer{margin-left:11em}.mw-body{padding:1.25em 1.5em 1.5em 1.5em}#footer{padding:1.25em}#mw-panel{padding-left:0.5em}#p-search{margin-right:1em}#p-personal{right:1em}}@media screen and (max-width:720px){#mw-head{position:static!important;margin-top:0.5em}#mw-navigation #mw-panel{display:table;position:static;table-layout:fixed;width:100%;overflow:hidden;font-size:150%}#mw-navigation #mw-panel .portal{display:block;width:100%}#mw-navigation #mw-panel ul li{list-style:none}body #footer{margin-left:0;padding-top:0}body #footer #footer-info-lastmod{display:none}#p-personal{display:table;position:relative;width:100%;top:inherit;left:inherit;right:inherit}#p-personal ul{padding-left:0}#right-navigation{position:absolute;top:inherit;right:0;margin-top:0;float:none}#left-navigation{position:absolute;top:inherit;margin:0;display:block;float:none}#p-namespaces,#p-views{position:relative;top:2.5em}#p-namespaces{padding-left:0}#p-search{float:none;position:absolute;right:0;width:100vw;margin:0}#simpleSearch{margin:0 3em;width:80vw;padding:0}.mw-body{border-left:0;margin-left:0}}#archnavbar{height:40px!important;padding:10px 15px!important;background:#333!important;border-bottom:5px #08c solid!important}#archnavbarlogo{float:left!important;margin:0!important;padding:0!important;height:40px!important;width:190px!important}html>body #archnavbarlogo{background:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEiIHdpZHRoPSI2MDAiIGhlaWdodD0iMTI2Ij48cGF0aCBkPSJNMTU5LjU2OCAzNC40MjdjLTguODktLjAxNC0xNi4yNjcgMS44MDktMTkuMTIgMi44MDNsLTIuOTM3IDE1Ljg1N2MtLjAwNy4wNTggMTQuNjE3LTMuOSAyMS4wNTktMy42NjcgMTAuNjY1LjM4MyAxMS42NDYgNC4wNzYgMTEuNDYgOS4wNi4xODIuMjkyLTIuNzUyLTQuNTAzLTExLjk3OS00LjY2NC0xMS42NC0uMi0yOC4wNjkgNC4xMjItMjguMDQ2IDIxLjY5Mi0uMzE0IDE5Ljc2NSAxNC43NjQgMjUuNTc5IDI1LjAzMiAyNS42ODYgOS4yMzItLjE2OCAxMy41NjMtMy40OTYgMTUuOTM0LTUuMjggMy4xMTUtMy4yNTcgNi42NzktNi41MzIgMTAuMDc4LTEwLjQ2Mi0zLjIxNiA1Ljg0NC02LjAwNSA5Ljg4NC04LjkwNyAxMi45Nzd2Mi42MTFsMTQuMDMzLTIuMzYxLjA5Ni0zOC4xNDRjLS4xNDMtNS4zOTkgMy4wOTYtMjYuMDU3LTI2LjcwMy0yNi4xMDh6bS0yLjAxNiAzMy4yMWM1LjgxNy4wOCAxMi40ODggMi45NDggMTIuNDk3IDkuODQ5LjAzIDYuMjc3LTcuODYzIDkuNjUxLTEyLjk5NiA5LjU5OC01LjEzNS0uMDUzLTExLjk0OS00LjAzNi0xMS45NzktMTAuMTU1LjA5OS01LjQ3IDYuNDI2LTkuNDMyIDEyLjQ3OC05LjI5MXptMzcuOTcyLTI5LjY4NWwtLjA5NSA2My4xNjYgMTYuMzQ4LTMuMTUuMDI3LTM1LjgxNGMuMDA0LTUuMzMzIDcuNjItMTEuNTY0IDE3LjE3OC0xMS40NjQgMi4wMjgtMy42NyA1Ljg0LTEzLjA1IDYuNzctMTUuMTgzLTIxLjM1MS0uMDUxLTIxLjYyMyA2LjEzNy0yNS4zMzYgOS4xOC0uMDQtNS44MDYtLjAxMy05LjI5Mi0uMDEzLTkuMjkybC0xNC44NzkgMi41NTd6bTkyLjAwMiA4LjI5MmMtLjE1OC0uMDc0LTguNTI2LTkuNzg4LTI1LjM1LTkuODY0LTE1Ljc1OC0uMjYyLTMzLjQzMyA1Ljg0Ny0zMy43MTYgMzIuMjcuMTM4IDIzLjIzMiAxNi45NzkgMzIuMzExIDMzLjgwNSAzMi40ODggMTguMDA3LjE4NyAyNS4xNzItMTEuMjYgMjUuNjAyLTExLjU0My0yLjE0OS0xLjg2My0xMC4xOTYtOS44MzctMTAuMTk2LTkuODM3cy01LjAyNyA3LjE1Ny0xNC43NzkgNy4yNDhjLTkuNzU1LjA5My0xOC4yMzQtNy41NC0xOC4zNTQtMTguMTg5LS4xMjUtMTAuNjUgNy43OTUtMTYuNDE5IDE4LjQyNy0xNi44ODUgOS4yMDUtLjAwMiAxNC41MTYgNS45NDMgMTQuNTE2IDUuOTQzem0yMC42MDYtMzAuMzk5bC0xNS40MzQgMy42MjguMTE1IDgyLjI3NyAxNS4yMDQtMi43NDUuMTcyLTM4LjcyYy4wMzMtNC4wNiA1Ljg3NC0xMC4yOTUgMTUuNjI2LTEwLjA5NyA5LjMyNS4wOTcgMTEuNDEgNi4yMTUgMTEuMzg0IDYuOTg4bC4yNjkgNDQuODI0IDE0Ljk5My0yLjY1LjA1Ny00Ny41M2MuMDk5LTQuNTc0LTEwLjAxOC0xNC4yMzMtMjYuMjgtMTQuMzAyLTcuNzI5LjAxMi0xMi4wMDkgMS43NjItMTQuMTg3IDMuMDUyLTMuNzI2IDIuODc5LTcuOTg1IDUuNjM3LTEyLjE3IDkuMTU3IDMuODY5LTQuOTcgNy4xMTctOC40MDcgMTAuMjktMTAuOTYxbC0uMDQtMjIuOTIxeiIgZmlsbD0iI2ZmZiIgZmlsbC1ydWxlPSJldmVub2RkIi8+PHBhdGggZD0iTTM2MC4xMzYgMTcuMjE4bDYuOTYyLTEuNzQyLjMzIDgyLjk1LTcuMDc0IDEuMjA0em0xOC45MjggMjQuNzU3bDYuMTAxLTIuNzE2LjA1MiA1OS40NzgtNS44OTIgMS4yMTd6bS0xLjQ1LTIxLjQ0OGw0LjkyLTQuMDE1IDQuMDg2IDQuNTQ3LTQuOTIxIDQuMTIxem0xOS4wMjQgMjAuMzY1bDYuOTYyLTEuNDIxLjAzMyAxMi40MzRjLjAwMS41MzQgMy44MjMtMTMuODkgMjIuMjU4LTEzLjU3IDE3LjkuMSAyMC44MjcgMTMuOTU3IDIwLjczIDE3LjA2NGwuMjIxIDQzLjcyNS02LjEwMiAxLjMyNC0uMDM1LTQzLjE4OWMuMDctMS4yNjEtMi43OS0xMS45MjctMTUuNDM5LTExLjk2Ni0xMi42NDYtLjAzNy0yMS40MDkgOS4xODYtMjEuMzkzIDE1LjA3OGwuMSAzOC4wNDctNy4wNyAxLjg0N3ptMTEwLjk1NCA1OC41NDZsLTYuOTYyIDEuNDItLjAzMy0xMi40MzNjLS4wMDEtLjUzNC0zLjgyNSAxMy44OS0yMi4yNTggMTMuNTctMTcuOS0uMS0yMC44MjctMTMuOTU3LTIwLjczLTE3LjA2NGwtLjIyMS00My43MjUgNy4zOTctMS40OTQuMTE0IDQzLjE5Yy4wMDMgMS4xOCAxLjQxNiAxMi4wOTYgMTQuMDY1IDEyLjEzNSAxMi42NDYuMDM3IDIxLjUwNi03LjYxNiAyMS41NjktMTkuMTM5bC0uMDktMzQuMDc2IDYuODg1LTEuNzU3em0xMy42NDUtNTkuMDM3bC00Ljg4MiAzLjgyIDE4LjcxNyAyNC40OTQtMTkuOTYzIDI4LjMgNS4xNzkgMy44NDMgMTguNzY2LTI2LjI4IDE5LjM2OCAyNi45MDIgNC43OTEtMy44Mi0yMC43NTctMjguNzY1IDE2LjU2LTIzLjI2Mi01LjA5Mi00LjMwNS0xNS4wODUgMjEuNTI1ek02MS44OCAxLjc3OGMtNS4zODUgMTMuMjAzLTguNjMzIDIxLjgzOS0xNC42MjkgMzQuNjQ5IDMuNjc2IDMuODk2IDguMTg4IDguNDM0IDE1LjUxNiAxMy41NTktNy44NzgtMy4yNDItMTMuMjUyLTYuNDk3LTE3LjI2Ny05Ljg3NC03LjY3MyAxNi4wMTEtMTkuNjk1IDM4LjgxOC00NC4wOSA4Mi42NSAxOS4xNzQtMTEuMDY4IDM0LjAzNy0xNy44OTMgNDcuODg5LTIwLjQ5N2EzNS4xMDMgMzUuMTAzIDAgMCAxLS45MS04LjIxM2wuMDIzLS42MTRjLjMwNC0xMi4yODQgNi42OTQtMjEuNzMgMTQuMjY0LTIxLjA5IDcuNTcuNjQyIDEzLjQ1NCAxMS4xMjYgMTMuMTUgMjMuNDEtLjA1OCAyLjMxMi0uMzE5IDQuNTM2LS43NzQgNi41OTggMTMuNzAxIDIuNjggMjguNDA1IDkuNDg3IDQ3LjMyIDIwLjQwNy0zLjczLTYuODY2LTcuMDU5LTEzLjA1Ni0xMC4yMzgtMTguOTUtNS4wMDctMy44ODItMTAuMjMtOC45MzMtMjAuODg0LTE0LjQwMiA3LjMyMyAxLjkwMyAxMi41NjYgNC4wOTkgMTYuNjUzIDYuNTUyQzc1LjU4IDM1Ljc4NiA3Mi45NjMgMjcuNzkgNjEuODggMS43Nzh6IiBmaWxsPSIjMTc5M2QxIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48cGF0aCBkPSJNNTc2Ljc3MSA5My4yNjVWODAuNjAzaC00Ljczdi0xLjY5NWgxMS4zOHYxLjY5NWgtNC43NXYxMi42NjJoLTEuOW04LjYyOSAwVjc4LjkwOGgyLjg1OWwzLjM5OCAxMC4xNjZjLjMxNC45NDcuNTQyIDEuNjU1LjY4NiAyLjEyNS4xNjMtLjUyMi40MTgtMS4yOS43NjQtMi4zMDFsMy40MzctOS45OWgyLjU1NnYxNC4zNTdoLTEuODMxVjgxLjI1bC00LjE3MiAxMi4wMTZoLTEuNzE0bC00LjE1Mi0xMi4yMjJ2MTIuMjIyaC0xLjgzMiIgZm9udC13ZWlnaHQ9IjQwMCIgZm9udC1zaXplPSI4LjQ0MSIgZm9udC1mYW1pbHk9IkRlamFWdSBTYW5zIE1vbm8iIGZpbGw9ImdyYXkiLz48L3N2Zz4=) no-repeat!important;background-size:190px 40px!important}#archnavbarlogo p{margin:0!important;padding:0!important;text-indent:-9999px!important}#archnavbarlogo a{display:block!important;height:40px!important;width:190px!important}#archnavbar ul{display:inline!important;float:right!important;list-style:none!important;margin:0!important;padding:0!important}#archnavbar ul li{float:left!important;font-size:14px!important;font-family:sans-serif!important;line-height:45px!important;padding-right:15px!important;padding-left:15px!important}#archnavbar ul#archnavbarlist li a{color:#999;font-weight:bold!important;text-decoration:none!important}#archnavbar ul li a:hover{color:white!important;text-decoration:underline!important}#archnavbar ul li.anb-selected a{color:white!important}@media (max-width:600px){#anb-wiki{display:none}}@media (max-width:680px){html>body #archnavbarlogo{width:40px!important;margin-right:5px!important;background:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjEyMDAiIHZlcnNpb249IjEiPjxwYXRoIGQ9Ik02MDAgMGMtNTMuNDE2IDEzMC45NjItODUuNjcxIDIxNi43NC0xNDUuMTQzIDM0My44MSAzNi40NjQgMzguNjUxIDgxLjIyIDgzLjQ0OSAxNTMuOTA1IDEzNC4yODUtNzguMTQ1LTMyLjE1Ni0xMzEuNDAzLTY0LjIxMy0xNzEuMjM4LTk3LjcxNEMzNjEuNDEgNTM5LjIgMjQxLjk4OSA3NjUuMTk0IDAgMTIwMGMxOTAuMTYxLTEwOS43ODQgMzM3LjY2NS0xNzcuMzk3IDQ3NS4wNDgtMjAzLjIzOC01Ljg5NS0yNS4zNjctOS4xOC01Mi44OTYtOC45NTMtODEuNTI0bC4xOS01LjkwNUM0NjkuMzA1IDc4Ny40OCA1MzIuNzIgNjkzLjYzOCA2MDcuODEgNzAwYzc1LjA4OSA2LjM2MiAxMzMuNDk0IDExMC41MjggMTMwLjQ3NiAyMzIuMzgxLS41NjggMjIuOTE2LTMuMTA1IDQ0Ljg4NS03LjYyIDY1LjMzM0M4NjYuNTI4IDEwMjQuMzI1IDEwMTIuNDYyIDEwOTEuNzMgMTIwMCAxMjAwYy0zNi45OTUtNjguMTExLTcwLjE4LTEyOS4zMzUtMTAxLjcxNC0xODcuODEtNDkuNjcyLTM4LjQ5OS0xMDEuMzY1LTg4LjYxMy0yMDcuMDQ4LTE0Mi44NTcgNzIuNjQgMTguODc1IDEyNC43OTMgNDAuNjEyIDE2NS4zMzMgNjQuOTUzQzczNS45NTIgMzM3LjM0OCA3MDkuOTQ4IDI1OC4wMTYgNjAwIDB6IiBmaWxsPSIjMTc5M2QxIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=) no-repeat!important;background-size:40px 40px!important}#archnavbar ul{display:flex!important;justify-content:space-between;flex-wrap:nowrap;overflow:hidden;float:none!important}#archnavbar ul li{padding:0!important;float:none!important}}@media (max-width:830px){#anb-home{display:none}html>body #archnavbarlogo{padding-right:15px!important}#archnavbar{padding-left:5px!important;padding-right:5px!important}#archnavbar ul li{padding-left:5px!important;padding-right:5px!important}}body{background:#f6f9fc}#content{background:#ffffff;border:1px solid #cccccc}#content h1,#content h2,#content h3,#content h4,#content pre,#content code{color:#222222}#content ul{list-style-image:none}#content pre{border:1px solid #bbccdd;overflow:auto;word-break:break-all;white-space:pre-wrap!important}#content pre,#content code{background-color:#ebf1f5;font-family:monospace}#content code{display:inline-block;padding:0 0.3em;border-width:0;border-radius:0}#footer{color:#333333}#toc{background-color:#f9faff;border:1px solid #d7dfe3}#bodyContent>div.mw-content-ltr a{font-weight:bold}#bodyContent #toc a{font-weight:normal}#content a:not(.new),#mw-navigation li:not(.new) a:not(.new),#mw-panel li:not(.new) a:not(.new),#column-one li:not(.new) a:not(.new),#footer a:not(.new){text-decoration:none;color:#0077bb!important}#content a:not(.new):hover,#mw-navigation li:not(.new) a:not(.new):hover,#mw-panel li:not(.new) a:not(.new):hover,#column-one li:not(.new) a:not(.new):hover,#footer a:not(.new):hover{text-decoration:underline;background-color:transparent;color:#999999!important}#content a:active,#mw-navigation li:not(.new) a:active,#mw-panel li:not(.new) a:active,#column-one li:not(.new) a:active,#footer a:active,#content a:focus,#mw-navigation li:not(.new) a:focus,#mw-panel li:not(.new) a:focus,#column-one li:not(.new) a:focus,#footer a:focus,#content a:active:hover,#mw-navigation li:not(.new) a:active:hover,#mw-panel li:not(.new) a:active:hover,#column-one li:not(.new) a:active:hover,#footer a:active:hover,#content a:focus:hover,#mw-navigation li:not(.new) a:focus:hover,#mw-panel li:not(.new) a:focus:hover,#column-one li:not(.new) a:focus:hover,#footer a:focus:hover{color:#ee9900!important}#content a:not(.new):visited,#mw-panel li:not(.new) a:not(.new):visited,#p-navigation li:not(.new) a:not(.new):visited,#p-tb li:not(.new) a:not(.new):visited{color:#666666!important}.mw-body-content a.external,.mw-body-content a.extiw{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6+R8AAAAs0lEQVR4AWP4//8/yRiroHH6njrjtN1/sGGYJpwajdJ2bXNI2M8BE8PQhMXUv0B8yThtMxeGJgyBmf9ZDRO3iRqn775rmL5NCyQG0giyEacm0WWvVstNvnNXt+hYNogP0giyEeRUnJpkVj3mBGqcC8SvNGrOVIJsBDkV5EecmmBYZOnrbqmZD1+CnAqTA2nEq4lh/38W0aWv9gGxF4YcpiYEFlz1jh+kGa8m3BhTE1GYYk0A08+9f1lXOBcAAAAASUVORK5CYII=) center right no-repeat;padding-right:13px}.mw-body h1,.mw-body-content h2{font-family:sans-serif}div#mw-head{top:65px}div#mw-panel{top:65px}#mw-page-base{background:none}div.vectorTabs{margin-top:-2px}div.vectorTabs{padding-left:0}div.vectorTabs ul,div.vectorTabs ul li{background:none}div.vectorTabs ul li{border:1px}div.vectorTabs li.selected{border:1px solid #cccccc;border-bottom-color:#ffffff;background-color:#ffffff}div.vectorTabs li.selected span{background:none}div.vectorTabs li:not(:first-child).selected{margin-left:-2px}@media screen and (max-width:720px){div#p-personal{top:unset}div#mw-panel{padding-top:0}}.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:0;z-index:1099;padding:0;margin:-1px 0 0 0}</style><meta name=ResourceLoaderDynamicStyles content>
+<style>#bodyContent a.external[href^="https://wiki.archlinux.org"]{background:none;padding-right:0}span.archwiki-template-pkg,span.archwiki-template-man{font-family:monospace}div.archwiki-template-box{padding:5px;border:thin solid black;margin:0.5em 0;overflow:hidden}div.archwiki-template-box.archwiki-template-box-note{background-color:#ddf;border-color:#bbd}div.archwiki-template-box.archwiki-template-box-warning{background-color:#fdd;border-color:#dbb}div.archwiki-template-message{position:relative;overflow:hidden;min-height:4.6em;margin-bottom:1em;background-color:#f9faff;border:1px solid #d7dfe3;padding:0 100px;text-align:center}div.archwiki-template-message>p>a{display:block;position:absolute;top:5px}div.archwiki-template-message>p>a:first-of-type{left:26px}div.archwiki-template-message>p>a:last-of-type{right:26px}div.archwiki-template-message>div{font-size:90%}div.archwiki-template-meta-related-articles-start{float:right;clear:right;width:25%;margin:0 0 0.5em 0.5em}div.archwiki-template-meta-related-articles-start>p{background:#333;color:white;padding:0.2em;border-bottom:5px #08c solid;margin:0;text-align:center;font-weight:bold}div.archwiki-template-meta-related-articles-start>ul{list-style-type:none;margin:0;padding:0.3em}div.archwiki-template-meta-related-articles-start>ul>li{padding:0.4em 0;line-height:1}</style>
+<meta name=generator content="MediaWiki 1.34.1">
+<meta name=viewport content="width=device-width, initial-scale=1">
+<link rel=search type=application/opensearchdescription+xml href=https://wiki.archlinux.org/opensearch_desc.php title="ArchWiki (en)">
+<link rel=EditURI type=application/rsd+xml href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel=license href=http://www.gnu.org/copyleft/fdl.html>
+<link rel=alternate type=application/atom+xml title="ArchWiki Atom feed" href="https://wiki.archlinux.org/index.php?title=Special:RecentChanges&amp;feed=atom">
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+<link rel="shortcut icon" href=data:image/vnd.microsoft.icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABvElEQVQ4jY2TP4gTQRTGfzM7ybp35mBX8LY4GxM5OI4UiqDWtoKIjWhl4QmmEQwIhzZaa3GLlYWgjViI+AcUrrASUYTbQ0UxepwpFj1EDCSXuLNj4QYSLxP8mnm8972P3wyMMMZgUxjF+ycLUjUW5l/YPMq6/VfnHCEmAGuAsBHsurG6QwiaRUeq2cCdfXy88nmUT9qSJ4tywVNyGxjVSbPzNp81wFNyt6cknpJ00uzk2Wfr/n8HHLrz4ajriFeuEsuekvS08Zu/eoujvFveYN+t98XAUw1jmEmN+ZEZfG2M8BzZKhVl+f6x8vexBIGn6hMFOeMqgTEEXZ2J39qwqbNSR5tLYwnmbr6b2hO4axvt1P/a6tHTw3SuI1pTrlNZPT33bSTBps7qb5K23/jZ7S8/AO72511tShud9MJIgjCKdwINYHs+e5TUqkfy2W3gVN5vA+WkVk3+Jbg8sAzwcKB+mp8G+ALUh64QRnEZOMOwPg3Ub/vEgAvcGwoArgKFvF4DrgEfBwKawHVgHagAy2EUnwAQ00sre4HXwBPgSlKrvmSMwig+CCwCh4F5Mb20chF4ntSq1h83JujAH3Eom+H9uAq8AAAAAElFTkSuQmCC><style>.sf-hidden{display:none!important}</style><link rel=canonical href=https://wiki.archlinux.org/index.php/Swap></head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Swap rootpage-Swap skin-vector action-view"><div id=archnavbar class=noprint>
+ <div id=archnavbarlogo>
+ <p><a id=logo href=https://www.archlinux.org/></a></p>
+ </div>
+ <div id=archnavbarmenu>
+ <ul id=archnavbarlist>
+ <li id=anb-home><a href=https://www.archlinux.org/>Home</a></li> <li id=anb-packages><a href=https://www.archlinux.org/packages/>Packages</a></li> <li id=anb-forums><a href=https://bbs.archlinux.org/>Forums</a></li> <li id=anb-wiki class=anb-selected><a href=https://wiki.archlinux.org/>Wiki</a></li> <li id=anb-bugs><a href=https://bugs.archlinux.org/>Bugs</a></li> <li id=anb-security><a href=https://security.archlinux.org/>Security</a></li> <li id=anb-aur><a href=https://aur.archlinux.org/>AUR</a></li> <li id=anb-download><a href=https://www.archlinux.org/download/>Download</a></li> </ul>
+ </div>
+</div>
+<div id=mw-page-base class=noprint></div>
+<div id=mw-head-base class=noprint></div>
+<div id=content class=mw-body role=main>
+ <a id=top></a>
+ 
+ <div class="mw-indicators mw-body-content">
+</div>
+ <h1 id=firstHeading class=firstHeading lang=en>Swap</h1>
+ 
+ <div id=bodyContent class=mw-body-content>
+ <div id=siteSub class="noprint sf-hidden">From ArchWiki</div>
+ <div id=contentSub></div>
+ 
+ 
+ 
+ <div id=jump-to-nav></div>
+ <a class=mw-jump-link href=#mw-head>Jump to navigation</a>
+ <a class=mw-jump-link href=#p-search>Jump to search</a>
+ <div id=mw-content-text dir=ltr class=mw-content-ltr lang=en><div class=mw-parser-output><div class=archwiki-template-meta-related-articles-start><p>Related articles<ul>
+<li><a href=https://wiki.archlinux.org/index.php/Fstab title=Fstab>fstab</a></li>
+<li><a href=https://wiki.archlinux.org/index.php/Power_management/Suspend_and_hibernate#Hibernation title="Power management/Suspend and hibernate">Power management/Suspend and hibernate#Hibernation</a></li>
+<li><a href=https://wiki.archlinux.org/index.php/Zswap title=Zswap>Zswap</a></li>
+<li><a href=https://wiki.archlinux.org/index.php/Swap_on_video_ram class=mw-redirect title="Swap on video ram">Swap on video ram</a></li>
+<li><a href=https://wiki.archlinux.org/index.php/ZFS#Swap_volume title=ZFS>ZFS#Swap volume</a></li>
+<li><a href=https://wiki.archlinux.org/index.php/Dm-crypt/Swap_encryption title="Dm-crypt/Swap encryption">dm-crypt/Swap encryption</a></li>
+</ul></div>
+<p>This page provides an introduction to <a href=https://en.wikipedia.org/wiki/Paging class=extiw title=wikipedia:Paging>swap space and paging</a> on GNU/Linux. It covers creation and activation of swap partitions and swap files.
+<p>From <a rel=nofollow class="external text" href=https://www.linux.com/news/all-about-linux-swap-space/>All about Linux swap space</a>:
+</p>
+<dl><dd>Linux divides its physical RAM (random access memory) into chunks of memory called pages. Swapping is the process whereby a page of memory is copied to the preconfigured space on the hard disk, called swap space, to free up that page of memory. The combined sizes of the physical memory and the swap space is the amount of virtual memory available.</dl>
+<p>Support for swap is provided by the Linux kernel and user-space utilities from the <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=util-linux">util-linux</a></span> package.
+</p>
+<div id=toc class=toc><input type=checkbox role=button id=toctogglecheckbox class=toctogglecheckbox style=display:none><div class=toctitle dir=ltr lang=en><h2>Contents</h2><span class=toctogglespan><label class=toctogglelabel for=toctogglecheckbox></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href=#Swap_space><span class=tocnumber>1</span> <span class=toctext>Swap space</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href=#Swap_partition><span class=tocnumber>2</span> <span class=toctext>Swap partition</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href=#Activation_by_systemd><span class=tocnumber>2.1</span> <span class=toctext>Activation by systemd</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href=#Disabling_swap><span class=tocnumber>2.2</span> <span class=toctext>Disabling swap</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href=#Swap_file><span class=tocnumber>3</span> <span class=toctext>Swap file</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href=#Manually><span class=tocnumber>3.1</span> <span class=toctext>Manually</span></a>
+<ul>
+<li class="toclevel-3 tocsection-7"><a href=#Swap_file_creation><span class=tocnumber>3.1.1</span> <span class=toctext>Swap file creation</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href=#Remove_swap_file><span class=tocnumber>3.1.2</span> <span class=toctext>Remove swap file</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-9"><a href=#Automated><span class=tocnumber>3.2</span> <span class=toctext>Automated</span></a>
+<ul>
+<li class="toclevel-3 tocsection-10"><a href=#systemd-swap><span class=tocnumber>3.2.1</span> <span class=toctext>systemd-swap</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href=#Swap_encryption><span class=tocnumber>4</span> <span class=toctext>Swap encryption</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href=#Performance><span class=tocnumber>5</span> <span class=toctext>Performance</span></a>
+<ul>
+<li class="toclevel-2 tocsection-13"><a href=#Swappiness><span class=tocnumber>5.1</span> <span class=toctext>Swappiness</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href=#VFS_cache_pressure><span class=tocnumber>5.2</span> <span class=toctext>VFS cache pressure</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href=#Priority><span class=tocnumber>5.3</span> <span class=toctext>Priority</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href=#Using_zswap_or_zram><span class=tocnumber>5.4</span> <span class=toctext>Using zswap or zram</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href=#Striping><span class=tocnumber>5.5</span> <span class=toctext>Striping</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h2><span class=mw-headline id=Swap_space>Swap space</span></h2>
+<p>Swap space can take the form of a disk partition or a file. Users may create a swap space during installation or at any later time as desired. Swap space can be used for two purposes, to extend the virtual memory beyond the installed physical memory (RAM), and also for <a href=https://wiki.archlinux.org/index.php/Power_management/Suspend_and_hibernate title="Power management/Suspend and hibernate">suspend-to-disk</a> support.
+<p>If it is beneficial to extend the virtual memory with swap depends on the amount of installed physical memory. If the amount of physical memory is less than the amount of memory required to run all the desired programs, then it <i>may be</i> beneficial to enable swap. This avoids <a href=https://en.wikipedia.org/wiki/Out_of_memory class=extiw title="wikipedia:Out of memory">out of memory conditions</a>, where the Linux kernel OOM killer mechanism will automatically attempt to free up memory by killing processes. To increase the amount of virtual memory to the required amount, add the necessary difference (or more) as swap space.
+<p>The biggest drawback of enabling swap is its lower performance, see section <a href=#Performance>#Performance</a>. Hence, enabling swap is a matter of personal preference: some prefer programs to be killed over enabling swap and others prefer enabling swap and slower system when the physical memory is exhausted.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> There is no performance difference between using a swap partition and a contiguous swap file.</div>
+<p>To check swap status, use:
+</p>
+<pre>$ swapon --show
+</pre>
+<p>Or to show physical memory as well as swap usage:
+</p>
+<pre>$ free -h
+</pre>
+<h2><span class=mw-headline id=Swap_partition>Swap partition</span></h2>
+<div class="noprint archwiki-template-message">
+<p><a href=https://wiki.archlinux.org/index.php/File:Tango-inaccurate.png class=image><img alt=Tango-inaccurate.png src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"><rect fill-opacity="0"/></svg>' decoding=async style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-5)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important" width=48 height=48></a><b>The factual accuracy of this article or section is disputed.</b><a href=https://wiki.archlinux.org/index.php/File:Tango-inaccurate.png class=image><img alt=Tango-inaccurate.png src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"><rect fill-opacity="0"/></svg>' decoding=async style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-5)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important" width=48 height=48></a></p>
+<div><b>Reason:</b> <code>82</code> is the swap <a href=https://en.wikipedia.org/wiki/Partition_type class=extiw title="wikipedia:Partition type">partition type</a> on MBR, there is no swap partition autodetection on MBR. (Discuss in <a rel=nofollow class="external text" href=https://wiki.archlinux.org/index.php/Talk:Swap>Talk:Swap#</a>)</div>
+</div>
+<p>A swap partition can be created with most GNU/Linux <a href=https://wiki.archlinux.org/index.php/Partitioning_tools class=mw-redirect title="Partitioning tools">partitioning tools</a>. Swap partitions are typically designated as type <code>82</code>. Even though it is possible to use any partition type as swap, it is recommended to use type <code>82</code> in most cases since <a href=https://wiki.archlinux.org/index.php/Systemd title=Systemd>systemd</a> will automatically detect it and mount it (see below).
+<p>To set up a partition as Linux swap area, the <span class="plainlinks archwiki-template-man" title="$ man 8 mkswap"><a rel=nofollow class="external text" href=https://jlk.fjfi.cvut.cz/arch/manpages/man/mkswap.8>mkswap(8)</a></span> command is used. For example:
+</p>
+<pre># mkswap /dev/sd<i>xy</i>
+</pre>
+<div class="archwiki-template-box archwiki-template-box-warning"><strong>Warning:</strong> All data on the specified partition will be lost.</div>
+<p>To enable the device for paging:
+</p>
+<pre># swapon /dev/sd<i>xy</i>
+</pre>
+<p>To enable this swap partition on boot, add an entry to <code>/etc/fstab</code>:
+</p>
+<pre>UUID=<i>device_UUID</i> none swap defaults 0 0
+</pre>
+<p>where the <code><i>device_UUID</i></code> is the <a href=https://wiki.archlinux.org/index.php/UUID class=mw-redirect title=UUID>UUID</a> of the swap space.
+<p>See <a href=https://wiki.archlinux.org/index.php/Fstab title=Fstab>fstab</a> for the file syntax.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> 
+<ul><li>The fstab-entry is optional if the swap partition is located on a device using GPT. See the next subsection.</li>
+<li>If using an SSD with <a href=https://wiki.archlinux.org/index.php/TRIM class=mw-redirect title=TRIM>TRIM</a> support, consider using <code>discard</code> in the swap line in <a href=https://wiki.archlinux.org/index.php/Fstab title=Fstab>fstab</a>. If activating swap manually with <i>swapon</i>, using the <code>-d</code>/<code>--discard</code> parameter achieves the same. See <span class="plainlinks archwiki-template-man" title="$ man 8 swapon"><a rel=nofollow class="external text" href=https://jlk.fjfi.cvut.cz/arch/manpages/man/swapon.8>swapon(8)</a></span> for details.</ul>
+</div>
+<div class="archwiki-template-box archwiki-template-box-warning"><strong>Warning:</strong> Enabling discard on RAID setups using mdadm will cause system lockup on boot and during runtime, if using swapon.</div> 
+<h3><span class=mw-headline id=Activation_by_systemd>Activation by systemd</span></h3>
+<p><a href=https://wiki.archlinux.org/index.php/Systemd title=Systemd>systemd</a> activates swap partitions based on two different mechanisms. Both are executables in <code>/usr/lib/systemd/system-generators</code>. The generators are run on start-up and create native systemd units for mounts. The first, <code>systemd-fstab-generator</code>, reads the fstab to generate units, including a unit for swap. The second, <code>systemd-gpt-auto-generator</code> inspects the root disk to generate units. It operates on GPT disks only, and can identify swap partitions by their type GUID, see <a href=https://wiki.archlinux.org/index.php/Systemd#GPT_partition_automounting title=Systemd>systemd#GPT partition automounting</a> for more information.
+</p>
+<h3><span class=mw-headline id=Disabling_swap>Disabling swap</span></h3>
+<p>To deactivate specific swap space:
+</p>
+<pre># swapoff /dev/sd<i>xy</i>
+</pre>
+<p>Alternatively use the <code>-a</code> switch to deactivate all swap space.
+<p>Since swap is managed by systemd, it will be activated again on the next system startup. To disable the automatic activation of detected swap space permanently, run <code>systemctl --type swap</code> to find the responsible <i>.swap</i> unit and <a href=https://wiki.archlinux.org/index.php/Mask class=mw-redirect title=Mask>mask</a> it.
+</p>
+<h2><span class=mw-headline id=Swap_file>Swap file</span></h2>
+<p>As an alternative to creating an entire partition, a swap file offers the ability to vary its size on-the-fly, and is more easily removed altogether. This may be especially desirable if disk space is at a premium (e.g. a modestly-sized SSD).
+</p>
+<div class="archwiki-template-box archwiki-template-box-warning"><strong>Warning:</strong> <a href=https://wiki.archlinux.org/index.php/Btrfs title=Btrfs>Btrfs</a> supports swap file with limitations since Linux kernel version 5.0. See <a href=https://wiki.archlinux.org/index.php/Btrfs#Swap_file title=Btrfs>Btrfs#Swap file</a> for more information.</div>
+<h3><span class=mw-headline id=Manually>Manually</span></h3>
+<h4><span class=mw-headline id=Swap_file_creation>Swap file creation</span></h4>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> If you use Btrfs, use the procedure described in <a href=https://wiki.archlinux.org/index.php/Btrfs#Swap_file title=Btrfs>Btrfs#Swap file</a> instead of the following <i>dd</i> command to initialize the swap file.</div>
+<p>Use <a href=https://wiki.archlinux.org/index.php/Dd title=Dd>dd</a> to create a swap file the size of your choosing. For example, creating a 512 MiB swap file:
+</p>
+<pre># dd if=/dev/zero of=/swapfile bs=1M count=512 status=progress
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> Using <i>dd</i> to allocate a swap file is the most portable solution, see <span class="plainlinks archwiki-template-man" title="$ man 8 swapon"><a rel=nofollow class="external text" href=https://jlk.fjfi.cvut.cz/arch/manpages/man/swapon.8#Files_with_holes>swapon(8) § Files with holes</a></span> for details.</div>
+<p>Set the right permissions (a world-readable swap file is a huge local vulnerability):
+</p>
+<pre># chmod 600 /swapfile
+</pre>
+<p>After creating the correctly sized file, format it to swap:
+</p>
+<pre># mkswap /swapfile
+</pre>
+<p>Activate the swap file:
+</p>
+<pre># swapon /swapfile
+</pre>
+<p>Finally, edit the fstab configuration to add an entry for the swap file:
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>/etc/fstab</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>/swapfile none swap defaults 0 0
+</pre>
+<p>For additional information, see <a href=https://wiki.archlinux.org/index.php/Fstab#Usage title=Fstab>fstab#Usage</a>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> 
+<ul><li>The swap file must be specified by its location on the file system, not by its UUID or LABEL.</li>
+<li>When using <a href=https://wiki.archlinux.org/index.php/Btrfs title=Btrfs>Btrfs</a>, do not forget to add the created subvolume to the list as well, and remove the <code>discard,autodefrag</code> and compression options.</ul>
+</div>
+<h4><span class=mw-headline id=Remove_swap_file>Remove swap file</span></h4>
+<p>To remove a swap file, it must be turned off first and then can be removed:
+</p>
+<pre># swapoff /swapfile
+# rm -f /swapfile
+</pre>
+<p>Finally remove the relevant entry from <code>/etc/fstab</code>.
+</p>
+<h3><span class=mw-headline id=Automated>Automated</span></h3>
+<h4><span class=mw-headline id=systemd-swap>systemd-swap</span></h4>
+<p>systemd-swap is a script for creating hybrid swap space from zram swaps, swap files and swap partitions. It is not affiliated with the systemd project.
+<p><a href=https://wiki.archlinux.org/index.php/Install class=mw-redirect title=Install>Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=systemd-swap">systemd-swap</a></span> package. Uncomment and set <code>swapfc_enabled=1</code> in the <i>Swap File Chunked</i> section of <code>/etc/systemd/swap.conf</code>. <a href=https://wiki.archlinux.org/index.php/Start/enable class=mw-redirect title=Start/enable>Start/enable</a> the <code>systemd-swap</code> service.
+<p>Visit the <a rel=nofollow class="external text" href=https://github.com/Nefelim4ag/systemd-swap>authors GitHub</a> page for more information and setting up the <a rel=nofollow class="external text" href=https://github.com/Nefelim4ag/systemd-swap/blob/master/README.md#about-configuration>recommended configuration</a>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> 
+<ul><li>If the journal keeps showing the following warning <code>systemd-swap[..]: WARN: swapFC: ENOSPC</code> and no swap file is being created, you need to uncomment and set <code>swapfc_force_preallocated=1</code> in <code>/etc/systemd/swap.conf</code>.</li>
+<li>The swap file created by systemd-swap cannot be easily used for <a href=https://wiki.archlinux.org/index.php/Hibernation class=mw-redirect title=Hibernation>hibernation</a>. See <a rel=nofollow class="external text" href=https://github.com/Nefelim4ag/systemd-swap/issues/85>systemd-swap issue 85</a>.</ul>
+</div>
+<h2><span class=mw-headline id=Swap_encryption>Swap encryption</span></h2>
+<p>See <a href=https://wiki.archlinux.org/index.php/Dm-crypt/Swap_encryption title="Dm-crypt/Swap encryption">dm-crypt/Swap encryption</a>.
+</p>
+<h2><span class=mw-headline id=Performance>Performance</span></h2>
+<p>Swap operations are usually significantly slower than directly accessing data in RAM. Disabling swap entirely to improve performance can sometimes lead to a degradation, since it decreases the memory available for VFS caches, causing more frequent and costly disk I/O.
+<p>Swap values can be adjusted to help performance:
+</p>
+<h3><span class=mw-headline id=Swappiness>Swappiness</span></h3>
+<p>The <i>swappiness</i> <a href=https://wiki.archlinux.org/index.php/Sysctl title=Sysctl>sysctl</a> parameter represents the kernel's preference (or avoidance) of swap space. Swappiness can have a value between 0 and 200, the default value is 60. A low value causes the kernel to avoid swapping, a high value causes the kernel to try to use swap space, and a value of 100 means IO cost is assumed to be equal. Using a low value on sufficient memory is known to improve responsiveness on many systems.
+<p>To check the current swappiness value:
+</p>
+<pre>$ sysctl vm.swappiness
+</pre>
+<p>Alternatively, the files <code>/sys/fs/cgroup/memory/memory.swappiness</code> or <code>/proc/sys/vm/swappiness</code> can be read in order to obtain the raw integer value.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> As <code>/proc</code> is a lot less organized and is kept only for compatibility purposes, you are encouraged to use <code>/sys</code> instead.</div>
+<p>To temporarily set the swappiness value:
+</p>
+<pre># sysctl -w vm.swappiness=10
+</pre>
+<p>To set the swappiness value permanently, create a <span class="plainlinks archwiki-template-man" title="$ man 5 sysctl.d"><a rel=nofollow class="external text" href=https://jlk.fjfi.cvut.cz/arch/manpages/man/sysctl.d.5>sysctl.d(5)</a></span> configuration file. For example:
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>/etc/sysctl.d/99-swappiness.conf</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>vm.swappiness=10</pre>
+<p>To test and more on why this may work, take a look at <a rel=nofollow class="external text" href=http://rudd-o.com/en/linux-and-free-software/tales-from-responsivenessland-why-linux-feels-slow-and-how-to-fix-that>this article</a>.
+</p>
+<h3><span class=mw-headline id=VFS_cache_pressure>VFS cache pressure</span></h3>
+<p>Another <i>sysctl</i> parameter that affects swap performance is <code>vm.vfs_cache_pressure</code>, which controls the tendency of the kernel to reclaim the memory which is used for caching of VFS caches, versus pagecache and swap. Increasing this value increases the rate at which VFS caches are reclaimed<a rel=nofollow class="external autonumber" href=http://doc.opensuse.org/documentation/leap/tuning/html/book.sle.tuning/cha.tuning.memory.html#cha.tuning.memory.vm.reclaim>[1]</a><sup title="Last check status: 404">[<a href=https://en.wikipedia.org/wiki/Wikipedia:Link_rot class=extiw title="wikipedia:Wikipedia:Link rot">dead link</a> 2020-04-03&nbsp;ⓘ]</sup>. For more information, see the <a rel=nofollow class="external text" href=https://www.kernel.org/doc/html/latest/admin-guide/sysctl/vm.html>Linux kernel documentation</a>.
+</p>
+<h3><span class=mw-headline id=Priority>Priority</span></h3>
+<p>If you have more than one swap file or swap partition you should consider assigning a priority value (0 to 32767) for each swap area. The system will use swap areas of higher priority before using swap areas of lower priority. For example, if you have a faster disk (<code>/dev/sda</code>) and a slower disk (<code>/dev/sdb</code>), assign a higher priority to the swap area located on the fastest device. Priorities can be assigned in <a href=https://wiki.archlinux.org/index.php/Fstab title=Fstab>fstab</a> via the <code>pri</code> parameter:
+</p>
+<pre>/dev/sda1 none swap defaults,pri=100 0 0
+/dev/sdb2 none swap defaults,pri=10  0 0
+</pre>
+<p>Or via the <code>--priority</code> parameter of <i>swapon</i>:
+</p>
+<pre># swapon --priority 100 /dev/sda1
+</pre>
+<p>If two or more areas have the same priority, and it is the highest priority available, pages are allocated on a round-robin basis between them.
+</p>
+<h3><span class=mw-headline id=Using_zswap_or_zram>Using zswap or zram</span></h3>
+<p><a href=https://wiki.archlinux.org/index.php/Zswap title=Zswap>Zswap</a> is a Linux kernel feature providing a compressed write-back cache for swapped pages. This increases the performance and decreases the IO-Operations. <a href=https://wiki.archlinux.org/index.php/ZRAM class=mw-redirect title=ZRAM>ZRAM</a> creates a virtual compressed Swap-file in memory as alternative to a swapfile on disk.
+</p>
+<h3><span class=mw-headline id=Striping>Striping</span></h3>
+<p>There is no necessity to use <a href=https://wiki.archlinux.org/index.php/RAID title=RAID>RAID</a> for swap performance reasons. The kernel itself can stripe swapping on several devices, if you just give them the same priority in the <code>/etc/fstab</code> file. Refer to <a rel=nofollow class="external text" href=http://unthought.net/Software-RAID.HOWTO/Software-RAID.HOWTO-2.html#ss2.3>The Software-RAID HOWTO</a> for details.
+</p>
+</div></div>
+ 
+ <div class="printfooter sf-hidden">Retrieved from ""</div>
+ 
+ <div id=catlinks class=catlinks data-mw=interface><div id=mw-normal-catlinks class=mw-normal-catlinks><a href=https://wiki.archlinux.org/index.php/Special:Categories title=Special:Categories>Category</a>: <ul><li><a href=https://wiki.archlinux.org/index.php/Category:File_systems title="Category:File systems">File systems</a></ul></div><div id=mw-hidden-catlinks class="mw-hidden-catlinks mw-hidden-cats-hidden sf-hidden">Hidden categories: </div></div>
+ <div class=visualClear></div>
+ 
+ </div>
+</div>
+ <div id=mw-navigation>
+ <h2>Navigation menu</h2>
+ <div id=mw-head>
+ <div id=p-personal role=navigation aria-labelledby=p-personal-label>
+ <h3 id=p-personal-label class=sf-hidden>Personal tools</h3>
+ <ul>
+ <li id=pt-createaccount><a href="https://wiki.archlinux.org/index.php?title=Special:CreateAccount&amp;returnto=Swap" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a><li id=pt-login><a href="https://wiki.archlinux.org/index.php?title=Special:UserLogin&amp;returnto=Swap" title="You are encouraged to log in; however, it is not mandatory [Alt+Shift+o]" accesskey=o>Log in</a></li> </ul>
+ </div>
+ <div id=left-navigation>
+ <div id=p-namespaces role=navigation class=vectorTabs aria-labelledby=p-namespaces-label>
+ <h3 id=p-namespaces-label class=sf-hidden>Namespaces</h3>
+ <ul>
+ <li id=ca-nstab-main class=selected><span><a href=https://wiki.archlinux.org/index.php/Swap title="View the content page [Alt+Shift+c]" accesskey=c>Page</a></span><li id=ca-talk><span><a href=https://wiki.archlinux.org/index.php/Talk:Swap rel=discussion title="Discussion about the content page [Alt+Shift+t]" accesskey=t>Discussion</a></span></li> </ul>
+ </div>
+ <div id=p-variants role=navigation class="vectorMenu emptyPortlet sf-hidden" aria-labelledby=p-variants-label>
+ 
+ 
+ 
+ </div>
+ </div>
+ <div id=right-navigation>
+ <div id=p-views role=navigation class=vectorTabs aria-labelledby=p-views-label>
+ <h3 id=p-views-label class=sf-hidden>Views</h3>
+ <ul>
+ <li id=ca-view class="collapsible selected"><span><a href=https://wiki.archlinux.org/index.php/Swap>Read</a></span><li id=ca-viewsource class=collapsible><span><a href="https://wiki.archlinux.org/index.php?title=Swap&amp;action=edit" title="This page is protected.
+You can view its source [Alt+Shift+e]" accesskey=e>View source</a></span><li id=ca-history class=collapsible><span><a href="https://wiki.archlinux.org/index.php?title=Swap&amp;action=history" title="Past revisions of this page [Alt+Shift+h]" accesskey=h>View history</a></span></li> </ul>
+ </div>
+ <div id=p-cactions role=navigation class="vectorMenu emptyPortlet sf-hidden" aria-labelledby=p-cactions-label>
+ 
+ 
+ 
+ </div>
+ <div id=p-search role=search>
+ <h3>
+ <label for=searchInput>Search</label>
+ </h3>
+ <form action=/index.php id=searchform>
+ <div id=simpleSearch>
+ <input type=search name=search placeholder="Search ArchWiki" title="Search ArchWiki [Alt+Shift+f]" accesskey=f id=searchInput autocomplete=off value><input type=submit name=go value=Go title="Go to a page with this exact name if it exists" id=searchButton class=searchButton> </div>
+ </form>
+ </div>
+ </div>
+ </div>
+ <div id=mw-panel>
+ <div id=p-logo role=banner class=sf-hidden></div>
+ <div class=portal role=navigation id=p-navigation aria-labelledby=p-navigation-label>
+ <h3 id=p-navigation-label class=sf-hidden>Navigation</h3>
+ <div class=body>
+ <ul>
+ <li id=n-mainpage-description><a href=https://wiki.archlinux.org/index.php/Main_page title="Visit the main page [Alt+Shift+z]" accesskey=z>Main page</a><li id=n-Table-of-contents><a href=https://wiki.archlinux.org/index.php/Table_of_contents>Table of contents</a><li id=n-portal><a href=https://wiki.archlinux.org/index.php/Getting_involved title="Various ways Archers can contribute to the community">Getting involved</a><li id=n-currentevents><a href=https://wiki.archlinux.org/index.php/ArchWiki:News title="The latest lowdown on the wiki">Wiki news</a><li id=n-randompage><a href=https://wiki.archlinux.org/index.php/Special:Random title="Load a random page [Alt+Shift+x]" accesskey=x>Random page</a></li> </ul>
+ </div>
+ </div>
+ <div class=portal role=navigation id=p-Interaction aria-labelledby=p-Interaction-label>
+ <h3 id=p-Interaction-label>Interaction</h3>
+ <div class=body>
+ <ul>
+ <li id=n-help><a href=https://wiki.archlinux.org/index.php/Category:Help title="Wiki navigation, reading, and editing help">Help</a><li id=n-Contributing><a href=https://wiki.archlinux.org/index.php/ArchWiki:Contributing>Contributing</a><li id=n-recentchanges><a href=https://wiki.archlinux.org/index.php/Special:RecentChanges title="A list of recent changes in the wiki [Alt+Shift+r]" accesskey=r>Recent changes</a><li id=n-Recent-talks><a href="https://wiki.archlinux.org/index.php?title=Special:RecentChanges&amp;namespace=all-discussions" rel=nofollow>Recent talks</a><li id=n-newpages><a href=https://wiki.archlinux.org/index.php/Special:NewPages>New pages</a><li id=n-Statistics><a href=https://wiki.archlinux.org/index.php/ArchWiki:Statistics>Statistics</a><li id=n-Requests><a href=https://wiki.archlinux.org/index.php/ArchWiki_talk:Requests>Requests</a></li> </ul>
+ </div>
+ </div>
+ <div class=portal role=navigation id=p-tb aria-labelledby=p-tb-label>
+ <h3 id=p-tb-label>Tools</h3>
+ <div class=body>
+ <ul>
+ <li id=t-whatlinkshere><a href=https://wiki.archlinux.org/index.php/Special:WhatLinksHere/Swap title="A list of all wiki pages that link here [Alt+Shift+j]" accesskey=j>What links here</a><li id=t-recentchangeslinked><a href=https://wiki.archlinux.org/index.php/Special:RecentChangesLinked/Swap rel=nofollow title="Recent changes in pages linked from this page [Alt+Shift+k]" accesskey=k>Related changes</a><li id=t-specialpages><a href=https://wiki.archlinux.org/index.php/Special:SpecialPages title="A list of all special pages [Alt+Shift+q]" accesskey=q>Special pages</a><li id=t-print><a href="https://wiki.archlinux.org/index.php?title=Swap&amp;printable=yes" rel=alternate title="Printable version of this page [Alt+Shift+p]" accesskey=p>Printable version</a><li id=t-permalink><a href="https://wiki.archlinux.org/index.php?title=Swap&amp;oldid=640177" title="Permanent link to this revision of the page">Permanent link</a><li id=t-info><a href="https://wiki.archlinux.org/index.php?title=Swap&amp;action=info" title="More information about this page">Page information</a></li> </ul>
+ </div>
+ </div>
+ <div class=portal role=navigation id=p-lang aria-labelledby=p-lang-label>
+ <h3 id=p-lang-label>In other languages</h3>
+ <div class=body>
+ <ul>
+ <li class="interlanguage-link interwiki-de"><a href=https://wiki.archlinux.de/title/Swap title="Swap – Deutsch" hreflang=de class=interlanguage-link-target lang=de>Deutsch</a><li class="interlanguage-link interwiki-es"><a href=https://wiki.archlinux.org/index.php/Swap_(Espa%C3%B1ol) title="Swap – español" hreflang=es class=interlanguage-link-target lang=es>Español</a><li class="interlanguage-link interwiki-fr"><a href=https://wiki.archlinux.fr/Swap title="Swap – français" hreflang=fr class=interlanguage-link-target lang=fr>Français</a><li class="interlanguage-link interwiki-hu"><a href=https://wiki.archlinux.org/index.php/Swap_(Magyar) title="Swap – magyar" hreflang=hu class=interlanguage-link-target lang=hu>Magyar</a><li class="interlanguage-link interwiki-it"><a href=https://wiki.archlinux.org/index.php/Swap_(Italiano) title="Swap – italiano" hreflang=it class=interlanguage-link-target lang=it>Italiano</a><li class="interlanguage-link interwiki-ja"><a href=https://wiki.archlinux.jp/index.php/%E3%82%B9%E3%83%AF%E3%83%83%E3%83%97 title="スワップ – 日本語" hreflang=ja class=interlanguage-link-target lang=ja>日本語</a><li class="interlanguage-link interwiki-pt"><a href=https://wiki.archlinux.org/index.php/Swap_(Portugu%C3%AAs) title="Swap – português" hreflang=pt class=interlanguage-link-target lang=pt>Português</a><li class="interlanguage-link interwiki-ru"><a href=https://wiki.archlinux.org/index.php/Swap_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) title="Swap – русский" hreflang=ru class=interlanguage-link-target lang=ru>Русский</a><li class="interlanguage-link interwiki-zh-hans"><a href=https://wiki.archlinux.org/index.php/Swap_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) title="Swap – 中文（简体）‎" hreflang=zh-Hans class=interlanguage-link-target lang=zh-Hans>中文（简体）‎</a></li> </ul>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div id=footer role=contentinfo>
+ <ul id=footer-info>
+ <li id=footer-info-lastmod> This page was last edited on 31 October 2020, at 17:23.</li>
+ <li id=footer-info-copyright>Content is available under <a class=external rel=nofollow href=http://www.gnu.org/copyleft/fdl.html>GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+ </ul>
+ <ul id=footer-places>
+ <li id=footer-places-privacy><a href=https://wiki.archlinux.org/index.php/ArchWiki:Privacy_policy title="ArchWiki:Privacy policy">Privacy policy</a></li>
+ <li id=footer-places-about><a href=https://wiki.archlinux.org/index.php/ArchWiki:About title=ArchWiki:About>About ArchWiki</a></li>
+ <li id=footer-places-disclaimer><a href=https://wiki.archlinux.org/index.php/ArchWiki:General_disclaimer title="ArchWiki:General disclaimer">Disclaimers</a></li>
+ </ul>
+ <ul id=footer-icons class="noprint sf-hidden">
+ 
+ </ul>
+ <div style=clear:both></div>
+ </div>
+ 
+<div style=display:none;font-size:14.3px class=suggestions></div>

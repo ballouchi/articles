@@ -1,0 +1,664 @@
+<!DOCTYPE html> <html class=client-js dir=ltr lang=en><!--
+ Page saved with SingleFile 
+ url: https://wiki.archlinux.org/index.php/Backlight#Using_DBus_with_Gnome 
+ saved date: Mon Nov 23 2020 16:25:11 GMT+0100 (Central European Standard Time)
+--><meta charset=utf-8>
+<title>Backlight - ArchWiki</title>
+<style>:root{--sf-img-6:url("data:image/png;base64,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");--sf-img-7:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwEAYAAAAHkiXEAAAABmJLR0QAAAAAAAD5Q7t/AAAACXBIWXMAAABIAAAASABGyWs+AAAACXZwQWcAAAAwAAAAMADO7oxXAAAInklEQVR42u1bW2wUVRj+Z2Z3Zy/d7W4pFVIXW1I1tOCFbSGYoEGeSAit3HwixUuMxMT4wqNP+kYsPjak6gPQh0IBExVjIELp0qZ2FXrRFGshqQoK3Uu33e5lZtaH39+zO2XZ2+zOGvolmz9z5sx//vP95/znugArWMHjDC7Ti2PHjh376KPGRp43mSyWL7+UpHg8Hm9pSSaTyWSS5/U2vNLBcRzHcYpiMJhMJtPkpKLE40tL7e1Hjx49+uGHt29TPkMmBYIgilZrX197e3v7vn0bNzY2ut3r1nH/Qu/qVT4SCVmWZZ4fGfnpJ59v48aRkaGhwcG+Pnzb1kb5DJkVxGKx2ObNDQ1I/L17oVAoBCDLiqIoelev8uF02mw2G0Bz84YNLS0c5/VeuXL58ubN6nwZHaAONfgMsH37oUMnTpTO8DfeeO01jwfgzTf37vV4tNf/+efnzvl8AF98cf68z1e6eoyN9fd/8AEAz2PEyBS6KyaWl5p4Aumn8vSG7g4oF/FqVIojdHMAEVBu4ivNDkOuGbWa+VBMNJtNJoNBO73Fguwh+xQFx7xika1+ZesBgsDzHAfgdDocZjPAt996vb/+CnDx4rVrt26Vy4rloPLJHrKP7C018ugBhc3/BcFg4HkAp7OqymzGClosAC4XyuHhsbHZWQCXq7raagXYtu35593u0ld8aOjmzdlZVn5NDZZP9SQZDC4sRKMAsixJ+Uy/iatk8tG85eyAfGEwGAyCgMSLIiPe6bTb0RHp6VNTMzN//83eb9iwfv3q1drb9csvMzP377PyqCEwkjD00DPJYHBhIRYDkCRJkmUNecqWId9WbzQajUg8EW23E/GiyCpcXY3pLhfmq65G+ddfc3MLCwA1NRgK1qyprbXbi6/ovXsPHoTDTD85Xt3ieR5DD7Vb9h7Tg8FwOBoFSCQSiVwckY0/zXrAO+/s39/WBlBT43RarQDnzl26NDnJHJFKPDkmPR17hMuFxMdiWMFoNB6XJDZI5gv6nvSRY3FxxAgnqpYTzyQAwFtv7d3b2grg9weDkQjAiRNnz/7wQ+G8FT0LevfdAwfa2gA6O9vbUxfaDofNJooAV6+Ojt6+nd4TzGZGBDnE5aL3zFGiCGCxFEY8gb6nnsbzWBcmqeWzeqb+CB0dr77a3AywY0dbW2MjSyf3dXefOZPqCDYGaOQA1gaI+IMHt2xZTjxhx44tW9avB3A4sGVPTExPY8ylHpA+JqjT7XZ0oFagkMfzPI/kU20o5GA6vaGQs327x/PUUwAeT3Nzff1yvZ2dHR24fsDvurv7+kZGMvNWsANIyZEjr7++dStAZ+eePS++mP271lY0nIi+e/f+/XB4+RhA0z+73WrVkng1qGdmCjXUoltamprq6gCamtzuVauy6z18GBuierao2RhAig4fzo14NZ5+GitSXY3T0Xg8FpMk1uKrqqxWk6l0xKvhcKCjU0MSAMDatbW1VVUAdXUul82Wv17ipwQhSBtQxRKJREKScNZUTIwvFuR4UTQaeb789pR8IZYJJpPJZDSWr6Llt4dC26O3NHTfDX3cUfbNuMcFuY4BKz1AZ+g2BjwuyMbbSg/QGStjQIlQ8WNAIqHttu7/1Z6yjwEPHgQCi4sAS0vxuCyzrYhyr4QJCwuRSDwOEAjgNrPFYjIJAkBtbWEr4XTGNFwHEPmnTn399c2byw8sssmZmdlZvx/g55/xICQYnJ+PRFAuLSERsVj+eguVVB6VT/aQfWRvvnqJHzVvRTuA0NV18uTgIMDJk199deNG9vw3bkxN3b0LMDDw44937gD4/Vhhvz8UQonPgcD8fDQKMD+/uBiL5WtV7iD9VF4me8hesj8biA/iJ1cUPAh3dZ065fWy9EOHdu9+4QX2fmDA57tzB+C774aHp6fZbijdsMN7BwB0BEjpySRLB2AHNcUiFMIjxUCAHB4OU8unBkDp0Sh77u/Hg6VwGL9/+WWPp6HhYcQjH2q+SnYeQPjkEyyYCKQTsd7eixfHx9lRJBlC561M0tU9ipksHQBAFDEmm82iWMheTTQaiyUSAH4/Eh4KEcHLZWrPoKNHckR3d3//6CjA/DyGLjoR6+o6ffr69fx5y9sB2WIZGWI2i6LBgAcxZjO2c0VJdQAblNJlag6AurpVq2w2AIulMOIJ9L0o4lm134+xnoimnsB6wMN7AoWmjz/u6blyBR0rScXzpvnGKxkmy7K8tISzAEYrgKJgiKFnJjH92WcbGmprAerrV692OLSzi/RRrP/tNxxkMxFNPUAdorSerpZsIUaGzs1hi2MtP/3aBz1v27Zpk9sN8NxzTU1PPKFdBdUg/YEAOuKbbwYHp6aYI9SEU+iSpELvBT06Xx6zoMLWAWT43Fx6C5ubC4UiEYCtW5H4V15pbcXD7tTDwtJJKo/KJ3uYfSjzJT5fvvJeBxQKWZZlRcEQEIkA7Nr10kvPPAOwb9/OnS0t5Zv/qyWVT/aQfWRvsaiYu6EEWcZYX667l7mC7CH7ygXdNuOOH+/tvX4dY2QyCfD22x0dra3lqzihp+fChdFRgE8/7e0dGtJOr+brgFKdB1DFOY7jeB4dUY57+j09Fy74fNoTr8b/5jzg+PHTp71eRkypQPqpPL2RoQcYjfQ/V3xmfy6bnDxz5v339Ta7cFAPK3VPo5Yvy7Isy+x/w/iW+FQUlQPohc3G84IgCBMTf/zx55+//75p05NP1te73ZU0bFY2FAX/zjs+PjExNpZMCoIgCML4OL6lje5wWOUANkkbGPj++8HB995DRZ99hgumpqaVf8rnBtbiOY7jpqeHh73ekZEjR+jtf/ke/jntP1ZVpUurFaXFkp6PFFbSVatygEIKSdodisdRRiIoFxfTZThM+bOEFCLWbEZJxNPZFV3iox6h5yVDPUCTTCKeHJFIoFQ7gp4ZNI7pgqA3Jfqg8O25fwAhdAiqcg3jQgAAAABJRU5ErkJggg==")}.client-js .sortable:not(.jquery-tablesorter)>*>tr:first-child>th:not(.unsortable),.jquery-tablesorter th.headerSort{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAJCAYAAADdA2d2AAAAO0lEQVR4AWMgEsgB8QEgViKkkBQD7wLxfyB+CDKYmgb+xzSYcgMxDaYToNyl9A1T+sc+AihA06kCMYoBdygf4zhjQ1EAAAAASUVORK5CYII=);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2221%22 height=%229%22 viewBox=%220 0 21 9%22%3E %3Cpath d=%22M14.5 5l-4 4-4-4zm0-1l-4-4-4 4z%22/%3E %3C/svg%3E");cursor:pointer;background-repeat:no-repeat;background-position:center right;padding-right:21px}@media screen{.mw-content-ltr{direction:ltr}.sitedir-ltr input{direction:ltr}input[type='submit']{direction:ltr}@supports (text-decoration:underline dotted){abbr[title],.explain[title]{border-bottom:0;text-decoration:underline dotted}}#catlinks{text-align:left}.catlinks ul{display:inline;margin:0;padding:0;list-style:none none}.catlinks li{display:inline-block;line-height:1.25em;border-left:1px solid #a2a9b1;margin:0.125em 0;padding:0 0.5em}.catlinks li:first-child{padding-left:0.25em;border-left:0}.plainlinks a.external{background:none!important;padding:0!important}.wikitable{background-color:#f8f9fa;color:#222;margin:1em 0;border:1px solid #a2a9b1;border-collapse:collapse}.wikitable>*>tr>th,.wikitable>*>tr>td{border:1px solid #a2a9b1;padding:0.2em 0.4em}.wikitable>*>tr>th{background-color:#eaecf0;text-align:center}.visualClear{clear:both}.mw-content-ltr ul{margin:0.3em 0 0 1.6em;padding:0}.mw-content-ltr dd{margin-left:1.6em;margin-right:0}h1:lang(anp),h1:lang(as),h1:lang(bh),h1:lang(bho),h1:lang(bn),h1:lang(gu),h1:lang(hi),h1:lang(kn),h1:lang(ks),h1:lang(ml),h1:lang(mr),h1:lang(my),h1:lang(mai),h1:lang(ne),h1:lang(new),h1:lang(or),h1:lang(pa),h1:lang(pi),h1:lang(sa),h1:lang(ta),h1:lang(te){line-height:1.6em!important}h2:lang(anp),h3:lang(anp),h4:lang(anp),h5:lang(anp),h6:lang(anp),h2:lang(as),h3:lang(as),h4:lang(as),h5:lang(as),h6:lang(as),h2:lang(bho),h3:lang(bho),h4:lang(bho),h5:lang(bho),h6:lang(bho),h2:lang(bh),h3:lang(bh),h4:lang(bh),h5:lang(bh),h6:lang(bh),h2:lang(bn),h3:lang(bn),h4:lang(bn),h5:lang(bn),h6:lang(bn),h2:lang(gu),h3:lang(gu),h4:lang(gu),h5:lang(gu),h6:lang(gu),h2:lang(hi),h3:lang(hi),h4:lang(hi),h5:lang(hi),h6:lang(hi),h2:lang(kn),h3:lang(kn),h4:lang(kn),h5:lang(kn),h6:lang(kn),h2:lang(ks),h3:lang(ks),h4:lang(ks),h5:lang(ks),h6:lang(ks),h2:lang(ml),h3:lang(ml),h4:lang(ml),h5:lang(ml),h6:lang(ml),h2:lang(mr),h3:lang(mr),h4:lang(mr),h5:lang(mr),h6:lang(mr),h2:lang(my),h3:lang(my),h4:lang(my),h5:lang(my),h6:lang(my),h2:lang(mai),h3:lang(mai),h4:lang(mai),h5:lang(mai),h6:lang(mai),h2:lang(ne),h3:lang(ne),h4:lang(ne),h5:lang(ne),h6:lang(ne),h2:lang(new),h3:lang(new),h4:lang(new),h5:lang(new),h6:lang(new),h2:lang(or),h3:lang(or),h4:lang(or),h5:lang(or),h6:lang(or),h2:lang(pa),h3:lang(pa),h4:lang(pa),h5:lang(pa),h6:lang(pa),h2:lang(pi),h3:lang(pi),h4:lang(pi),h5:lang(pi),h6:lang(pi),h2:lang(sa),h3:lang(sa),h4:lang(sa),h5:lang(sa),h6:lang(sa),h2:lang(ta),h3:lang(ta),h4:lang(ta),h5:lang(ta),h6:lang(ta),h2:lang(te),h3:lang(te),h4:lang(te),h5:lang(te),h6:lang(te){line-height:1.2em}.toc ul{margin:0.3em 0}.mw-content-ltr .toc ul{text-align:left}.mw-content-ltr .toc ul ul{margin:0 0 0 2em}.toc .toctitle{direction:ltr}sup{line-height:1}}@media screen{a{text-decoration:none;color:#0645ad;background:none}a:not([href]){cursor:pointer}a:visited{color:#0b0080}a:active{color:#faa700}a:hover,a:focus{text-decoration:underline}a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}.mw-parser-output a.extiw,.mw-parser-output a.extiw:active{color:#36b}.mw-parser-output a.extiw:visited{color:#636}.mw-parser-output a.extiw:active{color:#b63}.mw-parser-output a.external{color:#36b}.mw-parser-output a.external:visited{color:#636}.mw-parser-output a.external:active{color:#b63}.mw-parser-output a.external.free{word-wrap:break-word}img{border:0;vertical-align:middle}h1,h2,h3,h4{color:#000;background:none;font-weight:normal;margin:0;overflow:hidden;padding-top:0.5em;padding-bottom:0.17em;border-bottom:1px solid #a2a9b1}h1{font-size:188%}h2{font-size:150%}h3,h4{border-bottom:0;font-weight:bold}h3{font-size:128%}h4{font-size:116%}h2{margin-bottom:0.6em}h3,h4{margin-bottom:0.3em}p{margin:0.4em 0 0.5em 0}p img{margin:0}ul{margin:0.3em 0 0 1.6em;padding:0}li{margin-bottom:0.1em}dl{margin-top:0.2em;margin-bottom:0.5em}dd{margin-left:1.6em;margin-bottom:0.1em}pre,code{font-family:monospace,monospace}code{color:#000;background-color:#f8f9fa;border:1px solid #eaecf0;border-radius:2px;padding:1px 4px}pre{color:#000;background-color:#f8f9fa;border:1px solid #eaecf0;padding:1em;white-space:pre-wrap}table{font-size:100%}form{border:0;margin:0}.toc{border:1px solid #a2a9b1;background-color:#f8f9fa;font-size:95%}.toc{display:table;padding:7px}.toc h2{display:inline;border:0;padding:0;font-size:100%;font-weight:bold}.toc .toctitle{text-align:center}.toc ul{list-style-type:none;list-style-image:none;margin-left:0;padding:0;text-align:left}.toc ul ul{margin:0 0 0 2em}.tocnumber,.toctext{display:table-cell;text-decoration:inherit}.tocnumber{color:#222}.mw-content-ltr .tocnumber{padding-left:0;padding-right:0.5em}.catlinks{border:1px solid #a2a9b1;background-color:#f8f9fa;padding:5px;margin-top:1em;clear:both}.firstHeading{margin-bottom:0.1em;line-height:1.2em;padding-bottom:0}#contentSub{font-size:84%;line-height:1.2em;margin:0 0 1.4em 1em;color:#54595d;width:auto}}.toctogglecheckbox:checked~ul{display:none}@media screen{:not(:checked)>.toctogglecheckbox{display:inline!important;position:absolute;opacity:0;z-index:-1}.toctogglespan{font-size:94%}:not(:checked)>.toctogglespan:before{content:' ['}:not(:checked)>.toctogglespan:after{content:']'}.toctogglelabel{cursor:pointer;color:#0645ad}.toctogglelabel:hover{text-decoration:underline}.toctogglecheckbox:focus+.toctitle .toctogglelabel{text-decoration:underline;outline:dotted 1px;outline:auto -webkit-focus-ring-color}.toctogglecheckbox:checked+.toctitle .toctogglelabel:after{content:'show'}.toctogglecheckbox:not(:checked)+.toctitle .toctogglelabel:after{content:'hide'}}@media screen{html{font-size:100%}html,body{height:100%;margin:0;padding:0;font-family:sans-serif}body{background-color:#f6f6f6}.mw-body{background-color:#ffffff;color:#222222;padding:1em;direction:ltr}.mw-body{margin-left:10em}.mw-body{border:1px solid #a7d7f9;border-right-width:0;margin-top:-1px}.mw-body h1,.mw-body-content h2{margin-bottom:0.25em;padding:0;font-family:'Linux Libertine','Georgia','Times',serif;line-height:1.3}.mw-body h1:lang(ja),.mw-body-content h1:lang(ja),.mw-body-content h2:lang(ja),.mw-body h1:lang(he),.mw-body-content h1:lang(he),.mw-body-content h2:lang(he),.mw-body h1:lang(ko),.mw-body-content h1:lang(ko),.mw-body-content h2:lang(ko){font-family:sans-serif}.mw-body h1:lang(my),.mw-body-content h1:lang(my),.mw-body-content h2:lang(my){line-height:normal}.mw-body h1{font-size:1.8em}.mw-body .firstHeading{overflow:visible}.mw-body .mw-indicators{float:right;font-size:0.875em;line-height:1.6;position:relative;z-index:1}.mw-body-content{position:relative;font-size:0.875em;line-height:1.6;z-index:0}.mw-body-content p{margin:0.5em 0}.mw-body-content h2{margin-top:1em;font-size:1.5em}.mw-body-content h3,.mw-body-content h4{margin-top:0.3em;margin-bottom:0;padding-bottom:0;line-height:1.6}.mw-body-content h3{font-size:1.2em}.mw-body-content h3,.mw-body-content h4{font-weight:bold}.mw-body-content h4{font-size:100%}.mw-body-content .toc h2{font-family:sans-serif;font-size:100%}ul{list-style-image:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%225%22 height=%2213%22%3E %3Ccircle cx=%222.5%22 cy=%229%22 r=%222.5%22 fill=%22%23222%22/%3E %3C/svg%3E")}pre{line-height:1.3}#p-personal{position:absolute;top:0.33em;right:0.75em;z-index:100}#p-personal ul{list-style:none none;margin:0;padding-left:10em}#p-personal li{float:left;margin-left:0.75em;padding-top:0.5em;font-size:0.75em;line-height:1.16666667;white-space:nowrap}#p-search{float:left;margin-right:0.5em;margin-left:0.5em}#p-search h3{display:block;position:absolute!important;clip:rect(1px,1px,1px,1px);width:1px;height:1px;margin:-1px;border:0;padding:0;overflow:hidden}#p-search form{margin:0.5em 0 0}#simpleSearch{display:block;width:20vw;min-width:5em;max-width:20em;height:100%;margin-top:0;position:relative;min-height:1px}#simpleSearch input{background-color:rgba(0,0,0,0);color:#000000;margin:0}#searchInput{width:100%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;border:1px solid #a2a9b1;border-radius:2px;padding:0.4em 1.84615385em 0.4em 0.4em;-webkit-box-shadow:inset 0 0 0 1px transparent;box-shadow:inset 0 0 0 1px transparent;font-size:0.8125em;direction:ltr;-webkit-transition:border-color 250ms,box-shadow 250ms;-moz-transition:border-color 250ms,box-shadow 250ms;transition:border-color 250ms,box-shadow 250ms;-webkit-appearance:textfield}#simpleSearch:hover #searchInput{border-color:#72777d}#searchInput:focus,#simpleSearch:hover #searchInput:focus{outline:0;border-color:#3366cc;-webkit-box-shadow:inset 0 0 0 1px #3366cc,inset 0 0 0 2px #ffffff;box-shadow:inset 0 0 0 1px #3366cc,inset 0 0 0 2px #ffffff}#searchInput::-webkit-input-placeholder{color:#72777d;opacity:1}#searchInput::-moz-placeholder{color:#72777d;opacity:1}#searchInput:-moz-placeholder{color:#72777d;opacity:1}#searchInput::placeholder{color:#72777d;opacity:1}#searchInput::-webkit-search-decoration,#searchInput::-webkit-search-cancel-button,#searchInput::-webkit-search-results-button,#searchInput::-webkit-search-results-decoration{-webkit-appearance:textfield}#searchButton{position:absolute;top:1px;bottom:1px;right:1px;min-width:24px;width:1.84615385em;border:0;padding:0;cursor:pointer;font-size:0.8125em;direction:ltr;text-indent:-99999px;white-space:nowrap;overflow:hidden;z-index:1}#searchButton{background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2213%22%3E %3Cg fill=%22none%22 stroke=%22%2354595d%22 stroke-width=%222%22%3E %3Cpath d=%22M11.29 11.71l-4-4%22/%3E %3Ccircle cx=%225%22 cy=%225%22 r=%224%22/%3E %3C/g%3E %3C/svg%3E");background-position:center center;background-repeat:no-repeat}.vectorTabs{background-position:left bottom;float:left;height:2.5em;padding-left:1px}.vectorTabs ul{float:left;height:100%;list-style:none none;margin:0;padding:0}.vectorTabs li{background-image:linear-gradient(to top,#77c1f6 0,#e8f2f8 1px,#ffffff 100%);background-position:left bottom;background-repeat:repeat-x;float:left;display:block;height:100%;margin:0;padding:0;line-height:1.125em;white-space:nowrap}.vectorTabs li a{color:#0645ad;height:1.9em;padding-left:0.615em;padding-right:0.615em;cursor:pointer;font-size:0.8125em}.vectorTabs .selected{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAABkAQAAAABvV2fNAAAADElEQVR4AWNoGB4QAInlMgFKeRKBAAAAAElFTkSuQmCC);background:#ffffff}.vectorTabs .selected a,.vectorTabs .selected a:visited{color:#222222;text-decoration:none}.vectorTabs span{background-position:right bottom;display:inline-block;height:100%}.vectorTabs span a{float:left;display:block;position:relative;padding-top:1.25em}.vectorTabs,.vectorTabs span{background-image:linear-gradient(to bottom,rgba(167,215,249,0) 0,#a7d7f9 100%);background-repeat:no-repeat;background-size:1px 100%}@-webkit-keyframes rotate{from{-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(360deg);-moz-transform:rotate(360deg);transform:rotate(360deg)}}@-moz-keyframes rotate{from{-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(360deg);-moz-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes rotate{from{-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(360deg);-moz-transform:rotate(360deg);transform:rotate(360deg)}}#mw-navigation h2{position:absolute;top:-9999px}.mw-jump-link:not(:focus){display:block;position:absolute!important;clip:rect(1px,1px,1px,1px);width:1px;height:1px;margin:-1px;border:0;padding:0;overflow:hidden}#mw-page-base{height:5em;background-position:bottom left;background-color:#fbfbfb;background-image:-webkit-gradient(linear,right top,right bottom,color-stop(50%,#ffffff),color-stop(100%,#f6f6f6));background-image:-webkit-linear-gradient(top,#ffffff 50%,#f6f6f6 100%);background-image:-moz-linear-gradient(top,#ffffff 50%,#f6f6f6 100%);background-image:linear-gradient(to bottom,#ffffff 50%,#f6f6f6 100%)}#mw-head-base{margin-top:-5em;margin-left:10em;height:5em}#mw-head{position:absolute;top:0;right:0;width:100%}#left-navigation{float:left;margin-left:10em;margin-top:2.5em;margin-bottom:-2.5em}#right-navigation{float:right;margin-top:2.5em}#mw-panel{position:absolute;top:0;width:10em;left:0;font-size:inherit}#mw-panel .portal{margin:0 0.6em 0 0.7em;padding:0.25em 0;direction:ltr}#mw-panel .portal h3{color:#444444;font-weight:normal;margin:0.5em 0 0 0.66666667em;padding:0.25em 0;cursor:default;border:0;font-size:0.75em}#mw-panel .portal .body{margin-left:0.5em;padding-top:0;background-image:linear-gradient(to right,transparent 0,#c8ccd1 35%,#c8ccd1 70%,transparent 100%);background-repeat:no-repeat;background-size:100% 1px}#mw-panel .portal .body ul{list-style:none none;margin:0;padding-top:0.3em}#mw-panel .portal .body li{margin:0;padding:0.25em 0;font-size:0.75em;line-height:1.125em;word-wrap:break-word}#mw-panel .portal .body li a{color:#0645ad}#mw-panel .portal .body li a:visited{color:#0b0080}#mw-panel #p-logo+.portal{background-image:none;margin-top:1em}#mw-panel #p-logo+.portal .body{background-image:none;margin-left:0.5em}#footer{margin-left:10em;margin-top:0;padding:0.75em;direction:ltr}#footer ul{list-style:none none;margin:0;padding:0}#footer li{color:#222222;margin:0;padding:0.5em 0;font-size:0.7em}#footer-info li{line-height:1.4}#footer-places li{float:left;margin-right:1em;line-height:2}.mw-parser-output .external{background-position:center right;background-repeat:no-repeat;background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22%3E %3Cpath fill=%22%23fff%22 stroke=%22%2336c%22 d=%22M1.5 4.518h5.982V10.5H1.5z%22/%3E %3Cpath fill=%22%2336c%22 d=%22M5.765 1H11v5.39L9.427 7.937l-1.31-1.31L5.393 9.35l-2.69-2.688 2.81-2.808L4.2 2.544z%22/%3E %3Cpath fill=%22%23fff%22 d=%22M9.995 2.004l.022 4.885L8.2 5.07 5.32 7.95 4.09 6.723l2.882-2.88-1.85-1.852z%22/%3E %3C/svg%3E");padding-right:13px}}@media screen and (min-width:982px){.mw-body,#mw-head-base,#left-navigation,#footer{margin-left:11em}.mw-body{padding:1.25em 1.5em 1.5em 1.5em}#footer{padding:1.25em}#mw-panel{padding-left:0.5em}#p-search{margin-right:1em}#p-personal{right:1em}}@media screen and (max-width:720px){#mw-head{position:static!important;margin-top:0.5em}#mw-navigation #mw-panel{display:table;position:static;table-layout:fixed;width:100%;overflow:hidden;font-size:150%}#mw-navigation #mw-panel .portal{display:block;width:100%}#mw-navigation #mw-panel ul li{list-style:none}body #footer{margin-left:0;padding-top:0}body #footer #footer-info-lastmod{display:none}#p-personal{display:table;position:relative;width:100%;top:inherit;left:inherit;right:inherit}#p-personal ul{padding-left:0}#right-navigation{position:absolute;top:inherit;right:0;margin-top:0;float:none}#left-navigation{position:absolute;top:inherit;margin:0;display:block;float:none}#p-namespaces,#p-views{position:relative;top:2.5em}#p-namespaces{padding-left:0}#p-search{float:none;position:absolute;right:0;width:100vw;margin:0}#simpleSearch{margin:0 3em;width:80vw;padding:0}.mw-body{border-left:0;margin-left:0}}#archnavbar{height:40px!important;padding:10px 15px!important;background:#333!important;border-bottom:5px #08c solid!important}#archnavbarlogo{float:left!important;margin:0!important;padding:0!important;height:40px!important;width:190px!important}html>body #archnavbarlogo{background:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEiIHdpZHRoPSI2MDAiIGhlaWdodD0iMTI2Ij48cGF0aCBkPSJNMTU5LjU2OCAzNC40MjdjLTguODktLjAxNC0xNi4yNjcgMS44MDktMTkuMTIgMi44MDNsLTIuOTM3IDE1Ljg1N2MtLjAwNy4wNTggMTQuNjE3LTMuOSAyMS4wNTktMy42NjcgMTAuNjY1LjM4MyAxMS42NDYgNC4wNzYgMTEuNDYgOS4wNi4xODIuMjkyLTIuNzUyLTQuNTAzLTExLjk3OS00LjY2NC0xMS42NC0uMi0yOC4wNjkgNC4xMjItMjguMDQ2IDIxLjY5Mi0uMzE0IDE5Ljc2NSAxNC43NjQgMjUuNTc5IDI1LjAzMiAyNS42ODYgOS4yMzItLjE2OCAxMy41NjMtMy40OTYgMTUuOTM0LTUuMjggMy4xMTUtMy4yNTcgNi42NzktNi41MzIgMTAuMDc4LTEwLjQ2Mi0zLjIxNiA1Ljg0NC02LjAwNSA5Ljg4NC04LjkwNyAxMi45Nzd2Mi42MTFsMTQuMDMzLTIuMzYxLjA5Ni0zOC4xNDRjLS4xNDMtNS4zOTkgMy4wOTYtMjYuMDU3LTI2LjcwMy0yNi4xMDh6bS0yLjAxNiAzMy4yMWM1LjgxNy4wOCAxMi40ODggMi45NDggMTIuNDk3IDkuODQ5LjAzIDYuMjc3LTcuODYzIDkuNjUxLTEyLjk5NiA5LjU5OC01LjEzNS0uMDUzLTExLjk0OS00LjAzNi0xMS45NzktMTAuMTU1LjA5OS01LjQ3IDYuNDI2LTkuNDMyIDEyLjQ3OC05LjI5MXptMzcuOTcyLTI5LjY4NWwtLjA5NSA2My4xNjYgMTYuMzQ4LTMuMTUuMDI3LTM1LjgxNGMuMDA0LTUuMzMzIDcuNjItMTEuNTY0IDE3LjE3OC0xMS40NjQgMi4wMjgtMy42NyA1Ljg0LTEzLjA1IDYuNzctMTUuMTgzLTIxLjM1MS0uMDUxLTIxLjYyMyA2LjEzNy0yNS4zMzYgOS4xOC0uMDQtNS44MDYtLjAxMy05LjI5Mi0uMDEzLTkuMjkybC0xNC44NzkgMi41NTd6bTkyLjAwMiA4LjI5MmMtLjE1OC0uMDc0LTguNTI2LTkuNzg4LTI1LjM1LTkuODY0LTE1Ljc1OC0uMjYyLTMzLjQzMyA1Ljg0Ny0zMy43MTYgMzIuMjcuMTM4IDIzLjIzMiAxNi45NzkgMzIuMzExIDMzLjgwNSAzMi40ODggMTguMDA3LjE4NyAyNS4xNzItMTEuMjYgMjUuNjAyLTExLjU0My0yLjE0OS0xLjg2My0xMC4xOTYtOS44MzctMTAuMTk2LTkuODM3cy01LjAyNyA3LjE1Ny0xNC43NzkgNy4yNDhjLTkuNzU1LjA5My0xOC4yMzQtNy41NC0xOC4zNTQtMTguMTg5LS4xMjUtMTAuNjUgNy43OTUtMTYuNDE5IDE4LjQyNy0xNi44ODUgOS4yMDUtLjAwMiAxNC41MTYgNS45NDMgMTQuNTE2IDUuOTQzem0yMC42MDYtMzAuMzk5bC0xNS40MzQgMy42MjguMTE1IDgyLjI3NyAxNS4yMDQtMi43NDUuMTcyLTM4LjcyYy4wMzMtNC4wNiA1Ljg3NC0xMC4yOTUgMTUuNjI2LTEwLjA5NyA5LjMyNS4wOTcgMTEuNDEgNi4yMTUgMTEuMzg0IDYuOTg4bC4yNjkgNDQuODI0IDE0Ljk5My0yLjY1LjA1Ny00Ny41M2MuMDk5LTQuNTc0LTEwLjAxOC0xNC4yMzMtMjYuMjgtMTQuMzAyLTcuNzI5LjAxMi0xMi4wMDkgMS43NjItMTQuMTg3IDMuMDUyLTMuNzI2IDIuODc5LTcuOTg1IDUuNjM3LTEyLjE3IDkuMTU3IDMuODY5LTQuOTcgNy4xMTctOC40MDcgMTAuMjktMTAuOTYxbC0uMDQtMjIuOTIxeiIgZmlsbD0iI2ZmZiIgZmlsbC1ydWxlPSJldmVub2RkIi8+PHBhdGggZD0iTTM2MC4xMzYgMTcuMjE4bDYuOTYyLTEuNzQyLjMzIDgyLjk1LTcuMDc0IDEuMjA0em0xOC45MjggMjQuNzU3bDYuMTAxLTIuNzE2LjA1MiA1OS40NzgtNS44OTIgMS4yMTd6bS0xLjQ1LTIxLjQ0OGw0LjkyLTQuMDE1IDQuMDg2IDQuNTQ3LTQuOTIxIDQuMTIxem0xOS4wMjQgMjAuMzY1bDYuOTYyLTEuNDIxLjAzMyAxMi40MzRjLjAwMS41MzQgMy44MjMtMTMuODkgMjIuMjU4LTEzLjU3IDE3LjkuMSAyMC44MjcgMTMuOTU3IDIwLjczIDE3LjA2NGwuMjIxIDQzLjcyNS02LjEwMiAxLjMyNC0uMDM1LTQzLjE4OWMuMDctMS4yNjEtMi43OS0xMS45MjctMTUuNDM5LTExLjk2Ni0xMi42NDYtLjAzNy0yMS40MDkgOS4xODYtMjEuMzkzIDE1LjA3OGwuMSAzOC4wNDctNy4wNyAxLjg0N3ptMTEwLjk1NCA1OC41NDZsLTYuOTYyIDEuNDItLjAzMy0xMi40MzNjLS4wMDEtLjUzNC0zLjgyNSAxMy44OS0yMi4yNTggMTMuNTctMTcuOS0uMS0yMC44MjctMTMuOTU3LTIwLjczLTE3LjA2NGwtLjIyMS00My43MjUgNy4zOTctMS40OTQuMTE0IDQzLjE5Yy4wMDMgMS4xOCAxLjQxNiAxMi4wOTYgMTQuMDY1IDEyLjEzNSAxMi42NDYuMDM3IDIxLjUwNi03LjYxNiAyMS41NjktMTkuMTM5bC0uMDktMzQuMDc2IDYuODg1LTEuNzU3em0xMy42NDUtNTkuMDM3bC00Ljg4MiAzLjgyIDE4LjcxNyAyNC40OTQtMTkuOTYzIDI4LjMgNS4xNzkgMy44NDMgMTguNzY2LTI2LjI4IDE5LjM2OCAyNi45MDIgNC43OTEtMy44Mi0yMC43NTctMjguNzY1IDE2LjU2LTIzLjI2Mi01LjA5Mi00LjMwNS0xNS4wODUgMjEuNTI1ek02MS44OCAxLjc3OGMtNS4zODUgMTMuMjAzLTguNjMzIDIxLjgzOS0xNC42MjkgMzQuNjQ5IDMuNjc2IDMuODk2IDguMTg4IDguNDM0IDE1LjUxNiAxMy41NTktNy44NzgtMy4yNDItMTMuMjUyLTYuNDk3LTE3LjI2Ny05Ljg3NC03LjY3MyAxNi4wMTEtMTkuNjk1IDM4LjgxOC00NC4wOSA4Mi42NSAxOS4xNzQtMTEuMDY4IDM0LjAzNy0xNy44OTMgNDcuODg5LTIwLjQ5N2EzNS4xMDMgMzUuMTAzIDAgMCAxLS45MS04LjIxM2wuMDIzLS42MTRjLjMwNC0xMi4yODQgNi42OTQtMjEuNzMgMTQuMjY0LTIxLjA5IDcuNTcuNjQyIDEzLjQ1NCAxMS4xMjYgMTMuMTUgMjMuNDEtLjA1OCAyLjMxMi0uMzE5IDQuNTM2LS43NzQgNi41OTggMTMuNzAxIDIuNjggMjguNDA1IDkuNDg3IDQ3LjMyIDIwLjQwNy0zLjczLTYuODY2LTcuMDU5LTEzLjA1Ni0xMC4yMzgtMTguOTUtNS4wMDctMy44ODItMTAuMjMtOC45MzMtMjAuODg0LTE0LjQwMiA3LjMyMyAxLjkwMyAxMi41NjYgNC4wOTkgMTYuNjUzIDYuNTUyQzc1LjU4IDM1Ljc4NiA3Mi45NjMgMjcuNzkgNjEuODggMS43Nzh6IiBmaWxsPSIjMTc5M2QxIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48cGF0aCBkPSJNNTc2Ljc3MSA5My4yNjVWODAuNjAzaC00Ljczdi0xLjY5NWgxMS4zOHYxLjY5NWgtNC43NXYxMi42NjJoLTEuOW04LjYyOSAwVjc4LjkwOGgyLjg1OWwzLjM5OCAxMC4xNjZjLjMxNC45NDcuNTQyIDEuNjU1LjY4NiAyLjEyNS4xNjMtLjUyMi40MTgtMS4yOS43NjQtMi4zMDFsMy40MzctOS45OWgyLjU1NnYxNC4zNTdoLTEuODMxVjgxLjI1bC00LjE3MiAxMi4wMTZoLTEuNzE0bC00LjE1Mi0xMi4yMjJ2MTIuMjIyaC0xLjgzMiIgZm9udC13ZWlnaHQ9IjQwMCIgZm9udC1zaXplPSI4LjQ0MSIgZm9udC1mYW1pbHk9IkRlamFWdSBTYW5zIE1vbm8iIGZpbGw9ImdyYXkiLz48L3N2Zz4=) no-repeat!important;background-size:190px 40px!important}#archnavbarlogo p{margin:0!important;padding:0!important;text-indent:-9999px!important}#archnavbarlogo a{display:block!important;height:40px!important;width:190px!important}#archnavbar ul{display:inline!important;float:right!important;list-style:none!important;margin:0!important;padding:0!important}#archnavbar ul li{float:left!important;font-size:14px!important;font-family:sans-serif!important;line-height:45px!important;padding-right:15px!important;padding-left:15px!important}#archnavbar ul#archnavbarlist li a{color:#999;font-weight:bold!important;text-decoration:none!important}#archnavbar ul li a:hover{color:white!important;text-decoration:underline!important}#archnavbar ul li.anb-selected a{color:white!important}@media (max-width:600px){#anb-wiki{display:none}}@media (max-width:680px){html>body #archnavbarlogo{width:40px!important;margin-right:5px!important;background:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjEyMDAiIHZlcnNpb249IjEiPjxwYXRoIGQ9Ik02MDAgMGMtNTMuNDE2IDEzMC45NjItODUuNjcxIDIxNi43NC0xNDUuMTQzIDM0My44MSAzNi40NjQgMzguNjUxIDgxLjIyIDgzLjQ0OSAxNTMuOTA1IDEzNC4yODUtNzguMTQ1LTMyLjE1Ni0xMzEuNDAzLTY0LjIxMy0xNzEuMjM4LTk3LjcxNEMzNjEuNDEgNTM5LjIgMjQxLjk4OSA3NjUuMTk0IDAgMTIwMGMxOTAuMTYxLTEwOS43ODQgMzM3LjY2NS0xNzcuMzk3IDQ3NS4wNDgtMjAzLjIzOC01Ljg5NS0yNS4zNjctOS4xOC01Mi44OTYtOC45NTMtODEuNTI0bC4xOS01LjkwNUM0NjkuMzA1IDc4Ny40OCA1MzIuNzIgNjkzLjYzOCA2MDcuODEgNzAwYzc1LjA4OSA2LjM2MiAxMzMuNDk0IDExMC41MjggMTMwLjQ3NiAyMzIuMzgxLS41NjggMjIuOTE2LTMuMTA1IDQ0Ljg4NS03LjYyIDY1LjMzM0M4NjYuNTI4IDEwMjQuMzI1IDEwMTIuNDYyIDEwOTEuNzMgMTIwMCAxMjAwYy0zNi45OTUtNjguMTExLTcwLjE4LTEyOS4zMzUtMTAxLjcxNC0xODcuODEtNDkuNjcyLTM4LjQ5OS0xMDEuMzY1LTg4LjYxMy0yMDcuMDQ4LTE0Mi44NTcgNzIuNjQgMTguODc1IDEyNC43OTMgNDAuNjEyIDE2NS4zMzMgNjQuOTUzQzczNS45NTIgMzM3LjM0OCA3MDkuOTQ4IDI1OC4wMTYgNjAwIDB6IiBmaWxsPSIjMTc5M2QxIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=) no-repeat!important;background-size:40px 40px!important}#archnavbar ul{display:flex!important;justify-content:space-between;flex-wrap:nowrap;overflow:hidden;float:none!important}#archnavbar ul li{padding:0!important;float:none!important}}@media (max-width:830px){#anb-home{display:none}html>body #archnavbarlogo{padding-right:15px!important}#archnavbar{padding-left:5px!important;padding-right:5px!important}#archnavbar ul li{padding-left:5px!important;padding-right:5px!important}}body{background:#f6f9fc}#content{background:#ffffff;border:1px solid #cccccc}#content table,#content h1,#content h2,#content h3,#content h4,#content pre,#content code{color:#222222}#content ul{list-style-image:none}#content table{border-collapse:collapse;padding:2px}#content td{padding:2px}#content pre{border:1px solid #bbccdd;overflow:auto;word-break:break-all;white-space:pre-wrap!important}#content pre,#content code{background-color:#ebf1f5;font-family:monospace}#content code{display:inline-block;padding:0 0.3em;border-width:0;border-radius:0}#footer{color:#333333}#toc{background-color:#f9faff;border:1px solid #d7dfe3}#bodyContent>div.mw-content-ltr a{font-weight:bold}#bodyContent #toc a{font-weight:normal}#content a:not(.new),#mw-navigation li:not(.new) a:not(.new),#mw-panel li:not(.new) a:not(.new),#column-one li:not(.new) a:not(.new),#footer a:not(.new){text-decoration:none;color:#0077bb!important}#content a:not(.new):hover,#mw-navigation li:not(.new) a:not(.new):hover,#mw-panel li:not(.new) a:not(.new):hover,#column-one li:not(.new) a:not(.new):hover,#footer a:not(.new):hover{text-decoration:underline;background-color:transparent;color:#999999!important}#content a:active,#mw-navigation li:not(.new) a:active,#mw-panel li:not(.new) a:active,#column-one li:not(.new) a:active,#footer a:active,#content a:focus,#mw-navigation li:not(.new) a:focus,#mw-panel li:not(.new) a:focus,#column-one li:not(.new) a:focus,#footer a:focus,#content a:active:hover,#mw-navigation li:not(.new) a:active:hover,#mw-panel li:not(.new) a:active:hover,#column-one li:not(.new) a:active:hover,#footer a:active:hover,#content a:focus:hover,#mw-navigation li:not(.new) a:focus:hover,#mw-panel li:not(.new) a:focus:hover,#column-one li:not(.new) a:focus:hover,#footer a:focus:hover{color:#ee9900!important}#content a:not(.new):visited,#mw-panel li:not(.new) a:not(.new):visited,#p-navigation li:not(.new) a:not(.new):visited,#p-tb li:not(.new) a:not(.new):visited{color:#666666!important}.mw-body-content a.external,.mw-body-content a.extiw{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6+R8AAAAs0lEQVR4AWP4//8/yRiroHH6njrjtN1/sGGYJpwajdJ2bXNI2M8BE8PQhMXUv0B8yThtMxeGJgyBmf9ZDRO3iRqn775rmL5NCyQG0giyEacm0WWvVstNvnNXt+hYNogP0giyEeRUnJpkVj3mBGqcC8SvNGrOVIJsBDkV5EecmmBYZOnrbqmZD1+CnAqTA2nEq4lh/38W0aWv9gGxF4YcpiYEFlz1jh+kGa8m3BhTE1GYYk0A08+9f1lXOBcAAAAASUVORK5CYII=) center right no-repeat;padding-right:13px}.mw-body h1,.mw-body-content h2{font-family:sans-serif}div#mw-head{top:65px}div#mw-panel{top:65px}#mw-page-base{background:none}div.vectorTabs{margin-top:-2px}div.vectorTabs{padding-left:0}div.vectorTabs ul,div.vectorTabs ul li{background:none}div.vectorTabs ul li{border:1px}div.vectorTabs li.selected{border:1px solid #cccccc;border-bottom-color:#ffffff;background-color:#ffffff}div.vectorTabs li.selected span{background:none}div.vectorTabs li:not(:first-child).selected{margin-left:-2px}@media screen and (max-width:720px){div#p-personal{top:unset}div#mw-panel{padding-top:0}}.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:0;z-index:1099;padding:0;margin:-1px 0 0 0}</style><meta name=ResourceLoaderDynamicStyles content>
+<style>#bodyContent a.external[href^="https://wiki.archlinux.org"]{background:none;padding-right:0}span.archwiki-template-pkg,span.archwiki-template-man{font-family:monospace}div.archwiki-template-box{padding:5px;border:thin solid black;margin:0.5em 0;overflow:hidden}div.archwiki-template-box.archwiki-template-box-note{background-color:#ddf;border-color:#bbd}div.archwiki-template-box.archwiki-template-box-tip{background-color:#dfd;border-color:#bdb}div.archwiki-template-message{position:relative;overflow:hidden;min-height:4.6em;margin-bottom:1em;background-color:#f9faff;border:1px solid #d7dfe3;padding:0 100px;text-align:center}div.archwiki-template-message>p>a{display:block;position:absolute;top:5px}div.archwiki-template-message>p>a:first-of-type{left:26px}div.archwiki-template-message>p>a:last-of-type{right:26px}div.archwiki-template-message>div{font-size:90%}</style>
+<meta name=generator content="MediaWiki 1.34.1">
+<meta name=viewport content="width=device-width, initial-scale=1">
+<link rel=search type=application/opensearchdescription+xml href=https://wiki.archlinux.org/opensearch_desc.php title="ArchWiki (en)">
+<link rel=EditURI type=application/rsd+xml href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel=license href=http://www.gnu.org/copyleft/fdl.html>
+<link rel=alternate type=application/atom+xml title="ArchWiki Atom feed" href="https://wiki.archlinux.org/index.php?title=Special:RecentChanges&amp;feed=atom">
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+<link rel="shortcut icon" href=data:image/vnd.microsoft.icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABvElEQVQ4jY2TP4gTQRTGfzM7ybp35mBX8LY4GxM5OI4UiqDWtoKIjWhl4QmmEQwIhzZaa3GLlYWgjViI+AcUrrASUYTbQ0UxepwpFj1EDCSXuLNj4QYSLxP8mnm8972P3wyMMMZgUxjF+ycLUjUW5l/YPMq6/VfnHCEmAGuAsBHsurG6QwiaRUeq2cCdfXy88nmUT9qSJ4tywVNyGxjVSbPzNp81wFNyt6cknpJ00uzk2Wfr/n8HHLrz4ajriFeuEsuekvS08Zu/eoujvFveYN+t98XAUw1jmEmN+ZEZfG2M8BzZKhVl+f6x8vexBIGn6hMFOeMqgTEEXZ2J39qwqbNSR5tLYwnmbr6b2hO4axvt1P/a6tHTw3SuI1pTrlNZPT33bSTBps7qb5K23/jZ7S8/AO72511tShud9MJIgjCKdwINYHs+e5TUqkfy2W3gVN5vA+WkVk3+Jbg8sAzwcKB+mp8G+ALUh64QRnEZOMOwPg3Ub/vEgAvcGwoArgKFvF4DrgEfBwKawHVgHagAy2EUnwAQ00sre4HXwBPgSlKrvmSMwig+CCwCh4F5Mb20chF4ntSq1h83JujAH3Eom+H9uAq8AAAAAElFTkSuQmCC><style>.sf-hidden{display:none!important}</style><link rel=canonical href=https://wiki.archlinux.org/index.php/Backlight#Using_DBus_with_Gnome></head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Backlight rootpage-Backlight skin-vector action-view"><div id=archnavbar class=noprint>
+ <div id=archnavbarlogo>
+ <p><a id=logo href=https://www.archlinux.org/></a></p>
+ </div>
+ <div id=archnavbarmenu>
+ <ul id=archnavbarlist>
+ <li id=anb-home><a href=https://www.archlinux.org/>Home</a></li> <li id=anb-packages><a href=https://www.archlinux.org/packages/>Packages</a></li> <li id=anb-forums><a href=https://bbs.archlinux.org/>Forums</a></li> <li id=anb-wiki class=anb-selected><a href=https://wiki.archlinux.org/>Wiki</a></li> <li id=anb-bugs><a href=https://bugs.archlinux.org/>Bugs</a></li> <li id=anb-security><a href=https://security.archlinux.org/>Security</a></li> <li id=anb-aur><a href=https://aur.archlinux.org/>AUR</a></li> <li id=anb-download><a href=https://www.archlinux.org/download/>Download</a></li> </ul>
+ </div>
+</div>
+<div id=mw-page-base class=noprint></div>
+<div id=mw-head-base class=noprint></div>
+<div id=content class=mw-body role=main>
+ <a id=top></a>
+ 
+ <div class="mw-indicators mw-body-content">
+</div>
+ <h1 id=firstHeading class=firstHeading lang=en>Backlight</h1>
+ 
+ <div id=bodyContent class=mw-body-content>
+ <div id=siteSub class="noprint sf-hidden">From ArchWiki</div>
+ <div id=contentSub></div>
+ 
+ 
+ 
+ <div id=jump-to-nav></div>
+ <a class=mw-jump-link href=#mw-head>Jump to navigation</a>
+ <a class=mw-jump-link href=#p-search>Jump to search</a>
+ <div id=mw-content-text dir=ltr class=mw-content-ltr lang=en><div class=mw-parser-output><p>Screen brightness might be tricky to control. On some machines physical hardware switches are missing and software solutions may not work well. However, it is generally possible to find a functional method for a given hardware. This article aims to summarize all possible ways to adjust the backlight.
+<p>There are many ways to control brightness of a monitor, laptop or integrated panel (such as the iMac). According to <a rel=nofollow class="external text" href=https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/397617>these</a> <a rel=nofollow class="external text" href=https://lore.kernel.org/patchwork/patch/528936/#708706>discussions</a> and this <a rel=nofollow class="external text" href=https://wiki.ubuntu.com/Kernel/Debugging/Backlight>wiki page</a> the control method can be divided into these categories:
+</p>
+<ul><li>brightness is controlled by vendor-specified hotkey and there is no interface for the OS to adjust the brightness.</li>
+<li>brightness is controlled by either the <a href=#ACPI>ACPI</a>, graphic or platform driver. In this case, backlight control is exposed to the user through <code>/sys/class/backlight</code> which can be used by user-space <a href=#Backlight_utilities>backlight utilities</a>.</li>
+<li>brightness is controlled by writing into a graphic card register through <a href=#setpci>setpci</a>.</ul>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> Since OLED screens have no backlight, brightness cannot be controlled by changing backlight power on laptops equipped with an OLED screen. In this case see, perceived screen brightness can be adjusted with a PWM control (not implemented in the Linux kernel) or via <a href=#Color_correction>software color correction</a>.</div>
+<div id=toc class=toc><input type=checkbox role=button id=toctogglecheckbox class=toctogglecheckbox style=display:none><div class=toctitle dir=ltr lang=en><h2>Contents</h2><span class=toctogglespan><label class=toctogglelabel for=toctogglecheckbox></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href=#Hardware_interfaces><span class=tocnumber>1</span> <span class=toctext>Hardware interfaces</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href=#ACPI><span class=tocnumber>1.1</span> <span class=toctext>ACPI</span></a>
+<ul>
+<li class="toclevel-3 tocsection-3"><a href=#Kernel_command-line_options><span class=tocnumber>1.1.1</span> <span class=toctext>Kernel command-line options</span></a></li>
+<li class="toclevel-3 tocsection-4"><a href=#Udev_rule><span class=tocnumber>1.1.2</span> <span class=toctext>Udev rule</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-5"><a href=#setpci><span class=tocnumber>1.2</span> <span class=toctext>setpci</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href=#External_monitors><span class=tocnumber>1.3</span> <span class=toctext>External monitors</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href=#Switch_off_the_backlight><span class=tocnumber>2</span> <span class=toctext>Switch off the backlight</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href=#Save_and_restore_functionality><span class=tocnumber>3</span> <span class=toctext>Save and restore functionality</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href=#Backlight_utilities><span class=tocnumber>4</span> <span class=toctext>Backlight utilities</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href=#xbacklight><span class=tocnumber>4.1</span> <span class=toctext>xbacklight</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href=#Using_DBus_with_Gnome><span class=tocnumber>4.2</span> <span class=toctext>Using DBus with Gnome</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href=#Color_correction><span class=tocnumber>5</span> <span class=toctext>Color correction</span></a>
+<ul>
+<li class="toclevel-2 tocsection-13"><a href=#Wayland><span class=tocnumber>5.1</span> <span class=toctext>Wayland</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href=#Xorg:_adjust_perceived_brightness_with_xrandr><span class=tocnumber>5.2</span> <span class=toctext>Xorg: adjust perceived brightness with xrandr</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href=#NVIDIA_settings><span class=tocnumber>5.3</span> <span class=toctext>NVIDIA settings</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-16"><a href=#Troubleshooting><span class=tocnumber>6</span> <span class=toctext>Troubleshooting</span></a>
+<ul>
+<li class="toclevel-2 tocsection-17"><a href=#Backlight_PWM_modulation_frequency_(Intel_i915_only)><span class=tocnumber>6.1</span> <span class=toctext>Backlight PWM modulation frequency (Intel i915 only)</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href=#Inverted_Brightness_(Intel_i915_only)><span class=tocnumber>6.2</span> <span class=toctext>Inverted Brightness (Intel i915 only)</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href=#Unable_to_control_eDP_Panel_brightness_(Intel_i915_only)><span class=tocnumber>6.3</span> <span class=toctext>Unable to control eDP Panel brightness (Intel i915 only)</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href=#sysfs_modified_but_no_brightness_change><span class=tocnumber>6.4</span> <span class=toctext>sysfs modified but no brightness change</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href=#Backlight_not_working_in_MATE><span class=tocnumber>6.5</span> <span class=toctext>Backlight not working in MATE</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href=#Backlight_keys_not_working_in_Xfce><span class=tocnumber>6.6</span> <span class=toctext>Backlight keys not working in Xfce</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href=#xbacklight_returns_:_No_outputs_have_backlight_property><span class=tocnumber>6.7</span> <span class=toctext>xbacklight returns&nbsp;: No outputs have backlight property</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href=#Backlight_is_always_at_full_brightness_after_a_reboot_with_amdgpu_driver><span class=tocnumber>6.8</span> <span class=toctext>Backlight is always at full brightness after a reboot with amdgpu driver</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h2><span class=mw-headline id=Hardware_interfaces>Hardware interfaces</span></h2>
+<h3><span class=mw-headline id=ACPI>ACPI</span></h3>
+<p>The brightness of the screen backlight is adjusted by setting the power level of the backlight LEDs or cathodes. The power level can often be controlled using the ACPI kernel module for video. An interface to this module is provided via a sysfs directory at <code>/sys/class/backlight/</code>.
+<p>The name of the directory depends on the graphics card model.
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>$ ls /sys/class/backlight/</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>acpi_video0
+</pre>
+<p>In this case, the backlight is managed by an ATI graphics card. In the case of an Intel card, the directory is called <code>intel_backlight</code>. In the following examples, <code>acpi_video0</code> is used. If you use an Intel card, simply replace <code>acpi_video0</code> with <code>intel_backlight</code> in the examples.
+<p>The directory contains the following files and subdirectories:
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>$ ls /sys/class/backlight/acpi_video0/</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>actual_brightness  brightness         max_brightness     subsystem/    uevent             
+bl_power           device/            power/             type
+</pre>
+<p>The maximum brightness can be displayed by reading from <code>max_brightness</code>, which is often 15.
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>$ cat /sys/class/backlight/acpi_video0/max_brightness</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>15
+</pre>
+<p>The brightness can be set by writing a number to <code>brightness</code>. Attempting to set a brightness greater than the maximum results in an error.
+</p>
+<pre># echo 5 &gt; /sys/class/backlight/acpi_video0/brightness
+</pre>
+<p>By default, only <code>root</code> can change the brightness by this method. To allow users in the <code>video</code> group to change the brightness, a <a href=https://wiki.archlinux.org/index.php/Udev title=Udev>udev</a> rule such as the following can be used:
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>/etc/udev/rules.d/backlight.rules</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="acpi_video0", GROUP="video", MODE="0664"
+</pre>
+<h4><span class=mw-headline id=Kernel_command-line_options>Kernel command-line options</span></h4>
+<p>Sometimes ACPI does not work well due to different motherboard implementations and ACPI quirks. This results in, for instance, inaccurate brightness notifications. This includes some laptops with dual graphics (e.g., Nvidia/Radeon dedicated GPU with Intel/AMD integrated GPU). Additionally, ACPI sometimes needs to register its own <code>acpi_video0</code> backlight even if one already exists (such as <code>intel_backlight</code>), which can be done by adding one of the following <a href=https://wiki.archlinux.org/index.php/Kernel_parameters title="Kernel parameters">kernel parameters</a>:
+</p>
+<pre>acpi_backlight=video
+acpi_backlight=vendor
+acpi_backlight=native
+</pre>
+<p>If you find that changing the <code>acpi_video0</code> backlight does not actually change the brightness, you may need to use <code>acpi_backlight=none</code>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip"><strong>Tip:</strong> 
+<ul><li>On Nvidia Optimus laptops, the kernel parameter <code>nomodeset</code> can interfere with the ability to adjust the backlight.</li>
+<li>On an Asus notebooks you might also need to load the <code>asus-nb-wmi</code> <a href=https://wiki.archlinux.org/index.php/Kernel_module title="Kernel module">kernel module</a>.</li>
+<li>Disabling legacy boot on Dell XPS13 breaks backlight support.</ul>
+</div>
+<h4><span class=mw-headline id=Udev_rule>Udev rule</span></h4>
+<p>If the ACPI interface is available, the backlight level can be set at boot using a <a href=https://wiki.archlinux.org/index.php/Udev title=Udev>udev</a> rule:
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>/etc/udev/rules.d/81-backlight.rules</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em># Set backlight level to 8
+SUBSYSTEM=="backlight", ACTION=="add", KERNEL=="acpi_video0", ATTR{brightness}="8"</pre>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> The systemd-backlight service restores the previous backlight brightness level at boot. To prevent conflicts for the above rules, see <a href=#Save_and_restore_functionality>#Save and restore functionality</a>.</div>
+<div class="archwiki-template-box archwiki-template-box-tip"><strong>Tip:</strong> To set the backlight depending on power state, see <a href=https://wiki.archlinux.org/index.php/Power_management#Using_a_script_and_an_udev_rule title="Power management">Power management#Using a script and an udev rule</a> and use your favourite <a href=#Backlight_utilities>backlight utility</a> in the script.</div>
+<h3><span class=mw-headline id=setpci>setpci</span></h3>
+<p>In some cases (e.g. Intel Mobile 945GME <a rel=nofollow class="external autonumber" href=https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/397617>[1]</a>), it is possible to set the register of the graphic card to adjust the backlight. It means you adjust the backlight by manipulating the hardware directly, which can be risky and generally is not a good idea. Not all of the graphic cards support this method.
+<p>When using this method, you need to use <code>lspci</code> first to find out where your graphic card is.
+</p>
+<pre># setpci -s 00:02.0 F4.B=0
+</pre>
+<h3><span class=mw-headline id=External_monitors>External monitors</span></h3>
+<p><a href=https://en.wikipedia.org/wiki/Display_Data_Channel#DDC.2FCI class=extiw title="wikipedia:Display Data Channel">DDC/CI</a> (Display Data Channel Command Interface) can be used to communicate with external monitors implementing MCCS (Monitor Control Command Set) over I2C. DDC can control brightness, contrast, inputs, etc on supported monitors. Settings available via the OSD (On-Screen Display) panel can usually also be managed via DDC. The <a href=https://wiki.archlinux.org/index.php/Kernel_module title="Kernel module">kernel module</a> <code>i2c-dev</code> may need to be loaded if the <code>/dev/i2c-*</code> devices do not exist.
+<p><span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=ddcutil">ddcutil</a></span> can be used to query and set brightness settings:
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em># ddcutil capabilities | grep "Feature: 10"</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>  Feature: 10 (Brightness)
+</pre>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em># ddcutil getvcp 10</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>VCP code 0x10 (Brightness                    ): current value =    60, max value =   100</pre>
+<pre># ddcutil setvcp 10 70
+</pre>
+<p>Alternatively, one may use <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href=https://aur.archlinux.org/packages/ddcci-driver-linux-dkms/>ddcci-driver-linux-dkms</a></span><sup><small>AUR</small></sup> to expose external monitors in sysfs. Then, after loading the <code>ddcci</code> <a href=https://wiki.archlinux.org/index.php/Kernel_module title="Kernel module">kernel module</a>, one can use any <a href=#Backlight_utilities>backlight utility</a>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> 
+<ul><li>Using <code>ddcci</code> and <code>i2c-dev</code> simultaneously may result in resource conflicts such as a <code>Device or resource busy</code> error.</li>
+<li>ddcutil will fail to set some VCP features if there is a feature enabled on the monitor which already automatically adjusts them (e.g. <a href=https://en.wikipedia.org/wiki/Contrast_ratio#Dynamic_contrast_.28DC.29 class=extiw title="wikipedia:Contrast ratio">Dynamic Contrast Ratio</a> or BenQ's <i>Eye Care</i> technology).</ul>
+</div>
+<h2><span class=mw-headline id=Switch_off_the_backlight>Switch off the backlight</span></h2>
+<div class="noprint archwiki-template-message">
+<p><a href=https://wiki.archlinux.org/index.php/File:Merge-arrows-2.png class=image><img alt=Merge-arrows-2.png src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"><rect fill-opacity="0"/></svg>' decoding=async style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-6)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important" width=48 height=48></a><b>This article or section is a candidate for merging with <a href=https://wiki.archlinux.org/index.php/DPMS class=mw-redirect title=DPMS>DPMS</a>.</b><a href=https://wiki.archlinux.org/index.php/File:Merge-arrows-2.png class=image><img alt=Merge-arrows-2.png src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"><rect fill-opacity="0"/></svg>' decoding=async style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-6)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important" width=48 height=48></a></p>
+<div><b>Notes:</b> Same topic. (Discuss in <a rel=nofollow class="external text" href=https://wiki.archlinux.org/index.php/Talk:Backlight>Talk:Backlight#</a>)</div>
+</div>
+<p>Switching off the backlight (for example when one locks a notebook) can be useful to conserve battery energy. Ideally the following command should work for any <a href=https://wiki.archlinux.org/index.php/Xorg title=Xorg>Xorg</a> graphical session:
+</p>
+<pre>xset dpms force off
+</pre>
+<p>The backlight should switch on again on mouse movement or keyboard input. Alternately <code>xset s</code> could be used for a similar effect.
+<p>If the previous commands do not work, there is a chance that <i>vbetool</i> may work. Note, however, that in this case the backlight must be manually activated again. The command is as follows:
+</p>
+<pre>$ vbetool dpms off
+</pre>
+<p>To activate the backlight again:
+</p>
+<pre>$ vbetool dpms on
+</pre>
+<p>For example, this can be put to use when closing the notebook lid using <a href=https://wiki.archlinux.org/index.php/Acpid title=Acpid>Acpid</a>.
+</p>
+<h2><span class=mw-headline id=Save_and_restore_functionality>Save and restore functionality</span></h2>
+<p>The <a href=https://wiki.archlinux.org/index.php/Systemd title=Systemd>systemd</a> package includes the service <code>systemd-backlight@.service</code>, which is enabled by default and "static". It saves the backlight brightness level at shutdown and restores it at boot. The service uses the ACPI method described in <a href=#ACPI>#ACPI</a>, generating services for each folder found in <code>/sys/class/backlight/</code>. For example, if there is a folder named <code>acpi_video0</code>, it generates a service called <code>systemd-backlight@backlight:acpi_video0.service</code>. When using other methods of setting the backlight at boot, it is recommended to stop systemd-backlight from restoring the backlight by setting the <a href=https://wiki.archlinux.org/index.php/Kernel_parameters title="Kernel parameters">kernel parameters</a> parameter <code>systemd.restore_state=0</code>. See <span class="plainlinks archwiki-template-man" title="$ man 8 systemd-backlight@.service"><a rel=nofollow class="external text" href=https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-backlight%40.service.8>systemd-backlight@.service(8)</a></span> for details.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> Some laptops have multiple video cards (e.g. Optimus) and the backlight restoration fails. Try <a href=https://wiki.archlinux.org/index.php/Systemd#Using_units title=Systemd>masking</a> an instance of the service (e.g. <code>systemd-backlight@backlight:acpi_video1</code> for <code>acpi_video1</code>).</div>
+<p>The <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href=https://aur.archlinux.org/packages/relight/>relight</a></span><sup><small>AUR</small></sup> package provides an alternative systemd-based method of saving and restoring screen brightness.
+<p>Additionally, the <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href=https://aur.archlinux.org/packages/brillo/>brillo</a></span><sup><small>AUR</small></sup> and <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=light">light</a></span> utilities support save and restore functionality. These two may be more useful if one wishes to restore the screen brightness on a per-user basis, however no systemd units are provided to accomplish this.
+</p>
+<h2><span class=mw-headline id=Backlight_utilities>Backlight utilities</span></h2>
+<p>The utilities in the following table can be used to control screen brightness. All of them are compatible with Wayland and do not require X. Some (like <code>brightnessctl</code> or <code>light</code>) add udev rules to allow members of the <code>video</code> (or <code>input</code>) group to modify brightness.
+</p>
+<table class="wikitable sortable jquery-tablesorter">
+<thead><tr>
+<th class=headerSort tabindex=0 role="columnheader button" title="Sort ascending">Package name
+</th>
+<th class=headerSort tabindex=0 role="columnheader button" title="Sort ascending">Controls keyboard backlights
+</th>
+<th class=headerSort tabindex=0 role="columnheader button" title="Sort ascending">Reacts to ambient brightness
+</th>
+<th class=headerSort tabindex=0 role="columnheader button" title="Sort ascending">Language
+</th>
+<th class=headerSort tabindex=0 role="columnheader button" title="Sort ascending">License
+</th>
+<th class=headerSort tabindex=0 role="columnheader button" title="Sort ascending">Notes
+<tbody>
+<tr>
+<td><span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=acpilight">acpilight</a></span>
+</td>
+<td data-sort-value=5 style=background:#afa;color:inherit;vertical-align:middle;text-align:center>Yes
+</td>
+<td data-sort-value=1 style=background:#faa;color:inherit;vertical-align:middle;text-align:center>No
+</td>
+<td>Python3
+</td>
+<td>GPL-3.0-or-later
+</td>
+<td>"xbacklight" executable provided
+</tr>
+<tr>
+<td><span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href=https://aur.archlinux.org/packages/blight/>blight</a></span><sup><small>AUR</small></sup>
+</td>
+<td data-sort-value=5 style=background:#afa;color:inherit;vertical-align:middle;text-align:center>Yes
+</td>
+<td data-sort-value=1 style=background:#faa;color:inherit;vertical-align:middle;text-align:center>No
+</td>
+<td>Python3
+</td>
+<td>ISC
+</td>
+<td>Uses logind interface. Restricted to local users, but does not require suid or video group membership.
+</tr>
+<tr>
+<td><span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href=https://aur.archlinux.org/packages/brightd/>brightd</a></span><sup><small>AUR</small></sup>
+</td>
+<td data-sort-value=1 style=background:#faa;color:inherit;vertical-align:middle;text-align:center>No
+</td>
+<td data-sort-value=1 style=background:#faa;color:inherit;vertical-align:middle;text-align:center>No
+</td>
+<td>C
+</td>
+<td>GPL-2.0
+</td>
+<td>Dims the screen when there is no user input for some time.
+</tr>
+<tr>
+<td><span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=brightnessctl">brightnessctl</a></span>
+</td>
+<td data-sort-value=5 style=background:#afa;color:inherit;vertical-align:middle;text-align:center>Yes
+</td>
+<td data-sort-value=1 style=background:#faa;color:inherit;vertical-align:middle;text-align:center>No
+</td>
+<td>C
+</td>
+<td>MIT
+</td>
+<td>-
+</tr>
+<tr>
+<td><span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href=https://aur.archlinux.org/packages/brillo/>brillo</a></span><sup><small>AUR</small></sup>
+</td>
+<td data-sort-value=5 style=background:#afa;color:inherit;vertical-align:middle;text-align:center>Yes
+</td>
+<td data-sort-value=1 style=background:#faa;color:inherit;vertical-align:middle;text-align:center>No
+</td>
+<td>C
+</td>
+<td>GPL-3.0-only
+</td>
+<td>Supports smooth and relative adjustments.
+</tr>
+<tr>
+<td><span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href=https://aur.archlinux.org/packages/calise/>calise</a></span><sup><small>AUR</small></sup>
+</td>
+<td data-sort-value=1 style=background:#faa;color:inherit;vertical-align:middle;text-align:center>No
+</td>
+<td data-sort-value=5 style=background:#afa;color:inherit;vertical-align:middle;text-align:center>Yes
+</td>
+<td>Python2
+</td>
+<td>GPL-3.0
+</td>
+<td>-
+</tr>
+<tr>
+<td><span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href=https://aur.archlinux.org/packages/clight/>clight</a></span><sup><small>AUR</small></sup>
+</td>
+<td data-sort-value=5 style=background:#afa;color:inherit;vertical-align:middle;text-align:center>Yes
+</td>
+<td data-sort-value=5 style=background:#afa;color:inherit;vertical-align:middle;text-align:center>Yes
+</td>
+<td>C
+</td>
+<td>GPL-3.0-or-later
+</td>
+<td>Manages screen temperature (<a href=https://wiki.archlinux.org/index.php/Xorg title=Xorg>Xorg</a> only) and smoothly dims brightness after a timeout. Supports ambient light sensors <a rel=nofollow class="external autonumber" href=https://github.com/FedeDP/Clightd/wiki/Sensors>[2]</a>. Can turn webcam into an ambient light sensor.
+</tr>
+<tr>
+<td><span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href=https://aur.archlinux.org/packages/enlighten-git/>enlighten-git</a></span><sup><small>AUR</small></sup>
+</td>
+<td data-sort-value=1 style=background:#faa;color:inherit;vertical-align:middle;text-align:center>No
+</td>
+<td data-sort-value=1 style=background:#faa;color:inherit;vertical-align:middle;text-align:center>No
+</td>
+<td>C
+</td>
+<td>GPL-3.0-or-later
+</td>
+<td>-
+</tr>
+<tr>
+<td><span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href=https://aur.archlinux.org/packages/illum-git/>illum-git</a></span><sup><small>AUR</small></sup>
+</td>
+<td data-sort-value=1 style=background:#faa;color:inherit;vertical-align:middle;text-align:center>No
+</td>
+<td data-sort-value=1 style=background:#faa;color:inherit;vertical-align:middle;text-align:center>No
+</td>
+<td>C
+</td>
+<td>AGPL-3.0
+</td>
+<td>Reacts to key presses.
+</tr>
+<tr>
+<td><span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=light">light</a></span>
+</td>
+<td data-sort-value=5 style=background:#afa;color:inherit;vertical-align:middle;text-align:center>Yes
+</td>
+<td data-sort-value=1 style=background:#faa;color:inherit;vertical-align:middle;text-align:center>No
+</td>
+<td>C
+</td>
+<td>GPL-3.0-only
+</td>
+<td>-
+</tr>
+<tr>
+<td><span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href=https://aur.archlinux.org/packages/lux/>lux</a></span><sup><small>AUR</small></sup>
+</td>
+<td data-sort-value=1 style=background:#faa;color:inherit;vertical-align:middle;text-align:center>No
+</td>
+<td data-sort-value=1 style=background:#faa;color:inherit;vertical-align:middle;text-align:center>No
+</td>
+<td>Shell
+</td>
+<td>MIT
+</td>
+<td>-
+</tr>
+<tr>
+<td><span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href=https://aur.archlinux.org/packages/macbook-lighter/>macbook-lighter</a></span><sup><small>AUR</small></sup>
+</td>
+<td data-sort-value=5 style=background:#afa;color:inherit;vertical-align:middle;text-align:center>Yes
+</td>
+<td data-sort-value=5 style=background:#afa;color:inherit;vertical-align:middle;text-align:center>Yes
+</td>
+<td>Bash,Perl
+</td>
+<td>GPL
+</td>
+<td>Macbook screen/keyboard backlight CLI and auto-adjust on ambient light.
+</tr>
+<tr>
+<td><span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href=https://aur.archlinux.org/packages/wlr-brightness-git/>wlr-brightness-git</a></span><sup><small>AUR</small></sup>
+</td>
+<td data-sort-value=1 style=background:#faa;color:inherit;vertical-align:middle;text-align:center>No
+</td>
+<td data-sort-value=1 style=background:#faa;color:inherit;vertical-align:middle;text-align:center>No
+</td>
+<td>C
+</td>
+<td>MIT
+</td>
+<td>Also supports newer OLED displays that need gamma adjustment. Uses wlroots.
+<tfoot></table>
+<div class="archwiki-template-box archwiki-template-box-tip"><strong>Tip:</strong> Commands involving these utilities can be bound to the <code>XF86MonBrightnessUp</code> and <code>XF86MonBrightnessDown</code> keyboard keys as described in <a href=https://wiki.archlinux.org/index.php/Keyboard_shortcuts#Xorg title="Keyboard shortcuts">Keyboard shortcuts#Xorg</a>.</div>
+<h3><span class=mw-headline id=xbacklight>xbacklight</span></h3>
+<p>Brightness can be set using the <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=xorg-xbacklight">xorg-xbacklight</a></span> package.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> 
+<ul><li>xbacklight only works with <a href=https://wiki.archlinux.org/index.php/Intel class=mw-redirect title=Intel>Intel</a>. Other drivers (e.g. <a href=https://wiki.archlinux.org/index.php/Radeon class=mw-redirect title=Radeon>Radeon</a>) did not add support for the RandR backlight property.</li>
+<li>xbacklight currently does not work with the modesetting driver <a rel=nofollow class="external autonumber" href=https://gitlab.freedesktop.org/xorg/xserver/issues/47>[3]</a>.</ul></div>
+<p>To set brightness to 50% of maximum:
+</p>
+<pre>$ xbacklight -set 50
+</pre>
+<p>Increments can be used instead of absolute values, for example to increase or decrease brightness by 10%:
+</p>
+<pre>$ xbacklight -inc 10
+$ xbacklight -dec 10
+</pre>
+<p>If you get the "No outputs have backlight property" error, it is because xrandr/xbacklight does not choose the right directory in <code>/sys/class/backlight</code>. You can specify the directory by setting the <code>Backlight</code> option of the device section in <code>/etc/X11/xorg.conf.d/20-<i>video</i>.conf</code>. For instance, if the name of the directory is <code>intel_backlight</code> and using the <a href=https://wiki.archlinux.org/index.php/Intel class=mw-redirect title=Intel>Intel</a> driver, the device section may be configured as follows:
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>/etc/X11/xorg.conf.d/20-intel.conf</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>Section "Device"
+    Identifier  "Intel Graphics" 
+    Driver      "intel"
+    Option      "Backlight"  "intel_backlight"
+EndSection</pre>
+<p>See <a rel=nofollow class="external text" href=https://bugs.archlinux.org/task/27677>FS#27677</a> and <a rel=nofollow class="external free" href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=651741">https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=651741</a> for details.
+<p>If you have enabled <a href=https://wiki.archlinux.org/index.php/Intel_graphics#Fastboot title="Intel graphics">Intel Fastboot</a> you might also get the <code>No outputs have backlight property</code> error. In this case, trying the above method may cause Xorg to crash on start up. You should disable it to fix the issue. It is <a rel=nofollow class="external text" href="https://bugs.freedesktop.org/show_bug.cgi?id=108225">known</a> to cause issues with brightness control.
+</p>
+<h3><span class=mw-headline id=Using_DBus_with_Gnome>Using DBus with Gnome</span></h3>
+<p>Brightness can also be adjusted as the gnome controls do. Changes are reflected in the gnome UI using this method.
+</p>
+<pre>gdbus call --session --dest org.gnome.SettingsDaemon.Power --object-path /org/gnome/SettingsDaemon/Power --method org.freedesktop.DBus.Properties.Set org.gnome.SettingsDaemon.Power.Screen Brightness "&lt;int32 50&gt;"
+</pre>
+<p>Steps in brightness for keyboard control can be implemented with this method as well.
+</p>
+<pre>gdbus call --session --dest org.gnome.SettingsDaemon.Power --object-path /org/gnome/SettingsDaemon/Power --method org.gnome.SettingsDaemon.Power.Screen.StepUp
+gdbus call --session --dest org.gnome.SettingsDaemon.Power --object-path /org/gnome/SettingsDaemon/Power --method org.gnome.SettingsDaemon.Power.Screen.StepDown
+</pre>
+<h2><span class=mw-headline id=Color_correction>Color correction</span></h2>
+<div class="noprint archwiki-template-message">
+<p><a href=https://wiki.archlinux.org/index.php/File:Tango-view-fullscreen.png class=image><img alt=Tango-view-fullscreen.png src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"><rect fill-opacity="0"/></svg>' decoding=async style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-7)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important" width=48 height=48></a><b>This article or section needs expansion.</b><a href=https://wiki.archlinux.org/index.php/File:Tango-view-fullscreen.png class=image><img alt=Tango-view-fullscreen.png src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"><rect fill-opacity="0"/></svg>' decoding=async style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-7)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important" width=48 height=48></a></p>
+<div><b>Reason:</b> Which utilities require <a href=https://wiki.archlinux.org/index.php/Xorg title=Xorg>Xorg</a> and which work in <a href=https://wiki.archlinux.org/index.php/Wayland title=Wayland>Wayland</a>? (Discuss in <a rel=nofollow class="external text" href=https://wiki.archlinux.org/index.php/Talk:Backlight>Talk:Backlight#</a>)</div>
+</div>
+<p>Color correction does not change the backlight power, it just modifies the video LUT table: this means that your battery life will be unaffected by the change. Nevertheless, it could be useful when no backlight control is available (desktop PCs or laptops with OLED screens).
+</p>
+<ul><li><b>Clight</b> — User daemon utility that aims to fully manage your display. It can manage the screen temperature depending on the current time of the day, just like redshift does. It tries to use <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=geoclue">geoclue</a></span> to retrieve the user position if neither latitude or longitude are set in the configuration file. It also supports fixed times for sunrise and sunset.</ul>
+<dl><dd><a rel=nofollow class="external free" href=https://github.com/FedeDP/Clight>https://github.com/FedeDP/Clight</a> || <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href=https://aur.archlinux.org/packages/clight-git/>clight-git</a></span><sup><small>AUR</small></sup></dl>
+<ul><li><b>icc-brightness</b> — Control OLED display brightness by applying ICC color profiles.</ul>
+<dl><dd><a rel=nofollow class="external free" href=https://github.com/udifuchs/icc-brightness>https://github.com/udifuchs/icc-brightness</a> || <small>not packaged? <a rel=nofollow class="external text" href=https://aur.archlinux.org/packages/>search in AUR</a></small></dl>
+<ul><li><b>Monica</b> — Monitor calibration tool. It works as frontend to xgamma to alter the gamma correction.</ul>
+<dl><dd><a rel=nofollow class="external free" href=https://web.archive.org/web/20090815224839/http://www.pcbypaul.com/software/monica.html>https://web.archive.org/web/20090815224839/http://www.pcbypaul.com/software/monica.html</a> || <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href=https://aur.archlinux.org/packages/monica/>monica</a></span><sup><small>AUR</small></sup></dl>
+<ul><li><b><a href=https://wiki.archlinux.org/index.php/Redshift title=Redshift>Redshift</a></b> — Color temperature adjustment tool. It adjusts the color temperature of your screen according to your surroundings. This may help your eyes hurt less if you are working in front of the screen at night. This program is inspired by <a href=https://en.wikipedia.org/wiki/f.lux class=extiw title=wikipedia:f.lux>f.lux</a>.</ul>
+<dl><dd><a rel=nofollow class="external free" href=http://jonls.dk/redshift/>http://jonls.dk/redshift/</a> || <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=redshift">redshift</a></span></dl>
+<ul><li><b>xcalib</b> — Lightweight monitor calibration loader which can load an ICC monitor profile to be shared across desktop applications.</ul>
+<dl><dd><a rel=nofollow class="external free" href=https://github.com/OpenICC/xcalib>https://github.com/OpenICC/xcalib</a> || <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=xcalib">xcalib</a></span></dl>
+<ul><li><b>xgamma</b> — Alter a monitor's gamma correction.</ul>
+<dl><dd><a rel=nofollow class="external free" href=https://xorg.freedesktop.org/>https://xorg.freedesktop.org/</a> || <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=xorg-xgamma">xorg-xgamma</a></span></dl>
+<h3><span class=mw-headline id=Wayland>Wayland</span></h3>
+<p><a href=https://wiki.archlinux.org/index.php/Redshift title=Redshift>Redshift</a> does not support Wayland (without a patch). But it is possible to apply the desired temperature in <a href=https://wiki.archlinux.org/index.php/Tty class=mw-redirect title=Tty>tty</a> before starting a compositor. For example:
+</p>
+<pre>$ redshift -m drm -PO 3000
+</pre>
+<p>Otherwise some compositors can apply color correction during runtime:
+</p>
+<ul><li>On <a href=https://wiki.archlinux.org/index.php/GNOME title=GNOME>GNOME</a>, the built-in <a href=https://wiki.archlinux.org/index.php/GNOME#Night_Light title=GNOME>Night Light</a> can be used.</li>
+<li>On <a href=https://wiki.archlinux.org/index.php/KDE_Plasma class=mw-redirect title="KDE Plasma">KDE Plasma</a>, the built-in <a href=https://wiki.archlinux.org/index.php/KDE#Night_Color title=KDE>KDE#Night Color</a> can be used.</li>
+<li>On Sway 1.0 and other wlroots-based compositors, as well as Orbital, Redshift fork <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=gammastep">gammastep</a></span> can be used.</ul>
+<h3><span class=mw-headline id=Xorg:_adjust_perceived_brightness_with_xrandr>Xorg: adjust perceived brightness with xrandr</span></h3>
+<p><a href=https://wiki.archlinux.org/index.php/Xrandr title=Xrandr>xrandr</a> may be used to adjust the perceived brightness. 
+<p>To adjust perceived brightness above its maximum level (the same caveats mentioned above for Nvidia apply):
+</p>
+<pre>$ xrandr --output <i>output_name</i> --brightness 2
+</pre>
+<p>This should roughly double luma in the image. It will sacrifice color quality for brightness, nevertheless it is particularly suited for situations where the ambient light is very bright (e.g. sunlight).
+<p>This can also be used to reduce perceived brightness in a dark room by specifying some value less than 1 (e.g. 0.5), this is useful when no backlight control is available (e.g. desktop PC).
+<p>The <i>output name</i> of the connected device may be determined by calling <code>xrandr</code>:
+</p>
+<pre>xrandr | grep -w connected | cut -f '1' -d ' '
+</pre>
+<p>Users may find it convenient to implement this as an alias:
+</p>
+<pre>$ alias b='echo -e "enter brightness:\n"; read val; xrandr  --output <i>output name</i> --brightness "${val}"'
+</pre>
+<h3><span class=mw-headline id=NVIDIA_settings>NVIDIA settings</span></h3>
+<p>Users of <a href=https://wiki.archlinux.org/index.php/NVIDIA title=NVIDIA>NVIDIA's proprietary drivers</a> users can change display brightness via the nvidia-settings utility under "X Server Color Correction." However, note that this has absolutely nothing to do with backlight (intensity), it merely adjusts the color output. (Reducing brightness this way is a power-inefficient last resort when all other options fail; increasing brightness spoils your color output completely, in a way similar to overexposed photos.)
+</p>
+<h2><span class=mw-headline id=Troubleshooting>Troubleshooting</span></h2>
+<h3><span id=Backlight_PWM_modulation_frequency_.28Intel_i915_only.29></span><span class=mw-headline id=Backlight_PWM_modulation_frequency_(Intel_i915_only)>Backlight PWM modulation frequency (Intel i915 only)</span></h3>
+<p>Laptops with LED backlight are known to have screen flicker sometimes. This is because the most efficient way of controlling LED backlight brightness is by turning the LED's on and off very quickly varying the amount of time they are on. 
+<p>However, the frequency of the switching, so-called PWM (pulse-width modulation) frequency, may not be high enough for the eye to perceive it as a single brightness and instead see flickering. This causes some people to have symptoms such as headaches and eyestrain.
+<p>If you have an Intel i915 GPU, then it may be possible to adjust PWM frequency to eliminate flicker.
+<p>Period of PWM (inverse to frequency) is stored in 2 higher bytes of <code>0xC8254</code> register (if you are using the Intel GM45 chipset use address <code>0x61254</code> instead). To manipulate registers values install <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=intel-gpu-tools">intel-gpu-tools</a></span> from the official repositories.
+<p>To increase the frequency, period must be reduced. For example:
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em># intel_reg read 0xC8254</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>0xC8254&nbsp;: 0x12281228</pre>
+<p>Then to double PWM frequency divide 2 higher bytes (4 higher hex digits) by 2 and write back resulting value, keeping lower bytes unchanged:
+</p>
+<pre># intel_reg write 0xC8254 0x09141228
+</pre>
+<p>You can use online calculator to calculate desired value <a rel=nofollow class="external free" href=https://devbraindom.blogspot.com/2013/03/eliminate-led-screen-flicker-with-intel.html>https://devbraindom.blogspot.com/2013/03/eliminate-led-screen-flicker-with-intel.html</a>
+<p>To set new frequency automatically, consider writing an udev rule or install <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href=https://aur.archlinux.org/packages/intelpwm-udev/>intelpwm-udev</a></span><sup><small>AUR</small></sup>.
+</p>
+<h3><span id=Inverted_Brightness_.28Intel_i915_only.29></span><span class=mw-headline id=Inverted_Brightness_(Intel_i915_only)>Inverted Brightness (Intel i915 only)</span></h3>
+<p>Symptoms:
+</p>
+<ul><li>after installing <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=xf86-video-intel">xf86-video-intel</a></span> systemd-backlight.service turns off the backlight during boot
+<ul><li>possible solution: mask systemd-backlight.service</ul></li>
+<li>switching from X to another VT turns the backlight off</li>
+<li>the brightness keys are inverted (i.e. turning up the brightness makes the screen darker)</ul>
+<p>This problem may be solved by adding <code>i915.invert_brightness=1</code> to the list of <a href=https://wiki.archlinux.org/index.php/Kernel_parameters title="Kernel parameters">kernel parameters</a>.
+</p>
+<h3><span id=Unable_to_control_eDP_Panel_brightness_.28Intel_i915_only.29></span><span class=mw-headline id=Unable_to_control_eDP_Panel_brightness_(Intel_i915_only)>Unable to control eDP Panel brightness (Intel i915 only)</span></h3>
+<p>Embedded Display Port (eDP) v1.2 introduced a new display panel control protocol for backlight and other controls that works through the AUX channel.<a rel=nofollow class="external autonumber" href=https://www.vesa.org/wp-content/uploads/2010/12/DisplayPort-DevCon-Presentation-eDP-Dec-2010-v3.pdf>[4]</a>
+<p>By default the i915 driver tries to use PWM to control backlight brightness, which might not work.
+<p>To set the backlight through writes to DPCD registers using the AUX channel set <code>i915.enable_dpcd_backlight=1</code> as a <a href=https://wiki.archlinux.org/index.php/Kernel_parameter class=mw-redirect title="Kernel parameter">kernel parameter</a>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> The parameter changed from bool to int in <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=linux">linux</a></span> 5.4.</div>
+<h3><span class=mw-headline id=sysfs_modified_but_no_brightness_change>sysfs modified but no brightness change</span></h3>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> This behavior and their workarounds have been confirmed on the Dell M6700 with Nvidia K5000m (BIOS version prior to A10) and Clevo P750ZM (Eurocom P5 Pro Extreme) with Nvidia 980m.</div>
+<p>On some systems, the brightness hotkeys on your keyboard correctly modify the values of the acpi interface in <code>/sys/class/backlight/acpi_video0/actual_brightness</code> but the brightness of the screen is not changed. Brightness applets from <a href=https://wiki.archlinux.org/index.php/Desktop_environments class=mw-redirect title="Desktop environments">desktop environments</a> may also show changes to no effect.
+<p>If you have tested the recommended kernel parameters and only <code>xbacklight</code> works, then you may be facing an incompatibility between your BIOS and kernel driver.
+<p>In this case the only solution is to wait for a fix either from the BIOS or GPU driver manufacturer.
+<p>A workaround is to use the inotify kernel api to trigger <code>xbacklight</code> each time the value of <code>/sys/class/backlight/acpi_video0/actual_brightness</code> changes.
+<p>First <a href=https://wiki.archlinux.org/index.php/Install class=mw-redirect title=Install>install</a> <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=inotify-tools">inotify-tools</a></span>. Then create a script around inotify that will be launched upon each boot or through <a href=https://wiki.archlinux.org/index.php/Autostart class=mw-redirect title=Autostart>autostart</a>.
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>/usr/local/bin/xbacklightmon</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>#!/bin/sh
+
+path=/sys/class/backlight/acpi_video0
+
+luminance() {
+    read -r level &lt; "$path"/actual_brightness
+    factor=$((100 / max))
+    printf '%d\n' "$((level * factor))"
+}
+
+read -r max &lt; "$path"/max_brightness
+
+xbacklight -set "$(luminance)"
+
+inotifywait -me modify --format '' "$path"/actual_brightness | while read; do
+    xbacklight -set "$(luminance)"
+done
+</pre>
+<h3><span class=mw-headline id=Backlight_not_working_in_MATE>Backlight not working in MATE</span></h3>
+<p>Make sure the <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=mate-power-manager">mate-power-manager</a></span> package is <a href=https://wiki.archlinux.org/index.php/Install class=mw-redirect title=Install>installed</a>.
+</p>
+<h3><span class=mw-headline id=Backlight_keys_not_working_in_Xfce>Backlight keys not working in Xfce</span></h3>
+<p>In xfce4, the <a rel=nofollow class="external text" href=https://docs.xfce.org/xfce/xfce4-power-manager/start>Xfce4 Power Manager</a> handles the brightness keys.
+<p>In some installations of Xfce, the "Handle display brightness keys" setting may be turned off by default.
+<p>To activate the brightness keys again, open the <a rel=nofollow class="external text" href=https://docs.xfce.org/xfce/xfce4-power-manager/preferences>Xfce Power Manager dialog</a> and toggle on "Handle display brightness keys":
+</p>
+<pre>$ xfce4-power-manager -c
+</pre>
+<h3><span class=mw-headline id=xbacklight_returns_:_No_outputs_have_backlight_property>xbacklight returns&nbsp;: No outputs have backlight property</span></h3>
+<p>Depending on the video card installed, sometimes xbacklight from <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=xorg-xbacklight">xorg-xbacklight</a></span> returns the message "No outputs have backlight property". Installing <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=acpilight">acpilight</a></span> provides an alternative xbacklight that may work as expected.
+</p>
+<h3><span class=mw-headline id=Backlight_is_always_at_full_brightness_after_a_reboot_with_amdgpu_driver>Backlight is always at full brightness after a reboot with amdgpu driver</span></h3>
+<p>Due to a <a rel=nofollow class="external text" href="https://bugzilla.kernel.org/show_bug.cgi?id=203905">bug</a> introduced recently in the amdgpu driver, the backlight's <code>actual_brightness</code> value is reported as a 16-bit integer, which is outside the 8-bit range specified in <code>max_brightness</code>. This causes the <code>systemd-backlight</code> service to attempt to restore, at boot time, a value that is too large and ends being truncated to maximum brightness (255).
+<p>While the bug is not addressed, one possible workaround is to modify the stored brightness to within the correct range before it's restored. This can be accomplished with a script and a service unit:
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>fix-brightness.sh</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>#! /bin/bash
+
+# Change the line below according to your hardware
+BRIGHTNESS_FILE="/var/lib/systemd/backlight/pci-0000:04:00.0:backlight:amdgpu_bl0"
+BRIGHTNESS=$(cat "$BRIGHTNESS_FILE")
+BRIGHTNESS=$(($BRIGHTNESS*255/65535))
+BRIGHTNESS=${BRIGHTNESS/.*} # truncating to int, just in case
+echo $BRIGHTNESS &gt; "$BRIGHTNESS_FILE"
+</pre>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>fix-brightness.service</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>[Unit]
+Description=Convert 16-bit brightness values to 8-bit before systemd-backlight applies it
+Before=systemd-backlight@backlight:amdgpu_bl0.service
+
+[Service]
+Type=oneshot
+ExecStart=&lt;path to the script above&gt;
+
+[Install]
+WantedBy=multi-user.target
+</pre>
+</div></div>
+ 
+ <div class="printfooter sf-hidden">Retrieved from ""</div>
+ 
+ <div id=catlinks class=catlinks data-mw=interface><div id=mw-normal-catlinks class=mw-normal-catlinks><a href=https://wiki.archlinux.org/index.php/Special:Categories title=Special:Categories>Categories</a>: <ul><li><a href=https://wiki.archlinux.org/index.php/Category:Laptops title=Category:Laptops>Laptops</a><li><a href=https://wiki.archlinux.org/index.php/Category:Power_management title="Category:Power management">Power management</a></ul></div><div id=mw-hidden-catlinks class="mw-hidden-catlinks mw-hidden-cats-hidden sf-hidden">Hidden categories: </div></div>
+ <div class=visualClear></div>
+ 
+ </div>
+</div>
+ <div id=mw-navigation>
+ <h2>Navigation menu</h2>
+ <div id=mw-head>
+ <div id=p-personal role=navigation aria-labelledby=p-personal-label>
+ <h3 id=p-personal-label class=sf-hidden>Personal tools</h3>
+ <ul>
+ <li id=pt-createaccount><a href="https://wiki.archlinux.org/index.php?title=Special:CreateAccount&amp;returnto=Backlight" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a><li id=pt-login><a href="https://wiki.archlinux.org/index.php?title=Special:UserLogin&amp;returnto=Backlight" title="You are encouraged to log in; however, it is not mandatory [Alt+Shift+o]" accesskey=o>Log in</a></li> </ul>
+ </div>
+ <div id=left-navigation>
+ <div id=p-namespaces role=navigation class=vectorTabs aria-labelledby=p-namespaces-label>
+ <h3 id=p-namespaces-label class=sf-hidden>Namespaces</h3>
+ <ul>
+ <li id=ca-nstab-main class=selected><span><a href=https://wiki.archlinux.org/index.php/Backlight title="View the content page [Alt+Shift+c]" accesskey=c>Page</a></span><li id=ca-talk><span><a href=https://wiki.archlinux.org/index.php/Talk:Backlight rel=discussion title="Discussion about the content page [Alt+Shift+t]" accesskey=t>Discussion</a></span></li> </ul>
+ </div>
+ <div id=p-variants role=navigation class="vectorMenu emptyPortlet sf-hidden" aria-labelledby=p-variants-label>
+ 
+ 
+ 
+ </div>
+ </div>
+ <div id=right-navigation>
+ <div id=p-views role=navigation class=vectorTabs aria-labelledby=p-views-label>
+ <h3 id=p-views-label class=sf-hidden>Views</h3>
+ <ul>
+ <li id=ca-view class="collapsible selected"><span><a href=https://wiki.archlinux.org/index.php/Backlight>Read</a></span><li id=ca-viewsource class=collapsible><span><a href="https://wiki.archlinux.org/index.php?title=Backlight&amp;action=edit" title="This page is protected.
+You can view its source [Alt+Shift+e]" accesskey=e>View source</a></span><li id=ca-history class=collapsible><span><a href="https://wiki.archlinux.org/index.php?title=Backlight&amp;action=history" title="Past revisions of this page [Alt+Shift+h]" accesskey=h>View history</a></span></li> </ul>
+ </div>
+ <div id=p-cactions role=navigation class="vectorMenu emptyPortlet sf-hidden" aria-labelledby=p-cactions-label>
+ 
+ 
+ 
+ </div>
+ <div id=p-search role=search>
+ <h3>
+ <label for=searchInput>Search</label>
+ </h3>
+ <form action=/index.php id=searchform>
+ <div id=simpleSearch>
+ <input type=search name=search placeholder="Search ArchWiki" title="Search ArchWiki [Alt+Shift+f]" accesskey=f id=searchInput autocomplete=off value><input type=submit name=go value=Go title="Go to a page with this exact name if it exists" id=searchButton class=searchButton> </div>
+ </form>
+ </div>
+ </div>
+ </div>
+ <div id=mw-panel>
+ <div id=p-logo role=banner class=sf-hidden></div>
+ <div class=portal role=navigation id=p-navigation aria-labelledby=p-navigation-label>
+ <h3 id=p-navigation-label class=sf-hidden>Navigation</h3>
+ <div class=body>
+ <ul>
+ <li id=n-mainpage-description><a href=https://wiki.archlinux.org/index.php/Main_page title="Visit the main page [Alt+Shift+z]" accesskey=z>Main page</a><li id=n-Table-of-contents><a href=https://wiki.archlinux.org/index.php/Table_of_contents>Table of contents</a><li id=n-portal><a href=https://wiki.archlinux.org/index.php/Getting_involved title="Various ways Archers can contribute to the community">Getting involved</a><li id=n-currentevents><a href=https://wiki.archlinux.org/index.php/ArchWiki:News title="The latest lowdown on the wiki">Wiki news</a><li id=n-randompage><a href=https://wiki.archlinux.org/index.php/Special:Random title="Load a random page [Alt+Shift+x]" accesskey=x>Random page</a></li> </ul>
+ </div>
+ </div>
+ <div class=portal role=navigation id=p-Interaction aria-labelledby=p-Interaction-label>
+ <h3 id=p-Interaction-label>Interaction</h3>
+ <div class=body>
+ <ul>
+ <li id=n-help><a href=https://wiki.archlinux.org/index.php/Category:Help title="Wiki navigation, reading, and editing help">Help</a><li id=n-Contributing><a href=https://wiki.archlinux.org/index.php/ArchWiki:Contributing>Contributing</a><li id=n-recentchanges><a href=https://wiki.archlinux.org/index.php/Special:RecentChanges title="A list of recent changes in the wiki [Alt+Shift+r]" accesskey=r>Recent changes</a><li id=n-Recent-talks><a href="https://wiki.archlinux.org/index.php?title=Special:RecentChanges&amp;namespace=all-discussions" rel=nofollow>Recent talks</a><li id=n-newpages><a href=https://wiki.archlinux.org/index.php/Special:NewPages>New pages</a><li id=n-Statistics><a href=https://wiki.archlinux.org/index.php/ArchWiki:Statistics>Statistics</a><li id=n-Requests><a href=https://wiki.archlinux.org/index.php/ArchWiki_talk:Requests>Requests</a></li> </ul>
+ </div>
+ </div>
+ <div class=portal role=navigation id=p-tb aria-labelledby=p-tb-label>
+ <h3 id=p-tb-label>Tools</h3>
+ <div class=body>
+ <ul>
+ <li id=t-whatlinkshere><a href=https://wiki.archlinux.org/index.php/Special:WhatLinksHere/Backlight title="A list of all wiki pages that link here [Alt+Shift+j]" accesskey=j>What links here</a><li id=t-recentchangeslinked><a href=https://wiki.archlinux.org/index.php/Special:RecentChangesLinked/Backlight rel=nofollow title="Recent changes in pages linked from this page [Alt+Shift+k]" accesskey=k>Related changes</a><li id=t-specialpages><a href=https://wiki.archlinux.org/index.php/Special:SpecialPages title="A list of all special pages [Alt+Shift+q]" accesskey=q>Special pages</a><li id=t-print><a href="https://wiki.archlinux.org/index.php?title=Backlight&amp;printable=yes" rel=alternate title="Printable version of this page [Alt+Shift+p]" accesskey=p>Printable version</a><li id=t-permalink><a href="https://wiki.archlinux.org/index.php?title=Backlight&amp;oldid=642130" title="Permanent link to this revision of the page">Permanent link</a><li id=t-info><a href="https://wiki.archlinux.org/index.php?title=Backlight&amp;action=info" title="More information about this page">Page information</a></li> </ul>
+ </div>
+ </div>
+ <div class=portal role=navigation id=p-lang aria-labelledby=p-lang-label>
+ <h3 id=p-lang-label>In other languages</h3>
+ <div class=body>
+ <ul>
+ <li class="interlanguage-link interwiki-ja"><a href=https://wiki.archlinux.jp/index.php/%E3%83%90%E3%83%83%E3%82%AF%E3%83%A9%E3%82%A4%E3%83%88 title="バックライト – 日本語" hreflang=ja class=interlanguage-link-target lang=ja>日本語</a><li class="interlanguage-link interwiki-ru"><a href=https://wiki.archlinux.org/index.php/Backlight_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) title="Backlight – русский" hreflang=ru class=interlanguage-link-target lang=ru>Русский</a></li> </ul>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div id=footer role=contentinfo>
+ <ul id=footer-info>
+ <li id=footer-info-lastmod> This page was last edited on 22 November 2020, at 21:02.</li>
+ <li id=footer-info-copyright>Content is available under <a class=external rel=nofollow href=http://www.gnu.org/copyleft/fdl.html>GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+ </ul>
+ <ul id=footer-places>
+ <li id=footer-places-privacy><a href=https://wiki.archlinux.org/index.php/ArchWiki:Privacy_policy title="ArchWiki:Privacy policy">Privacy policy</a></li>
+ <li id=footer-places-about><a href=https://wiki.archlinux.org/index.php/ArchWiki:About title=ArchWiki:About>About ArchWiki</a></li>
+ <li id=footer-places-disclaimer><a href=https://wiki.archlinux.org/index.php/ArchWiki:General_disclaimer title="ArchWiki:General disclaimer">Disclaimers</a></li>
+ </ul>
+ <ul id=footer-icons class="noprint sf-hidden">
+ 
+ </ul>
+ <div style=clear:both></div>
+ </div>
+ 
+<div style=display:none;font-size:14.3px class=suggestions></div>

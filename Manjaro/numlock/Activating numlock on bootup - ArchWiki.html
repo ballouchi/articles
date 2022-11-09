@@ -1,0 +1,301 @@
+<!DOCTYPE html> <html class=client-js dir=ltr lang=en><!--
+ Page saved with SingleFile 
+ url: https://wiki.archlinux.org/index.php/Activating_numlock_on_bootup 
+ saved date: Mon Nov 23 2020 18:53:30 GMT+0100 (Central European Standard Time)
+--><meta charset=utf-8>
+<title>Activating numlock on bootup - ArchWiki</title>
+<style>@media screen{.mw-content-ltr{direction:ltr}.sitedir-ltr input{direction:ltr}input[type='submit']{direction:ltr}@supports (text-decoration:underline dotted){abbr[title],.explain[title]{border-bottom:0;text-decoration:underline dotted}}#catlinks{text-align:left}.catlinks ul{display:inline;margin:0;padding:0;list-style:none none}.catlinks li{display:inline-block;line-height:1.25em;border-left:1px solid #a2a9b1;margin:0.125em 0;padding:0 0.5em}.catlinks li:first-child{padding-left:0.25em;border-left:0}.plainlinks a.external{background:none!important;padding:0!important}.visualClear{clear:both}.mw-content-ltr ul{padding:0}h1:lang(anp),h1:lang(as),h1:lang(bh),h1:lang(bho),h1:lang(bn),h1:lang(gu),h1:lang(hi),h1:lang(kn),h1:lang(ks),h1:lang(ml),h1:lang(mr),h1:lang(my),h1:lang(mai),h1:lang(ne),h1:lang(new),h1:lang(or),h1:lang(pa),h1:lang(pi),h1:lang(sa),h1:lang(ta),h1:lang(te){line-height:1.6em!important}h2:lang(anp),h3:lang(anp),h4:lang(anp),h5:lang(anp),h6:lang(anp),h2:lang(as),h3:lang(as),h4:lang(as),h5:lang(as),h6:lang(as),h2:lang(bho),h3:lang(bho),h4:lang(bho),h5:lang(bho),h6:lang(bho),h2:lang(bh),h3:lang(bh),h4:lang(bh),h5:lang(bh),h6:lang(bh),h2:lang(bn),h3:lang(bn),h4:lang(bn),h5:lang(bn),h6:lang(bn),h2:lang(gu),h3:lang(gu),h4:lang(gu),h5:lang(gu),h6:lang(gu),h2:lang(hi),h3:lang(hi),h4:lang(hi),h5:lang(hi),h6:lang(hi),h2:lang(kn),h3:lang(kn),h4:lang(kn),h5:lang(kn),h6:lang(kn),h2:lang(ks),h3:lang(ks),h4:lang(ks),h5:lang(ks),h6:lang(ks),h2:lang(ml),h3:lang(ml),h4:lang(ml),h5:lang(ml),h6:lang(ml),h2:lang(mr),h3:lang(mr),h4:lang(mr),h5:lang(mr),h6:lang(mr),h2:lang(my),h3:lang(my),h4:lang(my),h5:lang(my),h6:lang(my),h2:lang(mai),h3:lang(mai),h4:lang(mai),h5:lang(mai),h6:lang(mai),h2:lang(ne),h3:lang(ne),h4:lang(ne),h5:lang(ne),h6:lang(ne),h2:lang(new),h3:lang(new),h4:lang(new),h5:lang(new),h6:lang(new),h2:lang(or),h3:lang(or),h4:lang(or),h5:lang(or),h6:lang(or),h2:lang(pa),h3:lang(pa),h4:lang(pa),h5:lang(pa),h6:lang(pa),h2:lang(pi),h3:lang(pi),h4:lang(pi),h5:lang(pi),h6:lang(pi),h2:lang(sa),h3:lang(sa),h4:lang(sa),h5:lang(sa),h6:lang(sa),h2:lang(ta),h3:lang(ta),h4:lang(ta),h5:lang(ta),h6:lang(ta),h2:lang(te),h3:lang(te),h4:lang(te),h5:lang(te),h6:lang(te){line-height:1.2em}.toc ul{margin:0.3em 0}.mw-content-ltr .toc ul{text-align:left}.mw-content-ltr .toc ul ul{margin:0 0 0 2em}.toc .toctitle{direction:ltr}sup{line-height:1}}@media screen{a{text-decoration:none;color:#0645ad;background:none}a:not([href]){cursor:pointer}a:visited{color:#0b0080}a:active{color:#faa700}a:hover,a:focus{text-decoration:underline}a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}.mw-parser-output a.external{color:#36b}.mw-parser-output a.external:visited{color:#636}.mw-parser-output a.external:active{color:#b63}h1,h2,h3{color:#000;background:none;font-weight:normal;margin:0;overflow:hidden;padding-top:0.5em;padding-bottom:0.17em;border-bottom:1px solid #a2a9b1}h1{font-size:188%}h2{font-size:150%}h3{border-bottom:0;font-weight:bold}h3{font-size:128%}h2{margin-bottom:0.6em}h3{margin-bottom:0.3em}p{margin:0.4em 0 0.5em 0}ul{margin:0.3em 0 0 1.6em;padding:0}li{margin-bottom:0.1em}pre,code{font-family:monospace,monospace}code{color:#000;background-color:#f8f9fa;border:1px solid #eaecf0;border-radius:2px;padding:1px 4px}pre{color:#000;background-color:#f8f9fa;border:1px solid #eaecf0;padding:1em;white-space:pre-wrap}form{border:0;margin:0}.toc{border:1px solid #a2a9b1;background-color:#f8f9fa;font-size:95%}.toc{display:table;padding:7px}.toc h2{display:inline;border:0;padding:0;font-size:100%;font-weight:bold}.toc .toctitle{text-align:center}.toc ul{list-style-type:none;list-style-image:none;margin-left:0;padding:0;text-align:left}.toc ul ul{margin:0 0 0 2em}.tocnumber,.toctext{display:table-cell;text-decoration:inherit}.tocnumber{color:#222}.mw-content-ltr .tocnumber{padding-left:0;padding-right:0.5em}.catlinks{border:1px solid #a2a9b1;background-color:#f8f9fa;padding:5px;margin-top:1em;clear:both}.firstHeading{margin-bottom:0.1em;line-height:1.2em;padding-bottom:0}#contentSub{font-size:84%;line-height:1.2em;margin:0 0 1.4em 1em;color:#54595d;width:auto}}.toctogglecheckbox:checked~ul{display:none}@media screen{:not(:checked)>.toctogglecheckbox{display:inline!important;position:absolute;opacity:0;z-index:-1}.toctogglespan{font-size:94%}:not(:checked)>.toctogglespan:before{content:' ['}:not(:checked)>.toctogglespan:after{content:']'}.toctogglelabel{cursor:pointer;color:#0645ad}.toctogglelabel:hover{text-decoration:underline}.toctogglecheckbox:focus+.toctitle .toctogglelabel{text-decoration:underline;outline:dotted 1px;outline:auto -webkit-focus-ring-color}.toctogglecheckbox:checked+.toctitle .toctogglelabel:after{content:'show'}.toctogglecheckbox:not(:checked)+.toctitle .toctogglelabel:after{content:'hide'}}@media screen{html{font-size:100%}html,body{height:100%;margin:0;padding:0;font-family:sans-serif}body{background-color:#f6f6f6}.mw-body{background-color:#ffffff;color:#222222;padding:1em;direction:ltr}.mw-body{margin-left:10em}.mw-body{border:1px solid #a7d7f9;border-right-width:0;margin-top:-1px}.mw-body h1,.mw-body-content h2{margin-bottom:0.25em;padding:0;font-family:'Linux Libertine','Georgia','Times',serif;line-height:1.3}.mw-body h1:lang(ja),.mw-body-content h1:lang(ja),.mw-body-content h2:lang(ja),.mw-body h1:lang(he),.mw-body-content h1:lang(he),.mw-body-content h2:lang(he),.mw-body h1:lang(ko),.mw-body-content h1:lang(ko),.mw-body-content h2:lang(ko){font-family:sans-serif}.mw-body h1:lang(my),.mw-body-content h1:lang(my),.mw-body-content h2:lang(my){line-height:normal}.mw-body h1{font-size:1.8em}.mw-body .firstHeading{overflow:visible}.mw-body .mw-indicators{float:right;font-size:0.875em;line-height:1.6;position:relative;z-index:1}.mw-body-content{position:relative;font-size:0.875em;line-height:1.6;z-index:0}.mw-body-content p{margin:0.5em 0}.mw-body-content h2{margin-top:1em;font-size:1.5em}.mw-body-content h3{margin-top:0.3em;margin-bottom:0;padding-bottom:0;line-height:1.6}.mw-body-content h3{font-size:1.2em}.mw-body-content h3{font-weight:bold}.mw-body-content .toc h2{font-family:sans-serif;font-size:100%}ul{list-style-image:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%225%22 height=%2213%22%3E %3Ccircle cx=%222.5%22 cy=%229%22 r=%222.5%22 fill=%22%23222%22/%3E %3C/svg%3E")}pre{line-height:1.3}#p-personal{position:absolute;top:0.33em;right:0.75em;z-index:100}#p-personal ul{list-style:none none;margin:0;padding-left:10em}#p-personal li{float:left;margin-left:0.75em;padding-top:0.5em;font-size:0.75em;line-height:1.16666667;white-space:nowrap}#p-search{float:left;margin-right:0.5em;margin-left:0.5em}#p-search h3{display:block;position:absolute!important;clip:rect(1px,1px,1px,1px);width:1px;height:1px;margin:-1px;border:0;padding:0;overflow:hidden}#p-search form{margin:0.5em 0 0}#simpleSearch{display:block;width:20vw;min-width:5em;max-width:20em;height:100%;margin-top:0;position:relative;min-height:1px}#simpleSearch input{background-color:rgba(0,0,0,0);color:#000000;margin:0}#searchInput{width:100%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;border:1px solid #a2a9b1;border-radius:2px;padding:0.4em 1.84615385em 0.4em 0.4em;-webkit-box-shadow:inset 0 0 0 1px transparent;box-shadow:inset 0 0 0 1px transparent;font-size:0.8125em;direction:ltr;-webkit-transition:border-color 250ms,box-shadow 250ms;-moz-transition:border-color 250ms,box-shadow 250ms;transition:border-color 250ms,box-shadow 250ms;-webkit-appearance:textfield}#simpleSearch:hover #searchInput{border-color:#72777d}#searchInput:focus,#simpleSearch:hover #searchInput:focus{outline:0;border-color:#3366cc;-webkit-box-shadow:inset 0 0 0 1px #3366cc,inset 0 0 0 2px #ffffff;box-shadow:inset 0 0 0 1px #3366cc,inset 0 0 0 2px #ffffff}#searchInput::-webkit-input-placeholder{color:#72777d;opacity:1}#searchInput::-moz-placeholder{color:#72777d;opacity:1}#searchInput:-moz-placeholder{color:#72777d;opacity:1}#searchInput::placeholder{color:#72777d;opacity:1}#searchInput::-webkit-search-decoration,#searchInput::-webkit-search-cancel-button,#searchInput::-webkit-search-results-button,#searchInput::-webkit-search-results-decoration{-webkit-appearance:textfield}#searchButton{position:absolute;top:1px;bottom:1px;right:1px;min-width:24px;width:1.84615385em;border:0;padding:0;cursor:pointer;font-size:0.8125em;direction:ltr;text-indent:-99999px;white-space:nowrap;overflow:hidden;z-index:1}#searchButton{background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2213%22%3E %3Cg fill=%22none%22 stroke=%22%2354595d%22 stroke-width=%222%22%3E %3Cpath d=%22M11.29 11.71l-4-4%22/%3E %3Ccircle cx=%225%22 cy=%225%22 r=%224%22/%3E %3C/g%3E %3C/svg%3E");background-position:center center;background-repeat:no-repeat}.vectorTabs{background-position:left bottom;float:left;height:2.5em;padding-left:1px}.vectorTabs ul{float:left;height:100%;list-style:none none;margin:0;padding:0}.vectorTabs li{background-image:linear-gradient(to top,#77c1f6 0,#e8f2f8 1px,#ffffff 100%);background-position:left bottom;background-repeat:repeat-x;float:left;display:block;height:100%;margin:0;padding:0;line-height:1.125em;white-space:nowrap}.vectorTabs li a{color:#0645ad;height:1.9em;padding-left:0.615em;padding-right:0.615em;cursor:pointer;font-size:0.8125em}.vectorTabs .selected{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAABkAQAAAABvV2fNAAAADElEQVR4AWNoGB4QAInlMgFKeRKBAAAAAElFTkSuQmCC);background:#ffffff}.vectorTabs .selected a,.vectorTabs .selected a:visited{color:#222222;text-decoration:none}.vectorTabs span{background-position:right bottom;display:inline-block;height:100%}.vectorTabs span a{float:left;display:block;position:relative;padding-top:1.25em}.vectorTabs,.vectorTabs span{background-image:linear-gradient(to bottom,rgba(167,215,249,0) 0,#a7d7f9 100%);background-repeat:no-repeat;background-size:1px 100%}@-webkit-keyframes rotate{from{-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(360deg);-moz-transform:rotate(360deg);transform:rotate(360deg)}}@-moz-keyframes rotate{from{-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(360deg);-moz-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes rotate{from{-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(360deg);-moz-transform:rotate(360deg);transform:rotate(360deg)}}#mw-navigation h2{position:absolute;top:-9999px}.mw-jump-link:not(:focus){display:block;position:absolute!important;clip:rect(1px,1px,1px,1px);width:1px;height:1px;margin:-1px;border:0;padding:0;overflow:hidden}#mw-page-base{height:5em;background-position:bottom left;background-color:#fbfbfb;background-image:-webkit-gradient(linear,right top,right bottom,color-stop(50%,#ffffff),color-stop(100%,#f6f6f6));background-image:-webkit-linear-gradient(top,#ffffff 50%,#f6f6f6 100%);background-image:-moz-linear-gradient(top,#ffffff 50%,#f6f6f6 100%);background-image:linear-gradient(to bottom,#ffffff 50%,#f6f6f6 100%)}#mw-head-base{margin-top:-5em;margin-left:10em;height:5em}#mw-head{position:absolute;top:0;right:0;width:100%}#left-navigation{float:left;margin-left:10em;margin-top:2.5em;margin-bottom:-2.5em}#right-navigation{float:right;margin-top:2.5em}#mw-panel{position:absolute;top:0;width:10em;left:0;font-size:inherit}#mw-panel .portal{margin:0 0.6em 0 0.7em;padding:0.25em 0;direction:ltr}#mw-panel .portal h3{color:#444444;font-weight:normal;margin:0.5em 0 0 0.66666667em;padding:0.25em 0;cursor:default;border:0;font-size:0.75em}#mw-panel .portal .body{margin-left:0.5em;padding-top:0;background-image:linear-gradient(to right,transparent 0,#c8ccd1 35%,#c8ccd1 70%,transparent 100%);background-repeat:no-repeat;background-size:100% 1px}#mw-panel .portal .body ul{list-style:none none;margin:0;padding-top:0.3em}#mw-panel .portal .body li{margin:0;padding:0.25em 0;font-size:0.75em;line-height:1.125em;word-wrap:break-word}#mw-panel .portal .body li a{color:#0645ad}#mw-panel .portal .body li a:visited{color:#0b0080}#mw-panel #p-logo+.portal{background-image:none;margin-top:1em}#mw-panel #p-logo+.portal .body{background-image:none;margin-left:0.5em}#footer{margin-left:10em;margin-top:0;padding:0.75em;direction:ltr}#footer ul{list-style:none none;margin:0;padding:0}#footer li{color:#222222;margin:0;padding:0.5em 0;font-size:0.7em}#footer-info li{line-height:1.4}#footer-places li{float:left;margin-right:1em;line-height:2}.mw-parser-output .external{background-position:center right;background-repeat:no-repeat;background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22%3E %3Cpath fill=%22%23fff%22 stroke=%22%2336c%22 d=%22M1.5 4.518h5.982V10.5H1.5z%22/%3E %3Cpath fill=%22%2336c%22 d=%22M5.765 1H11v5.39L9.427 7.937l-1.31-1.31L5.393 9.35l-2.69-2.688 2.81-2.808L4.2 2.544z%22/%3E %3Cpath fill=%22%23fff%22 d=%22M9.995 2.004l.022 4.885L8.2 5.07 5.32 7.95 4.09 6.723l2.882-2.88-1.85-1.852z%22/%3E %3C/svg%3E");padding-right:13px}}@media screen and (min-width:982px){.mw-body,#mw-head-base,#left-navigation,#footer{margin-left:11em}.mw-body{padding:1.25em 1.5em 1.5em 1.5em}#footer{padding:1.25em}#mw-panel{padding-left:0.5em}#p-search{margin-right:1em}#p-personal{right:1em}}@media screen and (max-width:720px){#mw-head{position:static!important;margin-top:0.5em}#mw-navigation #mw-panel{display:table;position:static;table-layout:fixed;width:100%;overflow:hidden;font-size:150%}#mw-navigation #mw-panel .portal{display:block;width:100%}#mw-navigation #mw-panel ul li{list-style:none}body #footer{margin-left:0;padding-top:0}body #footer #footer-info-lastmod{display:none}#p-personal{display:table;position:relative;width:100%;top:inherit;left:inherit;right:inherit}#p-personal ul{padding-left:0}#right-navigation{position:absolute;top:inherit;right:0;margin-top:0;float:none}#left-navigation{position:absolute;top:inherit;margin:0;display:block;float:none}#p-namespaces,#p-views{position:relative;top:2.5em}#p-namespaces{padding-left:0}#p-search{float:none;position:absolute;right:0;width:100vw;margin:0}#simpleSearch{margin:0 3em;width:80vw;padding:0}.mw-body{border-left:0;margin-left:0}}#archnavbar{height:40px!important;padding:10px 15px!important;background:#333!important;border-bottom:5px #08c solid!important}#archnavbarlogo{float:left!important;margin:0!important;padding:0!important;height:40px!important;width:190px!important}html>body #archnavbarlogo{background:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEiIHdpZHRoPSI2MDAiIGhlaWdodD0iMTI2Ij48cGF0aCBkPSJNMTU5LjU2OCAzNC40MjdjLTguODktLjAxNC0xNi4yNjcgMS44MDktMTkuMTIgMi44MDNsLTIuOTM3IDE1Ljg1N2MtLjAwNy4wNTggMTQuNjE3LTMuOSAyMS4wNTktMy42NjcgMTAuNjY1LjM4MyAxMS42NDYgNC4wNzYgMTEuNDYgOS4wNi4xODIuMjkyLTIuNzUyLTQuNTAzLTExLjk3OS00LjY2NC0xMS42NC0uMi0yOC4wNjkgNC4xMjItMjguMDQ2IDIxLjY5Mi0uMzE0IDE5Ljc2NSAxNC43NjQgMjUuNTc5IDI1LjAzMiAyNS42ODYgOS4yMzItLjE2OCAxMy41NjMtMy40OTYgMTUuOTM0LTUuMjggMy4xMTUtMy4yNTcgNi42NzktNi41MzIgMTAuMDc4LTEwLjQ2Mi0zLjIxNiA1Ljg0NC02LjAwNSA5Ljg4NC04LjkwNyAxMi45Nzd2Mi42MTFsMTQuMDMzLTIuMzYxLjA5Ni0zOC4xNDRjLS4xNDMtNS4zOTkgMy4wOTYtMjYuMDU3LTI2LjcwMy0yNi4xMDh6bS0yLjAxNiAzMy4yMWM1LjgxNy4wOCAxMi40ODggMi45NDggMTIuNDk3IDkuODQ5LjAzIDYuMjc3LTcuODYzIDkuNjUxLTEyLjk5NiA5LjU5OC01LjEzNS0uMDUzLTExLjk0OS00LjAzNi0xMS45NzktMTAuMTU1LjA5OS01LjQ3IDYuNDI2LTkuNDMyIDEyLjQ3OC05LjI5MXptMzcuOTcyLTI5LjY4NWwtLjA5NSA2My4xNjYgMTYuMzQ4LTMuMTUuMDI3LTM1LjgxNGMuMDA0LTUuMzMzIDcuNjItMTEuNTY0IDE3LjE3OC0xMS40NjQgMi4wMjgtMy42NyA1Ljg0LTEzLjA1IDYuNzctMTUuMTgzLTIxLjM1MS0uMDUxLTIxLjYyMyA2LjEzNy0yNS4zMzYgOS4xOC0uMDQtNS44MDYtLjAxMy05LjI5Mi0uMDEzLTkuMjkybC0xNC44NzkgMi41NTd6bTkyLjAwMiA4LjI5MmMtLjE1OC0uMDc0LTguNTI2LTkuNzg4LTI1LjM1LTkuODY0LTE1Ljc1OC0uMjYyLTMzLjQzMyA1Ljg0Ny0zMy43MTYgMzIuMjcuMTM4IDIzLjIzMiAxNi45NzkgMzIuMzExIDMzLjgwNSAzMi40ODggMTguMDA3LjE4NyAyNS4xNzItMTEuMjYgMjUuNjAyLTExLjU0My0yLjE0OS0xLjg2My0xMC4xOTYtOS44MzctMTAuMTk2LTkuODM3cy01LjAyNyA3LjE1Ny0xNC43NzkgNy4yNDhjLTkuNzU1LjA5My0xOC4yMzQtNy41NC0xOC4zNTQtMTguMTg5LS4xMjUtMTAuNjUgNy43OTUtMTYuNDE5IDE4LjQyNy0xNi44ODUgOS4yMDUtLjAwMiAxNC41MTYgNS45NDMgMTQuNTE2IDUuOTQzem0yMC42MDYtMzAuMzk5bC0xNS40MzQgMy42MjguMTE1IDgyLjI3NyAxNS4yMDQtMi43NDUuMTcyLTM4LjcyYy4wMzMtNC4wNiA1Ljg3NC0xMC4yOTUgMTUuNjI2LTEwLjA5NyA5LjMyNS4wOTcgMTEuNDEgNi4yMTUgMTEuMzg0IDYuOTg4bC4yNjkgNDQuODI0IDE0Ljk5My0yLjY1LjA1Ny00Ny41M2MuMDk5LTQuNTc0LTEwLjAxOC0xNC4yMzMtMjYuMjgtMTQuMzAyLTcuNzI5LjAxMi0xMi4wMDkgMS43NjItMTQuMTg3IDMuMDUyLTMuNzI2IDIuODc5LTcuOTg1IDUuNjM3LTEyLjE3IDkuMTU3IDMuODY5LTQuOTcgNy4xMTctOC40MDcgMTAuMjktMTAuOTYxbC0uMDQtMjIuOTIxeiIgZmlsbD0iI2ZmZiIgZmlsbC1ydWxlPSJldmVub2RkIi8+PHBhdGggZD0iTTM2MC4xMzYgMTcuMjE4bDYuOTYyLTEuNzQyLjMzIDgyLjk1LTcuMDc0IDEuMjA0em0xOC45MjggMjQuNzU3bDYuMTAxLTIuNzE2LjA1MiA1OS40NzgtNS44OTIgMS4yMTd6bS0xLjQ1LTIxLjQ0OGw0LjkyLTQuMDE1IDQuMDg2IDQuNTQ3LTQuOTIxIDQuMTIxem0xOS4wMjQgMjAuMzY1bDYuOTYyLTEuNDIxLjAzMyAxMi40MzRjLjAwMS41MzQgMy44MjMtMTMuODkgMjIuMjU4LTEzLjU3IDE3LjkuMSAyMC44MjcgMTMuOTU3IDIwLjczIDE3LjA2NGwuMjIxIDQzLjcyNS02LjEwMiAxLjMyNC0uMDM1LTQzLjE4OWMuMDctMS4yNjEtMi43OS0xMS45MjctMTUuNDM5LTExLjk2Ni0xMi42NDYtLjAzNy0yMS40MDkgOS4xODYtMjEuMzkzIDE1LjA3OGwuMSAzOC4wNDctNy4wNyAxLjg0N3ptMTEwLjk1NCA1OC41NDZsLTYuOTYyIDEuNDItLjAzMy0xMi40MzNjLS4wMDEtLjUzNC0zLjgyNSAxMy44OS0yMi4yNTggMTMuNTctMTcuOS0uMS0yMC44MjctMTMuOTU3LTIwLjczLTE3LjA2NGwtLjIyMS00My43MjUgNy4zOTctMS40OTQuMTE0IDQzLjE5Yy4wMDMgMS4xOCAxLjQxNiAxMi4wOTYgMTQuMDY1IDEyLjEzNSAxMi42NDYuMDM3IDIxLjUwNi03LjYxNiAyMS41NjktMTkuMTM5bC0uMDktMzQuMDc2IDYuODg1LTEuNzU3em0xMy42NDUtNTkuMDM3bC00Ljg4MiAzLjgyIDE4LjcxNyAyNC40OTQtMTkuOTYzIDI4LjMgNS4xNzkgMy44NDMgMTguNzY2LTI2LjI4IDE5LjM2OCAyNi45MDIgNC43OTEtMy44Mi0yMC43NTctMjguNzY1IDE2LjU2LTIzLjI2Mi01LjA5Mi00LjMwNS0xNS4wODUgMjEuNTI1ek02MS44OCAxLjc3OGMtNS4zODUgMTMuMjAzLTguNjMzIDIxLjgzOS0xNC42MjkgMzQuNjQ5IDMuNjc2IDMuODk2IDguMTg4IDguNDM0IDE1LjUxNiAxMy41NTktNy44NzgtMy4yNDItMTMuMjUyLTYuNDk3LTE3LjI2Ny05Ljg3NC03LjY3MyAxNi4wMTEtMTkuNjk1IDM4LjgxOC00NC4wOSA4Mi42NSAxOS4xNzQtMTEuMDY4IDM0LjAzNy0xNy44OTMgNDcuODg5LTIwLjQ5N2EzNS4xMDMgMzUuMTAzIDAgMCAxLS45MS04LjIxM2wuMDIzLS42MTRjLjMwNC0xMi4yODQgNi42OTQtMjEuNzMgMTQuMjY0LTIxLjA5IDcuNTcuNjQyIDEzLjQ1NCAxMS4xMjYgMTMuMTUgMjMuNDEtLjA1OCAyLjMxMi0uMzE5IDQuNTM2LS43NzQgNi41OTggMTMuNzAxIDIuNjggMjguNDA1IDkuNDg3IDQ3LjMyIDIwLjQwNy0zLjczLTYuODY2LTcuMDU5LTEzLjA1Ni0xMC4yMzgtMTguOTUtNS4wMDctMy44ODItMTAuMjMtOC45MzMtMjAuODg0LTE0LjQwMiA3LjMyMyAxLjkwMyAxMi41NjYgNC4wOTkgMTYuNjUzIDYuNTUyQzc1LjU4IDM1Ljc4NiA3Mi45NjMgMjcuNzkgNjEuODggMS43Nzh6IiBmaWxsPSIjMTc5M2QxIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48cGF0aCBkPSJNNTc2Ljc3MSA5My4yNjVWODAuNjAzaC00Ljczdi0xLjY5NWgxMS4zOHYxLjY5NWgtNC43NXYxMi42NjJoLTEuOW04LjYyOSAwVjc4LjkwOGgyLjg1OWwzLjM5OCAxMC4xNjZjLjMxNC45NDcuNTQyIDEuNjU1LjY4NiAyLjEyNS4xNjMtLjUyMi40MTgtMS4yOS43NjQtMi4zMDFsMy40MzctOS45OWgyLjU1NnYxNC4zNTdoLTEuODMxVjgxLjI1bC00LjE3MiAxMi4wMTZoLTEuNzE0bC00LjE1Mi0xMi4yMjJ2MTIuMjIyaC0xLjgzMiIgZm9udC13ZWlnaHQ9IjQwMCIgZm9udC1zaXplPSI4LjQ0MSIgZm9udC1mYW1pbHk9IkRlamFWdSBTYW5zIE1vbm8iIGZpbGw9ImdyYXkiLz48L3N2Zz4=) no-repeat!important;background-size:190px 40px!important}#archnavbarlogo p{margin:0!important;padding:0!important;text-indent:-9999px!important}#archnavbarlogo a{display:block!important;height:40px!important;width:190px!important}#archnavbar ul{display:inline!important;float:right!important;list-style:none!important;margin:0!important;padding:0!important}#archnavbar ul li{float:left!important;font-size:14px!important;font-family:sans-serif!important;line-height:45px!important;padding-right:15px!important;padding-left:15px!important}#archnavbar ul#archnavbarlist li a{color:#999;font-weight:bold!important;text-decoration:none!important}#archnavbar ul li a:hover{color:white!important;text-decoration:underline!important}#archnavbar ul li.anb-selected a{color:white!important}@media (max-width:600px){#anb-wiki{display:none}}@media (max-width:680px){html>body #archnavbarlogo{width:40px!important;margin-right:5px!important;background:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjEyMDAiIHZlcnNpb249IjEiPjxwYXRoIGQ9Ik02MDAgMGMtNTMuNDE2IDEzMC45NjItODUuNjcxIDIxNi43NC0xNDUuMTQzIDM0My44MSAzNi40NjQgMzguNjUxIDgxLjIyIDgzLjQ0OSAxNTMuOTA1IDEzNC4yODUtNzguMTQ1LTMyLjE1Ni0xMzEuNDAzLTY0LjIxMy0xNzEuMjM4LTk3LjcxNEMzNjEuNDEgNTM5LjIgMjQxLjk4OSA3NjUuMTk0IDAgMTIwMGMxOTAuMTYxLTEwOS43ODQgMzM3LjY2NS0xNzcuMzk3IDQ3NS4wNDgtMjAzLjIzOC01Ljg5NS0yNS4zNjctOS4xOC01Mi44OTYtOC45NTMtODEuNTI0bC4xOS01LjkwNUM0NjkuMzA1IDc4Ny40OCA1MzIuNzIgNjkzLjYzOCA2MDcuODEgNzAwYzc1LjA4OSA2LjM2MiAxMzMuNDk0IDExMC41MjggMTMwLjQ3NiAyMzIuMzgxLS41NjggMjIuOTE2LTMuMTA1IDQ0Ljg4NS03LjYyIDY1LjMzM0M4NjYuNTI4IDEwMjQuMzI1IDEwMTIuNDYyIDEwOTEuNzMgMTIwMCAxMjAwYy0zNi45OTUtNjguMTExLTcwLjE4LTEyOS4zMzUtMTAxLjcxNC0xODcuODEtNDkuNjcyLTM4LjQ5OS0xMDEuMzY1LTg4LjYxMy0yMDcuMDQ4LTE0Mi44NTcgNzIuNjQgMTguODc1IDEyNC43OTMgNDAuNjEyIDE2NS4zMzMgNjQuOTUzQzczNS45NTIgMzM3LjM0OCA3MDkuOTQ4IDI1OC4wMTYgNjAwIDB6IiBmaWxsPSIjMTc5M2QxIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=) no-repeat!important;background-size:40px 40px!important}#archnavbar ul{display:flex!important;justify-content:space-between;flex-wrap:nowrap;overflow:hidden;float:none!important}#archnavbar ul li{padding:0!important;float:none!important}}@media (max-width:830px){#anb-home{display:none}html>body #archnavbarlogo{padding-right:15px!important}#archnavbar{padding-left:5px!important;padding-right:5px!important}#archnavbar ul li{padding-left:5px!important;padding-right:5px!important}}body{background:#f6f9fc}#content{background:#ffffff;border:1px solid #cccccc}#content h1,#content h2,#content h3,#content pre,#content code{color:#222222}#content ul{list-style-image:none}#content pre{border:1px solid #bbccdd;overflow:auto;word-break:break-all;white-space:pre-wrap!important}#content pre,#content code{background-color:#ebf1f5;font-family:monospace}#content code{display:inline-block;padding:0 0.3em;border-width:0;border-radius:0}#footer{color:#333333}#toc{background-color:#f9faff;border:1px solid #d7dfe3}#bodyContent>div.mw-content-ltr a{font-weight:bold}#bodyContent #toc a{font-weight:normal}#content a:not(.new),#mw-navigation li:not(.new) a:not(.new),#mw-panel li:not(.new) a:not(.new),#column-one li:not(.new) a:not(.new),#footer a:not(.new){text-decoration:none;color:#0077bb!important}#content a:not(.new):hover,#mw-navigation li:not(.new) a:not(.new):hover,#mw-panel li:not(.new) a:not(.new):hover,#column-one li:not(.new) a:not(.new):hover,#footer a:not(.new):hover{text-decoration:underline;background-color:transparent;color:#999999!important}#content a:active,#mw-navigation li:not(.new) a:active,#mw-panel li:not(.new) a:active,#column-one li:not(.new) a:active,#footer a:active,#content a:focus,#mw-navigation li:not(.new) a:focus,#mw-panel li:not(.new) a:focus,#column-one li:not(.new) a:focus,#footer a:focus,#content a:active:hover,#mw-navigation li:not(.new) a:active:hover,#mw-panel li:not(.new) a:active:hover,#column-one li:not(.new) a:active:hover,#footer a:active:hover,#content a:focus:hover,#mw-navigation li:not(.new) a:focus:hover,#mw-panel li:not(.new) a:focus:hover,#column-one li:not(.new) a:focus:hover,#footer a:focus:hover{color:#ee9900!important}#content a:not(.new):visited,#mw-panel li:not(.new) a:not(.new):visited,#p-navigation li:not(.new) a:not(.new):visited,#p-tb li:not(.new) a:not(.new):visited{color:#666666!important}.mw-body-content a.external{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6+R8AAAAs0lEQVR4AWP4//8/yRiroHH6njrjtN1/sGGYJpwajdJ2bXNI2M8BE8PQhMXUv0B8yThtMxeGJgyBmf9ZDRO3iRqn775rmL5NCyQG0giyEacm0WWvVstNvnNXt+hYNogP0giyEeRUnJpkVj3mBGqcC8SvNGrOVIJsBDkV5EecmmBYZOnrbqmZD1+CnAqTA2nEq4lh/38W0aWv9gGxF4YcpiYEFlz1jh+kGa8m3BhTE1GYYk0A08+9f1lXOBcAAAAASUVORK5CYII=) center right no-repeat;padding-right:13px}.mw-body h1,.mw-body-content h2{font-family:sans-serif}div#mw-head{top:65px}div#mw-panel{top:65px}#mw-page-base{background:none}div.vectorTabs{margin-top:-2px}div.vectorTabs{padding-left:0}div.vectorTabs ul,div.vectorTabs ul li{background:none}div.vectorTabs ul li{border:1px}div.vectorTabs li.selected{border:1px solid #cccccc;border-bottom-color:#ffffff;background-color:#ffffff}div.vectorTabs li.selected span{background:none}div.vectorTabs li:not(:first-child).selected{margin-left:-2px}@media screen and (max-width:720px){div#p-personal{top:unset}div#mw-panel{padding-top:0}}.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:0;z-index:1099;padding:0;margin:-1px 0 0 0}</style><meta name=ResourceLoaderDynamicStyles content>
+<style>span.archwiki-template-pkg{font-family:monospace}div.archwiki-template-box{padding:5px;border:thin solid black;margin:0.5em 0;overflow:hidden}div.archwiki-template-box.archwiki-template-box-note{background-color:#ddf;border-color:#bbd}div.archwiki-template-box.archwiki-template-box-tip{background-color:#dfd;border-color:#bdb}</style>
+<meta name=generator content="MediaWiki 1.34.1">
+<meta name=viewport content="width=device-width, initial-scale=1">
+<link rel=search type=application/opensearchdescription+xml href=https://wiki.archlinux.org/opensearch_desc.php title="ArchWiki (en)">
+<link rel=EditURI type=application/rsd+xml href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel=license href=http://www.gnu.org/copyleft/fdl.html>
+<link rel=alternate type=application/atom+xml title="ArchWiki Atom feed" href="https://wiki.archlinux.org/index.php?title=Special:RecentChanges&amp;feed=atom">
+<link rel=canonical href=https://wiki.archlinux.org/index.php/Activating_numlock_on_bootup>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+<link rel="shortcut icon" href=data:image/vnd.microsoft.icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABvElEQVQ4jY2TP4gTQRTGfzM7ybp35mBX8LY4GxM5OI4UiqDWtoKIjWhl4QmmEQwIhzZaa3GLlYWgjViI+AcUrrASUYTbQ0UxepwpFj1EDCSXuLNj4QYSLxP8mnm8972P3wyMMMZgUxjF+ycLUjUW5l/YPMq6/VfnHCEmAGuAsBHsurG6QwiaRUeq2cCdfXy88nmUT9qSJ4tywVNyGxjVSbPzNp81wFNyt6cknpJ00uzk2Wfr/n8HHLrz4ajriFeuEsuekvS08Zu/eoujvFveYN+t98XAUw1jmEmN+ZEZfG2M8BzZKhVl+f6x8vexBIGn6hMFOeMqgTEEXZ2J39qwqbNSR5tLYwnmbr6b2hO4axvt1P/a6tHTw3SuI1pTrlNZPT33bSTBps7qb5K23/jZ7S8/AO72511tShud9MJIgjCKdwINYHs+e5TUqkfy2W3gVN5vA+WkVk3+Jbg8sAzwcKB+mp8G+ALUh64QRnEZOMOwPg3Ub/vEgAvcGwoArgKFvF4DrgEfBwKawHVgHagAy2EUnwAQ00sre4HXwBPgSlKrvmSMwig+CCwCh4F5Mb20chF4ntSq1h83JujAH3Eom+H9uAq8AAAAAElFTkSuQmCC><style>.sf-hidden{display:none!important}</style></head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Activating_numlock_on_bootup rootpage-Activating_numlock_on_bootup skin-vector action-view"><div id=archnavbar class=noprint>
+ <div id=archnavbarlogo>
+ <p><a id=logo href=https://www.archlinux.org/></a></p>
+ </div>
+ <div id=archnavbarmenu>
+ <ul id=archnavbarlist>
+ <li id=anb-home><a href=https://www.archlinux.org/>Home</a></li> <li id=anb-packages><a href=https://www.archlinux.org/packages/>Packages</a></li> <li id=anb-forums><a href=https://bbs.archlinux.org/>Forums</a></li> <li id=anb-wiki class=anb-selected><a href=https://wiki.archlinux.org/>Wiki</a></li> <li id=anb-bugs><a href=https://bugs.archlinux.org/>Bugs</a></li> <li id=anb-security><a href=https://security.archlinux.org/>Security</a></li> <li id=anb-aur><a href=https://aur.archlinux.org/>AUR</a></li> <li id=anb-download><a href=https://www.archlinux.org/download/>Download</a></li> </ul>
+ </div>
+</div>
+<div id=mw-page-base class=noprint></div>
+<div id=mw-head-base class=noprint></div>
+<div id=content class=mw-body role=main>
+ <a id=top></a>
+ 
+ <div class="mw-indicators mw-body-content">
+</div>
+ <h1 id=firstHeading class=firstHeading lang=en>Activating numlock on bootup</h1>
+ 
+ <div id=bodyContent class=mw-body-content>
+ <div id=siteSub class="noprint sf-hidden">From ArchWiki</div>
+ <div id=contentSub><span class=mw-redirectedfrom>(Redirected from <a href="https://wiki.archlinux.org/index.php?title=Activating_Numlock_on_Bootup&amp;redirect=no" class=mw-redirect title="Activating Numlock on Bootup">Activating Numlock on Bootup</a>)</span></div>
+ 
+ 
+ 
+ <div id=jump-to-nav></div>
+ <a class=mw-jump-link href=#mw-head>Jump to navigation</a>
+ <a class=mw-jump-link href=#p-search>Jump to search</a>
+ <div id=mw-content-text dir=ltr class=mw-content-ltr lang=en><div class=mw-parser-output><div id=toc class=toc><input type=checkbox role=button id=toctogglecheckbox class=toctogglecheckbox style=display:none><div class=toctitle dir=ltr lang=en><h2>Contents</h2><span class=toctogglespan><label class=toctogglelabel for=toctogglecheckbox></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href=#Console><span class=tocnumber>1</span> <span class=toctext>Console</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href=#Using_a_separate_service><span class=tocnumber>1.1</span> <span class=toctext>Using a separate service</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href=#Extending_getty@.service><span class=tocnumber>1.2</span> <span class=toctext>Extending getty@.service</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href=#Bash_alternative><span class=tocnumber>1.3</span> <span class=toctext>Bash alternative</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href=#X.org><span class=tocnumber>2</span> <span class=toctext>X.org</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href=#startx><span class=tocnumber>2.1</span> <span class=toctext>startx</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href=#MATE><span class=tocnumber>2.2</span> <span class=toctext>MATE</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href=#KDE_Plasma><span class=tocnumber>2.3</span> <span class=toctext>KDE Plasma</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href=#GDM><span class=tocnumber>2.4</span> <span class=toctext>GDM</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href=#GNOME><span class=tocnumber>2.5</span> <span class=toctext>GNOME</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href=#Xfce><span class=tocnumber>2.6</span> <span class=toctext>Xfce</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href=#SDDM><span class=tocnumber>2.7</span> <span class=toctext>SDDM</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href=#SLiM><span class=tocnumber>2.8</span> <span class=toctext>SLiM</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href=#OpenBox><span class=tocnumber>2.9</span> <span class=toctext>OpenBox</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href=#LightDM><span class=tocnumber>2.10</span> <span class=toctext>LightDM</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href=#LXDM><span class=tocnumber>2.11</span> <span class=toctext>LXDM</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href=#LXQt><span class=tocnumber>2.12</span> <span class=toctext>LXQt</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h2><span class=mw-headline id=Console>Console</span></h2>
+<h3><span class=mw-headline id=Using_a_separate_service>Using a separate service</span></h3>
+<div class="archwiki-template-box archwiki-template-box-tip"><strong>Tip:</strong> These steps can be automated by <a href=https://wiki.archlinux.org/index.php/Install class=mw-redirect title=Install>installing</a> the <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href=https://aur.archlinux.org/packages/systemd-numlockontty/>systemd-numlockontty</a></span><sup><small>AUR</small></sup> package and <a href=https://wiki.archlinux.org/index.php/Enabling class=mw-redirect title=Enabling>enabling</a> the <code>numLockOnTty</code> service.</div>
+<p>First create a script to set the numlock on relevant TTYs:
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>/usr/local/bin/numlock</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>#!/bin/bash
+
+for tty in /dev/tty{1..6}
+do
+    /usr/bin/setleds -D +num &lt; "$tty";
+done
+</pre>
+<p>Once the script is created, you will need to make it <a href=https://wiki.archlinux.org/index.php/Executable class=mw-redirect title=Executable>executable</a>. Otherwise the script cannot run.
+<p>Then create and <a href=https://wiki.archlinux.org/index.php/Enable class=mw-redirect title=Enable>enable</a> a systemd service:
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>/etc/systemd/system/numlock.service</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>[Unit]
+Description=numlock
+
+[Service]
+ExecStart=/usr/local/bin/numlock
+StandardInput=tty
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target</pre>
+<h3><span id=Extending_getty.40.service></span><span class=mw-headline id=Extending_getty@.service>Extending getty@.service</span></h3>
+<p>This is simpler than using a separate service and does not hardcode the number of VTs in a script. Create a <a href=https://wiki.archlinux.org/index.php/Drop-in_snippet class=mw-redirect title="Drop-in snippet">drop-in snippet</a> for <code>getty@.service</code> which are applied on top of the original unit:
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>/etc/systemd/system/getty@.service.d/activate-numlock.conf</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>[Service]
+ExecStartPre=/bin/sh -c 'setleds -D +num &lt; /dev/%I'</pre>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> If you experience any problems, try replacing <code>ExecStartPre</code> with <code>ExecStartPost</code>, and/or disabling the hint as described below.</div>
+<p>To disable the numlock activation hint displaying on the login screen, <a href=https://wiki.archlinux.org/index.php/Edit class=mw-redirect title=Edit>edit</a> <code>getty@tty1.service</code> and add <code>--nohints</code> to <i>agetty</i> options:
+</p>
+<pre>[Service]
+ExecStart=
+ExecStart=-/sbin/agetty '-p -- \\u' --nohints --noclear %I $TERM
+</pre>
+<h3><span class=mw-headline id=Bash_alternative>Bash alternative</span></h3>
+<p>Add <code>setleds -D +num</code> to <code>~/.bash_profile</code>. Note that, unlike the other methods, this will not take effect until after you log in.
+</p>
+<h2><span class=mw-headline id=X.org>X.org</span></h2>
+<p>Various methods are available.
+</p>
+<h3><span class=mw-headline id=startx>startx</span></h3>
+<p>Install the <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=numlockx">numlockx</a></span> package and add it to the <code>~/.xinitrc</code> file before <code>exec</code>:
+</p>
+<pre>#!/bin/sh
+#
+# ~/.xinitrc
+#
+# Executed by startx (run your window manager from here)
+#
+
+numlockx &amp;
+
+exec window_manager
+</pre>
+<h3><span class=mw-headline id=MATE>MATE</span></h3>
+<p>By default, MATE saves the last state on logout and restores it during the next login. To enable Numlock on every login, you must change the following DCONF-Values:
+</p>
+<pre>dconf write org.mate.peripherals-keyboard remember-numlock-state false
+dconf write org.mate.peripherals-keyboard numlock-state 'on'
+</pre>
+<h3><span class=mw-headline id=KDE_Plasma>KDE Plasma</span></h3>
+<p>Go to <i>System Settings &gt; Input Devices &gt; Keyboard</i>, in the <i>Hardware</i> tab, in the <i>NumLock on Plasma Startup</i> section, choose the desired NumLock behavior.
+</p>
+<h3><span class=mw-headline id=GDM>GDM</span></h3>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> GDM does not execute scripts in <code>/etc/gdm/Init</code> anymore.</div>
+<p>Make sure that you have <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=numlockx">numlockx</a></span> installed then add the following code to <a href=https://wiki.archlinux.org/index.php/Xprofile title=Xprofile>~/.xprofile</a>:
+</p>
+<pre>if [ -x /usr/bin/numlockx ]; then
+      /usr/bin/numlockx on
+fi
+</pre>
+<h3><span class=mw-headline id=GNOME>GNOME</span></h3>
+<p>Run the following command:
+</p>
+<pre> $ gsettings set org.gnome.desktop.peripherals.keyboard numlock-state true
+</pre>
+<p>In order to remember last state of numlock key (whether you disabled or enabled), use:
+</p>
+<pre> $ gsettings set org.gnome.desktop.peripherals.keyboard remember-numlock-state true
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> The key <code>numlock-state</code> was moved from <code>org.gnome.settings-daemon.peripherals.keyboard</code> since GNOME 3.34<a rel=nofollow class="external autonumber" href=https://gitlab.gnome.org/GNOME/gnome-settings-daemon/merge_requests/107>[1]</a></div>
+<p>Alternatively, you can use add <code>numlockx on</code> (from <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://www.archlinux.org/packages/?name=numlockx">numlockx</a></span> to a startup script, like <code>~/.bashrc</code> (if using <a href=https://wiki.archlinux.org/index.php/Bash title=Bash>Bash</a>) or <code>~/.profile</code>.
+</p>
+<h3><span class=mw-headline id=Xfce>Xfce</span></h3>
+<p>In the file <code>~/.config/xfce4/xfconf/xfce-perchannel-xml/keyboards.xml</code>, make sure the following values are set to true:
+</p>
+<pre>&lt;property name="Numlock" type="bool" value="true"/&gt;
+&lt;property name="RestoreNumlock" type="bool" value="true"/&gt;
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> If the file does not exist then open <i>Settings &gt; Keyboard</i>, then check and uncheck the <i>Restore num lock state on startup</i>. This will create the <code>keyboards.xml</code> file.</div>
+<h3><span class=mw-headline id=SDDM>SDDM</span></h3>
+<p>In the file <code>/etc/sddm.conf</code>, under the <code>[General]</code> section, set <i>Numlock</i> value to <i>on</i>&nbsp;:
+</p>
+<pre>[General]
+...
+Numlock=on
+</pre>
+<h3><span class=mw-headline id=SLiM>SLiM</span></h3>
+<p>In the file <code>/etc/slim.conf</code> find the line and uncomment it (remove the <code>#</code>):
+</p>
+<pre>#numlock             on
+</pre>
+<h3><span class=mw-headline id=OpenBox>OpenBox</span></h3>
+<p>In the file <code>~/.config/openbox/autostart</code> add the line:
+</p>
+<pre>numlockx &amp;
+</pre>
+<p>And then save the file.
+</p>
+<h3><span class=mw-headline id=LightDM>LightDM</span></h3>
+<p>See <a href=https://wiki.archlinux.org/index.php/LightDM#NumLock_on_by_default title=LightDM>LightDM#NumLock on by default</a>.
+</p>
+<h3><span class=mw-headline id=LXDM>LXDM</span></h3>
+<p>Set the option in <code>/etc/lxdm/lxdm.conf</code>:
+</p>
+<pre>numlock=1
+</pre>
+<h3><span class=mw-headline id=LXQt>LXQt</span></h3>
+<p>Set the option in <code>~/.config/lxqt/session.conf</code>:
+</p>
+<pre>[Keyboard]
+numlock=true
+</pre>
+</div></div>
+ 
+ <div class="printfooter sf-hidden">Retrieved from ""</div>
+ 
+ <div id=catlinks class=catlinks data-mw=interface><div id=mw-normal-catlinks class=mw-normal-catlinks><a href=https://wiki.archlinux.org/index.php/Special:Categories title=Special:Categories>Categories</a>: <ul><li><a href=https://wiki.archlinux.org/index.php/Category:Boot_process title="Category:Boot process">Boot process</a><li><a href=https://wiki.archlinux.org/index.php/Category:Keyboards title=Category:Keyboards>Keyboards</a></ul></div></div>
+ <div class=visualClear></div>
+ 
+ </div>
+</div>
+ <div id=mw-navigation>
+ <h2>Navigation menu</h2>
+ <div id=mw-head>
+ <div id=p-personal role=navigation aria-labelledby=p-personal-label>
+ <h3 id=p-personal-label class=sf-hidden>Personal tools</h3>
+ <ul>
+ <li id=pt-createaccount><a href="https://wiki.archlinux.org/index.php?title=Special:CreateAccount&amp;returnto=Activating+numlock+on+bootup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a><li id=pt-login><a href="https://wiki.archlinux.org/index.php?title=Special:UserLogin&amp;returnto=Activating+numlock+on+bootup" title="You are encouraged to log in; however, it is not mandatory [Alt+Shift+o]" accesskey=o>Log in</a></li> </ul>
+ </div>
+ <div id=left-navigation>
+ <div id=p-namespaces role=navigation class=vectorTabs aria-labelledby=p-namespaces-label>
+ <h3 id=p-namespaces-label class=sf-hidden>Namespaces</h3>
+ <ul>
+ <li id=ca-nstab-main class=selected><span><a href=https://wiki.archlinux.org/index.php/Activating_numlock_on_bootup title="View the content page [Alt+Shift+c]" accesskey=c>Page</a></span><li id=ca-talk><span><a href=https://wiki.archlinux.org/index.php/Talk:Activating_numlock_on_bootup rel=discussion title="Discussion about the content page [Alt+Shift+t]" accesskey=t>Discussion</a></span></li> </ul>
+ </div>
+ <div id=p-variants role=navigation class="vectorMenu emptyPortlet sf-hidden" aria-labelledby=p-variants-label>
+ 
+ 
+ 
+ </div>
+ </div>
+ <div id=right-navigation>
+ <div id=p-views role=navigation class=vectorTabs aria-labelledby=p-views-label>
+ <h3 id=p-views-label class=sf-hidden>Views</h3>
+ <ul>
+ <li id=ca-view class="collapsible selected"><span><a href=https://wiki.archlinux.org/index.php/Activating_numlock_on_bootup>Read</a></span><li id=ca-viewsource class=collapsible><span><a href="https://wiki.archlinux.org/index.php?title=Activating_numlock_on_bootup&amp;action=edit" title="This page is protected.
+You can view its source [Alt+Shift+e]" accesskey=e>View source</a></span><li id=ca-history class=collapsible><span><a href="https://wiki.archlinux.org/index.php?title=Activating_numlock_on_bootup&amp;action=history" title="Past revisions of this page [Alt+Shift+h]" accesskey=h>View history</a></span></li> </ul>
+ </div>
+ <div id=p-cactions role=navigation class="vectorMenu emptyPortlet sf-hidden" aria-labelledby=p-cactions-label>
+ 
+ 
+ 
+ </div>
+ <div id=p-search role=search>
+ <h3>
+ <label for=searchInput>Search</label>
+ </h3>
+ <form action=/index.php id=searchform>
+ <div id=simpleSearch>
+ <input type=search name=search placeholder="Search ArchWiki" title="Search ArchWiki [Alt+Shift+f]" accesskey=f id=searchInput autocomplete=off value><input type=submit name=go value=Go title="Go to a page with this exact name if it exists" id=searchButton class=searchButton> </div>
+ </form>
+ </div>
+ </div>
+ </div>
+ <div id=mw-panel>
+ <div id=p-logo role=banner class=sf-hidden></div>
+ <div class=portal role=navigation id=p-navigation aria-labelledby=p-navigation-label>
+ <h3 id=p-navigation-label class=sf-hidden>Navigation</h3>
+ <div class=body>
+ <ul>
+ <li id=n-mainpage-description><a href=https://wiki.archlinux.org/index.php/Main_page title="Visit the main page [Alt+Shift+z]" accesskey=z>Main page</a><li id=n-Table-of-contents><a href=https://wiki.archlinux.org/index.php/Table_of_contents>Table of contents</a><li id=n-portal><a href=https://wiki.archlinux.org/index.php/Getting_involved title="Various ways Archers can contribute to the community">Getting involved</a><li id=n-currentevents><a href=https://wiki.archlinux.org/index.php/ArchWiki:News title="The latest lowdown on the wiki">Wiki news</a><li id=n-randompage><a href=https://wiki.archlinux.org/index.php/Special:Random title="Load a random page [Alt+Shift+x]" accesskey=x>Random page</a></li> </ul>
+ </div>
+ </div>
+ <div class=portal role=navigation id=p-Interaction aria-labelledby=p-Interaction-label>
+ <h3 id=p-Interaction-label>Interaction</h3>
+ <div class=body>
+ <ul>
+ <li id=n-help><a href=https://wiki.archlinux.org/index.php/Category:Help title="Wiki navigation, reading, and editing help">Help</a><li id=n-Contributing><a href=https://wiki.archlinux.org/index.php/ArchWiki:Contributing>Contributing</a><li id=n-recentchanges><a href=https://wiki.archlinux.org/index.php/Special:RecentChanges title="A list of recent changes in the wiki [Alt+Shift+r]" accesskey=r>Recent changes</a><li id=n-Recent-talks><a href="https://wiki.archlinux.org/index.php?title=Special:RecentChanges&amp;namespace=all-discussions" rel=nofollow>Recent talks</a><li id=n-newpages><a href=https://wiki.archlinux.org/index.php/Special:NewPages>New pages</a><li id=n-Statistics><a href=https://wiki.archlinux.org/index.php/ArchWiki:Statistics>Statistics</a><li id=n-Requests><a href=https://wiki.archlinux.org/index.php/ArchWiki_talk:Requests>Requests</a></li> </ul>
+ </div>
+ </div>
+ <div class=portal role=navigation id=p-tb aria-labelledby=p-tb-label>
+ <h3 id=p-tb-label>Tools</h3>
+ <div class=body>
+ <ul>
+ <li id=t-whatlinkshere><a href=https://wiki.archlinux.org/index.php/Special:WhatLinksHere/Activating_numlock_on_bootup title="A list of all wiki pages that link here [Alt+Shift+j]" accesskey=j>What links here</a><li id=t-recentchangeslinked><a href=https://wiki.archlinux.org/index.php/Special:RecentChangesLinked/Activating_numlock_on_bootup rel=nofollow title="Recent changes in pages linked from this page [Alt+Shift+k]" accesskey=k>Related changes</a><li id=t-specialpages><a href=https://wiki.archlinux.org/index.php/Special:SpecialPages title="A list of all special pages [Alt+Shift+q]" accesskey=q>Special pages</a><li id=t-print><a href="https://wiki.archlinux.org/index.php?title=Activating_numlock_on_bootup&amp;printable=yes" rel=alternate title="Printable version of this page [Alt+Shift+p]" accesskey=p>Printable version</a><li id=t-permalink><a href="https://wiki.archlinux.org/index.php?title=Activating_numlock_on_bootup&amp;oldid=593041" title="Permanent link to this revision of the page">Permanent link</a><li id=t-info><a href="https://wiki.archlinux.org/index.php?title=Activating_numlock_on_bootup&amp;action=info" title="More information about this page">Page information</a></li> </ul>
+ </div>
+ </div>
+ <div class=portal role=navigation id=p-lang aria-labelledby=p-lang-label>
+ <h3 id=p-lang-label>In other languages</h3>
+ <div class=body>
+ <ul>
+ <li class="interlanguage-link interwiki-de"><a href=https://wiki.archlinux.de/title/Numlock title="Numlock – Deutsch" hreflang=de class=interlanguage-link-target lang=de>Deutsch</a><li class="interlanguage-link interwiki-es"><a href=https://wiki.archlinux.org/index.php/Activating_numlock_on_bootup_(Espa%C3%B1ol) title="Activating numlock on bootup – español" hreflang=es class=interlanguage-link-target lang=es>Español</a><li class="interlanguage-link interwiki-it"><a href=https://wiki.archlinux.org/index.php/Activating_numlock_on_bootup_(Italiano) title="Activating numlock on bootup – italiano" hreflang=it class=interlanguage-link-target lang=it>Italiano</a><li class="interlanguage-link interwiki-ja"><a href=https://wiki.archlinux.jp/index.php/%E8%B5%B7%E5%8B%95%E6%99%82%E3%81%AB_Numlock_%E3%82%92%E6%9C%89%E5%8A%B9%E5%8C%96 title="起動時に Numlock を有効化 – 日本語" hreflang=ja class=interlanguage-link-target lang=ja>日本語</a><li class="interlanguage-link interwiki-pt"><a href=https://wiki.archlinux.org/index.php/Activating_numlock_on_bootup_(Portugu%C3%AAs) title="Activating numlock on bootup – português" hreflang=pt class=interlanguage-link-target lang=pt>Português</a><li class="interlanguage-link interwiki-ru"><a href=https://wiki.archlinux.org/index.php/Activating_numlock_on_bootup_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) title="Activating numlock on bootup – русский" hreflang=ru class=interlanguage-link-target lang=ru>Русский</a><li class="interlanguage-link interwiki-zh-hans"><a href=https://wiki.archlinux.org/index.php/Activating_numlock_on_bootup_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) title="Activating numlock on bootup – 中文（简体）‎" hreflang=zh-Hans class=interlanguage-link-target lang=zh-Hans>中文（简体）‎</a></li> </ul>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div id=footer role=contentinfo>
+ <ul id=footer-info>
+ <li id=footer-info-lastmod> This page was last edited on 28 December 2019, at 15:37.</li>
+ <li id=footer-info-copyright>Content is available under <a class=external rel=nofollow href=http://www.gnu.org/copyleft/fdl.html>GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+ </ul>
+ <ul id=footer-places>
+ <li id=footer-places-privacy><a href=https://wiki.archlinux.org/index.php/ArchWiki:Privacy_policy title="ArchWiki:Privacy policy">Privacy policy</a></li>
+ <li id=footer-places-about><a href=https://wiki.archlinux.org/index.php/ArchWiki:About title=ArchWiki:About>About ArchWiki</a></li>
+ <li id=footer-places-disclaimer><a href=https://wiki.archlinux.org/index.php/ArchWiki:General_disclaimer title="ArchWiki:General disclaimer">Disclaimers</a></li>
+ </ul>
+ <ul id=footer-icons class="noprint sf-hidden">
+ 
+ </ul>
+ <div style=clear:both></div>
+ </div>
+ 
+<div style=display:none;font-size:14.3px class=suggestions></div>

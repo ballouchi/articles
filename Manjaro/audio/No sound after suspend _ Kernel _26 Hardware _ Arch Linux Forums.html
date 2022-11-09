@@ -1,0 +1,1157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> <html xmlns=http://www.w3.org/1999/xhtml xml:lang=en dir=ltr lang=en><!--
+ Page saved with SingleFile 
+ url: http://localhost:8000/No%20sound%20after%20suspend%20_%20Kernel%20%26%20Hardware%20_%20Arch%20Linux%20Forums.html 
+ saved date: Tue Aug 30 2022 08:57:16 GMT+0100 (Central European Standard Time) 
+ info: http://localhost:8000/No sound after suspend _ Kernel %26 Hardware _ Arch Linux Forums.html
+--><meta charset=utf-8>
+<meta name=viewport content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>[SOLVED] No sound after suspend / Kernel &amp; Hardware / Arch Linux Forums</title>
+<style>:root{--sf-img-5: url("data:image/png;base64,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");--sf-img-7: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAMAAAAMCGV4AAAArlBMVEVMaXH/2AD/3QAkGgD+6gD/4AD3ogAAAADimwD98QD/ugAqKipGRkb/7Xv+5QD9+AD+5BP8/BH/zAD/1QD/wQD/swDyoAD9rAb99So3LhX+80b/7mT+8WL97BH99BHGhwDpnQDaoS//1WX/5j3/42PgqQD+7SrlzSf/yUb/3Cr1uUX/2kb/3xD/xSr+zGL4sSrkpBn/wBHjoA7n0Dn/4Xv+62JDPSH/1Vb/xT7/41Zn+qvcAAAAAXRSTlMAQObYZgAAAKRJREFUeNpdz0cSwjAMBVASdyek90ZIQu8d7n8xZJMVfzTjefJC0kSHqcA76tl/htc7ZyNv5RRy7+ZMc1VWVVU+hu6oG3lfFLYNtVtvc/j2lllmWVCbw+nMwHXj+35Te/tLegUTLFzXFZiEknKw6WAhBHbMIE6UDeJgphKlLXiCDJMRYhoRoxyp+YsgNMIgiimf/RbiUso4TTR1A1GatBwp/t/3BbJwDC72bSy5AAAAAElFTkSuQmCC");--sf-img-8: url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUEBAUEAwUFBAUGBgUGCA4JCAcHCBEMDQoOFBEVFBMRExMWGB8bFhceFxMTGyUcHiAhIyMjFRomKSYiKR8iIyL/2wBDAQYGBggHCBAJCRAiFhMWIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiL/wAARCABLAFADASIAAhEBAxEB/8QAHQAAAgIDAQEBAAAAAAAAAAAABwgDBgIEBQEACf/EAEIQAAEDAgMFBQMGDAcAAAAAAAECAwQFEQAGIQcSMVFhEyJBcZEUgaEII0JSYtEVFyQzU2OCorLB4fAyQ3KDkrHC/8QAGgEAAwEBAQEAAAAAAAAAAAAABAUGAgMAAf/EADARAAEDAgMECQQDAAAAAAAAAAEAAgMEEQUSITFBUaEGExQiI3GB0fBhkcHhFTKx/9oADAMBAAIRAxEAPwBygNMeG2Pb2TgQ55z57SmZDpkt2LSYqy1LnRzZ2S4NCwwfC3BSxw1A4EjpHG6R2VqxJI2NuZytde2h0+kyX4NOZcq1UZ/Ox4xAQyf1rp7qPLVXTAqrW1GvyXFoFWYhjh2FIYDhHQvO3BPVKRiiTqo7LhNxo7aIlOB7kRnRI6q+seZONVlsIUlFuPDTFFT4O0MzO1Kj6vpJlqDC3Zx+fPourJzPV5JJcqlac6u1RwfBFhiBnNGY4usOuVhq3C09bg9F7wxE+zuIGnE2xE00AlaiO6MHDD4sl7Jc7HZRPkvorjR9tGaqWtIqqY1Xj6XDrYYdt0Wju+qcGXJ+0mhZwszDdVGqQTdUGUAlzqU62WOqSetsLMtH2QFH4DGg+wpLiHI61ofbUFocbUUqQocCCNQeowJLgrZAS3QoxvSrqXBrhm4p2xYjHx4YDmyvamusOt5fzQ6kVcD8mlGwEsAcDycA1+0OuDGeGJuaB8Dyx41VhS1UVXEJYjcFUvaDW34VKj0qmvlipVdSmkPJNjHaSLuu+YToPtKGFOz5tCo9Aktx1XMaK32cGAwQV7g+kq/De43Pxxb/AJQO0dyi1XMxpbiDUY6GKRHUdQxvp7Z5VvrWUke4Xwo9FoNVzfWHOw7R5a1bz8p26tTz5npg2nn6luWNt3nl85ICqgMzzJM/LGOfsOZ0RFZ21OKXZGW21t72m/NUPiE4JEHbBTHKGlC8hsGoEdxz8KK3f4b45WWtnNCokFK6uphC7XW9LcSk+qtB5DFmkZfpEzKcyXlRcKY+EKQw8hQcbDg8Du8vu44OfHXEd+Sx4D9JTFPhZOaOG42XI/Juh3mLarXqa8ylyiUZrtgVobTJdcUBzOot/THJTtrre5umjUojopwf+sciTs9zI9IdflMOvPLVdSyoG5+H9MQNUXM1Cc+YR2YI4OsJcTb3g6YD7VWt2uNvJMew4XIbta0nzXXXtrqJJLlDhddx9Y+/EjG2o7wEqg7qSdVNSbn0Kf545a85T6Y8Ga7l2lSgoXCkJLRUOYIuPhjTqMzKWZU2bYeoNQtZKlgLZUeRUm2nUgeeOjcRqbd2X0IHsuD8EoL+JT6cQT+DfkivSqxDzDGRUqHMUXo60rCh3HY6wbp08CCNDw00OHI2d5tGcckxZ7u6JzZLExCeAdTxIHgCCFDzx+XjKqtlSvBbS1R5bQ0Wk3Q4g/BSThwPksZ9ZrOYatTN7snpMYPOxib7jjarEp5gpV+7Y4+VNS2si74tI3mFqhopMOqAI3ZoXcju9rqi7esuv1mTVZNOuZrNbluLRf8AOAWSB5hIFvTC3R5cppKmkSpDNid5tLika+NwDh0NpUT2HaBX4i09xyWmYgH6SXWxc/8AJKhgB56yAt8rqtGR+UgXcaH+aPv/AO8eloS6ATxHW2oXqfExHVOpZ22bfQlCzsUuEqeKnVH6SyVH44KmyjabDyMJNOrkR56lyXA4Ho4BWyoC2qT/AIha3A3FvHAtZJUFCxC0GykEWKT5YyUQSb4WxSuidnadU8mgjnYY3jQp2KZtL2c1ZtDjOZ6a0fqS1dioHqFgHz1tjVrOc9m0VhapmZ6S62gDdbjudu4egCAdcJf2aTooC3LGe4hF7JHuwWMRlsln8LT3vqrZn/MdNzBXiqgR3WaYwT2ank7qnCbXO74DTQccU0oSTqNT44nJBQRwxA0lx2SiNFbU8+sgJQkanALrudfim7AI2W3BdyNVnhQ41LZYEmfvqREJTcoSq3Plrble/hhhfk5ZbOW9p1E3zvSpaH/aFfW+aUfQW/nihZHyS3RmvbaiEuT3BxtcJH1R9/jhgNjtMVJ2sh6w3KXT1rUR4LcISB6FXph02i6mmdNN/YjQcNylX4kautZT0w7gdcnib3+ytO3rLa1QoOZ4iCr2QeyzbfolKuhfklen7eAo24HkbpPdI1w6cyHHqFPfiTWkPRpDZbdaWLhaSLEH3YUjPWR5ez7MHZq7R6hyVn2OUdbfq1n64/eGo8QN4PVsZ4cnotdIqCaZofD6oRZ02fonLVUaOrspye8rWwc6Hr19cDFowVzFwcwMvwnkndL7Q7zZ+0ngoeWvInhhkWHmzvagg4qebclU/MjJUEdlKA7jqBqOnUdMFV+FB/iwbeCU4Rj74Hdlqtg0Dt4/SH34ray/HblUedCnQ3Rdt5JICh7r4hkbO6pTo5k1ubDhsJubjeWpXkDa+NSJUMy7NaotKVrERxXeSO8075g8Feh642WIOYdolREmouuNQVEd4/SHQePnwHgMJRFG7uMYc/Dcqo1EsfiSSN6rjvP0ts+bFXY0Ryq1P2SitLfUTbfXoEjmbaD+7YMuT8iw6A2HZHzsxY77qh8ByH9nHZy7l6nUCMhmIykW1KvFR5k+JxZkwlzbltSW22xdx5eiWxzJ/lh9QYWynHWzan/FHYvj01a/s1OLNP3P6UTLKWu1kukeyxk7678/Ae84PmxLLb1Lye9Wag2UT664JBSoWKGR+aHvBKv2hgeZAyYc8VFh15lacoU9zeK1ixqDoPAfYHifcNb2ZRKQlACQABoAMLcXrGyuyN9VQ9HcPkp4s0np7+XD1Ug4Y0qpSoVapb8CqRWpUOQndcZdTcKH3+IPEY2rnnjzePPCQaKltdLjm3YZVaU65Kya7+EIXH2F9YS+2OSVHRY87HzwLZDr9Nkqi1eM/BkpNi1JbLavQjDw3vxxqzqfDqLHYVCJHlMni3IaS4n0IOGlPik0WjtQlFTgtPMSQLFJBLjQ6owpqQ2h1CuIIBBxsMstxY/ZoUyy2BxUsDDXydk2RpSyp3LNPST+iQW/4SMZw9lmSYKwuPlmmlQ4F1rtP4r4KGMtBzBuqXO6ONfYOdoNyVylsmqyewo8OZWZR4MwmjuD/UvwHpgwZY2OVCpFmRnt1tmE2Qpuiwld3/dWOPkPXBqiRmIkYMxGGmGU8G2kBKR7hpie5wFNic0mg0TODB6aLaLrGNFZhxWo8VptlhpIQ202kJShI4AAcBiU8MYbx549BJ44XJqBZf/Z")}html,body,.pun div,.pun form,.pun p,.pun h2,.pun h3,.pun pre,.pun blockquote,.pun ul,.pun li,.pun dl,.pun dt,.pun dd,.pun cite{border:0;font-style:normal;font-weight:normal;margin:0;padding:0}.pun ul{list-style:none}.pun select{padding-bottom:1px;padding-top:1px;padding-right:1px}.pun{font:81.25%/1.462em Arial,Helvetica,sans-serif}.pun input,.pun select,.pun optgroup{font-family:Arial,Helvetica,sans-serif;font-size:1em}.pun pre,.pun code{font-family:consolas,monaco,"bitstream vera sans mono","courier new",courier,monospace;font-size:1em}.pun pre code{font-size:1em}.pun h2{font:1.462em/1em"Trebuchet MS",Arial,Helvetica,sans-serif;padding:7px 0}.pun h3{font-size:1.154em;line-height:1.267em;padding:7px 0}.pun p,.pun ul{padding:7px 0}.pun strong{font-weight:bold}.pun em{font-style:italic}.pun a,.pun a:link,.pun a:visited{text-decoration:none}.pun a:hover,.pun a:active,.pun a:focus{text-decoration:underline}#brdfooter h2,div.postright h3{display:block;overflow:hidden;position:absolute;text-indent:-9999em;width:0}.pun .inbox,.pun #brdmain,.pun .crumbs,.pun .pagepost{min-height:1px}.pun .inbox:after,.pun #brdmain:after,.pun .crumbs:after,.pun .pagepost:after,.pun .block2col:after{content:" ";display:block;height:0;font-size:0;clear:both;visibility:hidden}.pun{max-width:1070px;margin:0 auto;padding:30px 40px}.pun .punwrap{border:1px solid;border-radius:10px;padding:18px}#brdmain{border-style:solid none;border-width:2px 0;margin-bottom:12px;padding:12px 0}#brdmenu ul{padding:0}#brdmenu li{float:left}#brdmenu a:link,#brdmenu a:visited{border-right-style:solid;border-width:1px;display:block;min-width:60px;padding:12px 16px 6px 8px;white-space:nowrap}#brdmenu a:hover,#brmenu a:active,#brdmenu a:focus{text-decoration:none}#brdwelcome{padding:10px 0}#brdwelcome .conl,#brdwelcome .conr,#brdwelcome li{display:inline;padding:0}#brdwelcome .conl{float:left}#brdwelcome .conr{float:right}#brdwelcome li span{background:url(data:,)center left no-repeat;padding-left:18px;margin-right:3px;display:inline-block;line-height:normal;white-space:nowrap}.pun #brdfooter .conl{float:left}.pun #brdfooter .conr{text-align:right;float:right}.pun #brdfooter #poweredby a{font-size:1.077em;font-weight:bold}.pun #brdfooter #qjump{padding-top:5px}.pun #brdfooter #qjump *{white-space:nowrap}.pun #brdfooter #feedlinks{padding-bottom:0}.pun #brdfooter #feedlinks span{background:url(data:,)center left no-repeat;display:inline-block;padding-left:18px;white-space:nowrap}.pun .linkst .inbox,.pun .postlinksb .inbox{overflow:hidden}.pun .postlinksb,.pun .linkst,.pun .crumbs{clear:both;position:relative}.pun .linkst .crumbs{font-family:"Trebuchet MS",Helvetica,Arial,sans-serif;font-size:1.462em;line-height:1.211em;padding:7px 0}.pun .postlinksb .crumbs{font-family:"Trebuchet MS",Helvetica,Arial,sans-serif;font-size:1.154em}.pun .linkst .crumbsplus .pagepost{border-top-style:dotted;border-top-width:1px}.pun .postlinksb .crumbsplus .pagepost{border-bottom-style:dotted;border-bottom-width:1px}.pun .postlinksb .crumbs{margin-right:11em}.pun .crumbs li{float:left;padding-right:0.4em;white-space:nowrap}.pun .crumbs li strong{font-weight:normal}.pun .pagelink{float:left;white-space:nowrap}.pun .pagelink strong,.pun .pagelink a{border-style:none none none solid;border-width:0 0 0 1px;display:inline-block;padding:0 12px 0 10px;margin-right:-6px}.pun .pagelink .item1{border:0}.pun .pagelink .pages-label{display:inline-block}.pun .blockpost{border-style:solid;border-width:1px;margin-bottom:-1px;overflow:hidden;position:relative}.pun .blockpost h2{font:1em/1.462em Arial,Helvetica,sans-serif;white-space:nowrap;border-bottom-style:solid;border-bottom-width:1px;height:1.462em;padding:0.538em 8px 0.538em 236px;font-weight:normal}.pun .blockpost h2 .conr{float:right;text-align:right}.pun .blockpost .inbox{float:right;position:relative;width:100%}.pun .blockpost .postbody,.pun .blockpost .postfoot{border-left-style:solid;border-left-width:1px;float:right;margin-right:-218px;position:relative;text-align:left;width:100%}.pun .blockpost .postleft,.pun .blockpost .postfootleft{width:194px;padding:7px 12px 7px 12px;float:left;margin-left:-218px;position:relative}.pun .blockpost .postleft dl{padding:0}#punviewtopic .blockpost dt{display:block;position:absolute;padding:0.538em 0 0.538em 12px;height:1.462em;top:-2.615em;left:0;overflow:hidden;width:206px}.pun .blockpost dt{text-overflow:ellipsis;white-space:nowrap}.pun .blockpost dt strong{font-size:1.231em;font-weight:bold}.pun .blockpost .postleft dd{font-size:0.923em}.pun .blockpost .postleft .usertitle{padding:4px 0 6px 0;font-size:1em}.pun .blockpost .postleft .postavatar{display:block;margin:0 0 4px 0}.pun .blockpost .postright{position:relative;padding:4px 230px 7px 18px}.pun .postmsg{width:100%;overflow:hidden;word-wrap:break-word}.pun .postfoot p{padding:0}.pun .postmsg p{font-family:Verdana,Arial,Helvetica,sans-serif}.pun .blockpost .postmsg .postedit{font-size:0.857em}.pun .codebox{border-style:solid;border-width:1px;margin:0.75em 1em;padding:0}.pun .quotebox{border-style:solid;border-width:1px 1px 1px 3px;margin:0.75em 1em;padding:0 0.75em}.pun .quotebox cite{display:block;padding:0.75em 0 0 0;font-weight:bold;line-height:1.462em}.pun .quotebox blockquote{overflow:hidden;width:100%}.pun .codebox pre{overflow:auto;width:100%;direction:ltr;text-align:left}.pun .codebox pre code{padding:0.5em;white-space:pre}.pun div[class*=codebox] pre code{display:inline-block}.pun .codebox pre.vscroll{height:32em;overflow:auto;overflow-y:auto}.pun .postmsg img{vertical-align:text-top}.pun label select{margin-top:2px}.pun select{font-family:Verdana,Arial,Helvetica,sans-serif}html,body,.pun{background:#f6f9fc;color:#333}.pun .punwrap{background:#fff;border-color:#cad7e1;color:#566579}.pun .pagepost,.pun .pagelink a,.pun .pagelink *{border-color:#b9c5ce}.pun a,.pun a:link,.pun a:visited{color:#2365B0}.pun a:hover,.pun a:active,.pun a:focus{color:#b50000}#brdmenu{background:#44699c}#brdmenu a,#brdmenu a:link,#brdmenu a:visited{background:#44699c;border-color:#fff;color:#d4dae2}#brdmenu a:hover,#brdmenu a:active,#brdmenu a:focus{background:#b50000;border-color:#fff;color:#fff}.pun .blockpost{background:#f6f9fc;border-color:#b9c5ce #d9e1e7}.pun .blockpost h2{background:#ebf1f5;border-color:#cad7e1;color:#357082}.pun .blockpost .postbody,.pun .blockpost .postfoot{background:#fcfdfe;border-color:#dfe6ee}.pun .postmsg{color:#333}.pun .postmsg .postedit{color:#566579}.pun .quotebox{background:#f8f9f0;border-color:#7aadbd;color:#566579}.pun .quotebox cite{color:#357082}.pun .codebox{background:#333;color:#fff}.pun label{color:#357082}</style>
+<link rel=canonical href="https://bbs.archlinux.org/viewtopic.php?id=252030" title="Page 1">
+<link rel=next href="https://bbs.archlinux.org/viewtopic.php?id=252030&amp;p=2" title="Page 2">
+<link rel=alternate type=application/atom+xml href="https://bbs.archlinux.org/extern.php?action=feed&amp;tid=252030&amp;type=atom" title="Atom topic feed">
+<style media=screen>*{font-family:sans-serif!important}.pun{max-width:none;margin:0}#archnavbar.anb-forum ul li.anb-selected a{color:#fff!important}.pun pre,.pun code{font-family:monospace!important}html,body,.pun{background:#f6f9fc;color:#222}.pun .punwrap{border-color:#bcd;border-radius:0}.pun a,.pun a:link,.pun a:visited{text-decoration:none;color:#07b;outline:none}.pun a:focus,#brdmain a:focus{color:#e90}.pun a:hover,#brdmain a:hover{color:#999!important;text-decoration:underline}.pun a:active,#brdmain a:active{color:#e90!important}#brdmenu{background:#fff}#brdmenu ul{margin-left:-9px}#brdmenu a,#brdmenu a:link,#brdmenu a:visited{display:inline;padding-right:10px;background:#fff;color:#07b}#brdmain a:visited{color:#666}#brdmenu a:hover{color:#999;text-decoration:underline}#brdmenu a:active,#brdmenu a:focus{color:#e90}.pun .postmsg a{font-weight:bold}.pun .top-box{background:none}.pun .end-box{background:none}.pun .blockpost h2{color:#444}.pun .quotebox cite{color:#444}.pun label{color:#444}.pun .quotebox{border-color:#bcd;background:#f6f9fc;color:#444}.pun .codebox{border-color:#bcd;background:#ebf1f5;color:#222}@media (max-width:575px){.pun .blockpost .postfootleft,.pun .blockpost .postleft dd,.pun .blockpost h2 .conr,.pun .blockpost .postleft .postavatar{display:none}.pun .blockpost .postleft{margin-left:0;padding:0}.pun .blockpost .postbody{float:none}.pun .blockpost .postright{padding:5px}.pun select{max-width:75vw}.pun .blockpost{background-color:#fcfdfe}.pun .quotebox{margin:0.75em 0.5em}#brdmenu a:link,#brdmenu a:visited{padding-left:0}}@media (max-width:768px){.pun{padding:30px 5px}.pun .punwrap{padding:18px 5px}#brdwelcome{padding:20px 0}#brdmenu ul{margin-left:0}.pun .crumbs li{white-space:normal}.pun .postlinksb .crumbs{margin-right:0}.pun .blockpost .postfoot{border-left-style:none}#brdwelcome .conl{display:none}}#archnavbar{height:40px!important;padding:10px 15px!important;background:#333!important;border-bottom:5px #08c solid!important}#archnavbarlogo{float:left!important;margin:0!important;padding:0!important;height:40px!important;width:190px!important}html>body #archnavbarlogo{background:url(data:,)no-repeat!important;background-size:190px 40px!important}#archnavbarlogo h1{margin:0!important;padding:0!important;text-indent:-9999px!important}#archnavbarlogo a{display:block!important;height:40px!important;width:190px!important}#archnavbar ul{display:inline!important;float:right!important;list-style:none!important;margin:0!important;padding:0!important}#archnavbar ul li{float:left!important;font-size:14px!important;font-family:sans-serif!important;line-height:45px!important;padding-right:15px!important;padding-left:15px!important}#archnavbar ul#archnavbarlist li a{color:#999;font-weight:bold!important;text-decoration:none!important}#archnavbar ul li a:hover{color:white!important;text-decoration:underline!important}@media (max-width:680px){#anb-forums{display:none}html>body #archnavbarlogo{width:40px!important;margin-right:5px!important;background:url(data:,)no-repeat!important;background-size:40px 40px!important}#archnavbar ul{display:flex!important;justify-content:space-between;flex-wrap:nowrap;overflow:hidden;float:none!important}#archnavbar ul li{padding:0!important;float:none!important}}@media (max-width:830px){#anb-home{display:none}html>body #archnavbarlogo{padding-right:15px!important}#archnavbar{padding-left:5px!important;padding-right:5px!important}#archnavbar ul li{padding-left:5px!important;padding-right:5px!important}}</style>
+<link rel="shortcut icon" href=data:image/vnd.microsoft.icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABvElEQVQ4jY2TP4gTQRTGfzM7ybp35mBX8LY4GxM5OI4UiqDWtoKIjWhl4QmmEQwIhzZaa3GLlYWgjViI+AcUrrASUYTbQ0UxepwpFj1EDCSXuLNj4QYSLxP8mnm8972P3wyMMMZgUxjF+ycLUjUW5l/YPMq6/VfnHCEmAGuAsBHsurG6QwiaRUeq2cCdfXy88nmUT9qSJ4tywVNyGxjVSbPzNp81wFNyt6cknpJ00uzk2Wfr/n8HHLrz4ajriFeuEsuekvS08Zu/eoujvFveYN+t98XAUw1jmEmN+ZEZfG2M8BzZKhVl+f6x8vexBIGn6hMFOeMqgTEEXZ2J39qwqbNSR5tLYwnmbr6b2hO4axvt1P/a6tHTw3SuI1pTrlNZPT33bSTBps7qb5K23/jZ7S8/AO72511tShud9MJIgjCKdwINYHs+e5TUqkfy2W3gVN5vA+WkVk3+Jbg8sAzwcKB+mp8G+ALUh64QRnEZOMOwPg3Ub/vEgAvcGwoArgKFvF4DrgEfBwKawHVgHagAy2EUnwAQ00sre4HXwBPgSlKrvmSMwig+CCwCh4F5Mb20chF4ntSq1h83JujAH3Eom+H9uAq8AAAAAElFTkSuQmCC><meta http-equiv=content-security-policy content="default-src 'none'; font-src 'self' data:; img-src 'self' data:; style-src 'unsafe-inline'; media-src 'self' data:; script-src 'unsafe-inline' data:;"><style>img[src="data:,"],source[src="data:,"]{display:none!important}</style></head>
+<body>
+<div id=archnavbar class=anb-forum>
+ <div id=archnavbarlogo><h1><a href=http://www.archlinux.org/>Arch Linux</a></h1></div>
+ <div id=archnavbarmenu>
+ <ul id=archnavbarlist>
+ <li id=anb-home><a href=http://www.archlinux.org/>Home</a><li id=anb-packages><a href=http://www.archlinux.org/packages/>Packages</a><li id=anb-forums class=anb-selected><a href=https://bbs.archlinux.org/>Forums</a><li id=anb-wiki><a href=https://wiki.archlinux.org/>Wiki</a><li id=anb-bugs><a href=https://bugs.archlinux.org/>Bugs</a><li id=anb-security><a href=https://security.archlinux.org/>Security</a><li id=anb-aur><a href=https://aur.archlinux.org/>AUR</a><li id=anb-download><a href=http://www.archlinux.org/download/>Download</a></li> </ul>
+ </div>
+</div>
+<div id=punviewtopic class=pun>
+<div class=top-box></div>
+<div class=punwrap>
+<div id=brdheader class=block>
+ <div class=box>
+ <div id=brdmenu class=inbox>
+ <ul>
+ <li id=navindex class=isactive><a href=https://bbs.archlinux.org/index.php>Index</a></li>
+ <li id=navrules><a href="https://bbs.archlinux.org/misc.php?action=rules">Rules</a></li>
+ <li id=navsearch><a href=https://bbs.archlinux.org/search.php>Search</a></li>
+ <li id=navregister><a href=https://bbs.archlinux.org/register.php>Register</a></li>
+ <li id=navlogin><a href=https://bbs.archlinux.org/login.php>Login</a></li>
+ </ul>
+ </div>
+ <div id=brdwelcome class=inbox>
+ <p class=conl>You are not logged in.</p>
+ <ul class=conr>
+ <li><span>Topics: <a href="https://bbs.archlinux.org/search.php?action=show_recent" title="Find topics with recent posts.">Active</a> | <a href="https://bbs.archlinux.org/search.php?action=show_unanswered" title="Find topics with no replies.">Unanswered</a></span></li>
+ </ul>
+ <div class=clearer></div>
+ </div>
+ </div>
+</div>
+<div id=brdmain>
+<div class=linkst>
+ <div class="inbox crumbsplus">
+ <ul class=crumbs>
+ <li><a href=https://bbs.archlinux.org/index.php>Index</a></li>
+ <li><span>»&nbsp;</span><a href="https://bbs.archlinux.org/viewforum.php?id=22">Kernel &amp; Hardware</a></li>
+ <li><span>»&nbsp;</span><strong><a href="https://bbs.archlinux.org/viewtopic.php?id=252030">[SOLVED] No sound after suspend</a></strong></li>
+ </ul>
+ <div class=pagepost>
+ <p class="pagelink conl"><span class=pages-label>Pages: </span><strong class=item1>1</strong> <a href="https://bbs.archlinux.org/viewtopic.php?id=252030&amp;p=2">2</a> <a rel=next href="https://bbs.archlinux.org/viewtopic.php?id=252030&amp;p=2">Next</a></p>
+ </div>
+ <div class=clearer></div>
+ </div>
+</div>
+<div id=p1881979 class="blockpost rowodd firstpost blockpost1">
+ <h2><span><span class=conr>#1</span> <a href="https://bbs.archlinux.org/viewtopic.php?pid=1881979#p1881979">2020-01-09 22:17:49</a></span></h2>
+ <div class=box>
+ <div class=inbox>
+ <div class=postbody>
+ <div class=postleft>
+ <dl>
+ <dt><strong>maboleth</strong></dt>
+ <dd class=usertitle><strong>Member</strong></dd>
+ <dd><span>Registered: 2020-01-03</span></dd>
+ <dd><span>Posts: 141</span></dd>
+ </dl>
+ </div>
+ <div class=postright>
+ <h3>[SOLVED] No sound after suspend</h3>
+ <div class=postmsg>
+ <p>I never had any sound problem at all. The sound just worked.<p>And I'm left with dummy output. I didn't change anything alsa/pulse related. Btw, I'm not using Nvidia hdmi but Realtek.<p>I could go the route suggested here: <a href=https://wiki.archlinux.org/index.php/PulseAudio/Troubleshooting rel=nofollow>https://wiki.archlinux.org/index.php/Pu … leshooting</a> <br>but I'm wondering what happened, as Suspend/Waking was never a problem for the sound?</p>
+ <p class=postedit><em>Last edited by maboleth (2020-01-17 10:12:52)</em></p>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class=inbox>
+ <div class="postfoot clearb">
+ <div class=postfootleft><p><span>Offline</span></p></div>
+ </div>
+ </div>
+ </div>
+</div>
+<div id=p1881980 class="blockpost roweven">
+ <h2><span><span class=conr>#2</span> <a href="https://bbs.archlinux.org/viewtopic.php?pid=1881980#p1881980">2020-01-09 22:27:31</a></span></h2>
+ <div class=box>
+ <div class=inbox>
+ <div class=postbody>
+ <div class=postleft>
+ <dl>
+ <dt><strong>maboleth</strong></dt>
+ <dd class=usertitle><strong>Member</strong></dd>
+ <dd><span>Registered: 2020-01-03</span></dd>
+ <dd><span>Posts: 141</span></dd>
+ </dl>
+ </div>
+ <div class=postright>
+ <h3>Re: [SOLVED] No sound after suspend</h3>
+ <div class=postmsg>
+ <p>Alright, somehow my pulseaudio in /.config was corrupted so I 
+deleted the whole dir, reinstalled and set volume in gnome settings 
+again. It works now after suspend, normally.</p>
+ <p class=postedit><em>Last edited by maboleth (2020-01-09 22:28:10)</em></p>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class=inbox>
+ <div class="postfoot clearb">
+ <div class=postfootleft><p><span>Offline</span></p></div>
+ </div>
+ </div>
+ </div>
+</div>
+<div id=p1882625 class="blockpost rowodd">
+ <h2><span><span class=conr>#3</span> <a href="https://bbs.archlinux.org/viewtopic.php?pid=1882625#p1882625">2020-01-13 00:48:23</a></span></h2>
+ <div class=box>
+ <div class=inbox>
+ <div class=postbody>
+ <div class=postleft>
+ <dl>
+ <dt><strong>maboleth</strong></dt>
+ <dd class=usertitle><strong>Member</strong></dd>
+ <dd><span>Registered: 2020-01-03</span></dd>
+ <dd><span>Posts: 141</span></dd>
+ </dl>
+ </div>
+ <div class=postright>
+ <h3>Re: [SOLVED] No sound after suspend</h3>
+ <div class=postmsg>
+ <p>Actually, no. Still happens after suspend.<p>Some findings:<p>- It happens when music was playing and Suspend was pressed or initiated (without previously stopping the music).<br>- Dummy output is shown after wake, no sound can be heard.<br>- Sound is working normally if PC was suspended while silent (no music, no online radio streaming).<p>pacmd list-cards shows 0 cards, no sink.<p>pulseaudio
+ -k fixes it and after a few secs, pacmd list-cards shows the card and 
+there's a working sound. However, this is not a desirable fix. I want to
+ get to the root of the problem.</p><br><p>The problem here is that this
+ does not happen all the time! But in 1 out of 3. Enough to be very 
+irritating, but not enough to exactly pinpoint the issue by myself. I 
+tried reinstalling pulseaudio 13, but no avail. Same happens.<p>P.S.
+ the above mentioned findings in journal were NOT related to this issue.
+ It was about HDMI on Nvidia card, and not on this Realtek.</p>
+ <p class=postedit><em>Last edited by maboleth (2020-01-13 00:50:58)</em></p>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class=inbox>
+ <div class="postfoot clearb">
+ <div class=postfootleft><p><span>Offline</span></p></div>
+ </div>
+ </div>
+ </div>
+</div>
+<div id=p1882630 class="blockpost roweven">
+ <h2><span><span class=conr>#4</span> <a href="https://bbs.archlinux.org/viewtopic.php?pid=1882630#p1882630">2020-01-13 01:26:22</a></span></h2>
+ <div class=box>
+ <div class=inbox>
+ <div class=postbody>
+ <div class=postleft>
+ <dl>
+ <dt><strong>maboleth</strong></dt>
+ <dd class=usertitle><strong>Member</strong></dd>
+ <dd><span>Registered: 2020-01-03</span></dd>
+ <dd><span>Posts: 141</span></dd>
+ </dl>
+ </div>
+ <div class=postright>
+ <h3>Re: [SOLVED] No sound after suspend</h3>
+ <div class=postmsg>
+ <p>pactl list sinks<div class=codebox><pre><code>Sink #1
+	State: RUNNING
+	Name: auto_null
+	Description: Dummy Output
+	Driver: module-null-sink.c
+	Sample Specification: s16le 2ch 44100Hz
+	Channel Map: front-left,front-right
+	Owner Module: 27
+	Mute: no
+	Volume: front-left: 45876 /  70% / -9,29 dB,   front-right: 45876 /  70% / -9,29 dB
+	        balance 0,00
+	Base Volume: 65536 / 100% / 0,00 dB
+	Monitor Source: auto_null.monitor
+	Latency: 25073 usec, configured 75012 usec
+	Flags: DECIBEL_VOLUME LATENCY 
+	Properties:
+		device.description = "Dummy Output"
+		device.class = "abstract"
+		device.icon_name = "audio-card"
+	Formats:
+		pcm</code></pre></div>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class=inbox>
+ <div class="postfoot clearb">
+ <div class=postfootleft><p><span>Offline</span></p></div>
+ </div>
+ </div>
+ </div>
+</div>
+<div id=p1882633 class="blockpost rowodd">
+ <h2><span><span class=conr>#5</span> <a href="https://bbs.archlinux.org/viewtopic.php?pid=1882633#p1882633">2020-01-13 01:42:24</a></span></h2>
+ <div class=box>
+ <div class=inbox>
+ <div class=postbody>
+ <div class=postleft>
+ <dl>
+ <dt><strong>Ropid</strong></dt>
+ <dd class=usertitle><strong>Member</strong></dd>
+ <dd><span>Registered: 2015-03-09</span></dd>
+ <dd><span>Posts: 954</span></dd>
+ </dl>
+ </div>
+ <div class=postright>
+ <h3>Re: [SOLVED] No sound after suspend</h3>
+ <div class=postmsg>
+ <p>I had similar issues for a while. It only started happening with a certain kernel version. It was fixed in a later version.<p>Maybe
+ your problem is also because of a certain kernel version introducing 
+it? If you can remember when your problem first started showing up, try 
+looking through the pacman log file (it's in "/var/log/pacman.log"). The
+ following filters the file to just the interesting lines:<div class=codebox><pre><code>grep -E '\] (ins|upg|rem)\w+ ' /var/log/pacman.log | less +G</code></pre></div><p>While
+ I had those problems, doing "pulseaudio -k" didn't work for me to fix 
+audio. The way I had to do it was with the following script that first 
+"disconnects" the audio device and then a second later starts it again:<div class=codebox><pre><code>#!/bin/bash
+
+[[ $UID = 0 ]] || exec sudo "$0"
+
+echo 1 &gt; '/sys/bus/pci/devices/0000:00:1b.0/remove'
+sleep 1
+echo 1 &gt; /sys/bus/pci/rescan</code></pre></div><p>That "0000:00:1b.0"
+ part of the script has to be customized for a different computer. That 
+ID is shown in the output of "lspci -D".</p>
+ <p class=postedit><em>Last edited by Ropid (2020-01-13 01:43:43)</em></p>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class=inbox>
+ <div class="postfoot clearb">
+ <div class=postfootleft><p><span>Offline</span></p></div>
+ </div>
+ </div>
+ </div>
+</div>
+<div id=p1882634 class="blockpost roweven">
+ <h2><span><span class=conr>#6</span> <a href="https://bbs.archlinux.org/viewtopic.php?pid=1882634#p1882634">2020-01-13 01:52:20</a></span></h2>
+ <div class=box>
+ <div class=inbox>
+ <div class=postbody>
+ <div class=postleft>
+ <dl>
+ <dt><strong>maboleth</strong></dt>
+ <dd class=usertitle><strong>Member</strong></dd>
+ <dd><span>Registered: 2020-01-03</span></dd>
+ <dd><span>Posts: 141</span></dd>
+ </dl>
+ </div>
+ <div class=postright>
+ <h3>Re: [SOLVED] No sound after suspend</h3>
+ <div class=postmsg>
+ <p>Thanks Ropid. I don't remember exactly, but I think it started when 5.4.10 was installed. <p>I
+ could be wrong though, because this happens when audio is playing 
+_while_ PC is being suspended. It could be that I suspended my PC before
+ without any sound coming so all seemed good even though I possibly 
+already had this issue (I'm a relatively new linux user)<p>Further, 
+it does not happen every time, even now (usually some time have to pass 
+between suspend -&gt; wake. If I do it too soon, sound goes on 
+normally).</p>
+ <p class=postedit><em>Last edited by maboleth (2020-01-13 02:09:52)</em></p>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class=inbox>
+ <div class="postfoot clearb">
+ <div class=postfootleft><p><span>Offline</span></p></div>
+ </div>
+ </div>
+ </div>
+</div>
+<div id=p1882636 class="blockpost rowodd">
+ <h2><span><span class=conr>#7</span> <a href="https://bbs.archlinux.org/viewtopic.php?pid=1882636#p1882636">2020-01-13 02:14:52</a></span></h2>
+ <div class=box>
+ <div class=inbox>
+ <div class=postbody>
+ <div class=postleft>
+ <dl>
+ <dt><strong>maboleth</strong></dt>
+ <dd class=usertitle><strong>Member</strong></dd>
+ <dd><span>Registered: 2020-01-03</span></dd>
+ <dd><span>Posts: 141</span></dd>
+ </dl>
+ </div>
+ <div class=postright>
+ <h3>Re: [SOLVED] No sound after suspend</h3>
+ <div class=postmsg>
+ <p>Keeping my fingers crossed but sounds seems to be working after commenting this in default.pa<div class=codebox><pre><code>### Automatically suspend sinks/sources that become idle for too long
+# load-module module-suspend-on-idle</code></pre></div><p>Still early to tell... could be just a coincidence.<p>Update: Nope, after 6th suspend it gave me Dummy again. argh.</p>
+ <p class=postedit><em>Last edited by maboleth (2020-01-13 02:24:10)</em></p>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class=inbox>
+ <div class="postfoot clearb">
+ <div class=postfootleft><p><span>Offline</span></p></div>
+ </div>
+ </div>
+ </div>
+</div>
+<div id=p1882666 class="blockpost roweven">
+ <h2><span><span class=conr>#8</span> <a href="https://bbs.archlinux.org/viewtopic.php?pid=1882666#p1882666">2020-01-13 12:13:11</a></span></h2>
+ <div class=box>
+ <div class=inbox>
+ <div class=postbody>
+ <div class=postleft>
+ <dl>
+ <dt><strong>maboleth</strong></dt>
+ <dd class=usertitle><strong>Member</strong></dd>
+ <dd><span>Registered: 2020-01-03</span></dd>
+ <dd><span>Posts: 141</span></dd>
+ </dl>
+ </div>
+ <div class=postright>
+ <h3>Re: [SOLVED] No sound after suspend</h3>
+ <div class=postmsg>
+ <p>Hoped newest kernel fixed it, nope.<p>Can anyone help me, 
+is it possible to explicitly say to pulseaudio not to 
+lose/change/whatever default sink? And that is my realtek chip card.</p>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class=inbox>
+ <div class="postfoot clearb">
+ <div class=postfootleft><p><span>Offline</span></p></div>
+ </div>
+ </div>
+ </div>
+</div>
+<div id=p1882683 class="blockpost rowodd">
+ <h2><span><span class=conr>#9</span> <a href="https://bbs.archlinux.org/viewtopic.php?pid=1882683#p1882683">2020-01-13 13:27:10</a></span></h2>
+ <div class=box>
+ <div class=inbox>
+ <div class=postbody>
+ <div class=postleft>
+ <dl>
+ <dt><strong>V1del</strong></dt>
+ <dd class=usertitle><strong>Forum Moderator</strong></dd>
+ <dd class=postavatar><img src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="56" height="80"><rect fill-opacity="0"/></svg>' alt style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-5)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important" width=56 height=80></dd>
+ <dd><span>Registered: 2012-10-16</span></dd>
+ <dd><span>Posts: 11,871</span></dd>
+ </dl>
+ </div>
+ <div class=postright>
+ <h3>Re: [SOLVED] No sound after suspend</h3>
+ <div class=postmsg>
+ <p>Check dmesg after the suspend, for some reason your device doesn't become available immediately. Look at <div class=codebox><pre><code>journalctl -b --user-unit pulseaudio</code></pre></div><p> as well.<p>Maybe
+ also test a bigger kernel difference, check whether you can reproduce 
+on linux-lts for example. There have been quite a few reports for 
+various suspension issues in the 5.4 series.<p>Also remove the NOT solved from the title.</p>
+ <p class=postedit><em>Last edited by V1del (2020-01-13 13:31:25)</em></p>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class=inbox>
+ <div class="postfoot clearb">
+ <div class=postfootleft><p><span>Offline</span></p></div>
+ </div>
+ </div>
+ </div>
+</div>
+<div id=p1882688 class="blockpost roweven">
+ <h2><span><span class=conr>#10</span> <a href="https://bbs.archlinux.org/viewtopic.php?pid=1882688#p1882688">2020-01-13 13:55:43</a></span></h2>
+ <div class=box>
+ <div class=inbox>
+ <div class=postbody>
+ <div class=postleft>
+ <dl>
+ <dt><strong>maboleth</strong></dt>
+ <dd class=usertitle><strong>Member</strong></dd>
+ <dd><span>Registered: 2020-01-03</span></dd>
+ <dd><span>Posts: 141</span></dd>
+ </dl>
+ </div>
+ <div class=postright>
+ <h3>Re: [SOLVED] No sound after suspend</h3>
+ <div class=postmsg>
+ <p>I will dmesg after it fails and post findings here and try lts if nothing helps. Thanks!<p>I
+ do think, somehow, that these commented modules help. While yesterday 
+6th suspend was deaf again, today I commented one more module and so far
+ so good after numerous wakes.<div class=codebox><pre><code>### Automatically move streams to the default sink if the sink they are
+### connected to dies, similar for sources
+# load-module module-rescue-streams
+
+### Automatically suspend sinks/sources that become idle for too long
+# load-module module-suspend-on-idle</code></pre></div><p>Not sure if this is placebo <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAMAAAAMCGV4AAAAnFBMVEVMaXEmGQD9+Sr+80Y5OTnd3d3imgAAAAD///8RERH+8GL/73v3ogALCwvGhwD/z2T/yUb98yr+7So6MhexsbH/1wB7e3v/4xP/3wDkohP/zADgqADdozHgngD/2GLlzSf/2kb/5SpDPSHn0Dn/uQD/4Hv/7Wf/4GP/41b/6nv/4T7/1Vb/2yrVni7+6zv/xSr1uUXonAAwJhD4sSrm5nDxAAAAAXRSTlMAQObYZgAAAIdJREFUeNpdz1cSgzAMBFBsDEqwCTWk997b/e8WacNMBnb04bf6sO0hJMEJWp+Ph0ta1E282VtrT7tkGmO7iCJjeObJjdjF3feN4VmmzzevB3mmtc7y1fXxGRG7+494SEHnl4BCuCrBsoL7zb2npKip5P7JmAuwR3jQbEsSEIVyzr1CBbb+9wXnxgk2ojEo6AAAAABJRU5ErkJggg==" alt=big_smile width=15 height=15> or not, keeping my fingers crossed... again. I only wonder what are the consequences of these commented out modules?</p>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class=inbox>
+ <div class="postfoot clearb">
+ <div class=postfootleft><p><span>Offline</span></p></div>
+ </div>
+ </div>
+ </div>
+</div>
+<div id=p1882691 class="blockpost rowodd">
+ <h2><span><span class=conr>#11</span> <a href="https://bbs.archlinux.org/viewtopic.php?pid=1882691#p1882691">2020-01-13 14:17:04</a></span></h2>
+ <div class=box>
+ <div class=inbox>
+ <div class=postbody>
+ <div class=postleft>
+ <dl>
+ <dt><strong>V1del</strong></dt>
+ <dd class=usertitle><strong>Forum Moderator</strong></dd>
+ <dd class=postavatar><img src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="56" height="80"><rect fill-opacity="0"/></svg>' alt style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-5)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important" width=56 height=80></dd>
+ <dd><span>Registered: 2012-10-16</span></dd>
+ <dd><span>Posts: 11,871</span></dd>
+ </dl>
+ </div>
+ <div class=postright>
+ <h3>Re: [SOLVED] No sound after suspend</h3>
+ <div class=postmsg>
+ <p>Should both be placebo, module-rescue-streams is for ensuring 
+you are not completely mute if you remove a device (irrelevant in your 
+case, but if you had e.g. an USB card that doesn't run into this issue, 
+your audio would at least play from there and move back when the device 
+restores) that one has guaranteed no bearing on this issue.<p>module-suspend-on-idle
+ "might" have an effect, but if this only when you are suspending with 
+active sound playing, then this also shouldn't be relevant as your sinks
+ aren't suspended when actively playing. This might have a slight 
+relevance because pulse keeps the lock on the card and if there's some 
+interference from another source that might grab the card away from 
+under pulse, pulse should keep it. Incidentally what are you using for 
+playback? It might be that whatever you are using here, sees the card 
+before pulse, continues playback&nbsp; without pulse, pulse can't query 
+the card when it becomes aware, pulse generates a dummy device.</p>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class=inbox>
+ <div class="postfoot clearb">
+ <div class=postfootleft><p><span>Offline</span></p></div>
+ </div>
+ </div>
+ </div>
+</div>
+<div id=p1882726 class="blockpost roweven">
+ <h2><span><span class=conr>#12</span> <a href="https://bbs.archlinux.org/viewtopic.php?pid=1882726#p1882726">2020-01-13 16:11:42</a></span></h2>
+ <div class=box>
+ <div class=inbox>
+ <div class=postbody>
+ <div class=postleft>
+ <dl>
+ <dt><strong>maboleth</strong></dt>
+ <dd class=usertitle><strong>Member</strong></dd>
+ <dd><span>Registered: 2020-01-03</span></dd>
+ <dd><span>Posts: 141</span></dd>
+ </dl>
+ </div>
+ <div class=postright>
+ <h3>Re: [SOLVED] No sound after suspend</h3>
+ <div class=postmsg>
+ <div class=quotebox><cite>V1del wrote:</cite><blockquote><div><p>Should
+ both be placebo, module-rescue-streams is for ensuring you are not 
+completely mute if you remove a device (irrelevant in your case, but if 
+you had e.g. an USB card that doesn't run into this issue, your audio 
+would at least play from there and move back when the device restores) 
+that one has guaranteed no bearing on this issue.<p>module-suspend-on-idle
+ "might" have an effect, but if this only when you are suspending with 
+active sound playing, then this also shouldn't be relevant as your sinks
+ aren't suspended when actively playing. This might have a slight 
+relevance because pulse keeps the lock on the card and if there's some 
+interference from another source that might grab the card away from 
+under pulse, pulse should keep it. Incidentally what are you using for 
+playback? It might be that whatever you are using here, sees the card 
+before pulse, continues playback&nbsp; without pulse, pulse can't query 
+the card when it becomes aware, pulse generates a dummy device.</p></div></blockquote></div><p>Have
+ to agree with you there. The fact that this doesn't always help makes 
+it rather dubious. Still, I find the whole issue rather strange, as I 
+cannot say - hey my machine doesn't have sound after suspend. It's more 
+like it - sometimes it does, sometimes it does not. And under certain 
+circumstances. That's why I hoped for some setting rather than kernel 
+bug. I'm no expert in this by any means, but this looks like some timing
+ issue of some sorts.<p>As for playback, I use Lollypop for my home albums and Firefox for online radios. It happens on both.<p>I also have HDMI by Nividia that I have disabled it with <div class=codebox><pre><code>options snd_hda_intel probe_only=1,0</code></pre></div>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class=inbox>
+ <div class="postfoot clearb">
+ <div class=postfootleft><p><span>Offline</span></p></div>
+ </div>
+ </div>
+ </div>
+</div>
+<div id=p1882729 class="blockpost rowodd">
+ <h2><span><span class=conr>#13</span> <a href="https://bbs.archlinux.org/viewtopic.php?pid=1882729#p1882729">2020-01-13 16:21:38</a></span></h2>
+ <div class=box>
+ <div class=inbox>
+ <div class=postbody>
+ <div class=postleft>
+ <dl>
+ <dt><strong>V1del</strong></dt>
+ <dd class=usertitle><strong>Forum Moderator</strong></dd>
+ <dd class=postavatar><img src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="56" height="80"><rect fill-opacity="0"/></svg>' alt style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-5)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important" width=56 height=80></dd>
+ <dd><span>Registered: 2012-10-16</span></dd>
+ <dd><span>Posts: 11,871</span></dd>
+ </dl>
+ </div>
+ <div class=postright>
+ <h3>Re: [SOLVED] No sound after suspend</h3>
+ <div class=postmsg>
+ <p>Did you double check that your indices aren't swapping out 
+under you with e.g aplay -l ? It could be that you are disable probing 
+the wrong device on wakeup as udev becomes aware of them.</p>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class=inbox>
+ <div class="postfoot clearb">
+ <div class=postfootleft><p><span>Offline</span></p></div>
+ </div>
+ </div>
+ </div>
+</div>
+<div id=p1882730 class="blockpost roweven">
+ <h2><span><span class=conr>#14</span> <a href="https://bbs.archlinux.org/viewtopic.php?pid=1882730#p1882730">2020-01-13 16:25:50</a></span></h2>
+ <div class=box>
+ <div class=inbox>
+ <div class=postbody>
+ <div class=postleft>
+ <dl>
+ <dt><strong>maboleth</strong></dt>
+ <dd class=usertitle><strong>Member</strong></dd>
+ <dd><span>Registered: 2020-01-03</span></dd>
+ <dd><span>Posts: 141</span></dd>
+ </dl>
+ </div>
+ <div class=postright>
+ <h3>Re: [SOLVED] No sound after suspend</h3>
+ <div class=postmsg>
+ <p>Wake after suspend, no sound - journal:<div class=codebox><pre><code>јан 13 17:14:47 ivan-linux pulseaudio[837]: W: [alsa-sink-ALC892 Analog] alsa-util.c: Could not recover alsa device from SUSPENDED state, trying to restart PCM
+јан 13 17:14:47 ivan-linux pulseaudio[837]: E: [alsa-sink-ALC892 Analog] alsa-sink.c: Error opening PCM device front:1: No such file or directory
+јан 13 17:14:47 ivan-linux pulseaudio[837]: E: [pulseaudio] module-alsa-card.c: Failed to find a working profile.
+јан 13 17:14:47 ivan-linux pulseaudio[837]: E: [pulseaudio] module.c: Failed to load module "module-alsa-card" (argument: "device_id="0" name="pci-0000_26_00.1" card_name="alsa_card.pci-0000_26_00.1" namer&gt;</code></pre></div><p>Initiating pulseaudio -k, journal:<div class=codebox><pre><code>јан 13 17:18:36 ivan-linux systemd[781]: pulseaudio.service: Succeeded.
+јан 13 17:18:36 ivan-linux systemd[781]: Starting Sound Service...
+јан 13 17:18:36 ivan-linux pulseaudio[2498]: E: [pulseaudio] module-alsa-card.c: Failed to find a working profile.
+јан 13 17:18:36 ivan-linux pulseaudio[2498]: E: [pulseaudio] module.c: Failed to load module "module-alsa-card" (argument: "device_id="0" name="pci-0000_26_00.1" card_name="alsa_card.pci-0000_26_00.1" name&gt;
+јан 13 17:18:36 ivan-linux systemd[781]: Started Sound Service.
+јан 13 17:18:36 ivan-linux pulseaudio[2498]: E: [pulseaudio] bluez5-util.c: GetManagedObjects() failed: org.freedesktop.systemd1.NoSuchUnit: Unit dbus-org.bluez.service not found.</code></pre></div><p>However, nothing unusual in dmesg.<div class=quotebox><cite>V1del wrote:</cite><blockquote><div><p>Did
+ you double check that your indices aren't swapping out under you with 
+e.g aplay -l ? It could be that you are disable probing the wrong device
+ on wakeup as udev becomes aware of them.</p></div></blockquote></div><div class=codebox><pre><code>card 1: Generic [HD-Audio Generic], device 0: ALC892 Analog [ALC892 Analog]
+  Subdevices: 0/1
+  Subdevice #0: subdevice #0</code></pre></div><p>It shouldn't be, alsamixer clearly said Nvidia HDMI was disabled. But ok, will delete my probe and reboot.</p>
+ <p class=postedit><em>Last edited by maboleth (2020-01-13 16:29:57)</em></p>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class=inbox>
+ <div class="postfoot clearb">
+ <div class=postfootleft><p><span>Offline</span></p></div>
+ </div>
+ </div>
+ </div>
+</div>
+<div id=p1882737 class="blockpost rowodd">
+ <h2><span><span class=conr>#15</span> <a href="https://bbs.archlinux.org/viewtopic.php?pid=1882737#p1882737">2020-01-13 17:31:21</a></span></h2>
+ <div class=box>
+ <div class=inbox>
+ <div class=postbody>
+ <div class=postleft>
+ <dl>
+ <dt><strong>maboleth</strong></dt>
+ <dd class=usertitle><strong>Member</strong></dd>
+ <dd><span>Registered: 2020-01-03</span></dd>
+ <dd><span>Posts: 141</span></dd>
+ </dl>
+ </div>
+ <div class=postright>
+ <h3>Re: [SOLVED] No sound after suspend</h3>
+ <div class=postmsg>
+ <p>Nope, same happens... like, every 3rd suspend. <img src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"><rect fill-opacity="0"/></svg>' alt=sad style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-7)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important" width=15 height=15> It's so annoying.<p>One thing I have noticed, when it's dummy output, aplay -l shows this:<div class=codebox><pre><code>**** List of PLAYBACK Hardware Devices ****
+card 0: NVidia [HDA NVidia], device 3: HDMI 0 [HDMI 0]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 0: NVidia [HDA NVidia], device 7: HDMI 1 [HDMI 1]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 0: NVidia [HDA NVidia], device 8: HDMI 2 [HDMI 2]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 0: NVidia [HDA NVidia], device 9: HDMI 3 [HDMI 3]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 1: Generic [HD-Audio Generic], device 0: ALC892 Analog [ALC892 Analog]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0</code></pre></div><p>However, when pulseaudio is restarted Generic HD audio line is slightly changed:<div class=codebox><pre><code>card 1: Generic [HD-Audio Generic], device 0: ALC892 Analog [ALC892 Analog]
+  Subdevices: 0/1
+  Subdevice #0: subdevice #0</code></pre></div><p>Of course I don't 
+exactly know what it means, but it lists Subdevices 1/1 during dummy 
+output and 0/1 when it's actually working.</p>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class=inbox>
+ <div class="postfoot clearb">
+ <div class=postfootleft><p><span>Offline</span></p></div>
+ </div>
+ </div>
+ </div>
+</div>
+<div id=p1882766 class="blockpost roweven">
+ <h2><span><span class=conr>#16</span> <a href="https://bbs.archlinux.org/viewtopic.php?pid=1882766#p1882766">2020-01-13 21:44:47</a></span></h2>
+ <div class=box>
+ <div class=inbox>
+ <div class=postbody>
+ <div class=postleft>
+ <dl>
+ <dt><strong>V1del</strong></dt>
+ <dd class=usertitle><strong>Forum Moderator</strong></dd>
+ <dd class=postavatar><img src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="56" height="80"><rect fill-opacity="0"/></svg>' alt style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-5)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important" width=56 height=80></dd>
+ <dd><span>Registered: 2012-10-16</span></dd>
+ <dd><span>Posts: 11,871</span></dd>
+ </dl>
+ </div>
+ <div class=postright>
+ <h3>Re: [SOLVED] No sound after suspend</h3>
+ <div class=postmsg>
+ <p>Why is it registered as generic in the first place? Did you set
+ that? Setting that can very easily and very verifiably lead to issues 
+like that. What's your output for <div class=codebox><pre><code>systool -vm snd_hda_intel
+dmesg | grep snd</code></pre></div><p> but yes at this point I'd say 
+it's safe to assume a kernel bug, check with linux-lts or so, unless my 
+command turns something up.</p>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class=inbox>
+ <div class="postfoot clearb">
+ <div class=postfootleft><p><span>Offline</span></p></div>
+ </div>
+ </div>
+ </div>
+</div>
+<div id=p1882775 class="blockpost rowodd">
+ <h2><span><span class=conr>#17</span> <a href="https://bbs.archlinux.org/viewtopic.php?pid=1882775#p1882775">2020-01-13 22:35:00</a></span></h2>
+ <div class=box>
+ <div class=inbox>
+ <div class=postbody>
+ <div class=postleft>
+ <dl>
+ <dt><strong>maboleth</strong></dt>
+ <dd class=usertitle><strong>Member</strong></dd>
+ <dd><span>Registered: 2020-01-03</span></dd>
+ <dd><span>Posts: 141</span></dd>
+ </dl>
+ </div>
+ <div class=postright>
+ <h3>Re: [SOLVED] No sound after suspend</h3>
+ <div class=postmsg>
+ <div class=quotebox><cite>V1del wrote:</cite><blockquote><div><p>Why
+ is it registered as generic in the first place? Did you set that? 
+Setting that can very easily and very verifiably lead to issues like 
+that.</p></div></blockquote></div><p>That's how kernel/linux found it. I
+ don't even know how to set that. If it's possible to change it, please 
+feel free to tell me how.<p>It could be kernel bug, yes... I don't even know what to try anymore. I will try LTS some other day too. <p>There are the responses <em>while the sound is working</em>.<div class=codebox><pre class=vscroll><code>[ivan@ivan-linux ~]$ systool -vm snd_hda_intel
+Module = "snd_hda_intel"
+
+  Attributes:
+    coresize            = "53248"
+    initsize            = "0"
+    initstate           = "live"
+    refcnt              = "6"
+    srcversion          = "C3100F00C7A41A28089FFB6"
+    taint               = ""
+    uevent              = &lt;store method only&gt;
+
+  Parameters:
+    align_buffer_size   = "-1"
+    bdl_pos_adj         = "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1"
+    beep_mode           = "Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y"
+    dmic_detect         = "N"
+    enable_msi          = "-1"
+    enable              = "Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y"
+    id                  = "(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)"
+    index               = "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1"
+    jackpoll_ms         = "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"
+    model               = "(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)"
+    patch               = "(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)"
+    pm_blacklist        = "Y"
+    position_fix        = "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1"
+    power_save          = "0"
+    power_save_controller= "Y"
+    probe_mask          = "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1"
+    probe_only          = "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"
+    single_cmd          = "-1"
+    snoop               = "-1"
+
+  Sections:</code></pre></div><div class=codebox><pre><code>[ivan@ivan-linux ~]$ dmesg | grep snd
+[    4.561022] snd_hda_intel 0000:26:00.1: enabling device (0000 -&gt; 0002)
+[    4.561118] snd_hda_intel 0000:26:00.1: Disabling MSI
+[    4.561128] snd_hda_intel 0000:26:00.1: Handle vga_switcheroo audio client
+[    4.561222] snd_hda_intel 0000:28:00.4: enabling device (0000 -&gt; 0002)
+[    4.631121] snd_hda_codec_realtek hdaudioC1D0: autoconfig for ALC892: line_outs=4 (0x14/0x15/0x16/0x17/0x0) type:line
+[    4.631124] snd_hda_codec_realtek hdaudioC1D0:    speaker_outs=0 (0x0/0x0/0x0/0x0/0x0)
+[    4.631125] snd_hda_codec_realtek hdaudioC1D0:    hp_outs=1 (0x1b/0x0/0x0/0x0/0x0)
+[    4.631126] snd_hda_codec_realtek hdaudioC1D0:    mono: mono_out=0x0
+[    4.631126] snd_hda_codec_realtek hdaudioC1D0:    inputs:
+[    4.631128] snd_hda_codec_realtek hdaudioC1D0:      Front Mic=0x19
+[    4.631129] snd_hda_codec_realtek hdaudioC1D0:      Rear Mic=0x18
+[    4.631130] snd_hda_codec_realtek hdaudioC1D0:      Line=0x1a</code></pre></div><p>Also,<div class=codebox><pre><code>lsmod | grep '^snd' | column -t
+snd_seq_dummy          16384   0   
+snd_seq                86016   1   snd_seq_dummy
+snd_seq_device         16384   1   snd_seq
+snd_hda_codec_hdmi     73728   1   
+snd_hda_codec_realtek  126976  1   
+snd_hda_codec_generic  94208   1   snd_hda_codec_realtek
+snd_hda_intel          53248   6   
+snd_intel_nhlt         20480   1   snd_hda_intel
+snd_hda_codec          155648  4   snd_hda_codec_generic,snd_hda_codec_hdmi,snd_hda_intel,snd_hda_codec_realtek
+snd_hda_core           102400  5   snd_hda_codec_generic,snd_hda_codec_hdmi,snd_hda_intel,snd_hda_codec,snd_hda_codec_realtek
+snd_hwdep              16384   1   snd_hda_codec
+snd_pcm                135168  5   snd_hda_codec_hdmi,snd_hda_intel,snd_hda_codec,snd_hda_core
+snd_timer              40960   3   snd_seq,snd_pcm
+snd                    106496  20  snd_hda_codec_generic,snd_seq,snd_seq_device,snd_hda_codec_hdmi,snd_hwdep,snd_hda_intel,snd_hda_codec,snd_hda_codec_realtek,snd_timer,snd_pcm</code></pre></div>
+ <p class=postedit><em>Last edited by maboleth (2020-01-13 22:38:45)</em></p>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class=inbox>
+ <div class="postfoot clearb">
+ <div class=postfootleft><p><span>Offline</span></p></div>
+ </div>
+ </div>
+ </div>
+</div>
+<div id=p1883322 class="blockpost roweven">
+ <h2><span><span class=conr>#18</span> <a href="https://bbs.archlinux.org/viewtopic.php?pid=1883322#p1883322">2020-01-16 21:37:50</a></span></h2>
+ <div class=box>
+ <div class=inbox>
+ <div class=postbody>
+ <div class=postleft>
+ <dl>
+ <dt><strong>maboleth</strong></dt>
+ <dd class=usertitle><strong>Member</strong></dd>
+ <dd><span>Registered: 2020-01-03</span></dd>
+ <dd><span>Posts: 141</span></dd>
+ </dl>
+ </div>
+ <div class=postright>
+ <h3>Re: [SOLVED] No sound after suspend</h3>
+ <div class=postmsg>
+ <p>Things have changed a little bit. <p>I have bought another 
+monitor that I connect via HDMI. So now when I suspend, it's not dummy 
+output anymore but HDMI/Displayport2.<p>It's like pulseaudio/linux 
+takes the fastest opened sink after suspend and uses it. How can I say 
+to pulseaudio "please stop !@$%!@$ using other sinks, focus/force using 
+realtek ffs" ?!<p>Because, as I see, realtek is available.<div class=codebox><pre><code>[ivan@ivan-linux ~]$ aplay -l
+**** List of PLAYBACK Hardware Devices ****
+card 0: NVidia [HDA NVidia], device 3: HDMI 0 [HDMI 0]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 0: NVidia [HDA NVidia], device 7: HDMI 1 [HDMI 1]
+  Subdevices: 0/1
+  Subdevice #0: subdevice #0
+card 0: NVidia [HDA NVidia], device 8: HDMI 2 [HDMI 2]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 0: NVidia [HDA NVidia], device 9: HDMI 3 [HDMI 3]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 1: Generic [HD-Audio Generic], device 0: ALC892 Analog [ALC892 Analog]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0</code></pre></div>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class=inbox>
+ <div class="postfoot clearb">
+ <div class=postfootleft><p><span>Offline</span></p></div>
+ </div>
+ </div>
+ </div>
+</div>
+<div id=p1883325 class="blockpost rowodd">
+ <h2><span><span class=conr>#19</span> <a href="https://bbs.archlinux.org/viewtopic.php?pid=1883325#p1883325">2020-01-16 21:55:53</a></span></h2>
+ <div class=box>
+ <div class=inbox>
+ <div class=postbody>
+ <div class=postleft>
+ <dl>
+ <dt><strong>Zod</strong></dt>
+ <dd class=usertitle><strong>Member</strong></dd>
+ <dd class=postavatar><img src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="75"><rect fill-opacity="0"/></svg>' alt style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-8)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important" width=80 height=75></dd>
+ <dd><span>From: Hoosiertucky</span></dd>
+ <dd><span>Registered: 2019-03-10</span></dd>
+ <dd><span>Posts: 447</span></dd>
+ </dl>
+ </div>
+ <div class=postright>
+ <h3>Re: [SOLVED] No sound after suspend</h3>
+ <div class=postmsg>
+ <p>Beats me if it works as I only have the one sink.<p>I also don't know if it's been suggested as I searched this thread for 'default.pa' and only saw the one instance.<p>Have you tried this?<br><a href=https://wiki.archlinux.org/index.php/PulseAudio/Examples#Set_the_default_output_sink rel=nofollow>https://wiki.archlinux.org/index.php/Pu … utput_sink</a></p>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class=inbox>
+ <div class="postfoot clearb">
+ <div class=postfootleft><p><span>Offline</span></p></div>
+ </div>
+ </div>
+ </div>
+</div>
+<div id=p1883334 class="blockpost roweven">
+ <h2><span><span class=conr>#20</span> <a href="https://bbs.archlinux.org/viewtopic.php?pid=1883334#p1883334">2020-01-16 22:08:35</a></span></h2>
+ <div class=box>
+ <div class=inbox>
+ <div class=postbody>
+ <div class=postleft>
+ <dl>
+ <dt><strong>maboleth</strong></dt>
+ <dd class=usertitle><strong>Member</strong></dd>
+ <dd><span>Registered: 2020-01-03</span></dd>
+ <dd><span>Posts: 141</span></dd>
+ </dl>
+ </div>
+ <div class=postright>
+ <h3>Re: [SOLVED] No sound after suspend</h3>
+ <div class=postmsg>
+ <div class=quotebox><cite>Zod wrote:</cite><blockquote><div><p>Beats me if it works as I only have the one sink.<p>I also don't know if it's been suggested as I searched this thread for 'default.pa' and only saw the one instance.<p>Have you tried this?<br><a href=https://wiki.archlinux.org/index.php/PulseAudio/Examples#Set_the_default_output_sink rel=nofollow>https://wiki.archlinux.org/index.php/Pu … utput_sink</a></p></div></blockquote></div><p>That's the thing I wanted to try but didn't know what to write there. Thanks!<p>However, even though the card is listed in aplay -l, when trying to list sinks, it displays HDMI only. <p>pacmd list-sinks<div class=codebox><pre class=vscroll><code>1 sink(s) available.
+  * index: 7
+	name: &lt;alsa_output.pci-0000_26_00.1.hdmi-stereo-extra1&gt;
+	driver: &lt;module-alsa-card.c&gt;
+	flags: HARDWARE DECIBEL_VOLUME LATENCY DYNAMIC_LATENCY
+	state: SUSPENDED
+	suspend cause: IDLE
+	priority: 9030
+	volume: front-left: 38012 /  58% / -14,19 dB,   front-right: 38012 /  58% / -14,19 dB
+	        balance 0,00
+	base volume: 65536 / 100% / 0,00 dB
+	volume steps: 65537
+	muted: no
+	current latency: 0,00 ms
+	max request: 0 KiB
+	max rewind: 0 KiB
+	monitor source: 7
+	sample spec: s16le 2ch 44100Hz
+	channel map: front-left,front-right
+	             Stereo
+	used by: 0
+	linked by: 0
+	configured latency: 0,00 ms; range is 0,50 .. 1999,82 ms
+	card: 0 &lt;alsa_card.pci-0000_26_00.1&gt;
+	module: 6
+	properties:
+		alsa.resolution_bits = "16"
+		device.api = "alsa"
+		device.class = "sound"
+		alsa.class = "generic"
+		alsa.subclass = "generic-mix"
+		alsa.name = "HDMI 1"
+		alsa.id = "HDMI 1"
+		alsa.subdevice = "0"
+		alsa.subdevice_name = "subdevice #0"
+		alsa.device = "7"
+		alsa.card = "0"
+		alsa.card_name = "HDA NVidia"
+		alsa.long_card_name = "HDA NVidia at 0xf7080000 irq 93"
+		alsa.driver_name = "snd_hda_intel"
+		device.bus_path = "pci-0000:26:00.1"
+		sysfs.path = "/devices/pci0000:00/0000:00:03.1/0000:26:00.1/sound/card0"
+		device.bus = "pci"јан 16 22:29:12 ivan-linux pulseaudio[845]: W: [alsa-sink-ALC892 Analog] alsa-util.c: Could not recover alsa device from SUSPENDED state, trying to restart PCM
+јан 16 22:29:12 ivan-linux pulseaudio[845]: E: [alsa-sink-ALC892 Analog] alsa-sink.c: Error opening PCM device front:1: No such file or directory
+
+		device.vendor.id = "10de"
+		device.vendor.name = "NVIDIA Corporation"
+		device.product.id = "10f1"
+		device.product.name = "GP106 High Definition Audio Controller"
+		device.string = "hdmi:0,1"
+		device.buffering.buffer_size = "352768"
+		device.buffering.fragment_size = "176384"
+		device.access_mode = "mmap+timer"
+		device.profile.name = "hdmi-stereo-extra1"
+		device.profile.description = "Digital Stereo (HDMI 2)"
+		device.description = "GP106 High Definition Audio Controller Digital Stereo (HDMI 2)"
+		alsa.mixer_name = "Nvidia GPU 84 HDMI/DP"
+		alsa.components = "HDA:10de0084,1458371a,00100100"
+		module-udev-detect.discovered = "1"
+		device.icon_name = "audio-card-pci"
+	ports:
+		hdmi-output-1: HDMI / DisplayPort 2 (priority 5800, latency offset 0 usec, available: yes)
+			properties:
+				device.icon_name = "video-display"
+				device.product.name = "DELL U2415
+  "
+	active port: &lt;hdmi-output-1&gt;</code></pre></div><p>It's like the first (main and only) sink is <strong>lost</strong> during suspend, as documented by ALSA.<div class=codebox><pre><code>јан 16 22:29:12 ivan-linux pulseaudio[845]: W: [alsa-sink-ALC892 Analog] alsa-util.c: Could not recover alsa device from SUSPENDED state, trying to restart PCM
+јан 16 22:29:12 ivan-linux pulseaudio[845]: E: [alsa-sink-ALC892 Analog] alsa-sink.c: Error opening PCM device front:1: No such file or directory</code></pre></div><p>If I'm not mistaken, it's impossible to call that sink because it's lost, as shown in the journal above.<p>What
+ puzzles me even more is that simply restarting the pulseaudio -k, makes
+ everything alright and suddenly there IS a 2nd sink. <p>So I'm 
+running back and forth. Is this problem alsa or pulseaudio related? If 
+it's alsa, how can pulseaudio find it with a simple pulseaudio-k 
+restart? Why is the 2nd sink available, what kept it hidden in the first
+ place?</p>
+ <p class=postedit><em>Last edited by maboleth (2020-01-16 22:13:37)</em></p>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class=inbox>
+ <div class="postfoot clearb">
+ <div class=postfootleft><p><span>Offline</span></p></div>
+ </div>
+ </div>
+ </div>
+</div>
+<div id=p1883336 class="blockpost rowodd">
+ <h2><span><span class=conr>#21</span> <a href="https://bbs.archlinux.org/viewtopic.php?pid=1883336#p1883336">2020-01-16 22:21:11</a></span></h2>
+ <div class=box>
+ <div class=inbox>
+ <div class=postbody>
+ <div class=postleft>
+ <dl>
+ <dt><strong>Zod</strong></dt>
+ <dd class=usertitle><strong>Member</strong></dd>
+ <dd class=postavatar><img src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="75"><rect fill-opacity="0"/></svg>' alt style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-8)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important" width=80 height=75></dd>
+ <dd><span>From: Hoosiertucky</span></dd>
+ <dd><span>Registered: 2019-03-10</span></dd>
+ <dd><span>Posts: 447</span></dd>
+ </dl>
+ </div>
+ <div class=postright>
+ <h3>Re: [SOLVED] No sound after suspend</h3>
+ <div class=postmsg>
+ <p>Have you seen this?<br><a href=https://gitlab.freedesktop.org/pulseaudio/pulseaudio/issues/766 rel=nofollow>https://gitlab.freedesktop.org/pulseaud … issues/766</a></p>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class=inbox>
+ <div class="postfoot clearb">
+ <div class=postfootleft><p><span>Offline</span></p></div>
+ </div>
+ </div>
+ </div>
+</div>
+<div id=p1883338 class="blockpost roweven">
+ <h2><span><span class=conr>#22</span> <a href="https://bbs.archlinux.org/viewtopic.php?pid=1883338#p1883338">2020-01-16 22:32:44</a></span></h2>
+ <div class=box>
+ <div class=inbox>
+ <div class=postbody>
+ <div class=postleft>
+ <dl>
+ <dt><strong>maboleth</strong></dt>
+ <dd class=usertitle><strong>Member</strong></dd>
+ <dd><span>Registered: 2020-01-03</span></dd>
+ <dd><span>Posts: 141</span></dd>
+ </dl>
+ </div>
+ <div class=postright>
+ <h3>Re: [SOLVED] No sound after suspend</h3>
+ <div class=postmsg>
+ <div class=quotebox><cite>Zod wrote:</cite><blockquote><div><p>Have you seen this?<br><a href=https://gitlab.freedesktop.org/pulseaudio/pulseaudio/issues/766 rel=nofollow>https://gitlab.freedesktop.org/pulseaud … issues/766</a></p></div></blockquote></div><p>Thanks on this. You nailed it. It's exactly the same issue I'm facing.<p>So
+ it seems kernel -&gt; nvidia proprietary driver related... without any 
+workarounds as of now (well, except that pulseaudio -k). <img src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"><rect fill-opacity="0"/></svg>' alt=sad style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-7)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important" width=15 height=15></p>
+ <p class=postedit><em>Last edited by maboleth (2020-01-16 22:33:04)</em></p>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class=inbox>
+ <div class="postfoot clearb">
+ <div class=postfootleft><p><span>Offline</span></p></div>
+ </div>
+ </div>
+ </div>
+</div>
+<div id=p1883339 class="blockpost rowodd">
+ <h2><span><span class=conr>#23</span> <a href="https://bbs.archlinux.org/viewtopic.php?pid=1883339#p1883339">2020-01-16 22:38:53</a></span></h2>
+ <div class=box>
+ <div class=inbox>
+ <div class=postbody>
+ <div class=postleft>
+ <dl>
+ <dt><strong>Zod</strong></dt>
+ <dd class=usertitle><strong>Member</strong></dd>
+ <dd class=postavatar><img src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="75"><rect fill-opacity="0"/></svg>' alt style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-8)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important" width=80 height=75></dd>
+ <dd><span>From: Hoosiertucky</span></dd>
+ <dd><span>Registered: 2019-03-10</span></dd>
+ <dd><span>Posts: 447</span></dd>
+ </dl>
+ </div>
+ <div class=postright>
+ <h3>Re: [SOLVED] No sound after suspend</h3>
+ <div class=postmsg>
+ <p>I don't know, I guess it depends on why you are using the nvidia proprietary driver.<p>If your not a hard core gamer you might consider the nouveau driver.<p>The xf86-x-x drivers seem to get alot of bad publicity and video drivers are still something of a mystery to me.<p>So I don't know if you have any other workarounds.</p><br><p>Edit:
+ almost forgot to mention, my laptop has a quadro card with the nvidia 
+high definition sound hardware. With the nvidia blob I see it, with 
+nouveau I don't.</p>
+ <p class=postedit><em>Last edited by Zod (2020-01-16 22:44:35)</em></p>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class=inbox>
+ <div class="postfoot clearb">
+ <div class=postfootleft><p><span>Offline</span></p></div>
+ </div>
+ </div>
+ </div>
+</div>
+<div id=p1883344 class="blockpost roweven">
+ <h2><span><span class=conr>#24</span> <a href="https://bbs.archlinux.org/viewtopic.php?pid=1883344#p1883344">2020-01-16 22:50:24</a></span></h2>
+ <div class=box>
+ <div class=inbox>
+ <div class=postbody>
+ <div class=postleft>
+ <dl>
+ <dt><strong>maboleth</strong></dt>
+ <dd class=usertitle><strong>Member</strong></dd>
+ <dd><span>Registered: 2020-01-03</span></dd>
+ <dd><span>Posts: 141</span></dd>
+ </dl>
+ </div>
+ <div class=postright>
+ <h3>Re: [SOLVED] No sound after suspend</h3>
+ <div class=postmsg>
+ <p>^ I do play games with steam and proton. Having all the power 
+GPU gives is certainly a perk for me for current and future games. 
+Currently the games have been working wonderfully with zero penalties. 
+It's the same fps/experience as in Windows.<p>That being said, I 
+still didn't try nouveau driver. I will do it for testing purposes (also
+ trying to help that pulseaudio dev guy). At least we got closer to 
+finding a real issue here.<p>Thanks on your laptop findings too!</p>
+ <p class=postedit><em>Last edited by maboleth (2020-01-16 22:51:27)</em></p>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class=inbox>
+ <div class="postfoot clearb">
+ <div class=postfootleft><p><span>Offline</span></p></div>
+ </div>
+ </div>
+ </div>
+</div>
+<div id=p1883353 class="blockpost rowodd">
+ <h2><span><span class=conr>#25</span> <a href="https://bbs.archlinux.org/viewtopic.php?pid=1883353#p1883353">2020-01-17 00:35:14</a></span></h2>
+ <div class=box>
+ <div class=inbox>
+ <div class=postbody>
+ <div class=postleft>
+ <dl>
+ <dt><strong>maboleth</strong></dt>
+ <dd class=usertitle><strong>Member</strong></dd>
+ <dd><span>Registered: 2020-01-03</span></dd>
+ <dd><span>Posts: 141</span></dd>
+ </dl>
+ </div>
+ <div class=postright>
+ <h3>Re: [SOLVED] No sound after suspend</h3>
+ <div class=postmsg>
+ <p>Tested with nouveau drivers, 9 suspends, no sink-losing.<p>But alas, cannot use it. Steam games cannot even start.</p>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class=inbox>
+ <div class="postfoot clearb">
+ <div class=postfootleft><p><span>Offline</span></p></div>
+ </div>
+ </div>
+ </div>
+</div>
+<div class=postlinksb>
+ <div class="inbox crumbsplus">
+ <div class=pagepost>
+ <p class="pagelink conl"><span class=pages-label>Pages: </span><strong class=item1>1</strong> <a href="https://bbs.archlinux.org/viewtopic.php?id=252030&amp;p=2">2</a> <a rel=next href="https://bbs.archlinux.org/viewtopic.php?id=252030&amp;p=2">Next</a></p>
+ </div>
+ <ul class=crumbs>
+ <li><a href=https://bbs.archlinux.org/index.php>Index</a></li>
+ <li><span>»&nbsp;</span><a href="https://bbs.archlinux.org/viewforum.php?id=22">Kernel &amp; Hardware</a></li>
+ <li><span>»&nbsp;</span><strong><a href="https://bbs.archlinux.org/viewtopic.php?id=252030">[SOLVED] No sound after suspend</a></strong></li>
+ </ul>
+ <div class=clearer></div>
+ </div>
+</div>
+</div>
+<div id=brdfooter class=block>
+ <h2><span>Board footer</span></h2>
+ <div class=box>
+ <div id=brdfooternav class=inbox>
+ <div class=conl>
+ <form id=qjump action=viewforum.php>
+ <div><label><span>Jump to<br></span>
+ <select name=id>
+ <optgroup label="Technical Issues and Assistance">
+ <option value=23>Newbie Corner</option>
+ <option value=17>Installation</option>
+ <option value=22 selected>Kernel &amp; Hardware</option>
+ <option value=18>Applications &amp; Desktop Environments</option>
+ <option value=31>Laptop Issues</option>
+ <option value=8>Networking, Server, and Protection</option>
+ <option value=32>Multimedia and Games</option>
+ <option value=50>System Administration</option>
+ <option value=35>Other Architectures</option>
+ </optgroup>
+ <optgroup label=Arch-centric>
+ <option value=24>Announcements, Package &amp; Security Advisories</option>
+ <option value=1>Arch Discussion</option>
+ <option value=13>Forum &amp; Wiki discussion</option>
+ </optgroup>
+ <optgroup label="Pacman Upgrades, Packaging &amp; AUR">
+ <option value=44>Pacman &amp; Package Upgrade Issues</option>
+ <option value=49>[testing] Repo Forum</option>
+ <option value=4>Creating &amp; Modifying Packages</option>
+ <option value=38>AUR Issues, Discussion &amp; PKGBUILD Requests</option>
+ </optgroup>
+ <optgroup label="Contributions &amp; Discussion">
+ <option value=20>GNU/Linux Discussion</option>
+ <option value=27>Community Contributions</option>
+ <option value=33>Programming &amp; Scripting</option>
+ <option value=30>Other Languages</option>
+ <option value=47>Artwork and Screenshots</option>
+ </optgroup>
+ </select></label>
+ <input type=submit value=" Go " accesskey=g>
+ </div>
+ </form>
+ </div>
+ <div class=conr>
+ <p id=feedlinks><span class=atom><a href="https://bbs.archlinux.org/extern.php?action=feed&amp;tid=252030&amp;type=atom">Atom topic feed</a></span></p>
+ <p id=poweredby>Powered by <a href=http://fluxbb.org/>FluxBB</a></p>
+ </div>
+ <div class=clearer></div>
+ </div>
+ </div>
+</div>
+</div>
+<div class=end-box></div>
+</div>

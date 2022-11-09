@@ -1,0 +1,122 @@
+Installed:
+	sensors viewer
+	keepassxc
+	smtube mplayer
+	geary gnome-online-accounts
+	gnome-control-center
+	numlockx
+	feedreader
+	redshift
+	timeshift
+	gnome-disk-utility
+	onboard
+	ristretto
+	viewnior
+	deadbeef
+	pikaur (aur)
+	aqemu (aur)
+	smplayer
+	galculator
+	cmus
+	lyvi-git (aur)
+    hardinfo
+    tlpui
+    byobu tmux
+    Alpine-git (aur)
+    backintime
+    mc
+    bleachbit
+    shell-color-scripts (aur)
+
+
+
+
+
+Uninstalled:
+	claws-mail
+	light
+	auto-cpufreq
+	budgie-desktop gnome-screensaver gnome-backgrounds
+	budgie-extras dconf-editor
+	gnome-terminal
+	nautilus
+
+
+
+
+Settings:
+
+	numlock
+
+	med-arch no password (sudo)
+		/etc/sudoers.d/med
+
+	pamac no password policy (pkexec)
+		/usr/share/polkit-1/actions/org.manjaro.pamac.policy
+
+	Powersave Mode:
+		sudo cpupower frequency-info
+		ls -l /lib/modules/`uname -r`/kernel/drivers/cpufreq/
+		sudo modprobe cpufreq_powersave
+		sudo cpupower frequency-set -g powersave
+	Mount swap:
+		free
+		cat /proc/swaps
+		sudo lsblk
+		sudo fdisk -l
+		sudo blkid
+		sudo mkswap /dev/sda9
+		swapon -help
+		sudo swapon /dev/sda9
+		sudo nano /etc/fstab
+			UUID=<uuid> none swap defaults 0 0
+
+
+	ATI:
+		mhwd -l -d --pci
+		sudo nano /etc/mkinitcpio.conf
+			MODULES=(radeon)
+		sudo mkinitcpio -P
+		sudo nano /etc/X11/xorg.conf.d/20-radeon.conf
+			Section "Device"
+   				Identifier "Radeon"
+				Driver "radeon"
+				Option "TearFree" "on"
+			EndSection
+
+
+
+
+
+
+
+Commands:
+	lsb_release -a
+
+	
+	redshift -b 0.8:0.8
+	redshift -l 34.8:10.5 -b 0.7:0.7
+	redshift -o -l 38.8:10.2 -b 0.5
+		
+Other:
+	sudo nano /etc/default/grub
+		GRUB_CMDLINE_LINUX="acpi_osi=linux"
+	sudo update-grub
+
+
+	systemctl status systemd-backlight@backlight:acpi_video0
+	systemctl status systemd-backlight@backlight:radeon_bl0
+	sudo nano /sys/class/backlight/acpi_video0/brightness
+	sudo nano /sys/class/backlight/radeon_bl0/brightness
+	
+	pacman -Qqe > installed-packages.txt
+
+
+
+
+
+
+
+
+
+
