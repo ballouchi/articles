@@ -7,6 +7,10 @@ April 19, 2012
 - **ALT + Barre espace + U** : réduit la fenêtre
 - **ctrl+A** selectionner tout.
 - **ctrl+Z** annuler.
+- **ctrl+n** créer nouveau
+- **ctrl+f** rechercher
+- **ctrl+w** fermer un fichier dans un programme
+- **ctrl+maj+n** nouveau dossier
 - **F2** renames a file or folder
 - **Alt+Up** will navigate up one folder level
 - **Alt+Tab** but switches windows
