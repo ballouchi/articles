@@ -1,0 +1,221 @@
+<!DOCTYPE html> <html class="client-js vector-animations-ready" dir=ltr lang=en><!--
+ Page saved with SingleFile 
+ url: https://wiki.alpinelinux.org/wiki/Setting_up_a_samba-server 
+ saved date: Wed Apr 26 2023 19:03:37 GMT+0100 (Central European Standard Time)
+--><meta charset=utf-8>
+<title>Setting up a samba-server - Alpine Linux</title>
+<style>.mw-ui-button{border:1px solid #a2a9b1;cursor:pointer;font-family:inherit;text-align:center;-webkit-appearance:none}.mw-ui-button:not(.mw-ui-icon-element){min-height:32px;min-width:4em;max-width:28.75em;padding:5px 12px}.mw-ui-button:not(:disabled){transition-property:background-color,color,border-color,box-shadow;transition-duration:100ms}.mw-ui-button:not(:disabled):visited{color:#202122}.mw-ui-button:not(:disabled):hover{background-color:#ffffff;color:#404244;border-color:#a2a9b1}.mw-ui-button:not(:disabled):focus{color:#202122;border-color:#3366cc;box-shadow:inset 0 0 0 1px #3366cc,inset 0 0 0 2px #ffffff;outline-width:0}.mw-ui-button:not(:disabled):focus::-moz-focus-inner{border-color:transparent;padding:0}.mw-ui-button:not(:disabled):active,.mw-ui-button:not(:disabled).is-on{background-color:#c8ccd1;color:#000000;border-color:#72777d;box-shadow:none}.mw-ui-button:disabled{background-color:#c8ccd1;color:#ffffff;border-color:#c8ccd1;cursor:default}.mw-ui-button.mw-ui-icon-element:not(.mw-ui-icon-with-label-desktop){color:transparent!important}.mw-ui-button.mw-ui-icon-element:not(.mw-ui-icon-with-label-desktop) span{display:block;position:absolute!important;clip:rect(1px,1px,1px,1px);width:1px;height:1px;margin:-1px;border:0;padding:0;overflow:hidden}@media all and (max-width:1000px){.mw-ui-button.mw-ui-icon-element span{display:block;position:absolute!important;clip:rect(1px,1px,1px,1px);width:1px;height:1px;margin:-1px;border:0;padding:0;overflow:hidden}}.mw-ui-button.mw-ui-quiet{background-color:transparent;color:#202122;border-color:transparent;font-weight:bold}.mw-ui-button.mw-ui-quiet:not(.mw-ui-icon-element),.mw-ui-button.mw-ui-quiet.mw-ui-progressive:not(.mw-ui-icon-element),.mw-ui-button.mw-ui-quiet.mw-ui-destructive:not(.mw-ui-icon-element){min-height:32px}input[type="checkbox"]:hover+.mw-ui-button.mw-ui-quiet,input[type="checkbox"]:hover+.mw-ui-button.mw-ui-quiet.mw-ui-progressive,input[type="checkbox"]:hover+.mw-ui-button.mw-ui-quiet.mw-ui-destructive,.mw-ui-button.mw-ui-quiet:hover,.mw-ui-button.mw-ui-quiet.mw-ui-progressive:hover,.mw-ui-button.mw-ui-quiet.mw-ui-destructive:hover{background-color:rgba(0,24,73,0.02745098);color:#202122;border-color:transparent}input[type="checkbox"]:focus+.mw-ui-button.mw-ui-quiet,input[type="checkbox"]:focus+.mw-ui-button.mw-ui-quiet.mw-ui-progressive,input[type="checkbox"]:focus+.mw-ui-button.mw-ui-quiet.mw-ui-destructive,.mw-ui-button.mw-ui-quiet:focus,.mw-ui-button.mw-ui-quiet.mw-ui-progressive:focus,.mw-ui-button.mw-ui-quiet.mw-ui-destructive:focus{color:#202122;border-color:#3366cc;box-shadow:inset 0 0 0 1px #3366cc,inset 0 0 0 2px #ffffff}input[type="checkbox"]:active+.mw-ui-button.mw-ui-quiet,input[type="checkbox"]:active+.mw-ui-button.mw-ui-quiet.mw-ui-progressive,input[type="checkbox"]:active+.mw-ui-button.mw-ui-quiet.mw-ui-destructive,.mw-ui-button.mw-ui-quiet:active,.mw-ui-button.mw-ui-quiet.mw-ui-progressive:active,.mw-ui-button.mw-ui-quiet.mw-ui-destructive:active{background-color:rgba(0,36,73,0.08235294);color:#000000;border-color:#72777d;box-shadow:none}.mw-ui-button.mw-ui-quiet:disabled,.mw-ui-button.mw-ui-quiet.mw-ui-progressive:disabled,.mw-ui-button.mw-ui-quiet.mw-ui-destructive:disabled,.mw-ui-button.mw-ui-quiet:disabled:hover,.mw-ui-button.mw-ui-quiet.mw-ui-progressive:disabled:hover,.mw-ui-button.mw-ui-quiet.mw-ui-destructive:disabled:hover,.mw-ui-button.mw-ui-quiet:disabled:active,.mw-ui-button.mw-ui-quiet.mw-ui-progressive:disabled:active,.mw-ui-button.mw-ui-quiet.mw-ui-destructive:disabled:active{background-color:transparent;color:#72777d;border-color:transparent}a.mw-ui-button{text-decoration:none}a.mw-ui-button:hover,a.mw-ui-button:focus{text-decoration:none}.mw-ui-icon{font-size:initial;position:relative;display:inline-block;box-sizing:content-box!important;width:1.25em;height:1.25em;min-width:1.25em;min-height:1.25em;flex-basis:1.25em;vertical-align:middle;line-height:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;-moz-appearance:none;-webkit-appearance:none;background-color:transparent;margin:0;padding:0}.mw-ui-icon:not(.mw-ui-button){border:0}.mw-ui-icon:before{content:"";display:block;width:100%;height:100%;min-width:1.25em;min-height:1.25em;background-repeat:no-repeat;background-size:1.25em 1.25em;background-position:center}.mw-ui-icon+span:not(:empty){margin-left:8px}.mw-ui-icon-element{border-radius:2px;padding:0.75em;transition:background-color 100ms}.mw-ui-icon-element:focus,.mw-ui-icon-element:active,.mw-ui-icon-element:visited{color:transparent}.mw-ui-icon-element:active{background-color:rgba(0,0,0,0.03)}@media (hover:hover){.mw-ui-icon-element:not(.disabled):hover{background-color:rgba(0,0,0,0.03)}}.mw-ui-icon-wikimedia-listBullet:before{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABmJLR0QA/wD/AP+gvaeTAAAARklEQVQ4jWNgGCrAm4GB4QkDA8NjBgYGT2oY+JiBgeE/FD9CEv9PImZgooZrsAFPqCsfMTAweNDKksEFRmN5JIDRWB7OAAARDz0/ekammQAAAABJRU5ErkJggg==);background-image:linear-gradient(transparent,transparent),url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj48dGl0bGU+CgkJYnVsbGV0IGxpc3QKCTwvdGl0bGU+PGcgZmlsbD0iIzAwMCI+PHBhdGggZD0iTTcgMTVoMTJ2Mkg3em0wLTZoMTJ2Mkg3em0wLTZoMTJ2Mkg3eiIvPjxjaXJjbGUgY3g9IjMiIGN5PSI0IiByPSIyIi8+PGNpcmNsZSBjeD0iMyIgY3k9IjEwIiByPSIyIi8+PGNpcmNsZSBjeD0iMyIgY3k9IjE2IiByPSIyIi8+PC9nPjwvc3ZnPgo=)}.mw-ui-icon-wikimedia-ellipsis:before{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABmJLR0QA/wD/AP+gvaeTAAAAQElEQVQ4je3PsQkAIQxA0cdNp7j/Anp7nI2VlYJwFnmQ6hNCCOEeBS8a8onW8I2p09JWe3ZfWZXHtYp0qIXwmw749BlfpvCfqgAAAABJRU5ErkJggg==);background-image:linear-gradient(transparent,transparent),url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj48dGl0bGU+CgkJZWxsaXBzaXMKCTwvdGl0bGU+PGcgZmlsbD0iIzAwMCI+PGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iMiIvPjxjaXJjbGUgY3g9IjMiIGN5PSIxMCIgcj0iMiIvPjxjaXJjbGUgY3g9IjE3IiBjeT0iMTAiIHI9IjIiLz48L2c+PC9zdmc+Cg==)}.mw-ui-icon-wikimedia-logIn:before{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABmJLR0QA/wD/AP+gvaeTAAAAhElEQVQ4jcWU0QmAMAwFr4q7qYPpjxO4gAO4kXWP+qEVQcSor3iQj0I4mqQNJKIGPBBehgeqo/CLLMYE4DZhEFXqMpFoxypsn4rv+gPQGfPMQgf0SiFADgwW4RMKYLwSyqcckZf8y1Ckz6Yx5IRYRhQqSPeXZ4HLHw8V6z77sgtLwaXOLCxJqxJMix9EAAAAAElFTkSuQmCC);background-image:linear-gradient(transparent,transparent),url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj48dGl0bGU+CgkJbG9nIGluCgk8L3RpdGxlPjxnIGZpbGw9IiMwMDAiPjxwYXRoIGQ9Ik0xIDExdjZjMCAxLjEuOSAyIDIgMmgxNGMxLjEgMCAyLS45IDItMlYzYzAtMS4xLS45LTItMi0ySDNjLTEuMSAwLTIgLjktMiAydjZoOFY1bDQuNzUgNUw5IDE1di00SDF6Ii8+PC9nPjwvc3ZnPgo=)}.mw-ui-icon-wikimedia-search:before{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABmJLR0QA/wD/AP+gvaeTAAABCUlEQVQ4jcXTMUpDQRSF4Q9bYyEYklVYaR3jGuJGbASxUMyCJLHNDoyYxkL3YERFG/FZzH28KMl7I4geGG4x5/7cYc7lD9TBEDO84QU3OI+7H2mAJxQrzmN4smEf0XiBHtbj7GEUd+84aIJ1FiY7qvEdh2eObh1wuDBZk8bhPaszzcLUywD2wzutM72GqZUB3Ajv87LLtahFBihLJfA+6k5Gz+63nqXAcdTDDGDpGdWZulIUCikaq3Siik3j1gyk0BbSxH3pk1rYx6VqY+7QbgKSNqCcdNmZB6yQopYF7UqhneJBitQ1TqVntlW5zYY2aRNXAb3VsIb/Ct1SPX/yG8ASOsH2bwG/6BNPsVKl9TSnrgAAAABJRU5ErkJggg==);background-image:linear-gradient(transparent,transparent),url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj48dGl0bGU+CgkJc2VhcmNoCgk8L3RpdGxlPjxnIGZpbGw9IiMwMDAiPjxwYXRoIGQ9Ik0xMi4yIDEzLjZhNyA3IDAgMSAxIDEuNC0xLjRsNS40IDUuNC0xLjQgMS40LTUuNC01LjR6TTMgOGE1IDUgMCAxIDAgMTAgMEE1IDUgMCAxIDAgMyA4eiIvPjwvZz48L3N2Zz4K)}@media (prefers-reduced-motion:reduce){*,::before,::after{animation-delay:-0.01ms!important;animation-duration:0.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:0ms!important}}body{margin:0}main{display:block}@supports (text-decoration:underline dotted){abbr[title]{border-bottom:0;text-decoration:underline dotted}}img{border:0}input{margin:0}@media screen{html,body{height:100%}:focus{outline-color:#3366cc}html{font-size:100%}html,body{font-family:sans-serif}ul{list-style-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjEzIj4KCTxjaXJjbGUgY3g9IjIuNSIgY3k9IjkiIHI9IjIuNSIgZmlsbD0iIzIwMjEyMiIvPgo8L3N2Zz4K)}.mw-jump-link:not(:focus){display:block;position:absolute!important;clip:rect(1px,1px,1px,1px);width:1px;height:1px;margin:-1px;border:0;padding:0;overflow:hidden}.mw-body h1{margin-bottom:0.25em;padding:0;font-family:"Linux Libertine","Georgia","Times",serif;line-height:1.3}.mw-body h1:lang(ja),.mw-body-content h1:lang(ja),.mw-body-content h2:lang(ja),.mw-body h1:lang(he),.mw-body-content h1:lang(he),.mw-body-content h2:lang(he),.mw-body h1:lang(ko),.mw-body-content h1:lang(ko),.mw-body-content h2:lang(ko){font-family:sans-serif}.mw-body h1:lang(my),.mw-body-content h1:lang(my),.mw-body-content h2:lang(my){line-height:normal}.mw-body h1{font-size:1.8em}.vector-body{font-size:calc(1em*0.875);line-height:1.6}.vector-body h1{margin-top:1em}.vector-body p{margin:0.5em 0}.mw-indicators{font-size:0.875em;line-height:1.6;position:relative;float:right}#siteNotice{font-size:0.8em;margin:24px 0;position:relative;text-align:center}.mw-portlet .vector-menu-heading{display:none}.mw-portlet ul{list-style:none;margin:0}.vector-menu-dropdown{position:relative}.vector-menu-dropdown .vector-menu-content{position:absolute;top:100%;left:-1px;opacity:0;height:0;visibility:hidden;overflow:hidden;min-width:100%;margin:0;padding:0;z-index:3}.vector-menu-dropdown .vector-menu-content-list{list-style:none}.vector-menu-checkbox{cursor:pointer;position:absolute;top:0;left:0;z-index:1;opacity:0;width:100%;height:100%;margin:0;padding:0;display:none}.vector-menu-checkbox:checked~.vector-menu-content{opacity:1;visibility:visible;height:auto}:not(:checked)>.vector-menu-checkbox{display:block}.vector-menu-checkbox:focus+.vector-menu-heading{outline:dotted 1px;outline:auto -webkit-focus-ring-color}.search-toggle{display:block;float:right}.mw-footer{direction:ltr}.mw-footer ul{list-style:none;margin:0;padding:0}.mw-footer li{color:#202122;margin:0;padding:0.5em 0;font-size:0.75em}#footer-icons{float:right}#footer-icons li{float:left;margin-left:0.5em;line-height:2;text-align:right}#footer-info li{line-height:1.4}#footer-places li{float:left;margin-right:1em;line-height:2}}@media screen and (min-width:1000px){.search-toggle{display:none}}@media screen{body{background-color:#f8f9fa;color:#202122;overflow-y:scroll}.mw-body{direction:ltr}.mw-body{border-top:1px solid transparent;margin-top:-1px;padding:0.5em 0.5em 1.5em}.mw-body .firstHeading{overflow:visible;margin-bottom:0}.mw-header{position:relative;z-index:4}.mw-body-content{margin-top:16px}.mw-body,.mw-footer{margin-left:0}.mw-indicators{z-index:1}.mw-body-header:after,.mw-body-subheader:after{clear:both;content:"";display:block}.vector-body{position:relative;z-index:0}#left-navigation{float:left;margin-left:-8px}#right-navigation{float:right;margin-right:-8px}#right-navigation .vector-menu-content{left:auto;right:-1px}.mw-footer{border-top:1px solid #a2a9b1;padding:0.75em}.mw-page-container{position:relative;z-index:0;max-width:94.625em;min-height:100%;margin-left:auto;margin-right:auto;padding:0.05px 1em;background-color:#ffffff;min-width:26.25em}.mw-content-container{max-width:60em}.mw-article-toolbar-container{display:flow-root;border-bottom:1px solid #eaecf0}.mw-article-toolbar-container>div{font-size:0.8125em}.mw-article-toolbar-container .mw-portlet-views{display:none}@keyframes search-loader-progress-bar{0%{background-size:0 2px;background-position:-10%0}30%{background-size:30% 2px;background-position:-10%0}70%{background-size:30% 2px;background-position:110%0}100%{background-size:0 2px;background-position:110%0}}.vector-search-box{font-size:calc(1em*0.875);flex-grow:1}.mw-checkbox-hack-button{display:inline-block;cursor:pointer}#mw-sidebar-button:before{opacity:0.67;background-image:url(data:image/svg+xml,%3Csvg\ xmlns=%22http://www.w3.org/2000/svg%22\ width=%2220%22\ height=%2220%22\ viewBox=%220\ 0\ 20\ 20%22%3E\ %3Ctitle%3E\ chevron\ %3C/title%3E\ %3Cpath\ d=%22m9\ 2\ 1.3\ 1.3L3.7\ 10l6.6\ 6.7L9\ 18l-8-8\ 8-8zm8.5\ 0L19\ 3.3\ 12.2\ 10l6.7\ 6.7-1.4\ 1.3-8-8\ 8-8z%22/%3E\ %3C/svg%3E)}#mw-sidebar-checkbox:not(:checked)~.mw-header #mw-sidebar-button:before{background-image:url(data:image/svg+xml,%3Csvg\ xmlns=%22http://www.w3.org/2000/svg%22\ width=%2220%22\ height=%2220%22\ viewBox=%220\ 0\ 20\ 20%22%3E\ %3Ctitle%3E\ menu\ %3C/title%3E\ %3Cpath\ d=%22M1\ 3v2h18V3zm0\ 8h18V9H1zm0\ 6h18v-2H1z%22/%3E\ %3C/svg%3E)}#mw-sidebar-button:hover:before{opacity:1}.vector-user-links{display:flex;align-items:center;position:relative;justify-content:flex-end;flex-shrink:1;font-size:0.875em}.vector-user-links .mw-ui-button{align-items:center}.vector-user-links .mw-list-item{margin:0}.vector-user-menu .vector-menu-content{left:auto;right:0;min-width:200px}.vector-user-menu-overflow .vector-menu-content-list{display:flex;align-items:center}.vector-user-menu-more a:not(.mw-ui-button):not(.mw-echo-notifications-badge),.vector-user-menu-overflow a:not(.mw-ui-button):not(.mw-echo-notifications-badge){margin:0 8px}.vector-user-menu-login{border-bottom:1px solid #eaecf0}.mw-header{min-height:3.125em;padding:8px 0;display:flex;flex-wrap:nowrap;align-items:center}.mw-header #mw-sidebar-button{margin-right:0.75em}.mw-header-content,.mw-header-aside{display:flex;align-items:center}.mw-header-aside{float:left}.mw-header-content{flex-grow:1}.mw-footer-container{padding-top:50px;padding-bottom:82px}.vector-menu-dropdown .vector-menu-heading{display:flex}.vector-menu-dropdown .vector-menu-heading:after,.mw-interlanguage-selector:after{content:"";background:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMiIgdmlld0JveD0iMCAwIDEyIDEyIj4KCTxwYXRoIGZpbGw9IiMyMDIxMjIiIGQ9Im0xMS4wNSAzLjk5Ni0uOTY1LTEuMDUzLTQuMDM1IDMuODYtMy45NDctMy44NkwxLjA1IDMuOTk2bDUgNSA1LTUiLz4KPC9zdmc+Cg==)100% 50%no-repeat;width:1.23076923em;height:1.23076923em}.vector-menu-dropdown .vector-menu-content{background-color:#ffffff;border:1px solid #a2a9b1;box-shadow:0 1px 1px 0 rgba(0,0,0,0.1);transition-property:opacity;transition-duration:100ms}.vector-user-menu-login a{min-height:32px;display:flex;align-items:center;padding:0 12px;white-space:nowrap;color:#3366cc}.vector-user-menu-logout a:visited,.vector-user-menu-create-account a:visited,.vector-user-menu-login a:visited,.vector-menu-dropdown .mw-list-item a:visited{color:#3366cc}.vector-menu-tabs{float:left}.vector-menu-tabs .mw-list-item a{color:#3366cc}.vector-menu-tabs .mw-list-item a:focus,.vector-menu-tabs .mw-list-item a:hover{text-decoration:none;border-bottom:1px solid}.vector-menu-tabs .mw-list-item.selected a,.vector-menu-tabs .mw-list-item.selected a:visited{color:#202122;border-bottom:1px solid}.vector-menu-tabs .mw-list-item{float:left;white-space:nowrap;margin:0 8px}.vector-menu-tabs .mw-list-item>a{display:inline-flex;position:relative;padding:18px 0 7px 0;margin-bottom:-1px;cursor:pointer;border-bottom:1px solid transparent;max-height:3.15384615em;box-sizing:border-box;font-size:inherit;font-weight:normal}@keyframes rotate{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}.mw-table-of-contents-container{align-self:start;height:100%}.vector-sticky-toc-container{position:sticky;top:0}#vector-toc-collapsed-button{display:none;float:left;margin-right:4px;margin-left:-0.75em;padding:7px 10px 7px 10px;background-color:#ffffff}#vector-toc-collapsed-button:hover,#vector-toc-collapsed-button:active{background-color:#f8f9fa}#vector-toc-collapsed-button{z-index:3}}@media screen and (min-width:1000px){.mw-page-container{padding-left:2em;padding-right:2em}}@media screen and (min-width:1200px){.mw-page-container{padding-left:2.5em;padding-right:2.5em}}@media screen and (min-width:1000px){.mw-page-container-inner{display:grid;width:100%;grid-template:min-content min-content min-content 1fr min-content/232px 20px minmax(0,1fr);grid-template-areas:"header header header""sitenotice sitenotice sitenotice""sidebar gutter content""toc gutter content""footer footer footer"}.mw-body{padding-left:0}.vector-sitenotice-container{grid-area:sitenotice}.mw-table-of-contents-container{grid-area:toc}.mw-header{grid-area:header}.vector-sidebar-container{grid-area:sidebar}.mw-content-container{grid-area:content}.mw-footer-container{grid-area:footer}}@media screen and (min-width:1200px){.mw-page-container-inner{grid-template-columns:284px 20px minmax(0,1fr)}}@media screen and (min-width:720px){.mw-article-toolbar-container .mw-portlet-views:not(.emptyPortlet){display:block}}@media screen and (max-width:719px){.vector-user-menu-overflow .user-links-collapsible-item{display:none}}@media screen and (min-width:1200px){.mw-header .vector-search-box:not(.vector-search-box-auto-expand-width),html:not(.client-js) .mw-header .vector-search-box{padding-left:24px}}@media screen and (min-width:1000px){.mw-header .vector-search-box{margin-right:12px}}@media screen and (min-width:1000px){.vector-toc-not-collapsed .vector-sticky-toc-container{padding-top:1.5em}.vector-toc-not-collapsed #mw-sidebar-checkbox:not(:checked)~.mw-table-of-contents-container .vector-sticky-toc-container{margin-top:1.5em}}@media screen and (max-width:999px){#vector-toc-collapsed-button{display:block}.vector-sticky-toc-container{position:relative}.vector-below-page-title #vector-toc-collapsed-button{position:fixed}.vector-below-page-title #vector-toc-collapsed-button{top:0;left:0;margin:0}}@media screen and (min-width:1000px){@supports (display:grid){.client-js .vector-toc-collapsed #vector-toc-collapsed-button{display:block}.client-js .vector-toc-collapsed .mw-table-of-contents-container.mw-sticky-header-element,.client-js .vector-toc-collapsed .vector-sticky-toc-container{position:relative}.client-js .vector-toc-collapsed .mw-table-of-contents-container .sidebar-toc{display:none;position:absolute;margin:0;border:1px solid #a2a9b1}.client-js .vector-toc-collapsed #vector-toc-collapsed-checkbox:checked~.mw-table-of-contents-container .sidebar-toc{display:block}.client-js .vector-toc-collapsed .mw-table-of-contents-container{grid-area:content}.client-js .vector-toc-collapsed .mw-table-of-contents-container .sidebar-toc{top:calc(36px + 8px);left:-0.75em}body:not(.vector-sticky-header-visible).vector-below-page-title.client-js .vector-toc-collapsed #vector-toc-collapsed-button,body:not(.vector-sticky-header-visible).vector-below-page-title.client-js .vector-toc-collapsed .sidebar-toc{position:fixed}body:not(.vector-sticky-header-visible).vector-below-page-title.client-js .vector-toc-collapsed #vector-toc-collapsed-button{top:0;left:0;margin:0}body:not(.vector-sticky-header-visible).vector-below-page-title.client-js .vector-toc-collapsed .sidebar-toc{top:36px;left:6px}.client-js .vector-toc-collapsed .vector-toc-uncollapse-button{display:inline-block}.client-js .vector-toc-not-collapsed .vector-toc-collapse-button{display:inline-block}}}@media all{.mw-logo{display:flex;height:100%;align-items:center;min-width:13.875em}.mw-logo-container{float:left;max-width:120px}.mw-logo-wordmark{display:block;margin:0 auto}}@media all and (min-width:720px){.mw-logo-container{max-width:none}}.mw-table-of-contents-container{display:none}@supports (display:grid){.mw-table-of-contents-container{display:block}}@media screen{.mw-body-content:after{clear:both;content:"";display:block}#catlinks{text-align:left}.catlinks{border:1px solid #a2a9b1;background-color:#f8f9fa;padding:5px;margin-top:1em;clear:both}.catlinks ul{display:inline;margin:0;padding:0;list-style:none}.catlinks li{display:inline-block;line-height:1.25em;border-left:1px solid #a2a9b1;margin:0.125em 0;padding:0 0.5em}.catlinks li:first-child{padding-left:0.25em;border-left:0}a{text-decoration:none;color:#3366cc;background:none}a:not([href]){cursor:pointer}a:visited{color:#795cb2}a:active{color:#faa700}a:hover,a:focus{text-decoration:underline}a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}img{border:0;vertical-align:middle}h1{color:#000;margin:0;padding-top:0.5em;padding-bottom:0.17em;overflow:hidden}h1{margin-bottom:0.6em;border-bottom:1px solid #a2a9b1}h1{font-size:188%;font-weight:normal}p{margin:0.4em 0 0.5em 0}ul{margin:0.3em 0 0 1.6em;padding:0}li{margin-bottom:0.1em}@counter-style meetei{system:numeric;symbols:"꯰""꯱""꯲""꯳""꯴""꯵""꯶""꯷""꯸""꯹";suffix:") "}@counter-style santali{system:numeric;symbols:"᱐""᱑""᱒""᱓""᱔""᱕""᱖""᱗""᱘""᱙"}@counter-style myanmar_with_period{system:numeric;symbols:"၀""၁""၂""၃""၄""၅""၆""၇""၈""၉";suffix:"။ "}h1:lang(anp),h1:lang(as),h1:lang(bh),h1:lang(bho),h1:lang(blk),h1:lang(bn),h1:lang(gu),h1:lang(hi),h1:lang(kjp),h1:lang(kn),h1:lang(ks),h1:lang(ksw),h1:lang(ml),h1:lang(mr),h1:lang(my),h1:lang(mai),h1:lang(mnw),h1:lang(ne),h1:lang(new),h1:lang(or),h1:lang(pa),h1:lang(pi),h1:lang(sa),h1:lang(shn),h1:lang(syl),h1:lang(ta),h1:lang(te){line-height:1.6em!important}}</style>
+<meta name=generator content="MediaWiki 1.39.3">
+<meta name=format-detection content="telephone=no">
+<meta name=viewport content="width=1000">
+<link rel=search type=application/opensearchdescription+xml href=https://wiki.alpinelinux.org/w/opensearch_desc.php title="Alpine Linux (en)">
+<link rel=EditURI type=application/rsd+xml href="https://wiki.alpinelinux.org/w/api.php?action=rsd">
+<link rel=license href=https://wiki.alpinelinux.org/wiki/MediaWiki:Copyright>
+<link rel=alternate type=application/atom+xml title="Alpine Linux Atom feed" href="https://wiki.alpinelinux.org/w/index.php?title=Special:RecentChanges&amp;feed=atom">
+<link rel=icon href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAATJQTFRF////AICAC1qADVmAFGJ2DVmADVl/EFiADVmADlmADVmAAAAADVmADVl+DVl/Dlp/F110DVl/DVmADVmADVl/DliADFd8DliADVl+DVuADVl/CVh7DVmADFuADVh/DVqADVmADVmADFmADVl/FVWAC1h+Dlh+AFVVDFiADVl/DluADFl9DVl/DViADVh7DFqADVmADVmADVh/DVl/DVl+AECADlp/DVmADlmADVl/DFmADVmADFeAGk2ADlmADlqADlqADVh/DVqAAFVxDVl/DVeADlp+DlqADlqADll/AFWAAGCADFp/DFl/AGZmDVl/Dld9DV55DVmADVmADVl/DVh/DVl/DVmADFmADVl/DVl/DVt9Dll/DVmADViADll/DlmADFl9DVmADFiADVl/////pwlF4gAAAGR0Uk5TAAIwZA3ohyD4qjwBzF/nlwvlKIybgimWc0z5HfYqoHdQ+qbpDENLA1T7OCvDTjlY/P7HwU0Eqopc/aTqLAqESqiFYAmjJkeAXoEGCLmPBfc1E8jktdvRxrjzyzuphmLPzj/wQC8LztMAAAABYktHRACIBR1IAAAACXBIWXMAAABIAAAASABGyWs+AAABW0lEQVQ4y72TZ1vCMBCAD9lTUBEFVEAUwQlO6kBxFVcVcLFc9/9/g9c0lTYtX70PbXLv+7SXXALwb+EYE8IhCE4UwmnmLrcouF0mwYOW8Bi512cVfF6D4Eeb8A95AG0joPNgyF4IBbkQ1jORcbMR1ng0pq9sAibV95RecizKhLjOp2mSQJyB2SRPxVWeSnM+x+qZX6BnJqvl0ima5LTxIvH8EjVluUDJlaKWzQGUOF8lvlbMABTWN8jY3GLpcgkqfzy6jZjdAdjd2yfjoMpABST1dXgEcCyd0ChZI+P0jIw6MyRWo8rPLy7rrAVX9JfcNRlyVauygZi4gdu7+wcmoEKVPqbJeGoiNtR9atEn2s+0zhfexnazjPj69o7YYjsl48iQtV51RvEO71Z3lNDV+92z573hiVPsuGI4c307oW84k/mIlUfyxmM9sAoD8837EPmncPe+voX44eAXvM/afnTm3m8AAAAldEVYdGRhdGU6Y3JlYXRlADIwMTQtMTItMTBUMTE6Mjc6MzEtMDU6MDCD+78IAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE0LTEyLTEwVDExOjI3OjI3LTA1OjAwXdwyEAAAAABJRU5ErkJggg=="><style>.sf-hidden{display:none!important}</style><link rel=canonical href=https://wiki.alpinelinux.org/wiki/Setting_up_a_samba-server><meta http-equiv=content-security-policy content="default-src 'none'; font-src 'self' data:; img-src 'self' data:; style-src 'unsafe-inline'; media-src 'self' data:; script-src 'unsafe-inline' data:; object-src 'self' data:; frame-src 'self' data:;"><style>img[src="data:,"],source[src="data:,"]{display:none!important}</style></head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Setting_up_a_samba-server rootpage-Setting_up_a_samba-server skin-vector-2022 action-view vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled uls-dialog-sticky-hide vector-toc-not-collapsed vector-below-page-title"><div class=mw-page-container>
+ <span id=top-page></span>
+ <a class=mw-jump-link href=#content>Jump to content</a>
+ <div class=mw-page-container-inner>
+ <input type=checkbox id=mw-sidebar-checkbox class="mw-checkbox-hack-checkbox sf-hidden">
+ <header class=mw-header>
+ <div class=mw-header-aside>
+ <label id=mw-sidebar-button class="mw-checkbox-hack-button mw-ui-icon mw-ui-button mw-ui-quiet mw-ui-icon-element" for=mw-sidebar-checkbox role=button aria-controls=mw-panel data-event-name=ui.sidebar tabindex=0 title="Main menu" aria-expanded=false>
+ <span>Toggle sidebar</span>
+ </label>
+ 
+<a href=https://wiki.alpinelinux.org/wiki/Main_Page class=mw-logo>
+ <span class=mw-logo-container>
+ <strong class=mw-logo-wordmark>Alpine Linux</strong>
+ </span>
+</a>
+ </div>
+ <div class=mw-header-content>
+ 
+<div id=p-search role=search class="vector-search-box-vue vector-search-box-collapses vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box">
+ <a href=https://wiki.alpinelinux.org/wiki/Special:Search title="Search Alpine Linux [Alt+Shift+f]" accesskey=f class="mw-ui-button mw-ui-quiet mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-search search-toggle">
+ <span>Search</span>
+ </a>
+ 
+ <div class=sf-hidden>
+ 
+ </div>
+</div>
+ <nav class=vector-user-links aria-label="Personal tools" role=navigation>
+ 
+<div id=p-vector-user-menu-overflow class="vector-menu mw-portlet mw-portlet-vector-user-menu-overflow vector-user-menu-overflow">
+ <div class=vector-menu-content>
+ 
+ <ul class=vector-menu-content-list><li id=pt-createaccount-2 class="user-links-collapsible-item mw-list-item"><a href="https://wiki.alpinelinux.org/w/index.php?title=Special:CreateAccount&amp;returnto=Setting+up+a+samba-server" title="You are encouraged to create an account and log in; however, it is not mandatory"><span>Create account</span></a></ul>
+ 
+ </div>
+</div>
+ 
+<div id=p-personal class="vector-menu mw-portlet mw-portlet-personal vector-user-menu vector-user-menu-logged-out vector-menu-dropdown" title="More options">
+ <input type=checkbox id=p-personal-checkbox role=button aria-haspopup=true data-event-name=ui.dropdown-p-personal class=vector-menu-checkbox>
+ <label id=p-personal-label for=p-personal-checkbox class="vector-menu-heading mw-ui-button mw-ui-quiet mw-ui-icon mw-ui-icon-element mw-ui-icon-ellipsis mw-ui-icon-wikimedia-ellipsis">
+ <span class=vector-menu-heading-label>Personal tools</span>
+ </label>
+ <div class=vector-menu-content>
+ <div class=vector-user-menu-create-account><a href="https://wiki.alpinelinux.org/w/index.php?title=Special:CreateAccount&amp;returnto=Setting+up+a+samba-server" class="vector-menu-content-item user-links-collapsible-item sf-hidden" title="You are encouraged to create an account and log in; however, it is not mandatory"> </a></div>
+<div class=vector-user-menu-login><a href="https://wiki.alpinelinux.org/w/index.php?title=Special:UserLogin&amp;returnto=Setting+up+a+samba-server" class="vector-menu-content-item vector-menu-content-item-login" title="You are encouraged to log in; however, it is not mandatory [Alt+Shift+o]" accesskey=o><span class="mw-ui-icon mw-ui-icon-logIn mw-ui-icon-wikimedia-logIn"></span> <span>Log in</span></a></div>
+ <ul class=vector-menu-content-list></ul>
+ 
+ </div>
+</div>
+</nav>
+ </div>
+ </header>
+ <div class=vector-sidebar-container>
+ <div id=mw-navigation>
+ 
+<nav id=mw-panel class="mw-sidebar sf-hidden" aria-label=Site role=navigation>
+ 
+ 
+ 
+ 
+</nav>
+ </div>
+ </div>
+ <div class=vector-sitenotice-container>
+ <div id=siteNotice></div>
+ </div>
+ <input type=checkbox id=vector-toc-collapsed-checkbox class="mw-checkbox-hack-checkbox sf-hidden">
+ <div class=mw-table-of-contents-container>
+ <div class="vector-sticky-toc-container mw-sticky-header-element">
+ <nav id=mw-panel-toc class="sidebar-toc sf-hidden" role=navigation aria-labelledby=sidebar-toc-label data-event-name=ui.sidebar-toc>
+ 
+ 
+</nav>
+ </div>
+ </div>
+ <div class=mw-content-container>
+ <main id=content class=mw-body role=main>
+ <a id=top></a>
+ <header class=mw-body-header>
+ 
+ 
+ <label id=vector-toc-collapsed-button class="mw-ui-button mw-ui-quiet mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-listBullet mw-checkbox-hack-button" for=vector-toc-collapsed-checkbox role=button aria-controls=toc-toggle-list data-event-name=vector.toc-toggle-list tabindex=0 title="Table of Contents" aria-expanded=false>
+ Toggle the table of contents
+ </label>
+ <h1 id=firstHeading class="firstHeading mw-first-heading"><span class=mw-page-title-main>Setting up a samba-server</span></h1>
+ </header>
+ <nav class=vector-article-toolbar aria-label=Tools role=navigation>
+ <div class=mw-article-toolbar-container>
+ <div id=left-navigation>
+ 
+<div id=p-associated-pages class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+ <div class=vector-menu-content>
+ 
+ <ul class=vector-menu-content-list><li id=ca-nstab-main class="selected mw-list-item"><a href=https://wiki.alpinelinux.org/wiki/Setting_up_a_samba-server title="View the content page [Alt+Shift+c]" accesskey=c><span>Page</span></a><li id=ca-talk class=mw-list-item><a href=https://wiki.alpinelinux.org/wiki/Talk:Setting_up_a_samba-server rel=discussion title="Discussion about the content page [Alt+Shift+t]" accesskey=t><span>Discussion</span></a></ul>
+ 
+ </div>
+</div>
+ 
+<div id=p-variants class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown sf-hidden">
+ 
+ 
+ 
+</div>
+ </div>
+ <div id=right-navigation class=vector-collapsible>
+ 
+<div id=p-views class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+ <div class=vector-menu-content>
+ 
+ <ul class=vector-menu-content-list><li id=ca-view class="selected mw-list-item"><a href=https://wiki.alpinelinux.org/wiki/Setting_up_a_samba-server><span>Read</span></a><li id=ca-viewsource class=mw-list-item><a href="https://wiki.alpinelinux.org/w/index.php?title=Setting_up_a_samba-server&amp;action=edit" title="This page is protected.
+You can view its source [Alt+Shift+e]" accesskey=e><span>View source</span></a><li id=ca-history class=mw-list-item><a href="https://wiki.alpinelinux.org/w/index.php?title=Setting_up_a_samba-server&amp;action=history" title="Past revisions of this page [Alt+Shift+h]" accesskey=h><span>View history</span></a></ul>
+ 
+ </div>
+</div>
+ 
+<div id=p-cactions class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items sf-hidden" title="More options">
+ 
+ 
+ 
+</div>
+ </div>
+ </div>
+ </nav>
+ <div id=bodyContent class=vector-body data-mw-ve-target-container>
+ <div class=mw-body-subheader>
+ <div class=mw-indicators>
+ </div>
+ <div id=siteSub class="noprint sf-hidden">From Alpine Linux</div>
+ </div>
+ 
+ 
+ 
+ <div id=mw-content-text class="mw-body-content mw-content-ltr" dir=ltr lang=en><div class=mw-parser-output><mw:tocplace></mw:tocplace>
+<h1><span class=mw-headline id=Installation>Installation</span></h1>
+<p>Install packages:
+</p>
+<p style="background-color:#eeeeee;border:1px dashed #bbbbbb;line-height:1.1em;padding:1em;font-family:monospace,Courier;font-size:10pt;white-space:pre;overflow:auto"># apk add samba</p>
+<h1><span class=mw-headline id=Create_a_share_directory>Create a share directory</span></h1>
+<p>This will be the directory that's shared to clients. You can create as many of these as you wish.
+</p>
+<p style="background-color:#eeeeee;border:1px dashed #bbbbbb;line-height:1.1em;padding:1em;font-family:monospace,Courier;font-size:10pt;white-space:pre;overflow:auto"># mkdir /media/storage</p>
+<p style="background-color:#eeeeee;border:1px dashed #bbbbbb;line-height:1.1em;padding:1em;font-family:monospace,Courier;font-size:10pt;white-space:pre;overflow:auto"># chmod 0777 /media/storage</p>
+<h1><span class=mw-headline id=Create_smb.conf>Create smb.conf</span></h1>
+<p>Alpine provides an example configuration file located at /etc/samba/smb.conf. The following is a simple example to get you up and running.
+</p>
+<div><p style="background-color:#f9f9f9;border:1px solid #2f6fab;border-bottom:0;padding:.2em 1.2em;display:inline"><strong>Contents of </strong><span style=font-family:monospace,Courier;font-size:10pt;color:#000055;white-space:nowrap>/etc/samba/smb.conf</span><div style="background-color:#f9f9f9;border:1px dashed #2f6fab;border-left:1px solid #2f6fab;margin-top:-.2em;line-height:1.1em;padding:1em;font-family:monospace;font-size:10pt;white-space:pre;overflow:auto"># /etc/samba/smb.conf
+
+[global]
+#to allow symlinks from everywhere
+allow insecure wide links = yes 
+workgroup = WORKGROUP
+dos charset = cp866
+unix charset = utf-8
+force user = username
+
+[storage]
+# to follow symlinks
+follow symlinks = yes  
+# to allow symlinks from outside
+wide links = yes       
+browseable = yes
+writeable = yes
+path = /media/storage
+
+</div></div>
+<div style="padding:0.25em;margin:0.50em 0;background-color:#DDDDFF;border:2px solid #BBBBFF"><strong> Note: </strong><span class=Alp-Note>For each directory share, you'll need to add a subsection to <b>smb.conf</b></span></div>
+<h1><span class=mw-headline id=Create_a_system_user_and_Samba_user>Create a system user and Samba user</span></h1>
+<p>Create a user on the system. Create a Samba user. Give both users the same password.
+</p>
+<p style="background-color:#eeeeee;border:1px dashed #bbbbbb;line-height:1.1em;padding:1em;font-family:monospace,Courier;font-size:10pt;white-space:pre;overflow:auto"># adduser username</p>
+<p style="background-color:#eeeeee;border:1px dashed #bbbbbb;line-height:1.1em;padding:1em;font-family:monospace,Courier;font-size:10pt;white-space:pre;overflow:auto"># smbpasswd -a username</p>
+<h1><span class=mw-headline id=Configure_the_Samba_service>Configure the Samba service</span></h1>
+<p>Run these two commands to start the service on boot and to start the service right now.
+</p>
+<p style="background-color:#eeeeee;border:1px dashed #bbbbbb;line-height:1.1em;padding:1em;font-family:monospace,Courier;font-size:10pt;white-space:pre;overflow:auto"># rc-update add samba</p>
+<p style="background-color:#eeeeee;border:1px dashed #bbbbbb;line-height:1.1em;padding:1em;font-family:monospace,Courier;font-size:10pt;white-space:pre;overflow:auto"># rc-service samba start</p>
+</div>
+<div class="printfooter sf-hidden" data-nosnippet>Retrieved from ""</div></div>
+ <div id=catlinks class=catlinks data-mw=interface><div id=mw-normal-catlinks class=mw-normal-catlinks><a href=https://wiki.alpinelinux.org/wiki/Special:Categories title=Special:Categories>Categories</a>: <ul><li><a href=https://wiki.alpinelinux.org/wiki/Category:Server title=Category:Server>Server</a><li><a href=https://wiki.alpinelinux.org/wiki/Category:Printers title=Category:Printers>Printers</a><li><a href=https://wiki.alpinelinux.org/wiki/Category:Authentication title=Category:Authentication>Authentication</a></ul></div></div>
+ </div>
+ </main>
+ 
+ </div>
+ <div class=mw-footer-container>
+ 
+<footer id=footer class=mw-footer role=contentinfo>
+ <ul id=footer-info>
+ <li id=footer-info-lastmod> This page was last edited on 9 February 2022, at 12:57.</li>
+ <li id=footer-info-copyright><div align=right><div id=footer-inner> 
+ <p><a href=https://wiki.alpinelinux.org/wiki/Privacy_Policy#Copyright>© Copyright 2008-2021 Alpine Linux Development Team</a> 
+ all rights reserved </p></div></div></li>
+</ul>
+ <ul id=footer-places>
+ <li id=footer-places-privacy><a href=https://wiki.alpinelinux.org/wiki/Alpine_Linux:Privacy_policy>Privacy policy</a></li>
+ <li id=footer-places-about><a href=https://wiki.alpinelinux.org/wiki/Alpine_Linux:About>About</a></li>
+ <li id=footer-places-disclaimer><a href=https://wiki.alpinelinux.org/wiki/Alpine_Linux:General_disclaimer>Disclaimers</a></li>
+</ul>
+ <ul id=footer-icons class=noprint>
+ <li id=footer-poweredbyico><a href=https://www.mediawiki.org/><img src="data:image/png;base64,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" alt="Powered by MediaWiki" srcset loading=lazy sizes width=88 height=31></a></li>
+</ul>
+</footer>
+ </div>
+ </div> 
+</div> 
+<div id=p-namespaces style=display:none></div>

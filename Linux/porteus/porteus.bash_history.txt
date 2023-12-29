@@ -1,0 +1,27 @@
+
+redshift -o -l 38:10 -b 0.7:0.7 -v
+cpufreq-info
+su
+cd ./Downloads
+mkdir keepass
+cd ./keepass
+cd ./Downloads/keepass
+wget --help
+wget -r --no-parent https://packages.slackonly.com/pub/packages/14.2-x86_64/misc/KeePass/
+exit
+history 
+mount -o loop slackware-14.2-install-d3.iso /mnt/loop
+tlp-stat -p
+sudo tlp-stat -p
+which pm-utils
+xrandr -q
+redshift -x
+xrandr --output LVDS --brightness 0.7
+xbacklight -h
+xbacklight -get
+history -d 44
+nano .bash_history
+vi .bash_history
+which sysbacklight
+find laptop-mode.conf
+cat /proc/sys/vm/laptop_mode
