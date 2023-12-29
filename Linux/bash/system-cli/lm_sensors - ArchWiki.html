@@ -1,0 +1,880 @@
+<!DOCTYPE html> <html class="client-js vector-animations-ready" dir=ltr style lang=en><!--
+ Page saved with SingleFile 
+ url: https://wiki.archlinux.org/title/Lm_sensors 
+ saved date: Fri Apr 07 2023 17:49:32 GMT+0100 (Central European Standard Time)
+--><meta charset=utf-8>
+<title>lm_sensors - ArchWiki</title>
+<style>@media screen{html{height:100%}.ext-darkmode-link::before{content:"☾";display:inline-block}.skin-vector-2022 .ext-darkmode-link::before{display:none}}@-moz-document url-prefix(){body{background:#000}}@-moz-document url-prefix(){@supports (overflow-clip-margin:1px){body{background:#fff}}}.mw-ui-button{display:inline-block;box-sizing:border-box;margin:0;border:1px solid #a2a9b1;border-radius:2px;cursor:pointer;vertical-align:middle;font-family:inherit;font-size:1em;line-height:1.28571429em;text-align:center;-webkit-appearance:none}.mw-ui-button:not(.mw-ui-icon-element){min-height:32px;min-width:4em;max-width:28.75em;padding:5px 12px}.mw-ui-button:not(:disabled){transition-property:background-color,color,border-color,box-shadow;transition-duration:100ms}.mw-ui-button:not(:disabled):visited{color:#202122}.mw-ui-button:not(:disabled):hover{background-color:#ffffff;color:#404244;border-color:#a2a9b1}.mw-ui-button:not(:disabled):focus{color:#202122;border-color:#3366cc;box-shadow:inset 0 0 0 1px #3366cc,inset 0 0 0 2px #ffffff;outline-width:0}.mw-ui-button:not(:disabled):focus::-moz-focus-inner{border-color:transparent;padding:0}.mw-ui-button:not(:disabled):active,.mw-ui-button:not(:disabled).is-on{background-color:#c8ccd1;color:#000000;border-color:#72777d;box-shadow:none}.mw-ui-button:disabled{background-color:#c8ccd1;color:#ffffff;border-color:#c8ccd1;cursor:default}.mw-ui-button.mw-ui-icon-element:not(.mw-ui-icon-with-label-desktop){color:transparent!important}.mw-ui-button.mw-ui-icon-element:not(.mw-ui-icon-with-label-desktop) span{display:block;position:absolute!important;clip:rect(1px,1px,1px,1px);width:1px;height:1px;margin:-1px;border:0;padding:0;overflow:hidden}@media all and (max-width:1000px){.mw-ui-button.mw-ui-icon-element span{display:block;position:absolute!important;clip:rect(1px,1px,1px,1px);width:1px;height:1px;margin:-1px;border:0;padding:0;overflow:hidden}}.mw-ui-button.mw-ui-quiet,.mw-ui-button.mw-ui-quiet.mw-ui-progressive{background-color:transparent;color:#202122;border-color:transparent;font-weight:bold}.mw-ui-button.mw-ui-quiet:not(.mw-ui-icon-element),.mw-ui-button.mw-ui-quiet.mw-ui-progressive:not(.mw-ui-icon-element),.mw-ui-button.mw-ui-quiet.mw-ui-destructive:not(.mw-ui-icon-element){min-height:32px}input[type="checkbox"]:hover+.mw-ui-button.mw-ui-quiet,input[type="checkbox"]:hover+.mw-ui-button.mw-ui-quiet.mw-ui-progressive,input[type="checkbox"]:hover+.mw-ui-button.mw-ui-quiet.mw-ui-destructive,.mw-ui-button.mw-ui-quiet:hover,.mw-ui-button.mw-ui-quiet.mw-ui-progressive:hover,.mw-ui-button.mw-ui-quiet.mw-ui-destructive:hover{background-color:rgba(0,24,73,0.02745098);color:#202122;border-color:transparent}input[type="checkbox"]:focus+.mw-ui-button.mw-ui-quiet,input[type="checkbox"]:focus+.mw-ui-button.mw-ui-quiet.mw-ui-progressive,input[type="checkbox"]:focus+.mw-ui-button.mw-ui-quiet.mw-ui-destructive,.mw-ui-button.mw-ui-quiet:focus,.mw-ui-button.mw-ui-quiet.mw-ui-progressive:focus,.mw-ui-button.mw-ui-quiet.mw-ui-destructive:focus{color:#202122;border-color:#3366cc;box-shadow:inset 0 0 0 1px #3366cc,inset 0 0 0 2px #ffffff}input[type="checkbox"]:active+.mw-ui-button.mw-ui-quiet,input[type="checkbox"]:active+.mw-ui-button.mw-ui-quiet.mw-ui-progressive,input[type="checkbox"]:active+.mw-ui-button.mw-ui-quiet.mw-ui-destructive,.mw-ui-button.mw-ui-quiet:active,.mw-ui-button.mw-ui-quiet.mw-ui-progressive:active,.mw-ui-button.mw-ui-quiet.mw-ui-destructive:active{background-color:rgba(0,36,73,0.08235294);color:#000000;border-color:#72777d;box-shadow:none}.mw-ui-button.mw-ui-quiet:disabled,.mw-ui-button.mw-ui-quiet.mw-ui-progressive:disabled,.mw-ui-button.mw-ui-quiet.mw-ui-destructive:disabled,.mw-ui-button.mw-ui-quiet:disabled:hover,.mw-ui-button.mw-ui-quiet.mw-ui-progressive:disabled:hover,.mw-ui-button.mw-ui-quiet.mw-ui-destructive:disabled:hover,.mw-ui-button.mw-ui-quiet:disabled:active,.mw-ui-button.mw-ui-quiet.mw-ui-progressive:disabled:active,.mw-ui-button.mw-ui-quiet.mw-ui-destructive:disabled:active{background-color:transparent;color:#72777d;border-color:transparent}.mw-ui-button.mw-ui-progressive:not(:disabled){background-color:#3366cc;color:#fff;border-color:#3366cc}.mw-ui-button.mw-ui-progressive:not(:disabled):hover{background-color:#447ff5;border-color:#447ff5}.mw-ui-button.mw-ui-progressive:not(:disabled):focus{box-shadow:inset 0 0 0 1px #3366cc,inset 0 0 0 2px #ffffff}.mw-ui-button.mw-ui-progressive:not(:disabled):active,.mw-ui-button.mw-ui-progressive:not(:disabled).is-on{background-color:#2a4b8d;border-color:#2a4b8d;box-shadow:none}.mw-ui-button.mw-ui-progressive:disabled{background-color:#c8ccd1;color:#fff;border-color:#c8ccd1}.mw-ui-button.mw-ui-progressive.mw-ui-quiet{color:#3366cc;background-color:transparent;border-color:transparent}input[type="checkbox"]:hover+.mw-ui-button.mw-ui-progressive.mw-ui-quiet,.mw-ui-button.mw-ui-progressive.mw-ui-quiet:hover{background-color:rgba(52,123,255,0.2);border-color:transparent;color:#447ff5}input[type="checkbox"]:focus+.mw-ui-button.mw-ui-progressive.mw-ui-quiet,.mw-ui-button.mw-ui-progressive.mw-ui-quiet:focus{color:#3366cc;border-color:#3366cc}input[type="checkbox"]:active+.mw-ui-button.mw-ui-progressive.mw-ui-quiet,.mw-ui-button.mw-ui-progressive.mw-ui-quiet:active{color:#ffffff;background-color:#2a4b8d;border-color:#2a4b8d}.mw-ui-icon{font-size:initial;position:relative;display:inline-block;box-sizing:content-box!important;width:1.25em;height:1.25em;min-width:1.25em;min-height:1.25em;flex-basis:1.25em;vertical-align:middle;line-height:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;-moz-appearance:none;-webkit-appearance:none;background-color:transparent;margin:0;padding:0}.mw-ui-icon:not(.mw-ui-button){border:0}.mw-ui-icon:before{content:"";display:block;width:100%;height:100%;min-width:1.25em;min-height:1.25em;background-repeat:no-repeat;background-size:1.25em 1.25em;background-position:center}.mw-ui-icon+span:not(:empty){margin-left:8px}.mw-ui-icon-element{border-radius:2px;padding:0.75em;transition:background-color 100ms}.mw-ui-icon-element:focus,.mw-ui-icon-element:active,.mw-ui-icon-element:visited{color:transparent}.mw-ui-icon-element:active{background-color:rgba(0,0,0,0.03)}@media (hover:hover){.mw-ui-icon-element:not(.disabled):hover{background-color:rgba(0,0,0,0.03)}}.mw-ui-icon-small{width:1em;height:1em;min-width:1em;min-height:1em;flex-basis:1em;line-height:1em}.mw-ui-icon-small:before{content:"";display:block;width:100%;height:100%;min-width:1em;min-height:1em;background-repeat:no-repeat;background-size:1em 1em;background-position:center}.mw-ui-icon-wikimedia-language-progressive:before{background-image:url(data:text/plain;base64,SW1hZ2UgZ2VuZXJhdGlvbiBmYWlsZWQ=);background-image:linear-gradient(transparent,transparent),url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj48dGl0bGU+CgkJbGFuZ3VhZ2UKCTwvdGl0bGU+PGcgZmlsbD0iIzM2YyI+PHBhdGggZD0iTTIwIDE4aC0xLjQ0YS42MS42MSAwIDAgMS0uNC0uMTIuODEuODEgMCAwIDEtLjIzLS4zMUwxNyAxNWgtNWwtMSAyLjU0YS43Ny43NyAwIDAgMS0uMjIuMy41OS41OSAwIDAgMS0uNC4xNEg5bDQuNTUtMTEuNDdoMS44OXptLTMuNTMtNC4zMUwxNC44OSA5LjVhMTEuNjIgMTEuNjIgMCAwIDEtLjM5LTEuMjRxLS4wOS4zNy0uMTkuNjlsLS4xOS41Ni0xLjU4IDQuMTl6bS02LjMtMS41OGExMy40MyAxMy40MyAwIDAgMS0yLjkxLTEuNDEgMTEuNDYgMTEuNDYgMCAwIDAgMi44MS01LjM3SDEyVjRINy4zMWE0IDQgMCAwIDAtLjItLjU2QzYuODcgMi43OSA2LjYgMiA2LjYgMmwtMS40Ny41cy40Ljg5LjYgMS41SDB2MS4zM2gyLjE1QTExLjIzIDExLjIzIDAgMCAwIDUgMTAuN2ExNy4xOSAxNy4xOSAwIDAgMS01IDIuMXEuNTYuODIuODcgMS4zOGEyMy4yOCAyMy4yOCAwIDAgMCA1LjIyLTIuNTEgMTUuNjQgMTUuNjQgMCAwIDAgMy41NiAxLjc3ek0zLjYzIDUuMzNoNC45MWE4LjExIDguMTEgMCAwIDEtMi40NSA0LjQ1IDkuMTEgOS4xMSAwIDAgMS0yLjQ2LTQuNDV6Ii8+PC9nPjwvc3ZnPgo=)}.mw-ui-icon-wikimedia-ellipsis:before{background-image:url(data:text/plain;base64,SW1hZ2UgZ2VuZXJhdGlvbiBmYWlsZWQ=);background-image:linear-gradient(transparent,transparent),url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj48dGl0bGU+CgkJZWxsaXBzaXMKCTwvdGl0bGU+PGcgZmlsbD0iIzAwMCI+PGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iMiIvPjxjaXJjbGUgY3g9IjMiIGN5PSIxMCIgcj0iMiIvPjxjaXJjbGUgY3g9IjE3IiBjeT0iMTAiIHI9IjIiLz48L2c+PC9zdmc+Cg==)}.mw-ui-icon-wikimedia-logIn:before{background-image:url(data:text/plain;base64,SW1hZ2UgZ2VuZXJhdGlvbiBmYWlsZWQ=);background-image:linear-gradient(transparent,transparent),url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj48dGl0bGU+CgkJbG9nIGluCgk8L3RpdGxlPjxnIGZpbGw9IiMwMDAiPjxwYXRoIGQ9Ik0xIDExdjZjMCAxLjEuOSAyIDIgMmgxNGMxLjEgMCAyLS45IDItMlYzYzAtMS4xLS45LTItMi0ySDNjLTEuMSAwLTIgLjktMiAydjZoOFY1bDQuNzUgNUw5IDE1di00SDF6Ii8+PC9nPjwvc3ZnPgo=)}.mw-ui-icon-wikimedia-expand:before{background-image:url(data:text/plain;base64,SW1hZ2UgZ2VuZXJhdGlvbiBmYWlsZWQ=);background-image:linear-gradient(transparent,transparent),url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj48dGl0bGU+CgkJZXhwYW5kCgk8L3RpdGxlPjxnIGZpbGw9IiMwMDAiPjxwYXRoIGQ9Im0xNy41IDQuNzUtNy41IDcuNS03LjUtNy41TDEgNi4yNWw5IDkgOS05eiIvPjwvZz48L3N2Zz4K)}@media (prefers-reduced-motion:reduce){*,::before,::after{animation-delay:-0.01ms!important;animation-duration:0.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:0ms!important}}body{margin:0}main{display:block}@supports (text-decoration:underline dotted){abbr[title]{border-bottom:0;text-decoration:underline dotted}}pre{font-family:monospace,monospace}sup{line-height:1}button,input{margin:0}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner{border-style:none;padding:0}@media screen{html,body{height:100%}:focus{outline-color:#3366cc}html{font-size:100%}html,body{font-family:sans-serif}ul{list-style-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjEzIj4KCTxjaXJjbGUgY3g9IjIuNSIgY3k9IjkiIHI9IjIuNSIgZmlsbD0iIzIwMjEyMiIvPgo8L3N2Zz4K)}pre{line-height:1.3}.mw-jump-link:not(:focus){display:block;position:absolute!important;clip:rect(1px,1px,1px,1px);width:1px;height:1px;margin:-1px;border:0;padding:0;overflow:hidden}.mw-body h1,.mw-body-content h2{margin-bottom:0.25em;padding:0;font-family:"Linux Libertine","Georgia","Times",serif;line-height:1.3}.mw-body h1:lang(ja),.mw-body-content h1:lang(ja),.mw-body-content h2:lang(ja),.mw-body h1:lang(he),.mw-body-content h1:lang(he),.mw-body-content h2:lang(he),.mw-body h1:lang(ko),.mw-body-content h1:lang(ko),.mw-body-content h2:lang(ko){font-family:sans-serif}.mw-body h1:lang(my),.mw-body-content h1:lang(my),.mw-body-content h2:lang(my){line-height:normal}.mw-body h1{font-size:1.8em}.vector-body{font-size:calc(1em*0.875);line-height:1.6}.vector-body h2{margin-top:1em;font-size:1.5em}.vector-body h3,.vector-body h4{margin-top:0.3em;margin-bottom:0;padding-bottom:0;line-height:1.6}.vector-body h3{font-size:1.2em}.vector-body h3,.vector-body h4{font-weight:bold}.vector-body h4{font-size:100%}.vector-body p{margin:0.5em 0}.mw-parser-output a.external{background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMiIgdmlld0JveD0iMCAwIDEyIDEyIj4KCTx0aXRsZT4KCQlleHRlcm5hbCBsaW5rCgk8L3RpdGxlPgoJPHBhdGggZmlsbD0iIzM2YyIgZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNMTEgMUg2bDIgMiAuMy4zLTQgNCAuNi43IDQtNEg5bDIgMlYxWk0yIDJoMnYxSDJ2N2g3VjhoMXYyYTEgMSAwIDAgMS0xIDFIMmExIDEgMCAwIDEtMS0xVjNhMSAxIDAgMCAxIDEtMVoiIGNsaXAtcnVsZT0iZXZlbm9kZCIvPgo8L3N2Zz4K);background-position:center right;background-repeat:no-repeat;background-size:0.857em;padding-right:1em}.mw-indicators{font-size:0.875em;line-height:1.6;position:relative;float:right}#siteNotice{font-size:0.8em;margin:24px 0;position:relative;text-align:center}.mw-portlet .vector-menu-heading{display:none}.mw-portlet ul{list-style:none;margin:0}.vector-menu-dropdown{position:relative}.vector-menu-dropdown .vector-menu-content{position:absolute;top:100%;left:-1px;opacity:0;height:0;visibility:hidden;overflow:hidden;min-width:100%;margin:0;padding:0;z-index:3}.vector-menu-dropdown .vector-menu-content-list{list-style:none}.vector-menu-dropdown .mw-list-item{padding:0;margin:0}.vector-menu-dropdown .mw-list-item a{display:block;white-space:nowrap;cursor:pointer}.vector-menu-checkbox{cursor:pointer;position:absolute;top:0;left:0;z-index:1;opacity:0;width:100%;height:100%;margin:0;padding:0;display:none}.vector-menu-checkbox:checked~.vector-menu-content{opacity:1;visibility:visible;height:auto}:not(:checked)>.vector-menu-checkbox{display:block}.vector-menu-checkbox:focus+.vector-menu-heading{outline:dotted 1px;outline:auto -webkit-focus-ring-color}.vector-search-box-inner{position:relative;height:100%}.vector-search-box-input{background-color:rgba(255,255,255,0.5);color:#000000;width:100%;height:2.15384615em;box-sizing:border-box;border:1px solid #a2a9b1;border-radius:2px;padding:5px 2.15384615em 5px 0.4em;box-shadow:inset 0 0 0 1px transparent;font-family:inherit;font-size:0.8125em;direction:ltr;transition-property:border-color,box-shadow;transition-duration:250ms;-webkit-appearance:none;-moz-appearance:textfield}.vector-search-box-inner:hover .vector-search-box-input{border-color:#72777d}.vector-search-box-input:focus,.vector-search-box-inner:hover .vector-search-box-input:focus{outline:0;border-color:#3366cc;box-shadow:inset 0 0 0 1px #3366cc}.vector-search-box-input::-webkit-input-placeholder{color:#72777d;opacity:1}.vector-search-box-input::-moz-placeholder{color:#72777d;opacity:1}.vector-search-box-input::placeholder{color:#72777d;opacity:1}.vector-search-box-input::-webkit-search-decoration,.vector-search-box-input::-webkit-search-cancel-button,.vector-search-box-input::-webkit-search-results-button,.vector-search-box-input::-webkit-search-results-decoration{display:none}.searchButton{background-color:transparent;position:absolute;top:1px;bottom:1px;right:1px;min-width:28px;width:2.15384615em;border:0;padding:0;cursor:pointer;font-size:0.8125em;direction:ltr;text-indent:-99999px;white-space:nowrap;overflow:hidden;z-index:1}.searchButton[name="go"]{background:no-repeat center/1.23076923em url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj4KCTx0aXRsZT4KCQlzZWFyY2gKCTwvdGl0bGU+Cgk8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMi4yIDEzLjZhNyA3IDAgMSAxIDEuNC0xLjRsNS40IDUuNC0xLjQgMS40LTUuNC01LjR6TTEzIDhBNSA1IDAgMSAxIDMgOGE1IDUgMCAwIDEgMTAgMHoiLz4KPC9zdmc+Cg==);opacity:0.67}.vector-search-box-collapses>div{display:none}.mw-footer{direction:ltr}.mw-footer ul{list-style:none;margin:0;padding:0}.mw-footer li{color:#202122;margin:0;padding:0.5em 0;font-size:0.75em}#footer-info li{line-height:1.4}#footer-places li{float:left;margin-right:1em;line-height:2}}@media screen and (min-width:1000px){.vector-search-box-collapses>div{display:block}}@media screen{body{background-color:#f8f9fa;color:#202122;overflow-y:scroll}.mw-body{direction:ltr}.mw-body{border-top:1px solid transparent;margin-top:-1px;padding:0.5em 0.5em 1.5em}.mw-body .firstHeading{overflow:visible;margin-bottom:0}.mw-header{position:relative;z-index:4}.mw-body-content{margin-top:16px}.mw-body,.mw-footer{margin-left:0}.mw-indicators{z-index:1}.mw-body-header:after,.mw-body-subheader:after{clear:both;content:"";display:block}.vector-body{position:relative;z-index:0}#left-navigation{float:left;margin-left:-8px}#right-navigation{float:right;margin-right:-8px}#right-navigation .vector-menu-content{left:auto;right:-1px}.mw-footer{border-top:1px solid #a2a9b1;padding:0.75em}.mw-page-container{position:relative;z-index:0;max-width:94.625em;min-height:100%;margin-left:auto;margin-right:auto;padding:0.05px 1em;background-color:#ffffff}.skin--responsive .mw-page-container{min-width:auto}.mw-content-container{max-width:60em}.mw-article-toolbar-container{display:flow-root;border-bottom:1px solid #eaecf0}.mw-article-toolbar-container>div{font-size:0.8125em}.mw-article-toolbar-container .mw-portlet-views{display:none}@keyframes search-loader-progress-bar{0%{background-size:0 2px;background-position:-10%0}30%{background-size:30% 2px;background-position:-10%0}70%{background-size:30% 2px;background-position:110%0}100%{background-size:0 2px;background-position:110%0}}.vector-search-box{font-size:calc(1em*0.875);flex-grow:1}.vector-search-box-vue .vector-search-box-input,.vector-search-box-vue .searchButton{font-size:inherit}.vector-search-box-vue .vector-search-box-input{height:32px}.vector-search-box-vue .searchButton{background-size:1.42857143em auto}.client-js .vector-search-box-vue .vector-search-box-input{padding-left:36px;padding-right:8px}.client-js .vector-search-box-vue .searchButton{pointer-events:none;right:auto;top:0;bottom:0;width:36px;opacity:0.51}.client-js .vector-search-box-vue .vector-search-box-input:focus~.searchButton{opacity:0.87}.client-js .vector-search-box-vue.vector-search-box-show-thumbnail>div{max-width:37.42857143em}.client-js .vector-search-box-vue.vector-search-box-show-thumbnail.vector-search-box-auto-expand-width .searchButton{left:25px}.client-js .vector-search-box-vue.vector-search-box-show-thumbnail.vector-search-box-auto-expand-width .vector-search-box-input{margin-left:24px;width:calc(100% - 24px)}.client-js .vector-search-box-vue.vector-search-box-show-thumbnail:not(.vector-search-box-auto-expand-width) .vector-search-box-input,.client-js .vector-search-box-vue.vector-search-box-show-thumbnail.vector-search-box-auto-expand-width .vector-search-box-input:focus{margin-left:0;padding-left:calc(36px + 24px);width:100%}.client-js .vector-search-box-vue.vector-search-box-show-thumbnail:not(.vector-search-box-auto-expand-width) .vector-search-box-input~.searchButton,.client-js .vector-search-box-vue.vector-search-box-show-thumbnail.vector-search-box-auto-expand-width .vector-search-box-input:focus~.searchButton{left:14px}.mw-checkbox-hack-button{display:inline-block;cursor:pointer}.sidebar-toc,.sidebar-toc:after{width:220px;margin-left:0}.sidebar-toc,.sidebar-toc:after{margin-left:-0.75em}#mw-sidebar-button:before{opacity:0.67;background-image:url(data:image/svg+xml,%3Csvg\ xmlns=%22http://www.w3.org/2000/svg%22\ width=%2220%22\ height=%2220%22\ viewBox=%220\ 0\ 20\ 20%22%3E\ %3Ctitle%3E\ chevron\ %3C/title%3E\ %3Cpath\ d=%22m9\ 2\ 1.3\ 1.3L3.7\ 10l6.6\ 6.7L9\ 18l-8-8\ 8-8zm8.5\ 0L19\ 3.3\ 12.2\ 10l6.7\ 6.7-1.4\ 1.3-8-8\ 8-8z%22/%3E\ %3C/svg%3E)}#mw-sidebar-checkbox:not(:checked)~.mw-header #mw-sidebar-button:before{background-image:url(data:image/svg+xml,%3Csvg\ xmlns=%22http://www.w3.org/2000/svg%22\ width=%2220%22\ height=%2220%22\ viewBox=%220\ 0\ 20\ 20%22%3E\ %3Ctitle%3E\ menu\ %3C/title%3E\ %3Cpath\ d=%22M1\ 3v2h18V3zm0\ 8h18V9H1zm0\ 6h18v-2H1z%22/%3E\ %3C/svg%3E)}#mw-sidebar-button:hover:before{opacity:1}#p-lang-btn.mw-portlet-empty{display:none}.vector-user-links{display:flex;align-items:center;position:relative;justify-content:flex-end;flex-shrink:1;font-size:0.875em}.vector-user-links .mw-ui-button{align-items:center}.vector-user-links .mw-list-item{margin:0}.vector-user-menu .vector-menu-content{left:auto;right:0;min-width:200px}.vector-user-menu-overflow .vector-menu-content-list{display:flex;align-items:center}.vector-user-menu-more a:not(.mw-ui-button):not(.mw-echo-notifications-badge),.vector-user-menu-overflow a:not(.mw-ui-button):not(.mw-echo-notifications-badge){margin:0 8px}.vector-user-menu-anon-editor{min-height:32px;display:flex;align-items:center;padding:0 12px;color:#54595d}.vector-user-menu-anon-editor:visited{color:#3366cc}.vector-user-menu-anon-editor a:before{content:"("}.vector-user-menu-anon-editor a:after{content:")"}.vector-user-menu-login{border-bottom:1px solid #eaecf0}.mw-header{min-height:3.125em;padding:8px 0;display:flex;flex-wrap:nowrap;align-items:center}.mw-header #mw-sidebar-button{margin-right:0.75em}.mw-header-content,.mw-header-aside{display:flex;align-items:center}.mw-header-aside{float:left}.mw-header-content{flex-grow:1}.mw-footer-container{padding-top:50px;padding-bottom:82px}.vector-menu-dropdown .vector-menu-heading,.mw-interlanguage-selector{display:flex}.vector-menu-dropdown .vector-menu-heading:after,.mw-interlanguage-selector:after{content:"";background:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMiIgdmlld0JveD0iMCAwIDEyIDEyIj4KCTxwYXRoIGZpbGw9IiMyMDIxMjIiIGQ9Im0xMS4wNSAzLjk5Ni0uOTY1LTEuMDUzLTQuMDM1IDMuODYtMy45NDctMy44NkwxLjA1IDMuOTk2bDUgNSA1LTUiLz4KPC9zdmc+Cg==)100% 50%no-repeat;width:1.23076923em;height:1.23076923em}.vector-menu-dropdown .vector-menu-content{background-color:#ffffff;border:1px solid #a2a9b1;box-shadow:0 1px 1px 0 rgba(0,0,0,0.1);transition-property:opacity;transition-duration:100ms}.vector-user-menu-login a,.vector-menu-dropdown .mw-list-item a{min-height:32px;display:flex;align-items:center;padding:0 12px;white-space:nowrap;color:#3366cc}.vector-user-menu-logout a:visited,.vector-user-menu-create-account a:visited,.vector-user-menu-login a:visited,.vector-menu-dropdown .mw-list-item a:visited{color:#3366cc}.vector-menu-tabs{float:left}.vector-menu-tabs .mw-list-item a{color:#3366cc}.vector-menu-tabs .mw-list-item a:focus,.vector-menu-tabs .mw-list-item a:hover{text-decoration:none;border-bottom:1px solid}.vector-menu-tabs .mw-list-item.selected a,.vector-menu-tabs .mw-list-item.selected a:visited{color:#202122;border-bottom:1px solid}.vector-menu-tabs .mw-list-item{float:left;white-space:nowrap;margin:0 8px}.vector-menu-tabs .mw-list-item>a{display:inline-flex;position:relative;padding:18px 0 7px 0;margin-bottom:-1px;cursor:pointer;border-bottom:1px solid transparent;max-height:3.15384615em;box-sizing:border-box;font-size:inherit;font-weight:normal}@keyframes rotate{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}.mw-table-of-contents-container{align-self:start;height:100%}.vector-sticky-toc-container{position:sticky;top:0}.sidebar-toc{max-height:75vh;padding:20px 12px 20px calc(15px + 0.75em);box-sizing:border-box;overflow:auto;background-color:#ffffff}.sidebar-toc .sidebar-toc-header{padding-bottom:12px}.sidebar-toc .sidebar-toc-title{color:#54595d;font-size:0.875em;margin:0;padding:0;border:0}.sidebar-toc .sidebar-toc-numb{display:none}.sidebar-toc .sidebar-toc-toggle{position:absolute;top:1px;left:calc(-1*1.834em - 1px);width:1.834em;height:1.834em;font-size:0.75em;transition:100ms;cursor:pointer}.sidebar-toc .sidebar-toc-link{word-break:break-word;color:#3366cc;display:block}.sidebar-toc .sidebar-toc-list-item-active>.sidebar-toc-link{color:#202122;font-weight:bold;width:calc(100% + 12px)}.sidebar-toc .sidebar-toc-text{padding:4px 0}.sidebar-toc .sidebar-toc-contents,.sidebar-toc .sidebar-toc-list{margin:0;list-style:none;line-height:18px}.sidebar-toc .sidebar-toc-list-item{display:block;position:relative;list-style-type:none}.sidebar-toc .sidebar-toc-list-item.sidebar-toc-level-1{padding-left:0}.sidebar-toc .sidebar-toc-list-item a{font-size:0.875em}.client-js .sidebar-toc .sidebar-toc-toggle{display:block}.client-js body.ltr .sidebar-toc .sidebar-toc-toggle{transform:rotate(-90deg)}.sidebar-toc{z-index:3}.vector-toc-collapse-button{display:none;border:0;padding:0;background-color:transparent;color:#3366cc;cursor:pointer}.vector-toc-collapse-button:hover,.vector-toc-uncollapse-button:hover{color:#447ff5}.vector-toc-collapse-button:before,.vector-toc-uncollapse-button:before{content:"[";color:#54595d}.vector-toc-collapse-button:after,.vector-toc-uncollapse-button:after{content:"]";color:#54595d}}@media screen and (min-width:1000px){.mw-page-container{padding-left:2em;padding-right:2em}}@media screen and (min-width:1200px){.mw-page-container{padding-left:2.5em;padding-right:2.5em}}@media screen and (min-width:1000px){.mw-page-container-inner{display:grid;width:100%;grid-template:min-content min-content min-content 1fr min-content/232px 20px minmax(0,1fr);grid-template-areas:"header header header""sitenotice sitenotice sitenotice""sidebar gutter content""toc gutter content""footer footer footer"}.mw-body{padding-left:0}.vector-sitenotice-container{grid-area:sitenotice}.mw-table-of-contents-container{grid-area:toc}.mw-header{grid-area:header}.vector-sidebar-container{grid-area:sidebar}.mw-content-container{grid-area:content}.mw-footer-container{grid-area:footer}}@media screen and (min-width:1200px){.mw-page-container-inner{grid-template-columns:284px 20px minmax(0,1fr)}}@media screen and (min-width:720px){.mw-article-toolbar-container .mw-portlet-views:not(.emptyPortlet){display:block}}@media screen and (min-width:1200px){.sidebar-toc,.sidebar-toc:after{width:244px;margin-left:0.75em}}@media screen and (min-width:1200px){.sidebar-toc,.sidebar-toc:after{margin-left:0}}@media screen and (max-width:719px){.vector-user-menu-overflow .user-links-collapsible-item{display:none}}@media screen and (min-width:1200px){.mw-header .vector-search-box:not(.vector-search-box-auto-expand-width),html:not(.client-js) .mw-header .vector-search-box{padding-left:24px}}@media screen and (min-width:1000px){.mw-header .vector-search-box{margin-right:12px}}@media screen and (min-width:1000px){.vector-toc-not-collapsed .vector-sticky-toc-container{padding-top:1.5em}.vector-toc-not-collapsed #mw-sidebar-checkbox:not(:checked)~.mw-table-of-contents-container .vector-sticky-toc-container{margin-top:1.5em}}@media screen and (min-width:1000px){.vector-toc-not-collapsed .sidebar-toc:after{content:"";display:block;position:absolute;bottom:0;left:0;right:0;height:30px;background:linear-gradient(rgba(255,255,255,0),#ffffff);background-repeat:no-repeat;background-position:-12px;pointer-events:none}}@media screen and (max-width:999px){.vector-sticky-toc-container{position:relative}.mw-table-of-contents-container .sidebar-toc{display:none;position:absolute;margin:0;border:1px solid #a2a9b1}#vector-toc-collapsed-checkbox:checked~.mw-table-of-contents-container .sidebar-toc{display:block}.mw-table-of-contents-container .sidebar-toc{top:calc(36px + 8px);left:-4px}}@media screen and (min-width:1000px){@supports (display:grid){.client-js .vector-toc-collapsed #vector-toc-collapsed-button{display:block}.client-js .vector-toc-collapsed .mw-table-of-contents-container.mw-sticky-header-element,.client-js .vector-toc-collapsed .vector-sticky-toc-container{position:relative}.client-js .vector-toc-collapsed .mw-table-of-contents-container .sidebar-toc{display:none;position:absolute;margin:0;border:1px solid #a2a9b1}.client-js .vector-toc-collapsed #vector-toc-collapsed-checkbox:checked~.mw-table-of-contents-container .sidebar-toc{display:block}.client-js .vector-toc-collapsed .mw-table-of-contents-container{grid-area:content}.client-js .vector-toc-collapsed .mw-table-of-contents-container .sidebar-toc{top:calc(36px + 8px);left:-0.75em}body:not(.vector-sticky-header-visible).vector-below-page-title.client-js .vector-toc-collapsed #vector-toc-collapsed-button,body:not(.vector-sticky-header-visible).vector-below-page-title.client-js .vector-toc-collapsed .sidebar-toc{position:fixed}body:not(.vector-sticky-header-visible).vector-below-page-title.client-js .vector-toc-collapsed #vector-toc-collapsed-button{top:0;left:0;margin:0}body:not(.vector-sticky-header-visible).vector-below-page-title.client-js .vector-toc-collapsed .sidebar-toc{top:36px;left:6px}.client-js .vector-toc-collapsed .vector-toc-uncollapse-button{display:inline-block}.client-js .vector-toc-not-collapsed .vector-toc-collapse-button{display:inline-block}}}.mw-table-of-contents-container{display:none}@supports (display:grid){.mw-table-of-contents-container{display:block}}@media screen{.mw-parser-output a.external{color:#3366cc}.mw-parser-output a.extiw:visited,.mw-parser-output a.external:visited{color:#795cb2}.mw-parser-output a.extiw:active,.mw-parser-output a.external:active{color:#faa700}.plainlinks a.external{background:none!important;padding:0!important}.mw-body-content:after{clear:both;content:"";display:block}.mw-body-content a.external.free{word-wrap:break-word}#catlinks{text-align:left}.catlinks{border:1px solid #a2a9b1;background-color:#f8f9fa;padding:5px;margin-top:1em;clear:both}.catlinks ul{display:inline;margin:0;padding:0;list-style:none}.catlinks li{display:inline-block;line-height:1.25em;border-left:1px solid #a2a9b1;margin:0.125em 0;padding:0 0.5em}.catlinks li:first-child{padding-left:0.25em;border-left:0}a{text-decoration:none;color:#3366cc;background:none}a:not([href]){cursor:pointer}a:visited{color:#795cb2}a:active{color:#faa700}a:hover,a:focus{text-decoration:underline}a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}h1,h2,h3,h4{color:#000;margin:0;padding-top:0.5em;padding-bottom:0.17em;overflow:hidden}h1,h2{margin-bottom:0.6em;border-bottom:1px solid #a2a9b1}h3,h4{margin-bottom:0.3em}h1{font-size:188%;font-weight:normal}h2{font-size:150%;font-weight:normal}h3{font-size:128%}h4{font-size:116%}p{margin:0.4em 0 0.5em 0}ul{margin:0.3em 0 0 1.6em;padding:0}li{margin-bottom:0.1em}dl{margin-top:0.2em;margin-bottom:0.5em}dd{margin-bottom:0.1em}pre,code{font-family:monospace,monospace}pre,code{background-color:#f8f9fa;color:#000;border:1px solid #eaecf0}code{border-radius:2px;padding:1px 4px}pre{padding:1em;white-space:pre-wrap;overflow-x:hidden;word-wrap:break-word}form{border:0;margin:0}@counter-style meetei{system:numeric;symbols:"꯰""꯱""꯲""꯳""꯴""꯵""꯶""꯷""꯸""꯹";suffix:") "}@counter-style santali{system:numeric;symbols:"᱐""᱑""᱒""᱓""᱔""᱕""᱖""᱗""᱘""᱙"}@counter-style myanmar_with_period{system:numeric;symbols:"၀""၁""၂""၃""၄""၅""၆""၇""၈""၉";suffix:"။ "}.mw-content-ltr ul{margin:0.3em 0 0 1.6em;padding:0}.mw-content-ltr dd{margin-left:1.6em;margin-right:0}h1:lang(anp),h1:lang(as),h1:lang(bh),h1:lang(bho),h1:lang(blk),h1:lang(bn),h1:lang(gu),h1:lang(hi),h1:lang(kjp),h1:lang(kn),h1:lang(ks),h1:lang(ksw),h1:lang(ml),h1:lang(mr),h1:lang(my),h1:lang(mai),h1:lang(mnw),h1:lang(ne),h1:lang(new),h1:lang(or),h1:lang(pa),h1:lang(pi),h1:lang(sa),h1:lang(shn),h1:lang(syl),h1:lang(ta),h1:lang(te){line-height:1.6em!important}h2:lang(anp),h2:lang(as),h2:lang(bh),h2:lang(bho),h2:lang(blk),h2:lang(bn),h2:lang(gu),h2:lang(hi),h2:lang(kjp),h2:lang(kn),h2:lang(ks),h2:lang(ksw),h2:lang(ml),h2:lang(mr),h2:lang(my),h2:lang(mai),h2:lang(mnw),h2:lang(ne),h2:lang(new),h2:lang(or),h2:lang(pa),h2:lang(pi),h2:lang(sa),h2:lang(shn),h2:lang(syl),h2:lang(ta),h2:lang(te),h3:lang(anp),h3:lang(as),h3:lang(bh),h3:lang(bho),h3:lang(blk),h3:lang(bn),h3:lang(gu),h3:lang(hi),h3:lang(kjp),h3:lang(kn),h3:lang(ks),h3:lang(ksw),h3:lang(ml),h3:lang(mr),h3:lang(my),h3:lang(mai),h3:lang(mnw),h3:lang(ne),h3:lang(new),h3:lang(or),h3:lang(pa),h3:lang(pi),h3:lang(sa),h3:lang(shn),h3:lang(syl),h3:lang(ta),h3:lang(te),h4:lang(anp),h4:lang(as),h4:lang(bh),h4:lang(bho),h4:lang(blk),h4:lang(bn),h4:lang(gu),h4:lang(hi),h4:lang(kjp),h4:lang(kn),h4:lang(ks),h4:lang(ksw),h4:lang(ml),h4:lang(mr),h4:lang(my),h4:lang(mai),h4:lang(mnw),h4:lang(ne),h4:lang(new),h4:lang(or),h4:lang(pa),h4:lang(pi),h4:lang(sa),h4:lang(shn),h4:lang(syl),h4:lang(ta),h4:lang(te),h5:lang(anp),h5:lang(as),h5:lang(bh),h5:lang(bho),h5:lang(blk),h5:lang(bn),h5:lang(gu),h5:lang(hi),h5:lang(kjp),h5:lang(kn),h5:lang(ks),h5:lang(ksw),h5:lang(ml),h5:lang(mr),h5:lang(my),h5:lang(mai),h5:lang(mnw),h5:lang(ne),h5:lang(new),h5:lang(or),h5:lang(pa),h5:lang(pi),h5:lang(sa),h5:lang(shn),h5:lang(syl),h5:lang(ta),h5:lang(te),h6:lang(anp),h6:lang(as),h6:lang(bh),h6:lang(bho),h6:lang(blk),h6:lang(bn),h6:lang(gu),h6:lang(hi),h6:lang(kjp),h6:lang(kn),h6:lang(ks),h6:lang(ksw),h6:lang(ml),h6:lang(mr),h6:lang(my),h6:lang(mai),h6:lang(mnw),h6:lang(ne),h6:lang(new),h6:lang(or),h6:lang(pa),h6:lang(pi),h6:lang(sa),h6:lang(shn),h6:lang(syl),h6:lang(ta),h6:lang(te){line-height:1.4em}h2:lang(th){line-height:1.6}}#archnavbar{height:40px!important;padding:10px 15px!important;background:#333!important;border-bottom:5px #08c solid!important}#archnavbarlogo{float:left!important;margin:0!important;padding:0!important;height:40px!important;width:190px!important}html>body #archnavbarlogo{background:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEiIHdpZHRoPSI2MDAiIGhlaWdodD0iMTI2Ij48cGF0aCBkPSJNMTU5LjU2OCAzNC40MjdjLTguODktLjAxNC0xNi4yNjcgMS44MDktMTkuMTIgMi44MDNsLTIuOTM3IDE1Ljg1N2MtLjAwNy4wNTggMTQuNjE3LTMuOSAyMS4wNTktMy42NjcgMTAuNjY1LjM4MyAxMS42NDYgNC4wNzYgMTEuNDYgOS4wNi4xODIuMjkyLTIuNzUyLTQuNTAzLTExLjk3OS00LjY2NC0xMS42NC0uMi0yOC4wNjkgNC4xMjItMjguMDQ2IDIxLjY5Mi0uMzE0IDE5Ljc2NSAxNC43NjQgMjUuNTc5IDI1LjAzMiAyNS42ODYgOS4yMzItLjE2OCAxMy41NjMtMy40OTYgMTUuOTM0LTUuMjggMy4xMTUtMy4yNTcgNi42NzktNi41MzIgMTAuMDc4LTEwLjQ2Mi0zLjIxNiA1Ljg0NC02LjAwNSA5Ljg4NC04LjkwNyAxMi45Nzd2Mi42MTFsMTQuMDMzLTIuMzYxLjA5Ni0zOC4xNDRjLS4xNDMtNS4zOTkgMy4wOTYtMjYuMDU3LTI2LjcwMy0yNi4xMDh6bS0yLjAxNiAzMy4yMWM1LjgxNy4wOCAxMi40ODggMi45NDggMTIuNDk3IDkuODQ5LjAzIDYuMjc3LTcuODYzIDkuNjUxLTEyLjk5NiA5LjU5OC01LjEzNS0uMDUzLTExLjk0OS00LjAzNi0xMS45NzktMTAuMTU1LjA5OS01LjQ3IDYuNDI2LTkuNDMyIDEyLjQ3OC05LjI5MXptMzcuOTcyLTI5LjY4NWwtLjA5NSA2My4xNjYgMTYuMzQ4LTMuMTUuMDI3LTM1LjgxNGMuMDA0LTUuMzMzIDcuNjItMTEuNTY0IDE3LjE3OC0xMS40NjQgMi4wMjgtMy42NyA1Ljg0LTEzLjA1IDYuNzctMTUuMTgzLTIxLjM1MS0uMDUxLTIxLjYyMyA2LjEzNy0yNS4zMzYgOS4xOC0uMDQtNS44MDYtLjAxMy05LjI5Mi0uMDEzLTkuMjkybC0xNC44NzkgMi41NTd6bTkyLjAwMiA4LjI5MmMtLjE1OC0uMDc0LTguNTI2LTkuNzg4LTI1LjM1LTkuODY0LTE1Ljc1OC0uMjYyLTMzLjQzMyA1Ljg0Ny0zMy43MTYgMzIuMjcuMTM4IDIzLjIzMiAxNi45NzkgMzIuMzExIDMzLjgwNSAzMi40ODggMTguMDA3LjE4NyAyNS4xNzItMTEuMjYgMjUuNjAyLTExLjU0My0yLjE0OS0xLjg2My0xMC4xOTYtOS44MzctMTAuMTk2LTkuODM3cy01LjAyNyA3LjE1Ny0xNC43NzkgNy4yNDhjLTkuNzU1LjA5My0xOC4yMzQtNy41NC0xOC4zNTQtMTguMTg5LS4xMjUtMTAuNjUgNy43OTUtMTYuNDE5IDE4LjQyNy0xNi44ODUgOS4yMDUtLjAwMiAxNC41MTYgNS45NDMgMTQuNTE2IDUuOTQzem0yMC42MDYtMzAuMzk5bC0xNS40MzQgMy42MjguMTE1IDgyLjI3NyAxNS4yMDQtMi43NDUuMTcyLTM4LjcyYy4wMzMtNC4wNiA1Ljg3NC0xMC4yOTUgMTUuNjI2LTEwLjA5NyA5LjMyNS4wOTcgMTEuNDEgNi4yMTUgMTEuMzg0IDYuOTg4bC4yNjkgNDQuODI0IDE0Ljk5My0yLjY1LjA1Ny00Ny41M2MuMDk5LTQuNTc0LTEwLjAxOC0xNC4yMzMtMjYuMjgtMTQuMzAyLTcuNzI5LjAxMi0xMi4wMDkgMS43NjItMTQuMTg3IDMuMDUyLTMuNzI2IDIuODc5LTcuOTg1IDUuNjM3LTEyLjE3IDkuMTU3IDMuODY5LTQuOTcgNy4xMTctOC40MDcgMTAuMjktMTAuOTYxbC0uMDQtMjIuOTIxeiIgZmlsbD0iI2ZmZiIgZmlsbC1ydWxlPSJldmVub2RkIi8+PHBhdGggZD0iTTM2MC4xMzYgMTcuMjE4bDYuOTYyLTEuNzQyLjMzIDgyLjk1LTcuMDc0IDEuMjA0em0xOC45MjggMjQuNzU3bDYuMTAxLTIuNzE2LjA1MiA1OS40NzgtNS44OTIgMS4yMTd6bS0xLjQ1LTIxLjQ0OGw0LjkyLTQuMDE1IDQuMDg2IDQuNTQ3LTQuOTIxIDQuMTIxem0xOS4wMjQgMjAuMzY1bDYuOTYyLTEuNDIxLjAzMyAxMi40MzRjLjAwMS41MzQgMy44MjMtMTMuODkgMjIuMjU4LTEzLjU3IDE3LjkuMSAyMC44MjcgMTMuOTU3IDIwLjczIDE3LjA2NGwuMjIxIDQzLjcyNS02LjEwMiAxLjMyNC0uMDM1LTQzLjE4OWMuMDctMS4yNjEtMi43OS0xMS45MjctMTUuNDM5LTExLjk2Ni0xMi42NDYtLjAzNy0yMS40MDkgOS4xODYtMjEuMzkzIDE1LjA3OGwuMSAzOC4wNDctNy4wNyAxLjg0N3ptMTEwLjk1NCA1OC41NDZsLTYuOTYyIDEuNDItLjAzMy0xMi40MzNjLS4wMDEtLjUzNC0zLjgyNSAxMy44OS0yMi4yNTggMTMuNTctMTcuOS0uMS0yMC44MjctMTMuOTU3LTIwLjczLTE3LjA2NGwtLjIyMS00My43MjUgNy4zOTctMS40OTQuMTE0IDQzLjE5Yy4wMDMgMS4xOCAxLjQxNiAxMi4wOTYgMTQuMDY1IDEyLjEzNSAxMi42NDYuMDM3IDIxLjUwNi03LjYxNiAyMS41NjktMTkuMTM5bC0uMDktMzQuMDc2IDYuODg1LTEuNzU3em0xMy42NDUtNTkuMDM3bC00Ljg4MiAzLjgyIDE4LjcxNyAyNC40OTQtMTkuOTYzIDI4LjMgNS4xNzkgMy44NDMgMTguNzY2LTI2LjI4IDE5LjM2OCAyNi45MDIgNC43OTEtMy44Mi0yMC43NTctMjguNzY1IDE2LjU2LTIzLjI2Mi01LjA5Mi00LjMwNS0xNS4wODUgMjEuNTI1ek02MS44OCAxLjc3OGMtNS4zODUgMTMuMjAzLTguNjMzIDIxLjgzOS0xNC42MjkgMzQuNjQ5IDMuNjc2IDMuODk2IDguMTg4IDguNDM0IDE1LjUxNiAxMy41NTktNy44NzgtMy4yNDItMTMuMjUyLTYuNDk3LTE3LjI2Ny05Ljg3NC03LjY3MyAxNi4wMTEtMTkuNjk1IDM4LjgxOC00NC4wOSA4Mi42NSAxOS4xNzQtMTEuMDY4IDM0LjAzNy0xNy44OTMgNDcuODg5LTIwLjQ5N2EzNS4xMDMgMzUuMTAzIDAgMCAxLS45MS04LjIxM2wuMDIzLS42MTRjLjMwNC0xMi4yODQgNi42OTQtMjEuNzMgMTQuMjY0LTIxLjA5IDcuNTcuNjQyIDEzLjQ1NCAxMS4xMjYgMTMuMTUgMjMuNDEtLjA1OCAyLjMxMi0uMzE5IDQuNTM2LS43NzQgNi41OTggMTMuNzAxIDIuNjggMjguNDA1IDkuNDg3IDQ3LjMyIDIwLjQwNy0zLjczLTYuODY2LTcuMDU5LTEzLjA1Ni0xMC4yMzgtMTguOTUtNS4wMDctMy44ODItMTAuMjMtOC45MzMtMjAuODg0LTE0LjQwMiA3LjMyMyAxLjkwMyAxMi41NjYgNC4wOTkgMTYuNjUzIDYuNTUyQzc1LjU4IDM1Ljc4NiA3Mi45NjMgMjcuNzkgNjEuODggMS43Nzh6IiBmaWxsPSIjMTc5M2QxIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48cGF0aCBkPSJNNTc2Ljc3MSA5My4yNjVWODAuNjAzaC00Ljczdi0xLjY5NWgxMS4zOHYxLjY5NWgtNC43NXYxMi42NjJoLTEuOW04LjYyOSAwVjc4LjkwOGgyLjg1OWwzLjM5OCAxMC4xNjZjLjMxNC45NDcuNTQyIDEuNjU1LjY4NiAyLjEyNS4xNjMtLjUyMi40MTgtMS4yOS43NjQtMi4zMDFsMy40MzctOS45OWgyLjU1NnYxNC4zNTdoLTEuODMxVjgxLjI1bC00LjE3MiAxMi4wMTZoLTEuNzE0bC00LjE1Mi0xMi4yMjJ2MTIuMjIyaC0xLjgzMiIgZm9udC13ZWlnaHQ9IjQwMCIgZm9udC1zaXplPSI4LjQ0MSIgZm9udC1mYW1pbHk9IkRlamFWdSBTYW5zIE1vbm8iIGZpbGw9ImdyYXkiLz48L3N2Zz4=)no-repeat!important;background-size:190px 40px!important}#archnavbarlogo p{margin:0!important;padding:0!important;text-indent:-9999px!important}#archnavbarlogo a{display:block!important;height:40px!important;width:190px!important}#archnavbar ul{display:inline!important;float:right!important;list-style:none!important;margin:0!important;padding:0!important}#archnavbar ul li{float:left!important;font-size:14px!important;font-family:sans-serif!important;line-height:45px!important;padding-right:15px!important;padding-left:15px!important}#archnavbar ul#archnavbarlist li a{color:#999;font-weight:bold!important;text-decoration:none!important}#archnavbar ul li a:hover{color:white!important;text-decoration:underline!important}#archnavbar ul li.anb-selected a{color:white!important}@media (max-width:600px){#anb-wiki{display:none}}@media (max-width:680px){html>body #archnavbarlogo{width:40px!important;margin-right:5px!important;background:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjEyMDAiIHZlcnNpb249IjEiPjxwYXRoIGQ9Ik02MDAgMGMtNTMuNDE2IDEzMC45NjItODUuNjcxIDIxNi43NC0xNDUuMTQzIDM0My44MSAzNi40NjQgMzguNjUxIDgxLjIyIDgzLjQ0OSAxNTMuOTA1IDEzNC4yODUtNzguMTQ1LTMyLjE1Ni0xMzEuNDAzLTY0LjIxMy0xNzEuMjM4LTk3LjcxNEMzNjEuNDEgNTM5LjIgMjQxLjk4OSA3NjUuMTk0IDAgMTIwMGMxOTAuMTYxLTEwOS43ODQgMzM3LjY2NS0xNzcuMzk3IDQ3NS4wNDgtMjAzLjIzOC01Ljg5NS0yNS4zNjctOS4xOC01Mi44OTYtOC45NTMtODEuNTI0bC4xOS01LjkwNUM0NjkuMzA1IDc4Ny40OCA1MzIuNzIgNjkzLjYzOCA2MDcuODEgNzAwYzc1LjA4OSA2LjM2MiAxMzMuNDk0IDExMC41MjggMTMwLjQ3NiAyMzIuMzgxLS41NjggMjIuOTE2LTMuMTA1IDQ0Ljg4NS03LjYyIDY1LjMzM0M4NjYuNTI4IDEwMjQuMzI1IDEwMTIuNDYyIDEwOTEuNzMgMTIwMCAxMjAwYy0zNi45OTUtNjguMTExLTcwLjE4LTEyOS4zMzUtMTAxLjcxNC0xODcuODEtNDkuNjcyLTM4LjQ5OS0xMDEuMzY1LTg4LjYxMy0yMDcuMDQ4LTE0Mi44NTcgNzIuNjQgMTguODc1IDEyNC43OTMgNDAuNjEyIDE2NS4zMzMgNjQuOTUzQzczNS45NTIgMzM3LjM0OCA3MDkuOTQ4IDI1OC4wMTYgNjAwIDB6IiBmaWxsPSIjMTc5M2QxIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=)no-repeat!important;background-size:40px 40px!important}#archnavbar ul{display:flex!important;justify-content:space-between;flex-wrap:nowrap;overflow:hidden;float:none!important}#archnavbar ul li{padding:0!important;float:none!important}}@media (max-width:845px){#anb-home{display:none}html>body #archnavbarlogo{padding-right:15px!important}#archnavbar{padding-left:5px!important;padding-right:5px!important}#archnavbar ul li{padding-left:5px!important;padding-right:5px!important}}body{background:#f6f9fc}#content{background:#ffffff;border:1px solid #cccccc}#content h1,#content h2,#content h3,#content h4,#content pre,#content code{color:#222222}#content ul{list-style-image:none}#content pre:not([class*="CodeMirror"]){border:1px solid #bbccdd;overflow:auto;word-break:break-all;white-space:pre-wrap!important}#content pre:not([class*="CodeMirror"]),#content code{background-color:#ebf1f5;font-family:monospace,monospace}#content code{display:inline-block;padding:0 0.3em;border-width:0;border-radius:0}#footer{color:#333333}#bodyContent>div.mw-content-ltr a{font-weight:bold}#content a:not(.new),header.mw-header li:not(.new) a:not(.new),#mw-navigation li:not(.new) a:not(.new),#mw-panel li:not(.new) a:not(.new),#column-one li:not(.new) a:not(.new),#footer a:not(.new){text-decoration:none;color:#0077bb!important}#content a:not(.new):hover,header.mw-header li:not(.new) a:not(.new):hover,#mw-navigation li:not(.new) a:not(.new):hover,#mw-panel li:not(.new) a:not(.new):hover,#column-one li:not(.new) a:not(.new):hover,#footer a:not(.new):hover{text-decoration:underline;background-color:transparent;color:#999999!important}#content a:active,header.mw-header li:not(.new) a:active,#mw-navigation li:not(.new) a:active,#mw-panel li:not(.new) a:active,#column-one li:not(.new) a:active,#footer a:active,#content a:focus,header.mw-header li:not(.new) a:focus,#mw-navigation li:not(.new) a:focus,#mw-panel li:not(.new) a:focus,#column-one li:not(.new) a:focus,#footer a:focus,#content a:active:hover,header.mw-header li:not(.new) a:active:hover,#mw-navigation li:not(.new) a:active:hover,#mw-panel li:not(.new) a:active:hover,#column-one li:not(.new) a:active:hover,#footer a:active:hover,#content a:focus:hover,header.mw-header li:not(.new) a:focus:hover,#mw-navigation li:not(.new) a:focus:hover,#mw-panel li:not(.new) a:focus:hover,#column-one li:not(.new) a:focus:hover,#footer a:focus:hover{color:#ee9900!important}#content a:not(.new):visited,#mw-panel li:not(.new) a:not(.new):visited,#p-navigation li:not(.new) a:not(.new):visited,#p-tb li:not(.new) a:not(.new):visited{color:#666666!important}.mw-body-content a.external{background:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMyI+Cgk8cGF0aCBmaWxsPSIjMzZiIiBkPSJNNS4wMDIgMS4wMWg3djdsLTItMi0zIDJ2LTFsMy0yLjI1IDEgMVYyLjAxaC0zLjc1bDEgMS0yLjI1IDNoLTFsMi0zeiIvPgoJPHBhdGggZmlsbD0iIzM2YiIgZD0iTTcuMDAyIDMuMDFoLTV2OGg4di01aC0xdjRoLTZ2LTZoNHoiLz4KCTxwYXRoIGZpbGw9IiMxNWE1ZWEiIGQ9Ik00LjA4MiA1LjUxYzAtLjYyMS42MjEtLjYyMS42MjEtLjYyMSAxLjg2NC42MjEgMy4xMDcgMS44NjQgMy43MjggMy43MjggMCAwIDAgLjYyMS0uNjIuNjIxLTEuMjQ1LTEuODY0LTEuODY2LTIuNDg1LTMuNzMtMy43Mjh6Ii8+Cjwvc3ZnPgo=)center right no-repeat;padding-right:13px}.mw-body h1,.mw-body-content h2{font-family:sans-serif}body.skin-vector.skin--responsive li:not(:first-child).selected{margin-left:-1px}body.skin-vector div.mw-page-container{background-color:#f6f9fc}@media screen and (min-width:1000px){body.skin-vector-2022 .mw-body{padding-left:0.5em}}body.skin-vector-2022 #mw-panel-toc{left:auto}body.skin-vector-2022 #p-lang-btn.mw-portlet-empty{display:block;float:right}</style>
+<meta name=ResourceLoaderDynamicStyles content>
+<style>pre{white-space:pre}span.archwiki-template-pkg,span.archwiki-template-man{font-family:monospace,monospace}div.archwiki-template-box{padding:5px;border:thin solid black;margin:0.5em 0;overflow:hidden}div.archwiki-template-box.archwiki-template-box-note{background-color:#ddf;border-color:#bbd}div.archwiki-template-box.archwiki-template-box-warning{background-color:#fdd;border-color:#dbb}div.archwiki-template-meta-related-articles-start{float:right;clear:right;width:25%;margin:0 0 0.5em 0.5em}div.archwiki-template-meta-related-articles-start>p{background:#333;color:white;padding:0.2em;border-bottom:5px #08c solid;margin:0;text-align:center;font-weight:bold}div.archwiki-template-meta-related-articles-start>ul{list-style-type:none;margin:0;padding:0.3em}div.archwiki-template-meta-related-articles-start>ul>li{padding:0.4em 0;line-height:1}.mw-body-content h2{font-size:150%}.mw-body-content h3{font-size:128%}.mw-body-content h4{font-size:116%}body{counter-reset:h2-section h3-section h4-section h5-section h6-section}h2>.mw-headline{counter-increment:h2-section;counter-set:h3-section h4-section h5-section h6-section}h3>.mw-headline{counter-increment:h3-section;counter-set:h4-section h5-section h6-section}h4>.mw-headline{counter-increment:h4-section;counter-set:h5-section h6-section}h2>.mw-headline::before{content:counter(h2-section)}h3>.mw-headline::before{content:counter(h2-section)"."counter(h3-section)}h4>.mw-headline::before{content:counter(h2-section)"."counter(h3-section)"."counter(h4-section)}h2>.mw-headline::before,h3>.mw-headline::before,h4>.mw-headline::before,h5>.mw-headline::before,h6>.mw-headline::before{color:#6b3e26;font-style:italic;margin-right:1ex}.skin-vector-2022 .sidebar-toc .sidebar-toc-numb{display:inline;padding-right:0.5em}body:not(.page-Main_page) #bodyContent{display:flex;flex-direction:column}body:not(.page-Main_page) #catlinks{order:-1;margin:0.5em 0 1em}body:not(.page-Main_page) p:first-child,.archwiki-template-meta-related-articles-start+p{margin-top:0}@keyframes pacman-jaw-top{0%,100%{transform:rotate(-45deg)}50%{transform:rotate(-80deg)}}@keyframes pacman-jaw-bottom{0%,100%{transform:rotate(-45deg)}50%{transform:rotate(0deg)}}@keyframes pacman-food-translation{0%{transform:translateX(60%)}100%{transform:translateX(-40%)}}</style>
+<meta name=generator content="MediaWiki 1.39.2">
+<meta name=referrer content=no-referrer-when-downgrade>
+<meta name=format-detection content="telephone=no">
+<meta name=viewport content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel=search type=application/opensearchdescription+xml href=https://wiki.archlinux.org/opensearch_desc.php title="ArchWiki (en)">
+<link rel=EditURI type=application/rsd+xml href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel=license href=https://www.gnu.org/copyleft/fdl.html>
+<link rel=alternate type=application/atom+xml title="ArchWiki Atom feed" href="https://wiki.archlinux.org/index.php?title=Special:RecentChanges&amp;feed=atom">
+<link rel=icon href=data:image/vnd.microsoft.icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABvElEQVQ4jY2TP4gTQRTGfzM7ybp35mBX8LY4GxM5OI4UiqDWtoKIjWhl4QmmEQwIhzZaa3GLlYWgjViI+AcUrrASUYTbQ0UxepwpFj1EDCSXuLNj4QYSLxP8mnm8972P3wyMMMZgUxjF+ycLUjUW5l/YPMq6/VfnHCEmAGuAsBHsurG6QwiaRUeq2cCdfXy88nmUT9qSJ4tywVNyGxjVSbPzNp81wFNyt6cknpJ00uzk2Wfr/n8HHLrz4ajriFeuEsuekvS08Zu/eoujvFveYN+t98XAUw1jmEmN+ZEZfG2M8BzZKhVl+f6x8vexBIGn6hMFOeMqgTEEXZ2J39qwqbNSR5tLYwnmbr6b2hO4axvt1P/a6tHTw3SuI1pTrlNZPT33bSTBps7qb5K23/jZ7S8/AO72511tShud9MJIgjCKdwINYHs+e5TUqkfy2W3gVN5vA+WkVk3+Jbg8sAzwcKB+mp8G+ALUh64QRnEZOMOwPg3Ub/vEgAvcGwoArgKFvF4DrgEfBwKawHVgHagAy2EUnwAQ00sre4HXwBPgSlKrvmSMwig+CCwCh4F5Mb20chF4ntSq1h83JujAH3Eom+H9uAq8AAAAAElFTkSuQmCC><style>.sf-hidden{display:none!important}</style><link rel=canonical href=https://wiki.archlinux.org/title/Lm_sensors><meta http-equiv=content-security-policy content="default-src 'none'; font-src 'self' data:; img-src 'self' data:; style-src 'unsafe-inline'; media-src 'self' data:; script-src 'unsafe-inline' data:; object-src 'self' data:; frame-src 'self' data:;"><style>img[src="data:,"],source[src="data:,"]{display:none!important}</style></head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Lm_sensors rootpage-Lm_sensors skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled uls-dialog-sticky-hide vector-toc-not-collapsed"><div id=archnavbar class="noprint mw-no-invert">
+ <div id=archnavbarlogo>
+ <p><a id=logo href=https://archlinux.org/></a></p>
+ </div>
+ <div id=archnavbarmenu>
+ <ul id=archnavbarlist>
+ <li id=anb-home><a href=https://archlinux.org/>Home</a></li> <li id=anb-packages><a href=https://archlinux.org/packages/>Packages</a></li> <li id=anb-forums><a href=https://bbs.archlinux.org/>Forums</a></li> <li id=anb-wiki class=anb-selected><a href=https://wiki.archlinux.org/>Wiki</a></li> <li id=anb-bugs><a href=https://bugs.archlinux.org/>Bugs</a></li> <li id=anb-security><a href=https://security.archlinux.org/>Security</a></li> <li id=anb-aur><a href=https://aur.archlinux.org/>AUR</a></li> <li id=anb-download><a href=https://archlinux.org/download/>Download</a></li> </ul>
+ </div>
+</div>
+<div class=mw-page-container>
+ <span id=top-page></span>
+ <a class=mw-jump-link href=#content>Jump to content</a>
+ <div class=mw-page-container-inner>
+ <input type=checkbox id=mw-sidebar-checkbox class="mw-checkbox-hack-checkbox sf-hidden">
+ <header class=mw-header>
+ <div class=mw-header-aside>
+ <label id=mw-sidebar-button class="mw-checkbox-hack-button mw-ui-icon mw-ui-button mw-ui-quiet mw-ui-icon-element" for=mw-sidebar-checkbox role=button aria-controls=mw-panel data-event-name=ui.sidebar tabindex=0 title="Main menu" aria-expanded=false>
+ <span>Toggle sidebar</span>
+ </label>
+ 
+<a href=https://wiki.archlinux.org/title/Main_page class="mw-logo sf-hidden">
+ 
+</a>
+ </div>
+ <div class=mw-header-content>
+ 
+<div id=p-search role=search class="vector-search-box-vue vector-search-box-collapses vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box">
+ <a href=https://wiki.archlinux.org/title/Special:Search title="Search ArchWiki [Alt+Shift+f]" accesskey=f class="mw-ui-button mw-ui-quiet mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-search search-toggle sf-hidden">
+ 
+ </a>
+ 
+ <div>
+ <form action=/index.php id=searchform class=vector-search-box-form>
+ <div id=simpleSearch class=vector-search-box-inner data-search-loc=header-moved>
+ <input class=vector-search-box-input type=search name=search placeholder="Search ArchWiki" aria-label="Search ArchWiki" autocapitalize=sentences title="Search ArchWiki [Alt+Shift+f]" accesskey=f id=searchInput autocomplete=off value>
+ 
+ <input id=mw-searchButton class="searchButton mw-fallbackSearchButton" type=submit name=fulltext title="Search the pages for this text" value=Search>
+ <input id=searchButton class=searchButton type=submit name=go title="Go to a page with this exact name if it exists" value=Go>
+ </div>
+ </form>
+ </div>
+</div>
+ <nav class=vector-user-links aria-label="Personal tools" role=navigation>
+ 
+<div id=p-vector-user-menu-overflow class="vector-menu mw-portlet mw-portlet-vector-user-menu-overflow vector-user-menu-overflow">
+ <div class=vector-menu-content>
+ 
+ <ul class=vector-menu-content-list><li id=pt-createaccount-2 class="user-links-collapsible-item mw-list-item"><a href="https://wiki.archlinux.org/index.php?title=Special:CreateAccount&amp;returnto=Lm+sensors" title="You are encouraged to create an account and log in; however, it is not mandatory"><span>Create account</span></a></ul>
+ 
+ </div>
+</div>
+ 
+<div id=p-personal class="vector-menu mw-portlet mw-portlet-personal vector-user-menu vector-user-menu-logged-out vector-menu-dropdown" title="More options">
+ <input type=checkbox id=p-personal-checkbox role=button aria-haspopup=true data-event-name=ui.dropdown-p-personal class=vector-menu-checkbox>
+ <label id=p-personal-label for=p-personal-checkbox class="vector-menu-heading mw-ui-button mw-ui-quiet mw-ui-icon mw-ui-icon-element mw-ui-icon-ellipsis mw-ui-icon-wikimedia-ellipsis">
+ <span class=vector-menu-heading-label>Personal tools</span>
+ </label>
+ <div class=vector-menu-content>
+ <div class=vector-user-menu-create-account><a href="https://wiki.archlinux.org/index.php?title=Special:CreateAccount&amp;returnto=Lm+sensors" class="vector-menu-content-item user-links-collapsible-item sf-hidden" title="You are encouraged to create an account and log in; however, it is not mandatory"> </a></div>
+<div class=vector-user-menu-login><a href="https://wiki.archlinux.org/index.php?title=Special:UserLogin&amp;returnto=Lm+sensors" class="vector-menu-content-item vector-menu-content-item-login" title="You are encouraged to log in; however, it is not mandatory [Alt+Shift+o]" accesskey=o><span class="mw-ui-icon mw-ui-icon-logIn mw-ui-icon-wikimedia-logIn"></span> <span>Log in</span></a></div>
+<div class=vector-user-menu-anon-editor>
+ <p>
+ Pages for logged out editors <a href=https://wiki.archlinux.org/title/ArchWiki:Contributing aria-label="Learn more about editing"><span>learn more</span></a>
+ </p>
+</div>
+ <ul class=vector-menu-content-list><li id=pt-darkmode class="ext-darkmode-link mw-list-item"><a href=#><span>Dark mode</span></a></ul>
+ 
+ </div>
+</div>
+</nav>
+ </div>
+ </header>
+ <div class=vector-sidebar-container>
+ <div id=mw-navigation>
+ 
+<nav id=mw-panel class="mw-sidebar sf-hidden" aria-label=Site role=navigation>
+ 
+ 
+ 
+ 
+</nav>
+ </div>
+ </div>
+ <div class=vector-sitenotice-container>
+ <div id=siteNotice></div>
+ </div>
+ <input type=checkbox id=vector-toc-collapsed-checkbox class="mw-checkbox-hack-checkbox sf-hidden">
+ <div class=mw-table-of-contents-container>
+ <div class="vector-sticky-toc-container mw-sticky-header-element">
+ <nav id=mw-panel-toc class=sidebar-toc role=navigation aria-labelledby=sidebar-toc-label data-event-name=ui.sidebar-toc>
+ <div id=sidebar-toc-label class=sidebar-toc-header>
+ <p class=sidebar-toc-title>
+ Contents
+ <button class="vector-toc-uncollapse-button sf-hidden">move to sidebar</button>
+ <button class=vector-toc-collapse-button>hide</button>
+ </p>
+ </div>
+ <ul class=sidebar-toc-contents id=mw-panel-toc-list>
+ <li id=toc-mw-content-text class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-active">
+ <a href=#top-page class=sidebar-toc-link>
+ <div class=sidebar-toc-text>Beginning</div>
+ </a>
+ </li>
+ <li id=toc-Installation class="sidebar-toc-list-item sidebar-toc-level-1">
+ <a class=sidebar-toc-link href=#Installation>
+ <div class=sidebar-toc-text>
+ <span class=sidebar-toc-numb>1</span>Installation</div>
+ </a>
+ 
+ <ul id=toc-Installation-sublist class=sidebar-toc-list>
+ </ul>
+ </li>
+ <li id=toc-Configuration class="sidebar-toc-list-item sidebar-toc-level-1">
+ <a class=sidebar-toc-link href=#Configuration>
+ <div class=sidebar-toc-text>
+ <span class=sidebar-toc-numb>2</span>Configuration</div>
+ </a>
+ 
+ <ul id=toc-Configuration-sublist class=sidebar-toc-list>
+ </ul>
+ </li>
+ <li id=toc-Running_sensors class="sidebar-toc-list-item sidebar-toc-level-1">
+ <a class=sidebar-toc-link href=#Running_sensors>
+ <div class=sidebar-toc-text>
+ <span class=sidebar-toc-numb>3</span>Running sensors</div>
+ </a>
+ 
+ <button aria-controls=toc-Running_sensors-sublist class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle" aria-expanded=false>
+ Toggle Running sensors subsection
+ </button>
+ 
+ <ul id=toc-Running_sensors-sublist class=sidebar-toc-list>
+ <li id=toc-Adding_DIMM_temperature_sensors class="sidebar-toc-list-item sidebar-toc-level-2 sf-hidden">
+ 
+ 
+ 
+ </li>
+ <li id=toc-Reading_SPD_values_from_memory_modules_(optional) class="sidebar-toc-list-item sidebar-toc-level-2 sf-hidden">
+ 
+ 
+ 
+ </li>
+ </ul>
+ </li>
+ <li id=toc-Using_sensor_data class="sidebar-toc-list-item sidebar-toc-level-1">
+ <a class=sidebar-toc-link href=#Using_sensor_data>
+ <div class=sidebar-toc-text>
+ <span class=sidebar-toc-numb>4</span>Using sensor data</div>
+ </a>
+ 
+ <button aria-controls=toc-Using_sensor_data-sublist class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle" aria-expanded=false>
+ Toggle Using sensor data subsection
+ </button>
+ 
+ <ul id=toc-Using_sensor_data-sublist class=sidebar-toc-list>
+ <li id=toc-Graphical_front-ends class="sidebar-toc-list-item sidebar-toc-level-2 sf-hidden">
+ 
+ 
+ 
+ </li>
+ <li id=toc-sensord class="sidebar-toc-list-item sidebar-toc-level-2 sf-hidden">
+ 
+ 
+ 
+ </li>
+ </ul>
+ </li>
+ <li id=toc-Tips_and_tricks class="sidebar-toc-list-item sidebar-toc-level-1">
+ <a class=sidebar-toc-link href=#Tips_and_tricks>
+ <div class=sidebar-toc-text>
+ <span class=sidebar-toc-numb>5</span>Tips and tricks</div>
+ </a>
+ 
+ <button aria-controls=toc-Tips_and_tricks-sublist class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle" aria-expanded=false>
+ Toggle Tips and tricks subsection
+ </button>
+ 
+ <ul id=toc-Tips_and_tricks-sublist class=sidebar-toc-list>
+ <li id=toc-Adjusting_values class="sidebar-toc-list-item sidebar-toc-level-2 sf-hidden">
+ 
+ 
+ 
+ </li>
+ <li id=toc-Automatic_lm_sensors_deployment class="sidebar-toc-list-item sidebar-toc-level-2 sf-hidden">
+ 
+ 
+ 
+ </li>
+ <li id=toc-S.M.A.R.T._drive_temperature class="sidebar-toc-list-item sidebar-toc-level-2 sf-hidden">
+ 
+ 
+ 
+ </li>
+ </ul>
+ </li>
+ <li id=toc-Troubleshooting class="sidebar-toc-list-item sidebar-toc-level-1">
+ <a class=sidebar-toc-link href=#Troubleshooting>
+ <div class=sidebar-toc-text>
+ <span class=sidebar-toc-numb>6</span>Troubleshooting</div>
+ </a>
+ 
+ <button aria-controls=toc-Troubleshooting-sublist class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle" aria-expanded=false>
+ Toggle Troubleshooting subsection
+ </button>
+ 
+ <ul id=toc-Troubleshooting-sublist class=sidebar-toc-list>
+ <li id=toc-K10Temp_module class="sidebar-toc-list-item sidebar-toc-level-2 sf-hidden">
+ 
+ 
+ 
+ </li>
+ <li id=toc-Asus_B450M-A/A320M-K/A320M-K-BR_motherboards class="sidebar-toc-list-item sidebar-toc-level-2 sf-hidden">
+ 
+ 
+ 
+ </li>
+ <li id=toc-Asus_B450/X399/X470_motherboards_with_AM4_Socket class="sidebar-toc-list-item sidebar-toc-level-2 sf-hidden">
+ 
+ 
+ 
+ </li>
+ <li id=toc-Asus_H97/Z97/Z170/Z370i/X570/B550_motherboards class="sidebar-toc-list-item sidebar-toc-level-2 sf-hidden">
+ 
+ 
+ 
+ </li>
+ <li id=toc-Asrock_Deskmini_H470 class="sidebar-toc-list-item sidebar-toc-level-2 sf-hidden">
+ 
+ 
+ 
+ </li>
+ <li id=toc-Gigabyte_B250/Z370/B450M/B560M/B660M/Z690_motherboards class="sidebar-toc-list-item sidebar-toc-level-2 sf-hidden">
+ 
+ 
+ 
+ </li>
+ <li id=toc-Gigabyte_GA-J1900N-D3V class="sidebar-toc-list-item sidebar-toc-level-2 sf-hidden">
+ 
+ 
+ 
+ </li>
+ <li id=toc-Laptop_screen_issues_after_running_sensors-detect class="sidebar-toc-list-item sidebar-toc-level-2 sf-hidden">
+ 
+ 
+ 
+ </li>
+ <li id=toc-i2c_bus_errors_on_AMD_Navi_2_GPUs class="sidebar-toc-list-item sidebar-toc-level-2 sf-hidden">
+ 
+ 
+ 
+ </li>
+ </ul>
+ </li>
+ </ul>
+</nav>
+ </div>
+ </div>
+ <div class=mw-content-container>
+ <main id=content class=mw-body role=main>
+ <a id=top></a>
+ <header class=mw-body-header>
+ 
+ 
+ <div id=p-lang-btn class="vector-menu mw-portlet-empty vector-menu-dropdown">
+ <input type=checkbox id=p-lang-btn-checkbox role=button aria-haspopup=true data-event-name=ui.dropdown-p-lang-btn class="vector-menu-checkbox mw-interlanguage-selector" aria-label="Go to an article in another language. Available in 5 languages">
+ <label id=p-lang-btn-label for=p-lang-btn-checkbox class="vector-menu-heading mw-ui-progressive mw-portlet-lang-heading-5 mw-ui-button mw-ui-quiet">
+ <span class="mw-ui-icon mw-ui-icon-language-progressive mw-ui-icon-wikimedia-language-progressive"></span><span class=vector-menu-heading-label>5 languages</span>
+ </label>
+ <div class=vector-menu-content>
+ 
+ <ul class=vector-menu-content-list><li class="interlanguage-link interwiki-de mw-list-item"><a href=https://wiki.archlinux.de/title/Lm_sensors title="Lm sensors – Deutsch" hreflang=de class=interlanguage-link-target lang=de><span>Deutsch</span></a><li class="interlanguage-link interwiki-ja mw-list-item"><a href=https://wiki.archlinux.jp/index.php/Lm_sensors title="Lm sensors – 日本語" hreflang=ja class=interlanguage-link-target lang=ja><span>日本語</span></a><li class="interlanguage-link interwiki-pt mw-list-item"><a href=https://wiki.archlinux.org/title/Lm_sensors_(Portugu%C3%AAs) title="Lm sensors – português" hreflang=pt class=interlanguage-link-target lang=pt><span>Português</span></a><li class="interlanguage-link interwiki-ru mw-list-item"><a href=https://wiki.archlinux.org/title/Lm_sensors_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) title="Lm sensors – русский" hreflang=ru class=interlanguage-link-target lang=ru><span>Русский</span></a><li class="interlanguage-link interwiki-zh-hans mw-list-item"><a href=https://wiki.archlinuxcn.org/wiki/Lm_sensors title="Lm sensors – 中文（简体）" hreflang=zh-Hans class=interlanguage-link-target lang=zh-Hans><span>中文（简体）</span></a></ul>
+ 
+ </div>
+ </div>
+ 
+ <label id=vector-toc-collapsed-button class="mw-ui-button mw-ui-quiet mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-listBullet mw-checkbox-hack-button sf-hidden" for=vector-toc-collapsed-checkbox role=button aria-controls=toc-toggle-list data-event-name=vector.toc-toggle-list tabindex=0 title="Table of Contents" aria-expanded=false>
+ Toggle the table of contents
+ </label>
+ <h1 id=firstHeading class="firstHeading mw-first-heading">lm_sensors</h1>
+ </header>
+ <nav class=vector-article-toolbar aria-label=Tools role=navigation>
+ <div class=mw-article-toolbar-container>
+ <div id=left-navigation>
+ 
+<div id=p-associated-pages class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+ <div class=vector-menu-content>
+ 
+ <ul class=vector-menu-content-list><li id=ca-nstab-main class="selected mw-list-item"><a href=https://wiki.archlinux.org/title/Lm_sensors title="View the content page [Alt+Shift+c]" accesskey=c><span>Page</span></a><li id=ca-talk class=mw-list-item><a href=https://wiki.archlinux.org/title/Talk:Lm_sensors rel=discussion title="Discussion about the content page [Alt+Shift+t]" accesskey=t><span>Discussion</span></a></ul>
+ 
+ </div>
+</div>
+ 
+<div id=p-variants class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown sf-hidden">
+ 
+ 
+ 
+</div>
+ </div>
+ <div id=right-navigation class=vector-collapsible>
+ 
+<div id=p-views class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+ <div class=vector-menu-content>
+ 
+ <ul class=vector-menu-content-list><li id=ca-view class="selected mw-list-item"><a href=https://wiki.archlinux.org/title/Lm_sensors><span>Read</span></a><li id=ca-viewsource class=mw-list-item><a href="https://wiki.archlinux.org/index.php?title=Lm_sensors&amp;action=edit" title="This page is protected.
+You can view its source [Alt+Shift+e]" accesskey=e><span>View source</span></a><li id=ca-history class=mw-list-item><a href="https://wiki.archlinux.org/index.php?title=Lm_sensors&amp;action=history" title="Past revisions of this page [Alt+Shift+h]" accesskey=h><span>View history</span></a></ul>
+ 
+ </div>
+</div>
+ 
+<div id=p-cactions class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items sf-hidden" title="More options">
+ 
+ 
+ 
+</div>
+ </div>
+ </div>
+ </nav>
+ <div id=bodyContent class=vector-body data-mw-ve-target-container>
+ <div class=mw-body-subheader>
+ <div class=mw-indicators>
+ </div>
+ <div id=siteSub class="noprint sf-hidden">From ArchWiki</div>
+ </div>
+ 
+ 
+ 
+ <div id=mw-content-text class="mw-body-content mw-content-ltr" dir=ltr lang=en><div class=mw-parser-output><div class=archwiki-template-meta-related-articles-start><p class=mw-no-invert>Related articles<ul>
+<li><a href=https://wiki.archlinux.org/title/Fan_speed_control title="Fan speed control">Fan speed control</a></li>
+<li><a href=https://wiki.archlinux.org/title/Hddtemp title=Hddtemp>hddtemp</a></li>
+<li><a href=https://wiki.archlinux.org/title/I2C title=I2C>I2C</a></li>
+<li><a href=https://wiki.archlinux.org/title/Monitorix title=Monitorix>monitorix</a></li>
+</ul></div>
+<p><a rel=nofollow class="external text" href=https://hwmon.wiki.kernel.org/lm_sensors>lm_sensors</a> (Linux monitoring sensors) is a free and open-source application that provides tools and drivers for monitoring temperatures, voltage, and fans. This document explains how to install, configure, and use lm_sensors.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class=mw-headline id=Installation>Installation</span></h2>
+<p><a href=https://wiki.archlinux.org/title/Install class=mw-redirect title=Install>Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://archlinux.org/packages/?name=lm_sensors">lm_sensors</a></span> package.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> More documentation is at the <a rel=nofollow class="external text" href=https://github.com/groeck/lm-sensors/tree/master/doc>GitHub repository</a>. In the future these may be installed, see <a rel=nofollow class="external text" href=https://bugs.archlinux.org/task/48354>FS#48354</a>.</div>
+<h2><span class=mw-headline id=Configuration>Configuration</span></h2>
+<p>Use <i>sensors-detect</i> as root to detect and generate a list of kernel modules:
+</p>
+<div class="archwiki-template-box archwiki-template-box-warning"><strong>Warning:</strong> Do not use anything other than the default options (by just hitting <code>Enter</code>), unless you know exactly what you are doing. See <a href=#Laptop_screen_issues_after_running_sensors-detect>#Laptop screen issues after running sensors-detect</a>.</div>
+<pre># sensors-detect
+</pre>
+<p>It will ask to probe for various hardware. The "safe" answers are the defaults, so just hitting <code>Enter</code> to all the questions will generally not cause any problems. This will create the <code>/etc/conf.d/lm_sensors</code> configuration file which is used by <code>lm_sensors.service</code> to automatically load kernel modules on boot.
+<p>When the detection is finished, a summary of the probes is presented.
+<p>Example:
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em># sensors-detect</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>This program will help you determine which kernel modules you need
+to load to use lm_sensors most effectively. It is generally safe
+and recommended to accept the default answers to all questions,
+unless you know what you're doing.
+
+Some south bridges, CPUs or memory controllers contain embedded sensors.
+Do you want to scan for them? This is totally safe. (YES/no): 
+Module cpuid loaded successfully.
+Silicon Integrated Systems SIS5595...                       No
+VIA VT82C686 Integrated Sensors...                          No
+VIA VT8231 Integrated Sensors...                            No
+AMD K8 thermal sensors...                                   No
+AMD Family 10h thermal sensors...                           No
+
+...
+
+Now follows a summary of the probes I have just done.
+Just press ENTER to continue: 
+
+Driver `coretemp':
+  * Chip `Intel digital thermal sensor' (confidence: 9)
+
+Driver `lm90':
+  * Bus `SMBus nForce2 adapter at 4d00'
+    Busdriver `i2c_nforce2', I2C address 0x4c
+    Chip `Winbond W83L771AWG/ASG' (confidence: 6)
+
+Do you want to overwrite /etc/conf.d/lm_sensors? (YES/no): 
+ln -s '/usr/lib/systemd/system/lm_sensors.service' '/etc/systemd/system/multi-user.target.wants/lm_sensors.service'
+Unloading i2c-dev... OK
+Unloading cpuid... OK
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> A systemd service is automatically enabled if users answer <b>YES</b> when asked about generating <code>/etc/conf.d/lm_sensors</code>. Answering <b>YES</b> also automatically starts the service.</div>
+<h2><span class=mw-headline id=Running_sensors>Running sensors</span></h2>
+<p>Example running <code>sensors</code>:
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>$ sensors</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>coretemp-isa-0000
+Adapter: ISA adapter
+Core 0:       +35.0°C  (crit = +105.0°C)
+Core 1:       +32.0°C  (crit = +105.0°C)
+
+w83l771-i2c-0-4c
+Adapter: SMBus nForce2 adapter at 4d00
+temp1:        +28.0°C  (low  = -40.0°C, high = +70.0°C)
+                       (crit = +85.0°C, hyst = +75.0°C)
+temp2:        +37.4°C  (low  = -40.0°C, high = +70.0°C)
+                       (crit = +110.0°C, hyst = +100.0°C)
+</pre>
+<h3><span class=mw-headline id=Adding_DIMM_temperature_sensors>Adding DIMM temperature sensors</span></h3>
+<p>To find the temperature sensors of DIMMs, <a href=https://wiki.archlinux.org/title/Install class=mw-redirect title=Install>install</a> the <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://archlinux.org/packages/?name=i2c-tools">i2c-tools</a></span> package. Once installed, load the <code>i2c-dev</code> <a href=https://wiki.archlinux.org/title/Kernel_module title="Kernel module">kernel module</a>.
+</p>
+<pre># modprobe i2c_dev
+</pre>
+<p>To show all the columns, use <i>i2cdetect</i> <a href=https://wiki.archlinux.org/title/General_recommendations#Security title="General recommendations">as root</a>: 
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em># i2cdetect -l</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>i2c-2	smbus     	SMBus PIIX4 adapter port 2 at 0b00	SMBus adapter
+i2c-2	smbus     	SMBus PIIX4 adapter port 1 at 0b20	SMBus adapter
+i2c-0	smbus     	SMBus PIIX4 adapter port 0 at 0b00	SMBus adapter</pre>
+<p>Otherwise, its output will appear as follows: 
+</p>
+<pre>i2c-2	unknown    	SMBus PIIX4 adapter port 2 at 0b00	N/A
+i2c-2	unknown    	SMBus PIIX4 adapter port 1 at 0b20	N/A
+i2c-0	unknown    	SMBus PIIX4 adapter port 0 at 0b00	N/A
+</pre>
+<p>In the following example, RAM sticks are connected to the bus <code>SMBus 0</code>. The <i>i2cdetect</i> command will show the devices that are connected to the bus. The <code>-y <b>0</b></code> argument uses the <code>i2c-<b>0</b></code> smbus. Check other buses if needed.
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em># i2cdetect -y 0</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:                         -- -- -- -- 0c -- -- -- 
+10: 10 -- -- -- -- -- -- -- 18 19 -- -- -- -- -- -- 
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+30: -- -- -- -- -- -- 36 -- -- -- -- -- -- -- -- -- 
+40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 4f 
+50: 50 51 -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+70: -- -- -- -- -- -- -- 77</pre>
+<p>RAM SPD's (<i>s</i>erial <i>p</i>resence <i>d</i>etect) start from address <code>0x50</code> and RAM temperature sensors start from <code>0x18</code> at same bus. In this example, there are 2 DIMMs available. The address <code>0x18</code> and <code>0x19</code> are the DIMMs temperature sensors.
+<p>To read the temperatures of RAM sticks, we need the <code>jc42</code> <a href=https://wiki.archlinux.org/title/Kernel_module title="Kernel module">kernel module</a> loaded. You need to tell the module which addresses to use. This process consists of writing the <code><i>module_name</i></code> and <code><i>address</i></code> to <code><i>smbus_path</i></code>. For example:
+</p>
+<pre># modprobe jc42
+# echo jc42 0x18 &gt; /sys/bus/i2c/devices/i2c-0/new_device
+# echo jc42 0x19 &gt; /sys/bus/i2c/devices/i2c-0/new_device
+</pre>
+<p>After that your ram sticks temperature will be visible:
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>$ sensors</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>jc42-i2c-0-19
+Adapter: SMBus PIIX4 adapter port 0 at 0b00
+temp1:        +50.7°C  (low  =  +0.0°C)                  ALARM (HIGH, CRIT)
+                       (high =  +0.0°C, hyst =  +0.0°C)
+                       (crit =  +0.0°C, hyst =  +0.0°C)
+
+jc42-i2c-0-18
+Adapter: SMBus PIIX4 adapter port 0 at 0b00
+temp1:        +51.8°C  (low  =  +0.0°C)                  ALARM (HIGH, CRIT)
+                       (high =  +0.0°C, hyst =  +0.0°C)
+                       (crit =  +0.0°C, hyst =  +0.0°C)</pre>
+<h3><span id=Reading_SPD_values_from_memory_modules_.28optional.29></span><span class=mw-headline id=Reading_SPD_values_from_memory_modules_(optional)>Reading SPD values from memory modules (optional)</span></h3>
+<p>To read the SPD timing values from memory modules, install the <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://archlinux.org/packages/?name=i2c-tools">i2c-tools</a></span> package. Once installed, load the <code>eeprom</code> <a href=https://wiki.archlinux.org/title/Kernel_module title="Kernel module">kernel module</a>.
+</p>
+<pre># modprobe eeprom
+</pre>
+<p>Finally, view memory information with <code>decode-dimms</code>.
+<p>Here is partial output from one machine:
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em># decode-dimms</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>Memory Serial Presence Detect Decoder
+By Philip Edelbrock, Christian Zuckschwerdt, Burkart Lingner,
+Jean Delvare, Trent Piepho and others
+
+
+Decoding EEPROM: /sys/bus/i2c/drivers/eeprom/0-0050
+Guessing DIMM is in                             bank 1
+
+---=== SPD EEPROM Information ===---
+EEPROM CRC of bytes 0-116                       OK (0x583F)
+# of bytes written to SDRAM EEPROM              176
+Total number of bytes in EEPROM                 512
+Fundamental Memory type                         DDR3 SDRAM
+Module Type                                     UDIMM
+
+---=== Memory Characteristics ===---
+Fine time base                                  2.500 ps
+Medium time base                                0.125 ns
+Maximum module speed                            1066MHz (PC3-8533)
+Size                                            2048 MB
+Banks x Rows x Columns x Bits                   8 x 14 x 10 x 64
+Ranks                                           2
+SDRAM Device Width                              8 bits
+tCL-tRCD-tRP-tRAS                               7-7-7-33
+Supported CAS Latencies (tCL)                   8T, 7T, 6T, 5T
+
+---=== Timing Parameters ===---
+Minimum Write Recovery time (tWR)               15.000 ns
+Minimum Row Active to Row Active Delay (tRRD)   7.500 ns
+Minimum Active to Auto-Refresh Delay (tRC)      49.500 ns
+Minimum Recovery Delay (tRFC)                   110.000 ns
+Minimum Write to Read CMD Delay (tWTR)          7.500 ns
+Minimum Read to Pre-charge CMD Delay (tRTP)     7.500 ns
+Minimum Four Activate Window Delay (tFAW)       30.000 ns
+
+---=== Optional Features ===---
+Operable voltages                               1.5V
+RZQ/6 supported?                                Yes
+RZQ/7 supported?                                Yes
+DLL-Off Mode supported?                         No
+Operating temperature range                     0-85C
+Refresh Rate in extended temp range             1X
+Auto Self-Refresh?                              Yes
+On-Die Thermal Sensor readout?                  No
+Partial Array Self-Refresh?                     No
+Thermal Sensor Accuracy                         Not implemented
+SDRAM Device Type                               Standard Monolithic
+
+---=== Physical Characteristics ===---
+Module Height (mm)                              15
+Module Thickness (mm)                           1 front, 1 back
+Module Width (mm)                               133.5
+Module Reference Card                           B
+
+---=== Manufacturer Data ===---
+Module Manufacturer                             Invalid
+Manufacturing Location Code                     0x02
+Part Number                                     OCZ3G1600LV2G     
+
+...
+</pre>
+<h2><span class=mw-headline id=Using_sensor_data>Using sensor data</span></h2>
+<h3><span class=mw-headline id=Graphical_front-ends>Graphical front-ends</span></h3>
+<p>There are a variety of front-ends for sensors data.
+</p>
+<ul><li><b>psensor</b> — GTK application for monitoring hardware sensors, including temperatures and fan speeds. Monitors motherboard and CPU (using lm-sensors), Nvidia GPUs (using XNVCtrl), and harddisks (using <a href=https://wiki.archlinux.org/title/Hddtemp title=Hddtemp>hddtemp</a> or libatasmart).</ul>
+<dl><dd><a rel=nofollow class="external free" href=https://wpitchoune.net/psensor/>https://wpitchoune.net/psensor/</a> || <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://archlinux.org/packages/?name=psensor">psensor</a></span></dl>
+<ul><li><b>xsensors</b> — X11 interface to lm_sensors.</ul>
+<dl><dd><a rel=nofollow class="external free" href=https://github.com/Mystro256/xsensors>https://github.com/Mystro256/xsensors</a> || <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://archlinux.org/packages/?name=xsensors">xsensors</a></span></dl>
+<p>For specific <a href=https://wiki.archlinux.org/title/Desktop_environments class=mw-redirect title="Desktop environments">Desktop environments</a>:
+</p>
+<ul><li><b>Freon (GNOME Shell extension)</b> — Extension for displaying CPU temperature, disk temperature, video card temperature , voltage and fan RPM in <a href=https://wiki.archlinux.org/title/GNOME title=GNOME>GNOME</a> Shell.</ul>
+<dl><dd><a rel=nofollow class="external free" href=https://github.com/UshakovVasilii/gnome-shell-extension-freon>https://github.com/UshakovVasilii/gnome-shell-extension-freon</a> || <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href=https://aur.archlinux.org/packages/gnome-shell-extension-freon/>gnome-shell-extension-freon</a></span><sup><small>AUR</small></sup></dl>
+<ul><li><b>GNOME Sensors Applet</b> — Applet for the <a href=https://wiki.archlinux.org/title/GNOME title=GNOME>GNOME</a> Panel to display readings from hardware sensors, including CPU temperature, fan speeds and voltage readings.</ul>
+<dl><dd><a rel=nofollow class="external free" href=http://sensors-applet.sourceforge.net/>http://sensors-applet.sourceforge.net/</a> || <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://archlinux.org/packages/?name=sensors-applet">sensors-applet</a></span></dl>
+<ul><li><b>lm-sensors (LXPanel plugin)</b> — Monitor temperature/voltages/fan speeds in <a href=https://wiki.archlinux.org/title/LXDE title=LXDE>LXDE</a> through lm-sensors.</ul>
+<dl><dd><a rel=nofollow class="external free" href=https://danamlund.dk/sensors_lxpanel_plugin/>https://danamlund.dk/sensors_lxpanel_plugin/</a> || <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href=https://aur.archlinux.org/packages/sensors-lxpanel-plugin/>sensors-lxpanel-plugin</a></span><sup><small>AUR</small></sup></dl>
+<ul><li><b>MATE Sensors Applet</b> — Display readings from hardware sensors in your <a href=https://wiki.archlinux.org/title/MATE title=MATE>MATE</a> panel.</ul>
+<dl><dd><a rel=nofollow class="external free" href=https://github.com/mate-desktop/mate-sensors-applet>https://github.com/mate-desktop/mate-sensors-applet</a> || <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://archlinux.org/packages/?name=mate-sensors-applet">mate-sensors-applet</a></span></dl>
+<ul><li><b>Sensors (Xfce4 panel plugin)</b> — Hardware sensors plugin for the <a href=https://wiki.archlinux.org/title/Xfce title=Xfce>Xfce</a> panel.</ul>
+<dl><dd><a rel=nofollow class="external free" href=https://goodies.xfce.org/projects/panel-plugins/xfce4-sensors-plugin>https://goodies.xfce.org/projects/panel-plugins/xfce4-sensors-plugin</a> || <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://archlinux.org/packages/?name=xfce4-sensors-plugin">xfce4-sensors-plugin</a></span></dl>
+<ul><li><b>Thermal Monitor (Plasma 5 applet)</b> — <a href=https://wiki.archlinux.org/title/KDE title=KDE>KDE</a> Plasma applet for monitoring CPU, GPU and other available temperature sensors.</ul>
+<dl><dd><a rel=nofollow class="external free" href=https://gitlab.com/agurenko/plasma-applet-thermal-monitor>https://gitlab.com/agurenko/plasma-applet-thermal-monitor</a> || <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://archlinux.org/packages/?name=plasma5-applets-thermal-monitor">plasma5-applets-thermal-monitor</a></span></dl>
+<h3><span class=mw-headline id=sensord>sensord</span></h3>
+<p>There is an optional daemon called <i>sensord</i> (included with the <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href="https://archlinux.org/packages/?name=lm_sensors">lm_sensors</a></span> package) which can log data to a round robin database (rrd) and later visualize graphically. See the <span class="plainlinks archwiki-template-man" title="$ man 8 sensord"><a rel=nofollow class="external text" href=https://man.archlinux.org/man/sensord.8>sensord(8)</a></span> man page for details.
+</p>
+<h2><span class=mw-headline id=Tips_and_tricks>Tips and tricks</span></h2>
+<h3><span class=mw-headline id=Adjusting_values>Adjusting values</span></h3>
+<p>In some cases, the data displayed might be incorrect or users may wish to rename the output. Use cases include:
+</p>
+<ul><li>Incorrect temperature values due to a wrong offset (i.e. temps are reported 20 °C higher than actual).</li>
+<li>Users wish to rename the output of some sensors.</li>
+<li>The cores might be displayed in an incorrect order.</ul>
+<p>All of the above (and more) can be adjusted by overriding the package provides settings in <code>/etc/sensors3.conf</code> by creating <code>/etc/sensors.d/<i>foo</i></code> wherein any number of tweaks will override the default values. It is recommended to rename 'foo' to the motherboard brand and model but this naming nomenclature is optional.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> Do not edit <code>/etc/sensors3.conf</code> directly since package updates will overwrite any changes thus losing them.</div>
+<h4><span class=mw-headline id=Example_1._Adjusting_temperature_offsets>Example 1. Adjusting temperature offsets</span></h4>
+<p>This is a real example on a Zotac ION-ITX-A-U motherboard. The coretemp values are off by 20 °C (too high) and are adjusted down to Intel specs.
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>$ sensors</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>coretemp-isa-0000
+Adapter: ISA adapter
+Core 0:       +57.0°C  (crit = +125.0°C)
+Core 1:       +55.0°C  (crit = +125.0°C)
+...
+</pre>
+<p>Run <code>sensors</code> with the <code>-u</code> switch to see what options are available for each physical chip (raw mode). If some of the raw labels you are presented seem not to be configurable, look at the <code>/sys/class/hwmon</code> directory tree. Each device mentioned there has a <code>name</code> file, which can be used to match the device it is referring to. And then try the labels referred to by that directory.
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>$ sensors -u</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>coretemp-isa-0000
+Adapter: ISA adapter
+Core 0:
+  temp2_input: 57.000
+  temp2_crit: 125.000
+  temp2_crit_alarm: 0.000
+Core 1:
+  temp3_input: 55.000
+  temp3_crit: 125.000
+  temp3_crit_alarm: 0.000
+...
+</pre>
+<p>Create the following file overriding the default values:
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>/etc/sensors.d/Zotac-IONITX-A-U</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>chip "coretemp-isa-0000"
+  label temp2 "Core 0"
+  compute temp2 @-20,@-20
+
+  label temp3 "Core 1"
+  compute temp3 @-20,@-20
+</pre>
+<p>Now invoking <code>sensors</code> shows the adjust values:
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>$ sensors</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>coretemp-isa-0000
+Adapter: ISA adapter
+Core 0:       +37.0°C  (crit = +105.0°C)
+Core 1:       +35.0°C  (crit = +105.0°C)
+...
+</pre>
+<h4><span class=mw-headline id=Example_2._Renaming_labels>Example 2. Renaming labels</span></h4>
+<p>This is a real example on an Asus A7M266. The user wishes more verbose names for the temperature labels <code>temp1</code> and <code>temp2</code>:
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>$ sensors</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>as99127f-i2c-0-2d
+Adapter: SMBus Via Pro adapter at e800
+...
+temp1:        +35.0°C  (high =  +0.0°C, hyst = -128.0°C)
+temp2:        +47.5°C  (high = +100.0°C, hyst = +75.0°C)
+...
+</pre>
+<p>Create the following file to override the default values:
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>/etc/sensors.d/Asus_A7M266</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>chip "as99127f-*"
+  label temp1 "Mobo Temp"
+  label temp2 "CPU0 Temp"
+</pre>
+<p>Now invoking <code>sensors</code> shows the adjust values:
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>$ sensors</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>as99127f-i2c-0-2d
+Adapter: SMBus Via Pro adapter at e800
+...
+Mobo Temp:        +35.0°C  (high =  +0.0°C, hyst = -128.0°C)
+CPU0 Temp:        +47.5°C  (high = +100.0°C, hyst = +75.0°C)
+...
+</pre>
+<h4><span class=mw-headline id=Example_3._Renumbering_cores_for_multi-CPU_systems>Example 3. Renumbering cores for multi-CPU systems</span></h4>
+<p>This is a real example on an HP Z600 workstation with dual Xeons. The actual numbering of physical cores is incorrect: numbered 0, 1, 9, 10 which is repeated into the second CPU. Most users expect the core temperatures to report out in sequential order, i.e. 0,1,2,3,4,5,6,7.
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>$ sensors</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>coretemp-isa-0000
+Adapter: ISA adapter
+Core 0:       +65.0°C  (high = +85.0°C, crit = +95.0°C)
+Core 1:       +65.0°C  (high = +85.0°C, crit = +95.0°C)
+Core 9:       +66.0°C  (high = +85.0°C, crit = +95.0°C)
+Core 10:      +66.0°C  (high = +85.0°C, crit = +95.0°C)
+
+coretemp-isa-0004
+Adapter: ISA adapter
+Core 0:       +54.0°C  (high = +85.0°C, crit = +95.0°C)
+Core 1:       +56.0°C  (high = +85.0°C, crit = +95.0°C)
+Core 9:       +60.0°C  (high = +85.0°C, crit = +95.0°C)
+Core 10:      +61.0°C  (high = +85.0°C, crit = +95.0°C)
+...
+</pre>
+<p>Again, run <code>sensors</code> with the <code>-u</code> switch to see what options are available for each physical chip:
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>$ sensors -u coretemp-isa-0000</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>coretemp-isa-0000
+Adapter: ISA adapter
+Core 0:
+  temp2_input: 61.000
+  temp2_max: 85.000
+  temp2_crit: 95.000
+  temp2_crit_alarm: 0.000
+Core 1:
+  temp3_input: 61.000
+  temp3_max: 85.000
+  temp3_crit: 95.000
+  temp3_crit_alarm: 0.000
+Core 9:
+  temp11_input: 62.000
+  temp11_max: 85.000
+  temp11_crit: 95.000
+Core 10:
+  temp12_input: 63.000
+  temp12_max: 85.000
+  temp12_crit: 95.000
+</pre>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>$ sensors -u coretemp-isa-0004</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>coretemp-isa-0004
+Adapter: ISA adapter
+Core 0:
+  temp2_input: 53.000
+  temp2_max: 85.000
+  temp2_crit: 95.000
+  temp2_crit_alarm: 0.000
+Core 1:
+  temp3_input: 54.000
+  temp3_max: 85.000
+  temp3_crit: 95.000
+  temp3_crit_alarm: 0.000
+Core 9:
+  temp11_input: 59.000
+  temp11_max: 85.000
+  temp11_crit: 95.000
+Core 10:
+  temp12_input: 59.000
+  temp12_max: 85.000
+  temp12_crit: 95.000
+...
+</pre>
+<p>Create the following file overriding the default values:
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>/etc/sensors.d/HP_Z600</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>chip "coretemp-isa-0000"
+  label temp2 "Core 0"
+  label temp3 "Core 1"
+  label temp11 "Core 2"
+  label temp12 "Core 3"
+
+chip "coretemp-isa-0004"
+  label temp2 "Core 4"
+  label temp3 "Core 5"
+  label temp11 "Core 6"
+  label temp12 "Core 7"</pre>
+<p>Now invoking <code>sensors</code> shows the adjust values:
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>$ sensors</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>coretemp-isa-0000
+Adapter: ISA adapter
+Core0:        +64.0°C  (high = +85.0°C, crit = +95.0°C)
+Core1:        +63.0°C  (high = +85.0°C, crit = +95.0°C)
+Core2:        +65.0°C  (high = +85.0°C, crit = +95.0°C)
+Core3:        +66.0°C  (high = +85.0°C, crit = +95.0°C)
+
+coretemp-isa-0004
+Adapter: ISA adapter
+Core4:        +53.0°C  (high = +85.0°C, crit = +95.0°C)
+Core5:        +54.0°C  (high = +85.0°C, crit = +95.0°C)
+Core6:        +59.0°C  (high = +85.0°C, crit = +95.0°C)
+Core7:        +60.0°C  (high = +85.0°C, crit = +95.0°C)
+...
+</pre>
+<h3><span class=mw-headline id=Automatic_lm_sensors_deployment>Automatic lm_sensors deployment</span></h3>
+<p>Users wishing to deploy lm_sensors on multiple machines can use the following to accept the defaults to all questions:
+</p>
+<pre># sensors-detect --auto
+</pre>
+<h3><span class=mw-headline id=S.M.A.R.T._drive_temperature>S.M.A.R.T. drive temperature</span></h3>
+<p><a rel=nofollow class="external text" href=https://hwmon.wiki.kernel.org/device_support_status>Since kernel 5.6</a> the <code>drivetemp</code> module will report SATA/SAS temperature through hwmon, but <code>sensors-detect</code> does not automatically detect this so the module must be <a href=https://wiki.archlinux.org/title/Kernel_module#Manual_module_handling title="Kernel module">manually loaded</a>.
+</p>
+<pre># modprobe drivetemp
+</pre>
+<p>You should now see entries similar to this in your <code>sensors</code> output:
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>sensors</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>drivetemp-scsi-1-0
+Adapter: SCSI adapter
+temp1:        +33.0°C 
+
+drivetemp-scsi-2-0
+Adapter: SCSI adapter
+temp1:        +32.0°C  (low  =  +0.0°C, high = +70.0°C)
+                       (crit low =  +0.0°C, crit = +70.0°C)
+                       (lowest = +29.0°C, highest = +41.0°C)</pre>
+<p>You can now <a href=https://wiki.archlinux.org/title/Load_the_module_at_boot class=mw-redirect title="Load the module at boot">load the module at boot</a>. Alternatively, manually add it to the <code>HWMON_MODULES</code> line of <code>/etc/conf.d/lm-sensors</code>. Do note it will not be added automatically when <code>sensors-detect</code> will be allowed to write this file again.
+</p>
+<h2><span class=mw-headline id=Troubleshooting>Troubleshooting</span></h2>
+<h3><span class=mw-headline id=K10Temp_module>K10Temp module</span></h3>
+<p>Some K10 processors have issues with their temperature sensor. See the <a rel=nofollow class="external text" href=https://docs.kernel.org/hwmon/k10temp.html#description>k10temp documentation</a> for more information.
+<p>On affected machines the module will report "unreliable CPU thermal sensor; monitoring disabled". To force monitoring anyway, you can run the following:
+</p>
+<pre># rmmod k10temp
+# modprobe k10temp force=1
+</pre>
+<p>Confirm that the sensor is in fact valid and reliable. If it is, can edit <code>/etc/modprobe.d/k10temp.conf</code> and add:
+</p>
+<pre>options k10temp force=1
+</pre>
+<p>This will allow the module to load at boot.
+</p>
+<h3><span id=Asus_B450M-A.2FA320M-K.2FA320M-K-BR_motherboards></span><span class=mw-headline id=Asus_B450M-A/A320M-K/A320M-K-BR_motherboards>Asus B450M-A/A320M-K/A320M-K-BR motherboards</span></h3>
+<p>These motherboards use a IT8655E chip, which is not supported by the it87 kernel driver, as of Nov 2020 <a rel=nofollow class="external autonumber" href=https://docs.kernel.org/hwmon/it87.html>[1]</a>. However, it is supported by the upstream version of the kernel driver <a rel=nofollow class="external autonumber" href=https://github.com/bbqlinux/it87/blob/master/it87.c#L22>[2]</a>. The <a href=https://wiki.archlinux.org/title/DKMS class=mw-redirect title=DKMS>DKMS</a> variant is contained in <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href=https://aur.archlinux.org/packages/it87-dkms-git/>it87-dkms-git</a></span><sup><small>AUR</small></sup>.
+</p>
+<h3><span id=Asus_B450.2FX399.2FX470_motherboards_with_AM4_Socket></span><span class=mw-headline id=Asus_B450/X399/X470_motherboards_with_AM4_Socket>Asus B450/X399/X470 motherboards with AM4 Socket</span></h3>
+<p>Some recent Asus motherboards use a ITE IT8665E chip, accessing the temperature, fan and voltage sensors may require the <code>asus-wmi-sensors</code> module. It is part of the mainline kernel since 5.17: load the <code>asus-wmi-sensors</code> <a href=https://wiki.archlinux.org/title/Kernel_module title="Kernel module">kernel module</a> which uses the UEFI interface and may require a BIOS update on some boards <a rel=nofollow class="external autonumber" href=https://github.com/electrified/asus-wmi-sensors#supported-hardware>[3]</a>.
+<p>Alternatively, the <code>it87</code> module reads the values from the chip directly, install <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href=https://aur.archlinux.org/packages/it87-dkms-git/>it87-dkms-git</a></span><sup><small>AUR</small></sup> and load the <code>it87</code> <a href=https://wiki.archlinux.org/title/Kernel_module title="Kernel module">kernel module</a>.
+</p>
+<h3><span id=Asus_H97.2FZ97.2FZ170.2FZ370i.2FX570.2FB550_motherboards></span><span class=mw-headline id=Asus_H97/Z97/Z170/Z370i/X570/B550_motherboards>Asus H97/Z97/Z170/Z370i/X570/B550 motherboards</span></h3>
+<p>With some recent Asus motherboards, fan and voltage sensor access may require the <code>nct6775</code> <a href=https://wiki.archlinux.org/title/Kernel_module title="Kernel module">kernel module</a> to be loaded.
+<p>You may also need to add the following <a href=https://wiki.archlinux.org/title/Kernel_parameter class=mw-redirect title="Kernel parameter">kernel parameter</a>:
+</p>
+<pre>acpi_enforce_resources=lax
+</pre>
+<p>See <a rel=nofollow class="external free" href="https://bugzilla.kernel.org/show_bug.cgi?id=204807">https://bugzilla.kernel.org/show_bug.cgi?id=204807</a> for more information.
+<p>Note: Starting with Kernel 5.16 <a rel=nofollow class="external autonumber" href="https://bugzilla.kernel.org/show_bug.cgi?id=204807#c199">[4]</a>, the above <a href=https://wiki.archlinux.org/title/Kernel_parameter class=mw-redirect title="Kernel parameter">kernel parameter</a> is no longer be required for most boards and should be avoided. 
+</p>
+<h3><span class=mw-headline id=Asrock_Deskmini_H470>Asrock Deskmini H470</span></h3>
+<p>The STX board of the Deskmini H470 uses a NCT6683 chip, for accessing the temperature, fan and voltage sensors the loading of <code>nct6683</code> module is required.
+<p>For proper values of the <code>nct6683</code> module have a module config file created:
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>/etc/modprobe.d/nct6683.conf</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>options nct6683 force=1 
+</pre>
+<h3><span id=Gigabyte_B250.2FZ370.2FB450M.2FB560M.2FB660M.2FZ690_motherboards></span><span class=mw-headline id=Gigabyte_B250/Z370/B450M/B560M/B660M/Z690_motherboards>Gigabyte B250/Z370/B450M/B560M/B660M/Z690 motherboards</span></h3>
+<p>Some Gigabyte motherboards use the ITE IT8686E, ITE8689 (for B560 and B660M) or ITE8689E (for Z690) chip, which is not supported by the it87 kernel driver, as of May 2019 <a rel=nofollow class="external autonumber" href=https://docs.kernel.org/hwmon/it87.html>[5]</a>. However, it is supported by the upstream version of the kernel driver <a rel=nofollow class="external autonumber" href=https://github.com/bbqlinux/it87/blob/master/it87.c#L24>[6]</a>. The <a href=https://wiki.archlinux.org/title/DKMS class=mw-redirect title=DKMS>DKMS</a> variant is contained in <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href=https://aur.archlinux.org/packages/it87-dkms-git/>it87-dkms-git</a></span><sup><small>AUR</small></sup>. As with <a href=#Asus_H97/Z97/Z170/Z370i/X570/B550_motherboards>#Asus H97/Z97/Z170/Z370i/X570/B550 motherboards</a>, a <a href=https://wiki.archlinux.org/title/Kernel_parameter class=mw-redirect title="Kernel parameter">kernel parameter</a> is required before attempting to install the module:
+</p>
+<pre>acpi_enforce_resources=lax
+</pre>
+<p>Furthermore, supply the id of the chip when loading the module as follows:
+</p>
+<pre># modprobe it87 force_id=0x8686
+or
+# modprobe it87 force_id=0x8689  # for B560
+# modprobe it87 force_id=0x8628  # for Z690
+</pre>
+<p>Or you can <a href=https://wiki.archlinux.org/title/Kernel_modules class=mw-redirect title="Kernel modules">load the module</a> during boot process by creating the following two files:
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>/etc/modules-load.d/it87.conf</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>it87
+</pre>
+<p>For Z690
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>/etc/modprobe.d/it87.conf</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>options it87 force_id=0x8628
+</pre>
+<p>For others
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>/etc/modprobe.d/it87.conf</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>options it87 ignore_resource_conflict=1
+</pre>
+<p>Once the module is loaded you can use the <i>sensors</i> tool to probe the chip.
+Now you can also use <a href=https://wiki.archlinux.org/title/Fancontrol class=mw-redirect title=Fancontrol>fancontrol</a> to control the speed step of your case fan. 
+<p>Optionally installation of <span class="plainlinks archwiki-template-pkg"><a rel=nofollow class="external text" href=https://aur.archlinux.org/packages/zenpower3-dkms/>zenpower3-dkms</a></span><sup><small>AUR</small></sup> may allow greater fine tuning of the motherboard's cooling system. However, it does disable the default k10temp module.
+</p>
+<h3><span class=mw-headline id=Gigabyte_GA-J1900N-D3V>Gigabyte GA-J1900N-D3V</span></h3>
+<p>This motherboard uses the ITE IT8620E chip (useful also to read voltages, mainboard temp, fan speed). As of October 2014, lm_sensors has no driver support for chip ITE IT8620E <a rel=nofollow class="external autonumber" href=https://hwmon.wiki.kernel.org/device_support_status_g_i>[7]</a> <a rel=nofollow class="external autonumber" href="https://marc.info/?l=lm-sensors&amp;m=139496833404519">[8]</a>. lm_sensors developers had a report that the chip is somewhat compatible with the IT8728F for the hardware monitoring part. However, as of August 2016, <a rel=nofollow class="external autonumber" href=https://docs.kernel.org/hwmon/it87.html>[9]</a> lists the IT8620E as supported.
+<p>You can load the module at runtime with modprobe:
+</p>
+<pre>$ modprobe it87 force_id=0x8728
+</pre>
+<p>Or you can <a href=https://wiki.archlinux.org/title/Kernel_modules class=mw-redirect title="Kernel modules">load the modules</a> during boot process by creating the following two files:
+</p>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>/etc/modules-load.d/it87.conf</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>it87</pre>
+<pre style=margin-bottom:0;border-bottom:none;padding-bottom:0.8em>/etc/modprobe.d/it87.conf</pre>
+<pre style=margin-top:0;border-top-style:dashed;padding-top:0.8em>options it87 force_id=0x8603</pre>
+<p>Once the module is loaded you can use the <i>sensors</i> tool to probe the chip.
+<p>Now you can also use <a href=https://wiki.archlinux.org/title/Fancontrol class=mw-redirect title=Fancontrol>fancontrol</a> to control the speedsteps of your case fan.
+</p>
+<h3><span class=mw-headline id=Laptop_screen_issues_after_running_sensors-detect>Laptop screen issues after running sensors-detect</span></h3>
+<p>This is caused by lm-sensors messing with the Vcom values of the screen while probing for sensors. It has been discussed and solved at the forums already: <a rel=nofollow class="external free" href="https://bbs.archlinux.org/viewtopic.php?id=193048">https://bbs.archlinux.org/viewtopic.php?id=193048</a>. However, make sure to read through the thread carefully before running any of the suggested commands.
+</p>
+<h3><span class=mw-headline id=i2c_bus_errors_on_AMD_Navi_2_GPUs>i2c bus errors on AMD Navi 2 GPUs</span></h3>
+<p>There is currently a bug in the way the kernel handles reading the i2c bus on AMD Navi 2 GPUs. The bus currently can only be used with EEPROMs and trying to use it with other devices will cause it to fail. This can cause crashes, black screens, and even cause the card to behave oddly like unable to switch power states. Its currently advised not to scan the i2c bus if you have a Navi 2 based card. You can read more here: <a rel=nofollow class="external free" href=https://gitlab.freedesktop.org/drm/amd/-/issues/1470>https://gitlab.freedesktop.org/drm/amd/-/issues/1470</a>
+</p>
+</div>
+<div class="printfooter sf-hidden" data-nosnippet>Retrieved from ""</div></div>
+ <div id=catlinks class=catlinks data-mw=interface><div id=mw-normal-catlinks class=mw-normal-catlinks><a href=https://wiki.archlinux.org/title/Special:Categories title=Special:Categories>Categories</a>: <ul><li><a href=https://wiki.archlinux.org/title/Category:System_monitors title="Category:System monitors">System monitors</a><li><a href=https://wiki.archlinux.org/title/Category:CPU title=Category:CPU>CPU</a></ul></div></div>
+ </div>
+ </main>
+ 
+ </div>
+ <div class=mw-footer-container>
+ 
+<footer id=footer class=mw-footer role=contentinfo>
+ <ul id=footer-info>
+ <li id=footer-info-lastmod> This page was last edited on 21 February 2023, at 21:31.</li>
+ <li id=footer-info-copyright>Content is available under <a class=external rel=nofollow href=https://www.gnu.org/copyleft/fdl.html>GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+</ul>
+ <ul id=footer-places>
+ <li id=footer-places-privacy><a href=https://terms.archlinux.org/docs/privacy-policy/>Privacy policy</a></li>
+ <li id=footer-places-about><a href=https://wiki.archlinux.org/title/ArchWiki:About>About ArchWiki</a></li>
+ <li id=footer-places-disclaimer><a href=https://wiki.archlinux.org/title/ArchWiki:General_disclaimer>Disclaimers</a></li>
+</ul>
+ 
+</footer>
+ </div>
+ </div> 
+</div> 
+<div id=p-namespaces style=display:none></div></body><!-- Cached/compressed 20230406045615 -->
